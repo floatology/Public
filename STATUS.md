@@ -65,9 +65,12 @@ Recorded so they are not re-introduced:
   clean full scan (175 tokens, 2026-09-20) filtered 96 of 175 for stable-pool
   depth under $50k. Premiums among the 79 that survive run -4.69% to +5.89%,
   median +0.11%.
-- **USAR is the strongest live H1 candidate**: 99.0% lockup, $10.2M in
-  memecoin-paired pools across 13 pairs — a more extreme version of the
-  structure that drove the BONER/HIMS episode. NVDA is second at 76.8%
-  ($28.6M across 11 pairs).
+- **Lockup must be measured on live pools only.** USAR looked like the
+  strongest candidate at 99.0% lockup on $10.2M, but 98% of that sat in one
+  zero-volume pool — seeded liquidity, not a corner. Live-filtered it is 69.3%
+  on $244k. `live_lockup_ratio` is the signalling metric.
+- **Strongest genuine lockup: NVDA at 76.6%** ($28.1M across 11 pairs, 0%
+  dormant), then MU 72.4%, QQQ 62.4%, AAPL 56.3%, HIMS 55.4%. Control: SPY at
+  6.3%.
 - User is **non-US**, so stock tokens are holdable; the premium side remains
   AP-only regardless.

@@ -165,6 +165,7 @@ class PremiumReading:
     total_supply: float
     stable_pool_reserve_usd: float
     memecoin_pool_reserve_usd: float
+    live_memecoin_pool_reserve_usd: float
     deepest_stable_pool: str | None
     memecoin_pairs: tuple[str, ...]
 
@@ -197,11 +198,45 @@ class PremiumReading:
         High lockup is the BONER/HIMS structure: supply captured in pools that
         pair the stock token against a memecoin, where it cannot be sold back
         into the stable market without unwinding the memecoin position.
+
+        Prefer `live_lockup_ratio` for signalling. This raw figure counts dead
+        pools and is therefore trivially inflated by seeding a large one-sided
+        position that nobody trades.
         """
         total = self.stable_pool_reserve_usd + self.memecoin_pool_reserve_usd
         if total <= 0:
             return None
         return self.memecoin_pool_reserve_usd / total
+
+    @property
+    def live_lockup_ratio(self) -> float | None:
+        """Lockup counting only memecoin pools with non-zero 24h volume.
+
+        This is the signalling metric. The raw ratio can be hijacked by a single
+        dormant pool: on 2026-09-20 USAR showed 99.0% lockup on $10.2M of
+        memecoin-paired reserves, of which **98% sat in one `tornadoes / USAR`
+        pool holding $9.75M at zero 24h volume.** Filtering on liveness puts it
+        at 69.3%, and the $10.2M headline at $244k.
+
+        That distinction matters because a large dormant pool is the signature
+        of seeded or wash liquidity rather than a genuine corner — the exact
+        pattern a naive signal would rank first. Every other top-lockup token
+        measured that day was 0% dormant, so this guard costs nothing on
+        genuine cases and removes the one false positive.
+        """
+        total = self.stable_pool_reserve_usd + self.live_memecoin_pool_reserve_usd
+        if total <= 0:
+            return None
+        return self.live_memecoin_pool_reserve_usd / total
+
+    @property
+    def dormant_share(self) -> float | None:
+        """Fraction of memecoin-paired reserves sitting in zero-volume pools."""
+        if self.memecoin_pool_reserve_usd <= 0:
+            return None
+        return 1.0 - (
+            self.live_memecoin_pool_reserve_usd / self.memecoin_pool_reserve_usd
+        )
 
 
 def measure(
@@ -234,6 +269,9 @@ def measure(
         total_supply=total_supply,
         stable_pool_reserve_usd=sum(p.reserve_usd for p in stable),
         memecoin_pool_reserve_usd=sum(p.reserve_usd for p in memecoin),
+        live_memecoin_pool_reserve_usd=sum(
+            p.reserve_usd for p in memecoin if p.volume_24h_usd > 0
+        ),
         deepest_stable_pool=deepest.name if deepest else None,
         memecoin_pairs=tuple(sorted({p.base_symbol for p in memecoin})),
     )

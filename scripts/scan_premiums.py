@@ -130,6 +130,9 @@ def main() -> int:
                                 "stable_pool_reserve_usd": reading.stable_pool_reserve_usd,
                                 "memecoin_pool_reserve_usd": reading.memecoin_pool_reserve_usd,
                                 "lockup_ratio": reading.lockup_ratio,
+                                "live_lockup_ratio": reading.live_lockup_ratio,
+                                "dormant_share": reading.dormant_share,
+                                "live_memecoin_pool_reserve_usd": reading.live_memecoin_pool_reserve_usd,
                                 "memecoin_pairs": list(reading.memecoin_pairs),
                             }
                         )

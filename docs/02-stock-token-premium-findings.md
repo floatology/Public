@@ -63,9 +63,18 @@ Rather than reason about frequency, I measured it. `src/rhc/premium.py` computes
 
 Cross-checked against independent equity sources: HIMS closed **$28.00** (on-chain −1.04%), PLTR closed **$177.32** (on-chain −1.52%). This confirms the reference feed is genuinely independent of on-chain pricing and the comparison is not circular.
 
+> **Correction 2026-09-20 (later same day).** The "±1.5%" generalisation below was drawn from
+> these ten large-capitalisation tokens and does **not** hold across the full 176-token universe.
+> An unfiltered full scan produced an apparent **+151% premium on AMAT** — from a stable pool
+> holding **$5,669** — plus six more beyond ±6%, all on pools under $22k. None were dislocations;
+> all were illiquid prints. `premium_pct` now returns None below $50,000 of stable-pool depth,
+> which filters **96 of 175 tokens**. Among the 79 that survive, premiums run **−4.69% to +5.89%,
+> median +0.11%** — the conclusion holds for liquid tokens, but only once the filter is applied.
+
 ### What this says
 
-- **Every premium sits within ±1.5%**, and most are *negative* — small discounts, not premiums.
+- **Among tokens deep enough to price, premiums sit within a few percent**, and most are
+  *negative* — small discounts, not premiums.
 - That is **arbitrage-tight pricing**, and the residual is smaller than the round-trip cost of trading it (pool fees of 0.3–1% per leg, plus price impact, plus gas).
 - The measurement was taken under the precise conditions — weekend, minting window closed — that the BONER thesis says should produce dislocation. It produced none.
 - **The HIMS float has grown from 58,714 tokens at the time of the squeeze to 136,773 today** — a 2.3× expansion. The issuer widened the float that made the corner possible, which structurally reduces recurrence for that name.
@@ -96,9 +105,20 @@ So the usable inversion is:
 
 The current readings are striking:
 
-- **NVDA: 75.8% locked up** — $27.0M in memecoin pools against $8.6M in stable pools, across pairs including AI, CEREBRO, DARK, EI.
-- **AAPL 56.6%**, **HIMS 55.3%**, **PLTR 55.3%** — all majority-locked.
+- **NVDA: 76.6% locked up** — $28.1M in memecoin pools against $8.6M in stable pools, across 11
+  pairs including AI, CEREBRO, DARK, EI. **0% dormant.**
+- **MU 72.4%**, **QQQ 62.4%**, **AAPL 56.3%**, **HIMS 55.4%**, **META 48.7%** — all
+  majority-locked, all 0% dormant.
 - **SPY 6.3%** — the control case. A broad-market ETF token attracts almost no memecoin pairing.
+
+**Count only live pools.** The raw ratio is trivially inflated by seeding a large pool nobody
+trades. USAR initially measured **99.0% lockup on $10.2M** and looked like the strongest candidate
+on the chain — until inspection showed **98% of it in one `tornadoes / USAR` pool holding $9.75M
+at zero 24h volume**. Live-filtered, it is 69.3% on $244k. A large dormant pool is the signature
+of seeded or wash liquidity, not a corner, and it is exactly what a naive ranking puts first —
+as this one did. `live_lockup_ratio` is therefore the signalling metric and `lockup_ratio` is kept
+only for audit. Every other top-lockup token measured 0% dormant, so the guard costs nothing on
+genuine cases.
 
 This is a **novel, cheap, real-time signal that no vendor in the master document's tooling survey computes**, and it is exactly the kind of cross-domain join (on-chain pool state × tokenized-equity structure) that §5.6 of the critique identified as the only defensible source of edge on this project.
 
