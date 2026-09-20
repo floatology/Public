@@ -1,0 +1,46 @@
+{
+  "seed": "rhc-h0-v1",
+  "multiple": 10.0,
+  "cost_ceiling_pct": 10.0,
+  "max_pool_share_pct": 10.0,
+  "sampled": 1500,
+  "measured": 95,
+  "dead": 1403,
+  "price_winners": 21,
+  "reserves_unavailable": 0,
+  "price_rate_all_sampled": 0.014018691588785047,
+  "by_clip": [
+    {
+      "clip_usd": 100.0,
+      "tradable_winners": 18,
+      "tradable_share_of_price_winners": 0.8571428571428571,
+      "tradable_rate_all_sampled": 0.012016021361815754,
+      "impact_p50": 0.9194003116230087,
+      "impact_p90": 14.033859917210457
+    },
+    {
+      "clip_usd": 500.0,
+      "tradable_winners": 17,
+      "tradable_share_of_price_winners": 0.8095238095238095,
+      "tradable_rate_all_sampled": 0.011348464619492658,
+      "impact_p50": 3.321905501570266,
+      "impact_p90": 44.573998142929675
+    },
+    {
+      "clip_usd": 2000.0,
+      "tradable_winners": 7,
+      "tradable_share_of_price_winners": 0.3333333333333333,
+      "tradable_rate_all_sampled": 0.004672897196261682,
+      "impact_p50": 11.380108261632426,
+      "impact_p90": 76.23462503525761
+    },
+    {
+      "clip_usd": 10000.0,
+      "tradable_winners": 0,
+      "tradable_share_of_price_winners": 0.0,
+      "tradable_rate_all_sampled": 0.0,
+      "impact_p50": 38.65173837200771,
+      "impact_p90": 94.12696635755749
+    }
+  ]
+}

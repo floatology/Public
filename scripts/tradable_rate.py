@@ -113,7 +113,9 @@ def main() -> int:
     parser.add_argument("--census", type=Path, default=Path("data/parquet/pool_creations.parquet"))
     parser.add_argument("--sample", type=int, default=400)
     parser.add_argument("--multiple", type=float, default=10.0)
-    parser.add_argument("--clip", type=float, default=500.0, help="Clip size in USD")
+    parser.add_argument("--clips", type=float, nargs="+", default=[500.0],
+                        help="Clip sizes in USD; all are evaluated from the same "
+                             "reserve reads, so a sweep costs no extra scanning")
     parser.add_argument("--eth-usd", type=float, default=2576.0)
     parser.add_argument("--cost-ceiling", type=float, default=10.0,
                         help="One-way impact %% above which a winner is untradable")
@@ -129,13 +131,15 @@ def main() -> int:
 
     # Clip in raw units differs per quote asset: USDG is 6 decimals at ~$1,
     # WETH is 18 at the ETH price.
-    clip_raw = {
-        USDG.lower(): int(args.clip * 10**6),
-        WETH.lower(): int(args.clip / args.eth_usd * 10**18),
-    }
+    def clip_units(clip_usd: float, quote: str) -> int:
+        return (
+            int(clip_usd * 10**6)
+            if quote == USDG.lower()
+            else int(clip_usd / args.eth_usd * 10**18)
+        )
 
     con = duckdb.connect()
-    quotes = list(clip_raw)
+    quotes = [USDG.lower(), WETH.lower()]
     pools = con.execute(
         """
         SELECT pool, block,
@@ -153,8 +157,12 @@ def main() -> int:
     print(f"population {len(pools):,} USDG/WETH-quoted v2 pools; sampling {len(sample)}",
           file=sys.stderr)
 
-    measured = dead = price_winners = tradable_winners = no_reserves = 0
-    costs: list[float] = []
+    measured = dead = price_winners = no_reserves = 0
+    # Capacity is the real question: a signal that only works at $500 is not a
+    # strategy. Every clip size is priced from the same reserve read, so the
+    # sweep is free once the logs are fetched.
+    tradable_by_clip = {clip: 0 for clip in args.clips}
+    costs_by_clip: dict[float, list[float]] = {clip: [] for clip in args.clips}
 
     with Rpc() as rpc:
         head = rpc.block_number()
@@ -213,55 +221,66 @@ def main() -> int:
             if reserves is None:
                 no_reserves += 1
                 continue
-            metrics = execution_cost(clip_raw[quote], reserves[0], reserves[1])
-            if metrics is None:
+            line = [f"  {pool[:12]} ratio={ratio:8.1f}x"]
+            any_metric = False
+            for clip in args.clips:
+                metrics = execution_cost(clip_units(clip, quote), reserves[0], reserves[1])
+                if metrics is None:
+                    continue
+                any_metric = True
+                costs_by_clip[clip].append(metrics["impact_pct"])
+                if (metrics["impact_pct"] <= args.cost_ceiling
+                        and metrics["pool_share_pct"] <= args.max_pool_share):
+                    tradable_by_clip[clip] += 1
+                    line.append(f"  ${clip:,.0f}:{metrics['impact_pct']:6.2f}%*")
+                else:
+                    line.append(f"  ${clip:,.0f}:{metrics['impact_pct']:6.2f}% ")
+            if not any_metric:
                 no_reserves += 1
                 continue
-            cost = metrics["impact_pct"]
-            costs.append(cost)
-            tradable = (
-                cost <= args.cost_ceiling
-                and metrics["pool_share_pct"] <= args.max_pool_share
-            )
-            if tradable:
-                tradable_winners += 1
-
-            print(f"  {pool[:12]} ratio={ratio:8.1f}x  impact {cost:7.2f}%  "
-                  f"clip={metrics['pool_share_pct']:8.1f}% of quote reserve  "
-                  f"{'TRADABLE' if tradable else 'no'}", file=sys.stderr)
+            print("".join(line), file=sys.stderr)
 
     total = measured + dead
-    costs.sort()
+    for values in costs_by_clip.values():
+        values.sort()
+
+    def summary(clip: float) -> dict:
+        values = costs_by_clip[clip]
+        won = tradable_by_clip[clip]
+        return {
+            "clip_usd": clip,
+            "tradable_winners": won,
+            "tradable_share_of_price_winners": won / price_winners if price_winners else None,
+            "tradable_rate_all_sampled": won / total if total else None,
+            "impact_p50": values[len(values) // 2] if values else None,
+            "impact_p90": values[int(len(values) * 0.9)] if values else None,
+        }
+
     result = {
-        "seed": args.seed, "clip_usd": args.clip, "multiple": args.multiple,
+        "seed": args.seed, "multiple": args.multiple,
         "cost_ceiling_pct": args.cost_ceiling,
         "max_pool_share_pct": args.max_pool_share,
         "sampled": len(sample), "measured": measured, "dead": dead,
-        "price_winners": price_winners, "tradable_winners": tradable_winners,
+        "price_winners": price_winners,
         "reserves_unavailable": no_reserves,
-        "tradable_share_of_price_winners":
-            tradable_winners / price_winners if price_winners else None,
         "price_rate_all_sampled": price_winners / total if total else None,
-        "tradable_rate_all_sampled": tradable_winners / total if total else None,
-        "cost_p50": costs[len(costs)//2] if costs else None,
-        "cost_p90": costs[int(len(costs)*0.9)] if costs else None,
+        "by_clip": [summary(clip) for clip in args.clips],
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, indent=2) + "\n")
 
-    print(f"\n--- tradable rate (V2, ${args.clip:g} clip, seed {args.seed}) ---", file=sys.stderr)
-    print(f"  measured {measured}, dead {dead}", file=sys.stderr)
-    print(f"  price winners   : {price_winners}", file=sys.stderr)
-    print(f"  tradable winners: {tradable_winners}", file=sys.stderr)
-    if price_winners:
-        print(f"  tradable share of price winners: "
-              f"{tradable_winners/price_winners:.1%}", file=sys.stderr)
-    if total:
-        print(f"  price rate {price_winners/total:.3%} -> "
-              f"tradable rate {tradable_winners/total:.3%}", file=sys.stderr)
-    if costs:
-        print(f"  one-way impact at peak: p50 {costs[len(costs)//2]:.2f}%  "
-              f"p90 {costs[int(len(costs)*0.9)]:.2f}%", file=sys.stderr)
+    print(f"\n--- tradable rate (V2, seed {args.seed}) ---", file=sys.stderr)
+    print(f"  measured {measured}, dead {dead}, price winners {price_winners}", file=sys.stderr)
+    print(f"  price rate: {price_winners / total:.3%}\n" if total else "", file=sys.stderr)
+    print(f"  {'clip':>10}{'tradable':>10}{'of winners':>13}{'rate':>10}"
+          f"{'impact p50':>13}{'impact p90':>13}", file=sys.stderr)
+    for clip in args.clips:
+        s = summary(clip)
+        print(f"  ${clip:>9,.0f}{s['tradable_winners']:>10}"
+              f"{(s['tradable_share_of_price_winners'] or 0):>12.1%}"
+              f"{(s['tradable_rate_all_sampled'] or 0):>10.3%}"
+              f"{(s['impact_p50'] or 0):>12.2f}%{(s['impact_p90'] or 0):>12.2f}%",
+              file=sys.stderr)
     print(f"\nwrote {args.out}", file=sys.stderr)
     return 0
 
