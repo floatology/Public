@@ -61,5 +61,13 @@ Recorded so they are not re-introduced:
 - **Execution cost is the dominant term**, varying four orders of magnitude:
   BONER ($2.4M reserves) 0.90% round trip; INUT ($20k) **96.10%**. Below roughly
   $50k of pool reserves a token is untradable at any size.
+- **Over half the stock-token universe is too illiquid to price.** The first
+  clean full scan (175 tokens, 2026-09-20) filtered 96 of 175 for stable-pool
+  depth under $50k. Premiums among the 79 that survive run -4.69% to +5.89%,
+  median +0.11%.
+- **USAR is the strongest live H1 candidate**: 99.0% lockup, $10.2M in
+  memecoin-paired pools across 13 pairs — a more extreme version of the
+  structure that drove the BONER/HIMS episode. NVDA is second at 76.8%
+  ($28.6M across 11 pairs).
 - User is **non-US**, so stock tokens are holdable; the premium side remains
   AP-only regardless.
