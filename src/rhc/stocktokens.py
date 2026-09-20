@@ -153,3 +153,43 @@ def impostors(client: Blockscout, ticker: str) -> list[StockToken]:
         and token.symbol.upper() == ticker.upper()
         and not token.is_canonical
     ]
+
+
+def _address_of(item: dict[str, Any]) -> str | None:
+    """Blockscout returns the address flat on some endpoints, nested on others."""
+    return item.get("address_hash") or (item.get("address") or {}).get("hash")
+
+
+def discover_all(client: Blockscout, *, max_pages: int = 15) -> list[StockToken]:
+    """Enumerate every canonical Stock Token on the chain.
+
+    Walks Blockscout's ERC-20 token list and keeps those whose icon is served
+    from Robinhood's own CDN — the strongest identity marker available, since it
+    requires Robinhood to have published the asset (see module docstring).
+
+    Preferred over a hardcoded ticker list: the universe changes as Robinhood
+    lists assets, and a stale list silently omits exactly the newly-listed names
+    a memecoin is most likely to pair against.
+    """
+    found: dict[str, StockToken] = {}
+    for item in client.paginate("/api/v2/tokens", max_pages=max_pages, type="ERC-20"):
+        icon_url = item.get("icon_url") or ""
+        if ROBINHOOD_CDN not in icon_url:
+            continue
+        address = _address_of(item)
+        symbol = item.get("symbol")
+        if not address or not symbol or symbol in found:
+            continue
+        found[symbol] = StockToken(
+            address=address,
+            symbol=symbol,
+            name=item.get("name") or "",
+            total_supply_raw=str(item.get("total_supply") or "0"),
+            decimals=int(item.get("decimals") or 18),
+            verified_via_admin_panel=bool(item.get("is_verified_via_admin_panel")),
+            has_robinhood_cdn_icon=True,
+            priority=int(item.get("priority") or 0),
+            blockscout_exchange_rate=_coerce_float(item.get("exchange_rate")),
+            circulating_market_cap=_coerce_float(item.get("circulating_market_cap")),
+        )
+    return sorted(found.values(), key=lambda t: t.symbol)

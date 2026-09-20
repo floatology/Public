@@ -1,0 +1,58 @@
+name: Daily lockup scan
+
+# Builds the H1 time series. No free source carries historical liquidity
+# composition, so every missed day is a permanent gap. See docs/03-open-questions.md.
+#
+# Note: GitHub Actions cron is best-effort and is routinely delayed under load.
+# That is acceptable for a daily signal. The HEALTHCHECK_URL secret (optional)
+# provides a dead-man's-switch so a silently failing workflow is distinguishable
+# from a quiet market.
+
+on:
+  schedule:
+    - cron: "20 21 * * *"   # 21:20 UTC daily, after US market close
+  workflow_dispatch:         # manual trigger
+
+permissions:
+  contents: write
+
+concurrency:
+  group: daily-lockup-scan
+  cancel-in-progress: false
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+    timeout-minutes: 45
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install --quiet httpx pydantic duckdb pyarrow python-dotenv
+
+      - name: Scan
+        env:
+          HEALTHCHECK_URL: ${{ secrets.HEALTHCHECK_URL }}
+        run: python scripts/scan_premiums.py
+
+      - name: Commit snapshot
+        run: |
+          git config user.name  "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          if git diff --quiet -- data/premiums.jsonl; then
+            echo "no new rows"
+            exit 0
+          fi
+          rows=$(git diff --numstat -- data/premiums.jsonl | awk '{print $1}')
+          git add data/premiums.jsonl
+          git commit -m "Daily lockup snapshot: ${rows} rows ($(date -u +%Y-%m-%d))"
+          for attempt in 1 2 3 4; do
+            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            echo "push failed, retry ${attempt}"
+            sleep $((2 ** attempt))
+          done
+          exit 1
