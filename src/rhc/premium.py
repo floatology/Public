@@ -36,6 +36,12 @@ NETWORK = "robinhood"
 # memecoin prices it against sentiment.
 STABLE_QUOTES = {"USDG", "USDC", "USDT"}
 
+# Minimum stable-pool depth before an on-chain price is treated as meaningful.
+# Set from measurement: round-trip execution cost explodes below roughly $50k of
+# reserves (0.90% at $2.4M, 96.10% at $20k), so a price quoted from less than
+# this is not one anybody could transact against.
+MIN_PRICING_LIQUIDITY_USD = 50_000.0
+
 
 class PremiumError(RuntimeError):
     """GeckoTerminal returned an unusable response."""
@@ -164,10 +170,25 @@ class PremiumReading:
 
     @property
     def premium_pct(self) -> float | None:
-        """On-chain price as a percentage above (+) or below (-) the real stock."""
+        """On-chain price as a percentage above (+) or below (-) the real stock.
+
+        Returns None when the stable-pool depth is below MIN_PRICING_LIQUIDITY_USD.
+        A price quoted from a near-empty pool is not a price, and without this
+        guard the metric is dominated by noise: a full-universe scan on
+        2026-09-20 produced an apparent +151% "premium" on AMAT from a stable
+        pool holding $5,669, alongside six more beyond +/-6% all sitting on pools
+        under $22k. None were dislocations; all were illiquid prints.
+        """
         if not self.onchain_price_usd or not self.reference_price_usd:
             return None
+        if self.stable_pool_reserve_usd < MIN_PRICING_LIQUIDITY_USD:
+            return None
         return (self.onchain_price_usd / self.reference_price_usd - 1.0) * 100.0
+
+    @property
+    def priced_reliably(self) -> bool:
+        """Whether this token has enough stable-pool depth to quote a price."""
+        return self.stable_pool_reserve_usd >= MIN_PRICING_LIQUIDITY_USD
 
     @property
     def lockup_ratio(self) -> float | None:

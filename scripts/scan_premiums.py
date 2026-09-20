@@ -19,6 +19,7 @@ import argparse
 import json
 import os
 import sys
+from contextlib import contextmanager
 from datetime import datetime, timezone
 from pathlib import Path
 
@@ -44,6 +45,29 @@ def _universe(client: Blockscout, tickers: list[str], limit: int | None) -> list
         return resolved
     tokens = discover_all(client)
     return tokens[:limit] if limit else tokens
+
+
+@contextmanager
+def _single_instance(path: Path):
+    """Refuse to run if another scan is already writing this file.
+
+    Two concurrent scans append interleaved rows under different timestamps,
+    which silently duplicates the day's snapshot. That happened on 2026-09-20
+    and had to be cleaned up afterwards.
+    """
+    lock = path.with_suffix(path.suffix + ".lock")
+    try:
+        handle = os.open(lock, os.O_CREAT | os.O_EXCL | os.O_WRONLY)
+    except FileExistsError:
+        raise SystemExit(
+            f"another scan holds {lock}; remove it if no scan is running"
+        ) from None
+    try:
+        os.write(handle, str(os.getpid()).encode())
+        os.close(handle)
+        yield
+    finally:
+        lock.unlink(missing_ok=True)
 
 
 def _ping_healthcheck(state: str = "") -> None:
@@ -73,7 +97,7 @@ def main() -> int:
     written = 0
     failed: list[str] = []
     try:
-        with Blockscout() as bs, GeckoTerminal() as gt:
+        with _single_instance(args.out), Blockscout() as bs, GeckoTerminal() as gt:
             universe = _universe(bs, args.tickers, args.limit)
             print(f"scanning {len(universe)} tokens", file=sys.stderr)
 
