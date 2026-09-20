@@ -16,7 +16,8 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 | 4 | Read rebuilt `robinhood-screener` (2026-09-12) | **done** — lessons folded into PREREGISTRATION |
 | 5 | Check retail redemption latency | **done** — undisclosed; needs a question to Robinhood |
 | 6 | H0 population frame | **done** — 715,343 pool creations censused |
-| 7 | H0 power analysis | **provisional** — sampler works, tail still dust-contaminated |
+| 7 | H0 power analysis | **done** — `docs/06-power-analysis.md` |
+| 8 | V3 stratum rate (63% of pools) | next |
 
 ---
 
@@ -35,21 +36,26 @@ Running log. Updated as work completes so progress survives an interrupted sessi
   with the liquidity floor measured (`docs/04-execution-and-data-findings.md`).
 - Official archive RPC found and recorded in `src/rhc/chain.py`.
 
-## Provisional H0 numbers (NOT yet trustworthy)
+## H0 base rates (measured, 1,200 pools)
 
-From 1,200 sampled quote-paired V2 pools: **63 traded enough to measure, 1,137
-dead** (94.8% never reached 10 real trades). Of the 63, 19 reached 10x.
+- **95.2% of quote-paired V2 pools never trade meaningfully** (<10 real trades).
+- Among the 4.75% that do, **21.05% reach 10x** their launch VWAP.
+- **Overall positive rate: 1.001%** (95% CI 0.574–1.741%) — which independently
+  lands on the master document's cited "under 1% ever graduate".
+- Peak/launch among measurable pools: p50 4.08x, p90 49.4x, max 373x.
 
-**Do not quote these yet.** The p99 peak-over-launch is 9.4e18, a physically
-impossible ratio caused by pools whose launch trades are dust — a 1-wei quote
-leg makes the launch price ~0 and the ratio explodes. The median (4.29x) and p90
-(214x) look plausible; the tail does not, and some of the 19 "winners" are
-probably dust artefacts. Needs a minimum-trade-size filter before the rate means
-anything.
+**Sample size is not a binding constraint.** 50 positives per discovery/
+confirmation half needs ~10,000 pools, about 7 hours on the free archive RPC.
 
-What *is* solid from this: **~95% of quote-paired V2 pools never trade
-meaningfully**, which is consistent with the published base rates and is itself
-the key input to sizing any sample.
+**But the current n=57 can only detect a ~21pp effect** — roughly a doubling of
+the base rate. Literature effects are far smaller (the sniper-cohort paper's
++16.1% relative is ~3.4pp absolute), so detecting those needs tens of thousands
+of pools sampled. Plan for it rather than misread an underpowered null.
+
+**Caveat that bounds all of it:** these are printed prices. Given round-trip
+cost runs 0.90% at $2.4M of reserves and 96.10% at $20k, an unknown but likely
+large share of the 12 winners were never tradable. Expect the tradable rate to
+be materially below 1%.
 
 ## Infrastructure answer
 

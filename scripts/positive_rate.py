@@ -96,19 +96,29 @@ def _trades(logs: list[dict], *, quote_is_token0: bool) -> list[tuple[float, int
 
 
 def _drop_dust(trades: list[tuple[float, int]], floor_frac: float) -> list[tuple[float, int]]:
-    """Remove trades far smaller than the pool's own typical size.
+    """Remove trades far smaller than the pool's own real activity.
 
     A one-wei quote leg drives the computed launch price to near zero, and the
     peak-over-launch ratio then explodes: an unfiltered 1,200-pool sample
-    produced a p99 of 9.4e18, a physically impossible number. The threshold is
-    relative to each pool's own median trade, not absolute, because pools differ by
-    many orders of magnitude in size and decimals are unnormalised.
+    produced a p99 of 9.4e18, a physically impossible number.
+
+    **Anchor to the 90th percentile trade, not the median.** A first attempt
+    used the median, which fails precisely where it matters: in a pool where
+    most trades are dust the median *is* dust, so one percent of it is dust
+    too, and the filter passes everything. That version still produced a p99 of
+    8.8e18 across 1,200 pools while looking clean on a 60-pool smoke test. The
+    p90 anchors to whatever genuine activity a pool had, however rare.
+
+    The threshold stays relative to each pool rather than absolute, because
+    pools differ by orders of magnitude in size and the quote assets differ in
+    decimals (USDG has 6, WETH and VIRTUAL have 18), so no single wei figure
+    is meaningful across them.
     """
     if not trades:
         return []
     amounts = sorted(amount for _, amount in trades)
-    median = amounts[len(amounts) // 2]
-    floor = median * floor_frac
+    anchor = amounts[min(len(amounts) - 1, int(len(amounts) * 0.9))]
+    floor = anchor * floor_frac
     return [(price, amount) for price, amount in trades if amount >= floor]
 
 
@@ -133,6 +143,8 @@ def main() -> int:
     parser.add_argument("--launch-trades", type=int, default=5)
     parser.add_argument("--min-trades", type=int, default=10,
                         help="Pools with fewer real trades are counted as dead, not measured")
+    parser.add_argument("--max-plausible", type=float, default=1e6,
+                        help="Ratios above this are artefacts, counted separately")
     parser.add_argument("--dust-floor", type=float, default=0.01,
                         help="Drop trades below this fraction of the pool's median trade size")
     parser.add_argument("--seed", default="rhc-h0-v1", help="Sampling seed, for reproducibility")
@@ -167,7 +179,7 @@ def main() -> int:
         file=sys.stderr,
     )
 
-    measured = dead = errored = 0
+    measured = dead = errored = implausible = 0
     winners = 0
     ratios: list[float] = []
 
@@ -201,6 +213,12 @@ def main() -> int:
                 continue
 
             ratio = max(price for price, _ in trades) / launch
+            # A ratio this large is an artefact, not a token that went up a
+            # trillion-fold. Count it as unmeasurable rather than silently
+            # booking it as the sample's biggest winner.
+            if ratio > args.max_plausible:
+                implausible += 1
+                continue
             ratios.append(ratio)
             measured += 1
             if ratio >= args.multiple:
@@ -209,7 +227,7 @@ def main() -> int:
             if index % 25 == 0:
                 print(
                     f"  {index}/{len(sample)}  measured={measured} dead={dead} "
-                    f"winners={winners}",
+                    f"implausible={implausible} winners={winners}",
                     file=sys.stderr,
                 )
 
@@ -226,6 +244,7 @@ def main() -> int:
         "measured": measured,
         "dead_or_untradeable": dead,
         "errored": errored,
+        "implausible": implausible,
         "multiple": args.multiple,
         "dust_floor": args.dust_floor,
         "winners": winners,
@@ -242,8 +261,8 @@ def main() -> int:
     args.out.write_text(json.dumps(result, indent=2) + "\n")
 
     print(f"\n--- positive-class rate (V2 stratum, seed {args.seed}) ---", file=sys.stderr)
-    print(f"  sampled {len(sample)}: {measured} measured, {dead} dead, {errored} errored",
-          file=sys.stderr)
+    print(f"  sampled {len(sample)}: {measured} measured, {dead} dead, "
+          f"{implausible} implausible, {errored} errored", file=sys.stderr)
     print(f"  >= {args.multiple:g}x: {winners}", file=sys.stderr)
     if measured:
         print(f"  rate among measured   : {winners / measured:.3%}", file=sys.stderr)
