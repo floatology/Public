@@ -62,8 +62,8 @@ def _parse_v2_swap(data_hex: str) -> tuple[int, int, int, int] | None:
         return None
 
 
-def _price_series(logs: list[dict], *, quote_is_token0: bool) -> list[float]:
-    """Quote-per-base for each swap, skipping degenerate ones.
+def _trades(logs: list[dict], *, quote_is_token0: bool) -> list[tuple[float, int]]:
+    """(quote-per-base, quote amount) for each swap, skipping degenerate ones.
 
     **Orientation is not optional.** A first attempt took token1/token0 by
     position, but the quote asset is token0 in some pools and token1 in others
@@ -76,11 +76,11 @@ def _price_series(logs: list[dict], *, quote_is_token0: bool) -> list[float]:
     pair is non-zero. Both-zero or one-sided logs are skipped rather than
     treated as a price of zero, which would poison the peak ratio.
 
-    Decimals are deliberately not normalised: this returns a *ratio over time*
+    Decimals are deliberately not normalised: these are *ratios over time*
     within a single pool, where the decimal factor is constant and cancels.
-    These values are not comparable across pools and must not be read as prices.
+    They are not comparable across pools and must not be read as prices.
     """
-    prices: list[float] = []
+    trades: list[tuple[float, int]] = []
     for log in logs:
         parsed = _parse_v2_swap(log.get("data") or "0x")
         if parsed is None:
@@ -91,19 +91,38 @@ def _price_series(logs: list[dict], *, quote_is_token0: bool) -> list[float]:
         if amount0 <= 0 or amount1 <= 0:
             continue
         quote, base = (amount0, amount1) if quote_is_token0 else (amount1, amount0)
-        prices.append(quote / base)
-    return prices
+        trades.append((quote / base, quote))
+    return trades
 
 
-def _launch_vwap(prices: list[float], first_n: int) -> float | None:
-    """Reference price: mean over the first `first_n` real trades.
+def _drop_dust(trades: list[tuple[float, int]], floor_frac: float) -> list[tuple[float, int]]:
+    """Remove trades far smaller than the pool's own typical size.
 
-    Unweighted because the V2 log gives amounts in token units whose decimals
-    we have not resolved per pool; averaging several early trades already
-    removes the single-dust-trade failure this exists to prevent.
+    A one-wei quote leg drives the computed launch price to near zero, and the
+    peak-over-launch ratio then explodes: an unfiltered 1,200-pool sample
+    produced a p99 of 9.4e18, a physically impossible number. The threshold is
+    relative to each pool's own median trade, not absolute, because pools differ by
+    many orders of magnitude in size and decimals are unnormalised.
     """
-    head = prices[:first_n]
-    return sum(head) / len(head) if head else None
+    if not trades:
+        return []
+    amounts = sorted(amount for _, amount in trades)
+    median = amounts[len(amounts) // 2]
+    floor = median * floor_frac
+    return [(price, amount) for price, amount in trades if amount >= floor]
+
+
+def _launch_vwap(trades: list[tuple[float, int]], first_n: int) -> float | None:
+    """Reference price: volume-weighted mean over the first `first_n` trades.
+
+    Weighted by quote amount, per PREREGISTRATION — a simple mean lets one
+    small early trade pull the reference as hard as a large one.
+    """
+    head = trades[:first_n]
+    volume = sum(amount for _, amount in head)
+    if volume <= 0:
+        return None
+    return sum(price * amount for price, amount in head) / volume
 
 
 def main() -> int:
@@ -114,6 +133,8 @@ def main() -> int:
     parser.add_argument("--launch-trades", type=int, default=5)
     parser.add_argument("--min-trades", type=int, default=10,
                         help="Pools with fewer real trades are counted as dead, not measured")
+    parser.add_argument("--dust-floor", type=float, default=0.01,
+                        help="Drop trades below this fraction of the pool's median trade size")
     parser.add_argument("--seed", default="rhc-h0-v1", help="Sampling seed, for reproducibility")
     parser.add_argument("--out", type=Path, default=Path("data/positive_rate.json"))
     args = parser.parse_args()
@@ -168,16 +189,18 @@ def main() -> int:
                 print(f"  {pool} error: {exc}", file=sys.stderr)
                 continue
 
-            prices = _price_series(logs, quote_is_token0=bool(quote_is_token0))
-            if len(prices) < args.min_trades:
+            trades = _drop_dust(
+                _trades(logs, quote_is_token0=bool(quote_is_token0)), args.dust_floor
+            )
+            if len(trades) < args.min_trades:
                 dead += 1
                 continue
-            launch = _launch_vwap(prices, args.launch_trades)
+            launch = _launch_vwap(trades, args.launch_trades)
             if not launch or launch <= 0:
                 dead += 1
                 continue
 
-            ratio = max(prices) / launch
+            ratio = max(price for price, _ in trades) / launch
             ratios.append(ratio)
             measured += 1
             if ratio >= args.multiple:
@@ -204,6 +227,7 @@ def main() -> int:
         "dead_or_untradeable": dead,
         "errored": errored,
         "multiple": args.multiple,
+        "dust_floor": args.dust_floor,
         "winners": winners,
         # Two denominators, because they answer different questions: the rate
         # among pools that actually traded, and the rate among all pools drawn.
