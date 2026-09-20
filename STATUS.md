@@ -16,7 +16,7 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 | 4 | Read rebuilt `robinhood-screener` (2026-09-12) | **done** — lessons folded into PREREGISTRATION |
 | 5 | Check retail redemption latency | **done** — undisclosed; needs a question to Robinhood |
 | 6 | H0 population frame | **done** — 715,343 pool creations censused |
-| 7 | H0 power analysis | sampler built; census being rebuilt after an address bug |
+| 7 | H0 power analysis | **provisional** — sampler works, tail still dust-contaminated |
 
 ---
 
@@ -34,6 +34,22 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 - Execution model built on KyberSwap aggregator quotes (`src/rhc/execution.py`),
   with the liquidity floor measured (`docs/04-execution-and-data-findings.md`).
 - Official archive RPC found and recorded in `src/rhc/chain.py`.
+
+## Provisional H0 numbers (NOT yet trustworthy)
+
+From 1,200 sampled quote-paired V2 pools: **63 traded enough to measure, 1,137
+dead** (94.8% never reached 10 real trades). Of the 63, 19 reached 10x.
+
+**Do not quote these yet.** The p99 peak-over-launch is 9.4e18, a physically
+impossible ratio caused by pools whose launch trades are dust — a 1-wei quote
+leg makes the launch price ~0 and the ratio explodes. The median (4.29x) and p90
+(214x) look plausible; the tail does not, and some of the 19 "winners" are
+probably dust artefacts. Needs a minimum-trade-size filter before the rate means
+anything.
+
+What *is* solid from this: **~95% of quote-paired V2 pools never trade
+meaningfully**, which is consistent with the published base rates and is itself
+the key input to sizing any sample.
 
 ## Infrastructure answer
 

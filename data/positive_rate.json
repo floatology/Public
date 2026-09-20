@@ -1,16 +1,16 @@
 {
   "seed": "rhc-h0-v1",
-  "sample_requested": 300,
-  "population_v2_pools": 268151,
-  "measured": 14,
-  "dead_or_untradeable": 286,
+  "sample_requested": 1200,
+  "population_quote_paired_v2_pools": 266465,
+  "measured": 63,
+  "dead_or_untradeable": 1137,
   "errored": 0,
   "multiple": 10.0,
-  "winners": 10,
-  "rate_among_measured": 0.7142857142857143,
-  "rate_among_all_sampled": 0.03333333333333333,
-  "ratio_p50": 22668.232771967876,
-  "ratio_p90": 90411.29397851825,
-  "ratio_p99": 430410.7917605839,
-  "ratio_max": 430410.7917605839
+  "winners": 19,
+  "rate_among_measured": 0.30158730158730157,
+  "rate_among_all_sampled": 0.015833333333333335,
+  "ratio_p50": 4.2942466342116585,
+  "ratio_p90": 214.62926216157913,
+  "ratio_p99": 9.367473702522542e+18,
+  "ratio_max": 9.367473702522542e+18
 }
