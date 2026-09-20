@@ -97,11 +97,14 @@ def main() -> int:
 
     now = datetime.now(timezone.utc)
     captured_at = now.isoformat()
-    # Partition by month. A single append-only file grows without bound (~79KB
-    # per daily run, ~29MB/year) and git re-stores it on every commit; monthly
-    # files keep each one small and make a date range trivial to read back.
+    # One file per run day. Appending every run to a shared file makes a git
+    # rebase conflict inevitable: two runs append different lines at the same
+    # end-of-file, and CI cannot resolve that unattended -- it happened on the
+    # first scheduled run and left the working tree unmerged, which no amount
+    # of push-retry recovers from. A new file per day never collides, stays
+    # small, and reads back identically via a glob.
     if args.out is None:
-        args.out = Path("data/premiums") / f"{now:%Y-%m}.jsonl"
+        args.out = Path("data/premiums") / f"{now:%Y-%m-%d}.jsonl"
     args.out.parent.mkdir(parents=True, exist_ok=True)
     _ping_healthcheck("start")
 
@@ -112,7 +115,11 @@ def main() -> int:
             universe = _universe(bs, args.tickers, args.limit)
             print(f"scanning {len(universe)} tokens", file=sys.stderr)
 
-            with args.out.open("a") as handle:
+            # A full rescan replaces the day; a partial one appends. Always
+            # truncating lets a two-ticker spot check destroy that day's whole
+            # snapshot, which is exactly what happened once.
+            full_scan = not args.tickers and args.limit is None
+            with args.out.open("w" if full_scan else "a") as handle:
                 for token in universe:
                     try:
                         reading = measure(

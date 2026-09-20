@@ -23,7 +23,9 @@ concurrency:
 jobs:
   scan:
     runs-on: ubuntu-latest
-    timeout-minutes: 45
+    # The runner shares an IP pool, so GeckoTerminal throttles it far harder
+    # than a local run: 23 minutes on CI against ~7 locally. Headroom matters.
+    timeout-minutes: 90
     steps:
       - uses: actions/checkout@v4
 
@@ -52,7 +54,15 @@ jobs:
           git add data/premiums
           git commit -m "Daily lockup snapshot: ${rows} rows ($(date -u +%Y-%m-%d))"
           for attempt in 1 2 3 4; do
-            git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
+            if git pull --rebase origin "${GITHUB_REF_NAME}" \
+               && git push origin "HEAD:${GITHUB_REF_NAME}"; then
+              exit 0
+            fi
+            # A failed rebase leaves the tree unmerged, and every later pull
+            # then fails with "Pulling is not possible because you have
+            # unmerged files" -- so the retry loop must reset that state before
+            # trying again, or all four attempts fail for the same reason.
+            git rebase --abort 2>/dev/null || true
             echo "push failed, retry ${attempt}"
             sleep $((2 ** attempt))
           done
