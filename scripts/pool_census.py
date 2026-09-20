@@ -84,9 +84,21 @@ def main() -> int:
             rows["token1"].append(_topic_address(topics[2]))
             rows["factory"].append(log["address"])
             rows["kind"].append(TOPIC_TO_KIND.get(topics[0], "?"))
-            # V2 puts the pair address in data; V3 puts pool last in data too.
-            data = log.get("data") or "0x"
-            rows["pool"].append("0x" + data[-40:] if len(data) >= 42 else "")
+            # The pool address sits in a different data word per protocol:
+            #   V2 PairCreated(token0 idx, token1 idx, address pair, uint)
+            #      -> pair is the FIRST word
+            #   V3 PoolCreated(token0 idx, token1 idx, fee idx, int24, address pool)
+            #      -> pool is the LAST word
+            # Reading the last word for both yielded the V2 pair *counter*
+            # instead of the address, e.g. 0x...b3aa, so every V2 pool address
+            # was wrong and every V2 log lookup returned nothing.
+            body = (log.get("data") or "0x")[2:]
+            if len(body) < 64:
+                rows["pool"].append("")
+            elif topics[0] == TOPIC_V2_PAIR_CREATED:
+                rows["pool"].append("0x" + body[24:64])
+            else:
+                rows["pool"].append("0x" + body[-40:])
 
     _write(rows, args.out)
     elapsed = time.time() - started

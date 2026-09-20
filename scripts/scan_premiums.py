@@ -86,12 +86,23 @@ def _ping_healthcheck(state: str = "") -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("tickers", nargs="*", help="Specific tickers; default is all")
-    parser.add_argument("--out", type=Path, default=Path("data/premiums.jsonl"))
+    parser.add_argument(
+        "--out",
+        type=Path,
+        default=None,
+        help="Override the output file; default partitions by month",
+    )
     parser.add_argument("--limit", type=int, default=None, help="Cap universe size")
     args = parser.parse_args()
 
+    now = datetime.now(timezone.utc)
+    captured_at = now.isoformat()
+    # Partition by month. A single append-only file grows without bound (~79KB
+    # per daily run, ~29MB/year) and git re-stores it on every commit; monthly
+    # files keep each one small and make a date range trivial to read back.
+    if args.out is None:
+        args.out = Path("data/premiums") / f"{now:%Y-%m}.jsonl"
     args.out.parent.mkdir(parents=True, exist_ok=True)
-    captured_at = datetime.now(timezone.utc).isoformat()
     _ping_healthcheck("start")
 
     written = 0

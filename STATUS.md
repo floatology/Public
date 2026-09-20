@@ -16,7 +16,7 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 | 4 | Read rebuilt `robinhood-screener` (2026-09-12) | **done** — lessons folded into PREREGISTRATION |
 | 5 | Check retail redemption latency | **done** — undisclosed; needs a question to Robinhood |
 | 6 | H0 population frame | **done** — 715,343 pool creations censused |
-| 7 | H0 power analysis | next — needs positive-class rate from a sample |
+| 7 | H0 power analysis | sampler built; census being rebuilt after an address bug |
 
 ---
 
@@ -34,6 +34,30 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 - Execution model built on KyberSwap aggregator quotes (`src/rhc/execution.py`),
   with the liquidity floor measured (`docs/04-execution-and-data-findings.md`).
 - Official archive RPC found and recorded in `src/rhc/chain.py`.
+
+## Infrastructure answer
+
+**No Supabase, no new storage account needed.** The daily series is ~79KB/day
+(~29MB/year) of append-only JSONL, partitioned monthly in git — a file, not a
+workload. Bulk swap history is too big for git *and* for Supabase's 500MB free
+tier, and regenerates from the free archive RPC anyway, so it stays local
+Parquet. Supabase free also pauses after 7 days idle, which is the worst
+possible property for a project whose premise is gap-free logging. Full
+reasoning in `docs/05-infrastructure.md`.
+
+**The one account worth creating is Healthchecks.io** (free) — not for storage,
+but so a broken pipeline tells you instead of quietly producing nothing. Set
+`HEALTHCHECK_URL` as a repo secret and the scan pings it on start/success/fail.
+
+## Keeping the data flowing — two real risks
+
+1. **Scheduled workflows only fire from the repo's DEFAULT branch.** Right now
+   the default *is* `claude/document-analysis-review-dkjfu4`, so it works. If
+   the default ever changes (e.g. a `main` is created, or this branch is merged
+   and deleted), **the scan silently stops** — no error, it just never fires.
+2. **GitHub disables scheduled workflows after 60 days of repo inactivity**, and
+   `GITHUB_TOKEN` pushes generally do not count as activity. Any manual push
+   resets the timer.
 
 ## Needs you, not code
 

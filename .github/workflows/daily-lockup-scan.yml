@@ -43,12 +43,13 @@ jobs:
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git diff --quiet -- data/premiums.jsonl; then
+          if git status --porcelain -- data/premiums | grep -q .; then
+            rows=$(git diff --numstat -- data/premiums | awk '{s+=$1} END {print s+0}')
+          else
             echo "no new rows"
             exit 0
           fi
-          rows=$(git diff --numstat -- data/premiums.jsonl | awk '{print $1}')
-          git add data/premiums.jsonl
+          git add data/premiums
           git commit -m "Daily lockup snapshot: ${rows} rows ($(date -u +%Y-%m-%d))"
           for attempt in 1 2 3 4; do
             git pull --rebase origin "${GITHUB_REF_NAME}" && git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0
