@@ -10,12 +10,12 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 
 | # | Item | Status |
 |---|---|---|
-| 1 | Lockup scanner running daily | **in progress** |
-| 2 | Execution model via aggregator quotes | not started |
-| 3 | Test Goldsky / Bitquery for population scans | not started |
+| 1 | Lockup scanner running daily | **done** — 176-token universe, daily workflow |
+| 2 | Execution model via aggregator quotes | **done** — KyberSwap, raw-unit accounting |
+| 3 | Population-scan data source | **done** — official RPC serves free archive |
 | 4 | Read rebuilt `robinhood-screener` (2026-09-12) | not started |
 | 5 | Check retail redemption latency | not started |
-| 6 | H0 work | blocked on #3 |
+| 6 | H0 work | unblocked on data; needs power analysis |
 
 ---
 
@@ -30,6 +30,9 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 - Working chain access: Blockscout client with Cloudflare workaround,
   canonical token identity verification, premium/lockup scanner.
 - `PREREGISTRATION.md` committed ahead of any confirmatory pull.
+- Execution model built on KyberSwap aggregator quotes (`src/rhc/execution.py`),
+  with the liquidity floor measured (`docs/04-execution-and-data-findings.md`).
+- Official archive RPC found and recorded in `src/rhc/chain.py`.
 
 ## Claims withdrawn after measurement
 
@@ -46,6 +49,10 @@ Recorded so they are not re-introduced:
 - **No historical liquidity composition exists in any free source.** The lockup
   signal accumulates forward only. This is why #1 runs daily starting now.
 - **Liquidity spans eight DEX protocols**, including Uniswap V4 with hooks.
-- **Population-scan data source is unresolved** — blocks H0.
+- **Population-scan data source resolved**: `rpc.mainnet.chain.robinhood.com`
+  serves free unauthenticated archive `eth_getLogs` back to block 1 (2026-04-30).
+- **Execution cost is the dominant term**, varying four orders of magnitude:
+  BONER ($2.4M reserves) 0.90% round trip; INUT ($20k) **96.10%**. Below roughly
+  $50k of pool reserves a token is untradable at any size.
 - User is **non-US**, so stock tokens are holdable; the premium side remains
   AP-only regardless.

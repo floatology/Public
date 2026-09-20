@@ -22,6 +22,14 @@ import httpx
 CHAIN_ID = 4663
 BLOCKSCOUT_BASE = "https://robinhoodchain.blockscout.com"
 
+# Official RPC. Verified 2026-09-20 to serve UNAUTHENTICATED ARCHIVE access:
+# eth_getLogs reaches block 1 (2026-04-30), capped at 10,000 results per call
+# rather than by block range. This is the population-scan data source, and it
+# replaces Dune (paid since 2026-09-10) and SQD (does not carry this chain).
+# Note publicnode's mirror rejects archive queries without a personal token.
+RPC_URL = "https://rpc.mainnet.chain.robinhood.com"
+RPC_MAX_LOGS = 10_000
+
 # Canonical infrastructure addresses, from docs.robinhood.com/chain/contracts/.
 WETH = "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73"
 USDG = "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168"
