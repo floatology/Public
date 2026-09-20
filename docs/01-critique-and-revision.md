@@ -34,12 +34,12 @@ This is not a minor cost adjustment. The document's entire backtest architecture
 | Source | Cost | Fit |
 |---|---|---|
 | **Blockscout Robinhood API** (`robinhoodchain.blockscout.com`) | Free, keyless | Official explorer for the chain. Etherscan-style + REST. **Rate limits sized for humans, deep pagination slow, no SLA.** Good for per-token detail, bad for population scans. |
-| **SQD (Subsquid)** | Open-source SDK + free hosted Portal | Explicit Robinhood Chain support, validated archive of blocks/txs, historical + real-time. **This is the strongest free replacement for Dune's population-scan role.** |
+| ~~**SQD (Subsquid)**~~ | — | **WITHDRAWN 2026-09-20.** The vendor page claims Robinhood Chain support; the Portal API does not have it. `GET /datasets` returns 138 datasets, zero matches; `datasets/robinhood/head` returns `unknown_dataset`. See `03-open-questions.md` §1.2. |
 | **Goldsky** | Free tier | Subgraphs + pipelines + low-latency RPC for chain 4663. |
 | **Bitquery** | 7-day Pro trial | Pre-decoded DEX trades. Useful to bootstrap/validate, not to run on. |
 | **Dune Analyst** | $65/mo | Only if a specific query genuinely needs their curated tables. |
 
-**Recommended architecture change:** invert the plan. Do not scan the population in a hosted SQL warehouse. **Run a local indexer (SQD) over the chain's Swap/Mint/Burn/Transfer logs into local Parquet, and query it with DuckDB.** This is free, reproducible, unlimited, offline-queryable, and — critically — it gives you the raw event logs you need for liquidity-depth reconstruction anyway (which Part 6 correctly identifies as its own engineering task). You were going to have to build this for depth reconstruction regardless. Building it *first* removes the Dune dependency entirely.
+**Recommended architecture change (PARTIALLY WITHDRAWN):** the direction — local indexing into Parquet, queried with DuckDB — still stands. The named tool does not: SQD lacks this chain. The population-scan source is **unresolved**; see `03-open-questions.md` §2.1. Note also that reconstruction is **eight DEX protocols, not one** (§1.3 there), which materially enlarges the task. This is free, reproducible, unlimited, offline-queryable, and — critically — it gives you the raw event logs you need for liquidity-depth reconstruction anyway (which Part 6 correctly identifies as its own engineering task). You were going to have to build this for depth reconstruction regardless. Building it *first* removes the Dune dependency entirely.
 
 This also fixes a survivorship problem the document does not mention: **aggregator APIs prune dead pools.** Dexscreener/GeckoTerminal are unreliable sources for the negative class precisely because the negative class is the stuff they stop indexing. Raw logs do not have this problem.
 
@@ -130,7 +130,7 @@ The document *has* the pieces — constant-product impact math and V3 depth reco
 
 - Label on **simulated round-trip P&L for a fixed clip size** (e.g. $500), against reconstructed pool reserves at each timestamp.
 - Include: price impact on entry *and* exit, LP fee tier, gas, and **sell-side token tax** (ScanHood's sell-simulation is in Part 7 as a *scanner*; it belongs in the *label*).
-- Include **sandwich/MEV cost**. This is a public-mempool L2 with 100ms blocks. A market buy into a thin pool is sandwiched. This is a real, quantifiable haircut on every entry and exit.
+- ~~Include sandwich/MEV cost.~~ **WITHDRAWN 2026-09-20.** Arbitrum Orbit uses FCFS sequencing with a *private* mempool; published rollup research finds sandwiching rare-to-absent there. Drop the haircut for ordinary swaps; retain a note for cross-layer (L1→L2 bridge) sandwiching and Timeboost ordering. See `03-open-questions.md` §1.1.
 
 I suspect this alone explains a chunk of the prior art's "everything loses" result — and it means the document's positive class is currently contaminated with moves nobody could have captured.
 

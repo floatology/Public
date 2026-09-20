@@ -15,6 +15,7 @@ float-lockup scanner are live and verified against mainnet. No trading logic.
 | `docs/00-master-system-v1.md` | Original research document (baseline, unedited) |
 | `docs/01-critique-and-revision.md` | Critical review with verified sources and revised build order |
 | `docs/02-stock-token-premium-findings.md` | Retraction of the premium-arbitrage idea, with measurements |
+| `docs/03-open-questions.md` | What is verified, what is withdrawn, and what still blocks the build |
 
 ## Key findings so far
 
@@ -26,9 +27,16 @@ float-lockup scanner are live and verified against mainnet. No trading logic.
   value locked in memecoin-paired pools; SPY at 6%. This is the mechanism that
   drove the BONER/HIMS episode, it is measurable in real time, and no surveyed
   vendor computes it.
-- **Dune's free tier went view-only on 2026-09-10**, invalidating the original
-  data plan. Replacement path is Blockscout + GeckoTerminal now, a local SQD
-  indexer into Parquet/DuckDB for population scans.
+- **Historical liquidity composition is unavailable from any free source found.**
+  GeckoTerminal holds 26 daily candles back to 2026-08-21 (the chain launched
+  2026-07-01) and no reserve history at all. The lockup signal is therefore
+  forward-accumulating only, which is why the scanner should run daily starting
+  now.
+- **Liquidity is fragmented across eight DEX protocols**, including Uniswap V4
+  whose hooks can alter swap maths arbitrarily. Depth reconstruction is eight
+  implementations, not one.
+- **Dune's free tier went view-only on 2026-09-10** and SQD does not carry this
+  chain. The population-scan data source is unresolved; see `docs/03-open-questions.md`.
 
 ## Setup
 
