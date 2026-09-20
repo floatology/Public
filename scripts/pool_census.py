@@ -34,6 +34,10 @@ def _topic_address(topic: str) -> str:
     return "0x" + topic[-40:]
 
 
+def _write(rows: dict[str, list], out: Path) -> None:
+    pq.write_table(pa.table(rows), out, compression="zstd")
+
+
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--from-block", type=int, default=1)
@@ -51,6 +55,8 @@ def main() -> int:
         to_block = args.to_block or rpc.block_number()
         print(f"scanning blocks {args.from_block:,} -> {to_block:,}", file=sys.stderr)
 
+        last_checkpoint = [0]
+
         def progress(end: int, span: int, yielded: int) -> None:
             pct = (end - args.from_block) / max(1, to_block - args.from_block) * 100
             print(
@@ -58,6 +64,11 @@ def main() -> int:
                 f"  {time.time() - started:.0f}s",
                 file=sys.stderr,
             )
+            # Checkpoint periodically: a multi-minute scan that dies at 90%
+            # should not have to start over.
+            if yielded - last_checkpoint[0] >= 25_000:
+                _write(rows, args.out)
+                last_checkpoint[0] = yielded
 
         for log in rpc.iter_logs(
             from_block=args.from_block,
@@ -77,11 +88,10 @@ def main() -> int:
             data = log.get("data") or "0x"
             rows["pool"].append("0x" + data[-40:] if len(data) >= 42 else "")
 
-    table = pa.table(rows)
-    pq.write_table(table, args.out, compression="zstd")
+    _write(rows, args.out)
     elapsed = time.time() - started
     print(
-        f"\n{table.num_rows:,} pool creations -> {args.out} in {elapsed:.0f}s",
+        f"\n{len(rows['block']):,} pool creations -> {args.out} in {elapsed:.0f}s",
         file=sys.stderr,
     )
     return 0

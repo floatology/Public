@@ -6,11 +6,12 @@ source, and it replaces both Dune (paid since 2026-09-10) and SQD (which does
 not carry this chain). publicnode's mirror is not equivalent — it rejects
 archive queries without a personal token.
 
-The node caps `eth_getLogs` at **10,000 results per call**, not by block range.
-That distinction matters: a fixed block-span scanner either wastes calls on
-quiet periods or fails on busy ones. `iter_logs` therefore adapts its span,
-halving on an overflow and growing when a window comes back sparse, so a scan
-stays near the cap without tripping it.
+The node caps `eth_getLogs` at **10,000 results per call**, not by block range,
+and separately times out on windows that are merely expensive. A fixed-span
+scanner therefore either wastes calls on quiet periods or dies on busy ones.
+`iter_logs` adapts its span against both failure modes, halving and retrying the
+same window so nothing is skipped, and growing again when a window comes back
+sparse.
 """
 
 from __future__ import annotations
@@ -33,13 +34,27 @@ TOPIC_TRANSFER = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523
 
 
 class RpcError(RuntimeError):
-    """The node returned an error that is not a result-count overflow."""
+    """The node returned an error, carrying its message for span-adaptation checks."""
 
 
-def _is_overflow(message: str) -> bool:
-    """Whether an error means 'too many results' rather than a real failure."""
+def _needs_smaller_span(message: str) -> bool:
+    """Whether an error means 'this window was too big' rather than a real failure.
+
+    Two distinct node responses mean the same thing operationally. The result
+    cap is reported as an explicit limit breach, but a window that is merely
+    *expensive* — many blocks in a busy region — comes back as a timeout
+    instead, with no mention of limits. Both are fixed by narrowing the window
+    and retrying, and treating only the first as retryable aborts long scans
+    partway through, which is exactly what happened on the first full census.
+    """
     lowered = message.lower()
-    return "exceeds limit" in lowered or "more than" in lowered or "too many" in lowered
+    return (
+        "exceeds limit" in lowered
+        or "more than" in lowered
+        or "too many" in lowered
+        or "timed out" in lowered
+        or "timeout" in lowered
+    )
 
 
 @dataclass
@@ -74,7 +89,7 @@ class Rpc:
 
         Raises:
             RpcError: carrying the node's own message, so callers can inspect it
-                (``_is_overflow`` depends on this).
+                (``_needs_smaller_span`` depends on this).
         """
         last_error: Exception | None = None
         for attempt in range(self.max_retries):
@@ -166,12 +181,12 @@ class Rpc:
                     from_block=cursor, to_block=end, topics=topics, address=address
                 )
             except RpcError as exc:
-                if not _is_overflow(str(exc)):
+                if not _needs_smaller_span(str(exc)):
                     raise
                 if span <= min_span:
                     raise RpcError(
-                        f"Cannot fit blocks {cursor}-{end} under the {MAX_LOGS_PER_CALL} "
-                        "log cap even at minimum span"
+                        f"Cannot serve blocks {cursor}-{end} even at minimum span "
+                        f"({min_span}); node said: {exc}"
                     ) from exc
                 span = max(min_span, span // 2)
                 continue  # retry the same cursor with a tighter window

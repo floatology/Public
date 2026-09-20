@@ -5,6 +5,7 @@ venv/
 .env
 data/raw/*
 !data/premiums.jsonl
+!data/parquet/*.parquet
 data/parquet/*
 !data/raw/.gitkeep
 !data/parquet/.gitkeep

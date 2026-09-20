@@ -15,7 +15,8 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 | 3 | Population-scan data source | **done** — official RPC serves free archive |
 | 4 | Read rebuilt `robinhood-screener` (2026-09-12) | **done** — lessons folded into PREREGISTRATION |
 | 5 | Check retail redemption latency | **done** — undisclosed; needs a question to Robinhood |
-| 6 | H0 work | unblocked on data; needs power analysis |
+| 6 | H0 population frame | **done** — 715,343 pool creations censused |
+| 7 | H0 power analysis | next — needs positive-class rate from a sample |
 
 ---
 
@@ -58,6 +59,11 @@ Recorded so they are not re-introduced:
 - **Liquidity spans eight DEX protocols**, including Uniswap V4 with hooks.
 - **Population-scan data source resolved**: `rpc.mainnet.chain.robinhood.com`
   serves free unauthenticated archive `eth_getLogs` back to block 1 (2026-04-30).
+- **Full chain censused in 10 minutes**: 715,343 pool creations, 638,889 unique
+  pools, **675,438 distinct token addresses**, across **272 factories** — far
+  more fragmented than the eight DEX protocols visible via aggregators. One
+  factory accounts for 434,168 pools (61%). This confirms the master document's
+  "well over 700,000 tokens" estimate from primary data.
 - **Execution cost is the dominant term**, varying four orders of magnitude:
   BONER ($2.4M reserves) 0.90% round trip; INUT ($20k) **96.10%**. Below roughly
   $50k of pool reserves a token is untradable at any size.

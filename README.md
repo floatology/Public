@@ -48,6 +48,12 @@ cp .env.example .env    # add FINNHUB_API_KEY for an independent equity feed
 ## Usage
 
 ```bash
+# Census every pool creation from genesis (~10 min, writes 26MB Parquet)
+python scripts/pool_census.py
+
+# Measure round-trip execution cost for memecoins paired to a stock token
+python scripts/execution_floor.py <stock-token-address> --symbol HIMS
+
 # Snapshot premiums + float lockup for the default stock-token universe
 python scripts/scan_premiums.py
 
