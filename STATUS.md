@@ -73,10 +73,10 @@ the base rate. Literature effects are far smaller (the sniper-cohort paper's
 +16.1% relative is ~3.4pp absolute), so detecting those needs tens of thousands
 of pools sampled. Plan for it rather than misread an underpowered null.
 
-**Caveat that bounds all of it:** these are printed prices. Given round-trip
-cost runs 0.90% at $2.4M of reserves and 96.10% at $20k, an unknown but likely
-large share of the 12 winners were never tradable. Expect the tradable rate to
-be materially below 1%.
+**Now measured, and the earlier caution was too pessimistic.** Pricing each
+winner's buy at its own peak block: the price rate of 1.402% becomes a tradable
+rate of **1.135% at a $500 clip** — a 19% haircut, not the large unknown factor
+I warned about. The constraint is capacity, not tradability: see conclusion 1.
 
 ## Infrastructure answer
 
@@ -132,8 +132,13 @@ Recorded so they are not re-introduced:
   factory accounts for 434,168 pools (61%). This confirms the master document's
   "well over 700,000 tokens" estimate from primary data.
 - **Execution cost is the dominant term**, varying four orders of magnitude:
-  BONER ($2.4M reserves) 0.90% round trip; INUT ($20k) **96.10%**. Below roughly
-  $50k of pool reserves a token is untradable at any size.
+  BONER ($2.4M reserves) 0.90%; INUT ($20k) **96.10%**. Below roughly $50k of
+  pool reserves a token is untradable at any meaningful size.
+- **Tradability must be measured one-way, not as a round trip.** A round trip
+  cancels itself out in a thin pool: one sampled pool held two cents of WETH
+  against a $500 clip and reported **0.00%** round-trip cost for a position
+  nobody could take. Use one-way fill impact plus a cap on the share of the
+  quote reserve consumed.
 - **Over half the stock-token universe is too illiquid to price.** The first
   clean full scan (175 tokens, 2026-09-20) filtered 96 of 175 for stable-pool
   depth under $50k. Premiums among the 79 that survive run -4.69% to +5.89%,
