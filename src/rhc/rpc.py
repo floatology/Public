@@ -31,6 +31,11 @@ TOPIC_V2_SWAP = "0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d
 TOPIC_V3_POOL_CREATED = "0x783cca1c0412dd0d695e784568c96da2e9c22ff989357a2e8b1d9b2b4e6b7118"
 TOPIC_V3_SWAP = "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67"
 TOPIC_TRANSFER = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
+# V2 pairs emit Sync(uint112 reserve0, uint112 reserve1) after every swap, so
+# a pool's exact reserves at any historical block are recoverable from logs.
+# This is what makes a *historical* execution model possible despite no free
+# source carrying historical liquidity composition (docs/03 §1.4).
+TOPIC_V2_SYNC = "0x1c411e9a96e071241c2f21f7726b17ae89e3cab4c78be50e062b03a9fffbbad1"
 
 
 class RpcError(RuntimeError):
