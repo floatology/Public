@@ -39,7 +39,7 @@ This is not a minor cost adjustment. The document's entire backtest architecture
 | **Bitquery** | 7-day Pro trial | Pre-decoded DEX trades. Useful to bootstrap/validate, not to run on. |
 | **Dune Analyst** | $65/mo | Only if a specific query genuinely needs their curated tables. |
 
-**Recommended architecture change (PARTIALLY WITHDRAWN):** the direction — local indexing into Parquet, queried with DuckDB — still stands. The named tool does not: SQD lacks this chain. The population-scan source is **unresolved**; see `03-open-questions.md` §2.1. Note also that reconstruction is **eight DEX protocols, not one** (§1.3 there), which materially enlarges the task. This is free, reproducible, unlimited, offline-queryable, and — critically — it gives you the raw event logs you need for liquidity-depth reconstruction anyway (which Part 6 correctly identifies as its own engineering task). You were going to have to build this for depth reconstruction regardless. Building it *first* removes the Dune dependency entirely.
+**Recommended architecture change (PARTIALLY WITHDRAWN):** the direction — local indexing into Parquet, queried with DuckDB — still stands. The named tool does not: SQD lacks this chain. The population-scan source is **unresolved**; see `03-open-questions.md` §2.1. Note also that reconstruction is **eight DEX protocols, not one** (§1.3 there), which materially enlarges the task.
 
 This also fixes a survivorship problem the document does not mention: **aggregator APIs prune dead pools.** Dexscreener/GeckoTerminal are unreliable sources for the negative class precisely because the negative class is the stuff they stop indexing. Raw logs do not have this problem.
 
