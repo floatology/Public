@@ -1,0 +1,57 @@
+{
+  "hypothesis": "H2",
+  "seed": "rhc-h2-v1",
+  "sampled": 4000,
+  "measured": 239,
+  "dead": 3757,
+  "multiple": 10.0,
+  "clip_usd": 500.0,
+  "quantiles": [
+    {
+      "quantile": 1,
+      "n": 59,
+      "launch_liquidity_min": 0.07728,
+      "launch_liquidity_max": 1288.0,
+      "launch_liquidity_median": 1288.0,
+      "price_wins": 10,
+      "price_win_rate": 0.1694915254237288,
+      "tradable_wins": 4,
+      "tradable_win_rate": 0.06779661016949153
+    },
+    {
+      "quantile": 2,
+      "n": 59,
+      "launch_liquidity_min": 1288.0,
+      "launch_liquidity_max": 2576.0,
+      "launch_liquidity_median": 2576.0,
+      "price_wins": 26,
+      "price_win_rate": 0.4406779661016949,
+      "tradable_wins": 22,
+      "tradable_win_rate": 0.3728813559322034
+    },
+    {
+      "quantile": 3,
+      "n": 59,
+      "launch_liquidity_min": 2576.0,
+      "launch_liquidity_max": 5401.749232542146,
+      "launch_liquidity_median": 5031.6485072,
+      "price_wins": 8,
+      "price_win_rate": 0.13559322033898305,
+      "tradable_wins": 6,
+      "tradable_win_rate": 0.1016949152542373
+    },
+    {
+      "quantile": 4,
+      "n": 62,
+      "launch_liquidity_min": 5448.187707200001,
+      "launch_liquidity_max": 154791.84,
+      "launch_liquidity_median": 12880.0,
+      "price_wins": 2,
+      "price_win_rate": 0.03225806451612903,
+      "tradable_wins": 2,
+      "tradable_win_rate": 0.03225806451612903
+    }
+  ],
+  "chi_square_price_win": 35.053994300481186,
+  "chi_square_df": 3
+}
