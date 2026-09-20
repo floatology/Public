@@ -98,6 +98,49 @@ excess return, the project stops pursuing runner prediction and says so.
 
 ---
 
+## H2 — Launch liquidity predicts the 10x outcome
+
+**Added by amendment 2026-09-20, before the test was run.** It replaces the
+graduation-threshold regression discontinuity proposed in
+`01-critique-and-revision.md` §5.2, which is **infeasible on this chain**: the
+two dominant factories are a plain UniswapV3Factory (427,640 assets) and
+UniswapV2Factory, not a bonding-curve launchpad, and migration between
+factories is negligible (largest flow 166 assets). There is no graduation event
+to have a discontinuity around, so the only genuine causal design available was
+withdrawn rather than forced.
+
+**Claim.** A pool's liquidity shortly after creation predicts whether its token
+later reaches 10x its launch VWAP.
+
+**Why this signal.** It is the cheapest honest test available. It is observable
+**at launch with no look-ahead** — unlike anything derived from price history —
+and it connects directly to the capacity finding: a pool too thin to trade is
+also, plausibly, too thin to run.
+
+**Independent variable.** Quote-side reserve in USD at the pool's **first**
+`Sync` event, i.e. the liquidity the deployer actually seeded. Taken from the
+first Sync only, so no post-launch information enters.
+
+**Dependent variable.** Reached ≥10x launch VWAP, and separately the *tradable*
+version of that label at a $500 clip (`scripts/tradable_rate.py`).
+
+**Test.** Compare the 10x rate across launch-liquidity quantiles; report the
+trend with a chi-square test for a monotone relationship. Both labels reported.
+
+**Direction is not pre-specified, and this is deliberate.** The plausible story
+runs both ways: more seeded liquidity may mean a more committed deployer, or it
+may simply mean a larger pool is harder to move 10x. Predicting a direction
+after the fact would be exactly the sin this document exists to prevent.
+
+**Falsification.** If the 10x rate is flat across liquidity quantiles, the
+signal carries no information and is recorded as such. No re-specification with
+a different threshold, quantile count or horizon to find significance.
+
+**Power.** The critique's analysis says n=57 detects only a ~21pp effect. This
+test therefore needs the measurable count in the hundreds, which means sampling
+in the thousands. An inconclusive result at small n is reported as inconclusive,
+never as a null.
+
 ## Standing rules
 
 1. Any AUC / AUCPRC is reported **against its own prevalence baseline**. A bare

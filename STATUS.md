@@ -19,7 +19,8 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 | 7 | H0 power analysis | **done** — `docs/06-power-analysis.md` |
 | 8 | V3 stratum rate | **done** — differs significantly from V2 (z=3.28) |
 | 9 | Execution gate on H0 labels | next |
-| 10 | Graduation-threshold RDD | not started |
+| 10 | Graduation-threshold RDD | **withdrawn** — infeasible, no bonding curve on this chain |
+| 11 | H2: launch liquidity predicts 10x | pre-registered, running |
 
 ---
 
