@@ -36,7 +36,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 
 import duckdb
 
+from rhc.chain import USDG, WETH
 from rhc.rpc import TOPIC_V2_SWAP, Rpc, RpcError
+
+# The two other assets that act as quote sides on this chain, by pool count:
+# VIRTUAL appears in 51,453 v2 pools and HOODon in 3,146.
+VIRTUAL = "0xc6911796042b15d7fa4f6cde69e245ddcd3d9c31"
+HOODON = "0xfb5b5778d45ae47f15323fb59b666c655174a79c"
 
 # Swap(sender, amount0In, amount1In, amount0Out, amount1Out, to)
 # Four uint256 words, 64 hex chars each, after the 0x prefix.
@@ -56,12 +62,23 @@ def _parse_v2_swap(data_hex: str) -> tuple[int, int, int, int] | None:
         return None
 
 
-def _price_series(logs: list[dict]) -> list[float]:
-    """token1-per-token0 for each swap, skipping degenerate ones.
+def _price_series(logs: list[dict], *, quote_is_token0: bool) -> list[float]:
+    """Quote-per-base for each swap, skipping degenerate ones.
+
+    **Orientation is not optional.** A first attempt took token1/token0 by
+    position, but the quote asset is token0 in some pools and token1 in others
+    (Uniswap orders the pair by address, not by role). That inverted the price
+    series for roughly half the sample, and an inverted collapse is
+    indistinguishable from an enormous runner — it produced a median
+    peak-over-launch of 22,668x, which is how the bug was caught.
 
     A swap moves token0 one way and token1 the other, so exactly one of each
     pair is non-zero. Both-zero or one-sided logs are skipped rather than
-    treated as a price of zero, which would otherwise poison the peak ratio.
+    treated as a price of zero, which would poison the peak ratio.
+
+    Decimals are deliberately not normalised: this returns a *ratio over time*
+    within a single pool, where the decimal factor is constant and cancels.
+    These values are not comparable across pools and must not be read as prices.
     """
     prices: list[float] = []
     for log in logs:
@@ -69,11 +86,12 @@ def _price_series(logs: list[dict]) -> list[float]:
         if parsed is None:
             continue
         a0_in, a1_in, a0_out, a1_out = parsed
-        token0 = a0_in or a0_out
-        token1 = a1_in or a1_out
-        if token0 <= 0 or token1 <= 0:
+        amount0 = a0_in or a0_out
+        amount1 = a1_in or a1_out
+        if amount0 <= 0 or amount1 <= 0:
             continue
-        prices.append(token1 / token0)
+        quote, base = (amount0, amount1) if quote_is_token0 else (amount1, amount0)
+        prices.append(quote / base)
     return prices
 
 
@@ -101,12 +119,18 @@ def main() -> int:
     args = parser.parse_args()
 
     con = duckdb.connect()
+    # Restrict to pools with a recognised quote asset on one side, and record
+    # which side it is. A memecoin/memecoin pool has no meaningful price at all
+    # (21% of v2 pools), and without knowing the quote side the ratio inverts.
+    quotes = [q.lower() for q in (WETH, USDG, VIRTUAL, HOODON)]
     pools = con.execute(
         """
-        SELECT pool, block FROM read_parquet($census)
+        SELECT pool, block, lower(token0) IN $quotes AS quote_is_token0
+        FROM read_parquet($census)
         WHERE kind = 'v2' AND pool <> '' AND length(pool) = 42
+          AND (lower(token0) IN $quotes OR lower(token1) IN $quotes)
         """,
-        {"census": str(args.census)},
+        {"census": str(args.census), "quotes": quotes},
     ).fetchall()
     if not pools:
         print("no v2 pools in census; run scripts/pool_census.py first", file=sys.stderr)
@@ -117,7 +141,10 @@ def main() -> int:
         return hashlib.sha256(f"{args.seed}:{row[0]}".encode()).hexdigest()
 
     sample = sorted(pools, key=rank)[: args.sample]
-    print(f"population {len(pools):,} v2 pools; sampling {len(sample)}", file=sys.stderr)
+    print(
+        f"population {len(pools):,} quote-paired v2 pools; sampling {len(sample)}",
+        file=sys.stderr,
+    )
 
     measured = dead = errored = 0
     winners = 0
@@ -125,7 +152,7 @@ def main() -> int:
 
     with Rpc() as rpc:
         head = rpc.block_number()
-        for index, (pool, created_block) in enumerate(sample, start=1):
+        for index, (pool, created_block, quote_is_token0) in enumerate(sample, start=1):
             try:
                 logs = list(
                     rpc.iter_logs(
@@ -141,7 +168,7 @@ def main() -> int:
                 print(f"  {pool} error: {exc}", file=sys.stderr)
                 continue
 
-            prices = _price_series(logs)
+            prices = _price_series(logs, quote_is_token0=bool(quote_is_token0))
             if len(prices) < args.min_trades:
                 dead += 1
                 continue
@@ -172,7 +199,7 @@ def main() -> int:
     result = {
         "seed": args.seed,
         "sample_requested": args.sample,
-        "population_v2_pools": len(pools),
+        "population_quote_paired_v2_pools": len(pools),
         "measured": measured,
         "dead_or_untradeable": dead,
         "errored": errored,
