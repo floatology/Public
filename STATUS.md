@@ -13,8 +13,8 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 | 1 | Lockup scanner running daily | **done** — 176-token universe, daily workflow |
 | 2 | Execution model via aggregator quotes | **done** — KyberSwap, raw-unit accounting |
 | 3 | Population-scan data source | **done** — official RPC serves free archive |
-| 4 | Read rebuilt `robinhood-screener` (2026-09-12) | not started |
-| 5 | Check retail redemption latency | not started |
+| 4 | Read rebuilt `robinhood-screener` (2026-09-12) | **done** — lessons folded into PREREGISTRATION |
+| 5 | Check retail redemption latency | **done** — undisclosed; needs a question to Robinhood |
 | 6 | H0 work | unblocked on data; needs power analysis |
 
 ---
@@ -33,6 +33,13 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 - Execution model built on KyberSwap aggregator quotes (`src/rhc/execution.py`),
   with the liquidity floor measured (`docs/04-execution-and-data-findings.md`).
 - Official archive RPC found and recorded in `src/rhc/chain.py`.
+
+## Needs you, not code
+
+- **Ask Robinhood support** whether retail can redeem Stock Tokens directly
+  today (BBVI is the acting AP), how long redemption takes end to end, and
+  whether there is a minimum size. This decides whether the ~1% discount side
+  is capturable. See `docs/02-stock-token-premium-findings.md` §5.
 
 ## Claims withdrawn after measurement
 

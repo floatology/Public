@@ -28,6 +28,20 @@ not an outcome.
 **Benchmark.** Excess return over a chain-wide memecoin index constructed from
 the same data, with a paired same-day / same-age control group.
 
+**Control group must be gate-matched.** The control is drawn only from tokens
+that *pass the same liquidity and tradability gates* as the signal group, and
+differ solely in the signal being tested. This is not a refinement — the prior
+art's rebuild found its own control invalid for exactly this reason: 2,711 of
+2,754 control rows failed gates the alerted tiers had passed, so the comparison
+measured the gates rather than the signal.
+
+**Tradability gate (measured, not assumed).** A token enters the universe only
+if its measured round-trip cost at the test clip is under 5%. Pool reserves are
+*not* an adequate proxy: measured costs run 0.90% at $2.4M of reserves and
+96.10% at $20k, and two tokens $10k apart in depth differed by 3 percentage
+points in cost. The prior art's ≥$10k liquidity floor is far too permissive and
+admits tokens that cannot be traded at all.
+
 **Horizon.** 7 days from signal.
 
 **Universe.** Memecoins paired against a canonical Stock Token (identity
@@ -73,6 +87,11 @@ short VWAP over the first minutes of real trading, not the first transaction.
 may only join wallet records derived from tokens whose outcomes **resolved**
 before t. Accumulation windows are detected causally from trailing data only —
 never located retrospectively across the full series.
+
+Independently corroborated: the prior art's 2026-09-12 rebuild dropped its
+"proven dev" screener outright, citing look-ahead bias in that tier alongside
+deployers rotating wallets. The failure mode in §3.1 of the critique is not
+hypothetical — it has already sunk one implementation of this idea.
 
 **Stopping rule.** If the Phase 1 paired-control test shows no significant
 excess return, the project stops pursuing runner prediction and says so.

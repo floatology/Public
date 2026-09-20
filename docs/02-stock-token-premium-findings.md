@@ -132,3 +132,53 @@ The Phase 0 work in `01-critique-and-revision.md` §6 is unaffected — the inde
 - [A Memecoin Called BONER Has Cornered Half the Tokenized Hims & Hers Float](https://thedefiant.io/news/tokens/a-memecoin-called-boner-has-cornered-half-the-tokenized-hims-and-hers-float)
 - [Ethosis — peer-to-peer lending against tokenized stocks](https://www.ethosis.org/) — collateral direction only
 - Live measurements: Blockscout v2 API (chain 4663) and GeckoTerminal `robinhood` network, 2026-09-20
+
+---
+
+## 5. Addendum 2026-09-20 — the discount side, now that jurisdiction is settled
+
+The user is **not a US person**, so Stock Tokens are holdable and the discount direction is worth
+examining. Redemption caps discounts (retail-accessible in principle); minting caps premiums and
+is AP-only (closed). What follows is what the documentation actually supports.
+
+### What is disclosed
+
+- **Redemption pays cash**, not shares. The 1:1 share redemption announced 2026-09-14 is roadmap.
+- **Redemption fee: zero for the first 90 days after issuance, 0.05% thereafter.**
+- Holders may *"redeem them directly with the Issuer, **where there is no authorized participant**
+  (a firm that processes redemptions on investors' behalf), subject to completing the Issuer's
+  KYC/AML."*
+
+### What is not disclosed, and why it decides the question
+
+**Settlement time is stated nowhere** — not on the issuer product page, not in the chain docs.
+This is the decisive variable, not a detail:
+
+- Measured discounts are around **1%** (HIMS −1.04%, PLTR −1.52% against independent closes).
+- Round-trip cost on stock tokens is **0.01–0.28%** at a $5,000 clip, and the redemption fee is
+  0–0.05%.
+- So the gross edge is real but thin, and **it exists only if redemption settles inside the life
+  of the discount.** A discount that closes in hours cannot be captured by a redemption that
+  settles in days.
+
+There is also a **conditional clause worth reading carefully**: retail direct redemption is
+offered *"where there is no authorized participant."* There **is** one — BBVI. The plain reading
+is that direct retail redemption is a fallback for when no AP exists, which may mean it is not
+currently open at all. This is ambiguous in the source and should not be resolved by assumption.
+
+### Conclusion
+
+**The discount side is unverifiable from public documentation.** It hinges on two facts Robinhood
+has not published: redemption settlement latency, and whether retail direct redemption is
+actually available while BBVI is the acting AP.
+
+**This is a question for Robinhood support, not for code.** Concretely, worth asking them:
+
+1. Can an individual holder redeem Stock Tokens directly today, given BBVI is the authorized
+   participant?
+2. From submission to cash received, how long does redemption take?
+3. Is there a minimum redemption size?
+
+Until those are answered, no discount-capture logic should be built. The measurement
+infrastructure already tracks the discounts, so if the answers come back favourable the signal
+history will be waiting.
