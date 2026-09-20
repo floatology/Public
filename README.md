@@ -47,9 +47,9 @@ python scripts/scan_premiums.py
 python scripts/scan_premiums.py NVDA HIMS SPY
 ```
 
-Run daily. The gas subsidy ends **2026-09-29**; data captured before that date
-is from a different economic regime and cannot be pooled with later data
-without an explicit test.
+Run daily. Start early — H1 needs the history, and uncaptured days are unrecoverable.
+(The Sept 29 gas-subsidy expiry is logged as a regime flag but measured to be
+economically negligible — see the §5.3 correction.)
 
 ## Notes
 

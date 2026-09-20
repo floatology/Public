@@ -223,17 +223,32 @@ Bonding-curve → AMM graduation is a **threshold event with a sharp cutoff**. T
 
 It answers a question the rest of the system can only correlate at: *does graduation itself cause survival, or does it merely mark tokens that were going to survive?* If the former, graduation proximity is a genuine tradable signal. If the latter, it is a useless coincident indicator. Nothing else in the document can distinguish those.
 
-### 5.3 The gas cliff is a natural experiment, and it is in nine days
+### 5.3 The gas cliff — CORRECTED 2026-09-20, this section overstated its importance
 
-Part 0 correctly flags Sept 29 as a regime break. It does not follow through on the implication, and it has a stale detail: **the subsidy threshold was lowered from $5 to $0.50**, which widened it substantially. The cliff is therefore a *bigger* break than the document assumes.
+> **Correction.** This section originally called the Sept 29 gas cliff a "first-class design
+> constraint" and a chain-wide natural experiment separating genuine from manufactured activity.
+> Measurement does not support that, and the original claim is withdrawn.
+>
+> Observed fees across 50 recent mainnet transactions: **median $0.011, p90 $0.061, max $0.079.**
+> A modelled V3 swap costs **~$0.029** at the prevailing ~0.057 gwei. The subsidy pays only the
+> *excess above* $0.50, and **0% of sampled transactions reach that threshold.** The subsidy is
+> therefore paying out on almost nothing, and its expiry moves the cost of a swap from roughly
+> three cents to roughly three cents.
+>
+> The "free gas makes wash trading free" argument fails on the same numbers. Gas was never the
+> binding constraint on manufactured volume — **pool fees are.** A $10,000 wash round-trip pays
+> ~$60 in pool fees (0.3%/leg) against ~$0.06 in gas. The cliff moves the $0.06 and leaves the
+> $60 untouched.
 
-The follow-through: **free gas makes wash trading and sniping free.** Every activity-based feature you calibrate on July–September data is calibrated on an economy where fake volume costs nothing. On September 30, fake volume starts costing money.
+**What remains true:** the subsidy threshold *was* lowered from $5 to $0.50 (the master document
+has the stale $5 figure), and the expiry is real. A behavioural effect is still possible —
+Robinhood Wallet users may respond to "free gas is ending" as a headline regardless of the
+trivial actual cost — but that is a sentiment hypothesis, not an economic one, and it is much
+weaker than what this section originally claimed.
 
-Two actions:
-- **Instrument now.** You have nine days to capture clean pre-cliff baseline data. After the 29th that window is closed permanently.
-- **Treat the cliff as an identification strategy, not just a nuisance.** Activity that survives the imposition of real costs is economically genuine; activity that vanishes was not. This is a free, one-shot, chain-wide filter separating real from manufactured behaviour — far stronger than any wash-trading heuristic you could build, and it arrives whether you use it or not.
-
-Add a `regime` flag (pre/post cliff) as a first-class feature and never pool across it without testing.
+**Revised guidance:** log a `regime` flag for pre/post 2026-09-29 and test whether pooling across
+it is valid. Expect the test to find nothing. Do not reorder work around this date, and do not
+treat pre-cliff data capture as time-critical — that urgency was an artefact of this error.
 
 ### 5.4 Exits deserve to be built before entries
 
@@ -290,10 +305,12 @@ This also pairs naturally with the SQD-based local indexer from §1.
 
 The document's implicit plan is to build the full system and then test it. Given a measured-negative prior from the closest comparable project, I would invert that: **build the cheapest thing that can falsify the core hypothesis, and only expand if it survives.**
 
-**Phase 0 — nine days, before Sept 29 (time-boxed by the cliff)**
+**Phase 0 — foundations (not deadline-driven; see the §5.3 correction)**
 1. `PREREGISTRATION.md` committed with a hash. Label definition, signal list, stopping rule, success criterion. (§5.7)
 2. SQD indexer → Parquet → DuckDB over chain 4663 Swap/Mint/Burn/Transfer logs. Removes the Dune dependency. (§1)
-3. **Start capturing pre-cliff baseline immediately.** This window does not reopen. (§5.3)
+3. **Start capture early** — not because of the cliff, but because H1 and the execution
+   model both consume this history, and every uncaptured day is a day of series you will
+   never have. Cheap to run unattended; start it and move on.
 
 **Phase 1 — the falsification test**
 4. Price + liquidity reconstruction from raw logs, with an **execution model** (impact, fees, sell tax, MEV haircut) for a $500 clip. (§4.1)
