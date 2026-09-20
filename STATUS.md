@@ -17,7 +17,9 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 | 5 | Check retail redemption latency | **done** — undisclosed; needs a question to Robinhood |
 | 6 | H0 population frame | **done** — 715,343 pool creations censused |
 | 7 | H0 power analysis | **done** — `docs/06-power-analysis.md` |
-| 8 | V3 stratum rate (63% of pools) | next |
+| 8 | V3 stratum rate | **done** — differs significantly from V2 (z=3.28) |
+| 9 | Execution gate on H0 labels | next |
+| 10 | Graduation-threshold RDD | not started |
 
 ---
 
@@ -36,13 +38,32 @@ Running log. Updated as work completes so progress survives an interrupted sessi
   with the liquidity floor measured (`docs/04-execution-and-data-findings.md`).
 - Official archive RPC found and recorded in `src/rhc/chain.py`.
 
+## Conclusions so far
+
+Full write-up in `docs/07-conclusions.md`. Headlines:
+
+1. **Execution cost dominates.** $500 round trip costs 0.90% on a $2.4M pool
+   and **96.10% on a $20k pool**. Most chart winners were never reachable.
+2. **V2 and V3 are different populations** (z=3.28, p<0.01) and must not be
+   pooled. Chain-wide positive rate ~2.5%, not the 1% V2 alone suggested.
+3. **Most liquidity is not real.** 65% of stock tokens hold >50% of their
+   memecoin reserves in zero-volume pools; 55% lack the depth to price at all.
+4. **Data access is solved and free.** No database, no paid service, ten
+   minutes for a full-chain census.
+5. **Statistical power is the binding constraint**, not sample size or cost.
+
 ## H0 base rates (measured, 1,200 pools)
 
-- **95.2% of quote-paired V2 pools never trade meaningfully** (<10 real trades).
-- Among the 4.75% that do, **21.05% reach 10x** their launch VWAP.
-- **Overall positive rate: 1.001%** (95% CI 0.574–1.741%) — which independently
-  lands on the master document's cited "under 1% ever graduate".
-- Peak/launch among measurable pools: p50 4.08x, p90 49.4x, max 373x.
+| stratum | population | ever trades | 10x given trades | 10x overall |
+|---|---:|---:|---:|---:|
+| V2 | 266,465 | 4.8% | 21.05% | **1.000%** |
+| V3 | 441,582 | 43.5% | 7.85% | **3.420%** |
+
+Population-weighted chain-wide: **~2.5%**. Opposite profiles — V2 rarely trades
+but moonshots (p50 4.08x); V3 usually trades but rarely moonshots (p50 1.38x).
+
+**Sample V3 first:** 435 measurable per 1,000 sampled against V2's 48 — 9.2x
+more efficient per unit of scan time.
 
 **Sample size is not a binding constraint.** 50 positives per discovery/
 confirmation half needs ~10,000 pools, about 7 hours on the free archive RPC.

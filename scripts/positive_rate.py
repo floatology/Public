@@ -37,16 +37,20 @@ sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
 import duckdb
 
 from rhc.chain import USDG, WETH
-from rhc.rpc import TOPIC_V2_SWAP, Rpc, RpcError
+from rhc.rpc import TOPIC_V2_SWAP, TOPIC_V3_SWAP, Rpc, RpcError
 
 # The two other assets that act as quote sides on this chain, by pool count:
 # VIRTUAL appears in 51,453 v2 pools and HOODon in 3,146.
 VIRTUAL = "0xc6911796042b15d7fa4f6cde69e245ddcd3d9c31"
 HOODON = "0xfb5b5778d45ae47f15323fb59b666c655174a79c"
 
-# Swap(sender, amount0In, amount1In, amount0Out, amount1Out, to)
-# Four uint256 words, 64 hex chars each, after the 0x prefix.
+# V2 Swap(sender, amount0In, amount1In, amount0Out, amount1Out, to) -- 4 words.
+# V3 Swap(sender, recipient, int256 amount0, int256 amount1, uint160 sqrtPriceX96,
+#         uint128 liquidity, int24 tick) -- 5 words.
 _WORD = 64
+_TWO_96 = 2**96
+_UINT256 = 2**256
+_INT256_MAX = 2**255
 
 
 def _parse_v2_swap(data_hex: str) -> tuple[int, int, int, int] | None:
@@ -60,6 +64,58 @@ def _parse_v2_swap(data_hex: str) -> tuple[int, int, int, int] | None:
         )
     except ValueError:
         return None
+
+
+def _signed(word: int) -> int:
+    """Interpret a 256-bit word as a two's-complement int256.
+
+    V3 reports swap amounts signed: negative means the pool paid that token out.
+    Reading them unsigned turns every outflow into ~1.2e77 and destroys both the
+    dust filter and any volume weighting.
+    """
+    return word - _UINT256 if word >= _INT256_MAX else word
+
+
+def _parse_v3_swap(data_hex: str) -> tuple[int, int, int] | None:
+    """Return (amount0, amount1, sqrtPriceX96) or None if malformed."""
+    body = data_hex[2:] if data_hex.startswith("0x") else data_hex
+    if len(body) < _WORD * 5:
+        return None
+    try:
+        words = [int(body[i * _WORD : (i + 1) * _WORD], 16) for i in range(5)]
+    except ValueError:
+        return None
+    return _signed(words[0]), _signed(words[1]), words[2]
+
+
+def _v3_trades(logs: list[dict], *, quote_is_token0: bool) -> list[tuple[float, int]]:
+    """(quote-per-base, quote amount) from V3 swaps.
+
+    V3 carries the post-swap price directly as sqrtPriceX96, so price does not
+    have to be inferred from the amounts: (sqrtPriceX96 / 2**96)**2 is token1
+    per token0. That is more robust than the V2 route, because a dust trade
+    still reports the true pool price rather than a ratio of two tiny amounts.
+
+    The amounts are still needed, for the dust filter and volume weighting.
+    """
+    trades: list[tuple[float, int]] = []
+    for log in logs:
+        parsed = _parse_v3_swap(log.get("data") or "0x")
+        if parsed is None:
+            continue
+        amount0, amount1, sqrt_price = parsed
+        if sqrt_price <= 0:
+            continue
+        token1_per_token0 = (sqrt_price / _TWO_96) ** 2
+        if token1_per_token0 <= 0:
+            continue
+        # quote-per-base: invert when the quote asset is token0.
+        price = 1.0 / token1_per_token0 if quote_is_token0 else token1_per_token0
+        quote_amount = abs(amount0 if quote_is_token0 else amount1)
+        if quote_amount <= 0:
+            continue
+        trades.append((price, quote_amount))
+    return trades
 
 
 def _trades(logs: list[dict], *, quote_is_token0: bool) -> list[tuple[float, int]]:
@@ -147,9 +203,13 @@ def main() -> int:
                         help="Ratios above this are artefacts, counted separately")
     parser.add_argument("--dust-floor", type=float, default=0.01,
                         help="Drop trades below this fraction of the pool's median trade size")
+    parser.add_argument("--kind", choices=("v2", "v3"), default="v2",
+                        help="Which DEX stratum to sample")
     parser.add_argument("--seed", default="rhc-h0-v1", help="Sampling seed, for reproducibility")
-    parser.add_argument("--out", type=Path, default=Path("data/positive_rate.json"))
+    parser.add_argument("--out", type=Path, default=None)
     args = parser.parse_args()
+    if args.out is None:
+        args.out = Path(f"data/positive_rate_{args.kind}.json")
 
     con = duckdb.connect()
     # Restrict to pools with a recognised quote asset on one side, and record
@@ -160,13 +220,13 @@ def main() -> int:
         """
         SELECT pool, block, lower(token0) IN $quotes AS quote_is_token0
         FROM read_parquet($census)
-        WHERE kind = 'v2' AND pool <> '' AND length(pool) = 42
+        WHERE kind = $kind AND pool <> '' AND length(pool) = 42
           AND (lower(token0) IN $quotes OR lower(token1) IN $quotes)
         """,
-        {"census": str(args.census), "quotes": quotes},
+        {"census": str(args.census), "quotes": quotes, "kind": args.kind},
     ).fetchall()
     if not pools:
-        print("no v2 pools in census; run scripts/pool_census.py first", file=sys.stderr)
+        print(f"no {args.kind} pools in census; run scripts/pool_census.py first", file=sys.stderr)
         return 1
 
     # Seeded hash sample: reproducible across reruns, unlike ORDER BY random().
@@ -175,7 +235,7 @@ def main() -> int:
 
     sample = sorted(pools, key=rank)[: args.sample]
     print(
-        f"population {len(pools):,} quote-paired v2 pools; sampling {len(sample)}",
+        f"population {len(pools):,} quote-paired {args.kind} pools; sampling {len(sample)}",
         file=sys.stderr,
     )
 
@@ -191,7 +251,7 @@ def main() -> int:
                     rpc.iter_logs(
                         from_block=created_block,
                         to_block=head,
-                        topics=[[TOPIC_V2_SWAP]],
+                        topics=[[TOPIC_V2_SWAP if args.kind == "v2" else TOPIC_V3_SWAP]],
                         address=pool,
                         initial_span=head,  # one call when the pool is quiet
                     )
@@ -201,8 +261,9 @@ def main() -> int:
                 print(f"  {pool} error: {exc}", file=sys.stderr)
                 continue
 
+            extract = _trades if args.kind == "v2" else _v3_trades
             trades = _drop_dust(
-                _trades(logs, quote_is_token0=bool(quote_is_token0)), args.dust_floor
+                extract(logs, quote_is_token0=bool(quote_is_token0)), args.dust_floor
             )
             if len(trades) < args.min_trades:
                 dead += 1
@@ -240,7 +301,8 @@ def main() -> int:
     result = {
         "seed": args.seed,
         "sample_requested": args.sample,
-        "population_quote_paired_v2_pools": len(pools),
+        "kind": args.kind,
+        "population_quote_paired_pools": len(pools),
         "measured": measured,
         "dead_or_untradeable": dead,
         "errored": errored,
@@ -260,7 +322,8 @@ def main() -> int:
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, indent=2) + "\n")
 
-    print(f"\n--- positive-class rate (V2 stratum, seed {args.seed}) ---", file=sys.stderr)
+    print(f"\n--- positive-class rate ({args.kind} stratum, seed {args.seed}) ---",
+          file=sys.stderr)
     print(f"  sampled {len(sample)}: {measured} measured, {dead} dead, "
           f"{implausible} implausible, {errored} errored", file=sys.stderr)
     print(f"  >= {args.multiple:g}x: {winners}", file=sys.stderr)

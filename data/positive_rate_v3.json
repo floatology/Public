@@ -1,0 +1,19 @@
+{
+  "seed": "rhc-h0-v1",
+  "sample_requested": 1200,
+  "kind": "v3",
+  "population_quote_paired_pools": 441582,
+  "measured": 522,
+  "dead_or_untradeable": 676,
+  "errored": 1,
+  "implausible": 1,
+  "multiple": 10.0,
+  "dust_floor": 0.01,
+  "winners": 41,
+  "rate_among_measured": 0.07854406130268199,
+  "rate_among_all_sampled": 0.034223706176961605,
+  "ratio_p50": 1.38481700139764,
+  "ratio_p90": 7.0937028727470945,
+  "ratio_p99": 49.94258644361577,
+  "ratio_max": 446.8126096658102
+}
