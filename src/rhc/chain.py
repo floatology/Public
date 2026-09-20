@@ -1,0 +1,142 @@
+"""Robinhood Chain access layer.
+
+Blockscout is the free official explorer for chain 4663. It sits behind a
+Cloudflare challenge that rejects default HTTP client headers, so every request
+carries a browser User-Agent and a same-origin Referer. This is the workaround
+documented in the prior-art `robinhood-screener` source and verified working
+2026-09-20.
+
+Rate limits are "sized for humans" with no SLA, so the client self-throttles and
+retries on 429/5xx with backoff. Deep pagination is slow by design here; use
+this for per-token detail, not for population-wide scans.
+"""
+
+from __future__ import annotations
+
+import time
+from dataclasses import dataclass, field
+from typing import Any, Iterator
+
+import httpx
+
+CHAIN_ID = 4663
+BLOCKSCOUT_BASE = "https://robinhoodchain.blockscout.com"
+
+# Canonical infrastructure addresses, from docs.robinhood.com/chain/contracts/.
+WETH = "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73"
+USDG = "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168"
+
+_BROWSER_UA = (
+    "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
+    "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"
+)
+
+
+class BlockscoutError(RuntimeError):
+    """Blockscout returned an unusable response after retries."""
+
+
+@dataclass
+class Blockscout:
+    """Rate-limited Blockscout v2 API client.
+
+    Args:
+        min_interval: seconds enforced between requests. Blockscout publishes no
+            limit; 0.4s (~150/min) has been stable and stays well clear of the
+            Cloudflare challenge re-triggering.
+        max_retries: attempts per request before raising.
+    """
+
+    base_url: str = BLOCKSCOUT_BASE
+    min_interval: float = 0.4
+    max_retries: int = 4
+    timeout: float = 30.0
+    _client: httpx.Client = field(init=False, repr=False)
+    _last_request: float = field(default=0.0, init=False, repr=False)
+
+    def __post_init__(self) -> None:
+        self._client = httpx.Client(
+            base_url=self.base_url,
+            timeout=self.timeout,
+            follow_redirects=True,
+            headers={
+                "User-Agent": _BROWSER_UA,
+                "Referer": f"{self.base_url}/",
+                "Accept": "application/json",
+            },
+        )
+
+    def __enter__(self) -> Blockscout:
+        return self
+
+    def __exit__(self, *exc: object) -> None:
+        self.close()
+
+    def close(self) -> None:
+        self._client.close()
+
+    def _throttle(self) -> None:
+        elapsed = time.monotonic() - self._last_request
+        if elapsed < self.min_interval:
+            time.sleep(self.min_interval - elapsed)
+        self._last_request = time.monotonic()
+
+    def get(self, path: str, **params: Any) -> dict[str, Any]:
+        """GET a Blockscout v2 path, retrying transient failures.
+
+        Raises:
+            BlockscoutError: on a non-JSON body (usually an un-cleared Cloudflare
+                challenge page) or after exhausting retries.
+        """
+        last_error: Exception | None = None
+        for attempt in range(self.max_retries):
+            self._throttle()
+            try:
+                response = self._client.get(path, params=params or None)
+            except httpx.HTTPError as exc:  # network-level, worth retrying
+                last_error = exc
+            else:
+                if response.status_code == 429 or response.status_code >= 500:
+                    last_error = BlockscoutError(f"HTTP {response.status_code} for {path}")
+                elif response.status_code >= 400:
+                    raise BlockscoutError(f"HTTP {response.status_code} for {path}")
+                else:
+                    try:
+                        return response.json()
+                    except ValueError as exc:
+                        # Cloudflare serves an HTML challenge with a 200 status.
+                        raise BlockscoutError(
+                            f"Non-JSON response for {path}; Cloudflare challenge likely active"
+                        ) from exc
+            time.sleep(2**attempt)
+        raise BlockscoutError(f"Exhausted retries for {path}") from last_error
+
+    def paginate(self, path: str, *, max_pages: int = 50, **params: Any) -> Iterator[dict]:
+        """Yield items across Blockscout's cursor pagination.
+
+        Blockscout returns a `next_page_params` object that is fed back verbatim
+        as query parameters. `max_pages` is a required guard: deep pagination is
+        slow here and unbounded loops will hang a workflow.
+        """
+        page_params: dict[str, Any] = dict(params)
+        for _ in range(max_pages):
+            payload = self.get(path, **page_params)
+            yield from payload.get("items", [])
+            next_params = payload.get("next_page_params")
+            if not next_params:
+                return
+            page_params = {**params, **next_params}
+
+    def stats(self) -> dict[str, Any]:
+        """Chain-level stats. Doubles as a cheap connectivity/challenge probe."""
+        return self.get("/api/v2/stats")
+
+    def search(self, query: str) -> list[dict[str, Any]]:
+        """Search tokens/addresses by name, symbol, or address."""
+        return self.get("/api/v2/search", q=query).get("items", [])
+
+    def token(self, address: str) -> dict[str, Any]:
+        return self.get(f"/api/v2/tokens/{address}")
+
+    def token_holders(self, address: str, *, max_pages: int = 5) -> list[dict[str, Any]]:
+        return list(self.paginate(f"/api/v2/tokens/{address}/holders", max_pages=max_pages))

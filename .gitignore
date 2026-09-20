@@ -1,0 +1,12 @@
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+.env
+data/raw/*
+data/parquet/*
+!data/raw/.gitkeep
+!data/parquet/.gitkeep
+.pytest_cache/
+.ruff_cache/
+*.egg-info/
