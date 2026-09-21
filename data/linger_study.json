@@ -1,0 +1,243 @@
+{
+  "zone": [
+    200000.0,
+    500000.0
+  ],
+  "runner_cap": 2000000.0,
+  "linger_days": 5,
+  "tokens_reaching_zone": 915,
+  "runners": 666,
+  "runner_rate": 0.7278688524590164,
+  "days_in_zone_runners": {
+    "n": 666,
+    "median": 0.0,
+    "mean": 0.26876876876876876,
+    "p25": 0,
+    "p75": 0,
+    "p90": 0,
+    "max": 21
+  },
+  "days_in_zone_others": {
+    "n": 249,
+    "median": 0,
+    "mean": 3.8273092369477912,
+    "p25": 0,
+    "p75": 5,
+    "p90": 13,
+    "max": 35
+  },
+  "lingered_n": 73,
+  "passed_through_n": 842,
+  "p_runner_given_linger": 0.136986301369863,
+  "p_runner_given_linger_ci": [
+    0.07614307799620813,
+    0.23412635939187332
+  ],
+  "p_runner_given_pass": 0.7790973871733967,
+  "p_runner_given_pass_ci": [
+    0.7498429634447444,
+    0.8058166305028694
+  ],
+  "biggest": [
+    {
+      "pool": "0x11ac2311727e843c806e08f53aca60b763b8a3fa",
+      "name": "HOOD / WETH 1%",
+      "peak_cap": 1.6853274722702414e+21,
+      "days_of_history": 25,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 0.7418
+    },
+    {
+      "pool": "0xd3ca173cef100c1d239c93174dda610f694401b1",
+      "name": "HOOD / WETH 0.008%",
+      "peak_cap": 4.0417845798038e+20,
+      "days_of_history": 3,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 6.561931036e-05
+    },
+    {
+      "pool": "0xaa0915e61bdcddd3db50db13493af78637147010",
+      "name": "h33 / WETH",
+      "peak_cap": 2.058936166848766e+20,
+      "days_of_history": 3,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 0.05575708201
+    },
+    {
+      "pool": "0xea7ba72be3baab20546bfda880b7e285e5a51168",
+      "name": "HOOD / WETH",
+      "peak_cap": 1.7181359786641342e+20,
+      "days_of_history": 25,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 7.4966
+    },
+    {
+      "pool": "0x73f59948e473cb37164df951671ad61352036e1221d783ef0f225707f5212e14",
+      "name": "BOOMER / SPY",
+      "peak_cap": 3.9360708590127245e+17,
+      "days_of_history": 19,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 98513.536
+    },
+    {
+      "pool": "0x7321c23cf8708f0bd1a8df23d9aa179c8a3906cb",
+      "name": "USDT / USDG 0.01%",
+      "peak_cap": 99932991210.0,
+      "days_of_history": 3,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 2.3961
+    },
+    {
+      "pool": "0x8614bc7cdb6c2c8f15c6fcc094a8b052e50e667f",
+      "name": "CUPCAKE / WETH",
+      "peak_cap": 13509090269.2708,
+      "days_of_history": 17,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 13405.0646
+    },
+    {
+      "pool": "0xb23de2d42f870feda450b5b2ecef865ed2c27ad096c1a58e6989b807e6215ac3",
+      "name": "WETH / RBS",
+      "peak_cap": 6593399543.09835,
+      "days_of_history": 54,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 5945.6096
+    },
+    {
+      "pool": "0xace7e9e3716679aa566f31c29bff430daf57108c6100807d921f7b60efe846d2",
+      "name": "WETH / USDG",
+      "peak_cap": 6574942333.530749,
+      "days_of_history": 3,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 295.5238
+    },
+    {
+      "pool": "0xcce15c60d4a3f52381d97104eba00b5e88ac0a28e76884607c3afcf28d0d91fd",
+      "name": "WETH / USDG 0.045%",
+      "peak_cap": 6572422071.98337,
+      "days_of_history": 7,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": null
+    },
+    {
+      "pool": "0x8604b83984a0dd0d8e796ce0027ef382943df6bd07d7f6c6a33405dd939a4f69",
+      "name": "WETH / USDG 0.09%",
+      "peak_cap": 6568987597.9139,
+      "days_of_history": 8,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": null
+    },
+    {
+      "pool": "0x60013a13e0321a3cd4b9ae9348f8ae799fb461af79a334c10e109eda9d95e0d0",
+      "name": "WETH / USDG",
+      "peak_cap": 6563564821.767256,
+      "days_of_history": 3,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 72447.9134
+    },
+    {
+      "pool": "0x85aa9a7c2ef9deec7bcbc5e78c6b26d2598c2aaf3f810b267fa4f8f9b0854142",
+      "name": "WETH / USDG 0.003%",
+      "peak_cap": 6551788277.136721,
+      "days_of_history": 54,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 226882.1363
+    },
+    {
+      "pool": "0x24107d152f14a76d292123265ae3f3c71f863fc2f4ef7ba49d64e78d28ea379e",
+      "name": "WETH / USDG 0.01%",
+      "peak_cap": 6551314875.626172,
+      "days_of_history": 75,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 695115.9284
+    },
+    {
+      "pool": "0xbac3aa3b91584a53a579b3c999a56756e954e59247e497bad1d25a4334bde551",
+      "name": "WETH / USDG",
+      "peak_cap": 6551314875.626172,
+      "days_of_history": 33,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 20078124.3411
+    },
+    {
+      "pool": "0x3b0cbf0603ecc67b5fc9bb4fbb6ac9e08d3b2f406b63d1662a36063a7fe5e866",
+      "name": "WETH / USDG 0.009%",
+      "peak_cap": 6551098682.616786,
+      "days_of_history": 18,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 141237.7258
+    },
+    {
+      "pool": "0x00000000000014aa86c5d3c41765bb24e11bd701-0x3fa0d2cfa5e30d67c398ab2f83cc113002478295ded54448328a0003efa038cd",
+      "name": "WETH / USDG 0.05%",
+      "peak_cap": 6551098682.616784,
+      "days_of_history": 49,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 29468.122
+    },
+    {
+      "pool": "0x387bf619da4d3fb62bb276482693dba1b9b3520f573cabdfe033384a24125982",
+      "name": "WETH / USDG 0.05%",
+      "peak_cap": 6549591467.377668,
+      "days_of_history": 89,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 649213.0427
+    },
+    {
+      "pool": "0x00000000000014aa86c5d3c41765bb24e11bd701-0x882f65cc1f5a66926129a3e6b6a5022d3b9ac06d748df64080340e185945b59f",
+      "name": "WETH / USDG",
+      "peak_cap": 6549591467.377668,
+      "days_of_history": 49,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 69095.465
+    },
+    {
+      "pool": "0x54f7883914619af9105355bf83ed678bcf9f63560218ac61c9963b9503d0ba32",
+      "name": "WETH / USDG 0.046%",
+      "peak_cap": 6549591467.377665,
+      "days_of_history": 76,
+      "days_in_zone": 0,
+      "escaped_zone": true,
+      "is_runner": true,
+      "reserve_now": 1644243.9239
+    }
+  ]
+}
