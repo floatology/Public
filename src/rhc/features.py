@@ -179,6 +179,54 @@ def decode_v3_swaps(logs: Iterable[dict], *, quote_is_token0: bool) -> list[Trad
     return trades
 
 
+def decode_v3_depth(
+    logs: Iterable[dict], *, quote_is_token0: bool, move: float = 0.01
+) -> list[tuple[int, float]]:
+    """Per-swap depth for a V3 pool: quote needed to move the price by `move`.
+
+    V3 emits no `Sync` and has no reserve to read, which is why the V2 liquidity
+    columns do not port. But every V3 `Swap` log carries `sqrtPriceX96` and the
+    **active** `liquidity` at that tick, and those two are enough to price a
+    move directly:
+
+        Δy = L · √P · (√(1+m) − 1)        quote is token1
+        Δx = L · (1/√P) · (1 − 1/√(1+m))  quote is token0
+
+    This is better than the V2 reserve it replaces, not merely a substitute. A
+    V2 reserve prices a move only under the constant-product assumption; this is
+    read from the pool's own state at the moment of each trade, so it tracks
+    liquidity being added, removed, or repositioned out of the way.
+
+    **It measures depth at the current tick only.** A move large enough to cross
+    into a different liquidity range costs something this does not predict, so a
+    1% move is a reasonable question to ask of it and a 50% move is not. It is
+    a local gradient, not a fill simulator.
+
+    Returns (block, quote_units_to_move_price) in raw quote units, ordered as
+    the logs were.
+    """
+    out: list[tuple[int, float]] = []
+    step = (1.0 + move) ** 0.5
+    for log in logs:
+        words = _words(log.get("data") or "0x", 5)
+        if words is None:
+            continue
+        sqrt_price_x96, liquidity = words[2], words[3]
+        if sqrt_price_x96 <= 0 or liquidity <= 0:
+            continue
+        sqrt_price = sqrt_price_x96 / (1 << 96)
+        if quote_is_token0:
+            # Quote is token0: spending quote moves the price down, and the
+            # amount is L·(1/√P − 1/√P′).
+            amount = liquidity * (1.0 / sqrt_price) * (1.0 - 1.0 / step)
+        else:
+            amount = liquidity * sqrt_price * (step - 1.0)
+        if amount <= 0:
+            continue
+        out.append((int(log["blockNumber"], 16), amount))
+    return out
+
+
 def decode_syncs(logs: Iterable[dict], *, quote_is_token0: bool) -> list[tuple[int, int, int]]:
     """Decode Sync logs into (block, quote_reserve, base_reserve)."""
     out: list[tuple[int, int, int]] = []
@@ -253,6 +301,15 @@ class TokenFeatures:
     launch_quote_reserve: float = 0.0
     peak_quote_reserve: float = 0.0
     final_quote_reserve: float = 0.0
+    # V3 only: quote needed to move the price 1%, read from the pool's own
+    # state at each swap. Deliberately NOT named like a reserve -- it is a
+    # local price gradient and pooling it with V2 reserves would be wrong.
+    v3_depth_1pct_launch: float | None = None
+    v3_depth_1pct_median: float | None = None
+    v3_depth_1pct_min: float | None = None
+    v3_depth_1pct_final: float | None = None
+    v3_depth_observations: int = 0
+
     liquidity_add_events: int = 0
     liquidity_remove_events: int = 0
     largest_liquidity_removal_pct: float | None = None
@@ -353,6 +410,7 @@ def compute(
     trades: list[Trade],
     syncs: list[tuple[int, int, int]],
     head_block: int,
+    depths: list[tuple[int, float]] | None = None,
     sniper_window_blocks: int = 50,
     stealth_max_pool_share: float = 0.02,
     stealth_min_buys: int = 3,
@@ -366,6 +424,8 @@ def compute(
         stealth_max_pool_share: a buy consuming less than this fraction of the
             quote reserve counts as "not moving the price" — the operational
             form of accumulating without showing size.
+        depths: V3 depth observations from `decode_v3_depth`. Present for V3
+            pools, absent for V2, and never mixed with the reserve columns.
         stealth_min_buys: how many such buys before a wallet counts as one.
         hour_blocks: blocks per notional hour for the velocity window. At the
             chain's ~100ms target this is 36,000, and it is a parameter rather
@@ -430,6 +490,15 @@ def compute(
                 largest_removal = max(largest_removal, -change)
         if largest_removal > 0:
             features.largest_liquidity_removal_pct = largest_removal * 100.0
+
+    if depths:
+        values = [d for _, d in depths]
+        features.v3_depth_observations = len(values)
+        features.v3_depth_1pct_launch = values[0]
+        features.v3_depth_1pct_final = values[-1]
+        features.v3_depth_1pct_min = min(values)
+        ordered_depths = sorted(values)
+        features.v3_depth_1pct_median = ordered_depths[len(ordered_depths) // 2]
 
     # --- price trajectory ---
     priced = [t for t in trades if t.price > 0]

@@ -141,7 +141,7 @@ the cheapest wash-trading defence available and it feeds a ranking that itself d
 
 | # | Metric | Evidence | Feasibility |
 |---|---|---|---|
-| 4.1 | **Price impact per dollar (Beck's "Asset Weight")** | Industry | **Built** |
+| 4.1 | **Price impact per dollar (Beck's "Asset Weight")** | Industry | **Built** — V2 from reserves, V3 from active liquidity |
 | 4.2 | **Pool reserves, historical** | — | **Built** (via `Sync`) |
 | 4.3 | **Live vs dormant liquidity split** | Original finding | **Built** |
 | 4.4 | **Liquidity added / removed events** | **Published** (rug detection) | Buildable now |
@@ -160,6 +160,17 @@ pools across 28 factories, and for those the single-pool view is close to meanin
 Pool *count* is not liquidity. The census records creations, not reserves, so a token with
 nine pools might hold $9M or $9. Reserve-weighted fragmentation needs a per-pool reserve read
 and therefore the node; it is the next step, not something to approximate from counts.
+
+**V3 depth is read from the pool, not assumed.** A V2 reserve prices a move only under the
+constant-product assumption. Every V3 `Swap` log carries `sqrtPriceX96` and the **active**
+liquidity at that tick, so the quote needed to move the price 1% comes out in closed form —
+`L·√P·(√1.01−1)` when the quote is token1 — measured at the moment of each trade. That is
+strictly better information than a reserve snapshot, because it tracks liquidity being added,
+pulled, or repositioned out of the way. Its limit is that it is a **local gradient**: a move
+large enough to cross into another liquidity range costs something it does not predict, so it
+answers "1%" honestly and "50%" not at all. The columns are named `v3_depth_*` rather than
+anything reserve-shaped, because pooling them with V2 reserves would be comparing two
+different quantities.
 
 **The population itself was wrong, which matters more than any single metric here.** Every
 number in sections 3 and 4 was being computed over Uniswap V2 pools only. V3 is 63% of pool

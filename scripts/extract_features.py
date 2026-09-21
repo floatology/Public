@@ -24,7 +24,7 @@ import pyarrow.parquet as pq
 
 from rhc.chain import DEFAULT_ETH_USD, QUOTE_DECIMALS, USDG, WETH, quote_scale
 from rhc.features import (compute, decode_syncs, decode_v2_swaps,
-                          decode_v3_swaps, drop_dust)
+                          decode_v3_depth, decode_v3_swaps, drop_dust)
 from rhc.manipulation import detect
 from rhc.rpc import TOPIC_V2_SWAP, TOPIC_V2_SYNC, TOPIC_V3_SWAP, Rpc, RpcError
 
@@ -87,6 +87,7 @@ def main() -> int:
 
     rows: list[dict] = []
     trade_rows: list[dict] = []
+    depth_rows: list[dict] = []
     skipped = 0
     started = time.time()
     with Rpc() as rpc:
@@ -123,13 +124,28 @@ def main() -> int:
                 skipped += 1
                 continue
             syncs = decode_syncs(sync_logs, quote_is_token0=flag)
+            # V3 has no reserves, but every Swap log carries the active
+            # liquidity and price at that tick, which prices a move directly.
+            # This is what restores the tradability gate for V3.
+            depths = (
+                decode_v3_depth(swap_logs, quote_is_token0=flag)
+                if args.protocol == "v3" else None
+            )
 
             feats = compute(pool=pool, quote_asset=quote, created_block=created,
-                            trades=trades, syncs=syncs, head_block=head)
+                            trades=trades, syncs=syncs, head_block=head,
+                            depths=depths)
             record = feats.to_dict()
             record["token"] = token
             record["protocol"] = args.protocol
             record.update(detect(trades).to_dict())
+            for block, amount in (depths or []):
+                depth_rows.append({
+                    "pool": pool, "token": token, "block": block,
+                    # Raw quote units, scaled at read time like every other
+                    # quote-denominated value.
+                    "quote_to_move_1pct": str(int(amount)),
+                })
             for trade in trades:
                 trade_rows.append({
                     "pool": pool, "token": token, "quote_asset": quote,
@@ -168,6 +184,18 @@ def main() -> int:
             args.trades_out, compression="zstd",
         )
         print(f"archived {len(trade_rows):,} trades to {args.trades_out}", file=sys.stderr)
+
+    if depth_rows:
+        depth_path = args.trades_out.with_name(
+            args.trades_out.stem.replace("trades", "depth") + args.trades_out.suffix
+        )
+        depth_keys = list(depth_rows[0])
+        pq.write_table(
+            pa.table({k: [r[k] for r in depth_rows] for k in depth_keys}),
+            depth_path, compression="zstd",
+        )
+        print(f"archived {len(depth_rows):,} depth observations to {depth_path}",
+              file=sys.stderr)
     print(f"\n{len(rows)} pools x {len(keys)} features -> {args.out} "
           f"in {time.time() - started:.0f}s", file=sys.stderr)
     return 0

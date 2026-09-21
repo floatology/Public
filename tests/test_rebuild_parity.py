@@ -87,6 +87,32 @@ def test_head_block_dependence_is_declared():
     )
 
 
+def test_v3_depth_is_recomputable_not_carried():
+    """Depth is archived, so it must be rebuilt rather than frozen.
+
+    V3 has no reserves, which is why the reserve columns are carried over. It
+    is easy to conclude from that that everything liquidity-shaped for V3 must
+    also be carried. It must not: the depth observations are archived next to
+    the trades, so the rebuild recomputes them, and carrying them would freeze
+    a fixed calculation at its old values.
+    """
+    depths = [(100 + i * 10, 1e18 * (i + 1)) for i in range(5)]
+    with_depth = compute(pool="0xp", quote_asset="0xq", created_block=0,
+                         trades=trades(), syncs=[], head_block=5_000_000,
+                         depths=depths)
+    without = compute(pool="0xp", quote_asset="0xq", created_block=0,
+                      trades=trades(), syncs=[], head_block=5_000_000)
+    moved = {
+        name for name, value in with_depth.to_dict().items()
+        if without.to_dict()[name] != value
+    }
+    assert moved, "fixture does not exercise the depth block"
+    assert not (moved & SYNC_DERIVED), (
+        f"depth columns are in the carry-over set but are recomputable from "
+        f"the archive: {sorted(moved & SYNC_DERIVED)}"
+    )
+
+
 def test_carry_set_is_not_over_broad():
     # Carrying a column that the rebuild COULD recompute freezes it at its old
     # value, so a fixed feature would never take effect. Every declared column

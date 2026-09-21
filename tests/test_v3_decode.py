@@ -21,7 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from rhc.features import decode_v3_swaps
+from rhc.features import decode_v3_depth, decode_v3_swaps
 
 TRADER = "0x" + "ab" * 20
 
@@ -32,8 +32,11 @@ def word(value: int) -> str:
 
 
 def swap(block: int, amount0: int, amount1: int, index: int = 0,
-         recipient: str = TRADER) -> dict:
-    data = "0x" + word(amount0) + word(amount1) + word(2**96) + word(10**18) + word(0)
+         recipient: str = TRADER, sqrt_price_x96: int | None = None,
+         liquidity: int = 10**18) -> dict:
+    data = ("0x" + word(amount0) + word(amount1)
+            + word(2**96 if sqrt_price_x96 is None else sqrt_price_x96)
+            + word(liquidity) + word(0))
     return {
         "blockNumber": hex(block),
         "logIndex": hex(index),
@@ -109,6 +112,78 @@ def test_missing_topics_leaves_wallet_empty_not_crashing():
     log["topics"] = ["0xc42079f9"]
     trades = decode_v3_swaps([log], quote_is_token0=True)
     assert len(trades) == 1 and trades[0].wallet == ""
+
+
+# ---------------------------------------------------------------------------
+# Depth (catalogue 4.1 for V3)
+# ---------------------------------------------------------------------------
+
+
+def test_depth_scales_with_liquidity():
+    """Twice the active liquidity is twice the cost of the same price move."""
+    thin = decode_v3_depth([swap(10, 10**18, -10**18, liquidity=10**18)],
+                           quote_is_token0=False)
+    deep = decode_v3_depth([swap(10, 10**18, -10**18, liquidity=2 * 10**18)],
+                           quote_is_token0=False)
+    assert len(thin) == len(deep) == 1
+    assert abs(deep[0][1] / thin[0][1] - 2.0) < 1e-9
+
+
+def test_depth_matches_the_closed_form():
+    # sqrtPriceX96 = 2^96 means price 1.0, so sqrt(P) = 1 and the quote needed
+    # to move 1% is L * (sqrt(1.01) - 1).
+    liquidity = 10**18
+    got = decode_v3_depth([swap(10, 10**18, -10**18, liquidity=liquidity)],
+                          quote_is_token0=False)[0][1]
+    expected = liquidity * (1.01**0.5 - 1.0)
+    assert abs(got - expected) / expected < 1e-12, (got, expected)
+
+
+def test_depth_respects_which_side_is_quote():
+    # At price 4.0 (sqrtP = 2), the two sides cost different amounts to move.
+    sqrt_price_x96 = 2 * (2**96)
+    log = swap(10, 10**18, -10**18, sqrt_price_x96=sqrt_price_x96)
+    as_token1 = decode_v3_depth([log], quote_is_token0=False)[0][1]
+    as_token0 = decode_v3_depth([log], quote_is_token0=True)[0][1]
+    liquidity = 10**18
+    assert abs(as_token1 - liquidity * 2.0 * (1.01**0.5 - 1)) / as_token1 < 1e-12
+    assert abs(as_token0 - liquidity * 0.5 * (1 - 1 / 1.01**0.5)) / as_token0 < 1e-12
+    # Quoting in the more valuable token costs fewer units for the same move.
+    assert as_token0 < as_token1
+
+
+def test_depth_move_size_is_a_parameter():
+    log = swap(10, 10**18, -10**18)
+    one = decode_v3_depth([log], quote_is_token0=False, move=0.01)[0][1]
+    ten = decode_v3_depth([log], quote_is_token0=False, move=0.10)[0][1]
+    assert ten > one * 8, (one, ten)
+
+
+def test_zero_liquidity_yields_no_observation():
+    # A pool with no active liquidity at the tick has no measurable depth;
+    # reporting zero would say "free to move", which is the opposite.
+    assert decode_v3_depth([swap(10, 10**18, -10**18, liquidity=0)],
+                           quote_is_token0=False) == []
+    assert decode_v3_depth([swap(10, 10**18, -10**18, sqrt_price_x96=0)],
+                           quote_is_token0=False) == []
+
+
+def test_depth_feeds_the_feature_block():
+    from rhc.features import compute
+    logs = [swap(10 + i, 10**18, -10**18, index=i, liquidity=10**18 * (i + 1))
+            for i in range(5)]
+    trades = decode_v3_swaps(logs, quote_is_token0=False)
+    depths = decode_v3_depth(logs, quote_is_token0=False)
+    features = compute(pool="0xp", quote_asset="0xq", created_block=0,
+                       trades=trades, syncs=[], head_block=1000, depths=depths)
+    assert features.v3_depth_observations == 5
+    assert features.v3_depth_1pct_min == min(d for _, d in depths)
+    assert features.v3_depth_1pct_launch == depths[0][1]
+    assert features.v3_depth_1pct_final == depths[-1][1]
+    # V3 has no reserves, and the reserve columns must stay untouched rather
+    # than quietly absorbing the depth numbers.
+    assert features.launch_quote_reserve == 0.0
+    assert features.peak_quote_reserve == 0.0
 
 
 if __name__ == "__main__":

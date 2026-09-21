@@ -60,6 +60,9 @@ def main() -> int:
     parser.add_argument("--trades", type=str, default="data/parquet/trades*.parquet",
                         help="a path or a glob. Batched extractions write "
                              "one file each and are read together.")
+    parser.add_argument("--depth", type=str, default="data/parquet/depth*.parquet",
+                        help="V3 depth observations archived alongside the "
+                             "trades. Absent for a v2-only archive.")
     parser.add_argument("--previous", type=Path, default=Path("data/parquet/features.parquet"),
                         help="the table to carry sync-derived columns from")
     parser.add_argument("--out", type=Path, default=Path("data/parquet/features.parquet"))
@@ -123,12 +126,26 @@ def main() -> int:
     else:
         print("no previous table: sync-derived columns will be absent", file=sys.stderr)
 
+    # V3 depth, keyed by pool. Absent for a v2-only archive, which is not an
+    # error: v2 pools have reserves instead and carry them over above.
+    depths_by_pool: dict[str, list[tuple[int, float]]] = defaultdict(list)
+    depth_files = sorted(glob.glob(args.depth))
+    if depth_files:
+        for pool, block, amount in con.execute(
+            "SELECT pool, block, quote_to_move_1pct FROM read_parquet(?) "
+            "ORDER BY pool, block", [args.depth],
+        ).fetchall():
+            depths_by_pool[pool].append((int(block), float(amount)))
+        print(f"{sum(len(v) for v in depths_by_pool.values()):,} depth "
+              f"observations across {len(depths_by_pool):,} pools", file=sys.stderr)
+
     head = max(int(r[3]) for r in rows)
     out_rows: list[dict] = []
     for (pool, token, quote, protocol), trades in grouped.items():
         created = created_by_pool.get(pool, min(t.block for t in trades))
         feats = compute(pool=pool, quote_asset=quote, created_block=created,
-                        trades=trades, syncs=[], head_block=head)
+                        trades=trades, syncs=[], head_block=head,
+                        depths=depths_by_pool.get(pool) or None)
         record = feats.to_dict()
         record["token"] = token
         record["protocol"] = protocol
