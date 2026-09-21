@@ -130,7 +130,19 @@ the cheapest wash-trading defence available and it feeds a ranking that itself d
 | 4.4 | **Liquidity added / removed events** | **Published** (rug detection) | Buildable now |
 | 4.5 | **LP token concentration** | Industry | Buildable now |
 | 4.6 | **LP lock status via known lockers** | Industry | Needs work |
-| 4.7 | **Liquidity fragmentation across venues** | Original finding | Buildable now |
+| 4.7 | **Liquidity fragmentation across venues** | Original finding | **Built** — and mostly absent |
+
+**4.7 measured, and the answer is the useful kind of boring.** Across 644,581 tokens with a
+WETH- or USDG-quoted pool, **only 1.1% have more than one pool at all**. The chain's 272
+factories fragment the *population* without fragmenting individual tokens: almost every token
+lives in exactly one pool. That matters because it retroactively validates the single-pool
+feature extraction — the worry that per-pool metrics understate a token whose liquidity sits
+elsewhere applies to about one token in ninety. The tail is real, though: one token has 58
+pools across 28 factories, and for those the single-pool view is close to meaningless.
+
+Pool *count* is not liquidity. The census records creations, not reserves, so a token with
+nine pools might hold $9M or $9. Reserve-weighted fragmentation needs a per-pool reserve read
+and therefore the node; it is the next step, not something to approximate from counts.
 
 **Why 4.3 matters more than it sounds:** 113 of 174 stock tokens hold over half their paired
 liquidity in **zero-volume pools**. A reserve figure on this chain is not evidence of a market. Any
