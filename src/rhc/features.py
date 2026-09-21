@@ -113,6 +113,72 @@ def decode_v2_swaps(logs: Iterable[dict], *, quote_is_token0: bool) -> list[Trad
     return trades
 
 
+def _signed(word: int) -> int:
+    """Interpret a 256-bit word as a signed integer.
+
+    V3 reports swap amounts as int256: positive is *into* the pool, negative is
+    out. Read unsigned, an outflow of one token becomes a number near 2^256 and
+    every derived price is nonsense — which is the same class of error that
+    produced a median price ratio of 22,668x when token ordering was assumed.
+    """
+    return word - (1 << 256) if word >= (1 << 255) else word
+
+
+def decode_v3_swaps(logs: Iterable[dict], *, quote_is_token0: bool) -> list[Trade]:
+    """Decode Uniswap V3 Swap logs into direction-normalised trades.
+
+    The event is
+    ``Swap(address indexed sender, address indexed recipient, int256 amount0,
+    int256 amount1, uint160 sqrtPriceX96, uint128 liquidity, int24 tick)``,
+    so the data carries five words and the signs, not separate in/out fields,
+    carry the direction. A buy is quote positive (into the pool) and base
+    negative (out of it).
+
+    **V3 pools have no Sync event**, so nothing here yields reserves. Under
+    concentrated liquidity a single reserve figure would not mean what it means
+    in V2 anyway: the same nominal depth can be spread across the whole curve or
+    stacked in a tick that the price has already left. The reserve-derived
+    columns are therefore absent for V3 rather than approximated, and that
+    absence is deliberate.
+    """
+    trades: list[Trade] = []
+    for log in logs:
+        amounts = _words(log.get("data") or "0x", 5)
+        if amounts is None:
+            continue
+        amount0, amount1 = _signed(amounts[0]), _signed(amounts[1])
+        quote_delta, base_delta = (
+            (amount0, amount1) if quote_is_token0 else (amount1, amount0)
+        )
+        if quote_delta == 0 or base_delta == 0:
+            continue
+        # One side in, one side out. Same sign on both means a malformed log,
+        # not a trade in either direction.
+        if (quote_delta > 0) == (base_delta > 0):
+            continue
+
+        is_buy = quote_delta > 0
+        quote_amount = abs(quote_delta)
+        base_amount = abs(base_delta)
+
+        topics = log.get("topics") or []
+        # topics[1] is the sender (usually a router) and topics[2] the
+        # recipient, which matches the V2 decoder's use of `to` and is the
+        # closer proxy for the trader.
+        wallet = _topic_address(topics[2]) if len(topics) > 2 else ""
+        trades.append(
+            Trade(
+                block=int(log["blockNumber"], 16),
+                wallet=wallet,
+                is_buy=is_buy,
+                quote_amount=quote_amount,
+                base_amount=base_amount,
+                log_index=int(log.get("logIndex", "0x0"), 16),
+            )
+        )
+    return trades
+
+
 def decode_syncs(logs: Iterable[dict], *, quote_is_token0: bool) -> list[tuple[int, int, int]]:
     """Decode Sync logs into (block, quote_reserve, base_reserve)."""
     out: list[tuple[int, int, int]] = []

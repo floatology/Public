@@ -161,6 +161,14 @@ Pool *count* is not liquidity. The census records creations, not reserves, so a 
 nine pools might hold $9M or $9. Reserve-weighted fragmentation needs a per-pool reserve read
 and therefore the node; it is the next step, not something to approximate from counts.
 
+**The population itself was wrong, which matters more than any single metric here.** Every
+number in sections 3 and 4 was being computed over Uniswap V2 pools only. V3 is 63% of pool
+creations on this chain and 74% of daily volume, at roughly 19x the median depth. Measuring
+the V2 tail and then filtering it for tradability leaves almost nothing, because the V2 tail
+*is* the untradable part. V3 decoding is now built; the reserve-derived columns do not port,
+because V3 has no `Sync` and concentrated liquidity makes a single reserve figure mean
+something different.
+
 **Why 4.3 matters more than it sounds:** 113 of 174 stock tokens hold over half their paired
 liquidity in **zero-volume pools**. A reserve figure on this chain is not evidence of a market. Any
 metric that weights by nominal reserves without a liveness filter will rank seeded pools first.

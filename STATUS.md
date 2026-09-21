@@ -96,6 +96,22 @@ Running log. Updated as work completes so progress survives an interrupted sessi
   fragmentation → enrich → diagnostics produces **110 columns**, up from 84. The
   model and correlation stages refuse at this size with explicit messages, which
   is the designed behaviour, not a failure.
+- **The feature extraction was studying the wrong third of the chain.** It
+  filtered to Uniswap V2. Measured from the census: **63% of pool creations are
+  V3** (447,343 against 268,151), and from the live snapshot, **V3 pools carry
+  74% of daily volume ($521M of $703M) at a median reserve of $1.1M against
+  $59k for V2** — roughly 19x the depth. The V2-only sample is the shallow tail,
+  which is exactly where the measured $50k execution floor bites hardest, so
+  anything found there would have been untradable by construction. V3 swap
+  decoding is now built and tested; `--protocol v3` samples that population.
+- **V3 carries no reserves, and that absence is kept rather than papered over.**
+  V3 pools emit no `Sync`, and under concentrated liquidity a single reserve
+  figure does not mean what a V2 reserve means: the same nominal depth can be
+  spread across the curve or stacked in a tick the price has already left. The
+  reserve-derived columns are therefore absent for V3, not approximated.
+- **Uniswap V4 is the single most common venue in the top 60 pools** (17 of 60)
+  and is decoded by neither path. Its hooks can alter swap maths arbitrarily, so
+  it needs its own work and is not a variant of V3.
 
 ## Research deliverable: what to actually track
 

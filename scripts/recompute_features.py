@@ -75,15 +75,24 @@ def main() -> int:
     print(f"reading {len(matches)} trade file(s)", file=sys.stderr)
 
     con = duckdb.connect()
+    # Archives written before the v3 work carry no protocol column, and
+    # everything in them is v2 because that is all the extractor read.
+    archive_columns = {
+        name for name, *_ in con.execute(
+            f"DESCRIBE SELECT * FROM read_parquet('{args.trades}')").fetchall()
+    }
+    protocol_expr = "protocol" if "protocol" in archive_columns else "'v2'"
     rows = con.execute(
-        "SELECT pool, token, quote_asset, block, log_index, wallet, is_buy, "
-        "quote_amount, base_amount FROM read_parquet(?) ORDER BY pool, block, log_index",
+        f"SELECT pool, token, quote_asset, block, log_index, wallet, is_buy, "
+        f"quote_amount, base_amount, {protocol_expr} AS protocol "
+        f"FROM read_parquet(?) ORDER BY pool, block, log_index",
         [str(args.trades)],
     ).fetchall()
 
-    grouped: dict[tuple[str, str, str], list[Trade]] = defaultdict(list)
-    for pool, token, quote, block, log_index, wallet, is_buy, q_amt, b_amt in rows:
-        grouped[(pool, token, quote)].append(
+    grouped: dict[tuple[str, str, str, str], list[Trade]] = defaultdict(list)
+    for (pool, token, quote, block, log_index, wallet, is_buy, q_amt, b_amt,
+         protocol) in rows:
+        grouped[(pool, token, quote, protocol)].append(
             Trade(block=int(block), wallet=(wallet or "").lower(), is_buy=bool(is_buy),
                   quote_amount=int(q_amt), base_amount=int(b_amt), log_index=int(log_index))
         )
@@ -116,12 +125,13 @@ def main() -> int:
 
     head = max(int(r[3]) for r in rows)
     out_rows: list[dict] = []
-    for (pool, token, quote), trades in grouped.items():
+    for (pool, token, quote, protocol), trades in grouped.items():
         created = created_by_pool.get(pool, min(t.block for t in trades))
         feats = compute(pool=pool, quote_asset=quote, created_block=created,
                         trades=trades, syncs=[], head_block=head)
         record = feats.to_dict()
         record["token"] = token
+        record["protocol"] = protocol
         record.update(detect(trades).to_dict())
 
         scale = quote_scale(quote)
