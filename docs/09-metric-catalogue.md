@@ -195,12 +195,21 @@ implies, and nothing in the system currently models it.
 
 | # | Metric | Evidence | Feasibility |
 |---|---|---|---|
-| 7.1 | **Bundle-bot detection** | **Published** — a *required-FALSE* gate in 2601.08641 | Needs work |
-| 7.2 | **Sniper-bot detection** | **Published** | Buildable now |
-| 7.3 | **Bump-bot detection** | **Published** — *highest* LASSO importance (0.2333) | Needs work |
-| 7.4 | **Wash trading: self, matched, circular trades** | **Published** | Buildable now |
-| 7.5 | **Same-block coordinated buys** | **Published** (MELT bundle stats) | Buildable now |
+| 7.1 | **Bundle-bot detection** | **Published** — a *required-FALSE* gate in 2601.08641 | **Built** |
+| 7.2 | **Sniper-bot detection** | **Published** | **Built** |
+| 7.3 | **Bump-bot detection** | **Published** — *highest* LASSO importance (0.2333) | **Built** |
+| 7.4 | **Wash trading: self, matched, circular trades** | **Published** | **Built** |
+| 7.5 | **Same-block coordinated buys** | **Published** (MELT bundle stats) | **Built** |
 | 7.6 | **Dormant-pool detection** | Original finding | **Built** |
+
+**Section 7 is now complete.** 7.1 and 7.3 live in `src/rhc.manipulation`, and the detectors
+are deliberately conservative because the naive form of each fires on something ordinary.
+Eight wallets buying in the launch block is *also* what an anticipated launch looks like, so
+bundling additionally requires the amounts to match to within a low coefficient of variation —
+a bundler's contract splits a fixed budget, a crowd does not. One wallet trading forty times is
+*also* an active trader, so bumping additionally requires a near-flat net position and
+metronomic inter-trade gaps. Four of the eight committed tests are negative cases that must
+stay silent.
 
 **7.3 is the single most surprising research finding.** In the copy-trading paper's LASSO model,
 **bump-bot presence carried the highest normalised feature importance of any variable** — above
@@ -231,9 +240,27 @@ Everything buildable without further input has been built. The pipeline produces
 | `rhc.contracts` | §6 structural risk | **built, verified** |
 | `rhc.social` | §5.1, §5.2 Telegram | **built, verified** |
 | `rhc.wallets` | §1 ledger + point-in-time scoring | **built, verified** |
+| `rhc.manipulation` | §7.1 bundle bots, §7.3 bump bots | **built, verified** |
+| `scripts/wallet_ledger.py` | §1 as per-token features, leak-audited | **built, verified** |
+| `scripts/recompute_features.py` | offline feature rebuild from archived trades | **built, verified** |
+| `scripts/describe_features.py` | pre-model column diagnostics | **built, verified** |
+| `scripts/daily_movers.py` | forward memecoin activity series | **built, running daily** |
 | `scripts/enrich_features.py` | joins all of the above + GeckoTerminal info | **built, verified** |
 | `scripts/model_features.py` | regularised selection + negative control | **built** |
 | `scripts/feature_correlations.py` | independent-dimension analysis | **built** |
+
+### The architectural mistake this catalogue caused
+
+The first extraction decoded every trade, computed features from them, and then
+**threw the trades away**. That made the catalogue look more expensive than it is: any
+new metric appeared to cost another ninety minutes of a node that rate-limits globally,
+which is a strong incentive to stop adding metrics. It also made section 1 impossible,
+because a wallet's record is by definition across pools and a per-pool pass never has more
+than one pool in hand.
+
+Trades are now archived to Parquet. Features became a pure function of a file on disk,
+section 1 became reachable, and the marginal cost of a new metric fell from ninety minutes
+to seconds. This should have been true from the first run.
 
 ### Three corrections to this catalogue, found by building it
 
