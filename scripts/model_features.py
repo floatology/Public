@@ -54,7 +54,7 @@ LEAKY = {
     "realisable_peak_over_launch", "peak_trade_volume_share",
     "volume_above_2x_share", "volume_above_10x_share",
 }
-IDENTIFIERS = {"pool", "token", "quote_asset"}
+IDENTIFIERS = {"pool", "token", "quote_asset", "protocol"}
 
 
 def main() -> int:
@@ -65,6 +65,15 @@ def main() -> int:
     # could have taken.
     parser.add_argument("--label", default="realisable_peak_over_launch")
     parser.add_argument("--threshold", type=float, default=10.0)
+    parser.add_argument(
+        "--stratum", choices=("v2", "v3", "pooled"), default=None,
+        help="which protocol population to fit. PREREGISTRATION standing "
+             "rule: V2 and V3 are different populations (z=3.28, p<0.01) "
+             "and are never pooled without an explicit test that pooling "
+             "is valid. A mixed table therefore requires this flag; "
+             "'pooled' is that explicit choice and is recorded in the "
+             "output.",
+    )
     parser.add_argument("--discovery-frac", type=float, default=0.5)
     parser.add_argument("--seed", type=int, default=20260921)
     parser.add_argument("--out", type=Path, default=Path("data/model_result.json"))
@@ -81,6 +90,32 @@ def main() -> int:
     described = con.execute(
         f"DESCRIBE SELECT * FROM read_parquet('{args.features}')"
     ).fetchall()
+
+    # V2 and V3 are different populations by measurement (z=3.28, p<0.01) and
+    # by construction: V3 has no reserves, so half the liquidity columns are
+    # null for it and a pooled fit would learn to split on the nulls. Pooling
+    # is allowed but has to be chosen, not defaulted into.
+    stratum_filter = ""
+    if any(name == "protocol" for name, *_ in described):
+        strata = [
+            row[0] for row in con.execute(
+                f"SELECT DISTINCT protocol FROM read_parquet('{args.features}') "
+                f"WHERE protocol IS NOT NULL"
+            ).fetchall()
+        ]
+        if len(strata) > 1 and args.stratum is None:
+            print(f"this table mixes {sorted(strata)}. The pre-registration "
+                  f"forbids pooling them without an explicit decision: pass "
+                  f"--stratum v2, --stratum v3, or --stratum pooled.",
+                  file=sys.stderr)
+            return 1
+        if args.stratum in ("v2", "v3"):
+            stratum_filter = f" AND protocol = '{args.stratum}'"
+    elif args.stratum in ("v2", "v3"):
+        print(f"--stratum {args.stratum} was given but the table has no "
+              f"protocol column; refusing to guess which population this is.",
+              file=sys.stderr)
+        return 1
     feature_cols = [
         name for name, dtype, *_ in described
         # BOOLEAN is included deliberately. `is_bundled` and `has_bump_bot`
@@ -92,7 +127,8 @@ def main() -> int:
     ]
     quoted = ", ".join(f'"{c}"' for c in feature_cols)
     rows = con.execute(
-        f'SELECT {quoted}, "{args.label}" FROM read_parquet(?) WHERE "{args.label}" IS NOT NULL',
+        f'SELECT {quoted}, "{args.label}" FROM read_parquet(?) '
+        f'WHERE "{args.label}" IS NOT NULL{stratum_filter}',
         [str(args.features)],
     ).fetchall()
 
@@ -198,6 +234,7 @@ def main() -> int:
     result = {
         "rows": len(rows), "features": len(feature_cols), "positives": positives,
         "label": args.label, "threshold": args.threshold, "seed": args.seed,
+        "stratum": args.stratum or "unstratified",
         "discovery_n": len(discovery), "confirmation_n": len(confirmation),
         "lasso_auc": real["lasso_auc"], "gbm_auc": real["gbm_auc"],
         "shuffled_label_auc": control,

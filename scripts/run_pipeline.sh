@@ -78,10 +78,15 @@ echo "== 6. model, against the shuffled-label floor ==========================="
 # fixes 10x as primary and 2x/5x as secondary, declared before any of them had
 # been observed: reporting whichever one worked is exactly the failure this
 # guards against, so the loop is not conditional on the primary succeeding.
-for t in 10 5 2; do
-  echo "--- threshold ${t}x ---"
-  $PY scripts/model_features.py --threshold "$t" \
-      --out "data/model_result_${t}x.json" || true
+# Strata too: V2 and V3 are different populations and the pre-registration
+# forbids pooling them without an explicit test that pooling is valid. Fitting
+# each separately is what "different populations" means operationally.
+for stratum in v2 v3; do
+  for t in 10 5 2; do
+    echo "--- ${stratum}, threshold ${t}x ---"
+    $PY scripts/model_features.py --stratum "$stratum" --threshold "$t" \
+        --out "data/model_result_${stratum}_${t}x.json" || true
+  done
 done
 
 echo
