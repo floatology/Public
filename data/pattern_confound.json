@@ -1,0 +1,49 @@
+{
+  "all periods": {
+    "n": 2948,
+    "hits": 187,
+    "rate": 0.06343283582089553,
+    "ci_low": 0.05518967867885813,
+    "ci_high": 0.07281231167184365,
+    "lift_vs_all": 1.0
+  },
+  "impulse, no base": {
+    "n": 399,
+    "hits": 95,
+    "rate": 0.23809523809523808,
+    "ci_low": 0.19892544636504383,
+    "ci_high": 0.2822602107269745,
+    "lift_vs_all": 3.7535014005602236
+  },
+  "impulse, in a base": {
+    "n": 110,
+    "hits": 17,
+    "rate": 0.15454545454545454,
+    "ci_low": 0.09878570478208984,
+    "ci_high": 0.23362002387948907,
+    "lift_vs_all": 2.436363636363636
+  },
+  "breakout from a base": {
+    "n": 15,
+    "hits": 8,
+    "rate": 0.5333333333333333,
+    "ci_low": 0.3011663015105079,
+    "ci_high": 0.7519077474025355,
+    "lift_vs_all": 8.407843137254902
+  },
+  "no impulse": {
+    "n": 2439,
+    "hits": 75,
+    "rate": 0.03075030750307503,
+    "ci_low": 0.02460236939414665,
+    "ci_high": 0.0383741248656531,
+    "lift_vs_all": 0.4847695535778887
+  },
+  "_meta": {
+    "pools": 66,
+    "threshold": 5.0,
+    "horizon_days": 14,
+    "max_range": 0.6,
+    "caveat": "survivorship-biased sample; overlapping forward windows mean the effective n is pools, not periods"
+  }
+}
