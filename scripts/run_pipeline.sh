@@ -28,14 +28,19 @@ if [[ "${1:-}" == "--extract" ]]; then
   echo "== 1. extraction (RPC, exclusive, ~90 min) =============================="
   # This writes both the feature table and the trade archive. Without the
   # archive the wallet ledger below cannot run at all.
-  $PY scripts/extract_features.py --sample "$SAMPLE"
+  # SKIP extends an earlier sample instead of redrawing one; write each
+  # batch to its own file so the offline stages can read them together.
+  SKIP=${SKIP:-0}
+  $PY scripts/extract_features.py --sample "$SAMPLE" --skip "$SKIP" \
+      --out "data/parquet/features_${SKIP}.parquet" \
+      --trades-out "data/parquet/trades_${SKIP}.parquet"
 else
   echo "== 1. extraction SKIPPED (pass --extract to run it) ====================="
 fi
 
 echo "== 2. rebuild features from the archive (offline) ======================="
 # Safe to re-run after any change to rhc.features or rhc.manipulation.
-if [[ -f data/parquet/trades.parquet ]]; then
+if compgen -G "data/parquet/trades*.parquet" > /dev/null; then
   $PY scripts/recompute_features.py
 else
   echo "   no trade archive yet; keeping the extraction's own feature table"

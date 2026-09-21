@@ -33,6 +33,10 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--census", type=Path, default=Path("data/parquet/pool_creations.parquet"))
     parser.add_argument("--sample", type=int, default=2000)
+    parser.add_argument(
+        "--skip", type=int, default=0,
+        help="how many pools to pass over before taking --sample. The sample\n             order is a deterministic hash of the seed and the pool address,\n             so --skip 10000 takes the NEXT block of pools rather than a fresh\n             random draw: two runs extend one sample instead of overlapping.",
+    )
     parser.add_argument("--min-trades", type=int, default=10)
     parser.add_argument("--dust-floor", type=float, default=0.01)
     parser.add_argument("--eth-usd", type=float, default=2576.0)
@@ -64,8 +68,13 @@ def main() -> int:
     ).fetchall()
 
     sample = sorted(pools, key=lambda r: hashlib.sha256(f"{args.seed}:{r[0]}".encode()).hexdigest())
-    sample = sample[: args.sample]
-    print(f"population {len(pools):,}; sampling {len(sample)}", file=sys.stderr)
+    sample = sample[args.skip: args.skip + args.sample]
+    if not sample:
+        print(f"--skip {args.skip} is past the end of a {len(pools):,}-pool "
+              f"population; nothing to do.", file=sys.stderr)
+        return 1
+    print(f"population {len(pools):,}; sampling {len(sample)} "
+          f"(skipping {args.skip:,})", file=sys.stderr)
 
     rows: list[dict] = []
     trade_rows: list[dict] = []

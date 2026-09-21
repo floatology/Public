@@ -21,6 +21,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import glob
 import sys
 from collections import defaultdict
 from pathlib import Path
@@ -47,16 +48,22 @@ SYNC_DERIVED = {
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--trades", type=Path, default=Path("data/parquet/trades.parquet"))
+    parser.add_argument("--trades", type=str, default="data/parquet/trades*.parquet",
+                        help="a path or a glob. Batched extractions write "
+                             "one file each and are read together.")
     parser.add_argument("--previous", type=Path, default=Path("data/parquet/features.parquet"),
                         help="the table to carry sync-derived columns from")
     parser.add_argument("--out", type=Path, default=Path("data/parquet/features.parquet"))
     parser.add_argument("--eth-usd", type=float, default=4000.0)
     args = parser.parse_args()
 
-    if not args.trades.exists():
-        print(f"{args.trades} not found; nothing to rebuild from.", file=sys.stderr)
+    matches = sorted(glob.glob(args.trades))
+    if not matches:
+        print(f"no trade archive matches {args.trades!r}. Run "
+              f"scripts/extract_features.py first; it writes the archive these "
+              f"stages read.", file=sys.stderr)
         return 1
+    print(f"reading {len(matches)} trade file(s)", file=sys.stderr)
 
     con = duckdb.connect()
     rows = con.execute(

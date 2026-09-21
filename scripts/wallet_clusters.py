@@ -29,6 +29,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import glob
 import json
 import sys
 from collections import defaultdict
@@ -48,7 +49,9 @@ from wallet_ledger import load_trades
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--trades", type=Path, default=Path("data/parquet/trades.parquet"))
+    parser.add_argument("--trades", type=str, default="data/parquet/trades*.parquet",
+                        help="a path or a glob. Batched extractions write "
+                             "one file each and are read together.")
     parser.add_argument("--cutoff-quantile", type=float, default=0.5,
                         help="fraction of tokens, by launch block, whose trades "
                              "form the training window for the entity map")
@@ -61,10 +64,13 @@ def main() -> int:
                         default=Path("data/wallet_entities.json"))
     args = parser.parse_args()
 
-    if not args.trades.exists():
-        print(f"{args.trades} not found; run scripts/extract_features.py first",
-              file=sys.stderr)
+    matches = sorted(glob.glob(args.trades))
+    if not matches:
+        print(f"no trade archive matches {args.trades!r}. Run "
+              f"scripts/extract_features.py first; it writes the archive these "
+              f"stages read.", file=sys.stderr)
         return 1
+    print(f"reading {len(matches)} trade file(s)", file=sys.stderr)
 
     token_trades = load_trades(args.trades)
     first_block = {t: min(x.block for x in tr) for t, tr in token_trades.items() if tr}

@@ -40,6 +40,7 @@ Usage:
 from __future__ import annotations
 
 import argparse
+import glob
 import json
 import random
 import sys
@@ -56,7 +57,7 @@ from rhc.features import Trade
 from rhc.wallets import Position, binomial_tail, build_positions, score_at
 
 
-def load_trades(path: Path) -> dict[str, list[Trade]]:
+def load_trades(path: str) -> dict[str, list[Trade]]:
     """Read the archive back into per-token trade lists.
 
     Amounts were stored as strings because they are raw 256-bit integers that
@@ -149,7 +150,9 @@ class Sweep:
 
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
-    parser.add_argument("--trades", type=Path, default=Path("data/parquet/trades.parquet"))
+    parser.add_argument("--trades", type=str, default="data/parquet/trades*.parquet",
+                        help="a path or a glob. Batched extractions write "
+                             "one file each and are read together.")
     parser.add_argument("--features", type=Path, default=Path("data/parquet/features.parquet"))
     parser.add_argument("--label", default="realisable_peak_over_launch")
     parser.add_argument("--threshold", type=float, default=10.0)
@@ -168,10 +171,13 @@ def main() -> int:
     parser.add_argument("--seed", type=int, default=20260921)
     args = parser.parse_args()
 
-    if not args.trades.exists():
-        print(f"{args.trades} not found. Run scripts/extract_features.py first; it "
-              f"writes the trade archive this reads.", file=sys.stderr)
+    matches = sorted(glob.glob(args.trades))
+    if not matches:
+        print(f"no trade archive matches {args.trades!r}. Run "
+              f"scripts/extract_features.py first; it writes the archive these "
+              f"stages read.", file=sys.stderr)
         return 1
+    print(f"reading {len(matches)} trade file(s)", file=sys.stderr)
 
     token_trades = load_trades(args.trades)
     print(f"{len(token_trades):,} tokens, "
