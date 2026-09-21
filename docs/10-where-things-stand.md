@@ -55,6 +55,47 @@ trading **400 and 1,128 times their entire liquidity in a day**. No real order
 flow does that in a pool that thin. Capturing this daily matters because the
 evidence only exists while it is happening.
 
+## The biggest thing found since
+
+**The whole extraction was looking at the wrong third of the chain.**
+
+It was reading Uniswap V2 pools only. Checked against the census and a day of
+live trading:
+
+| | pools | share of daily volume | typical pool size |
+|---|---|---|---|
+| **V3** | 447,343 | $521M (74%) | $1,102,528 |
+| **V2** | 268,151 | $182M (26%) | $58,990 |
+
+V2 is the shallow end. It is also, by earlier measurement, the part where a $500
+trade can cost 96% to execute — so anything found there would have been
+untradable no matter how strong the signal looked. Worse, that failure would
+have arrived disguised: the results would have passed every statistical check
+and then quietly failed the tradability filter, looking like bad luck rather
+than a design error.
+
+V3 reading is now built and tested, and a V3 extraction is queued behind the
+running one. Both are kept separate rather than merged, because a test done
+earlier showed the two behave as genuinely different populations and mixing them
+would let a model learn "which kind of pool is this" instead of anything about
+the token.
+
+**V3 needed a different way to measure depth, and the one it got is better.**
+V2 pools publish their reserves. V3 pools do not — liquidity sits in ranges
+rather than a single pot. But every V3 trade record carries the pool's live
+liquidity and price, which gives the cost of moving the price 1% directly, at
+the moment of each trade. That tracks liquidity being pulled or moved out of the
+way, which a reserve snapshot does not. It only answers small moves honestly,
+and the code says so.
+
+**And there is a fourth venue nobody has looked at.** Uniswap V4 is the single
+most common venue among the 60 busiest pools — 18 of them, $141M a day, and
+typically deeper than V2. It is invisible to all of the above, because a V4
+"pool" is not a contract at all but an entry inside one big shared contract, so
+none of the existing machinery can address it. A tool to find it has been
+written and is waiting for the connection to be free. This is recorded as a gap,
+not as something solved.
+
 ## Two things measured that changed the plan
 
 **98.9% of tokens have exactly one pool.** The chain has 272 different factories
@@ -80,6 +121,24 @@ a wallet's record is by definition spread across pools.
 Trades are now saved. New measurements cost seconds instead of an hour and a
 half, and the whole wallet layer became possible. This should have been true from
 the first run.
+
+## One more thing, about the stock tokens
+
+All 175 of them are the same contract. Every one is a proxy pointing at a single
+shared implementation, deployed by a single address, with an identical set of
+functions. Two of those functions are `mint` and `pause`, and ownership is not
+given up on any of them.
+
+That is not a scandal — a tokenised share has to be mintable against new
+deposits and haltable on a corporate action, or redemption cannot work. It does
+mean that holding these is holding the issuer as well as the stock. And it means
+the contract-safety checks, which are useful on memecoins, tell you nothing here:
+they come back identical for all 175, which is easy to mistake for a clean bill
+of health rather than a measurement that could not vary.
+
+The useful side effect is that impersonation is trivially detectable. There are
+24 contracts on this chain claiming to be NVDA. Exactly one comes from that
+deployer.
 
 ## What happens next, in order
 
