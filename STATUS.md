@@ -112,6 +112,16 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 - **Uniswap V4 is the single most common venue in the top 60 pools** (17 of 60)
   and is decoded by neither path. Its hooks can alter swap maths arbitrarily, so
   it needs its own work and is not a variant of V3.
+- **All 175 stock tokens are one implementation behind 175 beacon proxies**, from
+  a single deployer, with an identical 36-function ABI carrying `mint` and
+  `pause` and nothing else privileged (`docs/11-stock-token-structure.md`). The
+  contract-risk module therefore cannot discriminate on this half of the
+  universe — every column is constant — which is the correct answer and is worth
+  stating, because a risk screen returning "uniformly clear" looks like one that
+  did not run. Robinhood retains mint and pause authority over every stock token.
+- **Contract enrichment costs ~12.7s per token** (175 in 2,222s), bounded by
+  Blockscout rate limiting. It does not touch the archive RPC, so it can run
+  concurrently with a bulk extraction — and did.
 
 ## Research deliverable: what to actually track
 

@@ -60,7 +60,6 @@ class ContractRisk:
     is_verified: bool = False
     is_proxy: bool = False
     compiler_version: str | None = None
-    creator: str | None = None
     abi_function_count: int = 0
     implementation: str | None = None
 
@@ -175,7 +174,14 @@ def inspect(client: Blockscout, address: str, *, owner: str | None = None) -> Co
 
 
 def creator_of(client: Blockscout, address: str) -> str | None:
-    """The address that deployed a contract, for deployer-age checks."""
+    """The address that deployed a contract, for deployer-age checks.
+
+    This is a separate call on purpose. `ContractRisk` used to carry a `creator`
+    field that `inspect` never populated, so it read as None for every token
+    while the information was sitting one endpoint away — an absent value that
+    looks like "unknown" when it is really "never asked". The field is gone;
+    callers that want a deployer call this.
+    """
     try:
         return client.get(f"/api/v2/addresses/{address}").get("creator_address_hash")
     except BlockscoutError:
