@@ -104,6 +104,21 @@ class GeckoTerminal:
             time.sleep(2**attempt)
         raise PremiumError(f"Exhausted retries for {path}") from last_error
 
+    def token_info(self, address: str) -> dict[str, Any]:
+        """Token metadata: social handles, developer holding, honeypot flag.
+
+        This endpoint carries several catalogue items the block explorer does
+        not expose at all — the explorer's token metadata has no social,
+        developer or honeypot fields, so a lookup against it can never find a
+        Telegram channel however well the code is written.
+
+        Fields of interest: telegram_handle, twitter_handle, websites,
+        developer_address, developer_holding_percentage, is_honeypot,
+        mint_authority, freeze_authority, holders, gt_score.
+        """
+        payload = self.get(f"/networks/{NETWORK}/tokens/{address}/info")
+        return (payload.get("data") or {}).get("attributes") or {}
+
     def token_pools(self, address: str) -> list[dict[str, Any]]:
         """All pools containing this token, as GeckoTerminal returns them."""
         payload = self.get(f"/networks/{NETWORK}/tokens/{address}/pools")
