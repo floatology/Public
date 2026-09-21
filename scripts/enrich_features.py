@@ -100,6 +100,14 @@ def main() -> int:
                         help="Also replay Transfer logs for holder metrics (uses the RPC)")
     parser.add_argument("--no-social", action="store_true")
     parser.add_argument("--no-contracts", action="store_true")
+    parser.add_argument(
+        "--wallet-features", type=Path,
+        default=Path("data/parquet/wallet_features.parquet"),
+        help="point-in-time wallet features from scripts/wallet_ledger.py. "
+             "Joined when present and skipped when absent, because the "
+             "ledger needs a trade archive that older extractions did not "
+             "write.",
+    )
     args = parser.parse_args()
 
     con = duckdb.connect()
@@ -191,6 +199,32 @@ def main() -> int:
         finally:
             if rpc is not None:
                 rpc.close()
+
+    # The wallet ledger is a separate, offline pass over the trade archive, so
+    # it is joined here rather than computed inline. A token with no matching
+    # row gets nulls, not zeros: "this token's early buyers had no prior track
+    # record" and "we never looked" are different states, and filling zero
+    # would merge them into the first.
+    if args.wallet_features.exists():
+        wallet_rows = con.execute(
+            f"SELECT * FROM read_parquet('{args.wallet_features}')"
+        ).fetchall()
+        wallet_columns = [d[0] for d in con.description]
+        by_token = {
+            dict(zip(wallet_columns, r))["token"]: dict(zip(wallet_columns, r))
+            for r in wallet_rows
+        }
+        matched = 0
+        for record in records:
+            found = by_token.get(record.get("token"))
+            if found:
+                matched += 1
+                record.update({k: v for k, v in found.items() if k != "token"})
+        print(f"  wallet ledger: {matched}/{len(records)} tokens matched",
+              file=sys.stderr)
+    else:
+        print(f"  wallet ledger: {args.wallet_features} absent, skipped",
+              file=sys.stderr)
 
     keys = sorted({k for r in records for k in r})
     table = pa.table({k: [r.get(k) for r in records] for k in keys})
