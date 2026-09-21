@@ -216,6 +216,8 @@ class TokenFeatures:
     wash_suspect_score: float | None = None
 
     # --- velocity and time shape (3.5, 3.6) ---
+    first_minute_trade_count: int = 0
+    first_minute_volume_share: float | None = None
     first_hour_trade_count: int = 0
     first_hour_volume_share: float | None = None
     first_hour_unique_wallets: int = 0
@@ -227,6 +229,8 @@ class TokenFeatures:
     time_to_half_volume_frac: float | None = None
     peak_hour_volume_share: float | None = None
     quiet_hour_share: float | None = None
+    peak_decile_volume_share: float | None = None
+    quiet_decile_share: float | None = None
 
     # --- lifecycle ---
     lifespan_blocks: int = 0
@@ -442,6 +446,17 @@ def compute(
     last_block = ordered[-1].block
     span = last_block - first_block
 
+    # Most tokens on this chain do not live an hour, so the hour window
+    # saturates at 1.0 and stops distinguishing anything. The minute window and
+    # the decile columns below exist because of that measurement, not in
+    # anticipation of it.
+    first_minute = [x for x in ordered if x.block <= first_block + hour_blocks // 60]
+    features.first_minute_trade_count = len(first_minute)
+    if total_volume > 0:
+        features.first_minute_volume_share = (
+            sum(x.quote_amount for x in first_minute) / total_volume
+        )
+
     first_hour = [x for x in ordered if x.block <= first_block + hour_blocks]
     features.first_hour_trade_count = len(first_hour)
     features.first_hour_unique_wallets = len({x.wallet for x in first_hour if x.wallet})
@@ -496,6 +511,17 @@ def compute(
                 features.peak_hour_volume_share = max(buckets.values()) / total_volume
                 total_hours = span // hour_blocks + 1
                 features.quiet_hour_share = 1.0 - len(buckets) / total_hours
+
+            # The same two shapes measured against the token's own life rather
+            # than the clock: ten equal slices of whatever span it had. A token
+            # that lived five minutes and one that lived three days are directly
+            # comparable here, and neither saturates.
+            deciles: dict[int, int] = {}
+            for x in ordered:
+                slot = min(9, int((x.block - first_block) / span * 10))
+                deciles[slot] = deciles.get(slot, 0) + x.quote_amount
+            features.peak_decile_volume_share = max(deciles.values()) / total_volume
+            features.quiet_decile_share = 1.0 - len(deciles) / 10
 
     # --- lifecycle ---
     blocks = [t.block for t in trades]
