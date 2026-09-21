@@ -22,7 +22,7 @@ import duckdb
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from rhc.chain import QUOTE_DECIMALS, USDG, WETH, quote_scale
+from rhc.chain import DEFAULT_ETH_USD, QUOTE_DECIMALS, USDG, WETH, quote_scale
 from rhc.features import compute, decode_syncs, decode_v2_swaps, drop_dust
 from rhc.manipulation import detect
 from rhc.rpc import TOPIC_V2_SWAP, TOPIC_V2_SYNC, Rpc, RpcError
@@ -39,7 +39,7 @@ def main() -> int:
     )
     parser.add_argument("--min-trades", type=int, default=10)
     parser.add_argument("--dust-floor", type=float, default=0.01)
-    parser.add_argument("--eth-usd", type=float, default=2576.0)
+    parser.add_argument("--eth-usd", type=float, default=DEFAULT_ETH_USD)
     parser.add_argument("--seed", default="rhc-features-v1")
     parser.add_argument("--out", type=Path, default=Path("data/parquet/features.parquet"))
     parser.add_argument(

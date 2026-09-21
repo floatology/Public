@@ -43,6 +43,16 @@ QUOTE_DECIMALS = {
     WETH.lower(): 18,
 }
 
+# Used to put WETH-quoted volumes on the same scale as USDG-quoted ones.
+# It is a constant rather than a live price on purpose: a historical scan
+# spanning months has no single correct spot rate, and the alternative --
+# marking each trade at its own moment -- needs a price series this chain
+# does not publish. The number therefore affects comparability between
+# quote assets and nothing else, so it must be IDENTICAL everywhere. Two
+# scripts defaulting to 2576 and 4000 produced volumes differing by 55%
+# for the same pool, which is why it lives here now.
+DEFAULT_ETH_USD = 2576.0
+
 
 class UnknownQuoteAsset(KeyError):
     """A pool quoted in an asset whose decimals are not known.

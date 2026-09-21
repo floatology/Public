@@ -32,7 +32,7 @@ import duckdb
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from rhc.chain import USDG, quote_scale
+from rhc.chain import DEFAULT_ETH_USD, USDG, quote_scale
 from rhc.features import Trade, compute
 from rhc.manipulation import detect
 
@@ -43,6 +43,15 @@ SYNC_DERIVED = {
     "launch_quote_reserve", "peak_quote_reserve", "final_quote_reserve",
     "liquidity_add_events", "liquidity_remove_events",
     "largest_liquidity_removal_pct",
+    # Stealth accumulation is "buys that consumed under 2% of the quote
+    # reserve", so it needs reserves and reads as zero without them. Left to
+    # recompute it reported 0 where the extractor found 9, which is not a
+    # missing value but a wrong one.
+    "stealth_accumulator_count",
+    # lifespan is chain-head minus pool-creation. The archive's last trade is
+    # not the chain head -- for a token that died months ago it is out by the
+    # months since -- so this is carried rather than re-derived.
+    "lifespan_blocks",
 }
 
 
@@ -54,7 +63,7 @@ def main() -> int:
     parser.add_argument("--previous", type=Path, default=Path("data/parquet/features.parquet"),
                         help="the table to carry sync-derived columns from")
     parser.add_argument("--out", type=Path, default=Path("data/parquet/features.parquet"))
-    parser.add_argument("--eth-usd", type=float, default=4000.0)
+    parser.add_argument("--eth-usd", type=float, default=DEFAULT_ETH_USD)
     args = parser.parse_args()
 
     matches = sorted(glob.glob(args.trades))
