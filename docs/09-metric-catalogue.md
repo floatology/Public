@@ -265,7 +265,7 @@ Everything buildable without further input has been built. The pipeline produces
 | Module | Covers | Status |
 |---|---|---|
 | `rhc.features` | §3 flow, §4 liquidity, §7 manipulation, parts of §1 | **built, verified** |
-| `rhc.features` holder block | §2 via Transfer replay | **built**, verified pending RPC availability |
+| `rhc.features` holder block | §2 via Transfer replay | **built, tested offline**; not yet run against the chain |
 | `rhc.contracts` | §6 structural risk | **built, verified** |
 | `rhc.social` | §5.1, §5.2 Telegram | **built, verified** |
 | `rhc.wallets` | §1 ledger + point-in-time scoring | **built, verified** |
