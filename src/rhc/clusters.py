@@ -92,6 +92,7 @@ def find_pairs(
     same_block_weight: int = 3,
     max_wallets_per_token: int = 300,
     min_tokens_per_wallet: int = 2,
+    max_pairs: int = 5_000_000,
 ) -> list[Pair]:
     """Wallet pairs whose overlap far exceeds what independence predicts.
 
@@ -105,6 +106,11 @@ def find_pairs(
         same_block_weight: a same-block co-occurrence counts this many times
             towards the overlap, because arriving in the same 100ms block is not
             the same evidence as arriving in the same week.
+        max_pairs: abort rather than exhaust memory. Pair enumeration is
+            quadratic in a token's trader count, so a handful of very busy
+            tokens can produce tens of millions of pairs; failing loudly with a
+            suggested remedy beats being killed by the OOM reaper halfway
+            through a run that took an hour of node time to feed.
         max_wallets_per_token: tokens with more traders than this are skipped.
             Pair enumeration is quadratic in a token's trader count, and a pool
             with thousands of traders contributes mostly noise anyway — nothing
@@ -133,6 +139,14 @@ def find_pairs(
         for i, left in enumerate(ordered):
             for right in ordered[i + 1:]:
                 shared[(left, right)] += 1
+        if len(shared) > max_pairs:
+            raise MemoryError(
+                f"co-occurrence exceeded {max_pairs:,} distinct wallet pairs. "
+                f"Lower max_wallets_per_token (currently {max_wallets_per_token}) "
+                f"or raise min_tokens_per_wallet (currently {min_tokens_per_wallet}); "
+                f"the busiest tokens contribute the most pairs and the least "
+                f"information."
+            )
 
         # Same-block co-occurrence, computed per block rather than per token so
         # a wallet trading a token repeatedly cannot inflate it.

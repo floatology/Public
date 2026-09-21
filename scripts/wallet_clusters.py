@@ -91,7 +91,12 @@ def main() -> int:
         for token, trades in token_trades.items()
     }
     window = {t: v for t, v in window.items() if len(v) >= 2}
-    pairs = find_pairs(window, min_shared=args.min_shared, min_excess=args.min_excess)
+    try:
+        pairs = find_pairs(window, min_shared=args.min_shared,
+                           min_excess=args.min_excess)
+    except MemoryError as exc:
+        print(f"clustering aborted: {exc}", file=sys.stderr)
+        return 1
     entities = build_entities(pairs)
     print(f"  training window: {len(window):,} tokens, {len(pairs):,} pairs, "
           f"{len(set(entities.values())):,} entities over {len(entities):,} wallets",
@@ -129,8 +134,14 @@ def main() -> int:
               file=sys.stderr)
 
     # Descriptive map over all history. Explicitly not a model input.
-    full_pairs = find_pairs(token_trades, min_shared=args.min_shared,
-                            min_excess=args.min_excess)
+    try:
+        full_pairs = find_pairs(token_trades, min_shared=args.min_shared,
+                                min_excess=args.min_excess)
+    except MemoryError as exc:
+        # The training-window features above are already written; the
+        # descriptive map is a nice-to-have and must not discard them.
+        print(f"\n  all-history map skipped: {exc}", file=sys.stderr)
+        return 0
     full_entities = build_entities(full_pairs)
     grouped: dict[str, list[str]] = defaultdict(list)
     for wallet, entity in full_entities.items():
