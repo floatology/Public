@@ -103,6 +103,14 @@ def main() -> int:
                         help="skip pools whose CURRENT fdv is far below the "
                              "threshold; reconstructing their history cannot "
                              "put them above it without an implausible collapse")
+    parser.add_argument(
+        "--max-fdv-now", type=float, default=50_000_000,
+        help="skip the giants. A token worth hundreds of millions has been "
+             "above any sensible threshold for its whole tracked history, so "
+             "its crossing happened before the candle window opens and no "
+             "multiple can be measured. Fetching those first is how a sample "
+             "of 50 produced a median peak multiple of 1.09x for tokens that "
+             "had every one of them reached $2M.")
     parser.add_argument("--pool-cache", type=Path, default=Path("data/gt_pools.json"))
     parser.add_argument("--candle-cache", type=Path, default=Path("data/gt_candles.json"))
     parser.add_argument("--out", type=Path, default=Path("data/marketcap_study.json"))
@@ -127,7 +135,7 @@ def main() -> int:
 
         candidates = sorted(
             (a for a, x in with_fdv.items()
-             if number(x["fdv_usd"]) >= args.min_fdv_now),
+             if args.min_fdv_now <= number(x["fdv_usd"]) <= args.max_fdv_now),
             key=lambda a: -number(with_fdv[a]["fdv_usd"]),
         )[: args.max_fetch]
         print(f"fetching candles for {len(candidates):,} pools with FDV >= "
