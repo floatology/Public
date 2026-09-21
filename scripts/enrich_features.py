@@ -108,6 +108,13 @@ def main() -> int:
              "ledger needs a trade archive that older extractions did not "
              "write.",
     )
+    parser.add_argument("--crowd-features", type=Path,
+                        default=Path("data/parquet/crowd_features.parquet"),
+                        help="entity-corrected crowd counts from "
+                             "scripts/wallet_clusters.py")
+    parser.add_argument("--fragmentation", type=Path,
+                        default=Path("data/parquet/fragmentation.parquet"),
+                        help="per-token venue counts from scripts/fragmentation.py")
     args = parser.parse_args()
 
     con = duckdb.connect()
@@ -205,26 +212,28 @@ def main() -> int:
     # row gets nulls, not zeros: "this token's early buyers had no prior track
     # record" and "we never looked" are different states, and filling zero
     # would merge them into the first.
-    if args.wallet_features.exists():
-        wallet_rows = con.execute(
-            f"SELECT * FROM read_parquet('{args.wallet_features}')"
-        ).fetchall()
-        wallet_columns = [d[0] for d in con.description]
-        by_token = {
-            dict(zip(wallet_columns, r))["token"]: dict(zip(wallet_columns, r))
-            for r in wallet_rows
-        }
+    side_tables = [
+        ("wallet ledger", args.wallet_features),
+        ("crowd clustering", args.crowd_features),
+        ("venue fragmentation", args.fragmentation),
+    ]
+    for label, path in side_tables:
+        if not path.exists():
+            print(f"  {label}: {path} absent, skipped", file=sys.stderr)
+            continue
+        side_rows = con.execute(f"SELECT * FROM read_parquet('{path}')").fetchall()
+        side_columns = [d[0] for d in con.description]
+        by_token = {}
+        for row in side_rows:
+            fields = dict(zip(side_columns, row))
+            by_token[str(fields["token"]).lower()] = fields
         matched = 0
         for record in records:
-            found = by_token.get(record.get("token"))
+            found = by_token.get(str(record.get("token") or "").lower())
             if found:
                 matched += 1
                 record.update({k: v for k, v in found.items() if k != "token"})
-        print(f"  wallet ledger: {matched}/{len(records)} tokens matched",
-              file=sys.stderr)
-    else:
-        print(f"  wallet ledger: {args.wallet_features} absent, skipped",
-              file=sys.stderr)
+        print(f"  {label}: {matched}/{len(records)} tokens matched", file=sys.stderr)
 
     keys = sorted({k for r in records for k in r})
     table = pa.table({k: [r.get(k) for r in records] for k in keys})

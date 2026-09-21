@@ -48,6 +48,17 @@ $PY scripts/wallet_ledger.py --threshold "$THRESHOLD" || {
   echo "   wallet ledger did not complete; continuing without its columns" >&2
 }
 
+echo "== 3b. coordination clustering (offline) ================================"
+# Entity map from a training window, so a token is scored with links that
+# existed before it launched.
+$PY scripts/wallet_clusters.py || true
+
+echo "== 3c. venue fragmentation (offline, from the census) ==================="
+$PY scripts/fragmentation.py || true
+
+echo "== 3d. join the side tables ============================================="
+$PY scripts/enrich_features.py --no-social --no-contracts || true
+
 echo "== 4. column diagnostics ================================================"
 # Read this before believing anything below it.
 $PY scripts/describe_features.py
