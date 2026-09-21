@@ -71,6 +71,7 @@ MIN_CONSOLIDATION_PERIODS = 3   # two periods is a pause, not a base
 MAX_CONSOLIDATION_RANGE = 0.60  # high/low spread across the flag, as a fraction
 MAX_RETRACEMENT = 0.60          # give back more than this and the impulse failed
 MAX_VOLUME_DECAY = 1.0          # a flag dries up; rising volume is distribution
+BREAKOUT_BUFFER = 0.02          # how far above the base a close must go to end it
 
 
 def find_flags(
@@ -82,6 +83,7 @@ def find_flags(
     max_range: float = MAX_CONSOLIDATION_RANGE,
     max_retracement: float = MAX_RETRACEMENT,
     max_volume_decay: float = MAX_VOLUME_DECAY,
+    breakout_buffer: float = BREAKOUT_BUFFER,
 ) -> list[FlagPattern]:
     """Every impulse-then-consolidation in a series, breakout or not.
 
@@ -144,6 +146,15 @@ def find_flags(
         for probe in range(best_end + 1, len(candles)):
             span = candles[best_end + 1:probe + 1]
             closes = [c.close for c in span]
+            # A base must not swallow its own breakout. Consolidation happens
+            # BELOW the level the impulse reached -- that is what makes it
+            # consolidation -- so a close above that resistance is the break,
+            # not more base. Using the impulse's closing high as the ceiling is
+            # principled; using a fixed percentage above the base's own high
+            # would just be a tuned number, and a base that drifted up gently
+            # would end on noise.
+            if closes[-1] > impulse_high * (1.0 + breakout_buffer):
+                break
             high, low = max(closes), min(closes)
             mid = (high + low) / 2
             if mid <= 0:
