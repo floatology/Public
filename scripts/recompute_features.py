@@ -31,12 +31,10 @@ import duckdb
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from rhc.chain import USDG
+from rhc.chain import USDG, quote_scale
 from rhc.features import Trade, compute
 from rhc.manipulation import detect
 
-QUOTE_DECIMALS = {USDG.lower(): 6}
-DEFAULT_DECIMALS = 18
 
 # Columns that cannot be derived from trades. Carried over from the previous
 # table by pool address rather than recomputed.
@@ -110,7 +108,7 @@ def main() -> int:
         record["token"] = token
         record.update(detect(trades).to_dict())
 
-        scale = 10 ** QUOTE_DECIMALS.get(quote, DEFAULT_DECIMALS)
+        scale = quote_scale(quote)
         usd = 1.0 if quote == USDG.lower() else args.eth_usd
         for key in ("buy_quote_volume", "sell_quote_volume", "net_flow_quote",
                     "trade_size_median", "trade_size_p90"):

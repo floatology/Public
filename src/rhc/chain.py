@@ -34,6 +34,34 @@ RPC_MAX_LOGS = 10_000
 WETH = "0x0Bd7D308f8E1639FAb988df18A8011f41EAcAD73"
 USDG = "0x5fc5360D0400a0Fd4f2af552ADD042D716F1d168"
 
+# Decimals for every asset used as the quote side of a pool. This lives here
+# rather than in each script because two copies of it drifted once already, and
+# a wrong decimal scale is the bug class that produced a median price ratio of
+# 22,668x -- it does not look like an error, it looks like a finding.
+QUOTE_DECIMALS = {
+    USDG.lower(): 6,
+    WETH.lower(): 18,
+}
+
+
+class UnknownQuoteAsset(KeyError):
+    """A pool quoted in an asset whose decimals are not known.
+
+    Guessing 18 here would silently rescale every value for that asset. The
+    scripts stop instead.
+    """
+
+
+def quote_scale(address: str) -> int:
+    """The divisor that turns raw units of a quote asset into whole units."""
+    try:
+        return 10 ** QUOTE_DECIMALS[address.lower()]
+    except KeyError:
+        raise UnknownQuoteAsset(
+            f"no decimals recorded for quote asset {address}; add it to "
+            f"rhc.chain.QUOTE_DECIMALS rather than assuming 18"
+        ) from None
+
 _BROWSER_UA = (
     "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
     "(KHTML, like Gecko) Chrome/140.0.0.0 Safari/537.36"

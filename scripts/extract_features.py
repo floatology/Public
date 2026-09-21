@@ -22,12 +22,11 @@ import duckdb
 import pyarrow as pa
 import pyarrow.parquet as pq
 
-from rhc.chain import USDG, WETH
+from rhc.chain import QUOTE_DECIMALS, USDG, WETH, quote_scale
 from rhc.features import compute, decode_syncs, decode_v2_swaps, drop_dust
 from rhc.manipulation import detect
 from rhc.rpc import TOPIC_V2_SWAP, TOPIC_V2_SYNC, Rpc, RpcError
 
-QUOTE_DECIMALS = {USDG.lower(): 6, WETH.lower(): 18}
 
 
 def main() -> int:
@@ -118,7 +117,7 @@ def main() -> int:
             # Normalise the raw-unit volume fields to USD so they compare across
             # pools; the price ratios stay raw because decimals cancel within a
             # pool but not between them.
-            scale = 10 ** QUOTE_DECIMALS[quote]
+            scale = quote_scale(quote)
             usd = 1.0 if quote == USDG.lower() else args.eth_usd
             for key in ("buy_quote_volume", "sell_quote_volume", "net_flow_quote",
                         "launch_quote_reserve", "peak_quote_reserve", "final_quote_reserve",
