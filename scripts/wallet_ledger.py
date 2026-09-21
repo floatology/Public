@@ -151,7 +151,7 @@ def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--trades", type=Path, default=Path("data/parquet/trades.parquet"))
     parser.add_argument("--features", type=Path, default=Path("data/parquet/features.parquet"))
-    parser.add_argument("--label", default="peak_over_launch")
+    parser.add_argument("--label", default="realisable_peak_over_launch")
     parser.add_argument("--threshold", type=float, default=10.0)
     parser.add_argument("--horizon-blocks", type=int, default=250_000,
                         help="blocks after first trade at which a token's outcome "

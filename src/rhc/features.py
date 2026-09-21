@@ -196,6 +196,12 @@ class TokenFeatures:
     peak_price: float | None = None
     peak_block: int | None = None
     peak_over_launch: float | None = None
+    # Outcome measured against what could actually have been sold. See the
+    # block in `compute` for why the naive peak is not a usable label.
+    realisable_peak_over_launch: float | None = None
+    peak_trade_volume_share: float | None = None
+    volume_above_2x_share: float | None = None
+    volume_above_10x_share: float | None = None
     final_over_launch: float | None = None
     drawdown_from_peak: float | None = None
 
@@ -374,6 +380,41 @@ def compute(
             features.final_over_launch = priced[-1].price / features.launch_vwap
         if features.peak_price and features.peak_price > 0:
             features.drawdown_from_peak = 1.0 - priced[-1].price / features.peak_price
+
+        # --- outcome, measured against what could have been sold -------------
+        # `peak_over_launch` is the price of ONE trade, which in a thin pool can
+        # be three dollars of dust. A 10x nobody could sell into is not a 10x,
+        # and using it as the label teaches a model to find tokens that print a
+        # number rather than tokens that pay.
+        #
+        # The realisable version asks a different question: how high a price had
+        # a *tenth of the token's volume* trading at or above it? That is a
+        # price the market demonstrably absorbed size at, and it needs no
+        # reserve data, so it survives the offline rebuild.
+        #
+        # The share columns beside it say how thin the peak was. A token whose
+        # peak trade is 0.01% of its volume peaked on a rounding error.
+        by_price = sorted(priced, key=lambda t: -t.price)
+        peak_volume = sum(x.quote_amount for x in priced if x.price >= peak.price)
+        if total_volume > 0:
+            features.peak_trade_volume_share = peak_volume / total_volume
+            running = 0
+            target = total_volume * 0.1
+            for x in by_price:
+                running += x.quote_amount
+                if running >= target:
+                    if features.launch_vwap and features.launch_vwap > 0:
+                        features.realisable_peak_over_launch = (
+                            x.price / features.launch_vwap
+                        )
+                    break
+            if features.launch_vwap and features.launch_vwap > 0:
+                for multiple, field_name in ((2.0, "volume_above_2x_share"),
+                                             (10.0, "volume_above_10x_share")):
+                    threshold = features.launch_vwap * multiple
+                    setattr(features, field_name, sum(
+                        x.quote_amount for x in priced if x.price >= threshold
+                    ) / total_volume)
 
     # --- wallet behaviour ---
     wallet_volume: dict[str, int] = defaultdict(int)

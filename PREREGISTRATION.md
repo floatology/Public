@@ -152,3 +152,45 @@ never as a null.
    explicit test that pooling is valid. Free gas made manufactured volume free.
 5. Negative results are committed to this repository with the same prominence as
    positive ones.
+
+---
+
+## Amendment 2026-09-21: the outcome is measured against sellable volume
+
+**Made before any model has been fitted to the feature set.** No feature table
+existed when this was written — the first full extraction was still running —
+so nothing here is a change made after seeing a result.
+
+**The problem.** Every hypothesis above is scored against `peak_over_launch`,
+which is the price of **a single trade** divided by the launch VWAP. In a pool
+holding a few thousand dollars, that trade can be three dollars of dust. A 10x
+that nobody could sell into is not a 10x, and a label built from one carries the
+model straight to tokens that print a number rather than tokens that pay.
+
+**The replacement.** `realisable_peak_over_launch`: the highest price at or above
+which **a tenth of the token's total volume** traded. That is a price the market
+demonstrably absorbed size at. It needs no reserve data, so it survives the
+offline rebuild, and it is computed from the same trades as everything else.
+
+Three columns are reported beside it so the difference is always visible rather
+than assumed:
+
+- `peak_trade_volume_share` — how much of the token's volume traded at its peak
+  price. Near zero means the peak was a rounding error.
+- `volume_above_2x_share` and `volume_above_10x_share` — how much volume traded
+  at or above those multiples of the launch price.
+
+**What this changes.** `realisable_peak_over_launch` becomes the default label
+for `scripts/model_features.py` and `scripts/wallet_ledger.py`. `peak_over_launch`
+stays in the feature table and stays available as `--label`, because the gap
+between the two is itself informative and suppressing it would hide how often
+the old label was measuring dust.
+
+**What it does not change.** All four outcome columns are added to the model's
+`LEAKY` exclusion set. They describe where the price went; any of them as an
+input predicts the outcome from the outcome and returns an AUC near 1.0 that
+means nothing.
+
+**Standing rule 6, added here:** an outcome that could not have been realised at
+size is not an outcome. Any future label must state what volume traded at the
+price it claims.

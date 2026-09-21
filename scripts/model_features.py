@@ -30,7 +30,7 @@ Outcome and features are separated strictly: anything describing what happened
 predicts the outcome from the outcome.
 
 Usage:
-    python scripts/model_features.py --label peak_over_launch --threshold 10
+    python scripts/model_features.py --label realisable_peak_over_launch --threshold 10
 """
 from __future__ import annotations
 
@@ -48,6 +48,11 @@ LEAKY = {
     "peak_over_launch", "final_over_launch", "peak_price", "peak_block",
     "drawdown_from_peak", "peak_quote_reserve", "final_quote_reserve",
     "launch_vwap", "created_block",
+    # The realisable-outcome block. Every one of these describes where the
+    # price went, so any of them as an input predicts the outcome from the
+    # outcome and returns an AUC near 1.0 that means nothing.
+    "realisable_peak_over_launch", "peak_trade_volume_share",
+    "volume_above_2x_share", "volume_above_10x_share",
 }
 IDENTIFIERS = {"pool", "token", "quote_asset"}
 
@@ -55,7 +60,10 @@ IDENTIFIERS = {"pool", "token", "quote_asset"}
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument("--features", type=Path, default=Path("data/parquet/features.parquet"))
-    parser.add_argument("--label", default="peak_over_launch")
+    # The default label is the volume-backed one. See PREREGISTRATION.md
+    # amendment 3: a peak reached on a dust trade is not an outcome anyone
+    # could have taken.
+    parser.add_argument("--label", default="realisable_peak_over_launch")
     parser.add_argument("--threshold", type=float, default=10.0)
     parser.add_argument("--discovery-frac", type=float, default=0.5)
     parser.add_argument("--seed", type=int, default=20260921)
