@@ -1,4 +1,4 @@
-name: Daily lockup scan
+name: Daily capture
 
 # Builds the H1 time series. No free source carries historical liquidity
 # composition, so every missed day is a permanent gap. See docs/03-open-questions.md.
@@ -7,6 +7,13 @@ name: Daily lockup scan
 # That is acceptable for a daily signal. The HEALTHCHECK_URL secret (optional)
 # provides a dead-man's-switch so a silently failing workflow is distinguishable
 # from a quiet market.
+#
+# Two captures run here, both of them irrecoverable if missed:
+#   * stock-token lockup composition (H1)
+#   * the day's most active memecoin pools, whose volume-to-reserve ratios
+#     are only visible while the trading is happening
+# The second must never be able to cost the first, so it runs after the scan
+# and cannot fail the job.
 
 on:
   schedule:
@@ -17,7 +24,7 @@ permissions:
   contents: write
 
 concurrency:
-  group: daily-lockup-scan
+  group: daily-capture
   cancel-in-progress: false
 
 jobs:
@@ -41,18 +48,26 @@ jobs:
           HEALTHCHECK_URL: ${{ secrets.HEALTHCHECK_URL }}
         run: python scripts/scan_premiums.py
 
+      - name: Movers
+        # Non-fatal: GeckoTerminal throttling that kills this must not discard
+        # the lockup rows already captured above.
+        continue-on-error: true
+        run: python scripts/daily_movers.py
+
       - name: Commit snapshot
         run: |
           git config user.name  "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          if git status --porcelain -- data/premiums | grep -q .; then
-            rows=$(git diff --numstat -- data/premiums | awk '{s+=$1} END {print s+0}')
-          else
+          if ! git status --porcelain -- data/premiums data/movers | grep -q .; then
             echo "no new rows"
             exit 0
           fi
-          git add data/premiums
-          git commit -m "Daily lockup snapshot: ${rows} rows ($(date -u +%Y-%m-%d))"
+          # Each day writes a new file, and an untracked file has no diff to
+          # count, so the row count must be taken after staging, not before.
+          git add data/premiums data/movers
+          rows=$(git diff --cached --numstat -- data/premiums data/movers \
+                 | awk '{s+=$1} END {print s+0}')
+          git commit -m "Daily capture: ${rows} rows ($(date -u +%Y-%m-%d))"
           for attempt in 1 2 3 4; do
             if git pull --rebase origin "${GITHUB_REF_NAME}" \
                && git push origin "HEAD:${GITHUB_REF_NAME}"; then
