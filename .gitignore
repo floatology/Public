@@ -15,3 +15,10 @@ data/parquet/*
 .pytest_cache/
 .ruff_cache/
 *.egg-info/
+
+# Reproducible API caches, not results. These exist so an analysis can be
+# re-run without refetching; they are large, they go stale, and every number
+# derived from them is committed separately.
+data/gt_pools.json
+data/gt_candles.json
+data/live_candles.json
