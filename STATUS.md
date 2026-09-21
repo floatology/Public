@@ -69,6 +69,22 @@ Running log. Updated as work completes so progress survives an interrupted sessi
   the feature to read zero there.
 - **Offline feature rebuild** (`scripts/recompute_features.py`): features are a
   pure function of archived trades, so iterating on them no longer needs the node.
+- **Coordination clustering built** (`src/rhc/clusters.py`), catalogue 1.8,
+  by wallet co-occurrence rather than the funding graph the catalogue assumed —
+  funding needs one explorer call per wallet and does not scale. Overlap is
+  scored against an `a*b/N` null so it ranks coordination rather than activity,
+  and the entity map is trained on a pre-cutoff window so a token is scored with
+  links that existed before it launched.
+- **Venue fragmentation measured** (catalogue 4.7): across 644,581 tokens,
+  **98.9% have exactly one pool**. The chain's 272 factories fragment the
+  population, not the token, which retroactively validates the single-pool
+  extraction.
+- **Movers screen built** (`scripts/screen_movers.py`). On the first capture,
+  **32 of the 60 busiest pools fail a two-tell wash screen** — turnover that is
+  not physically possible at their depth, or trades far outnumbering traders.
+  AIForce turned over 1,139x its $3,709 of reserves in a day; TYPING 1,129x its
+  $15,949. The clean list is mostly stock tokens plus a handful of real
+  memecoins (PONS, CASHCAT).
 
 ## Research deliverable: what to actually track
 
