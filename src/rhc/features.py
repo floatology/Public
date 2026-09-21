@@ -433,3 +433,132 @@ def window(trades: list[Trade], *, start: int, end: int) -> list[Trade]:
     relative-volume metrics (catalogue 3.5, 3.6) without a separate code path.
     """
     return [t for t in trades if start <= t.block <= end]
+
+
+# --------------------------------------------------------------------------
+# Holder distribution (catalogue section 2)
+# --------------------------------------------------------------------------
+
+BURN_ADDRESSES = {
+    "0x0000000000000000000000000000000000000000",
+    "0x000000000000000000000000000000000000dead",
+}
+
+
+@dataclass
+class HolderFeatures:
+    """Holder distribution, reconstructed by replaying Transfer logs.
+
+    **Pools, burn addresses and the zero address must be excluded.** Verified
+    live on this chain: the largest holder of the token checked was the
+    liquidity pool itself at 6.82% of supply, and the second was the burn
+    address at 5.48%. Including them measures the pool rather than the holders,
+    and inflates every concentration statistic.
+    """
+
+    holder_count: int = 0
+    top1_share: float | None = None
+    top10_share: float | None = None
+    top100_share: float | None = None
+    hhi: float | None = None
+    gini: float | None = None
+    entropy: float | None = None
+    normalised_entropy: float | None = None
+    deployer_share: float | None = None
+    early_buyer_share: float | None = None
+    holders_with_dust_only: int = 0
+    transfer_count: int = 0
+
+    def to_dict(self) -> dict[str, Any]:
+        return asdict(self)
+
+
+def replay_balances(
+    transfer_logs: Iterable[dict],
+    *,
+    exclude: set[str] | None = None,
+    up_to_block: int | None = None,
+) -> tuple[dict[str, int], int]:
+    """Reconstruct balances at a block by replaying Transfer logs.
+
+    Returns (balances, transfers_applied). Mints appear as transfers from the
+    zero address and burns as transfers to it, so both fall out naturally
+    provided the zero address is excluded from the final tally rather than from
+    the replay itself.
+    """
+    excluded = {a.lower() for a in (exclude or set())} | BURN_ADDRESSES
+    balances: dict[str, int] = defaultdict(int)
+    applied = 0
+    for log in transfer_logs:
+        topics = log.get("topics") or []
+        if len(topics) < 3:
+            continue  # ERC-721 or a malformed log
+        if up_to_block is not None and int(log["blockNumber"], 16) > up_to_block:
+            break
+        amounts = _words(log.get("data") or "0x", 1)
+        if amounts is None:
+            continue
+        value = amounts[0]
+        if value <= 0:
+            continue
+        sender = _topic_address(topics[1])
+        recipient = _topic_address(topics[2])
+        balances[sender] -= value
+        balances[recipient] += value
+        applied += 1
+    return (
+        {a: b for a, b in balances.items() if b > 0 and a not in excluded},
+        applied,
+    )
+
+
+def holder_features(
+    balances: dict[str, int],
+    *,
+    transfer_count: int = 0,
+    deployer: str | None = None,
+    early_buyers: set[str] | None = None,
+    dust_fraction: float = 1e-6,
+) -> HolderFeatures:
+    """Concentration and distribution statistics over a balance map.
+
+    Args:
+        dust_fraction: holders below this share of supply are counted separately.
+            Airdropped dust otherwise inflates holder counts dramatically, which
+            is a cheap and common way to fake adoption.
+    """
+    features = HolderFeatures(transfer_count=transfer_count)
+    if not balances:
+        return features
+
+    total = sum(balances.values())
+    if total <= 0:
+        return features
+
+    amounts = sorted(balances.values(), reverse=True)
+    features.holder_count = len(amounts)
+    features.holders_with_dust_only = sum(1 for a in amounts if a / total < dust_fraction)
+
+    features.top1_share = amounts[0] / total
+    features.top10_share = sum(amounts[:10]) / total
+    features.top100_share = sum(amounts[:100]) / total
+
+    shares = [a / total for a in amounts]
+    features.hhi = sum(s * s for s in shares)
+    features.gini = _gini([float(a) for a in amounts])
+
+    # Shannon entropy in bits; normalised against a uniform distribution over
+    # the same holder count so it compares across tokens of different sizes.
+    entropy = -sum(s * math.log2(s) for s in shares if s > 0)
+    features.entropy = entropy
+    if len(amounts) > 1:
+        features.normalised_entropy = entropy / math.log2(len(amounts))
+
+    if deployer:
+        features.deployer_share = balances.get(deployer.lower(), 0) / total
+    if early_buyers:
+        cohort = {w.lower() for w in early_buyers}
+        features.early_buyer_share = sum(
+            b for a, b in balances.items() if a in cohort
+        ) / total
+    return features

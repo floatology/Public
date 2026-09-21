@@ -12,6 +12,12 @@ scanner therefore either wastes calls on quiet periods or dies on busy ones.
 `iter_logs` adapts its span against both failure modes, halving and retrying the
 same window so nothing is skipped, and growing again when a window comes back
 sparse.
+
+**The node rate-limits under concurrent load, and it does so globally rather
+than per-query.** Running a bulk scan alongside any other RPC work will starve
+the second caller: during a 10,000-pool extraction even a bare `eth_blockNumber`
+exhausted its retries. Treat bulk scans as exclusive — schedule them serially,
+or raise `min_interval` on every client sharing the node.
 """
 
 from __future__ import annotations
