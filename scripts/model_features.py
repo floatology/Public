@@ -54,6 +54,14 @@ LEAKY = {
     "realisable_peak_over_launch", "peak_trade_volume_share",
     "volume_above_2x_share", "volume_above_10x_share",
 }
+
+# Panel columns describing the forward window. These are the outcome by
+# construction, and leaving them in produced a confirmation-half AUC of
+# exactly 1.000 at all three thresholds -- with L1 selecting
+# forward_volume_share_at_peak and forward_end_multiple as its two largest
+# coefficients. A prefix rule rather than a list, because the next forward
+# column added to the panel would otherwise leak silently in the same way.
+LEAKY_PREFIXES = ("forward_",)
 IDENTIFIERS = {"pool", "token", "quote_asset", "protocol"}
 
 
@@ -81,6 +89,21 @@ def main() -> int:
              "observations when a token's label is constant across its "
              "decision points.",
     )
+    parser.add_argument(
+        "--drop", action="append", default=[],
+        help="exclude a feature by name. Use it to test whether a result "
+             "survives without a suspect column.")
+    parser.add_argument(
+        "--split", choices=("token", "time", "both"), default="token",
+        help="how to divide discovery from confirmation. 'token' holds out "
+             "unseen tokens; 'time' trains on the earlier period and tests "
+             "on the later one. A token split cannot detect a market-wide "
+             "regime effect, because both halves span the same calendar. A "
+             "time split has the opposite hole: the same token appears in "
+             "both halves at different dates, so the model memorises it. "
+             "'both' trains on the EARLY points of one set of tokens and "
+             "tests on the LATE points of different tokens, which is the "
+             "only combination with neither hole.")
     parser.add_argument("--discovery-frac", type=float, default=0.5)
     parser.add_argument("--seed", type=int, default=20260921)
     parser.add_argument("--out", type=Path, default=Path("data/model_result.json"))
@@ -131,6 +154,14 @@ def main() -> int:
         # silently exclude the strongest candidate in the catalogue.
         if any(t in dtype.upper() for t in ("INT", "DOUBLE", "FLOAT", "DECIMAL", "BOOL"))
         and name not in LEAKY and name not in IDENTIFIERS
+        and not name.startswith(LEAKY_PREFIXES)
+        # The label is never a feature. This was previously handled only by
+        # LEAKY happening to contain the default label, so any run with a
+        # custom --label predicted the outcome from the outcome and returned a
+        # confirmation AUC of exactly 1.000. A tripwire, not a subtlety: no
+        # honest model scores 1.000 on held-out data.
+        and name != args.label
+        and name not in set(args.drop)
     ]
     quoted = ", ".join(f'"{c}"' for c in feature_cols)
     has_token = any(name == "token" for name, *_ in described)
@@ -162,7 +193,48 @@ def main() -> int:
     distinct_tokens = sorted(set(tokens.tolist()))
     is_panel = has_token and len(distinct_tokens) < len(rows)
 
-    if is_panel:
+    if is_panel and args.split == "both":
+        # Neither hole: unseen tokens AND a later period. Each split alone
+        # leaks in the direction the other covers -- a token split lets a
+        # market-wide regime effect through, and a time split lets the model
+        # memorise tokens that appear in both periods.
+        if "decision_block" not in feature_cols:
+            print("a time-aware split needs decision_block in the table",
+                  file=sys.stderr)
+            return 1
+        block_column = 1 + feature_cols.index("decision_block")
+        blocks = np.array([float(r[block_column]) for r in rows])
+        cutoff = np.quantile(blocks, args.discovery_frac)
+        shuffled_tokens = list(distinct_tokens)
+        rng.shuffle(shuffled_tokens)
+        train_tokens = set(shuffled_tokens[:len(shuffled_tokens) // 2])
+        in_train_tokens = np.array([tok in train_tokens for tok in tokens])
+        discovery = np.flatnonzero(in_train_tokens & (blocks <= cutoff))
+        confirmation = np.flatnonzero(~in_train_tokens & (blocks > cutoff))
+        print(f"token+time split at block {cutoff:,.0f}: "
+              f"{len(discovery):,} early rows from {len(train_tokens)} tokens / "
+              f"{len(confirmation):,} late rows from "
+              f"{len(distinct_tokens) - len(train_tokens)} other tokens",
+              file=sys.stderr)
+    elif is_panel and args.split == "time":
+        # Out-of-time: train on the earlier decision points, test on the later
+        # ones. This is the only split that can catch a regime effect, where a
+        # feature predicts because the whole market moved in a period rather
+        # than because it says anything about a token.
+        if "decision_block" not in feature_cols and "decision_block" not in set(args.drop):
+            print("a time split needs decision_block in the table", file=sys.stderr)
+            return 1
+        blocks = np.array([
+            r[1 + feature_cols.index("decision_block")] if "decision_block" in feature_cols
+            else 0 for r in rows
+        ], dtype=float)
+        cutoff = np.quantile(blocks, args.discovery_frac)
+        discovery = np.flatnonzero(blocks <= cutoff)
+        confirmation = np.flatnonzero(blocks > cutoff)
+        print(f"time split at block {cutoff:,.0f}: "
+              f"{len(discovery):,} earlier / {len(confirmation):,} later",
+              file=sys.stderr)
+    elif is_panel:
         # A panel carries many decision points per token, and rows from one
         # token are heavily correlated -- overlapping windows on one
         # trajectory. Splitting by row puts the same token on both sides, and
@@ -315,6 +387,10 @@ def main() -> int:
             control_lifts.append(decile["lift"] if decile else None)
     control = float(np.mean(control_aucs)) if control_aucs else None
 
+    control_lift_mean = (
+        float(np.mean([c for c in control_lifts if c is not None]))
+        if any(c is not None for c in control_lifts) else None
+    )
     result = {
         "rows": len(rows), "features": len(feature_cols), "positives": positives,
         "label": args.label, "threshold": args.threshold, "seed": args.seed,
@@ -331,14 +407,20 @@ def main() -> int:
         "beats_control": (
             control is not None and max(real["lasso_auc"], real["gbm_auc"]) > control + 0.05
         ),
+        # AUC and lift can disagree, and the disagreement matters: AUC measures
+        # ranking over the whole set, lift measures the top decile you would
+        # actually buy. A model can rank well and still have no edge where it
+        # counts. Both are reported as verdicts so neither can be quoted alone.
+        "lift_beats_control": (
+            real.get("lift_top_decile") is not None
+            and control_lift_mean is not None
+            and real["lift_top_decile"]["lift"] > control_lift_mean
+        ),
         "lasso_selected": real["lasso_selected"],
         "gbm_top": real["gbm_top"],
         "lift_top_decile": real.get("lift_top_decile"),
         "lift_top_quintile": real.get("lift_top_quintile"),
-        "shuffled_lift_top_decile": (
-            float(np.mean([c for c in control_lifts if c is not None]))
-            if any(c is not None for c in control_lifts) else None
-        ),
+        "shuffled_lift_top_decile": control_lift_mean,
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, indent=2) + "\n")
@@ -350,7 +432,10 @@ def main() -> int:
         print(f"  shuffled labels : {control:.3f}   <-- the floor to beat",
               file=sys.stderr)
         verdict = "BEATS control" if result["beats_control"] else "does NOT beat control"
-        print(f"  verdict         : {verdict}", file=sys.stderr)
+        print(f"  AUC verdict     : {verdict}", file=sys.stderr)
+        lift_verdict = ("BEATS control" if result["lift_beats_control"]
+                        else "does NOT beat control")
+        print(f"  lift verdict    : {lift_verdict}", file=sys.stderr)
     decile = real.get("lift_top_decile")
     if decile:
         print(f"\n  buying the top {decile['k']} of {len(confirmation)} predictions:",

@@ -120,6 +120,45 @@ def test_leaky_columns_are_excluded():
         assert report["features"] == 10, report["features"]
 
 
+def test_the_label_is_never_a_feature():
+    """The label column must be excluded whatever it is called.
+
+    Exclusion used to rely on LEAKY happening to contain the default label, so
+    any run with a custom --label put the outcome in the feature matrix and
+    returned a confirmation AUC of exactly 1.000. That is the tripwire: no
+    honest model scores 1.000 on held-out data, and this test exists so the
+    next custom label cannot reintroduce it.
+    """
+    with tempfile.TemporaryDirectory() as tmp:
+        directory = Path(tmp)
+        table = directory / "signal.parquet"
+        write_table(table, with_signal=True)
+
+        # Re-publish the same table with the outcome under a name no exclusion
+        # list mentions.
+        import pyarrow.parquet as pq_read
+        existing = pq_read.read_table(table).to_pydict()
+        existing["custom_outcome"] = existing["realisable_peak_over_launch"]
+        renamed = directory / "renamed.parquet"
+        pq.write_table(pa.table(existing), renamed)
+
+        out = directory / "out.json"
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "model_features.py"),
+             "--features", str(renamed), "--label", "custom_outcome",
+             "--out", str(out)],
+            capture_output=True, text=True,
+        )
+        assert result.returncode == 0, result.stderr
+        report = json.loads(out.read_text())
+        selected = {name for name, _ in report["lasso_selected"]}
+        assert "custom_outcome" not in selected, selected
+        assert report["gbm_auc"] < 0.999, (
+            f"AUC {report['gbm_auc']} on held-out data means the label reached "
+            f"the feature matrix"
+        )
+
+
 if __name__ == "__main__":
     failures = 0
     for name, fn in sorted(globals().items()):

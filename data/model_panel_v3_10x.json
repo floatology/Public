@@ -1,0 +1,213 @@
+{
+  "rows": 9036,
+  "features": 81,
+  "positives": 581,
+  "label": "realisable_forward_multiple",
+  "threshold": 10.0,
+  "seed": 20260921,
+  "stratum": "unstratified",
+  "discovery_n": 4423,
+  "confirmation_n": 4613,
+  "split": "by_token",
+  "positive_tokens": 57,
+  "distinct_tokens": 673,
+  "lasso_auc": 0.803066073581713,
+  "gbm_auc": 0.8110102612574925,
+  "shuffled_label_auc": 0.5641325771350452,
+  "beats_control": true,
+  "lasso_selected": [
+    [
+      "sniper_buy_count",
+      -1.0247767336242728
+    ],
+    [
+      "decision_block",
+      0.9241155645556058
+    ],
+    [
+      "buy_usd_share",
+      -0.610257919422384
+    ],
+    [
+      "quiet_decile_share",
+      0.6047385249236281
+    ],
+    [
+      "buy_count_share",
+      -0.599547519734978
+    ],
+    [
+      "peak_hour_volume_share",
+      0.5199176998549483
+    ],
+    [
+      "active_blocks",
+      -0.5120550207476832
+    ],
+    [
+      "repeat_buyer_share",
+      -0.49649008021927177
+    ],
+    [
+      "bundle_volume_share",
+      0.33492899983112695
+    ],
+    [
+      "buy_share_rotation",
+      -0.2856555901868108
+    ],
+    [
+      "same_block_multibuy_count",
+      -0.28117603688718573
+    ],
+    [
+      "first_minute_trade_count",
+      0.26082736417678504
+    ],
+    [
+      "volume_acceleration",
+      0.2536682678582423
+    ],
+    [
+      "first_ten_buyer_volume_share",
+      0.22931809460110977
+    ],
+    [
+      "first_hour_unique_wallets",
+      -0.21537641707774957
+    ],
+    [
+      "repeated_amount_share",
+      0.20747546806541098
+    ],
+    [
+      "trade_size_p90",
+      0.17657499075462876
+    ],
+    [
+      "net_flow_quote",
+      -0.15838396002785918
+    ],
+    [
+      "launch_quote_reserve",
+      -0.14775416451186582
+    ],
+    [
+      "stealth_accumulator_count",
+      0.1412791006869617
+    ],
+    [
+      "first_minute_volume_share",
+      0.1227635439612332
+    ],
+    [
+      "history_blocks",
+      -0.10652647701647676
+    ],
+    [
+      "trade_size_gini",
+      -0.100635306831834
+    ],
+    [
+      "mean_hold_blocks",
+      0.09511832314962324
+    ],
+    [
+      "sell_quote_volume",
+      0.08929969673753725
+    ],
+    [
+      "bundle_size_uniformity",
+      0.07798941380434102
+    ],
+    [
+      "first_hour_trade_count",
+      0.06951972431456407
+    ],
+    [
+      "time_to_half_volume_frac",
+      0.05716200812874837
+    ],
+    [
+      "repeat_buyer_count",
+      -0.0036494060563500995
+    ]
+  ],
+  "gbm_top": [
+    [
+      "usd_minus_count_share",
+      0.1985469590140486
+    ],
+    [
+      "same_block_multibuy_count",
+      0.13903550474139048
+    ],
+    [
+      "never_sold_wallet_count",
+      0.08504927551717936
+    ],
+    [
+      "quiet_decile_share",
+      0.06370461380099078
+    ],
+    [
+      "peak_decile_volume_share",
+      0.0497126420733323
+    ],
+    [
+      "v3_depth_1pct_launch",
+      0.0490745623383208
+    ],
+    [
+      "repeat_buyer_count",
+      0.04849587413504928
+    ],
+    [
+      "trade_size_gini",
+      0.043887984586417336
+    ],
+    [
+      "v3_depth_observations",
+      0.027575431789157865
+    ],
+    [
+      "early_buy_share",
+      0.026698034820213566
+    ],
+    [
+      "first_minute_trade_count",
+      0.019614333899188617
+    ],
+    [
+      "stealth_accumulator_count",
+      0.017992958328714982
+    ],
+    [
+      "repeated_amount_share",
+      0.01689846146961089
+    ],
+    [
+      "buy_sell_value_ratio",
+      0.015648812719265125
+    ],
+    [
+      "buy_count_share",
+      0.014977407218213099
+    ]
+  ],
+  "lift_top_decile": {
+    "k": 461,
+    "hits": 147,
+    "precision": 0.3188720173535792,
+    "base_rate": 0.06980273141122914,
+    "lift": 4.568188248608884
+  },
+  "lift_top_quintile": {
+    "k": 922,
+    "hits": 194,
+    "precision": 0.210412147505423,
+    "base_rate": 0.06980273141122914,
+    "lift": 3.0143827218711685
+  },
+  "shuffled_lift_top_decile": 1.5948768137834932
+}

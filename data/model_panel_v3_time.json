@@ -1,0 +1,209 @@
+{
+  "rows": 9036,
+  "features": 81,
+  "positives": 581,
+  "label": "realisable_forward_multiple",
+  "threshold": 10.0,
+  "seed": 20260921,
+  "stratum": "unstratified",
+  "discovery_n": 4518,
+  "confirmation_n": 4518,
+  "split": "by_token",
+  "positive_tokens": 57,
+  "distinct_tokens": 673,
+  "lasso_auc": 0.7827818842496854,
+  "gbm_auc": 0.8637360360457644,
+  "shuffled_label_auc": 0.8729784707713939,
+  "beats_control": false,
+  "lasso_selected": [
+    [
+      "peak_hour_volume_share",
+      0.5674652610444724
+    ],
+    [
+      "trade_count",
+      0.4893299449847376
+    ],
+    [
+      "decision_block",
+      0.48303023357136915
+    ],
+    [
+      "first_minute_volume_share",
+      0.46014502534768753
+    ],
+    [
+      "max_wallet_buy_count",
+      -0.45658371895010547
+    ],
+    [
+      "same_block_multibuy_count",
+      -0.41573455557571415
+    ],
+    [
+      "buy_count_share",
+      -0.40894827801404027
+    ],
+    [
+      "peak_decile_volume_share",
+      -0.3794252312000216
+    ],
+    [
+      "first_hour_volume_share",
+      -0.3535702592252035
+    ],
+    [
+      "trade_size_p90",
+      -0.30044686897421513
+    ],
+    [
+      "history_blocks",
+      -0.28047261398314827
+    ],
+    [
+      "repeat_buyer_count",
+      0.26989147000152464
+    ],
+    [
+      "time_to_half_volume_frac",
+      0.23630146089678478
+    ],
+    [
+      "modal_amount_count",
+      0.22311051849836946
+    ],
+    [
+      "launch_quote_reserve",
+      -0.21911334512198113
+    ],
+    [
+      "buy_usd_share",
+      -0.216502175461298
+    ],
+    [
+      "first_hour_unique_wallets",
+      -0.17189810874987696
+    ],
+    [
+      "early_buy_share",
+      -0.16242071413291023
+    ],
+    [
+      "never_sold_wallet_count",
+      0.14442905737770634
+    ],
+    [
+      "sniper_buy_count",
+      -0.13319455118235746
+    ],
+    [
+      "quiet_decile_share",
+      0.09696523097778063
+    ],
+    [
+      "largest_liquidity_removal_pct",
+      -0.05504309934936506
+    ],
+    [
+      "trade_size_median",
+      -0.04466206783009188
+    ],
+    [
+      "buy_sell_value_ratio",
+      -0.03648334518751131
+    ],
+    [
+      "trade_size_gini",
+      -0.012465904773844941
+    ],
+    [
+      "bundle_max_buyers_in_block",
+      -0.008661724543257107
+    ],
+    [
+      "net_flow_quote",
+      -0.0038539002072597033
+    ],
+    [
+      "repeated_amount_share",
+      0.002744868839368491
+    ]
+  ],
+  "gbm_top": [
+    [
+      "never_sold_wallet_count",
+      0.2416640154126042
+    ],
+    [
+      "v3_depth_observations",
+      0.07012600381398339
+    ],
+    [
+      "first_minute_volume_share",
+      0.06504022102578197
+    ],
+    [
+      "v3_depth_1pct_launch",
+      0.04198780994939917
+    ],
+    [
+      "max_wallet_buy_count",
+      0.04093266706977262
+    ],
+    [
+      "v3_depth_1pct_median",
+      0.037715082535850875
+    ],
+    [
+      "decision_block",
+      0.034758058929329365
+    ],
+    [
+      "trade_count",
+      0.03314877322897397
+    ],
+    [
+      "trade_size_median",
+      0.0300048730692769
+    ],
+    [
+      "sell_count",
+      0.026462311096955925
+    ],
+    [
+      "repeated_amount_share",
+      0.022184660461986264
+    ],
+    [
+      "buy_quote_volume",
+      0.020097905543105064
+    ],
+    [
+      "repeat_buyer_share",
+      0.018760855573651165
+    ],
+    [
+      "repeat_buyer_count",
+      0.0178020757422139
+    ],
+    [
+      "same_block_multibuy_count",
+      0.017561746521089282
+    ]
+  ],
+  "lift_top_decile": {
+    "k": 451,
+    "hits": 201,
+    "precision": 0.44567627494456763,
+    "base_rate": 0.0787959274015051,
+    "lift": 5.656082612920103
+  },
+  "lift_top_quintile": {
+    "k": 903,
+    "hits": 230,
+    "precision": 0.2547065337763012,
+    "base_rate": 0.0787959274015051,
+    "lift": 3.2324834820262045
+  },
+  "shuffled_lift_top_decile": 6.3241640534382295
+}

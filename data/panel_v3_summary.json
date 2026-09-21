@@ -1,0 +1,21 @@
+{
+  "rows": 9036,
+  "tokens": 673,
+  "rows_per_token": 13.426448736998514,
+  "step_blocks": 864000,
+  "horizon_blocks": 12096000,
+  "horizon_days": 14.0,
+  "step_days": 1.0,
+  "data_end_block": 68533403,
+  "pools_too_short": 64,
+  "decision_points_without_forward_trades": 166442,
+  "pools_touching_the_censoring_boundary": 1075,
+  "reserve_coverage_pools": 0,
+  "depth_coverage_pools": 4247,
+  "base_rate_2x": 0.16356795042054006,
+  "positives_2x": 1478,
+  "base_rate_5x": 0.07990261177512173,
+  "positives_5x": 722,
+  "base_rate_10x": 0.06429836210712704,
+  "positives_10x": 581
+}
