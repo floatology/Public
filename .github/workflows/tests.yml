@@ -1,0 +1,33 @@
+name: Tests
+
+# The suite is pure computation over synthetic fixtures -- no network, no RPC,
+# no chain data -- so it runs in seconds and can gate every push safely. The
+# modelling harness tests are the point of running it in CI: they check that
+# the pipeline reports nothing on noise, and that property is easy to break
+# accidentally while adding features.
+
+on:
+  push:
+    branches: ["**"]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+
+      - name: Install
+        run: pip install --quiet httpx pydantic duckdb pyarrow python-dotenv scikit-learn numpy
+
+      - name: Run tests
+        run: python tests/run_all.py
