@@ -60,9 +60,23 @@ def main() -> int:
     parser.add_argument("--threshold", type=float, default=5.0)
     parser.add_argument("--min-candles", type=int, default=12)
     parser.add_argument("--out", type=Path, default=Path("data/pattern_scan_live.json"))
+    parser.add_argument("--cache", type=Path, default=Path("data/live_candles.json"),
+                        help="candles are cached so the analysis can be redone "
+                             "without refetching; re-used when present")
     args = parser.parse_args()
 
     started = time.time()
+    if args.cache.exists():
+        cached = json.loads(args.cache.read_text())
+        by_pool = {
+            address: [Candle(**c) for c in rows]
+            for address, rows in cached["candles"].items()
+        }
+        names = cached["names"]
+        print(f"re-using {len(by_pool)} cached pools from {args.cache}",
+              file=sys.stderr)
+        return analyse_all(by_pool, names, args)
+
     with GeckoTerminal() as gecko:
         pools = list_pools(gecko, args.pools)
         print(f"{len(pools)} pools listed; fetching candles", file=sys.stderr)
@@ -95,6 +109,16 @@ def main() -> int:
                 print(f"  {index}/{len(pools)} scanned, {len(by_pool)} usable, "
                       f"{time.time() - started:.0f}s", file=sys.stderr)
 
+    args.cache.parent.mkdir(parents=True, exist_ok=True)
+    args.cache.write_text(json.dumps({
+        "names": names,
+        "candles": {a: [c.__dict__ for c in cs] for a, cs in by_pool.items()},
+    }))
+    print(f"cached {len(by_pool)} pools to {args.cache}", file=sys.stderr)
+    return analyse_all(by_pool, names, args)
+
+
+def analyse_all(by_pool, names, args) -> int:
     print(f"{len(by_pool)} pools with >= {args.min_candles} daily candles\n",
           file=sys.stderr)
     if not by_pool:
