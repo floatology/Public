@@ -117,6 +117,29 @@ def main() -> int:
     cut = int(len(rows) * args.discovery_frac)
     discovery, confirmation = order[:cut], order[cut:]
 
+    def lift_at(scores, truth, fraction: float) -> dict[str, float | int] | None:
+        """Precision in the top `fraction` of predictions, against the base rate.
+
+        AUC answers "does the model rank winners above losers", which is not the
+        question anyone acts on. The question anyone acts on is "if I buy the
+        top decile, what share of them win, and is that better than buying at
+        random". A model can have a respectable AUC and a lift of 1.0, and it
+        would be worth nothing.
+        """
+        count = max(1, int(len(scores) * fraction))
+        if count >= len(scores):
+            return None
+        order = np.argsort(scores)[::-1][:count]
+        hits = int(truth[order].sum())
+        base = float(truth.mean())
+        if base <= 0:
+            return None
+        precision = hits / count
+        return {
+            "k": count, "hits": hits, "precision": precision,
+            "base_rate": base, "lift": precision / base,
+        }
+
     def fit_and_score(train_idx, test_idx, y_train, y_test):
         results = {}
         if len(set(y_train)) < 2 or len(set(y_test)) < 2:
@@ -145,6 +168,13 @@ def main() -> int:
             ((feature_cols[i], float(v)) for i, v in enumerate(importances) if v > 0),
             key=lambda p: -p[1],
         )[:15]
+
+        # Lift on whichever model ranked better, since the decision would use
+        # that one. Reported at the top decile and the top quintile.
+        best = trees if results["gbm_auc"] >= results["lasso_auc"] else lasso
+        scores = best.predict_proba(data[test_idx])[:, 1]
+        for fraction, name in ((0.1, "lift_top_decile"), (0.2, "lift_top_quintile")):
+            results[name] = lift_at(scores, np.asarray(y_test), fraction)
         return results
 
     real = fit_and_score(discovery, confirmation, labels[discovery], labels[confirmation])
@@ -154,12 +184,15 @@ def main() -> int:
 
     # Negative control: identical pipeline, labels shuffled. This is the floor.
     control_aucs = []
+    control_lifts: list[float | None] = []
     for trial in range(5):
         shuffled = labels.copy()
         np.random.default_rng(args.seed + trial).shuffle(shuffled)
         out = fit_and_score(discovery, confirmation, shuffled[discovery], shuffled[confirmation])
         if out:
             control_aucs.append(max(out["lasso_auc"], out["gbm_auc"]))
+            decile = out.get("lift_top_decile")
+            control_lifts.append(decile["lift"] if decile else None)
     control = float(np.mean(control_aucs)) if control_aucs else None
 
     result = {
@@ -173,6 +206,12 @@ def main() -> int:
         ),
         "lasso_selected": real["lasso_selected"],
         "gbm_top": real["gbm_top"],
+        "lift_top_decile": real.get("lift_top_decile"),
+        "lift_top_quintile": real.get("lift_top_quintile"),
+        "shuffled_lift_top_decile": (
+            float(np.mean([c for c in control_lifts if c is not None]))
+            if any(c is not None for c in control_lifts) else None
+        ),
     }
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(result, indent=2) + "\n")
@@ -185,6 +224,17 @@ def main() -> int:
               file=sys.stderr)
         verdict = "BEATS control" if result["beats_control"] else "does NOT beat control"
         print(f"  verdict         : {verdict}", file=sys.stderr)
+    decile = real.get("lift_top_decile")
+    if decile:
+        print(f"\n  buying the top {decile['k']} of {len(confirmation)} predictions:",
+              file=sys.stderr)
+        print(f"    {decile['hits']}/{decile['k']} win = {decile['precision']:.1%} "
+              f"against a {decile['base_rate']:.1%} base rate "
+              f"({decile['lift']:.2f}x lift)", file=sys.stderr)
+        if result["shuffled_lift_top_decile"] is not None:
+            print(f"    shuffled labels reach {result['shuffled_lift_top_decile']:.2f}x, "
+                  f"which is the floor", file=sys.stderr)
+
     print(f"\n  L1 kept {len(real['lasso_selected'])} of {len(feature_cols)} features",
           file=sys.stderr)
     for name, coef in real["lasso_selected"][:10]:
