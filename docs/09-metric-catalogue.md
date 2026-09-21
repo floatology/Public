@@ -94,13 +94,21 @@ prior-art project dropped its entire deployer-tracking tier for exactly this fai
 | 2.5 | **Gini coefficient** | Industry | Buildable now |
 | 2.6 | **Holder entropy** | Industry | Buildable now |
 | 2.7 | **Dev / deployer holding %** | **Published** (MELT: `dev_hold_pct`) | Buildable now |
-| 2.8 | **Early-buyer cohort share** | **Published** (MELT: `early_buyer` shares) | Buildable now |
-| 2.9 | **Average holding duration** | Industry — "Asset Level Belief" | Needs work |
+| 2.8 | **Early-buyer cohort share** | **Published** (MELT: `early_buyer` shares) | **Built** — from trades, no replay needed |
+| 2.9 | **Average holding duration** | Industry — "Asset Level Belief" | **Built** — with a stated limitation |
 
 **Critical implementation detail, verified today:** $WALLET's largest holder at **6.82% is the
 liquidity pool itself**, and the second at 5.48% is the burn address. Every concentration metric
 must exclude LP contracts, burn addresses and known bridges, or it measures the pool rather than
 the holders. Your original document flagged this and it is confirmed live.
+
+**2.9 needed less work than this catalogue assumed, and 2.8 needed none.** Both were marked as
+requiring a Transfer replay. A wallet's hold is the span from its first buy to its last sell, and
+both are in the swap logs already archived. The limitation is that this measures holding *in the
+pool*: a wallet that moved its tokens to another address reads as never having sold, so a diamond
+hand and an exit through a side door look identical. That is why `never_sold_share` is reported
+beside the durations rather than folded into them — the column should not pretend to know which
+it saw.
 
 **A caution on interpretation:** *Measuring Memecoin Fragility* finds top-100 concentration above
 70% is *common* and sometimes exceeds 90%. Concentration is close to the norm, not a

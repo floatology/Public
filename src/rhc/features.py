@@ -232,6 +232,16 @@ class TokenFeatures:
     peak_decile_volume_share: float | None = None
     quiet_decile_share: float | None = None
 
+    # --- holding behaviour (2.8, 2.9) ---
+    median_hold_blocks: float | None = None
+    mean_hold_blocks: float | None = None
+    round_trip_wallet_count: int = 0
+    round_trip_share: float | None = None
+    never_sold_wallet_count: int = 0
+    never_sold_share: float | None = None
+    first_ten_buyer_volume_share: float | None = None
+    first_ten_buyer_sell_share: float | None = None
+
     # --- lifecycle ---
     lifespan_blocks: int = 0
     active_blocks: int = 0
@@ -522,6 +532,57 @@ def compute(
                 deciles[slot] = deciles.get(slot, 0) + x.quote_amount
             features.peak_decile_volume_share = max(deciles.values()) / total_volume
             features.quiet_decile_share = 1.0 - len(deciles) / 10
+
+    # --- holding behaviour (catalogue 2.8, 2.9) ---
+    # 2.9 was listed as needing work because holding duration was assumed to
+    # require a Transfer replay. It does not: a wallet's hold is the span from
+    # its first buy to its last sell in this pool, and both are in the trades.
+    # What this measures is holding *in the pool*, so a wallet that moved its
+    # tokens elsewhere reads as never having sold. That is a real limitation
+    # and the reason never_sold_share is reported next to the durations rather
+    # than folded into them.
+    holds: list[int] = []
+    never_sold = 0
+    first_buy_block: dict[str, int] = {}
+    last_sell_block: dict[str, int] = {}
+    for x in ordered:
+        if not x.wallet:
+            continue
+        if x.is_buy:
+            first_buy_block.setdefault(x.wallet, x.block)
+        elif x.wallet in first_buy_block:
+            last_sell_block[x.wallet] = x.block
+    for wallet, bought_at in first_buy_block.items():
+        sold_at = last_sell_block.get(wallet)
+        if sold_at is None:
+            never_sold += 1
+        else:
+            holds.append(sold_at - bought_at)
+    if first_buy_block:
+        features.round_trip_wallet_count = len(holds)
+        features.round_trip_share = len(holds) / len(first_buy_block)
+        features.never_sold_wallet_count = never_sold
+        features.never_sold_share = never_sold / len(first_buy_block)
+    if holds:
+        ordered_holds = sorted(holds)
+        features.median_hold_blocks = float(ordered_holds[len(ordered_holds) // 2])
+        features.mean_hold_blocks = sum(holds) / len(holds)
+
+    # 2.8, the early-buyer cohort, measured by trade rather than by balance.
+    # The first ten buyers are the cohort that got in before anything was
+    # known; their share of volume says how much of the token they took, and
+    # their share of selling says whether they then distributed it.
+    cohort = [w for w, _ in sorted(first_buy_block.items(), key=lambda kv: kv[1])[:10]]
+    if cohort and total_volume > 0:
+        members = set(cohort)
+        features.first_ten_buyer_volume_share = (
+            sum(x.quote_amount for x in ordered if x.wallet in members) / total_volume
+        )
+        cohort_sells = sum(
+            x.quote_amount for x in ordered if x.wallet in members and not x.is_buy
+        )
+        if sell_volume > 0:
+            features.first_ten_buyer_sell_share = cohort_sells / sell_volume
 
     # --- lifecycle ---
     blocks = [t.block for t in trades]
