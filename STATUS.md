@@ -20,7 +20,8 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 | 8 | V3 stratum rate | **done** — differs significantly from V2 (z=3.28) |
 | 9 | Execution gate on H0 labels | next |
 | 10 | Graduation-threshold RDD | **withdrawn** — infeasible, no bonding curve on this chain |
-| 11 | H2: launch liquidity predicts 10x | pre-registered, running |
+| 11 | H2: launch liquidity predicts 10x | **resolved** — real but mechanical, not a signal |
+| 12 | H1 (lockup) — accruing daily, not testable yet | waiting on data |
 
 ---
 
@@ -41,7 +42,18 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 
 ## Conclusions so far
 
-Full write-up in `docs/07-conclusions.md`. Headlines:
+Write-ups in `docs/07-conclusions.md` and `docs/08-h2-result.md`. Headlines:
+
+0. **H2 resolved: launch liquidity is an arithmetic identity, not a signal.**
+   It replicates (chi-square 35.05 then 29.96, p<0.001, peak at exactly 1 WETH)
+   but the gradient collapses at a lower multiple — at 10x the top bucket
+   reaches 15% of the peak bucket's rate, at 2x it reaches 80%. That is
+   mechanism, not information: a 10x move needs the quote reserve to grow
+   ~3.16x, so a 5-WETH pool needs ~10x the buying a 0.5-WETH pool does. It
+   predicts which pools are *cheap to move*, not which tokens will run.
+   **The practical inversion matters more:** at 2x, the smallest pools convert
+   just **12%** of price wins into tradable ones; the largest convert **98%**.
+   Chasing big multiples in thin pools is chasing unfillable prices.
 
 1. **Execution cost dominates.** $500 round trip costs 0.90% on a $2.4M pool
    and **96.10% on a $20k pool**. Most chart winners were never reachable.
