@@ -1,0 +1,123 @@
+#!/usr/bin/env python3
+"""Extract the full feature set for a sample of pools, into Parquet.
+
+One scan per pool yields ~45 features (docs/09-metric-catalogue.md). Output
+feeds the correlation analysis, which answers how many genuinely independent
+dimensions those 45 represent before any model is fitted.
+
+Usage:
+    python scripts/extract_features.py --sample 2000 --kind v2
+"""
+from __future__ import annotations
+
+import argparse
+import hashlib
+import sys
+import time
+from pathlib import Path
+
+sys.path.insert(0, str(Path(__file__).resolve().parent.parent / "src"))
+
+import duckdb
+import pyarrow as pa
+import pyarrow.parquet as pq
+
+from rhc.chain import USDG, WETH
+from rhc.features import compute, decode_syncs, decode_v2_swaps, drop_dust
+from rhc.rpc import TOPIC_V2_SWAP, TOPIC_V2_SYNC, Rpc, RpcError
+
+QUOTE_DECIMALS = {USDG.lower(): 6, WETH.lower(): 18}
+
+
+def main() -> int:
+    parser = argparse.ArgumentParser(description=__doc__)
+    parser.add_argument("--census", type=Path, default=Path("data/parquet/pool_creations.parquet"))
+    parser.add_argument("--sample", type=int, default=2000)
+    parser.add_argument("--min-trades", type=int, default=10)
+    parser.add_argument("--dust-floor", type=float, default=0.01)
+    parser.add_argument("--eth-usd", type=float, default=2576.0)
+    parser.add_argument("--seed", default="rhc-features-v1")
+    parser.add_argument("--out", type=Path, default=Path("data/parquet/features.parquet"))
+    args = parser.parse_args()
+    args.out.parent.mkdir(parents=True, exist_ok=True)
+
+    quotes = list(QUOTE_DECIMALS)
+    con = duckdb.connect()
+    pools = con.execute(
+        """
+        SELECT pool, block,
+               lower(token0) IN $quotes AS quote_is_token0,
+               CASE WHEN lower(token0) IN $quotes THEN lower(token0) ELSE lower(token1) END AS quote,
+               CASE WHEN lower(token0) IN $quotes THEN lower(token1) ELSE lower(token0) END AS token
+        FROM read_parquet($census)
+        WHERE kind = 'v2' AND pool <> '' AND length(pool) = 42
+          AND (lower(token0) IN $quotes OR lower(token1) IN $quotes)
+        """,
+        {"census": str(args.census), "quotes": quotes},
+    ).fetchall()
+
+    sample = sorted(pools, key=lambda r: hashlib.sha256(f"{args.seed}:{r[0]}".encode()).hexdigest())
+    sample = sample[: args.sample]
+    print(f"population {len(pools):,}; sampling {len(sample)}", file=sys.stderr)
+
+    rows: list[dict] = []
+    skipped = 0
+    started = time.time()
+    with Rpc() as rpc:
+        head = rpc.block_number()
+        for index, (pool, created, quote_is_token0, quote, token) in enumerate(sample, start=1):
+            if index % 200 == 0:
+                rate = index / max(1e-9, time.time() - started)
+                print(f"  {index}/{len(sample)}  kept={len(rows)} skipped={skipped} "
+                      f"{rate:.1f}/s", file=sys.stderr)
+            try:
+                swap_logs = list(rpc.iter_logs(from_block=created, to_block=head,
+                                               topics=[[TOPIC_V2_SWAP]], address=pool,
+                                               initial_span=head))
+                if len(swap_logs) < args.min_trades:
+                    skipped += 1
+                    continue
+                sync_logs = list(rpc.iter_logs(from_block=created, to_block=head,
+                                               topics=[[TOPIC_V2_SYNC]], address=pool,
+                                               initial_span=head))
+            except RpcError:
+                skipped += 1
+                continue
+
+            flag = bool(quote_is_token0)
+            trades = drop_dust(decode_v2_swaps(swap_logs, quote_is_token0=flag), args.dust_floor)
+            if len(trades) < args.min_trades:
+                skipped += 1
+                continue
+            syncs = decode_syncs(sync_logs, quote_is_token0=flag)
+
+            feats = compute(pool=pool, quote_asset=quote, created_block=created,
+                            trades=trades, syncs=syncs, head_block=head)
+            record = feats.to_dict()
+            record["token"] = token
+            # Normalise the raw-unit volume fields to USD so they compare across
+            # pools; the price ratios stay raw because decimals cancel within a
+            # pool but not between them.
+            scale = 10 ** QUOTE_DECIMALS[quote]
+            usd = 1.0 if quote == USDG.lower() else args.eth_usd
+            for key in ("buy_quote_volume", "sell_quote_volume", "net_flow_quote",
+                        "launch_quote_reserve", "peak_quote_reserve", "final_quote_reserve",
+                        "trade_size_median", "trade_size_p90"):
+                if record.get(key) is not None:
+                    record[key] = record[key] / scale * usd
+            rows.append(record)
+
+    if not rows:
+        print("no pools yielded features", file=sys.stderr)
+        return 1
+
+    keys = sorted({k for r in rows for k in r})
+    table = pa.table({k: [r.get(k) for r in rows] for k in keys})
+    pq.write_table(table, args.out, compression="zstd")
+    print(f"\n{len(rows)} pools x {len(keys)} features -> {args.out} "
+          f"in {time.time() - started:.0f}s", file=sys.stderr)
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
