@@ -215,6 +215,19 @@ class TokenFeatures:
     self_trade_volume_share: float | None = None
     wash_suspect_score: float | None = None
 
+    # --- velocity and time shape (3.5, 3.6) ---
+    first_hour_trade_count: int = 0
+    first_hour_volume_share: float | None = None
+    first_hour_unique_wallets: int = 0
+    trade_acceleration: float | None = None
+    volume_acceleration: float | None = None
+    early_buy_share: float | None = None
+    late_buy_share: float | None = None
+    buy_share_rotation: float | None = None
+    time_to_half_volume_frac: float | None = None
+    peak_hour_volume_share: float | None = None
+    quiet_hour_share: float | None = None
+
     # --- lifecycle ---
     lifespan_blocks: int = 0
     active_blocks: int = 0
@@ -257,6 +270,7 @@ def compute(
     sniper_window_blocks: int = 50,
     stealth_max_pool_share: float = 0.02,
     stealth_min_buys: int = 3,
+    hour_blocks: int = 36_000,
 ) -> TokenFeatures:
     """Compute every feature from one pool's decoded history.
 
@@ -267,6 +281,9 @@ def compute(
             quote reserve counts as "not moving the price" — the operational
             form of accumulating without showing size.
         stealth_min_buys: how many such buys before a wallet counts as one.
+        hour_blocks: blocks per notional hour for the velocity window. At the
+            chain's ~100ms target this is 36,000, and it is a parameter rather
+            than a constant because block time is a target, not a guarantee.
     """
     features = TokenFeatures(pool=pool, quote_asset=quote_asset, created_block=created_block)
     if not trades:
@@ -414,6 +431,71 @@ def compute(
         1.0 - min(1.0, features.unique_wallets / max(1, features.trade_count)),
     ]
     features.wash_suspect_score = sum(components) / len(components)
+
+    # --- velocity and time shape (catalogue 3.5, 3.6) ---
+    # All of these are shape, not level: two tokens with identical total volume
+    # can differ entirely in whether that volume arrived in the first minute or
+    # accumulated over a week, and only the shape distinguishes a launch that
+    # was worked from one that was dumped into.
+    ordered = sorted(trades, key=lambda x: (x.block, x.log_index))
+    first_block = ordered[0].block
+    last_block = ordered[-1].block
+    span = last_block - first_block
+
+    first_hour = [x for x in ordered if x.block <= first_block + hour_blocks]
+    features.first_hour_trade_count = len(first_hour)
+    features.first_hour_unique_wallets = len({x.wallet for x in first_hour if x.wallet})
+    if total_volume > 0:
+        features.first_hour_volume_share = (
+            sum(x.quote_amount for x in first_hour) / total_volume
+        )
+
+    if span > 0:
+        midpoint = first_block + span / 2
+        early = [x for x in ordered if x.block <= midpoint]
+        late = [x for x in ordered if x.block > midpoint]
+        # Ratios of late to early, so >1 means the token got busier as it aged.
+        # Guarded rather than clamped: an empty early half cannot happen (the
+        # first trade defines the window) but an empty late half can.
+        if early:
+            features.trade_acceleration = len(late) / len(early)
+            early_volume = sum(x.quote_amount for x in early)
+            if early_volume > 0:
+                features.volume_acceleration = (
+                    sum(x.quote_amount for x in late) / early_volume
+                )
+            features.early_buy_share = sum(1 for x in early if x.is_buy) / len(early)
+        if late:
+            features.late_buy_share = sum(1 for x in late if x.is_buy) / len(late)
+        if features.early_buy_share is not None and features.late_buy_share is not None:
+            # Negative means the crowd turned from buying to selling. This is
+            # the flow rotation the Asset Weight framework is really about.
+            features.buy_share_rotation = features.late_buy_share - features.early_buy_share
+
+        if total_volume > 0:
+            # How far into the token's life half its volume had traded. Near
+            # zero is a launch spike that never recovered; near one is a token
+            # whose activity came late.
+            running = 0
+            half = total_volume / 2
+            for x in ordered:
+                running += x.quote_amount
+                if running >= half:
+                    features.time_to_half_volume_frac = (x.block - first_block) / span
+                    break
+
+            # Busiest hour as a share of all volume, and the share of hours
+            # with no trades at all. Together these separate a token that
+            # traded steadily from one that had a single hour and then silence.
+            buckets: dict[int, int] = {}
+            for x in ordered:
+                buckets[(x.block - first_block) // hour_blocks] = (
+                    buckets.get((x.block - first_block) // hour_blocks, 0) + x.quote_amount
+                )
+            if buckets:
+                features.peak_hour_volume_share = max(buckets.values()) / total_volume
+                total_hours = span // hour_blocks + 1
+                features.quiet_hour_share = 1.0 - len(buckets) / total_hours
 
     # --- lifecycle ---
     blocks = [t.block for t in trades]
