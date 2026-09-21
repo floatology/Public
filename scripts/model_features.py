@@ -74,6 +74,13 @@ def main() -> int:
              "'pooled' is that explicit choice and is recorded in the "
              "output.",
     )
+    parser.add_argument(
+        "--min-positive-tokens", type=int, default=15,
+        help="panel input only: distinct tokens that must carry a positive "
+             "before a fit is attempted. Positive ROWS are not independent "
+             "observations when a token's label is constant across its "
+             "decision points.",
+    )
     parser.add_argument("--discovery-frac", type=float, default=0.5)
     parser.add_argument("--seed", type=int, default=20260921)
     parser.add_argument("--out", type=Path, default=Path("data/model_result.json"))
@@ -126,8 +133,10 @@ def main() -> int:
         and name not in LEAKY and name not in IDENTIFIERS
     ]
     quoted = ", ".join(f'"{c}"' for c in feature_cols)
+    has_token = any(name == "token" for name, *_ in described)
+    token_select = '"token", ' if has_token else "'' AS token, "
     rows = con.execute(
-        f'SELECT {quoted}, "{args.label}" FROM read_parquet(?) '
+        f'SELECT {token_select}{quoted}, "{args.label}" FROM read_parquet(?) '
         f'WHERE "{args.label}" IS NOT NULL{stratum_filter}',
         [str(args.features)],
     ).fetchall()
@@ -138,7 +147,8 @@ def main() -> int:
               file=sys.stderr)
         return 1
 
-    data = np.array([[np.nan if v is None else float(v) for v in r[:-1]] for r in rows])
+    tokens = np.array([r[0] for r in rows])
+    data = np.array([[np.nan if v is None else float(v) for v in r[1:-1]] for r in rows])
     labels = np.array([1 if float(r[-1]) >= args.threshold else 0 for r in rows])
 
     positives = int(labels.sum())
@@ -149,9 +159,63 @@ def main() -> int:
         return 1
 
     rng = np.random.default_rng(args.seed)
-    order = rng.permutation(len(rows))
-    cut = int(len(rows) * args.discovery_frac)
-    discovery, confirmation = order[:cut], order[cut:]
+    distinct_tokens = sorted(set(tokens.tolist()))
+    is_panel = has_token and len(distinct_tokens) < len(rows)
+
+    if is_panel:
+        # A panel carries many decision points per token, and rows from one
+        # token are heavily correlated -- overlapping windows on one
+        # trajectory. Splitting by row puts the same token on both sides, and
+        # the held-out score stops meaning anything. The split is therefore by
+        # TOKEN, so no token appears in both halves.
+        print(f"panel input: {len(rows):,} rows over {len(distinct_tokens):,} "
+              f"tokens ({len(rows)/len(distinct_tokens):.1f} each). Splitting by "
+              f"token, not by row.", file=sys.stderr)
+        if len(distinct_tokens) < 20:
+            print(f"only {len(distinct_tokens)} tokens. A token-level split of "
+                  f"this puts ~{len(distinct_tokens)//2} on each side, where any "
+                  f"score is noise. Refusing.", file=sys.stderr)
+            return 1
+        # The row count is an illusion if the label barely varies within a
+        # token. When a token's decision points are all positive or all
+        # negative, "predict the label" collapses into "identify the token",
+        # and a tree with enough features does that perfectly -- 464 rows over
+        # 29 tokens produced GBM AUC 0.995 with every positive coming from
+        # four tokens. The effective sample size is the number of tokens
+        # carrying positives, not the number of positive rows.
+        positive_tokens = sorted({
+            tok for tok, flag in zip(tokens.tolist(), labels.tolist()) if flag
+        })
+        constant = sum(
+            1 for tok in distinct_tokens
+            if len(set(labels[tokens == tok].tolist())) == 1
+        )
+        print(f"  {len(positive_tokens)} of {len(distinct_tokens)} tokens carry "
+              f"any positive; {constant} tokens have a constant label "
+              f"({constant / len(distinct_tokens):.0%})", file=sys.stderr)
+        if len(positive_tokens) < args.min_positive_tokens:
+            print(f"\nonly {len(positive_tokens)} tokens carry a positive. The "
+                  f"{int(labels.sum())} positive rows are {len(positive_tokens)} "
+                  f"trajectories seen repeatedly, so the effective sample size is "
+                  f"{len(positive_tokens)}, not {int(labels.sum())}. Any model "
+                  f"fitted here learns to recognise those tokens. Refusing; raise "
+                  f"--min-positive-tokens only if you know why.", file=sys.stderr)
+            return 1
+
+        shuffled_tokens = list(distinct_tokens)
+        rng.shuffle(shuffled_tokens)
+        cut_tokens = set(shuffled_tokens[:int(len(shuffled_tokens) * args.discovery_frac)])
+        mask = np.array([tok in cut_tokens for tok in tokens])
+        discovery = np.flatnonzero(mask)
+        confirmation = np.flatnonzero(~mask)
+    else:
+        order = rng.permutation(len(rows))
+        cut = int(len(rows) * args.discovery_frac)
+        discovery, confirmation = order[:cut], order[cut:]
+
+    if len(discovery) == 0 or len(confirmation) == 0:
+        print("a split half is empty; cannot score.", file=sys.stderr)
+        return 1
 
     def lift_at(scores, truth, fraction: float) -> dict[str, float | int] | None:
         """Precision in the top `fraction` of predictions, against the base rate.
@@ -222,8 +286,28 @@ def main() -> int:
     control_aucs = []
     control_lifts: list[float | None] = []
     for trial in range(5):
-        shuffled = labels.copy()
-        np.random.default_rng(args.seed + trial).shuffle(shuffled)
+        trial_rng = np.random.default_rng(args.seed + trial)
+        if is_panel:
+            # Shuffle labels BETWEEN tokens, keeping each token's own sequence
+            # intact. A row-wise shuffle destroys the within-token correlation
+            # that makes a panel hard, so the control would be easier to beat
+            # than the real task and the floor would be set too low.
+            by_token: dict[str, np.ndarray] = {}
+            for tok in distinct_tokens:
+                by_token[tok] = labels[tokens == tok]
+            donors = list(distinct_tokens)
+            trial_rng.shuffle(donors)
+            swap = dict(zip(distinct_tokens, donors))
+            shuffled = labels.copy()
+            for tok in distinct_tokens:
+                target = np.flatnonzero(tokens == tok)
+                donor = by_token[swap[tok]]
+                # Donor sequences differ in length; tile or truncate to fit.
+                take = np.resize(donor, len(target)) if len(donor) else labels[target]
+                shuffled[target] = take
+        else:
+            shuffled = labels.copy()
+            trial_rng.shuffle(shuffled)
         out = fit_and_score(discovery, confirmation, shuffled[discovery], shuffled[confirmation])
         if out:
             control_aucs.append(max(out["lasso_auc"], out["gbm_auc"]))
@@ -236,6 +320,12 @@ def main() -> int:
         "label": args.label, "threshold": args.threshold, "seed": args.seed,
         "stratum": args.stratum or "unstratified",
         "discovery_n": len(discovery), "confirmation_n": len(confirmation),
+        "split": "by_token" if is_panel else "by_row",
+        "positive_tokens": (
+            len({tok for tok, flag in zip(tokens.tolist(), labels.tolist()) if flag})
+            if has_token else None
+        ),
+        "distinct_tokens": len(distinct_tokens),
         "lasso_auc": real["lasso_auc"], "gbm_auc": real["gbm_auc"],
         "shuffled_label_auc": control,
         "beats_control": (

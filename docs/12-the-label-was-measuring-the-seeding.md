@@ -98,3 +98,71 @@ The panel's forward multiple supersedes it.
 decision point.** The extractor now archives `Sync` rows alongside trades, but
 the 592-pool run predates that, so every liquidity column is absent in this
 panel. Future batches carry it.
+
+---
+
+# Addendum: the panel's row count is an illusion
+
+Written immediately after the above, because the panel produced a result that
+looked spectacular and was not. This is the sixth time in this project.
+
+## What it reported
+
+Fitting the 464-row panel at a 10x threshold, split by token:
+
+| | |
+|---|---|
+| Gradient boosting AUC | **0.995** |
+| L1 logistic AUC | **0.111** |
+| Shuffled-label control | **0.676** |
+| Lift, top decile | **9.6x** |
+| `beats_control` | **True** |
+
+Taken at face value that is a near-perfect model with a tenfold lift.
+
+## Why every one of those numbers is a symptom
+
+**The control sits at 0.676, not 0.5.** A negative control that scores 0.68 from
+shuffled labels is announcing that the procedure can reach 0.68 knowing nothing.
+That is the alarm, and it went off correctly.
+
+**The two models disagree violently.** 0.995 against 0.111 is not two views of
+one signal. An AUC of 0.111 is strongly *inverted* — the linear model learned
+the opposite relationship in the discovery half to the one that holds in the
+confirmation half, which is what happens when the halves are effectively two
+different small samples rather than two draws from one population.
+
+**And the reason is in the labels.** Of 29 tokens, **26 have a label that never
+changes across any of their decision points**, and only **4 tokens carry a
+positive at all**. All 35 positive rows are four trajectories, observed
+repeatedly.
+
+So "predict the label" collapses into "identify the token". With 86 features and
+16 rows per token, a tree does that perfectly, which is precisely what an AUC of
+0.995 means here. The token-level split prevented a token appearing in both
+halves — it cannot prevent there being only four positive tokens in total.
+
+**The effective sample size is 4.** Not 464, not 35.
+
+## The guard
+
+`scripts/model_features.py` now counts distinct tokens carrying positives on any
+panel input, reports how many tokens have a constant label, and **refuses to fit
+below 15 positive tokens**. It also prints the concentration before refusing, so
+the reason is visible rather than inferred.
+
+This is the same lesson as the activity-matched binomial test in the wallet
+ledger, arriving from a different direction: a count of events is not a count of
+independent observations, and the difference is where results come from.
+
+## What this does not say
+
+It does not say the panel design is wrong. The design is right, and the
+diagnosis above is only possible *because* the panel carries the token identity
+and the split respects it. What it says is that **V2 cannot supply the sample**,
+which the graveyard numbers above already implied — 29 scoreable tokens was
+never going to be enough, and four positive ones certainly is not.
+
+The V3 extraction in flight is the test of whether this is a design problem or a
+population problem. On the evidence so far — a 41% keep rate against V2's 6%, on
+twice the population — it is a population problem.
