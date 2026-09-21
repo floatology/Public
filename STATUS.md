@@ -22,6 +22,8 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 | 10 | Graduation-threshold RDD | **withdrawn** — infeasible, no bonding curve on this chain |
 | 11 | H2: launch liquidity predicts 10x | **resolved** — real but mechanical, not a signal |
 | 12 | H1 (lockup) — accruing daily, not testable yet | waiting on data |
+| 13 | **Metric catalogue** — 50+ signals researched and prioritised | **done** — `docs/09-metric-catalogue.md` |
+| 14 | Wallet ledger (Phase 1 of the catalogue) | next |
 
 ---
 
@@ -39,6 +41,26 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 - Execution model built on KyberSwap aggregator quotes (`src/rhc/execution.py`),
   with the liquidity floor measured (`docs/04-execution-and-data-findings.md`).
 - Official archive RPC found and recorded in `src/rhc/chain.py`.
+
+## Research deliverable: what to actually track
+
+`docs/09-metric-catalogue.md` — 50+ metrics across seven domains, each rated for evidence
+strength, feasibility on this chain, and how much is already public.
+
+**The headline:** trader profitability is a *published* result, not an instinct. arXiv 2601.08641
+reports **AUC 0.70–0.72** predicting whether a wallet's next trade profits, smart-money wallets
+averaging **14%** per trade, copiers netting **~3%** after frictions. The nearest prior art to this
+project managed AUC 0.54. The whale-tracking instinct was aimed at the right target.
+
+Two counter-intuitive findings from the literature:
+- **Profitable traders buy *below* the 75th percentile of size.** Large buyers are not the smart
+  ones — which points straight at the stealth-accumulation idea.
+- **Bump-bot presence carried the highest feature importance of any variable** in the published
+  LASSO model, above every historical-performance feature.
+
+**Two vendor changes since the original document:** LunarCrush's free tier is now market-data only
+(social requires payment), as is Santiment. **Telegram is the exception** — public channel member
+counts and view counts scrape over plain HTTP with no key.
 
 ## Conclusions so far
 
