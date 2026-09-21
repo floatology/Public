@@ -1,155 +1,219 @@
-# Status
+# Conclusions From the Data So Far
 
-Running log. Updated as work completes so progress survives an interrupted session.
+**Date:** 2026-09-20
+**Basis:** full-chain census (715,343 pool creations), two 1,200-pool stratified samples, one
+full stock-token snapshot (174 tokens), and live execution measurements.
 
-**Branch:** `claude/document-analysis-review-dkjfu4`
-
----
-
-## Build order (from `docs/03-open-questions.md` §3)
-
-| # | Item | Status |
-|---|---|---|
-| 1 | Lockup scanner running daily | **done** — 176-token universe, daily workflow |
-| 2 | Execution model via aggregator quotes | **done** — KyberSwap, raw-unit accounting |
-| 3 | Population-scan data source | **done** — official RPC serves free archive |
-| 4 | Read rebuilt `robinhood-screener` (2026-09-12) | **done** — lessons folded into PREREGISTRATION |
-| 5 | Check retail redemption latency | **done** — undisclosed; needs a question to Robinhood |
-| 6 | H0 population frame | **done** — 715,343 pool creations censused |
-| 7 | H0 power analysis | **done** — `docs/06-power-analysis.md` |
-| 8 | V3 stratum rate | **done** — differs significantly from V2 (z=3.28) |
-| 9 | Execution gate on H0 labels | **done** — capacity ceiling measured |
-| 10 | Graduation-threshold RDD | not started |
+This is what the measurements actually support — separated from what the master document assumed
+and from what remains untested.
 
 ---
 
-## Done
+## 1. The single most important finding: execution cost dominates everything
 
-- Critical review of the master document, every external claim verified
-  (`docs/01-critique-and-revision.md`).
-- Stock-token premium arbitrage retracted with measurements
-  (`docs/02-stock-token-premium-findings.md`).
-- Open questions and three withdrawn claims recorded
-  (`docs/03-open-questions.md`).
-- Working chain access: Blockscout client with Cloudflare workaround,
-  canonical token identity verification, premium/lockup scanner.
-- `PREREGISTRATION.md` committed ahead of any confirmatory pull.
-- Execution model built on KyberSwap aggregator quotes (`src/rhc/execution.py`),
-  with the liquidity floor measured (`docs/04-execution-and-data-findings.md`).
-- Official archive RPC found and recorded in `src/rhc/chain.py`.
+Round-trip cost for a $500 clip, measured live through a routing aggregator:
 
-## Conclusions so far
+| Pool reserves | Round-trip cost |
+|---:|---:|
+| $2,410,406 (BONER) | **0.90%** |
+| $36,325 (VIAGRA) | 7.82% |
+| $25,546 (WET) | 10.73% |
+| $19,544 (INUT) | **96.10%** |
 
-Full write-up in `docs/07-conclusions.md`. Headlines:
+**Four orders of magnitude of variation, and the curve is brutally non-linear.** A token with
+$20k of liquidity costs 96% of your stake to enter and exit. No signal, holding period or exit
+rule survives that.
 
-1. **Hard capacity ceiling between $500 and $2,000 per position.** Priced at
-   each winner's actual peak using reserves from its own `Sync` logs: at $500 a
-   clip, **81% of price winners were tradable**; at $2,000, 33%; **at $10,000,
-   zero of 21**. This bounds capital, not signal quality — a perfect predictor
-   hits the same wall. Many-small-positions is the only viable shape.
-2. **V2 and V3 are different populations** (z=3.28, p<0.01) and must not be
-   pooled. Chain-wide positive rate ~2.5%, not the 1% V2 alone suggested.
-3. **Most liquidity is not real.** 65% of stock tokens hold >50% of their
-   memecoin reserves in zero-volume pools; 55% lack the depth to price at all.
-4. **Data access is solved and free.** No database, no paid service, ten
-   minutes for a full-chain census.
-5. **Statistical power is the binding constraint**, not sample size or cost.
+This reframes the entire project. The master document defines every outcome on price and never
+asks whether the price was reachable. **Most of what looks like a winner on a chart is not a
+winner you could have had.** Any base rate quoted below is a *price* rate and an upper bound on
+the tradable rate.
 
-## H0 base rates (measured, 1,200 pools)
+It also probably explains the prior art's headline result. `robinhood-screener` found its best
+exit policy was "sell immediately" at **−3.45%**, calling that "the round-trip cost." On the thin
+tokens a launch screener surfaces, −3.45% is optimistic by an order of magnitude.
 
-| stratum | population | ever trades | 10x given trades | 10x overall |
-|---|---:|---:|---:|---:|
-| V2 | 266,465 | 4.8% | 21.05% | **1.000%** |
-| V3 | 441,582 | 43.5% | 7.85% | **3.420%** |
+---
 
-Population-weighted chain-wide: **~2.5%**. Opposite profiles — V2 rarely trades
-but moonshots (p50 4.08x); V3 usually trades but rarely moonshots (p50 1.38x).
+## 1b. The strategy has a hard capacity ceiling between $500 and $2,000 per position
 
-**Sample V3 first:** 435 measurable per 1,000 sampled against V2's 48 — 9.2x
-more efficient per unit of scan time.
+This is the sharpest result measured, and it bounds the whole project.
 
-**Sample size is not a binding constraint.** 50 positives per discovery/
-confirmation half needs ~10,000 pools, about 7 hours on the free archive RPC.
+For each of 1,500 sampled V2 pools, the block of peak price was located, the pool's reserves at
+**that block** were read from its `Sync` logs, and a constant-product buy was priced there. A
+price winner counts as *tradable* only if the clip fills within 10% impact and consumes under 10%
+of the quote reserve.
 
-**But the current n=57 can only detect a ~21pp effect** — roughly a doubling of
-the base rate. Literature effects are far smaller (the sniper-cohort paper's
-+16.1% relative is ~3.4pp absolute), so detecting those needs tens of thousands
-of pools sampled. Plan for it rather than misread an underpowered null.
+| Clip | Tradable winners | Share of price winners | Tradable rate | Impact p50 | Impact p90 |
+|---:|---:|---:|---:|---:|---:|
+| $100 | 18 / 21 | **85.7%** | 1.202% | 0.92% | 14.03% |
+| $500 | 17 / 21 | **81.0%** | 1.135% | 3.32% | 44.57% |
+| $2,000 | 7 / 21 | **33.3%** | 0.467% | 11.38% | 76.23% |
+| **$10,000** | **0 / 21** | **0.0%** | **0.000%** | 38.65% | 94.13% |
 
-**Caveat that bounds all of it:** these are printed prices. Given round-trip
-cost runs 0.90% at $2.4M of reserves and 96.10% at $20k, an unknown but likely
-large share of the 12 winners were never tradable. Expect the tradable rate to
-be materially below 1%.
+**At $10,000 per position, not one of the twenty-one price winners was reachable.**
 
-## Infrastructure answer
+Two conclusions, pointing opposite ways:
 
-**No Supabase, no new storage account needed.** The daily series is ~79KB/day
-(~29MB/year) of append-only JSONL, partitioned monthly in git — a file, not a
-workload. Bulk swap history is too big for git *and* for Supabase's 500MB free
-tier, and regenerates from the free archive RPC anyway, so it stays local
-Parquet. Supabase free also pauses after 7 days idle, which is the worst
-possible property for a project whose premise is gap-free logging. Full
-reasoning in `docs/05-infrastructure.md`.
+- **Better than expected at small size.** The earlier caution that the tradable rate would be
+  "materially lower by an unknown factor" was too pessimistic. At a $500 clip the haircut is only
+  **19%** — 1.402% price rate against 1.135% tradable. At retail size, most price winners on this
+  chain *were* reachable.
+- **The ceiling is hard and low.** Capacity collapses between $500 and $2,000 and is gone by
+  $10,000. **This constrains capital, not signal quality** — a perfect predictor hits the same
+  wall, and no amount of research moves it.
 
-**The one account worth creating is Healthchecks.io** (free) — not for storage,
-but so a broken pipeline tells you instead of quietly producing nothing. Set
-`HEALTHCHECK_URL` as a repo secret and the scan pings it on start/success/fail.
+The practical consequence: this can only ever be a many-small-positions strategy. Deploying even
+$50,000 means roughly a hundred concurrent positions at $500 each, every one found, sized and
+exited independently. The master document's Lane B instinct — *"even $100, easy risk to accept
+losing entirely"* — turns out correctly sized by accident. It just never states the ceiling, and
+the ceiling is what decides whether the project is worth doing.
 
-## Keeping the data flowing — two real risks
+It also strengthens §5.5 of the critique: **position sizing is not an afterthought here, it is the
+binding constraint.**
 
-1. **Scheduled workflows only fire from the repo's DEFAULT branch.** Right now
-   the default *is* `claude/document-analysis-review-dkjfu4`, so it works. If
-   the default ever changes (e.g. a `main` is created, or this branch is merged
-   and deleted), **the scan silently stops** — no error, it just never fires.
-2. **GitHub disables scheduled workflows after 60 days of repo inactivity**, and
-   `GITHUB_TOKEN` pushes generally do not count as activity. Any manual push
-   resets the timer.
+---
 
-## Needs you, not code
+## 1c. H2: launch liquidity is mechanical, not informative
 
-- **Ask Robinhood support** whether retail can redeem Stock Tokens directly
-  today (BBVI is the acting AP), how long redemption takes end to end, and
-  whether there is a minimum size. This decides whether the ~1% discount side
-  is capturable. See `docs/02-stock-token-premium-findings.md` §5.
+Tested and resolved — full detail in `docs/08-h2-result.md`. Launch liquidity predicts the 10x
+outcome with χ² 35.05 then 29.96 across two seeds, but re-running the same pools at a 2x label
+collapses the gradient from 15% of peak to 80% of peak. That is mechanism, not information: a 10x
+move needs the quote reserve to grow ~3.16x, so a larger pool needs proportionally more buying.
 
-## Claims withdrawn after measurement
+**The inversion is the useful part.** At 2x, the smallest pools convert just **12%** of price wins
+into tradable ones; the largest convert **98%**. Small pools print high multiples; large pools
+deliver what they print.
 
-Recorded so they are not re-introduced:
+---
 
-1. **Gas cliff matters.** No — median fee $0.011, 0% of txs reach the $0.50
-   subsidy threshold.
-2. **MEV haircut needed.** No — Orbit uses FCFS private mempool; sandwiching
-   is rare-to-absent on such rollups.
-3. **SQD replaces Dune.** No — 138 datasets, this chain is not among them.
+## 2. The two DEX strata are different populations and must not be pooled
 
-## Key constraints
+The V2 rate was measured first, with an explicit caveat that generalising to V3 was an open
+question. It was right to flag: **the strata differ significantly (z = 3.28, p < 0.01).**
 
-- **No historical liquidity composition exists in any free source.** The lockup
-  signal accumulates forward only. This is why #1 runs daily starting now.
-- **Liquidity spans eight DEX protocols**, including Uniswap V4 with hooks.
-- **Population-scan data source resolved**: `rpc.mainnet.chain.robinhood.com`
-  serves free unauthenticated archive `eth_getLogs` back to block 1 (2026-04-30).
-- **Full chain censused in 10 minutes**: 715,343 pool creations, 638,889 unique
-  pools, **675,438 distinct token addresses**, across **272 factories** — far
-  more fragmented than the eight DEX protocols visible via aggregators. One
-  factory accounts for 434,168 pools (61%). This confirms the master document's
-  "well over 700,000 tokens" estimate from primary data.
-- **Execution cost is the dominant term**, varying four orders of magnitude:
-  BONER ($2.4M reserves) 0.90% round trip; INUT ($20k) **96.10%**. Below roughly
-  $50k of pool reserves a token is untradable at any size.
-- **Over half the stock-token universe is too illiquid to price.** The first
-  clean full scan (175 tokens, 2026-09-20) filtered 96 of 175 for stable-pool
-  depth under $50k. Premiums among the 79 that survive run -4.69% to +5.89%,
-  median +0.11%.
-- **Lockup must be measured on live pools only, and this matters far more than
-  one token.** USAR looked strongest at 99.0% lockup on $10.2M, but 98% sat in
-  one zero-volume pool. A full re-scan then showed **114 of 175 tokens carry
-  >50% dormant memecoin liquidity** — the majority of the universe would have
-  been false positives. Dormancy concentrates in the small names; every token
-  in the live top eight is 0% dormant. `live_lockup_ratio` is the signalling
-  metric.
-- **Strongest genuine lockup: NVDA at 76.6%** ($28.1M across 11 pairs, 0%
-  dormant), then MU 72.4%, QQQ 62.4%, AAPL 56.3%, HIMS 55.4%. Control: SPY at
-  6.3%.
-- User is **non-US**, so stock tokens are holdable; the premium side remains
-  AP-only regardless.
+| | V2 | V3 |
+|---|---:|---:|
+| Quote-paired population | 266,465 | 441,582 |
+| **Ever trades meaningfully** | **4.8%** | **43.5%** |
+| **Reaches 10× given it trades** | **21.05%** | **7.85%** |
+| **Reaches 10× overall** | **1.000%** | **3.420%** |
+| 95% CI | 0.573–1.740% | 2.531–4.606% |
+| Median peak/launch | 4.08× | 1.38× |
+| p90 peak/launch | 49.4× | 7.09× |
+
+The profiles are close to opposite. **V2 pools almost never trade, but moonshot when they do.
+V3 pools usually trade, but rarely moonshot.** Why is unknown and worth understanding before any
+model is trained across both — it may reflect different launch venues, different deployer
+populations, or simply that V3 is where routine liquidity sits and V2 is the memecoin long tail.
+
+**Population-weighted chain-wide positive rate: ~2.5%.** The V2-only figure understated it by
+2.5×, which is exactly the error that pooling-by-assumption would have produced in the other
+direction.
+
+**Practical consequence for sampling:** V3 yields **435 measurable pools per 1,000 sampled against
+V2's 48 — 9.2× more efficient per unit of scan time.** Any future H0 work should sample V3 first.
+
+---
+
+## 3. Most "liquidity" on this chain is not real
+
+Two independent measurements point the same way.
+
+**Stock-token lockup.** Of 174 canonical stock tokens, **113 (65%) carry more than 50% of their
+memecoin-paired reserves in pools with zero 24-hour volume.** USAR looked like the strongest
+candidate on the chain at 99.0% lockup on $10.2M — until 98% of it turned out to sit in a single
+`tornadoes / USAR` pool holding $9.75M at zero volume. Live-filtered: 69.3% on $244k.
+
+**Stock-token pricing.** **95 of 174 (55%) have under $50,000 of stable-pool depth**, which is
+below the level at which a quoted price means anything. Before that filter, the universe showed
+an apparent **+151% premium on AMAT** — from a pool holding $5,669.
+
+The lesson generalises: **on this chain, a reserve figure is not evidence of a market.** Any
+metric that weights by nominal reserves without a liveness check will rank seeded pools first —
+which is precisely what happened here before the guard was added.
+
+---
+
+## 4. The stock-token premium thesis is dead; the mechanism behind it survives
+
+Measured across 79 adequately-liquid stock tokens: premiums run **−4.32% to +5.89%, median
+−0.04%**. On a Saturday with US markets closed — the exact condition that produced the 360%
+BONER/HIMS dislocation.
+
+And even where a dislocation exists, it is not capturable: Robinhood's documentation restricts
+minting to Authorised Participants, of which **there is exactly one (BBVI)**. Profiting from a
+premium requires creating and selling supply. That is structurally closed to a retail participant,
+which is why BBVI — not a trader — collected the BONER/HIMS spread.
+
+**What survives is the causal direction.** BONER did not rise because HIMS went to a premium; it
+locked HIMS in its own pool and *caused* the premium, and BONER ran ~1,000%. So float lockup is
+worth tracking as a leading signal on the *memecoin*, not as an arbitrage on the stock token.
+Current genuine leaders: **NVDA 77.3%** (11 pairs, 0% dormant), MU 73.4%, QQQ, AAPL, HIMS 55.5%.
+Control: SPY at 5.1%.
+
+That hypothesis (H1) is now accruing data and **cannot be backtested** — no free source carries
+historical liquidity composition, so the series only exists forward from 2026-09-20.
+
+---
+
+## 5. What is now known about feasibility
+
+**Data access is solved and free.** The official RPC serves unauthenticated archive `eth_getLogs`
+back to block 1. The full 715,343-pool census takes ten minutes. Dune's paywall and SQD's absence
+turned out not to matter, and **no database or paid service is required** for anything this
+project produces.
+
+**Sample size does not bind.** 50 positives per discovery/confirmation half needs roughly 10,000
+V2 pools (~7h) — or far fewer V3 pools given the 9.2× efficiency.
+
+**Statistical power does bind, and this is the binding constraint.** At the current V2 n=57 the
+minimum detectable difference is **±21 percentage points** — a doubling of the base rate. The V3
+sample at n=522 is far better placed. For reference, the sniper-cohort paper's **+16.1% relative**
+lift is roughly 3.4pp absolute against a 21% base — **below even an n=500 floor**. Literature-scale
+effects need thousands of measurable pools, which is now affordable but must be planned rather
+than discovered after an underpowered null is misread as "no effect".
+
+---
+
+## 6. What this does not show
+
+Stated plainly, because the temptation to over-read a good-looking number is the main risk here:
+
+- **H0 and H1 remain untested.** H2 was tested and resolved as mechanical (§1c), which is not the
+  same as finding a signal. No signal has been shown to predict anything.
+- **Tradability is measured for V2 at several clip sizes (§1b) but not for V3**, and sell-side
+  token tax remains unmodelled.
+- **Nothing about V4 or the other protocols.** The census found **272 distinct factories**, not
+  the eight visible through aggregators. V2 and V3 are the two measured; V4 hooks can alter swap
+  maths arbitrarily and are unhandled.
+- **Nothing about causation anywhere.** No causal design has been run. The graduation-threshold
+  regression discontinuity proposed in the critique remains the best available and is unbuilt.
+
+---
+
+## 7. Honest assessment of the original thesis
+
+The master document's core bet is **multi-day accumulation-to-breakout on memecoins**. Nothing
+measured so far supports or refutes it, but three findings make it harder than the document
+assumes:
+
+1. **Execution cost on thin tokens is catastrophic**, and thin tokens are where a launch screener
+   looks. The document has no execution model at all.
+2. **The population is more heterogeneous than one model can span.** Two strata differ
+   significantly; there are 272 factories; V4 hooks are arbitrary.
+3. **The prior art measured negative expectancy on the nearest comparable system**, and its
+   rebuild independently hit the same look-ahead bias this project was warned about.
+
+Against that, the document's instincts hold up well: forensics over TA, buyer-identity over
+deployer-identity, rug-filter and runner-predictor as separate tools, statistical rigour as
+non-negotiable. Those were right.
+
+**The most valuable thing built so far is not a signal — it is the measurement apparatus that can
+tell a real one from an artefact.** Three separate bugs in this session each produced a confident,
+wrong, *exciting* number: inverted prices (median 22,668×), dust-contaminated launch prices (p99
+8.8e18, which passed a 60-pool smoke test), and reserve-weighted lockup ranking a dead pool first.
+Every one would have been believed without a cross-check.
+
+That is the actual lesson for what comes next: on this chain, **assume any striking result is an
+artefact until a second, independent measurement agrees.**
