@@ -184,6 +184,13 @@ but so a broken pipeline tells you instead of quietly producing nothing. Set
 
 ## Keeping the data flowing — two real risks
 
+**Risk 1 is resolved and verified.** The working branch
+`claude/document-analysis-review-dkjfu4` *is* the repository's default branch, so
+the schedule fires from it. Confirmed against the run history: run 3 fired on
+`schedule` at 2026-09-20 23:18 UTC and succeeded, two hours after its 21:20 cron
+— GitHub's scheduler is routinely late under load, which is expected and
+harmless for a daily signal. First capture on disk: 175 tokens, 2026-09-20.
+
 1. **Scheduled workflows only fire from the repo's DEFAULT branch.** Right now
    the default *is* `claude/document-analysis-review-dkjfu4`, so it works. If
    the default ever changes (e.g. a `main` is created, or this branch is merged
