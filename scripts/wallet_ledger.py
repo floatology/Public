@@ -178,6 +178,19 @@ def main() -> int:
           f"{sum(len(v) for v in token_trades.values()):,} trades", file=sys.stderr)
 
     con = duckdb.connect()
+    available = {
+        name for name, *_ in con.execute(
+            f"DESCRIBE SELECT * FROM read_parquet('{args.features}')").fetchall()
+    }
+    if args.label not in available:
+        # Feature tables written before the outcome amendment carry only the
+        # naive peak, so say which label is missing rather than surfacing a
+        # binder error from three frames down.
+        print(f"{args.features} has no column '{args.label}'. Tables written "
+              f"before the 2026-09-21 outcome amendment carry 'peak_over_launch' "
+              f"only; rebuild with scripts/recompute_features.py or pass "
+              f"--label explicitly.", file=sys.stderr)
+        return 1
     outcomes = dict(con.execute(
         f'SELECT token, "{args.label}" FROM read_parquet(?) WHERE "{args.label}" IS NOT NULL',
         [str(args.features)],

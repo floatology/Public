@@ -61,6 +61,7 @@ def write_fixture(directory: Path) -> tuple[Path, Path]:
         "token": [t for t, _ in LAUNCHES],
         "pool": ["0xp" + t for t, _ in LAUNCHES],
         "peak_over_launch": [100.0, 1.2, 1.1],
+        "realisable_peak_over_launch": [100.0, 1.2, 1.1],
     }), features)
     return trades, features
 
