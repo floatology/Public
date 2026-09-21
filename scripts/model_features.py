@@ -75,7 +75,11 @@ def main() -> int:
     ).fetchall()
     feature_cols = [
         name for name, dtype, *_ in described
-        if any(t in dtype.upper() for t in ("INT", "DOUBLE", "FLOAT", "DECIMAL"))
+        # BOOLEAN is included deliberately. `is_bundled` and `has_bump_bot`
+        # are flags, and the published model gives bump-bot presence the
+        # highest importance of any feature -- dropping booleans would
+        # silently exclude the strongest candidate in the catalogue.
+        if any(t in dtype.upper() for t in ("INT", "DOUBLE", "FLOAT", "DECIMAL", "BOOL"))
         and name not in LEAKY and name not in IDENTIFIERS
     ]
     quoted = ", ".join(f'"{c}"' for c in feature_cols)

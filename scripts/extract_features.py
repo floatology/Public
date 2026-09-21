@@ -24,6 +24,7 @@ import pyarrow.parquet as pq
 
 from rhc.chain import USDG, WETH
 from rhc.features import compute, decode_syncs, decode_v2_swaps, drop_dust
+from rhc.manipulation import detect
 from rhc.rpc import TOPIC_V2_SWAP, TOPIC_V2_SYNC, Rpc, RpcError
 
 QUOTE_DECIMALS = {USDG.lower(): 6, WETH.lower(): 18}
@@ -38,6 +39,13 @@ def main() -> int:
     parser.add_argument("--eth-usd", type=float, default=2576.0)
     parser.add_argument("--seed", default="rhc-features-v1")
     parser.add_argument("--out", type=Path, default=Path("data/parquet/features.parquet"))
+    parser.add_argument(
+        "--trades-out", type=Path, default=Path("data/parquet/trades.parquet"),
+        help="archive of every decoded trade. Without this the RPC work is "
+             "spent once and thrown away: a new feature idea then costs "
+             "another full scan of a node that rate-limits globally, and the "
+             "cross-token wallet ledger cannot be built at all.",
+    )
     args = parser.parse_args()
     args.out.parent.mkdir(parents=True, exist_ok=True)
 
@@ -61,6 +69,7 @@ def main() -> int:
     print(f"population {len(pools):,}; sampling {len(sample)}", file=sys.stderr)
 
     rows: list[dict] = []
+    trade_rows: list[dict] = []
     skipped = 0
     started = time.time()
     with Rpc() as rpc:
@@ -95,6 +104,17 @@ def main() -> int:
                             trades=trades, syncs=syncs, head_block=head)
             record = feats.to_dict()
             record["token"] = token
+            record.update(detect(trades).to_dict())
+            for trade in trades:
+                trade_rows.append({
+                    "pool": pool, "token": token, "quote_asset": quote,
+                    "block": trade.block, "log_index": trade.log_index,
+                    "wallet": trade.wallet, "is_buy": trade.is_buy,
+                    # Raw units. Scaling here would lose the exact integers
+                    # that repeated-amount detection depends on.
+                    "quote_amount": str(trade.quote_amount),
+                    "base_amount": str(trade.base_amount),
+                })
             # Normalise the raw-unit volume fields to USD so they compare across
             # pools; the price ratios stay raw because decimals cancel within a
             # pool but not between them.
@@ -114,6 +134,14 @@ def main() -> int:
     keys = sorted({k for r in rows for k in r})
     table = pa.table({k: [r.get(k) for r in rows] for k in keys})
     pq.write_table(table, args.out, compression="zstd")
+
+    if trade_rows:
+        trade_keys = list(trade_rows[0])
+        pq.write_table(
+            pa.table({k: [r[k] for r in trade_rows] for k in trade_keys}),
+            args.trades_out, compression="zstd",
+        )
+        print(f"archived {len(trade_rows):,} trades to {args.trades_out}", file=sys.stderr)
     print(f"\n{len(rows)} pools x {len(keys)} features -> {args.out} "
           f"in {time.time() - started:.0f}s", file=sys.stderr)
     return 0
