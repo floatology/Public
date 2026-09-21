@@ -73,7 +73,16 @@ $PY scripts/feature_correlations.py || true
 
 echo "== 6. model, against the shuffled-label floor ==========================="
 # Refuses to run below 60 rows or 10 positives, by design.
-$PY scripts/model_features.py --threshold "$THRESHOLD" || true
+#
+# All three thresholds run, every time. PREREGISTRATION amendment 2026-09-21b
+# fixes 10x as primary and 2x/5x as secondary, declared before any of them had
+# been observed: reporting whichever one worked is exactly the failure this
+# guards against, so the loop is not conditional on the primary succeeding.
+for t in 10 5 2; do
+  echo "--- threshold ${t}x ---"
+  $PY scripts/model_features.py --threshold "$t" \
+      --out "data/model_result_${t}x.json" || true
+done
 
 echo
 echo "Done. The number that matters is in data/model_result.json: whether the"

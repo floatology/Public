@@ -194,3 +194,36 @@ means nothing.
 **Standing rule 6, added here:** an outcome that could not have been realised at
 size is not an outcome. Any future label must state what volume traded at the
 price it claims.
+
+---
+
+## Amendment 2026-09-21b: thresholds for the exploratory model, fixed in advance
+
+**Written while the first full extraction was still running.** No feature table
+exists, no model has been fitted, and no positive rate at any threshold has been
+observed.
+
+The exploratory model (`scripts/model_features.py`, over the full feature set
+rather than a single hypothesis) needs a threshold on
+`realisable_peak_over_launch` to define a positive. Picking one after seeing
+which produces the best AUC is the most ordinary way a project of this shape
+manufactures a result, and it would be undetectable in the output.
+
+**Declared now:**
+
+- **Primary threshold: 10x.** A result counts as a result only if the
+  confirmation-half AUC beats the shuffled-label control at 10x by more than
+  0.05, with lift at the top decile above the control's lift.
+- **Secondary thresholds: 2x and 5x.** Reported alongside, always, whether they
+  help or not. They exist because the 10x base rate may leave too few positives
+  to fit at this sample size — a mechanical problem, not a reason to redefine
+  the outcome.
+- **All three are reported in every write-up.** Reporting the one that worked is
+  the failure mode this amendment exists to prevent.
+- **A secondary threshold beating control while the primary does not is a
+  hypothesis, not a finding.** It may be stated as such, and it requires a fresh
+  extraction batch to confirm — not a re-split of the same data.
+
+**If the model refuses to run at 10x** for want of positives, that is reported as
+"insufficient positives at the primary threshold", not quietly replaced by a
+lower one.
