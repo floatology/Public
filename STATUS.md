@@ -23,7 +23,14 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 | 11 | H2: launch liquidity predicts 10x | **resolved** — real but mechanical, not a signal |
 | 12 | H1 (lockup) — accruing daily, not testable yet | waiting on data |
 | 13 | **Metric catalogue** — 50+ signals researched and prioritised | **done** — `docs/09-metric-catalogue.md` |
-| 14 | Wallet ledger (Phase 1 of the catalogue) | next |
+| 14 | Wallet ledger + point-in-time scoring | **done** — `rhc.wallets` |
+| 15 | Feature engine (49 features/pool) | **done** — `rhc.features` |
+| 16 | Contract risk checks | **done** — `rhc.contracts` |
+| 17 | Telegram social (free tier) | **done** — `rhc.social` |
+| 18 | Enrichment pipeline (84 columns) | **done** — `scripts/enrich_features.py` |
+| 19 | Modelling harness + negative control | **done** — `scripts/model_features.py` |
+| 20 | Correlation / dimensionality analysis | **done** — `scripts/feature_correlations.py` |
+| 21 | 10,000-pool extraction | running |
 
 ---
 

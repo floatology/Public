@@ -219,6 +219,41 @@ are among the strongest predictors in the published model.
 
 ---
 
+## 8b. Build status as of 2026-09-21
+
+Everything buildable without further input has been built. The pipeline produces
+**84 columns per token** across four modules.
+
+| Module | Covers | Status |
+|---|---|---|
+| `rhc.features` | §3 flow, §4 liquidity, §7 manipulation, parts of §1 | **built, verified** |
+| `rhc.features` holder block | §2 via Transfer replay | **built**, verified pending RPC availability |
+| `rhc.contracts` | §6 structural risk | **built, verified** |
+| `rhc.social` | §5.1, §5.2 Telegram | **built, verified** |
+| `rhc.wallets` | §1 ledger + point-in-time scoring | **built, verified** |
+| `scripts/enrich_features.py` | joins all of the above + GeckoTerminal info | **built, verified** |
+| `scripts/model_features.py` | regularised selection + negative control | **built** |
+| `scripts/feature_correlations.py` | independent-dimension analysis | **built** |
+
+### Three corrections to this catalogue, found by building it
+
+**§2.3 concentration is cheaper than stated.** GeckoTerminal's token-info
+endpoint returns a nested holders object with a top-10 / 11-30 / 31-50 / rest
+breakdown. That yields holder count and concentration **without** replaying
+Transfer logs. Measured spread across nine sampled tokens: 19.8% to 99.9999% in
+the top ten.
+
+**§6.4 honeypot is partially free.** The same endpoint carries an `is_honeypot`
+flag, plus `mint_authority` and `freeze_authority`. It is tri-state — boolean for
+some tokens, `"unknown"` for others — so absence must be preserved rather than
+read as "safe".
+
+**§5 social is worse than stated, for a reason that is not a coverage gap.**
+None of nine sampled memecoins had *any* Telegram or Twitter handle registered.
+Social data may exist only for tokens that already have attention, which makes
+it a **selection problem**: conditioning on having social data may already
+condition on the outcome.
+
 ## 9. Recommended build order
 
 Ordered by evidence strength × feasibility × how little of it is already public.
