@@ -1,0 +1,855 @@
+{
+  "rows": 592,
+  "columns": 95,
+  "numeric_columns": 91,
+  "constant": [
+    "bump_wallet_count",
+    "has_bump_bot",
+    "v3_depth_observations"
+  ],
+  "mostly_missing": [
+    "bump_trade_share",
+    "bump_volume_share",
+    "bundle_size_uniformity",
+    "bundle_volume_share",
+    "max_bump_score",
+    "v3_depth_1pct_final",
+    "v3_depth_1pct_launch",
+    "v3_depth_1pct_median",
+    "v3_depth_1pct_min"
+  ],
+  "extreme_range": [
+    "final_over_launch",
+    "final_quote_reserve",
+    "launch_vwap",
+    "peak_over_launch",
+    "peak_price",
+    "realisable_peak_over_launch"
+  ],
+  "degenerate_spread": [
+    "first_hour_volume_share",
+    "never_sold_share",
+    "peak_hour_volume_share"
+  ],
+  "columns_detail": {
+    "active_blocks": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 567,
+      "min": 9.0,
+      "median": 6879.0,
+      "p99": 39339212.14,
+      "max": 60446522.0
+    },
+    "bump_trade_share": {
+      "present": 0,
+      "missing_frac": 1.0,
+      "distinct": 0,
+      "min": null,
+      "median": null,
+      "p99": null,
+      "max": null
+    },
+    "bump_volume_share": {
+      "present": 0,
+      "missing_frac": 1.0,
+      "distinct": 0,
+      "min": null,
+      "median": null,
+      "p99": null,
+      "max": null
+    },
+    "bump_wallet_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 1,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+    },
+    "bundle_block_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 7,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 3.0,
+      "max": 11.0
+    },
+    "bundle_buyer_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 19,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 29.810000000000286,
+      "max": 97.0
+    },
+    "bundle_max_buyers_in_block": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 15,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 25.090000000000032,
+      "max": 50.0
+    },
+    "bundle_size_uniformity": {
+      "present": 45,
+      "missing_frac": 0.9239864864864865,
+      "distinct": 34,
+      "min": 0.0,
+      "median": 0.8716123596967418,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "bundle_volume_share": {
+      "present": 45,
+      "missing_frac": 0.9239864864864865,
+      "distinct": 45,
+      "min": 2.484460002898937e-05,
+      "median": 0.020010962365601664,
+      "p99": 0.9144500000000003,
+      "max": 0.97
+    },
+    "buy_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 204,
+      "min": 2.0,
+      "median": 39.0,
+      "p99": 10154.140000000005,
+      "max": 63836.0
+    },
+    "buy_count_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 377,
+      "min": 0.06896551724137931,
+      "median": 0.7145002145002145,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "buy_quote_volume": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 590,
+      "min": 0.002296504,
+      "median": 5203.227017527865,
+      "p99": 5719658.018489654,
+      "max": 26158297.017760046
+    },
+    "buy_sell_count_ratio": {
+      "present": 493,
+      "missing_frac": 0.16722972972972971,
+      "distinct": 376,
+      "min": 0.07407407407407407,
+      "median": 2.0625,
+      "p99": 82.0,
+      "max": 152.0
+    },
+    "buy_sell_value_ratio": {
+      "present": 493,
+      "missing_frac": 0.16722972972972971,
+      "distinct": 479,
+      "min": 0.035255715499394345,
+      "median": 1.7382237190929666,
+      "p99": 3519.1019840111185,
+      "max": 4036.7386751529602
+    },
+    "buy_share_rotation": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 436,
+      "min": -1.0,
+      "median": -0.08433842580184042,
+      "p99": 0.3019285714285721,
+      "max": 0.47150259067357514
+    },
+    "buy_usd_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 479,
+      "min": 0.03405507931186589,
+      "median": 0.6775612350310665,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "created_block": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 592,
+      "min": 990550.0,
+      "median": 29675741.0,
+      "p99": 67723120.57,
+      "max": 67948223.0
+    },
+    "drawdown_from_peak": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 392,
+      "min": 0.0,
+      "median": 0.20378108571227393,
+      "p99": 0.9999957809992225,
+      "max": 1.0
+    },
+    "early_buy_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 277,
+      "min": 0.07692307692307693,
+      "median": 0.8333333333333334,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "final_over_launch": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 592,
+      "min": 1.613145619375737e-05,
+      "median": 2.2798351967137793,
+      "p99": 2548536.067814522,
+      "max": 1.4866551030315786e+18
+    },
+    "final_quote_reserve": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 423,
+      "min": 0.0,
+      "median": 0.014152528705582177,
+      "p99": 5009.797611425614,
+      "max": 287036.8645051887
+    },
+    "first_hour_trade_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 220,
+      "min": 2.0,
+      "median": 55.0,
+      "p99": 2799.9100000000035,
+      "max": 7068.0
+    },
+    "first_hour_unique_wallets": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 162,
+      "min": 1.0,
+      "median": 21.0,
+      "p99": 691.3300000000012,
+      "max": 1283.0
+    },
+    "first_hour_volume_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 160,
+      "min": 0.0008310339411554541,
+      "median": 1.0,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "first_minute_trade_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 72,
+      "min": 1.0,
+      "median": 7.0,
+      "p99": 184.1700000000004,
+      "max": 1683.0
+    },
+    "first_minute_volume_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 569,
+      "min": 3.978396608583738e-05,
+      "median": 0.13362865250542527,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "first_ten_buyer_sell_share": {
+      "present": 493,
+      "missing_frac": 0.16722972972972971,
+      "distinct": 47,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "first_ten_buyer_volume_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 503,
+      "min": 0.0001077808339574258,
+      "median": 0.3611011944739454,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "first_trade_delay_blocks": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 311,
+      "min": 0.0,
+      "median": 159.0,
+      "p99": 42557.77000000036,
+      "max": 33788204.0
+    },
+    "has_bump_bot": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 1,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+    },
+    "is_bundled": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 2,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "largest_liquidity_removal_pct": {
+      "present": 442,
+      "missing_frac": 0.2533783783783784,
+      "distinct": 285,
+      "min": 1.5416656715636532,
+      "median": 99.99330485874557,
+      "p99": 100.0,
+      "max": 100.0
+    },
+    "late_buy_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 240,
+      "min": 0.0,
+      "median": 0.6414285714285715,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "launch_quote_reserve": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 133,
+      "min": 0.088945,
+      "median": 2576.0,
+      "p99": 154791.84,
+      "max": 257831.84
+    },
+    "launch_vwap": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 590,
+      "min": 1.1749067153902247e-21,
+      "median": 6.206572760318093e-09,
+      "p99": 18.321912615527275,
+      "max": 589760573.1592164
+    },
+    "lifespan_blocks": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 592,
+      "min": 529945.0,
+      "median": 38802427.0,
+      "p99": 66693437.32,
+      "max": 67487618.0
+    },
+    "liquidity_add_events": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 15,
+      "min": 0.0,
+      "median": 1.0,
+      "p99": 8.270000000000095,
+      "max": 64.0
+    },
+    "liquidity_remove_events": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 18,
+      "min": 0.0,
+      "median": 1.0,
+      "p99": 17.810000000000286,
+      "max": 284.0
+    },
+    "max_bump_score": {
+      "present": 0,
+      "missing_frac": 1.0,
+      "distinct": 0,
+      "min": null,
+      "median": null,
+      "p99": null,
+      "max": null
+    },
+    "max_wallet_buy_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 58,
+      "min": 1.0,
+      "median": 3.0,
+      "p99": 340.7100000000006,
+      "max": 1860.0
+    },
+    "mean_hold_blocks": {
+      "present": 106,
+      "missing_frac": 0.8209459459459459,
+      "distinct": 106,
+      "min": 24.0,
+      "median": 56763.13043478261,
+      "p99": 8102286.976666667,
+      "max": 10357093.03125
+    },
+    "median_hold_blocks": {
+      "present": 106,
+      "missing_frac": 0.8209459459459459,
+      "distinct": 105,
+      "min": 24.0,
+      "median": 17931.0,
+      "p99": 7858259.550000004,
+      "max": 11185206.0
+    },
+    "modal_amount_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 80,
+      "min": 1.0,
+      "median": 2.0,
+      "p99": 625.1800000000032,
+      "max": 3366.0
+    },
+    "net_flow_quote": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 591,
+      "min": -12887.626348886984,
+      "median": 1788.4252536779927,
+      "p99": 39355.749328000005,
+      "max": 284460.8645051887
+    },
+    "never_sold_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 60,
+      "min": 0.0,
+      "median": 1.0,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "never_sold_wallet_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 162,
+      "min": 0.0,
+      "median": 20.0,
+      "p99": 1708.7300000000032,
+      "max": 3236.0
+    },
+    "peak_block": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 592,
+      "min": 1043768.0,
+      "median": 30395663.5,
+      "p99": 67723731.00999999,
+      "max": 67966379.0
+    },
+    "peak_decile_volume_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 591,
+      "min": 0.12075129577994834,
+      "median": 0.24382766431192363,
+      "p99": 0.9996598178549263,
+      "max": 0.9998585759456426
+    },
+    "peak_hour_volume_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 160,
+      "min": 0.020291609718786675,
+      "median": 1.0,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "peak_over_launch": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 592,
+      "min": 1.000000652325412,
+      "median": 4.099786488274148,
+      "p99": 2974231540427.5137,
+      "max": 3.923023360423195e+22
+    },
+    "peak_price": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 592,
+      "min": 4.3384151605185e-21,
+      "median": 2.134234853220641e-08,
+      "p99": 666683511.096402,
+      "max": 53339022829101.77
+    },
+    "peak_quote_reserve": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 591,
+      "min": 0.26127051676893653,
+      "median": 6799.245392999599,
+      "p99": 252473.9594658997,
+      "max": 437106.88194069033
+    },
+    "peak_trade_volume_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 592,
+      "min": 2.4476179712950463e-06,
+      "median": 0.008823121577713054,
+      "p99": 0.2384028768932819,
+      "max": 0.6364225419123093
+    },
+    "quiet_decile_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 9,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 0.8,
+      "max": 0.8
+    },
+    "quiet_hour_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 80,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 0.9780451127819548,
+      "max": 0.9952696310312205
+    },
+    "realisable_peak_over_launch": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 592,
+      "min": 0.7455833707629146,
+      "median": 3.5830054804914533,
+      "p99": 4730.328583333931,
+      "max": 1.7214149496395889e+22
+    },
+    "repeat_buyer_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 105,
+      "min": 0.0,
+      "median": 10.0,
+      "p99": 949.5100000000076,
+      "max": 2635.0
+    },
+    "repeat_buyer_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 232,
+      "min": 0.0,
+      "median": 0.4396969696969697,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "repeated_amount_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 276,
+      "min": 0.0,
+      "median": 0.07175925925925926,
+      "p99": 0.9116477272727281,
+      "max": 1.0
+    },
+    "round_trip_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 60,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "round_trip_wallet_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 25,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 24.360000000000127,
+      "max": 33.0
+    },
+    "same_block_multibuy_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 67,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 521.7000000000073,
+      "max": 6255.0
+    },
+    "self_trade_volume_share": {
+      "present": 110,
+      "missing_frac": 0.8141891891891893,
+      "distinct": 86,
+      "min": 7.545702267824714e-05,
+      "median": 0.81586892865332,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "self_trade_wallet_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 24,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 24.360000000000127,
+      "max": 37.0
+    },
+    "sell_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 160,
+      "min": 0.0,
+      "median": 15.0,
+      "p99": 4400.400000000066,
+      "max": 44109.0
+    },
+    "sell_quote_volume": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 494,
+      "min": 0.0,
+      "median": 1424.064535845386,
+      "p99": 5722516.656954683,
+      "max": 26148558.668652568
+    },
+    "sniper_buy_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 26,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 40.90000000000032,
+      "max": 131.0
+    },
+    "sniper_buy_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 94,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "stealth_accumulator_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 70,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 556.130000000005,
+      "max": 2154.0
+    },
+    "time_to_half_volume_frac": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 580,
+      "min": 0.0,
+      "median": 0.3762425387064648,
+      "p99": 0.9926253029618513,
+      "max": 1.0
+    },
+    "top_wallet_volume_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 585,
+      "min": 0.01,
+      "median": 0.3099840032644112,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "trade_acceleration": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 393,
+      "min": 5.249895002099958e-05,
+      "median": 0.8591269841269842,
+      "p99": 5.22500000000008,
+      "max": 147.22388059701493
+    },
+    "trade_count": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 225,
+      "min": 10.0,
+      "median": 56.0,
+      "p99": 12670.290000000063,
+      "max": 107945.0
+    },
+    "trade_size_gini": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 591,
+      "min": 0.0,
+      "median": 0.47737696302284216,
+      "p99": 0.7731886336909551,
+      "max": 0.8909087115838976
+    },
+    "trade_size_median": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 522,
+      "min": 2.576e-05,
+      "median": 103.13289220848671,
+      "p99": 1327.572512000001,
+      "max": 1659.4592
+    },
+    "trade_size_p90": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 505,
+      "min": 0.000127512,
+      "median": 267.5750367964893,
+      "p99": 2457.292768,
+      "max": 14740.836783642293
+    },
+    "trades_per_active_block": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 587,
+      "min": 9.728558493720451e-07,
+      "median": 0.008760846318089177,
+      "p99": 0.24919898646920136,
+      "max": 5.0
+    },
+    "unique_buyers": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 165,
+      "min": 1.0,
+      "median": 20.0,
+      "p99": 1736.0200000000023,
+      "max": 3241.0
+    },
+    "unique_sellers": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 36,
+      "min": 0.0,
+      "median": 1.0,
+      "p99": 34.720000000000255,
+      "max": 106.0
+    },
+    "unique_wallets": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 167,
+      "min": 1.0,
+      "median": 21.0,
+      "p99": 1774.5800000000017,
+      "max": 3247.0
+    },
+    "usd_minus_count_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 488,
+      "min": -0.6160143786470031,
+      "median": 0.0,
+      "p99": 0.21873578543614985,
+      "max": 0.37668944308826413
+    },
+    "v3_depth_1pct_final": {
+      "present": 0,
+      "missing_frac": 1.0,
+      "distinct": 0,
+      "min": null,
+      "median": null,
+      "p99": null,
+      "max": null
+    },
+    "v3_depth_1pct_launch": {
+      "present": 0,
+      "missing_frac": 1.0,
+      "distinct": 0,
+      "min": null,
+      "median": null,
+      "p99": null,
+      "max": null
+    },
+    "v3_depth_1pct_median": {
+      "present": 0,
+      "missing_frac": 1.0,
+      "distinct": 0,
+      "min": null,
+      "median": null,
+      "p99": null,
+      "max": null
+    },
+    "v3_depth_1pct_min": {
+      "present": 0,
+      "missing_frac": 1.0,
+      "distinct": 0,
+      "min": null,
+      "median": null,
+      "p99": null,
+      "max": null
+    },
+    "v3_depth_observations": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 1,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 0.0,
+      "max": 0.0
+    },
+    "volume_above_10x_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 121,
+      "min": 0.0,
+      "median": 0.0,
+      "p99": 0.9966137353313984,
+      "max": 0.9987765598013119
+    },
+    "volume_above_2x_share": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 429,
+      "min": 0.0,
+      "median": 0.6496780387433863,
+      "p99": 0.9996021049703164,
+      "max": 0.9999492285278264
+    },
+    "volume_acceleration": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 592,
+      "min": 3.3285904744126467e-06,
+      "median": 0.6446495387333591,
+      "p99": 15.67946760982852,
+      "max": 149.67620137107326
+    },
+    "wallet_volume_hhi": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 585,
+      "min": 0.009999999999999995,
+      "median": 0.1376029653667337,
+      "p99": 1.0,
+      "max": 1.0
+    },
+    "wash_suspect_score": {
+      "present": 592,
+      "missing_frac": 0.0,
+      "distinct": 589,
+      "min": 0.0033333333333333335,
+      "median": 0.3029307559911605,
+      "p99": 0.970569052675744,
+      "max": 0.9998617447808655
+    }
+  }
+}

@@ -88,6 +88,7 @@ def main() -> int:
     rows: list[dict] = []
     trade_rows: list[dict] = []
     depth_rows: list[dict] = []
+    sync_rows: list[dict] = []
     skipped = 0
     started = time.time()
     with Rpc() as rpc:
@@ -139,6 +140,17 @@ def main() -> int:
             record["token"] = token
             record["protocol"] = args.protocol
             record.update(detect(trades).to_dict())
+            # Reserves at each Sync, archived so a panel can reconstruct
+            # liquidity at an arbitrary decision block. Without this, features
+            # can be recomputed at any point in a token's life but the V2
+            # liquidity columns cannot, and a decision made weeks after launch
+            # is exactly when depth matters most.
+            for sync_block, quote_reserve, base_reserve in syncs:
+                sync_rows.append({
+                    "pool": pool, "token": token, "block": sync_block,
+                    "quote_reserve": str(quote_reserve),
+                    "base_reserve": str(base_reserve),
+                })
             for block, amount in (depths or []):
                 depth_rows.append({
                     "pool": pool, "token": token, "block": block,
@@ -185,17 +197,18 @@ def main() -> int:
         )
         print(f"archived {len(trade_rows):,} trades to {args.trades_out}", file=sys.stderr)
 
-    if depth_rows:
-        depth_path = args.trades_out.with_name(
-            args.trades_out.stem.replace("trades", "depth") + args.trades_out.suffix
+    for rows_out, label in ((sync_rows, "syncs"), (depth_rows, "depth")):
+        if not rows_out:
+            continue
+        path = args.trades_out.with_name(
+            args.trades_out.stem.replace("trades", label) + args.trades_out.suffix
         )
-        depth_keys = list(depth_rows[0])
         pq.write_table(
-            pa.table({k: [r[k] for r in depth_rows] for k in depth_keys}),
-            depth_path, compression="zstd",
+            pa.table({k: [r[k] for r in rows_out] for k in list(rows_out[0])}),
+            path, compression="zstd",
         )
-        print(f"archived {len(depth_rows):,} depth observations to {depth_path}",
-              file=sys.stderr)
+        print(f"archived {len(rows_out):,} {label} rows to {path}", file=sys.stderr)
+
     print(f"\n{len(rows)} pools x {len(keys)} features -> {args.out} "
           f"in {time.time() - started:.0f}s", file=sys.stderr)
     return 0
