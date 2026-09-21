@@ -48,6 +48,27 @@ Running log. Updated as work completes so progress survives an interrupted sessi
 - Execution model built on KyberSwap aggregator quotes (`src/rhc/execution.py`),
   with the liquidity floor measured (`docs/04-execution-and-data-findings.md`).
 - Official archive RPC found and recorded in `src/rhc/chain.py`.
+- **Manipulation detection completed** (`src/rhc/manipulation.py`): catalogue
+  7.1 bundle bots and 7.3 bump bots, the two metrics the catalogue still listed
+  as unbuilt. 7.3 matters most — in the published LASSO model, bump-bot presence
+  carried the highest importance of any feature. Eight tests, four of them
+  negative cases that must stay silent: eight wallets buying in the launch block
+  is also an anticipated launch, and one wallet trading forty times is also an
+  active trader.
+- **Trades are archived to Parquet** during extraction. Before this the RPC work
+  was spent once and thrown away, so every new feature idea cost another
+  ninety-minute scan of a node that rate-limits globally — and the cross-token
+  wallet ledger could not be built at all.
+- **Cross-token wallet ledger built** (`scripts/wallet_ledger.py`), the domain
+  with the strongest published evidence and the user's stated priority. It emits
+  a per-token feature computed at that token's own launch from wallet history
+  that had already **resolved** by then, not merely launched. Guarded two ways:
+  the fast forward-only sweep is cross-checked against the slow reference scorer
+  and aborts on any disagreement, and a committed test buys a 100x winner at
+  block 0, a second token at block 500 before the first resolves, and requires
+  the feature to read zero there.
+- **Offline feature rebuild** (`scripts/recompute_features.py`): features are a
+  pure function of archived trades, so iterating on them no longer needs the node.
 
 ## Research deliverable: what to actually track
 
