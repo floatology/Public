@@ -55,7 +55,7 @@ The domain with the strongest published evidence and the least of it already pub
 | 1.5 | **Purchase size percentile** | Position size relative to peers | **Published** — *below* 75th pctile | Buildable now |
 | 1.6 | **Cross-token hit rate vs activity-matched null** | Wins per token touched, against what chance predicts | Industry | Buildable now |
 | 1.7 | **Stealth accumulation** | Sustained buying at low pool-share per trade | Untested — **your original idea** | Buildable now |
-| 1.8 | **Funding-graph clustering** | Wallets sharing a funding source = one entity | **Published** (MELT, 2602.13480) | Needs work |
+| 1.8 | **Coordination clustering** | Wallets that co-trade far beyond chance = one entity | **Published** (MELT, 2602.13480) | **Built** — by co-occurrence, not funding |
 | 1.9 | **Time since last / first trade** | Recency and longevity | **Published** | Buildable now |
 | 1.10 | **Wallet age at first buy** | Fresh wallet vs established | Industry | Buildable now |
 
@@ -67,6 +67,15 @@ than moving price.
 **Demonstrated working already.** A live pull on $WALLET found the top six buys over 20 hours, with
 wallet addresses, and `0x8f10b468…` appearing twice ($22,348 then $9,068) — a wallet accumulating
 across separate entries. The raw capability is proven.
+
+**1.8 was built differently from how this catalogue specified it.** Funding-graph clustering needs
+one explorer call per wallet to read its first inbound transfer, which does not scale to the tens of
+thousands of wallets in the trade archive. Co-occurrence is free, already on disk, and is the better
+evidence: a shared funder says two wallets were once touched by the same hand, while two wallets
+buying the same nine obscure tokens in the same blocks are being operated by the same hand *now*.
+The point of either is the same — to stop counting addresses as participants, because nine early
+buyers might be nine people or one operator with nine wallets, and every crowd metric here assumed
+the first without checking.
 
 **The non-negotiable constraint:** wallet scores must be **point-in-time**. Scoring a wallet at the
 moment it buys token X may only use outcomes from tokens that *resolved before* that moment. The
@@ -253,6 +262,9 @@ Everything buildable without further input has been built. The pipeline produces
 | `rhc.social` | §5.1, §5.2 Telegram | **built, verified** |
 | `rhc.wallets` | §1 ledger + point-in-time scoring | **built, verified** |
 | `rhc.manipulation` | §7.1 bundle bots, §7.3 bump bots | **built, verified** |
+| `rhc.clusters` | §1.8 coordination clustering | **built, verified** |
+| `scripts/wallet_clusters.py` | §1.8 as training-window features | **built, verified** |
+| `scripts/fragmentation.py` | §4.7 venue counts | **built, measured** |
 | `scripts/wallet_ledger.py` | §1 as per-token features, leak-audited | **built, verified** |
 | `scripts/recompute_features.py` | offline feature rebuild from archived trades | **built, verified** |
 | `scripts/describe_features.py` | pre-model column diagnostics | **built, verified** |
