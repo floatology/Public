@@ -85,6 +85,17 @@ Running log. Updated as work completes so progress survives an interrupted sessi
   AIForce turned over 1,139x its $3,709 of reserves in a day; TYPING 1,129x its
   $15,949. The clean list is mostly stock tokens plus a handful of real
   memecoins (PONS, CASHCAT).
+- **Outcome definition replaced** (PREREGISTRATION amendment 2026-09-21, made
+  before any model was fitted). `peak_over_launch` is one trade's price, which
+  in a thin pool can be three dollars of dust; the test builds two tokens that
+  both read 10.0 on it and 10.0 vs 1.05 on the replacement.
+  `realisable_peak_over_launch` is the highest price at or above which a tenth
+  of the token's volume traded.
+- **Pipeline verified end to end on real chain data** (a 60-pool sample, 4 pools
+  with enough trades): extract → offline rebuild → ledger → clustering →
+  fragmentation → enrich → diagnostics produces **110 columns**, up from 84. The
+  model and correlation stages refuse at this size with explicit messages, which
+  is the designed behaviour, not a failure.
 
 ## Research deliverable: what to actually track
 
