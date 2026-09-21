@@ -40,6 +40,19 @@ from datetime import datetime, timezone
 from pathlib import Path
 
 
+# Assets that are the quote side of a pair, not a token anyone is trading up.
+# A pool named "WETH / USDG" has no memecoin side at all.
+QUOTE_ASSETS = {
+    "WETH", "ETH", "USDG", "USDC", "USDT", "DAI", "WBTC", "USDS", "FRAX",
+}
+
+# The whole chain's liquidity is a few hundred million dollars, so a token
+# reporting a multi-trillion-dollar valuation is a broken decimals field or a
+# nonsense supply, not a discovery. Without this bound the table opened with a
+# token at $404,178,457,980 billion.
+MAX_PLAUSIBLE_CAP = 10_000_000_000
+
+
 def number(value) -> float | None:
     try:
         out = float(value)
@@ -94,6 +107,8 @@ def main() -> int:
     # represents it.
     by_token: dict[str, dict] = {}
     skipped_no_data = 0
+    implausible = 0
+    quote_side = 0
 
     for address, raw in candles.items():
         attributes = pools.get(address) or {}
@@ -113,6 +128,14 @@ def main() -> int:
 
         peak_cap = max(c for _, c, _, _ in series)
         if peak_cap < args.threshold:
+            continue
+        if peak_cap > MAX_PLAUSIBLE_CAP:
+            implausible += 1
+            continue
+
+        name = token_name(attributes.get("name"))
+        if name.upper() in QUOTE_ASSETS:
+            quote_side += 1
             continue
 
         crossing = next(i for i, (_, c, _, _) in enumerate(series) if c >= args.threshold)
@@ -138,7 +161,6 @@ def main() -> int:
                     realisable = price / entry_price
                     break
 
-        name = token_name(attributes.get("name"))
         row = {
             "token": name,
             "pool": address,
@@ -225,13 +247,47 @@ def main() -> int:
         "traded — a price the market demonstrably absorbed size at. Where the two "
         "diverge sharply, the peak was a wick nobody could have sold into.",
         "",
-        f"## The table (top {min(args.top, len(rows))} by all-time high)",
+        f"## Observed crossings ({len(observed)}) — sorted by run from the crossing",
+        "",
+        "These are the rows where a multiple can be measured: the token was "
+        "below the threshold, then above it, both inside the candle window.",
         "",
         "| # | Token | Crossed | ATH cap | ATH date | Peak x | Realisable x | "
         f"Days to ATH | Now | {money(args.runner_cap)}+ |",
         "|---:|---|---|---:|---|---:|---:|---:|---:|:--:|",
     ]
-    for index, row in enumerate(rows[: args.top], start=1):
+    for index, row in enumerate(
+        sorted(observed, key=lambda r: -r["peak_multiple"])[: args.top], start=1
+    ):
+        realisable = (f"{row['realisable_multiple']:.1f}x"
+                      if row["realisable_multiple"] else "—")
+        lines.append(
+            f"| {index} | **{row['token']}** | {row['crossed_on']} | "
+            f"{money(row['ath_cap'])} | {row['ath_on']} | "
+            f"{row['peak_multiple']:.1f}x | {realisable} | "
+            f"{row['days_to_ath']} | {money(row['cap_now'])} | "
+            f"{'yes' if row['is_runner'] else 'no'} |"
+        )
+    lines += [
+        "",
+        f"## Already above {money(args.threshold)} when the data starts "
+        f"({len(censored)})",
+        "",
+        "Their all-time high is real; the multiple is not measurable, because "
+        "the crossing happened before the candle window opens.",
+        "",
+        "| # | Token | ATH cap | ATH date | Now |",
+        "|---:|---|---:|---|---:|",
+    ]
+    for index, row in enumerate(
+        sorted(censored, key=lambda r: -r["ath_cap"])[: args.top], start=1
+    ):
+        lines.append(
+            f"| {index} | **{row['token']}** | {money(row['ath_cap'])} | "
+            f"{row['ath_on']} | {money(row['cap_now'])} |"
+        )
+
+    for _unused_index, row in enumerate([], start=1):
         if row["left_censored"]:
             # Already above the threshold on its first candle: the ATH is real,
             # the multiple from a crossing that was never observed is not.
@@ -265,7 +321,9 @@ def main() -> int:
     if realisables:
         print(f"  median realisable    {statistics.median(realisables):.2f}x",
               file=sys.stderr)
-    print(f"  skipped {skipped_no_data} pools without usable data", file=sys.stderr)
+    print(f"  skipped: {skipped_no_data} without usable data, "
+          f"{implausible} with an implausible cap, {quote_side} quote assets",
+          file=sys.stderr)
     print(f"\nwrote {args.out_csv} and {args.out_md}", file=sys.stderr)
     return 0
 
