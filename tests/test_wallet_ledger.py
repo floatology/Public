@@ -95,6 +95,64 @@ def test_no_lookahead():
         assert priors["0xC"] == 2.0, priors
 
 
+def test_unlabelled_tokens_do_not_break_the_audit():
+    """A token in the archive with no outcome must resolve into nothing.
+
+    The archive and the feature table come from the same extraction but need
+    not agree row for row: a token whose label is null is in one and not the
+    other. If such a token is still given a resolution block, the slow
+    reference scorer counts positions in it that the forward sweep never
+    schedules, and the audit reports a mismatch that is its own doing --
+    aborting a run that was correct. That happened, and this is the fixture
+    that reproduces it.
+    """
+    with tempfile.TemporaryDirectory() as tmp:
+        directory = Path(tmp)
+        rows = []
+
+        def add(token, block, wallet, is_buy, quote, li):
+            rows.append({"pool": "0xp" + token, "token": token, "quote_asset": "0xq",
+                         "block": block, "log_index": li, "wallet": wallet,
+                         "is_buy": is_buy, "quote_amount": str(quote),
+                         "base_amount": str(10**18)})
+
+        launches = LAUNCHES + [("0xUNLABELLED", 100)]
+        for token, start in launches:
+            add(token, start, "0xw1", True, 10**18, 0)
+            for j in range(2, 12):
+                add(token, start + j, f"0xo{j:03d}", True, 10**17 * j, j)
+            add(token, start + 50, "0xw1", False, 3 * 10**18, 1)
+
+        trades = directory / "trades.parquet"
+        pq.write_table(pa.table({k: [r[k] for r in rows] for k in rows[0]}), trades)
+        features = directory / "features.parquet"
+        pq.write_table(pa.table({
+            "token": [t for t, _ in launches],
+            "pool": ["0xp" + t for t, _ in launches],
+            "peak_over_launch": [100.0, 1.2, 1.1, None],
+            "realisable_peak_over_launch": [100.0, 1.2, 1.1, None],
+        }), features)
+
+        out = directory / "wf.parquet"
+        result = subprocess.run(
+            [sys.executable, str(ROOT / "scripts" / "wallet_ledger.py"),
+             "--trades", str(trades), "--features", str(features),
+             "--horizon-blocks", str(HORIZON), "--min-prior", "1",
+             "--threshold", "10", "--audit-sample", "500",
+             "--out", str(out), "--summary", str(directory / "s.json")],
+            capture_output=True, text=True,
+        )
+        assert result.returncode == 0, result.stderr
+        assert "AUDIT FAILED" not in result.stderr, result.stderr
+
+        priors = dict(duckdb.connect().execute(
+            "SELECT token, early_buyer_mean_prior_positions FROM read_parquet(?)",
+            [str(out)]).fetchall())
+        # Two resolved priors at 0xC: 0xA and 0xB. The unlabelled token has no
+        # outcome, so it contributes nothing however early it launched.
+        assert priors["0xC"] == 2.0, priors
+
+
 def test_sweep_refuses_to_move_backwards():
     sweep = Sweep(base_rate=0.1)
     sweep.prepare()

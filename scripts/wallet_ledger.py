@@ -217,7 +217,14 @@ def main() -> int:
     positions_by_token = {t: build_positions(t, tr) for t, tr in token_trades.items()}
     all_positions = [p for ps in positions_by_token.values() for p in ps]
     first_block = {t: min(x.block for x in tr) for t, tr in token_trades.items() if tr}
-    resolved_by = {t: b + args.horizon_blocks for t, b in first_block.items()}
+    # Only tokens with an outcome get a resolution block. A token whose label is
+    # null never resolves into anything, so counting it would give the slow
+    # reference scorer positions the sweep never schedules -- the audit would
+    # then report a mismatch that is its own doing and abort a correct run.
+    resolved_by = {
+        t: b + args.horizon_blocks
+        for t, b in first_block.items() if t in outcomes
+    }
 
     sweep = Sweep(base_rate)
     for token, positions in positions_by_token.items():
@@ -230,6 +237,10 @@ def main() -> int:
     rows: list[dict] = []
     audit_points: list[tuple[str, int, dict]] = []
     rng = random.Random(args.seed)
+    # Sample enough to reach the cap on a large run, and everything on a small
+    # one. A fixed 5% audits essentially nothing on a handful of tokens, which
+    # is exactly where a bug is easiest to introduce and hardest to notice.
+    audit_probability = min(1.0, args.audit_sample / max(1, len(order)))
 
     for block, token in order:
         sweep.advance(block)
@@ -272,7 +283,8 @@ def main() -> int:
             row["early_buyer_skilled_count"] = 0
         rows.append(row)
 
-        if early and len(audit_points) < args.audit_sample and rng.random() < 0.05:
+        if (early and len(audit_points) < args.audit_sample
+                and rng.random() < audit_probability):
             # The sweep is destructive -- by the end of the loop it has advanced
             # past every audit block -- so its state has to be captured here,
             # while it is still the state the feature was computed from.
