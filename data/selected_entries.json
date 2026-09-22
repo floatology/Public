@@ -1,0 +1,50 @@
+{
+  "threshold": 250000.0,
+  "crossings": 95,
+  "selected_n": 23,
+  "quantile": 0.25,
+  "training_rows": 8204,
+  "rules": {
+    "2x target, stop at 0.5x": {
+      "selected": 0.6824102377117468,
+      "rejected": 0.7755454215665826,
+      "all": 0.7518919881521594,
+      "random_quartile_mean": 0.7590505373782258,
+      "random_quartile_p95": 0.95462747720049,
+      "beats_random_p95": false
+    },
+    "3x target, trailing 30%": {
+      "selected": 0.9051292386967892,
+      "rejected": 0.7762859385858016,
+      "all": 0.8056890237800924,
+      "random_quartile_mean": 0.8105292092795738,
+      "random_quartile_p95": 0.9485204326065738,
+      "beats_random_p95": false
+    },
+    "trailing 30%": {
+      "selected": 0.9068260760383404,
+      "rejected": 0.7480017538061065,
+      "all": 0.7836962943738074,
+      "random_quartile_mean": 0.7864398534577788,
+      "random_quartile_p95": 0.9280326654472341,
+      "beats_random_p95": false
+    },
+    "sell at 2x": {
+      "selected": 0.3507599160061532,
+      "rejected": 0.3220158841858734,
+      "all": 0.3287511705618063,
+      "random_quartile_mean": 0.3562192748775427,
+      "random_quartile_p95": 0.6125418592918757,
+      "beats_random_p95": false
+    },
+    "hold to the end": {
+      "selected": 0.09490923333856423,
+      "rejected": 0.13017667076745232,
+      "all": 0.12058973463185375,
+      "random_quartile_mean": 0.12683205698719002,
+      "random_quartile_p95": 0.22337826662592516,
+      "beats_random_p95": false
+    }
+  },
+  "verdict_note": "a rule is only rescued if selected > 1.0x AND above the random-quartile p95"
+}
