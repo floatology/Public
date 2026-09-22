@@ -1,0 +1,51 @@
+{
+  "run_at": "2026-09-22T07:57:39.539092+00:00",
+  "criteria": {
+    "market_cap": [
+      100000,
+      400000
+    ],
+    "min_liquidity_over_cap": 0.4,
+    "min_liquidity_usd": 50000,
+    "max_peak_cap_ever": 1000000
+  },
+  "universe": 135,
+  "passed": [
+    {
+      "pair": "0xa24a9d77258380c7eac2ba8c30c5533cc0410f9266fea2d734f35d76f8ea6720",
+      "dex": "uniswap",
+      "base_token": "0xC57Aa24860b56eAe71E1e3e6d558D9c3F238D07c",
+      "base_symbol": "HETH",
+      "quote_symbol": "ETH",
+      "price_usd": "0.01485",
+      "market_cap": 269073,
+      "fdv": 269073,
+      "liquidity_usd": 149994.46,
+      "liquidity_base": 527776,
+      "liquidity_quote": 52.1906,
+      "pair_created_at": 1789242698000,
+      "url": "https://dexscreener.com/robinhood/0xa24a9d77258380c7eac2ba8c30c5533cc0410f9266fea2d734f35d76f8ea6720",
+      "price_change_m5": -0.14,
+      "volume_m5": 1869.89,
+      "buys_m5": 8,
+      "sells_m5": 15,
+      "price_change_h1": -0.65,
+      "volume_h1": 12174.17,
+      "buys_h1": 98,
+      "sells_h1": 157,
+      "price_change_h6": -7.02,
+      "volume_h6": 65977.13,
+      "buys_h6": 563,
+      "sells_h6": 883,
+      "price_change_h24": -7.29,
+      "volume_h24": 283319.71,
+      "buys_h24": 2471,
+      "sells_h24": 3715,
+      "market_cap_used": 269073.0,
+      "liq_ratio": 0.557448945081818,
+      "peak_cap_ever": 291027.0131504843,
+      "days_of_history": 10
+    }
+  ],
+  "excluded_for_spike": []
+}

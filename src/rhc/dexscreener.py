@@ -127,6 +127,27 @@ class DexScreener:
             return payload
         return payload.get("pairs") or []
 
+    def pairs_by_address(self, addresses: Iterable[str]) -> Iterator[dict[str, Any]]:
+        """Pairs looked up by POOL address rather than token address.
+
+        The token endpoint needs token addresses, which a pool census does not
+        carry. This takes the pool addresses directly, which is what a census
+        of pool-creation events actually gives you.
+        """
+        batch: list[str] = []
+        for address in addresses:
+            batch.append(address)
+            if len(batch) == MAX_BATCH:
+                yield from self._fetch_pairs(batch)
+                batch = []
+        if batch:
+            yield from self._fetch_pairs(batch)
+
+    def _fetch_pairs(self, batch: list[str]) -> list[dict[str, Any]]:
+        payload = self.get(f"/latest/dex/pairs/{self.network}/{','.join(batch)}")
+        pairs = (payload or {}).get("pairs")
+        return pairs if isinstance(pairs, list) else []
+
     def search(self, query: str) -> list[dict[str, Any]]:
         """Free-text search, filtered to this network.
 
