@@ -116,8 +116,14 @@ def load(args) -> list[dict]:
         signatures = detect(trades)
         cap = caps[index]
         depth_usd = depths[-1] / scale * usd * DEPTH_TO_RESERVE
+        # Has it already spiked and crashed? Peak market cap BEFORE the moment
+        # of screening. A coin that touched $1M and fell back into the band is
+        # a different animal from one that has never been there.
+        prior_peak = max(caps[:index + 1])
         out.append({
             "token": token, "cap": cap, "depth_usd": depth_usd,
+            "prior_peak_cap": prior_peak,
+            "prior_peak_multiple": prior_peak / cap,
             "liq_ratio": depth_usd / cap,
             "round_trip_share": feats.round_trip_share,
             "trade_count": feats.trade_count,
@@ -173,6 +179,10 @@ def main() -> int:
     payload["liq_ratio"] = sweep(
         records, "liq_ratio", [0.05, 0.10, 0.15, 0.20, 0.25, 0.30, 0.35, 0.40, 0.50, 0.60],
         True, "liquidity / market cap  (keep at or above)")
+    payload["prior_peak"] = sweep(
+        records, "prior_peak_cap",
+        [250_000, 400_000, 600_000, 1_000_000, 2_000_000, 5_000_000],
+        False, "prior peak market cap  (keep at or BELOW - never spiked)")
     payload["round_trip"] = sweep(
         records, "round_trip_share", [0.05, 0.10, 0.15, 0.20, 0.30, 0.40, 0.50],
         False, "round-trip share  (keep at or below)")
@@ -180,23 +190,23 @@ def main() -> int:
     # The combination, at a few plausible pairs rather than a full grid: a grid
     # over 328 tokens finds a winning cell by construction.
     print(f"\n  --- combined ---", file=sys.stderr)
-    print(f"  {'liq>=':>7} {'rt<=':>6} {'kept':>6} {'survived':>10} {'95% CI':>16} "
+    print(f"  {'liq>=':>7} {'peak<=':>6} {'kept':>6} {'survived':>10} {'95% CI':>16} "
           f"{'med peak':>9}", file=sys.stderr)
     combos = []
     for liq in (0.20, 0.25, 0.30):
-        for rt in (0.15, 0.25, 1.01):
+        for peak in (600_000, 1_000_000, float("inf")):
             group = [r for r in records if r["liq_ratio"] >= liq
-                     and (r["round_trip_share"] is None or r["round_trip_share"] <= rt)]
+                     and r["prior_peak_cap"] <= peak]
             if len(group) < 10:
                 continue
             hits = sum(r["survived"] for r in group)
             lo, hi = wilson(hits, len(group))
             peaks = sorted(r["peak_multiple"] for r in group)
-            combos.append({"liq": liq, "round_trip": rt, "n": len(group),
+            combos.append({"liq": liq, "max_prior_peak": peak, "n": len(group),
                            "survived": hits / len(group), "ci": [lo, hi],
                            "median_peak": peaks[len(peaks) // 2]})
-            label_rt = "any" if rt > 1 else f"{rt:.2f}"
-            print(f"  {liq:>7.2f} {label_rt:>6} {len(group):>6} {hits/len(group):>9.1%} "
+            label = "any" if peak == float("inf") else f"${peak/1000:.0f}k"
+            print(f"  {liq:>7.2f} {label:>6} {len(group):>6} {hits/len(group):>9.1%} "
                   f"{f'{lo:.1%}-{hi:.1%}':>16} {peaks[len(peaks)//2]:>8.2f}x",
                   file=sys.stderr)
     payload["combined"] = combos

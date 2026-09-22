@@ -13,11 +13,34 @@ measured in this project does that, and `docs/18` says so at length.
 
 ## The screen, in full
 
-| # | Criterion | Threshold | Why |
-|---|---|---|---|
-| 1 | Market cap | **$100k – $400k** | the band asked for |
-| 2 | **Liquidity ÷ market cap** | **≥ 0.20**, and higher is better | the entire screen |
-| 3 | Absolute liquidity | **≥ $25k** | at $20k of depth a $500 trade cost 96% |
+| # | Criterion | Threshold (my depth figure) | **On DexScreener** | Why |
+|---|---|---|---|---|
+| 1 | Market cap | $100k – $400k | same | the band asked for |
+| 2 | **Liquidity ÷ market cap** | **≥ 0.20** | **≥ 0.40** | the entire screen |
+| 3 | Absolute liquidity | ≥ $25k | **≥ $50k** | at $20k of depth a $500 trade cost 96% |
+| 4 | Never been above $1M | — | same | free, untestable here, keep it |
+
+### The DexScreener column, and why it is double
+
+An aggregator's "Liquidity" is the **whole pool** — both sides. My depth figure
+is the **quote side only**. In a balanced AMM the two sides are equal by
+construction, so:
+
+```
+aggregator liquidity ≈ 2 x (my depth figure)
+```
+
+and every threshold doubles. Checked directly, DexScreener and GeckoTerminal
+agree with each other on this field: across 98 pairs present in both, the median
+ratio between them is **0.978**.
+
+**The doubling is derivation, not measurement.** Only three pools overlapped
+between my archived depth and a live snapshot, which is far too few to verify
+on, and the archived value predates the snapshot anyway. Treat **0.40 as a
+starting point that may be too strict** — on a trending list it passed roughly
+one coin in nine where the census screen passes about one in four. Recalibrating
+properly needs the market poller to accumulate a few weeks of snapshots with
+outcomes attached.
 
 That is the whole thing. Criterion 2 does essentially all the work, and
 criterion 3 matters only because the ratio can be satisfied by a very small pool
@@ -58,6 +81,40 @@ That is why the threshold is sharp rather than gradual: it is measuring
 something structural about how the token was launched, not a market mood.
 
 ---
+
+## Criterion 4: never been above $1M
+
+**The reasoning is sound and the data cannot test it, so it goes in as a free
+filter rather than a proven one.**
+
+Tested over 556 observations across 353 tokens, sampled once per token per day
+whenever the coin sat in the band — which, unlike the first-entry design used
+elsewhere, does include coins that fell back into it:
+
+| prior peak | observations | **distinct tokens** | survived |
+|---|---:|---:|---:|
+| never above $400k | 388 | **349** | 28.1% |
+| peaked $400k–$1M | 91 | **13** | 41.8% |
+| peaked $1M–$5M | 21 | **6** | 23.8% |
+| peaked above $5M | 56 | **3** | 71.4% |
+
+The eye is drawn to that 71.4%, and it should not be: it is **three tokens**
+contributing 56 observations. Same for the 67.8% in the "more than 10x below its
+peak" bucket — **four tokens**. Neither is evidence of anything.
+
+The decisive line is elsewhere. Among coins that already pass the liquidity gate,
+the "has been above $1M" group has **fewer than ten observations in the entire
+dataset** — too few to report. Every one of the 113 passing observations, across
+101 tokens, had never been above $1M.
+
+So: **within the set this screen already keeps, spiked-and-crashed coins barely
+exist.** The filter excludes nothing, costs nothing, and cannot be shown to add
+anything. It stays in because the mechanism is sound — a coin that round-tripped
+from $5M has an overhang of holders underwater at every level above — and
+because a criterion that removes nothing cannot hurt.
+
+If it starts excluding candidates in live use, that is worth knowing, and the
+poller will show it.
 
 ## A correction: round-tripping does not work as a criterion
 

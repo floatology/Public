@@ -1,0 +1,105 @@
+{
+  "band": [
+    100000,
+    400000
+  ],
+  "observations": 556,
+  "tokens": 353,
+  "base_survival": 0.34532374100719426,
+  "prior_peak": [
+    {
+      "group": "never above $400k",
+      "observations": 388,
+      "tokens": 349,
+      "survived": 0.2809278350515464,
+      "ci": [
+        0.23852131070421598,
+        0.32762990958479865
+      ]
+    },
+    {
+      "group": "peaked $400k-$1M",
+      "observations": 91,
+      "tokens": 13,
+      "survived": 0.4175824175824176,
+      "ci": [
+        0.32161134602464436,
+        0.5202302087361358
+      ]
+    },
+    {
+      "group": "peaked $1M-$5M",
+      "observations": 21,
+      "tokens": 6,
+      "survived": 0.23809523809523808,
+      "ci": [
+        0.10627856389112261,
+        0.45091581972345923
+      ]
+    },
+    {
+      "group": "peaked above $5M",
+      "observations": 56,
+      "tokens": 3,
+      "survived": 0.7142857142857143,
+      "ci": [
+        0.5852450091364125,
+        0.8158137860829666
+      ]
+    }
+  ],
+  "drawdown": [
+    {
+      "group": "at or near its high (<1.5x)",
+      "observations": 387,
+      "tokens": 349,
+      "survived": 0.2971576227390181,
+      "ci": [
+        0.2537991912065832,
+        0.34450354831756175
+      ]
+    },
+    {
+      "group": "1.5x - 3x below peak",
+      "observations": 49,
+      "tokens": 18,
+      "survived": 0.40816326530612246,
+      "ci": [
+        0.2821503460597105,
+        0.5475293002795374
+      ]
+    },
+    {
+      "group": "3x - 10x below peak",
+      "observations": 61,
+      "tokens": 13,
+      "survived": 0.2786885245901639,
+      "ci": [
+        0.18188396512091543,
+        0.40171668631273205
+      ]
+    },
+    {
+      "group": "more than 10x below peak",
+      "observations": 59,
+      "tokens": 4,
+      "survived": 0.6779661016949152,
+      "ci": [
+        0.5510476493903221,
+        0.7831258917034755
+      ]
+    }
+  ],
+  "with_liquidity_gate": [
+    {
+      "group": "never above $1M",
+      "observations": 113,
+      "tokens": 101,
+      "survived": 0.7522123893805309,
+      "ci": [
+        0.6651990148002161,
+        0.8226409326157725
+      ]
+    }
+  ]
+}
