@@ -1,0 +1,3213 @@
+{
+ "trades": 263408,
+ "wallets": 16416,
+ "gross_bought_usd": 64812070.38790563,
+ "gross_sold_usd": 63733565.066545166,
+ "era_net_flow_usd": {
+  "0": 579755.9111165025,
+  "1": 770712.9204598968,
+  "2": -271963.510215762
+ },
+ "holders": [
+  {
+   "wallet": "0xb92fe925dc43a0ecde6c8b1a2709c170ec4fff4f",
+   "supply_share": 0.26439654289980186,
+   "value_usd": 7395171.304907458,
+   "spent_usd": 1096809.2023187901,
+   "taken_usd": 0.0,
+   "buys": 7817,
+   "sells": 0,
+   "first_block": 5682929,
+   "last_block": 69734893,
+   "era_share": {
+    "0": 0.2613802170517714,
+    "1": 0.000903091458474714,
+    "2": 0.0021132343895556866
+   }
+  },
+  {
+   "wallet": "0xb336fbe46e7ba2aca408057084f0159a1e4edf16",
+   "supply_share": 0.1354741603694251,
+   "value_usd": 3789212.2655328205,
+   "spent_usd": 2942.5651291413187,
+   "taken_usd": 0.0,
+   "buys": 11,
+   "sells": 0,
+   "first_block": 5673789,
+   "last_block": 5860845,
+   "era_share": {
+    "0": 0.1354741603694251,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xd4d8a5f5ad99349ae53746926b077505ead139aa",
+   "supply_share": 0.08976475490916055,
+   "value_usd": 2510720.1948092207,
+   "spent_usd": 2582.9139600000003,
+   "taken_usd": 0.0,
+   "buys": 8,
+   "sells": 0,
+   "first_block": 5787709,
+   "last_block": 5859991,
+   "era_share": {
+    "0": 0.08976475490916055,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x039ec98a76f111092d4751365ff09dd2aec301e8",
+   "supply_share": 0.08488930972600738,
+   "value_usd": 2374353.993036426,
+   "spent_usd": 1619849.504113499,
+   "taken_usd": 0.0,
+   "buys": 3083,
+   "sells": 0,
+   "first_block": 46124734,
+   "last_block": 69738242,
+   "era_share": {
+    "0": 0.0008800119534158536,
+    "1": 0.0068444310597488,
+    "2": 0.07716486671284276
+   }
+  },
+  {
+   "wallet": "0x711067eaf55873bfc0a7e1ef06ae74f75b977e2c",
+   "supply_share": 0.08107360743888635,
+   "value_usd": 2267628.800065651,
+   "spent_usd": 4255.010891999999,
+   "taken_usd": 0.0,
+   "buys": 28,
+   "sells": 0,
+   "first_block": 5672431,
+   "last_block": 6272418,
+   "era_share": {
+    "0": 0.08107360743888635,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x48a097df16c7844a33b1c3d11ab353457846e13f",
+   "supply_share": 0.0700956142084192,
+   "value_usd": 1960574.329409485,
+   "spent_usd": 817857.6880191531,
+   "taken_usd": 327058.2163674888,
+   "buys": 1552,
+   "sells": 777,
+   "first_block": 5900971,
+   "last_block": 69728447,
+   "era_share": {
+    "0": 0.06532679728621184,
+    "1": 0.0013582892874509855,
+    "2": 0.0034105276347563183
+   }
+  },
+  {
+   "wallet": "0x17d4f025b99b8a16c58f84e46599431d800a4512",
+   "supply_share": 0.06840970257528858,
+   "value_usd": 1913419.3810308215,
+   "spent_usd": 1495.3712400000004,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5674265,
+   "last_block": 5856005,
+   "era_share": {
+    "0": 0.06840970257528858,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xf721cd0457f12bc809a00c6377fe073b181b961a",
+   "supply_share": 0.06837730475927006,
+   "value_usd": 1912513.2141167833,
+   "spent_usd": 8395.8297984,
+   "taken_usd": 0.0,
+   "buys": 11,
+   "sells": 0,
+   "first_block": 5685861,
+   "last_block": 9336559,
+   "era_share": {
+    "0": 0.06837730475927006,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x93cf6a7932a1719d1cec7e11305ee5d97318e642",
+   "supply_share": 0.06728041265632123,
+   "value_usd": 1881833.1419973045,
+   "spent_usd": 761.2799040000001,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5674296,
+   "last_block": 5760231,
+   "era_share": {
+    "0": 0.06728041265632123,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x8d6e03db156b56df20f40f8d9a91a6bd277e2bb2",
+   "supply_share": 0.06447327462434124,
+   "value_usd": 1803317.4912428244,
+   "spent_usd": 1844.0298769839292,
+   "taken_usd": 0.0,
+   "buys": 5,
+   "sells": 0,
+   "first_block": 5676861,
+   "last_block": 5796696,
+   "era_share": {
+    "0": 0.06447327462434124,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xe7ef47d37d61f9505f5b696926e6c9e2aa79570b",
+   "supply_share": 0.06353758847390656,
+   "value_usd": 1777146.3496151664,
+   "spent_usd": 674.1712747932565,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5674293,
+   "last_block": 5760225,
+   "era_share": {
+    "0": 0.06353758847390656,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x7855a2091504bd0ebc8a389f5b8a6dac0fd65155",
+   "supply_share": 0.06281635090534113,
+   "value_usd": 1756973.3348223914,
+   "spent_usd": 1487.2146696000002,
+   "taken_usd": 0.0,
+   "buys": 8,
+   "sells": 0,
+   "first_block": 5672049,
+   "last_block": 5684744,
+   "era_share": {
+    "0": 0.06281635090534113,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x6b3f07e71d825ef324138a50176c4497565232db",
+   "supply_share": 0.06210236469318573,
+   "value_usd": 1737003.1404684049,
+   "spent_usd": 933.7488000000001,
+   "taken_usd": 0.0,
+   "buys": 10,
+   "sells": 0,
+   "first_block": 5680922,
+   "last_block": 5774339,
+   "era_share": {
+    "0": 0.06210236469318573,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x72518a5ef4f53401284456b16e7396519542559e",
+   "supply_share": 0.058638082725973234,
+   "value_usd": 1640107.1738454713,
+   "spent_usd": 643.4627760000001,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5670491,
+   "last_block": 5713576,
+   "era_share": {
+    "0": 0.058638082725973234,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xa7a52f9231a23aa5f98534fc670ed82e88c311d4",
+   "supply_share": 0.05362282123028554,
+   "value_usd": 1499830.3098110864,
+   "spent_usd": 643.4627760000001,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5670490,
+   "last_block": 5713576,
+   "era_share": {
+    "0": 0.05362282123028554,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xe12766c6607b97002a56ed15801a859c683070b2",
+   "supply_share": 0.05269658399607922,
+   "value_usd": 1473923.4543703354,
+   "spent_usd": 308046.47544000024,
+   "taken_usd": 0.0,
+   "buys": 119,
+   "sells": 0,
+   "first_block": 6349765,
+   "last_block": 34523621,
+   "era_share": {
+    "0": 0.05269658399607922,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xca79927a23330323e858b5be6908c7e4f9cee902",
+   "supply_share": 0.05196549946637221,
+   "value_usd": 1453475.0200744306,
+   "spent_usd": 561.1792213019521,
+   "taken_usd": 0.0,
+   "buys": 9,
+   "sells": 0,
+   "first_block": 5669528,
+   "last_block": 5713575,
+   "era_share": {
+    "0": 0.05196549946637221,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x8366a39cc670b4001a1121b8f6a443a643e40951",
+   "supply_share": 0.049547944266322246,
+   "value_usd": 1385856.0011290333,
+   "spent_usd": 180777.60758497563,
+   "taken_usd": 549.5613286102007,
+   "buys": 1441,
+   "sells": 18,
+   "first_block": 5903998,
+   "last_block": 68912005,
+   "era_share": {
+    "0": 0.04901601274551645,
+    "1": 9.75408432569806e-05,
+    "2": 0.00043439067754876703
+   }
+  },
+  {
+   "wallet": "0x416cbed27076cba2a62b2abcc5287a995708ec44",
+   "supply_share": 0.04471329124402642,
+   "value_usd": 1250630.756095419,
+   "spent_usd": 1209.331691774311,
+   "taken_usd": 0.0,
+   "buys": 9,
+   "sells": 0,
+   "first_block": 5672289,
+   "last_block": 6270498,
+   "era_share": {
+    "0": 0.04471329124402642,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x47423c8d522769bc54cd803c5d3e42b4211bfea5",
+   "supply_share": 0.044205894684136646,
+   "value_usd": 1236438.874315302,
+   "spent_usd": 400.0150294072744,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5668639,
+   "last_block": 5673675,
+   "era_share": {
+    "0": 0.044205894684136646,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xbe89f548d7fe24a813c3ed9ce6219970aca132fc",
+   "supply_share": 0.04410751050175792,
+   "value_usd": 1233687.068734169,
+   "spent_usd": 1631.31408,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5677299,
+   "last_block": 65552886,
+   "era_share": {
+    "0": 0.044074270347017684,
+    "1": 0.0,
+    "2": 3.324015474023654e-05
+   }
+  },
+  {
+   "wallet": "0x6372e107520695be6b10c5101e7dea67bbfcb0b6",
+   "supply_share": 0.04349233333008852,
+   "value_usd": 1216480.5632425759,
+   "spent_usd": 388.4838283195078,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5668638,
+   "last_block": 5673675,
+   "era_share": {
+    "0": 0.04349233333008852,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x1a469d80b64e9ebe7ab2084dd03c206d05fc34e0",
+   "supply_share": 0.04344195271929395,
+   "value_usd": 1215071.4175586517,
+   "spent_usd": 392.08112527401624,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5668638,
+   "last_block": 5673675,
+   "era_share": {
+    "0": 0.04344195271929395,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xdcf7c020617954bb21189593d337d117e24630d5",
+   "supply_share": 0.04276567817180841,
+   "value_usd": 1196156.018465481,
+   "spent_usd": 395.91762921576225,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5668639,
+   "last_block": 5673675,
+   "era_share": {
+    "0": 0.04276567817180841,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x660c72ca66461fe79b86d2a2e92dc84deba9896c",
+   "supply_share": 0.04050192210215476,
+   "value_usd": 1132838.7611972685,
+   "spent_usd": 1903.1997600000004,
+   "taken_usd": 0.0,
+   "buys": 7,
+   "sells": 0,
+   "first_block": 5811969,
+   "last_block": 5816967,
+   "era_share": {
+    "0": 0.04050192210215476,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x86765cef781a9befd345572f97f9608731fa6d90",
+   "supply_share": 0.04013790572213583,
+   "value_usd": 1122657.2230481391,
+   "spent_usd": 401.1302819081908,
+   "taken_usd": 0.0,
+   "buys": 8,
+   "sells": 0,
+   "first_block": 5669413,
+   "last_block": 5713574,
+   "era_share": {
+    "0": 0.04013790572213583,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x09e0dc0475736925a3b4e208423effc7c89f8dd0",
+   "supply_share": 0.04,
+   "value_usd": 1118800.0,
+   "spent_usd": 353.5737048101338,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5670255,
+   "last_block": 5675107,
+   "era_share": {
+    "0": 0.04,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xef9dd03aaeeb537327fd25eb53e635e9f78039a7",
+   "supply_share": 0.04,
+   "value_usd": 1118800.0,
+   "spent_usd": 377.97101525252475,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5670255,
+   "last_block": 5675107,
+   "era_share": {
+    "0": 0.04,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x76513827d913d89edb58b26c65c91424f270a3c3",
+   "supply_share": 0.03869433876859125,
+   "value_usd": 1082280.655357497,
+   "spent_usd": 1126.4781471871154,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5677535,
+   "last_block": 5801029,
+   "era_share": {
+    "0": 0.03869433876859125,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xc9576a72c86ffd17e5ded8319593c97ee881d539",
+   "supply_share": 0.03858367031764498,
+   "value_usd": 1079185.2587845302,
+   "spent_usd": 74496.67631999998,
+   "taken_usd": 0.0,
+   "buys": 117,
+   "sells": 0,
+   "first_block": 5900071,
+   "last_block": 15344822,
+   "era_share": {
+    "0": 0.03858367031764498,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xb4982c8799e173ba1aadbff4de598030bb2f7e2f",
+   "supply_share": 0.0384912233555202,
+   "value_usd": 1076599.5172539,
+   "spent_usd": 1060.354152,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5675687,
+   "last_block": 5900245,
+   "era_share": {
+    "0": 0.0384912233555202,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x1d4b86491ec211257cbedd77a4380a7494624eff",
+   "supply_share": 0.03593322654685917,
+   "value_usd": 1005052.3465156509,
+   "spent_usd": 1388326.0773228577,
+   "taken_usd": 1105899.0244198523,
+   "buys": 2721,
+   "sells": 2221,
+   "first_block": 12197556,
+   "last_block": 67639296,
+   "era_share": {
+    "0": 0.03593263874558026,
+    "1": 0.0,
+    "2": 5.878012789018557e-07
+   }
+  },
+  {
+   "wallet": "0x466c34b6d8f81b69b69272b703e266061eddf17c",
+   "supply_share": 0.03545458263518868,
+   "value_usd": 991664.6763062272,
+   "spent_usd": 543.7713600000001,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5717164,
+   "last_block": 5799543,
+   "era_share": {
+    "0": 0.03545458263518868,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x8146201acece798327c6514d22aa9282f0efca2e",
+   "supply_share": 0.03497649329897254,
+   "value_usd": 978292.5175722619,
+   "spent_usd": 1767.2569199999998,
+   "taken_usd": 0.0,
+   "buys": 5,
+   "sells": 0,
+   "first_block": 5676281,
+   "last_block": 5876965,
+   "era_share": {
+    "0": 0.03497649329897254,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xf3e9a1bf3e72bef1b762ac5d5cc2564e9cb3aed0",
+   "supply_share": 0.034555389108691534,
+   "value_usd": 966514.2333701022,
+   "spent_usd": 1767.2569199999998,
+   "taken_usd": 0.0,
+   "buys": 5,
+   "sells": 0,
+   "first_block": 5676281,
+   "last_block": 5876965,
+   "era_share": {
+    "0": 0.034555389108691534,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x1d788455b157d5efd134ba808548919887cc552f",
+   "supply_share": 0.034191395530097146,
+   "value_usd": 956333.3329768172,
+   "spent_usd": 212.91841109051015,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5669410,
+   "last_block": 5713571,
+   "era_share": {
+    "0": 0.034191395530097146,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xbf755b5d77379c0c50ebe701b3076496aaa22dee",
+   "supply_share": 0.03391248332273296,
+   "value_usd": 948532.1585368407,
+   "spent_usd": 1616.5497944614053,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5682187,
+   "last_block": 5800684,
+   "era_share": {
+    "0": 0.03391248332273296,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x2e209a99c4529106fec78fbeadce0c4991d8955a",
+   "supply_share": 0.033501138831928165,
+   "value_usd": 937026.8531290308,
+   "spent_usd": 4888.449599999999,
+   "taken_usd": 0.0,
+   "buys": 20,
+   "sells": 0,
+   "first_block": 5677816,
+   "last_block": 6552099,
+   "era_share": {
+    "0": 0.033501138831928165,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x25ea09eb8659f63e982fa133430b2bc998bf8338",
+   "supply_share": 0.03301994273587567,
+   "value_usd": 923567.7983224425,
+   "spent_usd": 679.7142000000001,
+   "taken_usd": 0.0,
+   "buys": 5,
+   "sells": 0,
+   "first_block": 5782543,
+   "last_block": 5810534,
+   "era_share": {
+    "0": 0.03301994273587567,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xaa4e9e8f1e9c03e6de9f5f78680a0f8ae5908709",
+   "supply_share": 0.032507906080830304,
+   "value_usd": 909246.1330808235,
+   "spent_usd": 435.01708800000006,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5761506,
+   "last_block": 5901862,
+   "era_share": {
+    "0": 0.032507906080830304,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x02872e08f8a1faff198bbe84610181962bceadde",
+   "supply_share": 0.032185285477943325,
+   "value_usd": 900222.4348180748,
+   "spent_usd": 815.65704,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5672368,
+   "last_block": 5968178,
+   "era_share": {
+    "0": 0.032185285477943325,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xdfcdaec37712604285cd1117d221f05b92667258",
+   "supply_share": 0.03211848218738351,
+   "value_usd": 898353.9467811168,
+   "spent_usd": 815.65704,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5672368,
+   "last_block": 5968178,
+   "era_share": {
+    "0": 0.03211848218738351,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x9473622ca59dfda03a9b4761e5d4e4a04b6fd69d",
+   "supply_share": 0.032046988109440594,
+   "value_usd": 896354.2574210532,
+   "spent_usd": 815.65704,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5672368,
+   "last_block": 5968178,
+   "era_share": {
+    "0": 0.032046988109440594,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xb300000b72deaeb607a12d5f54773d1c19c7028d",
+   "supply_share": 0.03168452212923089,
+   "value_usd": 886216.0839545878,
+   "spent_usd": 367938.17886893026,
+   "taken_usd": 2097.043382073076,
+   "buys": 1035,
+   "sells": 5,
+   "first_block": 9659062,
+   "last_block": 69681046,
+   "era_share": {
+    "0": 0.017894187873949897,
+    "1": 0.002909074727796003,
+    "2": 0.010881259527485004
+   }
+  },
+  {
+   "wallet": "0x2ceecab09351e92689ac3c6f34d1023815bfd0af",
+   "supply_share": 0.03100131230915938,
+   "value_usd": 867106.7052871878,
+   "spent_usd": 62250.69812400005,
+   "taken_usd": 0.0,
+   "buys": 42,
+   "sells": 0,
+   "first_block": 5899240,
+   "last_block": 8821686,
+   "era_share": {
+    "0": 0.03100131230915938,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xc51e16440e37c0fd2397ac13c3f125471a428ae6",
+   "supply_share": 0.03099693495421389,
+   "value_usd": 866984.2706693624,
+   "spent_usd": 208.44568800000002,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5669522,
+   "last_block": 5713572,
+   "era_share": {
+    "0": 0.03099693495421389,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xecd1f3e99caa4cdbf174ad12ce79d89a8ba54fca",
+   "supply_share": 0.030438504927691016,
+   "value_usd": 851364.9828275177,
+   "spent_usd": 9850.372003261582,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5672548,
+   "last_block": 6001099,
+   "era_share": {
+    "0": 0.030438504927691016,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xc128499f87bb3451feb479b26484596586fdbda6",
+   "supply_share": 0.0298835762516912,
+   "value_usd": 835843.6277598029,
+   "spent_usd": 1364.8661136,
+   "taken_usd": 0.0,
+   "buys": 8,
+   "sells": 0,
+   "first_block": 5675816,
+   "last_block": 5903636,
+   "era_share": {
+    "0": 0.0298835762516912,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xcdc107a009fa760341142b3b08767a112ff59e6a",
+   "supply_share": 0.02979346275238481,
+   "value_usd": 833323.1531842031,
+   "spent_usd": 208.44568800000002,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5669522,
+   "last_block": 5713572,
+   "era_share": {
+    "0": 0.02979346275238481,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xcc7010c59220cfa98428fee3d5fa5189ae1d506e",
+   "supply_share": 0.028977685816844616,
+   "value_usd": 810505.8722971439,
+   "spent_usd": 2446.9711200000006,
+   "taken_usd": 0.0,
+   "buys": 20,
+   "sells": 0,
+   "first_block": 5676306,
+   "last_block": 7898344,
+   "era_share": {
+    "0": 0.028977685816844616,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x78ca0d29b697b72f4e31d8e5130c0463fffac93e",
+   "supply_share": 0.028162996379091206,
+   "value_usd": 787719.008723181,
+   "spent_usd": 1368.2316306079533,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5672841,
+   "last_block": 5878064,
+   "era_share": {
+    "0": 0.028162996379091206,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xaeb679e8cce17e2c2f13c1a1a1bbf647c31163a9",
+   "supply_share": 0.027834521292161706,
+   "value_usd": 778531.5605417629,
+   "spent_usd": 436.77473280000004,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5672645,
+   "last_block": 5685784,
+   "era_share": {
+    "0": 0.027834521292161706,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x5b051aa41cd55e2a986d46733ccf42cf23432fe5",
+   "supply_share": 0.02725982820147875,
+   "value_usd": 762457.3947953606,
+   "spent_usd": 271.88568000000004,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5672288,
+   "last_block": 5673710,
+   "era_share": {
+    "0": 0.02725982820147875,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x7bd728f7da2fea17bd3598e4ba8fb4adac907aac",
+   "supply_share": 0.026717292696397513,
+   "value_usd": 747282.6767182384,
+   "spent_usd": 837.2770905723271,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5680367,
+   "last_block": 5865243,
+   "era_share": {
+    "0": 0.026717292696397513,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xe4fd07e37f25f89f7cbf1446d614a5d2c456a914",
+   "supply_share": 0.02647282294465478,
+   "value_usd": 740444.8577619942,
+   "spent_usd": 53874.14749199996,
+   "taken_usd": 0.0,
+   "buys": 76,
+   "sells": 0,
+   "first_block": 5906206,
+   "last_block": 8018141,
+   "era_share": {
+    "0": 0.02647282294465478,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x347ffc6db9acc54ac2019795173b9599e8b82bd9",
+   "supply_share": 0.02573546651184061,
+   "value_usd": 719820.9983361819,
+   "spent_usd": 274.60453680000006,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5781447,
+   "last_block": 5782362,
+   "era_share": {
+    "0": 0.02573546651184061,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x32a1f3b5af48eba238b13be0704e80a14cd10a22",
+   "supply_share": 0.025535262089324072,
+   "value_usd": 714221.2806383943,
+   "spent_usd": 121315.39041599998,
+   "taken_usd": 0.0,
+   "buys": 69,
+   "sells": 0,
+   "first_block": 5995124,
+   "last_block": 13211060,
+   "era_share": {
+    "0": 0.025535262089324072,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xdef34909015734e8dcb3fb55fbc09297b02c78c8",
+   "supply_share": 0.025444396681085116,
+   "value_usd": 711679.7751699507,
+   "spent_usd": 2175.0854400000003,
+   "taken_usd": 0.0,
+   "buys": 5,
+   "sells": 0,
+   "first_block": 5812586,
+   "last_block": 6488973,
+   "era_share": {
+    "0": 0.025444396681085116,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xb351552f021acb51577830f953b2b44d11944727",
+   "supply_share": 0.024707947732680955,
+   "value_usd": 691081.2980830863,
+   "spent_usd": 271.88568000000004,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5672289,
+   "last_block": 5673710,
+   "era_share": {
+    "0": 0.024707947732680955,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x05e4e6fe82a65d636e64d5af6448b2f2baeec624",
+   "supply_share": 0.024650182666868393,
+   "value_usd": 689465.6091923089,
+   "spent_usd": 407.82852000000014,
+   "taken_usd": 0.0,
+   "buys": 9,
+   "sells": 0,
+   "first_block": 5682879,
+   "last_block": 5709472,
+   "era_share": {
+    "0": 0.024650182666868393,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xf3b0dcdd12a0f965af00009992ff94773b2f5afe",
+   "supply_share": 0.024459479931713074,
+   "value_usd": 684131.6536900146,
+   "spent_usd": 26459.914377600006,
+   "taken_usd": 0.0,
+   "buys": 9,
+   "sells": 0,
+   "first_block": 5812349,
+   "last_block": 9995513,
+   "era_share": {
+    "0": 0.024459479931713074,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x69dec5e0e10ea678d6c6156895207b3a7212ad27",
+   "supply_share": 0.024247078367379236,
+   "value_usd": 678190.7819355972,
+   "spent_usd": 1087.5427200000001,
+   "taken_usd": 0.0,
+   "buys": 8,
+   "sells": 0,
+   "first_block": 5787753,
+   "last_block": 5881815,
+   "era_share": {
+    "0": 0.024247078367379236,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x4d26d2e47f82a1f9775be591f9c5059ff6b04ba4",
+   "supply_share": 0.023869006176959823,
+   "value_usd": 667616.1027695662,
+   "spent_usd": 897.2227440000001,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5686569,
+   "last_block": 5884253,
+   "era_share": {
+    "0": 0.023869006176959823,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x59bd258daa4f130e9a7b0a15ad82234eb0a655ae",
+   "supply_share": 0.023846508746116414,
+   "value_usd": 666986.8496288761,
+   "spent_usd": 21421.296,
+   "taken_usd": 0.0,
+   "buys": 12,
+   "sells": 0,
+   "first_block": 5896870,
+   "last_block": 5914852,
+   "era_share": {
+    "0": 0.023846508746116414,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x0c8acf06e7a60c88c9ef680bd9f886ed55acac3f",
+   "supply_share": 0.023483245513770432,
+   "value_usd": 656826.3770201589,
+   "spent_usd": 271.88568000000004,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5781459,
+   "last_block": 5781459,
+   "era_share": {
+    "0": 0.023483245513770432,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x5322b3b84cf3be5d00342e13fb5e3429488164c3",
+   "supply_share": 0.023455087014259867,
+   "value_usd": 656038.7837888484,
+   "spent_usd": 7201.707891840002,
+   "taken_usd": 0.0,
+   "buys": 84,
+   "sells": 0,
+   "first_block": 5670551,
+   "last_block": 6831748,
+   "era_share": {
+    "0": 0.023455087014259867,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x9ff4f1594b124919eee05c09b6735148f00dc1f4",
+   "supply_share": 0.023115678315339224,
+   "value_usd": 646545.522480038,
+   "spent_usd": 1617.994428,
+   "taken_usd": 0.0,
+   "buys": 9,
+   "sells": 0,
+   "first_block": 5677418,
+   "last_block": 17834496,
+   "era_share": {
+    "0": 0.023115678315339224,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xbdbae060cbab0e9cfe802a7513dd5ecb36cda6c3",
+   "supply_share": 0.022886423794187715,
+   "value_usd": 640133.2735234303,
+   "spent_usd": 378372.76228713006,
+   "taken_usd": 8819.718060208945,
+   "buys": 1259,
+   "sells": 35,
+   "first_block": 10120648,
+   "last_block": 69740787,
+   "era_share": {
+    "0": 0.009548296068392685,
+    "1": 0.0025986856176634008,
+    "2": 0.010739442108131674
+   }
+  },
+  {
+   "wallet": "0x1c66ae54d5e4ee86980c90edbc55ddb29161b4ea",
+   "supply_share": 0.0227468460583353,
+   "value_usd": 636229.2842516383,
+   "spent_usd": 847.153283051243,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5681568,
+   "last_block": 5683884,
+   "era_share": {
+    "0": 0.0227468460583353,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x38727a6be906c930da17a5209161c38f554a9e7a",
+   "supply_share": 0.0224294894690961,
+   "value_usd": 627352.8204506178,
+   "spent_usd": 120771.6190559999,
+   "taken_usd": 0.0,
+   "buys": 33,
+   "sells": 0,
+   "first_block": 6074276,
+   "last_block": 15071099,
+   "era_share": {
+    "0": 0.0224294894690961,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xf89379fe5d6dcf54f4eb4f298709cf11cb03096e",
+   "supply_share": 0.022362048138776517,
+   "value_usd": 625466.4864415792,
+   "spent_usd": 543.7713600000001,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5809672,
+   "last_block": 5809672,
+   "era_share": {
+    "0": 0.022362048138776517,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x7fe554645a1edcd79e55fb59ff520332a323547f",
+   "supply_share": 0.022229709875166318,
+   "value_usd": 621764.9852084019,
+   "spent_usd": 1087.5427200000001,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5682313,
+   "last_block": 5682981,
+   "era_share": {
+    "0": 0.022229709875166318,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x5520f87dc7a50a0bdb36ec81988d3c560b666e69",
+   "supply_share": 0.02220412328048222,
+   "value_usd": 621049.3281550877,
+   "spent_usd": 543.7713600000001,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5736179,
+   "last_block": 5811233,
+   "era_share": {
+    "0": 0.02220412328048222,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xa4beaea04ee42f451f38c771842489d7649b95f2",
+   "supply_share": 0.021746779005637394,
+   "value_usd": 608257.4087876779,
+   "spent_usd": 353.4513840000001,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5674633,
+   "last_block": 5678904,
+   "era_share": {
+    "0": 0.021746779005637394,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x010aa621da8ef8ee30e8fd19d88322d765f37d16",
+   "supply_share": 0.021231611818350926,
+   "value_usd": 593848.1825592754,
+   "spent_usd": 114.44873572376977,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5669762,
+   "last_block": 5753778,
+   "era_share": {
+    "0": 0.021231611818350926,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x3b4726665ce43461de2162ef232ca5496933117b",
+   "supply_share": 0.021136046433398486,
+   "value_usd": 591175.2187421556,
+   "spent_usd": 180094.44370062175,
+   "taken_usd": 129626.52436263235,
+   "buys": 799,
+   "sells": 594,
+   "first_block": 5894871,
+   "last_block": 8309843,
+   "era_share": {
+    "0": 0.021136046433398486,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xa78be696b23baa52467740702a96bd20c0d2b019",
+   "supply_share": 0.021033995019639887,
+   "value_usd": 588320.8406993276,
+   "spent_usd": 3860.7766559999995,
+   "taken_usd": 0.0,
+   "buys": 13,
+   "sells": 0,
+   "first_block": 5730400,
+   "last_block": 9540258,
+   "era_share": {
+    "0": 0.021033995019639887,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x551a67f57fef52267b0034e0f12f59b6907e819f",
+   "supply_share": 0.020988155606577855,
+   "value_usd": 587038.7123159826,
+   "spent_usd": 44861.137199999976,
+   "taken_usd": 0.0,
+   "buys": 88,
+   "sells": 0,
+   "first_block": 5956696,
+   "last_block": 6662343,
+   "era_share": {
+    "0": 0.020988155606577855,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x39b38686a19836ac10162c490e4558e120cbbe5f",
+   "supply_share": 0.0209788807542463,
+   "value_usd": 586779.294696269,
+   "spent_usd": 2422415.6179754804,
+   "taken_usd": 2168239.7582220477,
+   "buys": 3514,
+   "sells": 4017,
+   "first_block": 21608809,
+   "last_block": 58857553,
+   "era_share": {
+    "0": 0.016927897622409784,
+    "1": 0.0040509831318365505,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xd3a6ebeb50d4840c4483a81def6b3a6c5c31f3b3",
+   "supply_share": 0.020970464021689905,
+   "value_usd": 586543.8786866666,
+   "spent_usd": 1752.3032076000004,
+   "taken_usd": 0.0,
+   "buys": 33,
+   "sells": 0,
+   "first_block": 5679771,
+   "last_block": 9656355,
+   "era_share": {
+    "0": 0.020970464021689905,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xd1f2b5909fd0339f023fcd3fa019e496e1952d4e",
+   "supply_share": 0.020891381882275975,
+   "value_usd": 584331.951247259,
+   "spent_usd": 897.2227440000001,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5801849,
+   "last_block": 5812484,
+   "era_share": {
+    "0": 0.020891381882275975,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x051c9b93ad8110e54b2ab8499e75c2948d666666",
+   "supply_share": 0.020810000370962912,
+   "value_usd": 582055.7103758325,
+   "spent_usd": 1141.9198560000002,
+   "taken_usd": 0.0,
+   "buys": 11,
+   "sells": 0,
+   "first_block": 5680781,
+   "last_block": 5914121,
+   "era_share": {
+    "0": 0.020810000370962912,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x0b5662cad3cd33c5328b5fa133983814ddedfbf3",
+   "supply_share": 0.02066440723801084,
+   "value_usd": 577983.4704471631,
+   "spent_usd": 271.88568000000004,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5781999,
+   "last_block": 5781999,
+   "era_share": {
+    "0": 0.02066440723801084,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xfc2b322799db5b892805b250347083c749b61d9e",
+   "supply_share": 0.020650614833250154,
+   "value_usd": 577597.6968860067,
+   "spent_usd": 3404.28763313971,
+   "taken_usd": 0.0,
+   "buys": 9,
+   "sells": 0,
+   "first_block": 5720428,
+   "last_block": 6755687,
+   "era_share": {
+    "0": 0.020650614833250154,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x90bd352c0e4c2c5076863f92e6c69a60fe92b302",
+   "supply_share": 0.020471555036285356,
+   "value_usd": 572589.3943649014,
+   "spent_usd": 137460.97614114202,
+   "taken_usd": 0.0,
+   "buys": 52,
+   "sells": 0,
+   "first_block": 8651855,
+   "last_block": 57437828,
+   "era_share": {
+    "0": 0.02006140773330221,
+    "1": 0.0004101473029831465,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x04e41931aa1d46a2ecf2578fa89bf438e4ca47a3",
+   "supply_share": 0.02,
+   "value_usd": 559400.0,
+   "spent_usd": 97.29489738004979,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5670255,
+   "last_block": 5670255,
+   "era_share": {
+    "0": 0.02,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x9708635c963b45f67ac91b5b90ccbce87535868d",
+   "supply_share": 0.02,
+   "value_usd": 559400.0,
+   "spent_usd": 133.49562698443677,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5670599,
+   "last_block": 5670599,
+   "era_share": {
+    "0": 0.02,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xf9066f2dc390f1d8a95c6fb7cdd8bb4ea1530dcf",
+   "supply_share": 0.02,
+   "value_usd": 559400.0,
+   "spent_usd": 141.67115077911018,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5670862,
+   "last_block": 5670862,
+   "era_share": {
+    "0": 0.02,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x331cc2e56c657126f7a986419040838cf446eb93",
+   "supply_share": 0.02,
+   "value_usd": 559400.0,
+   "spent_usd": 463.3677352632664,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5677635,
+   "last_block": 5677635,
+   "era_share": {
+    "0": 0.02,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x07cdaf0140c60a0c34681065abf49bb8d85b8cbe",
+   "supply_share": 0.02,
+   "value_usd": 559400.0,
+   "spent_usd": 513.0569395235017,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5677635,
+   "last_block": 5677635,
+   "era_share": {
+    "0": 0.02,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x4d9644d05fe2123b4eafa8d7fd31b0ea430726f3",
+   "supply_share": 0.02,
+   "value_usd": 559400.0,
+   "spent_usd": 604.8760554912827,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5680947,
+   "last_block": 5680947,
+   "era_share": {
+    "0": 0.02,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x968532bb22a670e94b0f66ee84ff5ac83171a7ec",
+   "supply_share": 0.01998635533959503,
+   "value_usd": 559018.3588484729,
+   "spent_usd": 339.85710000000006,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5687314,
+   "last_block": 5687745,
+   "era_share": {
+    "0": 0.01998635533959503,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xc493608b60033788b01d17c92a0e081afd767195",
+   "supply_share": 0.01998462332384936,
+   "value_usd": 558969.9143680666,
+   "spent_usd": 1097.612634652429,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5682105,
+   "last_block": 5682228,
+   "era_share": {
+    "0": 0.01998462332384936,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x2a4beabeaef993b5417a066a7d518954257e4ca5",
+   "supply_share": 0.019937600735150343,
+   "value_usd": 557654.6925621551,
+   "spent_usd": 326.26281600000004,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5685210,
+   "last_block": 5685472,
+   "era_share": {
+    "0": 0.019937600735150343,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x36ce5f2f8455d81ecce9193e8a66365ec219d9e4",
+   "supply_share": 0.019908900368616488,
+   "value_usd": 556851.9433102031,
+   "spent_usd": 1359.4284,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5874031,
+   "last_block": 5874031,
+   "era_share": {
+    "0": 0.019908900368616488,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x97367b4fc9118691ad5b8ac122900dafbc704cb0",
+   "supply_share": 0.019797580137259786,
+   "value_usd": 553738.3164391562,
+   "spent_usd": 1631.31408,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5811943,
+   "last_block": 5874258,
+   "era_share": {
+    "0": 0.019797580137259786,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xca3ed0aacdefc22b329228a52a8582bf5d5cf255",
+   "supply_share": 0.01961853954113098,
+   "value_usd": 548730.5509654336,
+   "spent_usd": 351.92882419200004,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5676245,
+   "last_block": 5676245,
+   "era_share": {
+    "0": 0.01961853954113098,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x159c4b3fbf1bb02873a3e277c8844561a083c18c",
+   "supply_share": 0.019514011951528517,
+   "value_usd": 545806.9142842526,
+   "spent_usd": 1576.936944,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5874200,
+   "last_block": 5876169,
+   "era_share": {
+    "0": 0.019514011951528517,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x3a7f029e3ad003ab5aa78ccf101b1b543eaed6f9",
+   "supply_share": 0.01941791611182489,
+   "value_usd": 543119.1136477421,
+   "spent_usd": 204661.51274050315,
+   "taken_usd": 50311.23198566115,
+   "buys": 462,
+   "sells": 55,
+   "first_block": 35839919,
+   "last_block": 64433747,
+   "era_share": {
+    "0": 0.01913950032450623,
+    "1": 0.00027841578731865657,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x768e0ca9d622943078df5f674eb6810e44c12f35",
+   "supply_share": 0.019244485720844525,
+   "value_usd": 538268.2656120213,
+   "spent_usd": 543.7713600000001,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5856832,
+   "last_block": 5856832,
+   "era_share": {
+    "0": 0.019244485720844525,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x275f60f6a52e35c250c74559ffd768956fab73c6",
+   "supply_share": 0.01914083198795058,
+   "value_usd": 535369.0707029776,
+   "spent_usd": 40920.168000000005,
+   "taken_usd": 0.0,
+   "buys": 15,
+   "sells": 0,
+   "first_block": 5958607,
+   "last_block": 6150299,
+   "era_share": {
+    "0": 0.01914083198795058,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xa99416605785b6ccea16ef2730d7f83f73cf1587",
+   "supply_share": 0.019099248061069506,
+   "value_usd": 534205.968268114,
+   "spent_usd": 244.99271157739395,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5695250,
+   "last_block": 5695250,
+   "era_share": {
+    "0": 0.019099248061069506,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x2f0a1f9b8d9a26be553122ce6bfb83e91e18e045",
+   "supply_share": 0.019094530877948643,
+   "value_usd": 534074.0286562234,
+   "spent_usd": 271.88568000000004,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5686152,
+   "last_block": 5690598,
+   "era_share": {
+    "0": 0.019094530877948643,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x7547e2c93409194676cccca3f0b445e013213848",
+   "supply_share": 0.019089840389950243,
+   "value_usd": 533942.8357069083,
+   "spent_usd": 83194.28028476842,
+   "taken_usd": 0.0,
+   "buys": 20,
+   "sells": 0,
+   "first_block": 5977850,
+   "last_block": 22776681,
+   "era_share": {
+    "0": 0.019089840389950243,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x794fad2b3585063321d3a5613ce4bf832642814b",
+   "supply_share": 0.01887782127766718,
+   "value_usd": 528012.661136351,
+   "spent_usd": 1305.0512640000002,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5673867,
+   "last_block": 5975298,
+   "era_share": {
+    "0": 0.01887782127766718,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x017274d0124e580c27ff0ee4f2a2c0d8ddbcae85",
+   "supply_share": 0.018797853942687542,
+   "value_usd": 525775.9747769705,
+   "spent_usd": 462.20565600000003,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5680257,
+   "last_block": 5681395,
+   "era_share": {
+    "0": 0.018797853942687542,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xcc90cf56e5bd645974326111a86fd05da8ec2a2c",
+   "supply_share": 0.01870077700744075,
+   "value_usd": 523060.73289811774,
+   "spent_usd": 118248.58041085074,
+   "taken_usd": 0.0,
+   "buys": 196,
+   "sells": 0,
+   "first_block": 6855704,
+   "last_block": 63860655,
+   "era_share": {
+    "0": 0.018526864418894385,
+    "1": 0.00017391258854636756,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x43808768a15bd6a91e7705892d4ab6638bd940e1",
+   "supply_share": 0.01856358437773873,
+   "value_usd": 519223.4550453522,
+   "spent_usd": 326.26281600000004,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5672332,
+   "last_block": 5792116,
+   "era_share": {
+    "0": 0.01856358437773873,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x4d8b6d3723d8df7370e3d10d30fe5d4daede234a",
+   "supply_share": 0.01838077433432187,
+   "value_usd": 514110.2581309827,
+   "spent_usd": 271.88568000000004,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5672581,
+   "last_block": 5672706,
+   "era_share": {
+    "0": 0.01838077433432187,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x57841a6640bf42d4f2aa7d87308db3c962c3945c",
+   "supply_share": 0.018212465635358718,
+   "value_usd": 509402.6638209833,
+   "spent_usd": 2311.0282800000004,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5677240,
+   "last_block": 8051607,
+   "era_share": {
+    "0": 0.018212465635358718,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x13a8147e3f5c2da365556bf7e2431d45efa074c9",
+   "supply_share": 0.01801361832513344,
+   "value_usd": 503840.90455398225,
+   "spent_usd": 135.94284000000002,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5671119,
+   "last_block": 5671119,
+   "era_share": {
+    "0": 0.01801361832513344,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x7db50747d2ec81f5f4c64832a00c03f4ecc5be54",
+   "supply_share": 0.01788100826010362,
+   "value_usd": 500131.80103509827,
+   "spent_usd": 299.074248,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5685874,
+   "last_block": 5687542,
+   "era_share": {
+    "0": 0.01788100826010362,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x2c46056bd5408cfdeb43afd571a8d7d471b5ff89",
+   "supply_share": 0.01787590607450459,
+   "value_usd": 499989.0929038934,
+   "spent_usd": 17543.173367174397,
+   "taken_usd": 0.0,
+   "buys": 27,
+   "sells": 0,
+   "first_block": 5879376,
+   "last_block": 9706220,
+   "era_share": {
+    "0": 0.01787590607450459,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xd46172180998be754249bedfe2f59486a414490b",
+   "supply_share": 0.017821502701488714,
+   "value_usd": 498467.4305606393,
+   "spent_usd": 353.4513840000001,
+   "taken_usd": 0.0,
+   "buys": 8,
+   "sells": 0,
+   "first_block": 5675882,
+   "last_block": 5807063,
+   "era_share": {
+    "0": 0.017821502701488714,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x5dcbfc184752a1b9421d6b9693036768b43e6444",
+   "supply_share": 0.01773610271576972,
+   "value_usd": 496078.7929600791,
+   "spent_usd": 159643.5815999999,
+   "taken_usd": 0.0,
+   "buys": 93,
+   "sells": 0,
+   "first_block": 7296683,
+   "last_block": 69712974,
+   "era_share": {
+    "0": 0.016104259100343875,
+    "1": 0.00040818122246137454,
+    "2": 0.0012236623929644753
+   }
+  },
+  {
+   "wallet": "0xe053a85bdf416937c450f18b202fba369ac9d403",
+   "supply_share": 0.017718668384132476,
+   "value_usd": 495591.15470418526,
+   "spent_usd": 18142.898995294425,
+   "taken_usd": 0.0,
+   "buys": 9,
+   "sells": 0,
+   "first_block": 5901455,
+   "last_block": 5912615,
+   "era_share": {
+    "0": 0.017718668384132476,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x0f0e12786ccbf6f668b3f0231a37e947348554c1",
+   "supply_share": 0.017623199930385594,
+   "value_usd": 492920.90205288504,
+   "spent_usd": 3267.1595879999986,
+   "taken_usd": 0.0,
+   "buys": 33,
+   "sells": 0,
+   "first_block": 5818534,
+   "last_block": 6286030,
+   "era_share": {
+    "0": 0.017623199930385594,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x60407a94e92c2f2279919f966fbb228af85ef554",
+   "supply_share": 0.01758470000420069,
+   "value_usd": 491844.0591174933,
+   "spent_usd": 145.005696,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5671416,
+   "last_block": 5671426,
+   "era_share": {
+    "0": 0.01758470000420069,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xadffbebbd2d9141cff80f8a905846ba8f9e3946d",
+   "supply_share": 0.017513818185815114,
+   "value_usd": 489861.4946572487,
+   "spent_usd": 543.7713600000001,
+   "taken_usd": 0.0,
+   "buys": 6,
+   "sells": 0,
+   "first_block": 5746922,
+   "last_block": 5901919,
+   "era_share": {
+    "0": 0.017513818185815114,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x478d935c1a7b5ad71f6325fbf97e909f989e7cbd",
+   "supply_share": 0.017410852848489932,
+   "value_usd": 486981.55417226336,
+   "spent_usd": 244.69711200000006,
+   "taken_usd": 0.0,
+   "buys": 7,
+   "sells": 0,
+   "first_block": 5781769,
+   "last_block": 5872884,
+   "era_share": {
+    "0": 0.017410852848489932,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xa33bdb7aad1f87ffe034a3f3531d506616f2093c",
+   "supply_share": 0.017378065754094004,
+   "value_usd": 486064.4991420093,
+   "spent_usd": 265.088538,
+   "taken_usd": 0.0,
+   "buys": 12,
+   "sells": 0,
+   "first_block": 5683024,
+   "last_block": 5709452,
+   "era_share": {
+    "0": 0.017378065754094004,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x8bd335b457b6ea8c7f98134659af0c7c8785f543",
+   "supply_share": 0.01732626266424321,
+   "value_usd": 484615.56671888253,
+   "spent_usd": 230.69088000000002,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5692559,
+   "last_block": 5692559,
+   "era_share": {
+    "0": 0.01732626266424321,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x98794db6ed9a5a04089cdd299205b0b0114964fc",
+   "supply_share": 0.017325911749470093,
+   "value_usd": 484605.75163267844,
+   "spent_usd": 145.005696,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5671416,
+   "last_block": 5671426,
+   "era_share": {
+    "0": 0.017325911749470093,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x06f62f2970ff98970c611c26686d9ddc2c8a3f39",
+   "supply_share": 0.01718986911545613,
+   "value_usd": 480800.63915930793,
+   "spent_usd": 718.1325842678525,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5681739,
+   "last_block": 5681739,
+   "era_share": {
+    "0": 0.01718986911545613,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xf6151ca8f109cbf4d87721e065148142faab68b3",
+   "supply_share": 0.017124036364827604,
+   "value_usd": 478959.29712422803,
+   "spent_usd": 129269.98717150923,
+   "taken_usd": 0.0,
+   "buys": 8,
+   "sells": 0,
+   "first_block": 7345428,
+   "last_block": 9546762,
+   "era_share": {
+    "0": 0.017124036364827604,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x97e7ab99b1c51912ef43a336fb488c1a34fc9535",
+   "supply_share": 0.017089751465123936,
+   "value_usd": 478000.34847951645,
+   "spent_usd": 24469.7112,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5894884,
+   "last_block": 7493095,
+   "era_share": {
+    "0": 0.017089751465123936,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x01202a650190c00db23151dadde392718aaa621d",
+   "supply_share": 0.0170883953138527,
+   "value_usd": 477962.41692846,
+   "spent_usd": 145.005696,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5671416,
+   "last_block": 5671426,
+   "era_share": {
+    "0": 0.0170883953138527,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x5520c0c506abb7abf702f46b720c4f007a002cce",
+   "supply_share": 0.0169359083110057,
+   "value_usd": 473697.35545882944,
+   "spent_usd": 3267.1595879999986,
+   "taken_usd": 0.0,
+   "buys": 33,
+   "sells": 0,
+   "first_block": 5818536,
+   "last_block": 6286030,
+   "era_share": {
+    "0": 0.0169359083110057,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x476e47bc7807667779a50d55cd81373d3abf3534",
+   "supply_share": 0.01689823564676193,
+   "value_usd": 472643.65103993117,
+   "spent_usd": 883.6284600000001,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5811970,
+   "last_block": 5813259,
+   "era_share": {
+    "0": 0.01689823564676193,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xef32caf886bbc6e1ba69b40d6a7063371b9cff8c",
+   "supply_share": 0.01687972303422822,
+   "value_usd": 472125.8532673633,
+   "spent_usd": 3267.1595879999986,
+   "taken_usd": 0.0,
+   "buys": 33,
+   "sells": 0,
+   "first_block": 5818534,
+   "last_block": 6286030,
+   "era_share": {
+    "0": 0.01687972303422822,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x8337493a39b0cbd33e6fdcf44f6a05c7a40bf752",
+   "supply_share": 0.016854150951155198,
+   "value_usd": 471410.6021038108,
+   "spent_usd": 788.468472,
+   "taken_usd": 0.0,
+   "buys": 5,
+   "sells": 0,
+   "first_block": 5801862,
+   "last_block": 5878357,
+   "era_share": {
+    "0": 0.016854150951155198,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xa633c73658857d5241fe21d43f854a82e2d0592c",
+   "supply_share": 0.016853831811187093,
+   "value_usd": 471401.6757589029,
+   "spent_usd": 73541.25427232956,
+   "taken_usd": 10926.026221891612,
+   "buys": 146,
+   "sells": 39,
+   "first_block": 5906244,
+   "last_block": 66498250,
+   "era_share": {
+    "0": 0.017073431815328374,
+    "1": -1.055223195763371e-05,
+    "2": -0.00020904777218365425
+   }
+  },
+  {
+   "wallet": "0x7777777bcb976a2255c7feaa594f70d9fa7edf10",
+   "supply_share": 0.01675739977785671,
+   "value_usd": 468704.4717866521,
+   "spent_usd": 117541.61717759998,
+   "taken_usd": 0.0,
+   "buys": 81,
+   "sells": 0,
+   "first_block": 12473806,
+   "last_block": 33977232,
+   "era_share": {
+    "0": 0.01675739977785671,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xdf75ed09962bbf0af8d2662b602932ff1bd96b73",
+   "supply_share": 0.016757237496379845,
+   "value_usd": 468699.9327737442,
+   "spent_usd": 679.7142,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5832957,
+   "last_block": 5832957,
+   "era_share": {
+    "0": 0.016757237496379845,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x2e73ac3d7fb9af259bae41c7b99606e64ef77f84",
+   "supply_share": 0.016679415885868312,
+   "value_usd": 466523.2623277367,
+   "spent_usd": 983.1825600000001,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5683484,
+   "last_block": 5890071,
+   "era_share": {
+    "0": 0.016679415885868312,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xc51b211fe1f47982b27a35ad56de634d7391c206",
+   "supply_share": 0.01660568310782464,
+   "value_usd": 464460.95652585523,
+   "spent_usd": 815.65704,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5682395,
+   "last_block": 5684181,
+   "era_share": {
+    "0": 0.01660568310782464,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x2bda4afb624e6d60ce0d1d32dac68bf3fda23d58",
+   "supply_share": 0.016577835360898237,
+   "value_usd": 463682.0550443237,
+   "spent_usd": 271.88568000000004,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5686564,
+   "last_block": 5686564,
+   "era_share": {
+    "0": 0.016577835360898237,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x71447730f7df641bc852c944b1a2f616144c0e2c",
+   "supply_share": 0.016535131668228478,
+   "value_usd": 462487.6327603505,
+   "spent_usd": 34900.87719888002,
+   "taken_usd": 0.0,
+   "buys": 91,
+   "sells": 0,
+   "first_block": 5683644,
+   "last_block": 16858434,
+   "era_share": {
+    "0": 0.016535131668228478,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x942620e5ff4554f0db29cbf593f6e4a22acda158",
+   "supply_share": 0.016479347603917782,
+   "value_usd": 460927.35248158034,
+   "spent_usd": 5628.033576000001,
+   "taken_usd": 0.0,
+   "buys": 24,
+   "sells": 0,
+   "first_block": 5788718,
+   "last_block": 8754475,
+   "era_share": {
+    "0": 0.016479347603917782,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x23cf34a4dc0089f935834f8a09b9c8ac1552ceb0",
+   "supply_share": 0.016382436806072015,
+   "value_usd": 458216.75746583426,
+   "spent_usd": 99.691416,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5670491,
+   "last_block": 5670491,
+   "era_share": {
+    "0": 0.016382436806072015,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x860a13ac9b15bc6088129bbc3356ae085ecf7629",
+   "supply_share": 0.01631246816880024,
+   "value_usd": 456259.7346813427,
+   "spent_usd": 34855.74417599997,
+   "taken_usd": 0.0,
+   "buys": 50,
+   "sells": 0,
+   "first_block": 6022213,
+   "last_block": 6662083,
+   "era_share": {
+    "0": 0.01631246816880024,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xc0b4a58fce2da79cef47884c9af4025afe2ad582",
+   "supply_share": 0.01625454188170427,
+   "value_usd": 454639.5364312684,
+   "spent_usd": 543.7713600000001,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5811621,
+   "last_block": 5811621,
+   "era_share": {
+    "0": 0.01625454188170427,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x77f7ec14682a8e15070f2d3411dd62e83c9b8001",
+   "supply_share": 0.01570211993539793,
+   "value_usd": 439188.29459308006,
+   "spent_usd": 407.82852,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5794900,
+   "last_block": 5844715,
+   "era_share": {
+    "0": 0.01570211993539793,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x3b427d6df5025a8766adc9a7ec58c39706d18ca8",
+   "supply_share": 0.015640699680392896,
+   "value_usd": 437470.3700605893,
+   "spent_usd": 12234.855600000004,
+   "taken_usd": 0.0,
+   "buys": 17,
+   "sells": 0,
+   "first_block": 5881037,
+   "last_block": 5968593,
+   "era_share": {
+    "0": 0.015640699680392896,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x18303f295d62f11524b445820f7f0e936c790e9e",
+   "supply_share": 0.015565644860082009,
+   "value_usd": 435371.0867364938,
+   "spent_usd": 217.50854400000003,
+   "taken_usd": 0.0,
+   "buys": 5,
+   "sells": 0,
+   "first_block": 5672022,
+   "last_block": 5680024,
+   "era_share": {
+    "0": 0.015565644860082009,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x19477f707c95dc93e625b89e390dc3726626159f",
+   "supply_share": 0.015517866821192928,
+   "value_usd": 434034.73498876614,
+   "spent_usd": 380.63995200000005,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5790981,
+   "last_block": 5860134,
+   "era_share": {
+    "0": 0.015517866821192928,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x318106630d08c76ec0c6283e3046f68134d2c9e7",
+   "supply_share": 0.015445617549845707,
+   "value_usd": 432013.9228691844,
+   "spent_usd": 217.50854400000003,
+   "taken_usd": 0.0,
+   "buys": 5,
+   "sells": 0,
+   "first_block": 5672023,
+   "last_block": 5680024,
+   "era_share": {
+    "0": 0.015445617549845707,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xf0f5c5d2b15fe01beac2a38af618ca2a805b46c8",
+   "supply_share": 0.015255809343732095,
+   "value_usd": 426704.98734418664,
+   "spent_usd": 134094.0173760009,
+   "taken_usd": 0.0,
+   "buys": 352,
+   "sells": 0,
+   "first_block": 6974912,
+   "last_block": 58633938,
+   "era_share": {
+    "0": 0.014193418911324333,
+    "1": 0.0010623904324077655,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xdfb8003ab3f2496e6e915b5b5d6057e0e43b731f",
+   "supply_share": 0.015153040936615559,
+   "value_usd": 423830.55499713717,
+   "spent_usd": 135.94284000000002,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5672087,
+   "last_block": 5672087,
+   "era_share": {
+    "0": 0.015153040936615559,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xbe847c3dafa3ef17d2b8c7c346eca1a3f61f5a69",
+   "supply_share": 0.015054181535034003,
+   "value_usd": 421065.45753490104,
+   "spent_usd": 589.9919256000002,
+   "taken_usd": 0.0,
+   "buys": 7,
+   "sells": 0,
+   "first_block": 5813117,
+   "last_block": 5845974,
+   "era_share": {
+    "0": 0.015054181535034003,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x9b6c1b716be0fe672a1e8f5adb2905136fee4b15",
+   "supply_share": 0.0149909527063399,
+   "value_usd": 419296.947196327,
+   "spent_usd": 2406.1882680000003,
+   "taken_usd": 0.0,
+   "buys": 18,
+   "sells": 0,
+   "first_block": 5733043,
+   "last_block": 6003385,
+   "era_share": {
+    "0": 0.0149909527063399,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x72246c8d0a5c668cafcd908663f1421e25673402",
+   "supply_share": 0.014937808047512898,
+   "value_usd": 417810.49108893576,
+   "spent_usd": 83438.85027560614,
+   "taken_usd": 0.0,
+   "buys": 97,
+   "sells": 0,
+   "first_block": 6050665,
+   "last_block": 30498143,
+   "era_share": {
+    "0": 0.014937808047512898,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x56abd14ca029d27bcc0af0fea428170f82fd89b2",
+   "supply_share": 0.014905888900472165,
+   "value_usd": 416917.7125462064,
+   "spent_usd": 4249.573178400003,
+   "taken_usd": 0.0,
+   "buys": 27,
+   "sells": 0,
+   "first_block": 5795409,
+   "last_block": 14411776,
+   "era_share": {
+    "0": 0.014905888900472165,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xbb9a31fa4875fe2fc905bb0598a583756dac80f7",
+   "supply_share": 0.014774376094849922,
+   "value_usd": 413239.2993729523,
+   "spent_usd": 78303.07584,
+   "taken_usd": 0.0,
+   "buys": 23,
+   "sells": 0,
+   "first_block": 6480064,
+   "last_block": 11539114,
+   "era_share": {
+    "0": 0.014774376094849922,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x085111103c78e708199e1779789eefe9529d5d3a",
+   "supply_share": 0.014645388428555556,
+   "value_usd": 409631.5143466989,
+   "spent_usd": 22567.192527359985,
+   "taken_usd": 0.0,
+   "buys": 176,
+   "sells": 0,
+   "first_block": 5884036,
+   "last_block": 9637061,
+   "era_share": {
+    "0": 0.014645388428555556,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x1d14b8f653f9b86e2b45cd1790634ffd9ebc00f7",
+   "supply_share": 0.014602755720405439,
+   "value_usd": 408439.0774997401,
+   "spent_usd": 1359.428400000001,
+   "taken_usd": 0.0,
+   "buys": 26,
+   "sells": 0,
+   "first_block": 5803022,
+   "last_block": 5914603,
+   "era_share": {
+    "0": 0.014602755720405439,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xfc78968f91200892f42125bf71da6c97fd0ae4a3",
+   "supply_share": 0.014534059290694862,
+   "value_usd": 406517.63836073526,
+   "spent_usd": 164.7792,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5672290,
+   "last_block": 5672290,
+   "era_share": {
+    "0": 0.014534059290694862,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xc3b66d2c097db6b55612f4e905b63d93cd4fd3ab",
+   "supply_share": 0.014530153126212489,
+   "value_usd": 406408.3829401633,
+   "spent_usd": 13567.095431999996,
+   "taken_usd": 4972.515503854617,
+   "buys": 25,
+   "sells": 12,
+   "first_block": 5677638,
+   "last_block": 6993522,
+   "era_share": {
+    "0": 0.014530153126212489,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x7bac4bfe0610e598979cba192e8893fee09e56da",
+   "supply_share": 0.014433359174176662,
+   "value_usd": 403701.05610172125,
+   "spent_usd": 38550.67056720001,
+   "taken_usd": 0.0,
+   "buys": 200,
+   "sells": 0,
+   "first_block": 5881002,
+   "last_block": 8004182,
+   "era_share": {
+    "0": 0.014433359174176662,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x31c83a891dec2ff9caa21d1b93c7f0e976895dd9",
+   "supply_share": 0.01435327053588597,
+   "value_usd": 401460.9768887306,
+   "spent_usd": 118059.77670341844,
+   "taken_usd": 0.0,
+   "buys": 10,
+   "sells": 0,
+   "first_block": 7160821,
+   "last_block": 65598899,
+   "era_share": {
+    "0": 0.012709112890635558,
+    "1": 0.0,
+    "2": 0.0016441576452504146
+   }
+  },
+  {
+   "wallet": "0xbb5cab1e9333cf9842e3e6ac72c2b8283d2496c3",
+   "supply_share": 0.014252774135224149,
+   "value_usd": 398650.0925622194,
+   "spent_usd": 407.82852,
+   "taken_usd": 0.0,
+   "buys": 5,
+   "sells": 0,
+   "first_block": 5795604,
+   "last_block": 5819473,
+   "era_share": {
+    "0": 0.014252774135224149,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x4806aab45cd0ca6f114fbe7aab21419790e2927c",
+   "supply_share": 0.014245454900177576,
+   "value_usd": 398445.3735579668,
+   "spent_usd": 2377.414270722963,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5870444,
+   "last_block": 6433331,
+   "era_share": {
+    "0": 0.014245454900177576,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xd7cb10194df08d6ac3dcc027b7c4f886dd7f056f",
+   "supply_share": 0.014180911879701946,
+   "value_usd": 396640.1052752634,
+   "spent_usd": 5492.090736,
+   "taken_usd": 0.0,
+   "buys": 35,
+   "sells": 0,
+   "first_block": 5810439,
+   "last_block": 9191192,
+   "era_share": {
+    "0": 0.014180911879701946,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x3f84f9fd12dc7e17b7879c39703f4a9cf9785d05",
+   "supply_share": 0.0139841263018314,
+   "value_usd": 391136.01266222424,
+   "spent_usd": 25355.281249003234,
+   "taken_usd": 0.0,
+   "buys": 8,
+   "sells": 0,
+   "first_block": 5915559,
+   "last_block": 7886392,
+   "era_share": {
+    "0": 0.0139841263018314,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xe089ec6b790d6e274236c5883f079e615b96a3aa",
+   "supply_share": 0.013866241258670831,
+   "value_usd": 387838.7680050231,
+   "spent_usd": 198782.59336401324,
+   "taken_usd": 0.0,
+   "buys": 69,
+   "sells": 0,
+   "first_block": 6706083,
+   "last_block": 68611413,
+   "era_share": {
+    "0": 0.0072731285569401045,
+    "1": 0.001596710047302958,
+    "2": 0.0049964026544277685
+   }
+  },
+  {
+   "wallet": "0x6b018a97969f415b874a1958505179f5d6c08ad0",
+   "supply_share": 0.013865643153572466,
+   "value_usd": 387822.03900542186,
+   "spent_usd": 380.63995200000005,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5683883,
+   "last_block": 5685568,
+   "era_share": {
+    "0": 0.013865643153572466,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x29d4daf23bfb744ad952ad5d7ddedc6051a81ebe",
+   "supply_share": 0.013833249493879176,
+   "value_usd": 386915.98834380053,
+   "spent_usd": 6791.758119764639,
+   "taken_usd": 0.0,
+   "buys": 17,
+   "sells": 0,
+   "first_block": 5811625,
+   "last_block": 8259377,
+   "era_share": {
+    "0": 0.013833249493879176,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xc1865b5327a4c6d652463b0e3ba95fd05a3fa974",
+   "supply_share": 0.013755249595594673,
+   "value_usd": 384734.331188783,
+   "spent_usd": 247.1688,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5674442,
+   "last_block": 5678556,
+   "era_share": {
+    "0": 0.013755249595594673,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x49d17105ca8734158c0a84ba084e88a50b71f7c4",
+   "supply_share": 0.013653682430448228,
+   "value_usd": 381893.4975796369,
+   "spent_usd": 30587.138999999974,
+   "taken_usd": 0.0,
+   "buys": 48,
+   "sells": 0,
+   "first_block": 5897755,
+   "last_block": 6487488,
+   "era_share": {
+    "0": 0.013653682430448228,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x6502a009d39da9a60b311561b035aa572fbac444",
+   "supply_share": 0.013515697036737079,
+   "value_usd": 378034.0461175361,
+   "spent_usd": 626.9939262658994,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5681742,
+   "last_block": 5681742,
+   "era_share": {
+    "0": 0.013515697036737079,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x33da7ddc7a80d283bbb6eb8012428b69df3a324d",
+   "supply_share": 0.013496186735640998,
+   "value_usd": 377488.3429958787,
+   "spent_usd": 679.7142000000003,
+   "taken_usd": 0.0,
+   "buys": 10,
+   "sells": 0,
+   "first_block": 5801232,
+   "last_block": 5881096,
+   "era_share": {
+    "0": 0.013496186735640998,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x550cbb58190fc12ccac637394c09331dfd734514",
+   "supply_share": 0.013462533209757085,
+   "value_usd": 376547.05387690564,
+   "spent_usd": 52800.19905599999,
+   "taken_usd": 0.0,
+   "buys": 32,
+   "sells": 0,
+   "first_block": 5815334,
+   "last_block": 8377964,
+   "era_share": {
+    "0": 0.013462533209757085,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xb14618b76f1cefefeae6072b012dfe360ba9b38f",
+   "supply_share": 0.013395939903845312,
+   "value_usd": 374684.43911055336,
+   "spent_usd": 28847.070648000004,
+   "taken_usd": 0.0,
+   "buys": 13,
+   "sells": 0,
+   "first_block": 5894292,
+   "last_block": 6718983,
+   "era_share": {
+    "0": 0.013395939903845312,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x387bd4252f4fdd1919e8234c37203ce4b2aee1fe",
+   "supply_share": 0.013361903995245433,
+   "value_usd": 373732.45474701474,
+   "spent_usd": 2011.954032,
+   "taken_usd": 0.0,
+   "buys": 7,
+   "sells": 0,
+   "first_block": 5878072,
+   "last_block": 5931233,
+   "era_share": {
+    "0": 0.013361903995245433,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xc9f75e3f5cf794d4ee12282484549b424bdd999e",
+   "supply_share": 0.01322436504899482,
+   "value_usd": 369885.4904203851,
+   "spent_usd": 163.13140800000002,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5782218,
+   "last_block": 5785367,
+   "era_share": {
+    "0": 0.01322436504899482,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x9c4468c67bb0c8977fb541dd2b22c28497293312",
+   "supply_share": 0.013211116362238286,
+   "value_usd": 369514.92465180485,
+   "spent_usd": 489.394224,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5831779,
+   "last_block": 5838615,
+   "era_share": {
+    "0": 0.013211116362238286,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x27d45c61d147d3ca2f54f5d6f1536c68e8cd272d",
+   "supply_share": 0.0130919017920024,
+   "value_usd": 366180.4931223071,
+   "spent_usd": 51807.45600535708,
+   "taken_usd": 2357.1993436506373,
+   "buys": 23,
+   "sells": 2,
+   "first_block": 6020168,
+   "last_block": 21053790,
+   "era_share": {
+    "0": 0.0130919017920024,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x111116053f09d34a7eae8102887004445176ca11",
+   "supply_share": 0.013062998995615822,
+   "value_usd": 365372.0819073745,
+   "spent_usd": 960597.7882743466,
+   "taken_usd": 1018159.0896765894,
+   "buys": 794,
+   "sells": 859,
+   "first_block": 20584548,
+   "last_block": 69725062,
+   "era_share": {
+    "0": 0.018608362282078322,
+    "1": -0.004578883121601558,
+    "2": -0.0009664801648609108
+   }
+  },
+  {
+   "wallet": "0x25259669afbf9445d674e1c7daec238a6ea02293",
+   "supply_share": 0.013027150088739482,
+   "value_usd": 364369.3879820433,
+   "spent_usd": 870.0341760000001,
+   "taken_usd": 0.0,
+   "buys": 8,
+   "sells": 0,
+   "first_block": 5674231,
+   "last_block": 17829548,
+   "era_share": {
+    "0": 0.013027150088739482,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xe1d6f00222d7735d999dc465d6d04e75ac8ec50c",
+   "supply_share": 0.012926431230181622,
+   "value_usd": 361552.28150817996,
+   "spent_usd": 188458.03763878375,
+   "taken_usd": 0.0,
+   "buys": 20,
+   "sells": 0,
+   "first_block": 7085778,
+   "last_block": 68268245,
+   "era_share": {
+    "0": 0.003517253736711813,
+    "1": 0.00045934784281068017,
+    "2": 0.008949829650659128
+   }
+  },
+  {
+   "wallet": "0x6bfa00b012c5f9d6fb593afac3372a4fe442ec10",
+   "supply_share": 0.012902074155784083,
+   "value_usd": 360871.0141372808,
+   "spent_usd": 79114.27237925047,
+   "taken_usd": 0.0,
+   "buys": 51,
+   "sells": 0,
+   "first_block": 20684602,
+   "last_block": 63688189,
+   "era_share": {
+    "0": 0.012861896085132862,
+    "1": 4.017807065122161e-05,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x2759575a90f4df27df06c4818027fd2a793f016c",
+   "supply_share": 0.012862105593102647,
+   "value_usd": 359753.09343908104,
+   "spent_usd": 810.27315976464,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5811625,
+   "last_block": 6164340,
+   "era_share": {
+    "0": 0.012862105593102647,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x4c2e6afbf7f471dd59f9a0e94de0fd087f89a59e",
+   "supply_share": 0.012571906380386008,
+   "value_usd": 351636.22145939665,
+   "spent_usd": 299.074248,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5795285,
+   "last_block": 5795771,
+   "era_share": {
+    "0": 0.012571906380386008,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xeb1222a0c07d4e62b0235d8b4b3e7e617d259be2",
+   "supply_share": 0.012482536136443102,
+   "value_usd": 349136.53573631356,
+   "spent_usd": 44725.194360000016,
+   "taken_usd": 0.0,
+   "buys": 26,
+   "sells": 0,
+   "first_block": 5878782,
+   "last_block": 11600090,
+   "era_share": {
+    "0": 0.012482536136443102,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xe90e6e7a0ca70abf772702e4fd7c1ac8f4a90a96",
+   "supply_share": 0.012433125196766443,
+   "value_usd": 347754.5117535574,
+   "spent_usd": 23156.997484824482,
+   "taken_usd": 0.0,
+   "buys": 51,
+   "sells": 0,
+   "first_block": 5907751,
+   "last_block": 15788902,
+   "era_share": {
+    "0": 0.012433125196766443,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xa338731ebc1a1599a2ea5749dbfa488853ee115f",
+   "supply_share": 0.012427677303167203,
+   "value_usd": 347602.13416958664,
+   "spent_usd": 13649.210400000004,
+   "taken_usd": 0.0,
+   "buys": 10,
+   "sells": 0,
+   "first_block": 5890814,
+   "last_block": 6802490,
+   "era_share": {
+    "0": 0.012427677303167203,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xafbb5fcf8034536a7cf5fbada8d789ff3af42175",
+   "supply_share": 0.012350592081637652,
+   "value_usd": 345446.06052340515,
+   "spent_usd": 407.82852,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5857763,
+   "last_block": 5857763,
+   "era_share": {
+    "0": 0.012350592081637652,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x60ba0971d4514ad301269f7b64bad5675357edc4",
+   "supply_share": 0.01222301797427656,
+   "value_usd": 341877.81274051534,
+   "spent_usd": 4622.056560000001,
+   "taken_usd": 0.0,
+   "buys": 11,
+   "sells": 0,
+   "first_block": 5872836,
+   "last_block": 7933453,
+   "era_share": {
+    "0": 0.01222301797427656,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x8d077b23f1fffc1a57a1ff2f3bb71c60f6938f43",
+   "supply_share": 0.0120922573482665,
+   "value_usd": 338220.43803101394,
+   "spent_usd": 135.94284000000002,
+   "taken_usd": 0.0,
+   "buys": 1,
+   "sells": 0,
+   "first_block": 5718602,
+   "last_block": 5718602,
+   "era_share": {
+    "0": 0.0120922573482665,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x555c4f74be722faf6ba9b6005ae1c2ee1a21752a",
+   "supply_share": 0.012091365927529544,
+   "value_usd": 338195.5049930013,
+   "spent_usd": 9244.11312,
+   "taken_usd": 0.0,
+   "buys": 7,
+   "sells": 0,
+   "first_block": 5812560,
+   "last_block": 11703883,
+   "era_share": {
+    "0": 0.012091365927529544,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xf154977eb88584660cb43467516126716938434a",
+   "supply_share": 0.011891850312572982,
+   "value_usd": 332615.0532426663,
+   "spent_usd": 73184.20999200002,
+   "taken_usd": 0.0,
+   "buys": 120,
+   "sells": 0,
+   "first_block": 7086465,
+   "last_block": 62313010,
+   "era_share": {
+    "0": 0.011807331070224743,
+    "1": 8.45192423482399e-05,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xd660d81c12cc42971258511ef39023f604dc9821",
+   "supply_share": 0.01186888759810458,
+   "value_usd": 331972.78611898504,
+   "spent_usd": 7069.027679999999,
+   "taken_usd": 0.0,
+   "buys": 8,
+   "sells": 0,
+   "first_block": 5811026,
+   "last_block": 8284814,
+   "era_share": {
+    "0": 0.01186888759810458,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x7514bb49edf49362fe14bca8d1df6edae2d4b62a",
+   "supply_share": 0.011841286451309094,
+   "value_usd": 331200.78204311535,
+   "spent_usd": 1941.3099034499724,
+   "taken_usd": 0.0,
+   "buys": 4,
+   "sells": 0,
+   "first_block": 5870032,
+   "last_block": 5887756,
+   "era_share": {
+    "0": 0.011841286451309094,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x66cf2c08fb295323cc8f5a3d94831a0f8e61bead",
+   "supply_share": 0.011823495686824639,
+   "value_usd": 330703.1743604851,
+   "spent_usd": 1386.6169680000003,
+   "taken_usd": 0.0,
+   "buys": 9,
+   "sells": 0,
+   "first_block": 5816195,
+   "last_block": 13950695,
+   "era_share": {
+    "0": 0.011823495686824639,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x77442495f22c7e650fc999fc53ad5a07b4047ab4",
+   "supply_share": 0.011807013106561267,
+   "value_usd": 330242.1565905186,
+   "spent_usd": 462.20565600000003,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5680618,
+   "last_block": 5683959,
+   "era_share": {
+    "0": 0.011807013106561267,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x76f5e423a080077e640d555d3d13255553a3af23",
+   "supply_share": 0.011800465332232429,
+   "value_usd": 330059.01534254104,
+   "spent_usd": 244.69711200000003,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5730431,
+   "last_block": 5811159,
+   "era_share": {
+    "0": 0.011800465332232429,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xe568c7b09782368dba0d554b891b70583fe4564a",
+   "supply_share": 0.011699737183924579,
+   "value_usd": 327241.64903437044,
+   "spent_usd": 204.05020284000003,
+   "taken_usd": 0.0,
+   "buys": 3,
+   "sells": 0,
+   "first_block": 5680022,
+   "last_block": 5963815,
+   "era_share": {
+    "0": 0.011699737183924579,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x8e1980efaa318be0aebc870807c13ce91a29c2b9",
+   "supply_share": 0.011578589759073622,
+   "value_usd": 323853.1555612892,
+   "spent_usd": 163.13140800000002,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5713605,
+   "last_block": 5713804,
+   "era_share": {
+    "0": 0.011578589759073622,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0x8888ce87b4b0db91c9b7f193ad4570637d948888",
+   "supply_share": 0.011451763444004767,
+   "value_usd": 320305.8235288133,
+   "spent_usd": 1087.5427200000001,
+   "taken_usd": 0.0,
+   "buys": 2,
+   "sells": 0,
+   "first_block": 5800737,
+   "last_block": 5881735,
+   "era_share": {
+    "0": 0.011451763444004767,
+    "1": 0.0,
+    "2": 0.0
+   }
+  },
+  {
+   "wallet": "0xcd40df1d01c56f88ff7838d3088961abe3eedfc3",
+   "supply_share": 0.01141854079892413,
+   "value_usd": 319376.5861459079,
+   "spent_usd": 59867.02967999999,
+   "taken_usd": 0.0,
+   "buys": 19,
+   "sells": 0,
+   "first_block": 8050780,
+   "last_block": 9664005,
+   "era_share": {
+    "0": 0.01141854079892413,
+    "1": 0.0,
+    "2": 0.0
+   }
+  }
+ ]
+}
