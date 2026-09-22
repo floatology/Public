@@ -184,6 +184,15 @@ def flatten(pair: dict[str, Any]) -> dict[str, Any]:
         "liquidity_quote": liquidity.get("quote"),
         "pair_created_at": pair.get("pairCreatedAt"),
         "url": pair.get("url"),
+        # GeckoTerminal's token-info endpoint serves nothing at all for this
+        # chain -- it returns empty even for USDG -- so DexScreener's info
+        # block is the only source of websites and socials.
+        "websites": [w.get("url") for w in ((pair.get("info") or {}).get("websites") or [])],
+        "socials": [
+            f"{s.get('type')}:{s.get('url')}"
+            for s in ((pair.get("info") or {}).get("socials") or [])
+        ],
+        "has_image": bool((pair.get("info") or {}).get("imageUrl")),
     }
     for window in ("m5", "h1", "h6", "h24"):
         row[f"price_change_{window}"] = price_change.get(window)

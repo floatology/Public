@@ -30,7 +30,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parents[1] / "src"))
 
-from rhc.premium import GeckoTerminal, PremiumError
+from rhc.dexscreener import DexScreener, flatten
 
 
 def main() -> int:
@@ -51,57 +51,46 @@ def main() -> int:
     passing = results.get("passed") or []
     print(f"{len(passing)} tokens from {path}\n", file=sys.stderr)
 
+    # GeckoTerminal's token-info endpoint returns nothing for this chain --
+    # verified empty even for USDG -- so the pair's own info block is the only
+    # place websites and socials exist.
+    addresses = [r["pair"] for r in passing if r.get("pair")]
+    info: dict[str, dict] = {}
+    with DexScreener() as dex:
+        for pair in dex.pairs_by_address(addresses):
+            row = flatten(pair)
+            if row.get("pair"):
+                info[row["pair"].lower()] = row
+
     rows = []
-    with GeckoTerminal() as gecko:
-        for row in passing:
-            address = row.get("base_token")
-            symbol = row.get("base_symbol") or "?"
-            entry = {
-                "symbol": symbol, "address": address,
-                "market_cap": row.get("market_cap_used"),
-                "dexscreener": row.get("url"),
-            }
-            if address:
-                try:
-                    payload = gecko.token_info(address)
-                except PremiumError as exc:
-                    entry["error"] = str(exc)[:120]
-                    rows.append(entry)
-                    continue
-                attributes = (payload.get("data") or {}).get("attributes") or {}
-                entry["name"] = attributes.get("name")
-                entry["description"] = (attributes.get("description") or "").strip() or None
-                entry["websites"] = attributes.get("websites") or []
-                entry["twitter"] = attributes.get("twitter_handle")
-                entry["telegram"] = attributes.get("telegram_handle")
-                entry["discord"] = attributes.get("discord_url")
-                entry["gt_score"] = attributes.get("gt_score")
-            rows.append(entry)
+    for row in passing:
+        found = info.get((row.get("pair") or "").lower(), {})
+        rows.append({
+            "symbol": row.get("base_symbol") or "?",
+            "address": row.get("base_token"),
+            "market_cap": row.get("market_cap_used"),
+            "dexscreener": row.get("url"),
+            "websites": found.get("websites") or [],
+            "socials": found.get("socials") or [],
+            "has_image": found.get("has_image", False),
+            "pair_created_at": found.get("pair_created_at"),
+        })
 
     args.out.parent.mkdir(parents=True, exist_ok=True)
     args.out.write_text(json.dumps(rows, indent=2, default=str) + "\n")
 
-    described = [r for r in rows if r.get("description")]
-    linked = [r for r in rows if r.get("websites") or r.get("twitter")
-              or r.get("telegram")]
-    print(f"  {len(described)}/{len(rows)} carry a description", file=sys.stderr)
+    linked = [r for r in rows if r.get("websites") or r.get("socials")]
     print(f"  {len(linked)}/{len(rows)} carry a website or social link\n",
           file=sys.stderr)
 
     for row in rows:
-        bits = []
-        if row.get("twitter"):
-            bits.append(f"x:@{row['twitter']}")
-        if row.get("telegram"):
-            bits.append(f"tg:{row['telegram']}")
-        if row.get("websites"):
-            bits.append(str(row["websites"][0])[:40])
-        description = row.get("description")
-        text = (description[:140] + "…") if description and len(description) > 140 \
-            else (description or "— no description served —")
-        print(f"  {row['symbol']:<14} {text}", file=sys.stderr)
+        bits = list(row.get("websites") or []) + list(row.get("socials") or [])
         if bits:
-            print(f"  {'':<14} {' | '.join(bits)}", file=sys.stderr)
+            print(f"  {row['symbol']:<14} {' | '.join(b[:60] for b in bits)}",
+                  file=sys.stderr)
+        else:
+            marker = "image only" if row.get("has_image") else "nothing at all"
+            print(f"  {row['symbol']:<14} — {marker} —", file=sys.stderr)
 
     print(f"\nwrote {args.out}", file=sys.stderr)
     print("\n  Descriptions are deployer-written marketing retrieved from a third "

@@ -1,0 +1,402 @@
+[
+  {
+    "symbol": "LMT",
+    "address": "0x329fcACEb9AD6F9580DD5F643fed0646900D043c",
+    "market_cap": 329724.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x0b118d2480ebdb11374d3ad2ea1b935e9458a9f704222004b3b8de07bc98f1eb",
+    "websites": [],
+    "socials": [],
+    "has_image": false,
+    "pair_created_at": 1788463124000
+  },
+  {
+    "symbol": "musegram",
+    "address": "0x9cb595Fbb3601DC0EF80e87921Dc4ffD9307aBA3",
+    "market_cap": 184363.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x15cdc3dbc951a9d4a5a39098811fa4481a6e8a19c32cefd82a1e97a1a4f171be",
+    "websites": [
+      "https://musegram.lol/"
+    ],
+    "socials": [
+      "twitter:https://x.com/musegramlol/status/2100145191457841284"
+    ],
+    "has_image": true,
+    "pair_created_at": 1789549040000
+  },
+  {
+    "symbol": "CLOCKIN",
+    "address": "0xb525B9718243D9fb790D5Bdb2313aBd746666666",
+    "market_cap": 107896.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x1602f58e62adb60927ec314145a19617507dfb78",
+    "websites": [],
+    "socials": [],
+    "has_image": false,
+    "pair_created_at": null
+  },
+  {
+    "symbol": "Wink",
+    "address": "0x4Cb8Ad81df8Ed2E9f7fB04452F435B5726dbDBdb",
+    "market_cap": 224370.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x1cbd17f1d6d3546b5deb2d6c7ec2b8d521095517135765fb2118914ecb8dcec7",
+    "websites": [
+      "https://winkwink.pages.dev/"
+    ],
+    "socials": [
+      "twitter:https://x.com/winkwink_cto",
+      "telegram:https://t.me/WinkCTO_Official"
+    ],
+    "has_image": true,
+    "pair_created_at": 1789113203000
+  },
+  {
+    "symbol": "RIZO",
+    "address": "0xc99FD9FF8494229C8271a9053e489F6405f61e18",
+    "market_cap": 128137.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x2202c667c036b29394d6bf839d6889984987f85ef8892fee323e068953dfcfc2",
+    "websites": [
+      "https://rizoteslameme.com/"
+    ],
+    "socials": [
+      "twitter:https://x.com/RizoTeslaMeme"
+    ],
+    "has_image": true,
+    "pair_created_at": 1789084689000
+  },
+  {
+    "symbol": "BMNRon",
+    "address": "0x05d8e73787AcD02C70A9C43dD6f0443E3b8D3D77",
+    "market_cap": 114410.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x26ddf528e3e137fa022c08840fb1c26a4d0706f6",
+    "websites": [],
+    "socials": [],
+    "has_image": false,
+    "pair_created_at": 1788875506000
+  },
+  {
+    "symbol": "PHOOD",
+    "address": "0x26C41B10527DE2Dc870fa5C9D5f4A8dBAA966cDf",
+    "market_cap": 164689.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x27eaa4899098f0566ee995391db0da49ca60be27",
+    "websites": [
+      "https://www.privacyhood.app",
+      "https://www.privacyhood.app/whitepaper"
+    ],
+    "socials": [
+      "twitter:https://x.com/PrivacyHood",
+      "telegram:https://t.me/privacyhood"
+    ],
+    "has_image": true,
+    "pair_created_at": 1783962892000
+  },
+  {
+    "symbol": "aUSD",
+    "address": "0x4f11d7603D1B0D0f021Db552D8A6d88d7fa38ecf",
+    "market_cap": 151204.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x29e3f3d9891cacf213361bcbcb7728970d53baa8",
+    "websites": [
+      "https://www.arrowfinance.io/",
+      "https://arrowfinance.io/docs"
+    ],
+    "socials": [
+      "twitter:https://www.x.com/arrowfinanceio",
+      "telegram:https://t.me/arrowfinanceio"
+    ],
+    "has_image": true,
+    "pair_created_at": null
+  },
+  {
+    "symbol": "FTR",
+    "address": "0xA605875D620753f4Fb06024B788b2B6552a81e18",
+    "market_cap": 267769.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x42b961e421c08741fe9b25dda1d1090d42c7f782a0d73e099b4248d67357a612",
+    "websites": [
+      "https://www.tesla.com/roadster"
+    ],
+    "socials": [
+      "twitter:https://x.com/cb_doge/status/2098859781079576962/video/1?s=46"
+    ],
+    "has_image": true,
+    "pair_created_at": 1789238304000
+  },
+  {
+    "symbol": "MACRO",
+    "address": "0xBb09AbB73f766f00625852894eB5c9Cf08a94Ba3",
+    "market_cap": 160155.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x44e7d5e358437598979f16eb499fcd2ae01152a0a0b893a515dd478448bb2c97",
+    "websites": [
+      "https://thefirm.biz/macrostrategy",
+      "https://docs.thefirm.biz/macrostrategy"
+    ],
+    "socials": [
+      "twitter:https://x.com/MacroStratFirm",
+      "farcaster:https://farcaster.xyz/thefirm"
+    ],
+    "has_image": true,
+    "pair_created_at": 1789058270000
+  },
+  {
+    "symbol": "FROGE",
+    "address": "0x1dF1F09c4Dd65C76746d53467361D536cDfDC719",
+    "market_cap": 124907.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xf5eecbfa6aaad42fc1db776221e88a7da12a5895d9404424f8e419eda9aba56d",
+    "websites": [],
+    "socials": [
+      "twitter:https://x.com/search?q=%24FROGE"
+    ],
+    "has_image": true,
+    "pair_created_at": 1785981612000
+  },
+  {
+    "symbol": "JevBrain",
+    "address": "0x69Abf2352A94da9Cf1Aab62dfdD318A07d92B62e",
+    "market_cap": 116155.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x4de22cb533c77a0cf05cff43d21c2671045e40379c5c823c133bb2d451dcb6c6",
+    "websites": [
+      "https://github.com/ashleyotooligan/jevbrain"
+    ],
+    "socials": [],
+    "has_image": true,
+    "pair_created_at": 1789942168000
+  },
+  {
+    "symbol": "DATACENTER",
+    "address": "0x080Ad0136eDe24Cc46AeFa11B7F648724bf71E18",
+    "market_cap": 124641.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x52a5d89cbc34ded976311c864aeb0c5563bd298e9d5260c8a9a932d7a3d5743f",
+    "websites": [
+      "https://datacenterwatch.ai/"
+    ],
+    "socials": [
+      "twitter:https://x.com/Data_Centers_"
+    ],
+    "has_image": true,
+    "pair_created_at": 1788836107000
+  },
+  {
+    "symbol": "Agrippa",
+    "address": "0x83a49B808F8d5e02CB2931cd2352988f498e5Ba3",
+    "market_cap": 188171.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x541bedd98337d22c46ff8196494f14e7d9922ddedf07b74df44c7020487e5fdf",
+    "websites": [
+      "https://musebook.lol"
+    ],
+    "socials": [
+      "twitter:https://x.com/agrippa_muse"
+    ],
+    "has_image": true,
+    "pair_created_at": 1789660901000
+  },
+  {
+    "symbol": "SNOW",
+    "address": "0xb851CeBcBcf1Dc5F07D9F0a8276caE8D953B3713",
+    "market_cap": 202858.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x57210a17c7116990f590d033ee309f4b72ca44100e767d2ad91c284444bd36fd",
+    "websites": [
+      "https://www.snowon.io"
+    ],
+    "socials": [
+      "twitter:https://x.com/0xSnowOn",
+      "telegram:https://t.me/SnowOn_AI",
+      "discord:https://discord.gg/P6J99uXnnp"
+    ],
+    "has_image": true,
+    "pair_created_at": 1786739988000
+  },
+  {
+    "symbol": "LOCKHEEDINU",
+    "address": "0xBA60A394627379Ff6ae9688EF30B11DA5A641E18",
+    "market_cap": 397919.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x651f1158d012bbc4263b73e2857cca77c151b71a28283c5a758e45a6d1c45325",
+    "websites": [],
+    "socials": [],
+    "has_image": true,
+    "pair_created_at": 1789011220000
+  },
+  {
+    "symbol": "OOF",
+    "address": "0xeA3b282273E9ab901790694aDD171C2606D71e18",
+    "market_cap": 101945.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x694d0e99cb80f58c41cc77d4da8abf731d8b9c215faab16d12fc46bacaed4592",
+    "websites": [],
+    "socials": [
+      "twitter:https://x.com/OOFonRH"
+    ],
+    "has_image": true,
+    "pair_created_at": 1785371469000
+  },
+  {
+    "symbol": "INDA",
+    "address": "0xACEF2e09adb47aD6aBeBAD9fF06689E60615C2B6",
+    "market_cap": 159499.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x7d0895d8162b0be326ef944faeb5a84f4a08377b9bc9f010e38fa4d268a94469",
+    "websites": [],
+    "socials": [],
+    "has_image": false,
+    "pair_created_at": 1788464457000
+  },
+  {
+    "symbol": "PENG",
+    "address": "0x9b23573b156B52565012F5cE02CDF60AFBaa70Be",
+    "market_cap": 111196.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0x9b977d504d94cf1efbee30531392545fa55349ab",
+    "websites": [],
+    "socials": [],
+    "has_image": false,
+    "pair_created_at": 1785854987000
+  },
+  {
+    "symbol": "HETH",
+    "address": "0xC57Aa24860b56eAe71E1e3e6d558D9c3F238D07c",
+    "market_cap": 269445.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xa24a9d77258380c7eac2ba8c30c5533cc0410f9266fea2d734f35d76f8ea6720",
+    "websites": [
+      "http://hookedethereum.com/",
+      "https://hookedethereum.org/docs"
+    ],
+    "socials": [
+      "twitter:https://x.com/hookedethereum",
+      "telegram:https://t.me/Hookedethereumheth"
+    ],
+    "has_image": true,
+    "pair_created_at": 1789242698000
+  },
+  {
+    "symbol": "WU",
+    "address": "0x727E02c785D3DD40148ff0a831Aee55990711e18",
+    "market_cap": 120498.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xb98a046ed046d4c7a68ed1690cf220e7682b590457000d8dc4a4b5b1e13c3621",
+    "websites": [
+      "https://wu.fun",
+      "https://app.long.xyz/tokens/0x727E02c785D3DD40148ff0a831Aee55990711e18"
+    ],
+    "socials": [
+      "twitter:https://x.com/wudotfun"
+    ],
+    "has_image": true,
+    "pair_created_at": 1788703581000
+  },
+  {
+    "symbol": "RSI",
+    "address": "0xCE4C9418B8E9bCad3E4BA2bD84123A49A6911e18",
+    "market_cap": 181010.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xba032a22521f6eda5ded133a1b0e5cbb74c5e84e0579310f7aa8161a5aaff49b",
+    "websites": [],
+    "socials": [],
+    "has_image": true,
+    "pair_created_at": 1789380922000
+  },
+  {
+    "symbol": "JEV",
+    "address": "0x8a43d46b198BA604253099D0E4aEae48f13c1E18",
+    "market_cap": 100309.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xbb8e1d26fe1e4a54d8f994eeb94f1da995fc386e4783ecfee70f0b180a5f1ae3",
+    "websites": [],
+    "socials": [],
+    "has_image": false,
+    "pair_created_at": 1789496948000
+  },
+  {
+    "symbol": "FRAMON",
+    "address": "0xe4F44D4444385B199d65bDBaac486DcAA12E1E18",
+    "market_cap": 196529.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xc023f0216d3ea7d01a315ece168bf71f81f1e42172ed2101104487ccfbd4a52f",
+    "websites": [
+      "https://www.framon.fun/"
+    ],
+    "socials": [
+      "twitter:https://x.com/FramonHood"
+    ],
+    "has_image": true,
+    "pair_created_at": 1788561240000
+  },
+  {
+    "symbol": "I",
+    "address": "0xC05BA3437c12bC5462C89c3D1AC847Af90A11e18",
+    "market_cap": 111367.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xc9b1ff65c2a432d81e6c6c8fd29168c2eb82bbc2ccbcc176c60d60a8428644d0",
+    "websites": [
+      "https://inurobinhood.fun/"
+    ],
+    "socials": [
+      "twitter:https://x.com/inuonrobinchain"
+    ],
+    "has_image": true,
+    "pair_created_at": 1789155633000
+  },
+  {
+    "symbol": "GC",
+    "address": "0x9224dF397aBfdc9f0BA16701B97bAF92244b1E18",
+    "market_cap": 148101.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xcc1d32dceb2f16e3607323499bfa07bcb13fa4b0e1f82bd22cdc0f6f86dd7677",
+    "websites": [
+      "https://groupchat.family/"
+    ],
+    "socials": [
+      "twitter:https://x.com/groupchatfamily"
+    ],
+    "has_image": true,
+    "pair_created_at": 1788927472000
+  },
+  {
+    "symbol": "MUSE",
+    "address": "0x941cf3f6B5CbfcFDb5402Cf8a8AB3903Df9C1e18",
+    "market_cap": 167882.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xd4fdad28071449b235057c28c388881a7402df34482440ea57cdc157bd4aa6c5",
+    "websites": [],
+    "socials": [],
+    "has_image": false,
+    "pair_created_at": 1789333039000
+  },
+  {
+    "symbol": "NASTY",
+    "address": "0x75983916521Ac4A7faFAd7568819463cebdE1e18",
+    "market_cap": 281913.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xd75affcade9903339447882f97bae2f8e61542f33d8a56ae74d0642be282afcc",
+    "websites": [
+      "https://notastrategy.io/"
+    ],
+    "socials": [
+      "twitter:https://x.com/NotaStrategy"
+    ],
+    "has_image": true,
+    "pair_created_at": 1788811782000
+  },
+  {
+    "symbol": "PAWSINU",
+    "address": "0x99544c92856BbBa2982980333DD61ac325421337",
+    "market_cap": 104844.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xddab655ac4d7e2417b1a56888b851f3f8ae7926805d6d8e8c2fd8e9bc39cf881",
+    "websites": [],
+    "socials": [
+      "twitter:https://x.com/pawsinucto?s=21"
+    ],
+    "has_image": true,
+    "pair_created_at": 1789681688000
+  },
+  {
+    "symbol": "FATCOIN",
+    "address": "0x7175c4666317738D3BC1c00A12218a691f081e18",
+    "market_cap": 199710.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xde2c6f9b3702cd90f3a30b4a8443daa58dddd89dd413f5ededda029b337d6c4b",
+    "websites": [
+      "https://fatcoin.fun/"
+    ],
+    "socials": [
+      "twitter:https://x.com/fatcoinonlong"
+    ],
+    "has_image": true,
+    "pair_created_at": 1788613404000
+  },
+  {
+    "symbol": "VACCINU",
+    "address": "0xcF1968747bC573294e468FD0cDaB0Dc61B971E18",
+    "market_cap": 236649.0,
+    "dexscreener": "https://dexscreener.com/robinhood/0xe4fcea2c4b8fdbd2adf3317b8253b6967ff9e542bfba310642ea81a8b09ce5e6",
+    "websites": [],
+    "socials": [
+      "twitter:https://x.com/VaccinuRH"
+    ],
+    "has_image": true,
+    "pair_created_at": 1788302197000
+  }
+]
