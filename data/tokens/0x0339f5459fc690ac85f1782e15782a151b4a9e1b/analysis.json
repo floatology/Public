@@ -1,0 +1,34 @@
+{
+ "token": "WALLET",
+ "ath": {
+  "day": "09-17",
+  "price": 0.09808172700378139
+ },
+ "lp": {
+  "added": 1.1434132407814193,
+  "removed": 0.232543191177658
+ },
+ "snipers": {
+  "addresses": 7,
+  "share": 0.11797849885844766,
+  "paid_usd": 492.94933944638666,
+  "later_sold_usd": 1526.5910282241866
+ },
+ "bots": {
+  "traders": 1173,
+  "volume_share": 0.10525643291787129,
+  "whale_volume_share": 0.10695062216290825,
+  "retail_volume_share": 0.25413207568551005,
+  "unattributed_share": 0.0673217384674834
+ },
+ "pnl": {
+  "winners": 19421,
+  "traders": 31751,
+  "top10_share_of_profit": 0.09896873700781014
+ },
+ "holders": {
+  "count": 8995,
+  "top10": 0.15484457869262888,
+  "peer_received_share": 0.1613048853320055
+ }
+}
