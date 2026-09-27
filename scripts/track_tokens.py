@@ -50,7 +50,7 @@ import pyarrow.parquet as pq
 
 from rhc.dexscreener import DexScreener
 from rhc.features import decode_v2_swaps, decode_v3_swaps, decode_v4_swaps
-from rhc.rpc import (TOPIC_V2_SWAP, TOPIC_V3_SWAP, TOPIC_V4_SWAP,
+from rhc.rpc import (TOPIC_PCS_V3_SWAP, TOPIC_V2_SWAP, TOPIC_V3_SWAP, TOPIC_V4_SWAP,
                      V4_POOL_MANAGER, Rpc, RpcError)
 from token_archive import covered_to, dedupe, merge
 
@@ -92,6 +92,8 @@ def kind_of(pair: dict) -> str | None:
     dex = (pair.get("dexId") or "").lower()
     if "v4" in labels:
         return "v4"
+    if "v3" in labels and dex.startswith("pancakeswap"):
+        return "pcs3"
     if "v3" in labels:
         return "v3"          # Uniswap and CL forks; verified by a probe below
     if "v2" in labels or dex in ("uniswap",):
@@ -164,8 +166,8 @@ def cmd_add(args) -> int:
                         "liq_at_add": liq, "created_ms": p.get("pairCreatedAt")}
                 # Probe: a pool whose logs this decoder cannot see is skipped
                 # and recorded, not silently archived as empty.
-                if k in ("v2", "v3"):
-                    topic = TOPIC_V2_SWAP if k == "v2" else TOPIC_V3_SWAP
+                if k in ("v2", "v3", "pcs3"):
+                    topic = {"v2": TOPIC_V2_SWAP, "v3": TOPIC_V3_SWAP, "pcs3": TOPIC_PCS_V3_SWAP}[k]
                     got = rpc.get_logs(from_block=head - 400_000, to_block=head,
                                        topics=[[topic]], address=key)
                     txns = sum(((p.get("txns") or {}).get("h24") or {}).values())
@@ -194,7 +196,8 @@ def scan_pool(rpc: Rpc, key: str, pool: dict, lo: int, hi: int) -> dict[str, lis
         decode = decode_v4_swaps
     else:
         address = key
-        topics = [[TOPIC_V2_SWAP if pool["kind"] == "v2" else TOPIC_V3_SWAP]]
+        topics = [[{"v2": TOPIC_V2_SWAP, "v3": TOPIC_V3_SWAP,
+                    "pcs3": TOPIC_PCS_V3_SWAP}[pool["kind"]]]]
         decode = decode_v2_swaps if pool["kind"] == "v2" else decode_v3_swaps
     started = time.time()
 

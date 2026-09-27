@@ -10,6 +10,28 @@ and `data/tokens/STATUS.md` / `data/overnight/LOG.md`, commit+push anything
 complete, then continue with the first unchecked step. Never run two bulk RPC
 scans at once (the node rate-limits globally). Tick steps here as they finish.
 
+## Live state (update as things change)
+
+- Candles: `data/overnight/run_candles.sh` (resumable). Order: 1,839 liquid
+  pools, then 1,896 census-only pools, then 1,555 dust. ~11 pools/min.
+- Batch build: `data/overnight/run_batch.sh` builds all registered tokens
+  except the six (resumable; tokens over 600k transfers/segment are skipped).
+- NEVER edit data/tokens/tokens.json while a build runs: the build rewrites it
+  from memory after every token.
+- Queued after the batch: `track_tokens.py add U` (now picks up its
+  PancakeSwap V3 pool) and rebuild U.
+- Launch jobs via the scripts above, not inline: `pkill -f`/`grep` on a
+  command line that contains the same text kills the calling shell.
+
+## Findings so far
+
+- Flow backtest (old V2/V3 archive, to 21 Sep): 99% of token-days are dead.
+  Among active coins (>= $1k/week), base: 16% reach 2x in 14d, 8.6% halve.
+  Volume dry-up: 26% 2x, 6.8% crash (1.58x lift, no extra crash risk),
+  consistent across time and token splits. Absorption and breakout days lift
+  2x AND crash about equally: they predict size of move, not direction. The
+  full WALLET-shaped SETUP almost never occurs (7 events, 0 runs).
+
 ## Steps
 
 - [x] 1. Six-coin build (track_tokens.py build) finishes; commit archives.

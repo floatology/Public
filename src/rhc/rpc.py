@@ -42,6 +42,11 @@ TOPIC_V3_SWAP = "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcc
 # memory, and the Swap sign convention was checked against the token transfers
 # in the same transactions (see rhc.features.decode_v4_swaps).
 V4_POOL_MANAGER = "0x8366a39cc670b4001a1121b8f6a443a643e40951"
+# PancakeSwap V3: Uniswap V3's Swap plus two protocol-fee words (3 topics, 7
+# words). Read off a live pool, and decoded buys checked against the token
+# leaving the pool in the same transactions: the first five words, and their
+# signs, are laid out exactly as in Uniswap V3.
+TOPIC_PCS_V3_SWAP = "0x19b47279256b2a23a1665c810c8d55a1758940ee09377d4f8d26497a3577dc83"
 TOPIC_V4_SWAP = "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f"
 TOPIC_TRANSFER = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
 # V2 pairs emit Sync(uint112 reserve0, uint112 reserve1) after every swap, so

@@ -101,7 +101,18 @@ def cmd_candles(args) -> int:
                 done.add(json.loads(line)["pool"])
             except Exception:
                 pass
-    todo = [p for p in uni if p not in done]
+    # GeckoTerminal throttles to ~11 pools a minute in practice, so order
+    # matters: pools with real liquidity first, then pools seen only in the
+    # September census (the delisted coins that correct survivorship), then
+    # dust. An interrupted run has then fetched the pools that matter.
+    f = lambda x: float(x or 0)
+    def rank(a):
+        p = uni[a]
+        if "census" in (p.get("source") or ""):
+            return (1, 0)
+        live = f(p.get("reserve_usd")) >= 1e4 or f(p.get("vol24")) >= 5e3
+        return (0 if live else 2, -f(p.get("reserve_usd")))
+    todo = sorted((p for p in uni if p not in done), key=rank)
     print(f"{len(done):,} pools done, {len(todo):,} to fetch", flush=True)
     t0 = time.time()
     with path.open("a") as f:
