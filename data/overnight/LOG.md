@@ -10,3 +10,4 @@
 2026-09-27T19:21:02Z check-in 2: batch 14/30 built, candles 1785/5290
 2026-09-27T19:24:34Z fixed quote pricing (by asset, not per pool): 152k of ORBIO's 202k trades had been unpriced; repriced all built tokens
 2026-09-27T19:26:00Z batch2 case-control list chosen (20 cases, 20 controls); queued after batch1
+2026-09-27T20:51:07Z check-in 3: batch1 24/30 (OPENAIx1L skipped heavy), candles 2864/5290 (liquid done, census-only ~half)
