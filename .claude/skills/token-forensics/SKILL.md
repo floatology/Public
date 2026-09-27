@@ -119,3 +119,46 @@ bot** and never a flag on its own.
 Round-tripping at a crash is arbitrage, not conviction: after WALLET's −96% hour
 the same addresses topped both the buy and sell lists, 83% of supply each way.
 Reading either side as demand would have been wrong.
+
+## The ledger
+
+`data/tokens/<token>/ledger.parquet` is one row per trade and the table every
+question should be asked of. Build it with `build_ledger.py` after the archive
+is filled.
+
+| Column | Meaning |
+|---|---|
+| `ts`, `block`, `log_index`, `tx_hash` | when, and the chain coordinates |
+| `trader` | the address whose token balance actually moved — null when unattributable, never dropped |
+| `side`, `tokens`, `quote_eth`, `usd`, `price_usd` | the trade |
+| `pos_before` / `pos_after` | position in tokens **from this pool**, not holdings |
+| `basis_before` / `basis_after` | weighted-average USD cost per token |
+| `realised_usd`, `realised_cum` | profit taken on this sale and to date |
+| `net_quote_cum` | quote out minus quote in, needing no basis convention |
+| `holdings_now` | the trader's real balance today, from the transfer replay |
+| `n_trade`, `seconds_since_prev` | for behavioural work |
+
+**Use block deltas, not `seconds_since_prev`, for fine timing.** Timestamps come
+from interpolation between sampled anchors: worst measured error is 3 seconds
+above block 4,000,000, but 186 below it, where the chain had not yet reached its
+steady ~10 blocks/second. Interpolation error is a slowly varying offset, so it
+cancels in the gap between two nearby trades; blocks are the precise clock.
+
+**`pos_after` is not `holdings_now`.** A trader who buys and forwards to a cold
+wallet keeps a positive pool position and a zero balance. Both are true and they
+answer different questions.
+
+## Attribution rates, measured
+
+| Token | Swaps | Attributed | `recipient` was right |
+|---|---|---|---|
+| WALLET | 270,497 | 98.9% | **34.1%** |
+| HH | 13,002 | 91.7% | **51.2%** |
+
+The last column is why none of this can be shortcut: on WALLET, keying a ledger
+on the swap log's `recipient` names the wrong party two times in three.
+
+What stays unattributed is one shape — an arbitrage that buys and sells the same
+token inside one transaction and nets to nothing, so no address dominates the
+movement. Those rows carry a null trader and are counted, because dropping them
+would understate every volume computed from the table.

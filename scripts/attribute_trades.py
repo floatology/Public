@@ -20,10 +20,19 @@ on transaction hash. That is the difference between attributing a week and
 attributing a history: `tx.from` resolution runs at about five swaps a second,
 so WALLET's 263,000 would take fourteen hours.
 
-**Ties and ambiguity are reported, never guessed.** A transaction holding two
-swaps of the same token, or one whose largest delta is a contract that also
-routes, is counted in `ambiguous` and left with its log-derived identity rather
-than assigned to a plausible-looking neighbour.
+**A transaction holding several swaps of the same token is not automatically
+ambiguous.** Net deltas are summed across the whole transaction, so two swaps
+cannot be split by amount — but they rarely need to be. A multi-hop route ends
+at one address, and when a single non-pool address accounts for at least
+`--dominance` of all token movement in that transaction, every swap in it
+belongs to that address. What this cannot resolve is the other shape: an
+arbitrage that buys and sells within one transaction and nets to nothing, where
+no address dominates because none ended up with anything. Those are left null
+and counted, not assigned to whichever address happens to be largest in the
+noise.
+
+Dropping them instead would not be neutral: on HH they are 12% of all swaps, so
+a table that silently omitted them would understate every volume it reported.
 """
 from __future__ import annotations
 
@@ -48,6 +57,10 @@ def main() -> int:
     p.add_argument("--pool", action="append", required=True)
     p.add_argument("--out", type=Path, required=True)
     p.add_argument("--supply", type=float, default=1e9)
+    p.add_argument("--dominance", type=float, default=0.90,
+                   help="share of a multi-swap transaction's token movement one "
+                        "address must account for before the swaps are assigned "
+                        "to it")
     args = p.parse_args()
 
     pools = {x.lower() for x in args.pool}
@@ -83,12 +96,26 @@ def main() -> int:
         swaps_per_tx[s["tx_hash"][i]] += 1
 
     trader: list[str | None] = [None] * n
-    stats = {"attributed": 0, "ambiguous_multi_swap": 0, "no_transfers": 0,
-             "no_counterparty": 0}
+    stats = {"attributed": 0, "attributed_multi_swap": 0,
+             "ambiguous_multi_swap": 0, "no_transfers": 0, "no_counterparty": 0}
     for i in range(n):
         h = s["tx_hash"][i]
         if swaps_per_tx[h] > 1:
-            stats["ambiguous_multi_swap"] += 1
+            d = deltas.get(h)
+            if not d:
+                stats["no_transfers"] += 1
+                continue
+            outside = {a: v for a, v in d.items() if a not in pools and v != 0}
+            if not outside:
+                stats["ambiguous_multi_swap"] += 1
+                continue
+            total = sum(abs(v) for v in outside.values())
+            top = max(outside.items(), key=lambda kv: abs(kv[1]))
+            if total and abs(top[1]) / total >= args.dominance:
+                trader[i] = top[0]
+                stats["attributed_multi_swap"] += 1
+            else:
+                stats["ambiguous_multi_swap"] += 1
             continue
         d = deltas.get(h)
         if not d:
@@ -108,7 +135,8 @@ def main() -> int:
     pq.write_table(pa.table(s), args.out)
 
     print(json.dumps(stats, indent=1), file=sys.stderr)
-    print(f"  attributed {stats['attributed']/n:.1%} of {n:,} swaps", file=sys.stderr)
+    got = stats["attributed"] + stats["attributed_multi_swap"]
+    print(f"  attributed {got/n:.1%} of {n:,} swaps", file=sys.stderr)
 
     # How often would each cheaper proxy have been wrong?
     for col in ("recipient", "sender"):
