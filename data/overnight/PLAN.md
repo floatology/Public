@@ -12,15 +12,18 @@ scans at once (the node rate-limits globally). Tick steps here as they finish.
 
 ## Steps
 
-- [ ] 1. Six-coin build (track_tokens.py build) finishes; commit archives.
+- [x] 1. Six-coin build (track_tokens.py build) finishes; commit archives.
          No analysis yet.
-- [ ] 2. Pool registry: every V2/V3 pool creation (extend pool_creations to
-         head) and every V4 pool (PoolManager Initialize events), with tokens.
-- [ ] 3. Chain-wide swap archive: all V2, V3, V4 Swap logs from genesis to
-         head, segmented and committed per segment (data/chain/swaps/).
-- [ ] 4. Token supplies (totalSupply) and an ETH/USD daily series from the
-         WETH/USDG pool.
-- [ ] 5. Daily bars per token (all WETH/ETH/USDG-quoted pools combined).
+- [ ] 2. Universe + daily candles from GeckoTerminal (scripts/gt_history.py,
+         running in background, log data/overnight/gt.log; resumable — rerun
+         `gt_history.py candles` if it died). REVISED: a raw chain-wide swap
+         scan was measured at >430k V3 and >430k V4 swaps/day, far too big;
+         GT candles cover every tracked pool incl. V4 at one call per pool.
+- [ ] 3. Flow backtest on existing per-trade archives (data/parquet/trades*.parquet,
+         4,836 V2/V3 pools to 21 Sep): net flow, $2k+ buy clusters,
+         absorption (tokens leaving pool) before breakouts vs base rate.
+- [ ] 4. Supply per token (fdv/price from GT; token_supply.json cache).
+- [ ] 5. Daily bars per token from the candles (all pools combined).
 - [ ] 6. Backtest: pre-breakout signals (dry-up, ignition, absorption, higher
          lows, held pullback) vs forward outcomes, against base rates, with a
          token-and-time split. Criteria study: base rates by age, market cap,

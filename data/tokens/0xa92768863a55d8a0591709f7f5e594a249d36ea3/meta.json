@@ -1,0 +1,18 @@
+{
+ "token": "0xa92768863a55d8a0591709f7f5e594a249d36ea3",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74068997
+   ]
+  ],
+  "rows": 152284
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-27T16:12:10Z"
+}
