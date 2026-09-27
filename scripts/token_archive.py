@@ -19,6 +19,12 @@ touch the first would leave an invisible hole in the middle of the history. The
 ranges are stored, merged when they touch, and a scan that would leave a gap is
 refused rather than silently written.
 
+**Scans commit in segments.** A single flush at the end of a ten-minute scan
+means a rate limit at 10% discards all of it, which is what happened on the
+first full WALLET build. Each `--segment` blocks is written, and its range
+recorded, before the next begins, so an interruption costs one segment and a
+rerun resumes from the stored ranges.
+
 **Reorg margin.** The last `--reorg-margin` blocks of a previous scan are read
 again, because a log read at the chain tip can be reorganised out from under
 the archive. Re-read rows replace rather than duplicate: rows are keyed on
@@ -149,6 +155,48 @@ def scan(rpc: Rpc, *, topic: str, address: str, lo: int, hi: int, label: str) ->
                               on_progress=progress))
 
 
+def collect(rpc: Rpc, kind: str, args, lo: int, hi: int) -> dict[str, list]:
+    """Read one segment's logs and shape them into the archive's columns."""
+    if kind == "transfers":
+        logs = scan(rpc, topic=TOPIC_TRANSFER, address=args.token,
+                    lo=lo, hi=hi, label="tr")
+        rows = {"block": [], "log_index": [], "tx_hash": [],
+                "src": [], "dst": [], "value": []}
+        for lg in logs:
+            t = lg.get("topics") or []
+            if len(t) < 3:
+                continue
+            rows["block"].append(int(lg["blockNumber"], 16))
+            rows["log_index"].append(int(lg.get("logIndex", "0x0"), 16))
+            # tx_hash is what joins a transfer to the swap that caused it,
+            # which is how a trade is attributed to the address that ended up
+            # with the tokens rather than to a router.
+            rows["tx_hash"].append(lg.get("transactionHash"))
+            rows["src"].append("0x" + t[1][-40:])
+            rows["dst"].append("0x" + t[2][-40:])
+            rows["value"].append(str(int(lg.get("data") or "0x0", 16)))
+        return rows
+
+    topic = TOPIC_V2_SWAP if args.protocol == "v2" else TOPIC_V3_SWAP
+    decode = decode_v2_swaps if args.protocol == "v2" else decode_v3_swaps
+    logs = scan(rpc, topic=topic, address=args.pool, lo=lo, hi=hi, label="sw")
+    tx_of = {(int(lg["blockNumber"], 16), int(lg.get("logIndex", "0x0"), 16)):
+             lg["transactionHash"] for lg in logs}
+    trades = decode(logs, quote_is_token0=args.quote_is_token0)
+    rows = {"block": [], "log_index": [], "recipient": [], "sender": [],
+            "tx_hash": [], "is_buy": [], "quote_amount": [], "base_amount": []}
+    for t in trades:
+        rows["block"].append(t.block)
+        rows["log_index"].append(t.log_index)
+        rows["recipient"].append(t.wallet)
+        rows["sender"].append(None)   # filled by --resolve-senders
+        rows["tx_hash"].append(tx_of.get((t.block, t.log_index)))
+        rows["is_buy"].append(t.is_buy)
+        rows["quote_amount"].append(str(t.quote_amount))
+        rows["base_amount"].append(str(t.base_amount))
+    return rows
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--token", required=True)
@@ -163,6 +211,9 @@ def main() -> int:
                    help="resolve tx.from for up to N swaps that lack it, newest "
                         "first. One RPC call each; already-resolved swaps are free.")
     p.add_argument("--reorg-margin", type=int, default=REORG_MARGIN)
+    p.add_argument("--segment", type=int, default=8_000_000,
+                   help="commit to disk every this many blocks, so an "
+                        "interrupted scan keeps what it already read")
     p.add_argument("--rescan", action="store_true", help="discard and start over")
     args = p.parse_args()
 
@@ -210,54 +261,23 @@ def main() -> int:
             print(f"{kind}: scanning {lo:,}-{head:,} "
                   f"({'resuming' if have_to else 'fresh'})", file=sys.stderr, flush=True)
 
-            if kind == "transfers":
-                logs = scan(rpc, topic=TOPIC_TRANSFER, address=args.token,
-                            lo=lo, hi=head, label="tr")
-                rows = {"block": [], "log_index": [], "tx_hash": [],
-                        "src": [], "dst": [], "value": []}
-                for lg in logs:
-                    t = lg.get("topics") or []
-                    if len(t) < 3:
-                        continue
-                    rows["block"].append(int(lg["blockNumber"], 16))
-                    rows["log_index"].append(int(lg.get("logIndex", "0x0"), 16))
-                    # tx_hash is what joins a transfer to the swap that caused
-                    # it, which is how a trade is attributed to the address that
-                    # ended up with the tokens rather than to a router.
-                    rows["tx_hash"].append(lg.get("transactionHash"))
-                    rows["src"].append("0x" + t[1][-40:])
-                    rows["dst"].append("0x" + t[2][-40:])
-                    rows["value"].append(str(int(lg.get("data") or "0x0", 16)))
-            else:
-                topic = TOPIC_V2_SWAP if args.protocol == "v2" else TOPIC_V3_SWAP
-                decode = decode_v2_swaps if args.protocol == "v2" else decode_v3_swaps
-                logs = scan(rpc, topic=topic, address=args.pool, lo=lo, hi=head,
-                            label="sw")
-                tx_of = {(int(lg["blockNumber"], 16), int(lg.get("logIndex", "0x0"), 16)):
-                         lg["transactionHash"] for lg in logs}
-                trades = decode(logs, quote_is_token0=args.quote_is_token0)
-                rows = {"block": [], "log_index": [], "recipient": [], "sender": [],
-                        "tx_hash": [], "is_buy": [], "quote_amount": [], "base_amount": []}
-                for t in trades:
-                    rows["block"].append(t.block)
-                    rows["log_index"].append(t.log_index)
-                    rows["recipient"].append(t.wallet)
-                    rows["sender"].append(None)   # filled by --resolve-senders
-                    rows["tx_hash"].append(tx_of.get((t.block, t.log_index)))
-                    rows["is_buy"].append(t.is_buy)
-                    rows["quote_amount"].append(str(t.quote_amount))
-                    rows["base_amount"].append(str(t.base_amount))
-
-            merged = dedupe(arc.read(kind), rows)
-            arc.write(kind, merged)
-            meta[kind]["ranges"] = merge(ranges + [[lo, head]])
-            meta[kind]["rows"] = len(merged["block"])
-            if kind == "swaps":
-                meta[kind]["pool"] = args.pool.lower()
-                meta[kind]["protocol"] = args.protocol
-            arc.write_meta(meta)
-            print(f"{kind}: {len(rows['block']):,} new, {len(merged['block']):,} total",
-                  file=sys.stderr, flush=True)
+            seg_lo = lo
+            while seg_lo <= head:
+                hi = min(seg_lo + args.segment - 1, head)
+                rows = collect(rpc, kind, args, seg_lo, hi)
+                merged = dedupe(arc.read(kind), rows)
+                arc.write(kind, merged)
+                ranges = merge(ranges + [[seg_lo, hi]])
+                meta[kind]["ranges"] = ranges
+                meta[kind]["rows"] = len(merged["block"])
+                if kind == "swaps":
+                    meta[kind]["pool"] = args.pool.lower()
+                    meta[kind]["protocol"] = args.protocol
+                arc.write_meta(meta)
+                print(f"{kind}: committed {seg_lo:,}-{hi:,}  "
+                      f"+{len(rows['block']):,} rows, {len(merged['block']):,} total",
+                      file=sys.stderr, flush=True)
+                seg_lo = hi + 1
 
     # -- sender resolution, newest first, skipping what is already known -------
     if args.resolve_senders:

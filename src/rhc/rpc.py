@@ -75,6 +75,7 @@ class Rpc:
     url: str = RPC_URL
     min_interval: float = 0.15
     max_retries: int = 4
+    max_throttle_retries: int = 8   # 5s..60s, about four minutes of patience
     timeout: float = 60.0
     _client: httpx.Client = field(init=False, repr=False)
     _last_request: float = field(default=0.0, init=False, repr=False)
@@ -103,7 +104,10 @@ class Rpc:
                 (``_needs_smaller_span`` depends on this).
         """
         last_error: Exception | None = None
-        for attempt in range(self.max_retries):
+        throttled = 0
+        attempt = -1
+        while attempt + 1 < self.max_retries:
+            attempt += 1
             elapsed = time.monotonic() - self._last_request
             if elapsed < self.min_interval:
                 time.sleep(self.min_interval - elapsed)
@@ -124,7 +128,23 @@ class Rpc:
                 time.sleep(2**attempt)
                 continue
 
-            if response.status_code >= 500 or response.status_code == 429:
+            if response.status_code == 429:
+                # A rate limit is not a failure, it is an instruction to wait,
+                # and it persists for far longer than a 5xx blip. Retrying it on
+                # the 1-2-4-8s ladder exhausts the budget in fifteen seconds and
+                # throws away a scan that was 10% through a ten-minute job. It
+                # gets its own, much longer budget, and honours Retry-After when
+                # the node sends one.
+                last_error = RpcError("HTTP 429")
+                retry_after = response.headers.get("Retry-After")
+                if throttled < self.max_throttle_retries:
+                    delay = float(retry_after) if (retry_after or "").isdigit() \
+                        else min(60.0, 5.0 * (2**throttled))
+                    time.sleep(delay)
+                    throttled += 1
+                    attempt -= 1  # a wait is not an attempt
+                continue
+            if response.status_code >= 500:
                 last_error = RpcError(f"HTTP {response.status_code}")
                 time.sleep(2**attempt)
                 continue
