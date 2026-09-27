@@ -3821,3 +3821,10 @@ transfers: committed 72,000,001-74,183,164  +46,151 rows, 272,423 total
     0xaf8aa959  84.4% block 66,540,507 logs 51,091 99s
     0xaf8aa959  88.4% block 66,865,183 logs 54,262 100s
     0xaf8aa959  94.5% block 67,352,197 logs 59,212 107s
+    0xaf8aa959 100.0% block 67,789,736 logs 61,690 113s
+    0xaf8aa959   1.6% block 67,889,736 logs 333 0s
+    0xaf8aa959   3.9% block 68,039,736 logs 1,077 6s
+    0xaf8aa959   7.4% block 68,264,736 logs 3,468 6s
+    0xaf8aa959  12.7% block 68,602,236 logs 5,781 12s
+    0xaf8aa959  20.6% block 69,108,486 logs 10,278 18s
+    0xaf8aa959  32.5% block 69,867,861 logs 14,001 24s
