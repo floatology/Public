@@ -15,10 +15,15 @@ name: Daily capture
 # The second must never be able to cost the first, so it runs after the scan
 # and cannot fail the job.
 
+# PAUSED 2026-09-27 at the user's request: the work has moved to per-token
+# forensics (.claude/skills/token-forensics), driven on demand rather than on a
+# schedule. The schedule is commented rather than deleted because the H1 series
+# above is irrecoverable — every paused day is a permanent hole in it — so
+# restarting must stay a one-line change.
 on:
-  schedule:
-    - cron: "20 21 * * *"   # 21:20 UTC daily, after US market close
-  workflow_dispatch:         # manual trigger
+  # schedule:
+  #   - cron: "20 21 * * *"   # 21:20 UTC daily, after US market close
+  workflow_dispatch:         # manual trigger — still runs on demand
 
 permissions:
   contents: write
