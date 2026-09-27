@@ -161,21 +161,21 @@ def main() -> int:
 
     def table(title, u):
         print(f"\n== {title}: {len(u):,} token-days, {len({o['token'] for o in u}):,} tokens")
-        print(f"   {'':22} {'events':>7} {'run2x':>18} {'crash':>18} {'clean':>18}")
-        base = {k: wilson(sum(o[k] for o in u), len(u)) for k in ("run2x", "crash", "clean")}
+        print(f"   {'':22} {'events':>7} {'run2x':>18} {'crash':>18} {'clean':>18} {'held':>18}")
+        base = {k: wilson(sum(o[k] for o in u), len(u)) for k in ("run2x", "crash", "clean", "held")}
         print(f"   {'BASE (all days)':22} {len(u):>7} " + " ".join(
-            f"{base[k][0]:6.1%} [{base[k][1]:4.0%}-{base[k][2]:4.0%}]" for k in ("run2x", "crash", "clean")))
+            f"{base[k][0]:6.1%} [{base[k][1]:4.0%}-{base[k][2]:4.0%}]" for k in ("run2x", "crash", "clean", "held")))
         res = {"base": base}
         for name in ("dry", "ignite", "hlows", "coil", "SETUP", "BREAK"):
             ev = events(lambda o: o[name], u)
             if not ev:
                 continue
-            r = {k: wilson(sum(o[k] for o in ev), len(ev)) for k in ("run2x", "crash", "clean")}
-            lift = {k: matched_lift(ev, u, k) for k in ("run2x", "crash", "clean")}
+            r = {k: wilson(sum(o[k] for o in ev), len(ev)) for k in ("run2x", "crash", "clean", "held")}
+            lift = {k: matched_lift(ev, u, k) for k in ("run2x", "crash", "clean", "held")}
             r["events"] = len(ev); r["lift_vs_activity"] = lift; res[name] = r
             print(f"   {name:22} {len(ev):>7} " + " ".join(
-                f"{r[k][0]:6.1%} [{r[k][1]:4.0%}-{r[k][2]:4.0%}]" for k in ("run2x", "crash", "clean"))
-                + "   lift vs same-activity: " + " ".join(f"{k} {lift[k][2]:.2f}x" for k in ("run2x", "crash", "clean")))
+                f"{r[k][0]:6.1%} [{r[k][1]:4.0%}-{r[k][2]:4.0%}]" for k in ("run2x", "crash", "clean", "held"))
+                + "   lift vs same-activity: " + " ".join(f"{k} {lift[k][2]:.2f}x" for k in ("run2x", "crash", "clean", "held")))
         return res
 
     results = {"all": table("ALL", obs)}
@@ -193,14 +193,14 @@ def main() -> int:
             u = [o for o in obs if o[key] is not None and a <= o[key] < z]
             if not u:
                 continue
-            r = {k: sum(o[k] for o in u) / len(u) for k in ("run2x", "crash", "clean")}
+            r = {k: sum(o[k] for o in u) / len(u) for k in ("run2x", "crash", "clean", "held")}
             res[lab] = dict(r, n=len(u), tokens=len({o["token"] for o in u}))
             print(f"   {lab:>10} {len(u):>8,} days {res[lab]['tokens']:>6,} tokens  run2x {r['run2x']:6.1%}  "
-                  f"crash {r['crash']:6.1%}  clean {r['clean']:6.1%}")
+                  f"crash {r['crash']:6.1%}  clean {r['clean']:6.1%}  held {r['held']:6.1%}")
         return res
     inf = float("inf")
     results["by_age"] = buckets("AGE (days of trading history)", "age",
-                                [0, 30, 45, 60, inf], ["24-29d", "30-44d", "45-59d", "60d+"])
+                                [0, 21, 30, 45, 60, inf], ["14-20d", "21-29d", "30-44d", "45-59d", "60d+"])
     results["by_mcap"] = buckets("MARKET CAP", "mcap", [0, 25e3, 1e5, 3e5, 1e6, 5e6, inf],
                                  ["<25k", "25-100k", "100-300k", "300k-1M", "1-5M", "5M+"])
     results["by_vol7"] = buckets("7-DAY VOLUME", "vol7", [0, 1e3, 1e4, 5e4, 2.5e5, 1e6, inf],

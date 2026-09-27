@@ -6,3 +6,4 @@
 2026-09-27T16:44:08Z step 3b: registered 30 active memecoins (batch1) and started their full-history build (log data/overnight/build_batch1.log). PancakeSwap V3 Swap topic differs -> those pools skipped.
 2026-09-27T16:47:00Z batch1 build restarted with a 1.5M-logs-per-segment cap (musebook ~2.7 transfers/block)
 2026-09-27T17:51:38Z check-in 1: batch 7/30 built (musebook skipped heavy), candles 831/5290
+2026-09-27T17:53:18Z partial candle backtest run (outcomes switched to closes); findings in PLAN.md

@@ -32,6 +32,16 @@ scans at once (the node rate-limits globally). Tick steps here as they finish.
   2x AND crash about equally: they predict size of move, not direction. The
   full WALLET-shaped SETUP almost never occurs (7 events, 0 runs).
 
+- Candle backtest, PARTIAL (598 liquid tokens, survivors only; delisted
+  coins still downloading, so base rates are inflated). Outcomes now on
+  CLOSES: highs gave a 38.5% "2x in 14d" base, driven by single-fill wicks
+  on thin pools. Active coins: base 30% 2x / 18% crash. BREAK (close > 20d
+  high on >= 2x volume after a dry-up): 60% 2x, 49% still +50% at day 14,
+  lift 1.9x / 1.77x, crash 1.3x; stable 1.80-1.90x across all four splits.
+  SETUP (pre-break): 1.3-1.6x 2x with no extra crash, ~38 events. Weekly
+  volume $10k-250k is the sweet spot (36-40% 2x, 3-8% crash); above $250k
+  crash jumps to 24-26%. RE-RUN after the census-only pools finish.
+
 ## Steps
 
 - [x] 1. Six-coin build (track_tokens.py build) finishes; commit archives.
