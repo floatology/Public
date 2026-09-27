@@ -80,7 +80,9 @@ def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     p.add_argument("--dir", type=Path, required=True)
     p.add_argument("--name", required=True)
-    p.add_argument("--pool", required=True)
+    p.add_argument("--pool", action="append", required=True,
+                   help="every pool address the token trades in; for Uniswap V4 "
+                        "pools pass the PoolManager, which holds their tokens")
     p.add_argument("--supply", type=float, required=True)
     p.add_argument("--price-now", type=float, required=True, help="USD")
     p.add_argument("--eth-usd", type=float, required=True)
@@ -91,7 +93,7 @@ def main() -> int:
     p.add_argument("--out", type=Path)
     args = p.parse_args()
 
-    pool = args.pool.lower()
+    pools = {x.lower() for x in args.pool}
     SUP = args.supply
     clock = BlockClock(json.loads(Path("data/tokens/block_times.json").read_text())["anchors"])
     px_now_eth = args.price_now / args.eth_usd
@@ -130,11 +132,11 @@ def main() -> int:
     for i in tord:
         if int(T["value"][i]):
             dests[T["src"][i]].add(T["dst"][i])
-    routers = {a for a in bal if a != pool and (
+    routers = {a for a in bal if a not in pools and (
         (min(inflow[a], outflow[a]) / WEI / SUP > 0.02
          and bal[a] / WEI / SUP < 0.001 and touches[a] >= 50)
         or (len(dests[a]) >= 500 and min(inflow[a], outflow[a]) / WEI / SUP > 0.02))}
-    market = routers | {pool}
+    market = routers | pools
     skip = market | {DEAD}
 
     # An intermediary's "trades" belong to whoever it later pays out to, so they
@@ -189,8 +191,37 @@ def main() -> int:
             mdest[T["dst"][i]] += int(T["value"][i])
     print("minter sent to:")
     for a, v in sorted(mdest.items(), key=lambda kv: -kv[1])[:8]:
-        tag = "POOL" if a == pool else ("router" if a in routers else "")
+        tag = "POOL" if a in pools else ("router" if a in routers else "")
         print(f"   {a}  {v/WEI/SUP:>7.2%}  holds now {bal[a]/WEI/SUP:>6.2%}  {tag}")
+
+    # Supply after launch. A fixed-supply token mints once. ERHA was found
+    # minting straight into its pool on sells and burning on buys, which lets
+    # whoever triggers it sell tokens that never existed. Any token whose supply
+    # moves after the first mint block is flagged here, with who moved it.
+    mint_ev = [(T["block"][i], T["dst"][i], int(T["value"][i]), T["tx_hash"][i])
+               for i in tord if T["src"][i] == ZERO and int(T["value"][i])]
+    burn_ev = [(T["block"][i], T["src"][i], int(T["value"][i]), T["tx_hash"][i])
+               for i in tord if T["dst"][i] == ZERO and int(T["value"][i])]
+    first_mint_block = mint_ev[0][0] if mint_ev else None
+    later_mints = [m for m in mint_ev if m[0] > (first_mint_block or 0) + 100]
+    print(f"\nsupply events: {len(mint_ev):,} mints, {len(burn_ev):,} burns to the zero "
+          f"address")
+    if later_mints or len(burn_ev) > 5:
+        lm = sum(m[2] for m in later_mints) / WEI
+        bb = sum(b[2] for b in burn_ev) / WEI
+        into_pool = sum(m[2] for m in later_mints if m[1] in pools) / WEI
+        print(f"  ** SUPPLY IS NOT FIXED: {len(later_mints):,} mints after launch "
+              f"({lm:,.0f} tokens, {lm/SUP:.2%} of current supply), "
+              f"{into_pool/max(lm,1e-18):.0%} of it minted directly into the pool; "
+              f"{bb:,.0f} tokens burned")
+        dst = defaultdict(int)
+        for b_, d_, v_, h_ in later_mints:
+            dst[d_] += v_
+        for a_, v_ in sorted(dst.items(), key=lambda kv: -kv[1])[:5]:
+            tag = "POOL" if a_ in pools else ""
+            print(f"     minted to {a_}  {v_/WEI:,.0f}  {tag}")
+        report["supply_changes"] = {"later_mints": len(later_mints), "minted": lm,
+                                    "burned": bb, "minted_into_pool": into_pool}
 
     # Liquidity events: pool transfers in transactions with no swap.
     lp_in = defaultdict(int); lp_out = defaultdict(int); lp_events = []
@@ -201,9 +232,9 @@ def main() -> int:
         v = int(T["value"][i])
         if not v:
             continue
-        if T["dst"][i] == pool and T["src"][i] != ZERO:
+        if T["dst"][i] in pools and T["src"][i] != ZERO:
             lp_in[T["src"][i]] += v; lp_events.append((T["block"][i], "add", T["src"][i], v))
-        elif T["src"][i] == pool:
+        elif T["src"][i] in pools:
             lp_out[T["dst"][i]] += v; lp_events.append((T["block"][i], "remove", T["dst"][i], v))
     print(f"\nliquidity events (pool transfers with no swap in the tx): {len(lp_events):,}")
     print(f"  tokens added {sum(lp_in.values())/WEI/SUP:.2%} of supply by "
@@ -371,7 +402,7 @@ def main() -> int:
     holders = sorted((a for a in bal if bal[a] > 0 and a not in skip),
                      key=lambda a: -bal[a])
     fl_tot = sum(bal[a] for a in holders)
-    print(f"{len(holders):,} holders; pool {bal[pool]/WEI/SUP:.2%}, burn "
+    print(f"{len(holders):,} holders; pools {sum(bal[x] for x in pools)/WEI/SUP:.2%}, burn "
           f"{bal[DEAD]/WEI/SUP:.2%}, float {fl_tot/WEI/SUP:.2%}")
     cum = 0
     for k, a in enumerate(holders, 1):
