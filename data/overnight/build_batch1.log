@@ -5954,3 +5954,6 @@ transfers: committed 72,000,001-74,258,951  +25,073 rows, 980,505 total
     0x6538e2c2   4.2% block 55,008,131 logs 70,838 319s
     0x6538e2c2   5.0% block 55,068,962 logs 72,211 325s
     0x6538e2c2   6.1% block 55,160,208 logs 75,149 332s
+    0x6538e2c2   7.0% block 55,228,642 logs 78,412 345s
+    0x6538e2c2   8.2% block 55,331,293 logs 81,661 353s
+    0x6538e2c2  10.2% block 55,485,269 logs 84,490 359s
