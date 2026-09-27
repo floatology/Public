@@ -58,10 +58,16 @@ def main() -> int:
                    help="a single ETH price for the whole window; the error it "
                         "introduces is stated in the output, not hidden")
     p.add_argument("--clock", type=Path, default=Path("data/tokens/block_times.json"))
+    p.add_argument("--quotes", type=Path,
+                   help="per-pool quote pricing from track_tokens.py; without it "
+                        "every quote is treated as 18-decimal ETH")
+    p.add_argument("--base-decimals", type=int, default=18)
     p.add_argument("--out", type=Path)
     args = p.parse_args()
 
     pools = {x.lower() for x in args.pool}
+    quotes = json.loads(args.quotes.read_text())["pools"] if args.quotes else {}
+    base_scale = 10 ** args.base_decimals
     clock = BlockClock(json.loads(args.clock.read_text())["anchors"])
 
     sw = pq.read_table(args.dir / "swaps_attributed.parquet")
@@ -89,8 +95,9 @@ def main() -> int:
     count = defaultdict(int)
     last_ts: dict[str, int] = {}
 
+    has_pool = "pool" in s
     cols: dict[str, list] = {k: [] for k in (
-        "ts", "block", "log_index", "tx_hash", "trader", "side", "tokens",
+        "ts", "block", "log_index", "tx_hash", "pool", "trader", "side", "tokens",
         "quote_eth", "usd", "price_usd", "pos_before", "pos_after",
         "basis_before", "basis_after", "realised_usd", "realised_cum",
         "net_quote_cum", "holdings_now", "n_trade", "seconds_since_prev")}
@@ -99,9 +106,16 @@ def main() -> int:
 
     for i in order:
         w = s["trader"][i]
-        tokens = int(s["base_amount"][i]) / WEI
-        quote = int(s["quote_amount"][i]) / WEI
-        usd = quote * args.eth_usd
+        tokens = int(s["base_amount"][i]) / base_scale
+        q = quotes.get((s.get("pool") or [None] * n)[i] or "", None)
+        if q:
+            # Priced per pool: a USDG or stock-token quote is not ETH.
+            raw = int(s["quote_amount"][i]) / 10 ** q["decimals"]
+            usd = raw * (q["quote_usd"] or 0.0)
+            quote = usd / args.eth_usd
+        else:
+            quote = int(s["quote_amount"][i]) / WEI
+            usd = quote * args.eth_usd
         px = usd / tokens if tokens else 0.0
         ts = clock.at(s["block"][i])
         buy = bool(s["is_buy"][i])
@@ -133,13 +147,14 @@ def main() -> int:
             last_ts[w] = ts
             rc = realised[w]
             nq = net_quote[w]
-            hn = bal.get(w, 0) / WEI
+            hn = bal.get(w, 0) / base_scale
             nt = count[w]
 
         cols["ts"].append(ts)
         cols["block"].append(s["block"][i])
         cols["log_index"].append(s["log_index"][i])
         cols["tx_hash"].append(s["tx_hash"][i])
+        cols["pool"].append(s["pool"][i] if has_pool else None)
         cols["trader"].append(w)
         cols["side"].append("buy" if buy else "sell")
         cols["tokens"].append(tokens)

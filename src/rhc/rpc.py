@@ -36,6 +36,13 @@ TOPIC_V2_PAIR_CREATED = "0x0d3648bd0f6ba80134a33ba9275ac585d9d315f0ad8355cddefde
 TOPIC_V2_SWAP = "0xd78ad95fa46c994b6551d0da85fc275fe613ce37657fb8d5e3d130840159d822"
 TOPIC_V3_POOL_CREATED = "0x783cca1c0412dd0d695e784568c96da2e9c22ff989357a2e8b1d9b2b4e6b7118"
 TOPIC_V3_SWAP = "0xc42079f94a6350d7e6235f29174924f928cc2ac818eb64fed8004e115fbcca67"
+# Uniswap V4: one singleton PoolManager emits every pool's events, with the
+# 32-byte PoolId in topic 1. Both values were read off the chain by
+# scripts/discover_v4.py from a pool known to be trading, not written from
+# memory, and the Swap sign convention was checked against the token transfers
+# in the same transactions (see rhc.features.decode_v4_swaps).
+V4_POOL_MANAGER = "0x8366a39cc670b4001a1121b8f6a443a643e40951"
+TOPIC_V4_SWAP = "0x40e9cecb9f5f1f1c5b9c97dec2917b7ee92e57ba5563708daca94dd84ad7112f"
 TOPIC_TRANSFER = "0xddf252ad1be2c89b69c2b068fc378daa952ba7f163c4a11628f55a4df523b3ef"
 # V2 pairs emit Sync(uint112 reserve0, uint112 reserve1) after every swap, so
 # a pool's exact reserves at any historical block are recoverable from logs.

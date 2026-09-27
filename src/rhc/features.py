@@ -124,6 +124,52 @@ def _signed(word: int) -> int:
     return word - (1 << 256) if word >= (1 << 255) else word
 
 
+def decode_v4_swaps(logs: Iterable[dict], *, quote_is_token0: bool) -> list[Trade]:
+    """Decode Uniswap V4 PoolManager Swap logs into direction-normalised trades.
+
+    ``Swap(PoolId indexed id, address indexed sender, int128 amount0,
+    int128 amount1, uint160 sqrtPriceX96, uint128 liquidity, int24 tick,
+    uint24 fee)``.
+
+    **The signs are the reverse of V3.** V3 reports the pool's side (positive is
+    into the pool); V4 reports the swapper's balance delta (positive is what the
+    swapper *receives*). Verified on ERHA against the token Transfer logs of the
+    same transactions: a sell showed the token amount negative with the tokens
+    moving to the PoolManager, and the ETH amount positive. Decoding V4 with the
+    V3 rule would turn every buy into a sell.
+
+    ``sender`` in topic 2 is whoever called the PoolManager, almost always a
+    router, so the wallet recorded here is a placeholder. Attribution by
+    per-transaction token delta (`scripts/attribute_trades.py`) replaces it.
+    """
+    trades: list[Trade] = []
+    for log in logs:
+        amounts = _words(log.get("data") or "0x", 6)
+        if amounts is None:
+            continue
+        amount0, amount1 = _signed(amounts[0]), _signed(amounts[1])
+        quote_delta, base_delta = (
+            (amount0, amount1) if quote_is_token0 else (amount1, amount0)
+        )
+        if quote_delta == 0 or base_delta == 0:
+            continue
+        if (quote_delta > 0) == (base_delta > 0):
+            continue
+        is_buy = base_delta > 0          # the swapper received the token
+        topics = log.get("topics") or []
+        trades.append(
+            Trade(
+                block=int(log["blockNumber"], 16),
+                wallet=_topic_address(topics[2]) if len(topics) > 2 else "",
+                is_buy=is_buy,
+                quote_amount=abs(quote_delta),
+                base_amount=abs(base_delta),
+                log_index=int(log.get("logIndex", "0x0"), 16),
+            )
+        )
+    return trades
+
+
 def decode_v3_swaps(logs: Iterable[dict], *, quote_is_token0: bool) -> list[Trade]:
     """Decode Uniswap V3 Swap logs into direction-normalised trades.
 
