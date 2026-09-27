@@ -1813,3 +1813,1930 @@ transfers: committed 72,000,001-74,118,780  +115,570 rows, 636,352 total
     0x541bedd9  65.0% block 70,693,450 logs 92,032 341s
     0x541bedd9  67.3% block 70,878,488 logs 95,384 426s
     0x541bedd9  70.8% block 71,156,045 logs 102,968 442s
+    0x541bedd9  74.2% block 71,433,602 logs 105,665 458s
+    0x541bedd9  79.4% block 71,849,937 logs 112,022 465s
+    0x541bedd9  84.7% block 72,266,272 logs 117,377 543s
+    0x541bedd9  89.9% block 72,682,607 logs 120,691 559s
+    0x541bedd9  97.7% block 73,307,109 logs 123,583 575s
+    0x541bedd9 100.0% block 73,494,042 logs 124,183 612s
+    0x541bedd9  15.8% block 73,594,042 logs 220 36s
+    0x541bedd9  39.4% block 73,744,042 logs 481 36s
+    0x541bedd9  74.9% block 73,969,042 logs 1,197 37s
+    0x541bedd9 100.0% block 74,127,865 logs 1,814 42s
+[17:56:56] Agrippa: pool 0x541bedd9 DONE, 125,997 swaps
+[17:56:56] Agrippa: pool 0x4e3c581d (v4/USDG) fresh from 65,494,043
+    0x4e3c581d   1.2% block 65,594,042 logs 0 0s
+    0x4e3c581d   3.1% block 65,744,042 logs 0 0s
+    0x4e3c581d   5.9% block 65,969,042 logs 0 0s
+    0x4e3c581d  10.2% block 66,306,542 logs 0 1s
+    0x4e3c581d  16.5% block 66,812,792 logs 0 1s
+    0x4e3c581d  26.0% block 67,572,167 logs 0 6s
+    0x4e3c581d  40.2% block 68,711,229 logs 0 6s
+    0x4e3c581d  50.9% block 69,565,525 logs 0 43s
+    0x4e3c581d  54.9% block 69,885,886 logs 0 66s
+    0x4e3c581d  56.4% block 70,006,021 logs 6,740 79s
+    0x4e3c581d  57.9% block 70,126,156 logs 10,400 79s
+    0x4e3c581d  60.2% block 70,306,358 logs 13,400 85s
+    0x4e3c581d  63.5% block 70,576,661 logs 16,244 92s
+    0x4e3c581d  66.1% block 70,779,388 logs 19,094 138s
+    0x4e3c581d  68.0% block 70,931,433 logs 23,607 151s
+    0x4e3c581d  70.8% block 71,159,500 logs 25,700 152s
+    0x4e3c581d  73.0% block 71,330,550 logs 26,817 197s
+    0x4e3c581d  74.6% block 71,458,837 logs 29,373 211s
+    0x4e3c581d  77.0% block 71,651,267 logs 32,763 228s
+    0x4e3c581d  80.6% block 71,939,912 logs 36,132 246s
+    0x4e3c581d  83.3% block 72,156,395 logs 39,353 259s
+    0x4e3c581d  87.3% block 72,481,119 logs 42,809 266s
+    0x4e3c581d  93.4% block 72,968,205 logs 46,443 273s
+    0x4e3c581d 100.0% block 73,494,042 logs 48,610 279s
+    0x4e3c581d  15.8% block 73,594,042 logs 269 0s
+    0x4e3c581d  39.4% block 73,744,042 logs 637 6s
+    0x4e3c581d  74.9% block 73,969,042 logs 1,434 6s
+    0x4e3c581d 100.0% block 74,127,865 logs 2,165 6s
+[18:01:42] Agrippa: pool 0x4e3c581d DONE, 50,775 swaps
+[18:01:42] Agrippa: pool 0x9bcc119a (v4/USDG) fresh from 65,494,043
+    0x9bcc119a   1.2% block 65,594,042 logs 0 5s
+    0x9bcc119a   3.1% block 65,744,042 logs 0 6s
+    0x9bcc119a   5.9% block 65,969,042 logs 0 6s
+    0x9bcc119a  10.2% block 66,306,542 logs 0 11s
+    0x9bcc119a  16.5% block 66,812,792 logs 0 11s
+    0x9bcc119a  26.0% block 67,572,167 logs 0 11s
+    0x9bcc119a  40.2% block 68,711,229 logs 0 12s
+    0x9bcc119a  61.6% block 70,419,822 logs 7,758 14s
+    0x9bcc119a  82.9% block 72,128,415 logs 11,256 16s
+    0x9bcc119a 100.0% block 73,494,042 logs 12,421 22s
+    0x9bcc119a  15.8% block 73,594,042 logs 34 5s
+    0x9bcc119a  39.4% block 73,744,042 logs 83 21s
+    0x9bcc119a  74.9% block 73,969,042 logs 158 21s
+    0x9bcc119a 100.0% block 74,127,865 logs 243 22s
+[18:02:26] Agrippa: pool 0x9bcc119a DONE, 12,663 swaps
+[18:02:26] Agrippa: pool 0x271cb70a (v4/USDG) fresh from 65,494,043
+    0x271cb70a   1.2% block 65,594,042 logs 0 5s
+    0x271cb70a   3.1% block 65,744,042 logs 0 11s
+    0x271cb70a   5.9% block 65,969,042 logs 0 11s
+    0x271cb70a  10.2% block 66,306,542 logs 0 11s
+    0x271cb70a  16.5% block 66,812,792 logs 0 47s
+    0x271cb70a  26.0% block 67,572,167 logs 0 47s
+    0x271cb70a  40.2% block 68,711,229 logs 0 48s
+    0x271cb70a  50.9% block 69,565,525 logs 0 55s
+    0x271cb70a  58.9% block 70,206,247 logs 5,306 63s
+    0x271cb70a  66.9% block 70,846,969 logs 10,027 70s
+    0x271cb70a  78.9% block 71,808,052 logs 18,513 77s
+    0x271cb70a  84.9% block 72,288,593 logs 22,392 90s
+    0x271cb70a  93.9% block 73,009,404 logs 25,808 97s
+    0x271cb70a 100.0% block 73,494,042 logs 27,007 102s
+    0x271cb70a  15.8% block 73,594,042 logs 144 5s
+    0x271cb70a  39.4% block 73,744,042 logs 346 6s
+    0x271cb70a  74.9% block 73,969,042 logs 815 6s
+    0x271cb70a 100.0% block 74,127,865 logs 1,266 6s
+[18:04:14] Agrippa: pool 0x271cb70a DONE, 28,273 swaps
+[18:04:14] Agrippa: pool 0xfc0191a1 (v4/ETH) fresh from 65,494,043
+    0xfc0191a1   1.2% block 65,594,042 logs 0 0s
+    0xfc0191a1   3.1% block 65,744,042 logs 0 0s
+    0xfc0191a1   5.9% block 65,969,042 logs 0 0s
+    0xfc0191a1  10.2% block 66,306,542 logs 0 1s
+    0xfc0191a1  16.5% block 66,812,792 logs 0 1s
+    0xfc0191a1  26.0% block 67,572,167 logs 0 1s
+    0xfc0191a1  40.2% block 68,711,229 logs 0 1s
+    0xfc0191a1  61.6% block 70,419,822 logs 0 1s
+    0xfc0191a1  93.6% block 72,982,711 logs 2,802 2s
+    0xfc0191a1 100.0% block 73,494,042 logs 3,713 8s
+    0xfc0191a1  15.8% block 73,594,042 logs 147 6s
+    0xfc0191a1  39.4% block 73,744,042 logs 341 6s
+    0xfc0191a1  74.9% block 73,969,042 logs 807 6s
+    0xfc0191a1 100.0% block 74,127,865 logs 1,258 6s
+[18:04:28] Agrippa: pool 0xfc0191a1 DONE, 4,971 swaps
+[18:04:28] Agrippa: pool 0xbe44ad58 (v4/ETH) fresh from 65,494,043
+    0xbe44ad58   1.2% block 65,594,042 logs 0 0s
+    0xbe44ad58   3.1% block 65,744,042 logs 0 0s
+    0xbe44ad58   5.9% block 65,969,042 logs 0 0s
+    0xbe44ad58  10.2% block 66,306,542 logs 0 1s
+    0xbe44ad58  16.5% block 66,812,792 logs 0 1s
+    0xbe44ad58  26.0% block 67,572,167 logs 0 1s
+    0xbe44ad58  40.2% block 68,711,229 logs 0 1s
+    0xbe44ad58  61.6% block 70,419,822 logs 0 1s
+    0xbe44ad58  93.6% block 72,982,711 logs 2,960 2s
+    0xbe44ad58 100.0% block 73,494,042 logs 3,964 8s
+    0xbe44ad58  15.8% block 73,594,042 logs 145 5s
+    0xbe44ad58  39.4% block 73,744,042 logs 346 6s
+    0xbe44ad58  74.9% block 73,969,042 logs 763 6s
+    0xbe44ad58 100.0% block 74,127,865 logs 1,201 6s
+[18:04:42] Agrippa: pool 0xbe44ad58 DONE, 5,165 swaps
+154,799 transactions moved this token
+{
+ "attributed": 52691,
+ "attributed_multi_swap": 168381,
+ "ambiguous_multi_swap": 3353,
+ "no_transfers": 2181,
+ "no_counterparty": 1238
+}
+  attributed 97.0% of 227,844 swaps
+  'recipient' matched the true holder on 2.8% of 221,072 comparable swaps
+wrote /home/user/Public/data/tokens/0x83a49b808f8d5e02cb2931cd2352988f498e5ba3/swaps_attributed.parquet
+[18:04:50] Agrippa: attributed DONE
+227,844 trades -> /home/user/Public/data/tokens/0x83a49b808f8d5e02cb2931cd2352988f498e5ba3/ledger.parquet
+  6,772 (2.97%) had no attributed trader and carry a null
+  23,116 distinct traders across the full history
+  span 1,789,660,910 - 1,790,531,123
+[18:04:56] Agrippa: ledger DONE
+[18:04:56] ORDESK: transfers starting
+head 74,139,161
+transfers: scanning 1-74,139,161 (fresh)
+  tr   1.2%  block 100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 1,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 2,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 3,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 4,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 7,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 8,000,000  span 3,844,333  logs 0  1s
+transfers: committed 1-8,000,000  +0 rows, 0 total
+  tr   1.2%  block 8,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 8,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 8,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 8,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 9,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 10,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 11,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 12,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 15,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 16,000,000  span 3,844,333  logs 0  1s
+transfers: committed 8,000,001-16,000,000  +0 rows, 0 total
+  tr   1.2%  block 16,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 16,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 16,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 16,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 17,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 18,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 19,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 20,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 23,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 24,000,000  span 3,844,333  logs 0  1s
+transfers: committed 16,000,001-24,000,000  +0 rows, 0 total
+  tr   1.2%  block 24,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 24,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 24,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 24,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 25,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 26,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 27,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 28,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 31,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 32,000,000  span 3,844,333  logs 0  2s
+transfers: committed 24,000,001-32,000,000  +0 rows, 0 total
+  tr   1.2%  block 32,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 32,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 32,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 32,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 33,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 34,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 35,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 36,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 39,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 40,000,000  span 3,844,333  logs 0  1s
+transfers: committed 32,000,001-40,000,000  +0 rows, 0 total
+  tr   1.2%  block 40,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 40,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 40,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 40,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 41,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 42,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 43,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 44,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 47,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 48,000,000  span 3,844,333  logs 0  1s
+transfers: committed 40,000,001-48,000,000  +0 rows, 0 total
+  tr   1.2%  block 48,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 48,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 48,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 48,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 49,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 50,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 51,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 52,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 55,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 56,000,000  span 3,844,333  logs 0  2s
+transfers: committed 48,000,001-56,000,000  +0 rows, 0 total
+  tr   1.2%  block 56,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 56,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 56,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 56,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 57,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 58,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 59,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 60,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 63,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 64,000,000  span 3,844,333  logs 0  1s
+transfers: committed 56,000,001-64,000,000  +0 rows, 0 total
+  tr   1.2%  block 64,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 64,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 64,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 64,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 65,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 66,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 67,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 68,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 71,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 72,000,000  span 3,844,333  logs 0  2s
+transfers: committed 64,000,001-72,000,000  +0 rows, 0 total
+  tr   4.7%  block 72,100,000  span 100,000  logs 0  0s
+  tr  11.7%  block 72,250,000  span 150,000  logs 0  0s
+  tr  22.2%  block 72,475,000  span 225,000  logs 0  0s
+  tr  38.0%  block 72,812,500  span 337,500  logs 0  1s
+  tr  61.6%  block 73,318,750  span 506,250  logs 0  1s
+  tr  97.1%  block 74,078,125  span 759,375  logs 4,258  1s
+  tr 100.0%  block 74,139,161  span 1,139,062  logs 4,258  7s
+transfers: committed 72,000,001-74,139,161  +4,258 rows, 4,258 total
+{
+ "token": "0x80a4af02e910e02b815e389a12ce69ba882929b0",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74139161
+   ]
+  ],
+  "rows": 4258
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-27T18:05:16Z"
+}
+[18:05:17] ORDESK: transfers DONE
+[18:05:17] ORDESK: pool 0x6d567ba0 (v4/WETH) fresh from 74,009,103
+    0x6d567ba0  76.8% block 74,109,102 logs 2,356 0s
+    0x6d567ba0 100.0% block 74,139,367 logs 2,356 0s
+[18:05:17] ORDESK: pool 0x6d567ba0 DONE, 2,356 swaps
+3,378 transactions moved this token
+{
+ "attributed": 2356,
+ "attributed_multi_swap": 0,
+ "ambiguous_multi_swap": 0,
+ "no_transfers": 0,
+ "no_counterparty": 0
+}
+  attributed 100.0% of 2,356 swaps
+  'recipient' matched the true holder on 0.0% of 2,356 comparable swaps
+wrote /home/user/Public/data/tokens/0x80a4af02e910e02b815e389a12ce69ba882929b0/swaps_attributed.parquet
+[18:05:18] ORDESK: attributed DONE
+2,356 trades -> /home/user/Public/data/tokens/0x80a4af02e910e02b815e389a12ce69ba882929b0/ledger.parquet
+  0 (0.00%) had no attributed trader and carry a null
+  1,195 distinct traders across the full history
+  span 1,790,519,225 - 1,790,523,768
+[18:05:18] ORDESK: ledger DONE
+[18:05:18] CEREBRO: transfers starting
+head 74,139,389
+transfers: scanning 1-74,139,389 (fresh)
+  tr   1.2%  block 100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 1,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 2,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 3,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 4,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 7,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 8,000,000  span 3,844,333  logs 0  1s
+transfers: committed 1-8,000,000  +0 rows, 0 total
+  tr   1.2%  block 8,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 8,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 8,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 8,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 9,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 10,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 11,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 12,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 15,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 16,000,000  span 3,844,333  logs 0  1s
+transfers: committed 8,000,001-16,000,000  +0 rows, 0 total
+  tr   1.2%  block 16,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 16,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 16,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 16,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 17,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 18,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 19,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 20,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 23,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 24,000,000  span 3,844,333  logs 0  1s
+transfers: committed 16,000,001-24,000,000  +0 rows, 0 total
+  tr   1.2%  block 24,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 24,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 24,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 24,812,500  span 337,500  logs 0  16s
+  tr  16.5%  block 25,318,750  span 506,250  logs 0  16s
+  tr  26.0%  block 26,078,125  span 759,375  logs 0  17s
+  tr  40.2%  block 27,217,187  span 1,139,062  logs 0  17s
+  tr  61.6%  block 28,925,780  span 1,708,593  logs 0  17s
+  tr  93.6%  block 31,488,669  span 2,562,889  logs 0  17s
+  tr 100.0%  block 32,000,000  span 3,844,333  logs 0  17s
+transfers: committed 24,000,001-32,000,000  +0 rows, 0 total
+  tr   1.2%  block 32,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 32,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 32,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 32,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 33,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 34,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 35,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 36,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 39,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 40,000,000  span 3,844,333  logs 0  1s
+transfers: committed 32,000,001-40,000,000  +0 rows, 0 total
+  tr   1.2%  block 40,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 40,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 40,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 40,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 41,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 42,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 43,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 44,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 47,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 48,000,000  span 3,844,333  logs 0  2s
+transfers: committed 40,000,001-48,000,000  +0 rows, 0 total
+  tr   1.2%  block 48,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 48,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 48,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 48,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 49,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 50,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 51,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 52,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 55,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 56,000,000  span 3,844,333  logs 0  1s
+transfers: committed 48,000,001-56,000,000  +0 rows, 0 total
+  tr   1.2%  block 56,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 56,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 56,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 56,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 57,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 58,078,125  span 759,375  logs 5  1s
+  tr  33.1%  block 58,647,656  span 569,531  logs 5  9s
+  tr  38.4%  block 59,074,804  span 427,148  logs 7,365  16s
+  tr  43.8%  block 59,501,952  span 427,148  logs 7,960  17s
+  tr  51.8%  block 60,142,674  span 640,722  logs 8,434  22s
+  tr  57.8%  block 60,623,215  span 480,541  logs 9,910  30s
+  tr  62.3%  block 60,983,620  span 360,405  logs 13,724  38s
+  tr  69.1%  block 61,524,227  span 540,607  logs 22,558  40s
+  tr  75.8%  block 62,064,834  span 540,607  logs 25,993  41s
+  tr  85.9%  block 62,875,744  span 810,910  logs 31,246  48s
+  tr  96.1%  block 63,686,654  span 810,910  logs 38,318  56s
+  tr 100.0%  block 64,000,000  span 810,910  logs 40,710  62s
+transfers: committed 56,000,001-64,000,000  +40,710 rows, 40,710 total
+  tr   1.2%  block 64,100,000  span 100,000  logs 786  6s
+  tr   3.1%  block 64,250,000  span 150,000  logs 1,589  12s
+  tr   5.9%  block 64,475,000  span 225,000  logs 4,387  18s
+  tr  10.2%  block 64,812,500  span 337,500  logs 6,553  24s
+  tr  16.5%  block 65,318,750  span 506,250  logs 10,477  24s
+  tr  26.0%  block 66,078,125  span 759,375  logs 19,353  26s
+  tr  35.5%  block 66,837,500  span 759,375  logs 26,319  34s
+  tr  45.0%  block 67,596,875  span 759,375  logs 30,300  39s
+  tr  59.2%  block 68,735,937  span 1,139,062  logs 35,890  41s
+  tr  73.4%  block 69,874,999  span 1,139,062  logs 44,209  46s
+  tr  87.7%  block 71,014,061  span 1,139,062  logs 49,459  48s
+  tr 100.0%  block 72,000,000  span 1,139,062  logs 56,513  48s
+transfers: committed 64,000,001-72,000,000  +56,513 rows, 97,223 total
+  tr   4.7%  block 72,100,000  span 100,000  logs 1,123  0s
+  tr  11.7%  block 72,250,000  span 150,000  logs 1,697  6s
+  tr  22.2%  block 72,475,000  span 225,000  logs 3,939  6s
+  tr  38.0%  block 72,812,500  span 337,500  logs 6,993  12s
+  tr  61.6%  block 73,318,750  span 506,250  logs 11,932  19s
+  tr  97.1%  block 74,078,125  span 759,375  logs 17,862  25s
+  tr 100.0%  block 74,139,389  span 759,375  logs 18,084  30s
+transfers: committed 72,000,001-74,139,389  +18,084 rows, 115,307 total
+{
+ "token": "0xeb24a2663af4ee979dcbfe39cb95b5f12d369c4b",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74139389
+   ]
+  ],
+  "rows": 115307
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-27T18:08:07Z"
+}
+[18:08:07] CEREBRO: transfers DONE
+[18:08:07] CEREBRO: pool 0xb553e268 (v4/NVDA) fresh from 57,985,246
+    0xb553e268   1.2% block 58,085,245 logs 0 0s
+    0xb553e268   3.1% block 58,235,245 logs 0 0s
+    0xb553e268   5.9% block 58,460,245 logs 0 0s
+    0xb553e268  10.2% block 58,797,745 logs 2,511 2s
+    0xb553e268  16.5% block 59,303,995 logs 3,302 8s
+    0xb553e268  26.0% block 60,063,370 logs 3,671 15s
+    0xb553e268  40.2% block 61,202,432 logs 7,721 22s
+    0xb553e268  61.6% block 62,911,025 logs 11,189 30s
+    0xb553e268  77.6% block 64,192,469 logs 14,478 45s
+    0xb553e268 100.0% block 65,985,245 logs 18,968 52s
+    0xb553e268   1.2% block 66,085,245 logs 374 0s
+    0xb553e268   3.1% block 66,235,245 logs 682 6s
+    0xb553e268   5.9% block 66,460,245 logs 1,002 6s
+    0xb553e268  10.2% block 66,797,745 logs 1,488 12s
+    0xb553e268  16.5% block 67,303,995 logs 2,076 18s
+    0xb553e268  26.0% block 68,063,370 logs 2,625 23s
+    0xb553e268  40.2% block 69,202,432 logs 3,872 24s
+    0xb553e268  61.6% block 70,911,025 logs 5,319 30s
+    0xb553e268  93.6% block 73,473,914 logs 7,729 36s
+    0xb553e268 100.0% block 73,985,245 logs 8,811 42s
+    0xb553e268  64.2% block 74,085,245 logs 57 0s
+    0xb553e268 100.0% block 74,141,056 logs 88 0s
+[18:09:42] CEREBRO: pool 0xb553e268 DONE, 27,867 swaps
+[18:09:42] CEREBRO: pool 0x402added (v4/USDG) fresh from 57,985,246
+    0x402added   1.2% block 58,085,245 logs 0 6s
+    0x402added   3.1% block 58,235,245 logs 0 6s
+    0x402added   5.9% block 58,460,245 logs 0 6s
+    0x402added  10.2% block 58,797,745 logs 0 6s
+    0x402added  16.5% block 59,303,995 logs 0 6s
+    0x402added  26.0% block 60,063,370 logs 0 6s
+    0x402added  40.2% block 61,202,432 logs 0 6s
+    0x402added  61.6% block 62,911,025 logs 1,067 8s
+    0x402added  93.6% block 65,473,914 logs 3,047 15s
+    0x402added 100.0% block 65,985,245 logs 4,008 21s
+    0x402added   1.2% block 66,085,245 logs 215 16s
+    0x402added   3.1% block 66,235,245 logs 570 16s
+    0x402added   5.9% block 66,460,245 logs 1,158 22s
+    0x402added  10.2% block 66,797,745 logs 1,843 28s
+    0x402added  16.5% block 67,303,995 logs 2,511 34s
+    0x402added  26.0% block 68,063,370 logs 3,243 40s
+    0x402added  40.2% block 69,202,432 logs 4,753 46s
+    0x402added  61.6% block 70,911,025 logs 6,980 52s
+    0x402added  93.6% block 73,473,914 logs 11,035 59s
+    0x402added 100.0% block 73,985,245 logs 11,718 65s
+    0x402added  64.2% block 74,085,245 logs 78 0s
+    0x402added 100.0% block 74,141,056 logs 105 0s
+[18:11:09] CEREBRO: pool 0x402added DONE, 15,831 swaps
+44,861 transactions moved this token
+{
+ "attributed": 33004,
+ "attributed_multi_swap": 7506,
+ "ambiguous_multi_swap": 966,
+ "no_transfers": 1708,
+ "no_counterparty": 514
+}
+  attributed 92.7% of 43,698 swaps
+  'recipient' matched the true holder on 12.5% of 40,510 comparable swaps
+wrote /home/user/Public/data/tokens/0xeb24a2663af4ee979dcbfe39cb95b5f12d369c4b/swaps_attributed.parquet
+[18:11:10] CEREBRO: attributed DONE
+43,698 trades -> /home/user/Public/data/tokens/0xeb24a2663af4ee979dcbfe39cb95b5f12d369c4b/ledger.parquet
+  3,188 (7.30%) had no attributed trader and carry a null
+  5,213 distinct traders across the full history
+  span 1,788,967,286 - 1,790,532,314
+[18:11:11] CEREBRO: ledger DONE
+[18:11:11] UBIK: transfers starting
+head 74,142,893
+transfers: scanning 1-74,142,893 (fresh)
+  tr   1.2%  block 100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 1,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 2,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 3,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 4,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 7,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 8,000,000  span 3,844,333  logs 0  1s
+transfers: committed 1-8,000,000  +0 rows, 0 total
+  tr   1.2%  block 8,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 8,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 8,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 8,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 9,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 10,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 11,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 12,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 15,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 16,000,000  span 3,844,333  logs 0  1s
+transfers: committed 8,000,001-16,000,000  +0 rows, 0 total
+  tr   1.2%  block 16,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 16,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 16,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 16,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 17,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 18,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 19,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 20,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 23,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 24,000,000  span 3,844,333  logs 0  1s
+transfers: committed 16,000,001-24,000,000  +0 rows, 0 total
+  tr   1.2%  block 24,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 24,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 24,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 24,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 25,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 26,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 27,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 28,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 31,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 32,000,000  span 3,844,333  logs 0  1s
+transfers: committed 24,000,001-32,000,000  +0 rows, 0 total
+  tr   1.2%  block 32,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 32,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 32,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 32,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 33,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 34,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 35,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 36,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 39,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 40,000,000  span 3,844,333  logs 0  1s
+transfers: committed 32,000,001-40,000,000  +0 rows, 0 total
+  tr   1.2%  block 40,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 40,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 40,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 40,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 41,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 42,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 43,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 44,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 47,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 48,000,000  span 3,844,333  logs 0  2s
+transfers: committed 40,000,001-48,000,000  +0 rows, 0 total
+  tr   1.2%  block 48,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 48,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 48,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 48,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 49,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 50,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 51,217,187  span 1,139,062  logs 0  1s
+  tr  45.6%  block 51,644,335  span 427,148  logs 0  8s
+  tr  47.6%  block 51,804,515  span 160,180  logs 0  9s
+  tr  47.9%  block 51,834,548  span 30,033  logs 49  15s
+  tr  48.0%  block 51,840,179  span 5,631  logs 175  21s
+  tr  48.1%  block 51,844,402  span 4,223  logs 7,350  21s
+  tr  48.1%  block 51,845,457  span 1,055  logs 13,802  34s
+  tr  48.1%  block 51,846,512  span 1,055  logs 17,991  35s
+  tr  48.1%  block 51,848,094  span 1,582  logs 26,766  42s
+  tr  48.1%  block 51,849,676  span 1,582  logs 32,091  42s
+  tr  48.1%  block 51,851,258  span 1,582  logs 35,322  58s
+  tr  48.2%  block 51,853,631  span 2,373  logs 42,785  59s
+  tr  48.2%  block 51,856,004  span 2,373  logs 48,044  59s
+  tr  48.2%  block 51,858,377  span 2,373  logs 53,163  66s
+  tr  48.3%  block 51,860,750  span 2,373  logs 56,980  72s
+  tr  48.3%  block 51,864,309  span 3,559  logs 65,178  74s
+  tr  48.3%  block 51,867,868  span 3,559  logs 70,996  81s
+  tr  48.4%  block 51,871,427  span 3,559  logs 74,151  87s
+  tr  48.4%  block 51,874,096  span 2,669  logs 77,083  94s
+  tr  48.5%  block 51,876,097  span 2,001  logs 84,020  102s
+  tr  48.5%  block 51,878,098  span 2,001  logs 87,648  103s
+  tr  48.5%  block 51,881,099  span 3,001  logs 90,832  109s
+  tr  48.6%  block 51,885,600  span 4,501  logs 96,165  115s
+  tr  48.6%  block 51,890,101  span 4,501  logs 100,757  116s
+  tr  48.7%  block 51,896,852  span 6,751  logs 105,890  123s
+  tr  48.8%  block 51,903,603  span 6,751  logs 109,713  129s
+  tr  48.9%  block 51,913,729  span 10,126  logs 113,290  129s
+  tr  49.1%  block 51,928,918  span 15,189  logs 119,299  131s
+  tr  49.3%  block 51,944,107  span 15,189  logs 123,306  138s
+  tr  49.4%  block 51,955,498  span 11,391  logs 131,092  153s
+  tr  49.6%  block 51,966,889  span 11,391  logs 136,105  153s
+  tr  49.7%  block 51,978,280  span 11,391  logs 137,818  160s
+  tr  49.8%  block 51,986,823  span 8,543  logs 143,235  173s
+  tr  49.9%  block 51,995,366  span 8,543  logs 147,304  178s
+  tr  50.1%  block 52,008,180  span 12,814  logs 151,524  180s
+  tr  50.3%  block 52,027,401  span 19,221  logs 155,153  186s
+  tr  50.7%  block 52,056,232  span 28,831  logs 160,420  192s
+  tr  51.1%  block 52,085,063  span 28,831  logs 164,297  192s
+  tr  51.6%  block 52,128,309  span 43,246  logs 168,263  193s
+  tr  52.4%  block 52,193,178  span 64,869  logs 172,484  200s
+  tr  53.0%  block 52,241,829  span 48,651  logs 177,959  214s
+  tr  53.6%  block 52,290,480  span 48,651  logs 180,855  220s
+  tr  54.5%  block 52,363,456  span 72,976  logs 183,656  227s
+  tr  55.9%  block 52,472,920  span 109,464  logs 188,858  234s
+  tr  56.6%  block 52,527,652  span 54,732  logs 193,574  247s
+  tr  56.9%  block 52,548,176  span 20,524  logs 198,017  255s
+  tr  57.2%  block 52,578,962  span 30,786  logs 206,521  262s
+  tr  57.6%  block 52,609,748  span 30,786  logs 210,796  269s
+  tr  58.2%  block 52,655,927  span 46,179  logs 217,311  275s
+  tr  58.8%  block 52,702,106  span 46,179  logs 221,998  275s
+  tr  59.6%  block 52,771,374  span 69,268  logs 225,884  282s
+  tr  60.3%  block 52,823,325  span 51,951  logs 228,880  295s
+  tr  60.8%  block 52,862,288  span 38,963  logs 235,952  303s
+  tr  61.3%  block 52,901,251  span 38,963  logs 238,751  309s
+  tr  62.0%  block 52,959,695  span 58,444  logs 241,483  309s
+  tr  63.1%  block 53,047,361  span 87,666  logs 245,458  310s
+  tr  64.7%  block 53,178,860  span 131,499  logs 248,672  317s
+  tr  67.2%  block 53,376,108  span 197,248  logs 254,623  324s
+  tr  68.4%  block 53,474,732  span 98,624  logs 257,968  337s
+  tr  70.3%  block 53,622,668  span 147,936  logs 265,617  337s
+  tr  72.1%  block 53,770,604  span 147,936  logs 269,647  344s
+  tr  74.9%  block 53,992,508  span 221,904  logs 275,369  351s
+  tr  77.7%  block 54,214,412  span 221,904  logs 279,896  357s
+  tr  81.8%  block 54,547,268  span 332,856  logs 286,072  359s
+  tr  86.0%  block 54,880,124  span 332,856  logs 291,700  366s
+  tr  88.1%  block 55,046,552  span 166,428  logs 295,451  379s
+  tr  89.6%  block 55,171,373  span 124,821  logs 298,595  386s
+  tr  90.8%  block 55,264,988  span 93,615  logs 301,974  399s
+  tr  90.9%  block 55,273,764  span 8,776  logs 308,976  420s
+  tr  91.0%  block 55,282,540  span 8,776  logs 314,944  422s
+  tr  91.1%  block 55,291,316  span 8,776  logs 316,967  428s
+  tr  91.3%  block 55,304,480  span 13,164  logs 318,491  434s
+  tr  91.6%  block 55,324,226  span 19,746  logs 319,950  441s
+  tr  91.9%  block 55,353,845  span 29,619  logs 321,485  447s
+  tr  92.5%  block 55,398,273  span 44,428  logs 323,168  453s
+  tr  93.3%  block 55,464,915  span 66,642  logs 325,544  459s
+  tr  94.6%  block 55,564,878  span 99,963  logs 331,493  466s
+  tr  95.8%  block 55,664,841  span 99,963  logs 334,046  472s
+  tr  97.7%  block 55,814,785  span 149,944  logs 336,711  478s
+  tr 100.0%  block 56,000,000  span 224,916  logs 341,729  480s
+transfers: committed 48,000,001-56,000,000  +341,729 rows, 341,729 total
+  tr   1.2%  block 56,100,000  span 100,000  logs 2,626  1s
+  tr   3.1%  block 56,250,000  span 150,000  logs 6,518  2s
+  tr   4.5%  block 56,362,500  span 112,500  logs 13,831  11s
+  tr   5.9%  block 56,475,000  span 112,500  logs 17,637  16s
+  tr   8.0%  block 56,643,750  span 168,750  logs 23,345  18s
+  tr  10.2%  block 56,812,500  span 168,750  logs 27,209  25s
+  tr  13.3%  block 57,065,625  span 253,125  logs 33,914  33s
+  tr  16.5%  block 57,318,750  span 253,125  logs 38,582  40s
+  tr  18.9%  block 57,508,593  span 189,843  logs 42,420  53s
+  tr  22.4%  block 57,793,357  span 284,764  logs 49,543  54s
+  tr  23.3%  block 57,864,548  span 71,191  logs 56,427  69s
+  tr  24.2%  block 57,935,739  span 71,191  logs 58,075  75s
+  tr  25.5%  block 58,042,525  span 106,786  logs 60,804  81s
+  tr  27.5%  block 58,202,704  span 160,179  logs 63,309  82s
+  tr  30.5%  block 58,442,972  span 240,268  logs 70,677  90s
+  tr  33.5%  block 58,683,240  span 240,268  logs 76,351  97s
+  tr  36.5%  block 58,923,508  span 240,268  logs 80,998  104s
+  tr  38.8%  block 59,103,709  span 180,201  logs 84,353  117s
+  tr  42.2%  block 59,374,010  span 270,301  logs 89,400  119s
+  tr  45.6%  block 59,644,311  span 270,301  logs 95,759  125s
+  tr  48.9%  block 59,914,612  span 270,301  logs 101,806  126s
+  tr  52.3%  block 60,184,913  span 270,301  logs 106,266  133s
+  tr  54.8%  block 60,387,638  span 202,725  logs 111,988  146s
+  tr  57.4%  block 60,590,363  span 202,725  logs 115,754  149s
+  tr  59.3%  block 60,742,406  span 152,043  logs 118,050  162s
+  tr  62.1%  block 60,970,470  span 228,064  logs 124,784  163s
+  tr  63.6%  block 61,084,502  span 114,032  logs 127,077  176s
+  tr  65.7%  block 61,255,550  span 171,048  logs 131,406  177s
+  tr  68.9%  block 61,512,122  span 256,572  logs 137,409  184s
+  tr  72.1%  block 61,768,694  span 256,572  logs 141,050  190s
+  tr  74.5%  block 61,961,123  span 192,429  logs 145,102  197s
+  tr  78.1%  block 62,249,766  span 288,643  logs 152,093  204s
+  tr  81.7%  block 62,538,409  span 288,643  logs 157,999  212s
+  tr  85.3%  block 62,827,052  span 288,643  logs 161,914  218s
+  tr  88.0%  block 63,043,534  span 216,482  logs 166,365  231s
+  tr  92.1%  block 63,368,257  span 324,723  logs 172,931  233s
+  tr  96.2%  block 63,692,980  span 324,723  logs 178,149  251s
+  tr 100.0%  block 64,000,000  span 324,723  logs 186,294  269s
+transfers: committed 56,000,001-64,000,000  +186,294 rows, 528,023 total
+  tr   1.2%  block 64,100,000  span 100,000  logs 1,892  0s
+  tr   3.1%  block 64,250,000  span 150,000  logs 3,452  1s
+  tr   5.9%  block 64,475,000  span 225,000  logs 6,337  6s
+  tr  10.2%  block 64,812,500  span 337,500  logs 11,326  12s
+  tr  16.5%  block 65,318,750  span 506,250  logs 17,228  14s
+  tr  19.6%  block 65,571,875  span 253,125  logs 21,880  22s
+  tr  24.4%  block 65,951,562  span 379,687  logs 26,755  23s
+  tr  31.5%  block 66,521,092  span 569,530  logs 33,304  29s
+  tr  38.6%  block 67,090,622  span 569,530  logs 37,700  35s
+  tr  49.3%  block 67,944,917  span 854,295  logs 46,272  37s
+  tr  54.7%  block 68,372,064  span 427,147  logs 51,663  50s
+  tr  60.0%  block 68,799,211  span 427,147  logs 59,142  52s
+  tr  62.7%  block 69,012,784  span 213,573  logs 68,693  67s
+  tr  65.3%  block 69,226,357  span 213,573  logs 73,681  74s
+  tr  69.3%  block 69,546,716  span 320,359  logs 77,223  89s
+  tr  75.3%  block 70,027,254  span 480,538  logs 83,854  91s
+  tr  81.3%  block 70,507,792  span 480,538  logs 87,850  98s
+  tr  90.4%  block 71,228,599  span 720,807  logs 95,718  105s
+  tr  99.4%  block 71,949,406  span 720,807  logs 99,750  122s
+  tr 100.0%  block 72,000,000  span 1,081,210  logs 99,937  128s
+transfers: committed 64,000,001-72,000,000  +99,937 rows, 627,960 total
+  tr   4.7%  block 72,100,000  span 100,000  logs 457  0s
+  tr  11.7%  block 72,250,000  span 150,000  logs 1,576  1s
+  tr  22.2%  block 72,475,000  span 225,000  logs 3,154  6s
+  tr  37.9%  block 72,812,500  span 337,500  logs 6,709  12s
+  tr  61.5%  block 73,318,750  span 506,250  logs 10,686  13s
+  tr  97.0%  block 74,078,125  span 759,375  logs 19,792  19s
+  tr 100.0%  block 74,142,893  span 759,375  logs 20,506  24s
+transfers: committed 72,000,001-74,142,893  +20,506 rows, 648,466 total
+{
+ "token": "0x812486eaea648819853f8e372dc9f1516c7868bd",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74142893
+   ]
+  ],
+  "rows": 648466
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-27T18:26:37Z"
+}
+[18:26:37] UBIK: transfers DONE
+[18:26:38] UBIK: pool 0x4aaa4f57 (v4/USDG) fresh from 51,819,359
+    0x4aaa4f57   1.2% block 51,919,358 logs 0 0s
+    0x4aaa4f57   3.1% block 52,069,358 logs 0 0s
+    0x4aaa4f57   5.9% block 52,294,358 logs 0 0s
+    0x4aaa4f57  10.2% block 52,631,858 logs 0 1s
+    0x4aaa4f57  16.5% block 53,138,108 logs 0 6s
+    0x4aaa4f57  26.0% block 53,897,483 logs 0 7s
+    0x4aaa4f57  40.2% block 55,036,545 logs 0 22s
+    0x4aaa4f57  61.6% block 56,745,138 logs 0 22s
+    0x4aaa4f57  93.6% block 59,308,027 logs 0 28s
+    0x4aaa4f57 100.0% block 59,819,358 logs 0 28s
+    0x4aaa4f57   1.2% block 59,919,358 logs 0 0s
+    0x4aaa4f57   3.1% block 60,069,358 logs 0 0s
+    0x4aaa4f57   5.9% block 60,294,358 logs 0 0s
+    0x4aaa4f57  10.2% block 60,631,858 logs 0 1s
+    0x4aaa4f57  16.5% block 61,138,108 logs 0 1s
+    0x4aaa4f57  26.0% block 61,897,483 logs 0 1s
+    0x4aaa4f57  40.2% block 63,036,545 logs 0 1s
+    0x4aaa4f57  61.6% block 64,745,138 logs 0 1s
+    0x4aaa4f57  93.6% block 67,308,027 logs 159 2s
+    0x4aaa4f57 100.0% block 67,819,358 logs 343 8s
+    0x4aaa4f57   1.6% block 67,919,358 logs 37 0s
+    0x4aaa4f57   3.9% block 68,069,358 logs 143 0s
+    0x4aaa4f57   7.5% block 68,294,358 logs 282 0s
+    0x4aaa4f57  12.8% block 68,631,858 logs 494 6s
+    0x4aaa4f57  20.8% block 69,138,108 logs 1,375 6s
+    0x4aaa4f57  32.8% block 69,897,483 logs 1,757 12s
+    0x4aaa4f57  50.8% block 71,036,545 logs 2,321 12s
+    0x4aaa4f57  77.8% block 72,745,138 logs 2,870 18s
+    0x4aaa4f57 100.0% block 74,152,112 logs 3,677 24s
+[18:27:37] UBIK: pool 0x4aaa4f57 DONE, 4,020 swaps
+[18:27:37] UBIK: pool 0x1f28c0c3 (v4/GLD) fresh from 51,819,359
+    0x1f28c0c3   0.3% block 51,844,358 logs 3,764 8s
+    0x1f28c0c3   0.3% block 51,846,701 logs 9,746 28s
+    0x1f28c0c3   0.4% block 51,849,044 logs 14,403 35s
+    0x1f28c0c3   0.4% block 51,852,558 logs 16,958 53s
+    0x1f28c0c3   0.5% block 51,857,829 logs 20,245 60s
+    0x1f28c0c3   0.5% block 51,861,782 logs 22,219 74s
+    0x1f28c0c3   0.6% block 51,867,711 logs 24,647 80s
+    0x1f28c0c3   0.7% block 51,876,604 logs 27,728 86s
+    0x1f28c0c3   0.9% block 51,889,943 logs 30,983 86s
+    0x1f28c0c3   1.1% block 51,909,951 logs 32,687 91s
+    0x1f28c0c3   1.5% block 51,939,963 logs 34,303 93s
+    0x1f28c0c3   2.1% block 51,984,981 logs 37,126 100s
+    0x1f28c0c3   2.9% block 52,052,508 logs 39,114 105s
+    0x1f28c0c3   4.2% block 52,153,798 logs 40,277 112s
+    0x1f28c0c3   6.1% block 52,305,733 logs 42,167 117s
+    0x1f28c0c3   8.9% block 52,533,635 logs 44,024 124s
+    0x1f28c0c3  13.2% block 52,875,488 logs 47,743 131s
+    0x1f28c0c3  19.6% block 53,388,267 logs 49,527 138s
+    0x1f28c0c3  29.2% block 54,157,435 logs 52,123 145s
+    0x1f28c0c3  36.4% block 54,734,311 logs 53,549 159s
+    0x1f28c0c3  41.8% block 55,166,968 logs 55,048 173s
+    0x1f28c0c3  50.0% block 55,815,953 logs 58,777 180s
+    0x1f28c0c3  62.1% block 56,789,430 logs 61,823 180s
+    0x1f28c0c3  80.4% block 58,249,645 logs 65,337 186s
+    0x1f28c0c3 100.0% block 59,819,358 logs 67,952 194s
+    0x1f28c0c3   1.2% block 59,919,358 logs 64 5s
+    0x1f28c0c3   3.1% block 60,069,358 logs 182 6s
+    0x1f28c0c3   5.9% block 60,294,358 logs 571 6s
+    0x1f28c0c3  10.2% block 60,631,858 logs 983 12s
+    0x1f28c0c3  16.5% block 61,138,108 logs 1,951 18s
+    0x1f28c0c3  26.0% block 61,897,483 logs 2,726 24s
+    0x1f28c0c3  40.2% block 63,036,545 logs 3,933 29s
+    0x1f28c0c3  61.6% block 64,745,138 logs 5,847 36s
+    0x1f28c0c3  93.6% block 67,308,027 logs 7,265 42s
+    0x1f28c0c3 100.0% block 67,819,358 logs 7,528 42s
+    0x1f28c0c3   1.6% block 67,919,358 logs 34 0s
+    0x1f28c0c3   3.9% block 68,069,358 logs 189 0s
+    0x1f28c0c3   7.5% block 68,294,358 logs 355 6s
+    0x1f28c0c3  12.8% block 68,631,858 logs 548 6s
+    0x1f28c0c3  20.8% block 69,138,108 logs 1,398 12s
+    0x1f28c0c3  32.8% block 69,897,483 logs 1,723 17s
+    0x1f28c0c3  50.8% block 71,036,545 logs 2,279 18s
+    0x1f28c0c3  77.8% block 72,745,138 logs 2,588 23s
+    0x1f28c0c3 100.0% block 74,152,112 logs 2,941 29s
+[18:32:04] UBIK: pool 0x1f28c0c3 DONE, 78,421 swaps
+[18:32:04] UBIK: pool 0x6d56f66e (v4/USDG) fresh from 51,819,359
+    0x6d56f66e   1.2% block 51,919,358 logs 336 0s
+    0x6d56f66e   3.1% block 52,069,358 logs 539 6s
+    0x6d56f66e   5.9% block 52,294,358 logs 599 11s
+    0x6d56f66e  10.2% block 52,631,858 logs 2,661 13s
+    0x6d56f66e  13.3% block 52,884,983 logs 4,947 27s
+    0x6d56f66e  18.1% block 53,264,670 logs 6,480 34s
+    0x6d56f66e  25.2% block 53,834,200 logs 9,406 41s
+    0x6d56f66e  35.9% block 54,688,495 logs 12,168 49s
+    0x6d56f66e  43.9% block 55,329,216 logs 17,423 73s
+    0x6d56f66e  47.9% block 55,649,576 logs 19,920 86s
+    0x6d56f66e  53.9% block 56,130,116 logs 22,140 87s
+    0x6d56f66e  58.4% block 56,490,521 logs 24,866 132s
+    0x6d56f66e  65.1% block 57,031,128 logs 27,965 139s
+    0x6d56f66e  70.2% block 57,436,583 logs 29,728 153s
+    0x6d56f66e  74.0% block 57,740,674 logs 31,293 167s
+    0x6d56f66e  79.7% block 58,196,810 logs 34,531 173s
+    0x6d56f66e  84.0% block 58,538,912 logs 36,794 197s
+    0x6d56f66e  90.4% block 59,052,065 logs 39,407 198s
+    0x6d56f66e  95.2% block 59,436,929 logs 41,415 205s
+    0x6d56f66e 100.0% block 59,819,358 logs 43,803 207s
+    0x6d56f66e   1.2% block 59,919,358 logs 363 0s
+    0x6d56f66e   3.1% block 60,069,358 logs 834 6s
+    0x6d56f66e   5.9% block 60,294,358 logs 2,543 12s
+    0x6d56f66e  10.2% block 60,631,858 logs 4,474 48s
+    0x6d56f66e  16.5% block 61,138,108 logs 7,521 65s
+    0x6d56f66e  26.0% block 61,897,483 logs 10,727 73s
+    0x6d56f66e  40.2% block 63,036,545 logs 14,807 79s
+    0x6d56f66e  45.6% block 63,463,693 logs 16,443 110s
+    0x6d56f66e  53.6% block 64,104,415 logs 18,977 127s
+    0x6d56f66e  65.6% block 65,065,498 logs 21,138 133s
+    0x6d56f66e  83.6% block 66,507,122 logs 24,485 141s
+    0x6d56f66e 100.0% block 67,819,358 logs 26,525 148s
+    0x6d56f66e   1.6% block 67,919,358 logs 125 0s
+    0x6d56f66e   3.9% block 68,069,358 logs 514 6s
+    0x6d56f66e   7.5% block 68,294,358 logs 900 6s
+    0x6d56f66e  12.8% block 68,631,858 logs 1,573 22s
+    0x6d56f66e  20.8% block 69,138,108 logs 4,095 29s
+    0x6d56f66e  32.8% block 69,897,483 logs 5,365 35s
+    0x6d56f66e  50.8% block 71,036,545 logs 6,842 41s
+    0x6d56f66e  77.8% block 72,745,138 logs 8,225 48s
+    0x6d56f66e 100.0% block 74,152,112 logs 9,905 53s
+[18:38:53] UBIK: pool 0x6d56f66e DONE, 80,231 swaps
+[18:38:53] UBIK: pool 0x10fcb9ac (v4/USDG) fresh from 51,819,359
+    0x10fcb9ac   0.6% block 51,869,358 logs 608 13s
+    0x10fcb9ac   1.1% block 51,906,858 logs 3,500 37s
+    0x10fcb9ac   1.8% block 51,963,108 logs 4,771 43s
+    0x10fcb9ac   2.9% block 52,047,483 logs 5,722 49s
+    0x10fcb9ac   4.4% block 52,174,045 logs 6,209 65s
+    0x10fcb9ac   6.8% block 52,363,888 logs 6,819 71s
+    0x10fcb9ac  10.4% block 52,648,652 logs 8,170 77s
+    0x10fcb9ac  15.7% block 53,075,798 logs 9,247 94s
+    0x10fcb9ac  23.7% block 53,716,517 logs 10,346 111s
+    0x10fcb9ac  35.7% block 54,677,595 logs 11,133 148s
+    0x10fcb9ac  53.7% block 56,119,212 logs 13,167 155s
+    0x10fcb9ac  80.8% block 58,281,637 logs 14,993 161s
+    0x10fcb9ac 100.0% block 59,819,358 logs 15,747 167s
+    0x10fcb9ac   1.2% block 59,919,358 logs 34 0s
+    0x10fcb9ac   3.1% block 60,069,358 logs 66 6s
+    0x10fcb9ac   5.9% block 60,294,358 logs 201 6s
+    0x10fcb9ac  10.2% block 60,631,858 logs 350 11s
+    0x10fcb9ac  16.5% block 61,138,108 logs 614 17s
+    0x10fcb9ac  26.0% block 61,897,483 logs 845 17s
+    0x10fcb9ac  40.2% block 63,036,545 logs 1,202 23s
+    0x10fcb9ac  61.6% block 64,745,138 logs 1,727 39s
+    0x10fcb9ac  93.6% block 67,308,027 logs 2,079 45s
+    0x10fcb9ac 100.0% block 67,819,358 logs 2,123 50s
+    0x10fcb9ac   1.6% block 67,919,358 logs 0 16s
+    0x10fcb9ac   3.9% block 68,069,358 logs 8 21s
+    0x10fcb9ac   7.5% block 68,294,358 logs 34 21s
+    0x10fcb9ac  12.8% block 68,631,858 logs 73 37s
+    0x10fcb9ac  20.8% block 69,138,108 logs 351 37s
+    0x10fcb9ac  32.8% block 69,897,483 logs 415 38s
+    0x10fcb9ac  50.8% block 71,036,545 logs 528 45s
+    0x10fcb9ac  77.8% block 72,745,138 logs 602 51s
+    0x10fcb9ac 100.0% block 74,152,112 logs 715 56s
+[18:43:27] UBIK: pool 0x10fcb9ac DONE, 18,585 swaps
+[18:43:27] UBIK: pool 0xbea39772 (v3/WETH) fresh from 51,819,359
+    0xbea39772   1.2% block 51,919,358 logs 0 36s
+    0xbea39772   3.1% block 52,069,358 logs 0 36s
+    0xbea39772   5.9% block 52,294,358 logs 0 36s
+    0xbea39772  10.2% block 52,631,858 logs 0 37s
+    0xbea39772  16.5% block 53,138,108 logs 0 37s
+    0xbea39772  26.0% block 53,897,483 logs 0 37s
+    0xbea39772  40.2% block 55,036,545 logs 0 37s
+    0xbea39772  61.6% block 56,745,138 logs 0 37s
+    0xbea39772  93.6% block 59,308,027 logs 0 37s
+    0xbea39772 100.0% block 59,819,358 logs 0 37s
+    0xbea39772   1.2% block 59,919,358 logs 0 0s
+    0xbea39772   3.1% block 60,069,358 logs 0 0s
+    0xbea39772   5.9% block 60,294,358 logs 0 0s
+    0xbea39772  10.2% block 60,631,858 logs 0 1s
+    0xbea39772  16.5% block 61,138,108 logs 0 1s
+    0xbea39772  26.0% block 61,897,483 logs 686 1s
+    0xbea39772  40.2% block 63,036,545 logs 1,973 8s
+    0xbea39772  61.6% block 64,745,138 logs 3,940 24s
+    0xbea39772  93.6% block 67,308,027 logs 5,860 25s
+    0xbea39772 100.0% block 67,819,358 logs 6,069 31s
+    0xbea39772   1.6% block 67,919,358 logs 37 5s
+    0xbea39772   3.9% block 68,069,358 logs 178 6s
+    0xbea39772   7.5% block 68,294,358 logs 415 11s
+    0xbea39772  12.8% block 68,631,858 logs 612 11s
+    0xbea39772  20.8% block 69,138,108 logs 1,971 28s
+    0xbea39772  32.8% block 69,897,483 logs 3,398 33s
+    0xbea39772  50.8% block 71,036,545 logs 4,927 40s
+    0xbea39772  77.8% block 72,745,138 logs 6,424 46s
+    0xbea39772 100.0% block 74,152,112 logs 8,305 62s
+[18:45:37] UBIK: pool 0xbea39772 DONE, 14,374 swaps
+246,365 transactions moved this token
+{
+ "attributed": 141482,
+ "attributed_multi_swap": 39153,
+ "ambiguous_multi_swap": 4934,
+ "no_transfers": 4359,
+ "no_counterparty": 5703
+}
+  attributed 92.3% of 195,631 swaps
+  'recipient' matched the true holder on 5.2% of 180,635 comparable swaps
+wrote /home/user/Public/data/tokens/0x812486eaea648819853f8e372dc9f1516c7868bd/swaps_attributed.parquet
+[18:45:45] UBIK: attributed DONE
+195,631 trades -> /home/user/Public/data/tokens/0x812486eaea648819853f8e372dc9f1516c7868bd/ledger.parquet
+  14,996 (7.67%) had no attributed trader and carry a null
+  29,145 distinct traders across the full history
+  span 1,788,278,083 - 1,790,533,538
+[18:45:50] UBIK: ledger DONE
+[18:45:50] BUN: transfers starting
+head 74,163,572
+transfers: scanning 1-74,163,572 (fresh)
+  tr   1.2%  block 100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 1,318,750  span 506,250  logs 0  16s
+  tr  26.0%  block 2,078,125  span 759,375  logs 0  17s
+  tr  40.2%  block 3,217,187  span 1,139,062  logs 0  17s
+  tr  61.6%  block 4,925,780  span 1,708,593  logs 0  17s
+  tr  93.6%  block 7,488,669  span 2,562,889  logs 0  17s
+  tr 100.0%  block 8,000,000  span 3,844,333  logs 0  17s
+transfers: committed 1-8,000,000  +0 rows, 0 total
+  tr   1.2%  block 8,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 8,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 8,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 8,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 9,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 10,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 11,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 12,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 15,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 16,000,000  span 3,844,333  logs 0  2s
+transfers: committed 8,000,001-16,000,000  +0 rows, 0 total
+  tr   1.2%  block 16,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 16,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 16,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 16,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 17,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 18,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 19,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 20,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 23,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 24,000,000  span 3,844,333  logs 0  1s
+transfers: committed 16,000,001-24,000,000  +0 rows, 0 total
+  tr   1.2%  block 24,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 24,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 24,475,000  span 225,000  logs 0  6s
+  tr  10.2%  block 24,812,500  span 337,500  logs 0  6s
+  tr  16.5%  block 25,318,750  span 506,250  logs 0  143s
+  tr  26.0%  block 26,078,125  span 759,375  logs 0  143s
+  tr  40.2%  block 27,217,187  span 1,139,062  logs 0  143s
+  tr  61.6%  block 28,925,780  span 1,708,593  logs 0  143s
+  tr  93.6%  block 31,488,669  span 2,562,889  logs 0  143s
+  tr 100.0%  block 32,000,000  span 3,844,333  logs 0  144s
+transfers: committed 24,000,001-32,000,000  +0 rows, 0 total
+  tr   1.2%  block 32,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 32,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 32,475,000  span 225,000  logs 0  6s
+  tr  10.2%  block 32,812,500  span 337,500  logs 0  6s
+  tr  16.5%  block 33,318,750  span 506,250  logs 0  6s
+  tr  26.0%  block 34,078,125  span 759,375  logs 0  6s
+  tr  40.2%  block 35,217,187  span 1,139,062  logs 0  22s
+  tr  61.6%  block 36,925,780  span 1,708,593  logs 0  28s
+  tr  93.6%  block 39,488,669  span 2,562,889  logs 0  28s
+  tr 100.0%  block 40,000,000  span 3,844,333  logs 0  28s
+transfers: committed 32,000,001-40,000,000  +0 rows, 0 total
+  tr   1.2%  block 40,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 40,250,000  span 150,000  logs 0  6s
+  tr   5.9%  block 40,475,000  span 225,000  logs 0  6s
+  tr  10.2%  block 40,812,500  span 337,500  logs 0  6s
+  tr  16.5%  block 41,318,750  span 506,250  logs 0  6s
+  tr  26.0%  block 42,078,125  span 759,375  logs 0  6s
+  tr  40.2%  block 43,217,187  span 1,139,062  logs 0  6s
+  tr  61.6%  block 44,925,780  span 1,708,593  logs 0  7s
+  tr  93.6%  block 47,488,669  span 2,562,889  logs 0  7s
+  tr 100.0%  block 48,000,000  span 3,844,333  logs 0  7s
+transfers: committed 40,000,001-48,000,000  +0 rows, 0 total
+  tr   1.2%  block 48,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 48,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 48,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 48,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 49,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 50,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 51,217,187  span 1,139,062  logs 0  1s
+  tr  50.9%  block 52,071,483  span 854,296  logs 0  9s
+  tr  54.9%  block 52,391,844  span 320,361  logs 0  22s
+  tr  57.9%  block 52,632,114  span 240,270  logs 0  28s
+  tr  58.5%  block 52,677,164  span 45,050  logs 0  60s
+  tr  58.6%  block 52,685,610  span 8,446  logs 0  66s
+  tr  58.6%  block 52,688,777  span 3,167  logs 5,062  87s
+  tr  58.6%  block 52,690,360  span 1,583  logs 10,403  94s
+  tr  58.6%  block 52,691,943  span 1,583  logs 16,477  95s
+  tr  58.7%  block 52,693,526  span 1,583  logs 26,041  96s
+  tr  58.7%  block 52,695,109  span 1,583  logs 30,589  98s
+  tr  58.7%  block 52,697,483  span 2,374  logs 33,548  104s
+  tr  58.8%  block 52,701,044  span 3,561  logs 36,974  111s
+  tr  58.8%  block 52,706,385  span 5,341  logs 39,001  111s
+  tr  58.9%  block 52,714,396  span 8,011  logs 40,936  128s
+  tr  59.1%  block 52,726,412  span 12,016  logs 43,757  146s
+  tr  59.3%  block 52,744,436  span 18,024  logs 45,873  152s
+  tr  59.6%  block 52,771,472  span 27,036  logs 47,373  157s
+  tr  60.2%  block 52,812,026  span 40,554  logs 48,430  174s
+  tr  60.9%  block 52,872,857  span 60,831  logs 51,057  180s
+  tr  62.1%  block 52,964,103  span 91,246  logs 52,208  186s
+  tr  63.8%  block 53,100,972  span 136,869  logs 54,204  192s
+  tr  66.3%  block 53,306,275  span 205,303  logs 56,184  198s
+  tr  68.3%  block 53,460,252  span 153,977  logs 64,343  212s
+  tr  70.2%  block 53,614,229  span 153,977  logs 68,762  212s
+  tr  73.1%  block 53,845,194  span 230,965  logs 72,319  219s
+  tr  77.4%  block 54,191,641  span 346,447  logs 76,177  226s
+  tr  83.9%  block 54,711,311  span 519,670  logs 80,581  231s
+  tr  88.8%  block 55,101,063  span 389,752  logs 84,066  239s
+  tr  92.4%  block 55,393,377  span 292,314  logs 88,619  274s
+  tr  97.9%  block 55,831,848  span 438,471  logs 91,858  281s
+  tr 100.0%  block 56,000,000  span 657,706  logs 92,637  286s
+transfers: committed 48,000,001-56,000,000  +92,637 rows, 92,637 total
+  tr   1.2%  block 56,100,000  span 100,000  logs 624  16s
+  tr   3.1%  block 56,250,000  span 150,000  logs 1,399  22s
+  tr   5.9%  block 56,475,000  span 225,000  logs 3,400  27s
+  tr  10.2%  block 56,812,500  span 337,500  logs 4,620  33s
+  tr  16.5%  block 57,318,750  span 506,250  logs 8,112  33s
+  tr  26.0%  block 58,078,125  span 759,375  logs 11,676  40s
+  tr  33.1%  block 58,647,656  span 569,531  logs 14,337  64s
+  tr  38.4%  block 59,074,804  span 427,148  logs 20,920  75s
+  tr  41.1%  block 59,288,378  span 213,574  logs 24,462  99s
+  tr  45.1%  block 59,608,739  span 320,361  logs 31,235  106s
+  tr  49.1%  block 59,929,100  span 320,361  logs 34,967  123s
+  tr  55.1%  block 60,409,641  span 480,541  logs 39,594  130s
+  tr  64.1%  block 61,130,452  span 720,811  logs 45,342  146s
+  tr  73.1%  block 61,851,263  span 720,811  logs 49,268  164s
+  tr  86.7%  block 62,932,479  span 1,081,216  logs 56,252  171s
+  tr 100.0%  block 64,000,000  span 1,081,216  logs 63,325  177s
+transfers: committed 56,000,001-64,000,000  +63,325 rows, 155,962 total
+  tr   1.2%  block 64,100,000  span 100,000  logs 398  0s
+  tr   3.1%  block 64,250,000  span 150,000  logs 1,533  16s
+  tr   5.9%  block 64,475,000  span 225,000  logs 2,242  16s
+  tr  10.2%  block 64,812,500  span 337,500  logs 4,021  22s
+  tr  16.5%  block 65,318,750  span 506,250  logs 5,972  29s
+  tr  26.0%  block 66,078,125  span 759,375  logs 9,224  35s
+  tr  40.2%  block 67,217,187  span 1,139,062  logs 12,492  41s
+  tr  61.6%  block 68,925,780  span 1,708,593  logs 17,441  59s
+  tr  77.6%  block 70,207,224  span 1,281,444  logs 22,436  82s
+  tr  89.6%  block 71,168,307  span 961,083  logs 26,147  105s
+  tr 100.0%  block 72,000,000  span 1,441,624  logs 35,087  113s
+transfers: committed 64,000,001-72,000,000  +35,087 rows, 191,049 total
+  tr   4.6%  block 72,100,000  span 100,000  logs 576  0s
+  tr  11.6%  block 72,250,000  span 150,000  logs 1,052  6s
+  tr  22.0%  block 72,475,000  span 225,000  logs 2,991  6s
+  tr  25.9%  block 72,559,375  span 84,375  logs 9,837  19s
+  tr  29.8%  block 72,643,750  span 84,375  logs 14,383  24s
+  tr  35.6%  block 72,770,312  span 126,562  logs 19,702  31s
+  tr  41.5%  block 72,896,874  span 126,562  logs 23,059  36s
+  tr  50.2%  block 73,086,717  span 189,843  logs 28,482  42s
+  tr  59.0%  block 73,276,560  span 189,843  logs 33,639  49s
+  tr  67.8%  block 73,466,403  span 189,843  logs 36,516  55s
+  tr  80.9%  block 73,751,167  span 284,764  logs 40,943  132s
+  tr 100.0%  block 74,163,572  span 427,146  logs 46,382  138s
+transfers: committed 72,000,001-74,163,572  +46,382 rows, 237,431 total
+{
+ "token": "0x07ebb29a38fbcb41563817e5e19f2cec619c90d2",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74163572
+   ]
+  ],
+  "rows": 237431
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-27T19:01:08Z"
+}
+[19:01:08] BUN: transfers DONE
+[19:01:08] BUN: pool 0x06e308b7 (v4/ETH) fresh from 52,687,031
+    0x06e308b7   0.0% block 52,690,155 logs 5,619 54s
+    0x06e308b7   0.1% block 52,691,717 logs 8,877 62s
+    0x06e308b7   0.1% block 52,692,888 logs 12,188 86s
+    0x06e308b7   0.1% block 52,694,644 logs 15,154 103s
+    0x06e308b7   0.1% block 52,697,278 logs 16,564 110s
+    0x06e308b7   0.2% block 52,701,229 logs 18,056 116s
+    0x06e308b7   0.3% block 52,707,155 logs 18,848 132s
+    0x06e308b7   0.4% block 52,716,044 logs 19,638 138s
+    0x06e308b7   0.5% block 52,729,377 logs 20,868 145s
+    0x06e308b7   0.8% block 52,749,376 logs 21,451 150s
+    0x06e308b7   1.2% block 52,779,374 logs 21,989 156s
+    0x06e308b7   1.7% block 52,824,371 logs 22,289 156s
+    0x06e308b7   2.6% block 52,891,866 logs 23,219 162s
+    0x06e308b7   3.8% block 52,993,108 logs 23,622 168s
+    0x06e308b7   5.7% block 53,144,971 logs 24,197 174s
+    0x06e308b7   8.6% block 53,372,765 logs 26,186 181s
+    0x06e308b7  12.8% block 53,714,456 logs 29,240 188s
+    0x06e308b7  19.2% block 54,226,992 logs 31,072 195s
+    0x06e308b7  28.9% block 54,995,796 logs 33,151 202s
+    0x06e308b7  43.3% block 56,149,002 logs 36,603 209s
+    0x06e308b7  64.9% block 57,878,811 logs 39,670 217s
+    0x06e308b7  81.1% block 59,176,167 logs 42,642 231s
+    0x06e308b7  93.3% block 60,149,184 logs 45,751 245s
+    0x06e308b7 100.0% block 60,687,030 logs 46,766 251s
+    0x06e308b7   1.2% block 60,787,030 logs 154 0s
+    0x06e308b7   3.1% block 60,937,030 logs 403 6s
+    0x06e308b7   5.9% block 61,162,030 logs 617 6s
+    0x06e308b7  10.2% block 61,499,530 logs 949 12s
+    0x06e308b7  16.5% block 62,005,780 logs 1,432 17s
+    0x06e308b7  26.0% block 62,765,155 logs 2,700 34s
+    0x06e308b7  40.2% block 63,904,217 logs 4,437 41s
+    0x06e308b7  61.6% block 65,612,810 logs 6,654 47s
+    0x06e308b7  93.6% block 68,175,699 logs 8,246 54s
+    0x06e308b7 100.0% block 68,687,030 logs 8,577 60s
+    0x06e308b7   1.8% block 68,787,030 logs 79 0s
+    0x06e308b7   4.6% block 68,937,030 logs 190 6s
+    0x06e308b7   8.7% block 69,162,030 logs 317 6s
+    0x06e308b7  14.8% block 69,499,530 logs 414 6s
+    0x06e308b7  24.0% block 70,005,780 logs 661 6s
+    0x06e308b7  37.9% block 70,765,155 logs 2,141 12s
+    0x06e308b7  58.6% block 71,904,217 logs 4,100 19s
+    0x06e308b7  89.8% block 73,612,810 logs 9,897 26s
+    0x06e308b7 100.0% block 74,172,684 logs 10,918 32s
+[19:06:52] BUN: pool 0x06e308b7 DONE, 66,259 swaps
+[19:06:52] BUN: pool 0x4f22b1a5 (v3/WETH) fresh from 52,687,031
+    0x4f22b1a5   1.2% block 52,787,030 logs 0 0s
+    0x4f22b1a5   3.1% block 52,937,030 logs 2 0s
+    0x4f22b1a5   5.9% block 53,162,030 logs 2 0s
+    0x4f22b1a5  10.2% block 53,499,530 logs 2 1s
+    0x4f22b1a5  16.5% block 54,005,780 logs 12 1s
+    0x4f22b1a5  26.0% block 54,765,155 logs 12 1s
+    0x4f22b1a5  40.2% block 55,904,217 logs 12 1s
+    0x4f22b1a5  61.6% block 57,612,810 logs 264 1s
+    0x4f22b1a5  77.6% block 58,894,254 logs 1,132 9s
+    0x4f22b1a5 100.0% block 60,687,030 logs 3,846 10s
+    0x4f22b1a5   1.2% block 60,787,030 logs 107 5s
+    0x4f22b1a5   3.1% block 60,937,030 logs 297 6s
+    0x4f22b1a5   5.9% block 61,162,030 logs 450 6s
+    0x4f22b1a5  10.2% block 61,499,530 logs 736 6s
+    0x4f22b1a5  16.5% block 62,005,780 logs 1,081 6s
+    0x4f22b1a5  26.0% block 62,765,155 logs 1,643 12s
+    0x4f22b1a5  40.2% block 63,904,217 logs 2,436 12s
+    0x4f22b1a5  61.6% block 65,612,810 logs 3,452 18s
+    0x4f22b1a5  93.6% block 68,175,699 logs 4,151 18s
+    0x4f22b1a5 100.0% block 68,687,030 logs 4,279 24s
+    0x4f22b1a5   1.8% block 68,787,030 logs 44 0s
+    0x4f22b1a5   4.6% block 68,937,030 logs 105 0s
+    0x4f22b1a5   8.7% block 69,162,030 logs 170 0s
+    0x4f22b1a5  14.8% block 69,499,530 logs 222 1s
+    0x4f22b1a5  24.0% block 70,005,780 logs 326 1s
+    0x4f22b1a5  37.9% block 70,765,155 logs 969 1s
+    0x4f22b1a5  58.6% block 71,904,217 logs 2,013 7s
+    0x4f22b1a5  89.8% block 73,612,810 logs 6,026 14s
+    0x4f22b1a5 100.0% block 74,172,684 logs 6,922 19s
+[19:07:45] BUN: pool 0x4f22b1a5 DONE, 15,047 swaps
+[19:07:45] BUN: pool 0x4357c2de (v4/USDG) fresh from 52,687,031
+    0x4357c2de   1.2% block 52,787,030 logs 347 0s
+    0x4357c2de   3.1% block 52,937,030 logs 416 6s
+    0x4357c2de   5.9% block 53,162,030 logs 467 6s
+    0x4357c2de  10.2% block 53,499,530 logs 784 6s
+    0x4357c2de  16.5% block 54,005,780 logs 1,027 12s
+    0x4357c2de  26.0% block 54,765,155 logs 1,188 12s
+    0x4357c2de  40.2% block 55,904,217 logs 1,488 18s
+    0x4357c2de  61.6% block 57,612,810 logs 1,709 18s
+    0x4357c2de  93.6% block 60,175,699 logs 2,148 24s
+    0x4357c2de 100.0% block 60,687,030 logs 2,233 29s
+    0x4357c2de   1.2% block 60,787,030 logs 9 0s
+    0x4357c2de   3.1% block 60,937,030 logs 52 0s
+    0x4357c2de   5.9% block 61,162,030 logs 61 0s
+    0x4357c2de  10.2% block 61,499,530 logs 116 1s
+    0x4357c2de  16.5% block 62,005,780 logs 159 6s
+    0x4357c2de  26.0% block 62,765,155 logs 218 6s
+    0x4357c2de  40.2% block 63,904,217 logs 320 6s
+    0x4357c2de  61.6% block 65,612,810 logs 428 7s
+    0x4357c2de  93.6% block 68,175,699 logs 532 12s
+    0x4357c2de 100.0% block 68,687,030 logs 559 12s
+    0x4357c2de   1.8% block 68,787,030 logs 3 0s
+    0x4357c2de   4.6% block 68,937,030 logs 10 0s
+    0x4357c2de   8.7% block 69,162,030 logs 10 0s
+    0x4357c2de  14.8% block 69,499,530 logs 10 1s
+    0x4357c2de  24.0% block 70,005,780 logs 13 1s
+    0x4357c2de  37.9% block 70,765,155 logs 40 1s
+    0x4357c2de  58.6% block 71,904,217 logs 98 1s
+    0x4357c2de  89.8% block 73,612,810 logs 397 1s
+    0x4357c2de 100.0% block 74,172,684 logs 484 1s
+[19:08:28] BUN: pool 0x4357c2de DONE, 3,276 swaps
+[19:08:28] BUN: pool 0xf4d523e3 (v4/USDG) fresh from 52,687,031
+    0xf4d523e3   1.2% block 52,787,030 logs 0 5s
+    0xf4d523e3   3.1% block 52,937,030 logs 0 6s
+    0xf4d523e3   5.9% block 53,162,030 logs 0 6s
+    0xf4d523e3  10.2% block 53,499,530 logs 0 6s
+    0xf4d523e3  16.5% block 54,005,780 logs 0 6s
+    0xf4d523e3  26.0% block 54,765,155 logs 0 6s
+    0xf4d523e3  40.2% block 55,904,217 logs 0 6s
+    0xf4d523e3  61.6% block 57,612,810 logs 0 6s
+    0xf4d523e3  93.6% block 60,175,699 logs 0 7s
+    0xf4d523e3 100.0% block 60,687,030 logs 0 7s
+    0xf4d523e3   1.2% block 60,787,030 logs 0 5s
+    0xf4d523e3   3.1% block 60,937,030 logs 0 6s
+    0xf4d523e3   5.9% block 61,162,030 logs 0 6s
+    0xf4d523e3  10.2% block 61,499,530 logs 0 6s
+    0xf4d523e3  16.5% block 62,005,780 logs 0 6s
+    0xf4d523e3  26.0% block 62,765,155 logs 0 6s
+    0xf4d523e3  40.2% block 63,904,217 logs 0 6s
+    0xf4d523e3  61.6% block 65,612,810 logs 0 6s
+    0xf4d523e3  93.6% block 68,175,699 logs 0 7s
+    0xf4d523e3 100.0% block 68,687,030 logs 0 7s
+    0xf4d523e3   1.8% block 68,787,030 logs 0 0s
+    0xf4d523e3   4.6% block 68,937,030 logs 0 0s
+    0xf4d523e3   8.7% block 69,162,030 logs 0 0s
+    0xf4d523e3  14.8% block 69,499,530 logs 0 1s
+    0xf4d523e3  24.0% block 70,005,780 logs 0 1s
+    0xf4d523e3  37.9% block 70,765,155 logs 0 1s
+    0xf4d523e3  58.6% block 71,904,217 logs 20 1s
+    0xf4d523e3  89.8% block 73,612,810 logs 769 1s
+    0xf4d523e3 100.0% block 74,172,684 logs 987 7s
+[19:08:49] BUN: pool 0xf4d523e3 DONE, 987 swaps
+[19:08:49] BUN: pool 0xf719b71f (v4/USDG) fresh from 52,687,031
+    0xf719b71f   1.2% block 52,787,030 logs 0 0s
+    0xf719b71f   3.1% block 52,937,030 logs 0 0s
+    0xf719b71f   5.9% block 53,162,030 logs 0 0s
+    0xf719b71f  10.2% block 53,499,530 logs 0 1s
+    0xf719b71f  16.5% block 54,005,780 logs 0 1s
+    0xf719b71f  26.0% block 54,765,155 logs 0 1s
+    0xf719b71f  40.2% block 55,904,217 logs 0 1s
+    0xf719b71f  61.6% block 57,612,810 logs 0 7s
+    0xf719b71f  93.6% block 60,175,699 logs 0 7s
+    0xf719b71f 100.0% block 60,687,030 logs 0 7s
+    0xf719b71f   1.2% block 60,787,030 logs 0 6s
+    0xf719b71f   3.1% block 60,937,030 logs 0 6s
+    0xf719b71f   5.9% block 61,162,030 logs 0 6s
+    0xf719b71f  10.2% block 61,499,530 logs 0 6s
+    0xf719b71f  16.5% block 62,005,780 logs 0 6s
+    0xf719b71f  26.0% block 62,765,155 logs 0 6s
+    0xf719b71f  40.2% block 63,904,217 logs 0 6s
+    0xf719b71f  61.6% block 65,612,810 logs 0 6s
+    0xf719b71f  93.6% block 68,175,699 logs 0 7s
+    0xf719b71f 100.0% block 68,687,030 logs 0 7s
+    0xf719b71f   1.8% block 68,787,030 logs 0 0s
+    0xf719b71f   4.6% block 68,937,030 logs 0 0s
+    0xf719b71f   8.7% block 69,162,030 logs 0 0s
+    0xf719b71f  14.8% block 69,499,530 logs 0 1s
+    0xf719b71f  24.0% block 70,005,780 logs 0 1s
+    0xf719b71f  37.9% block 70,765,155 logs 0 1s
+    0xf719b71f  58.6% block 71,904,217 logs 30 1s
+    0xf719b71f  89.8% block 73,612,810 logs 522 7s
+    0xf719b71f 100.0% block 74,172,684 logs 648 7s
+[19:09:10] BUN: pool 0xf719b71f DONE, 648 swaps
+93,242 transactions moved this token
+{
+ "attributed": 63098,
+ "attributed_multi_swap": 19130,
+ "ambiguous_multi_swap": 832,
+ "no_transfers": 1104,
+ "no_counterparty": 2053
+}
+  attributed 95.4% of 86,217 swaps
+  'recipient' matched the true holder on 10.0% of 82,228 comparable swaps
+wrote /home/user/Public/data/tokens/0x07ebb29a38fbcb41563817e5e19f2cec619c90d2/swaps_attributed.parquet
+[19:09:13] BUN: attributed DONE
+86,217 trades -> /home/user/Public/data/tokens/0x07ebb29a38fbcb41563817e5e19f2cec619c90d2/ledger.parquet
+  3,989 (4.63%) had no attributed trader and carry a null
+  10,976 distinct traders across the full history
+  span 1,788,363,424 - 1,790,535,575
+[19:09:16] BUN: ledger DONE
+[19:09:16] HOODS: transfers starting
+head 74,177,533
+transfers: scanning 1-74,177,533 (fresh)
+  tr   1.2%  block 100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 1,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 2,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 3,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 4,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 7,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 8,000,000  span 3,844,333  logs 0  1s
+transfers: committed 1-8,000,000  +0 rows, 0 total
+  tr   1.2%  block 8,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 8,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 8,475,000  span 225,000  logs 0  1s
+  tr  10.2%  block 8,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 9,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 10,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 11,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 12,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 15,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 16,000,000  span 3,844,333  logs 0  2s
+transfers: committed 8,000,001-16,000,000  +0 rows, 0 total
+  tr   1.2%  block 16,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 16,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 16,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 16,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 17,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 18,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 19,217,187  span 1,139,062  logs 0  6s
+  tr  61.6%  block 20,925,780  span 1,708,593  logs 0  6s
+  tr  93.6%  block 23,488,669  span 2,562,889  logs 0  7s
+  tr 100.0%  block 24,000,000  span 3,844,333  logs 0  7s
+transfers: committed 16,000,001-24,000,000  +0 rows, 0 total
+  tr   1.2%  block 24,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 24,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 24,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 24,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 25,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 26,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 27,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 28,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 31,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 32,000,000  span 3,844,333  logs 0  2s
+transfers: committed 24,000,001-32,000,000  +0 rows, 0 total
+  tr   1.2%  block 32,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 32,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 32,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 32,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 33,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 34,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 35,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 36,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 39,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 40,000,000  span 3,844,333  logs 0  1s
+transfers: committed 32,000,001-40,000,000  +0 rows, 0 total
+  tr   1.2%  block 40,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 40,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 40,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 40,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 41,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 42,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 43,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 44,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 47,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 48,000,000  span 3,844,333  logs 0  2s
+transfers: committed 40,000,001-48,000,000  +0 rows, 0 total
+  tr   1.2%  block 48,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 48,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 48,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 48,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 49,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 50,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 51,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 52,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 55,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 56,000,000  span 3,844,333  logs 0  1s
+transfers: committed 48,000,001-56,000,000  +0 rows, 0 total
+  tr   1.2%  block 56,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 56,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 56,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 56,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 57,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 58,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 59,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 60,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 63,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 64,000,000  span 3,844,333  logs 0  1s
+transfers: committed 56,000,001-64,000,000  +0 rows, 0 total
+  tr   1.2%  block 64,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 64,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 64,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 64,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 65,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 66,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 67,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 68,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 71,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 72,000,000  span 3,844,333  logs 1  2s
+transfers: committed 64,000,001-72,000,000  +1 rows, 1 total
+  tr   4.6%  block 72,100,000  span 100,000  logs 0  0s
+  tr  11.5%  block 72,250,000  span 150,000  logs 0  0s
+  tr  21.8%  block 72,475,000  span 225,000  logs 0  0s
+  tr  37.3%  block 72,812,500  span 337,500  logs 0  1s
+  tr  60.6%  block 73,318,750  span 506,250  logs 520  1s
+  tr  61.7%  block 73,342,480  span 23,730  logs 1,007  14s
+  tr  61.9%  block 73,346,929  span 4,449  logs 2,934  21s
+  tr  62.2%  block 73,353,602  span 6,673  logs 12,566  21s
+  tr  62.5%  block 73,360,275  span 6,673  logs 14,049  27s
+  tr  62.9%  block 73,370,284  span 10,009  logs 15,164  27s
+  tr  63.6%  block 73,385,297  span 15,013  logs 15,623  33s
+  tr  64.7%  block 73,407,816  span 22,519  logs 16,068  33s
+  tr  66.2%  block 73,441,594  span 33,778  logs 16,499  33s
+  tr  68.5%  block 73,492,261  span 50,667  logs 17,926  33s
+  tr  72.0%  block 73,568,261  span 76,000  logs 26,901  39s
+  tr  75.5%  block 73,644,261  span 76,000  logs 29,064  45s
+  tr  80.7%  block 73,758,261  span 114,000  logs 30,054  45s
+  tr  88.6%  block 73,929,261  span 171,000  logs 31,199  51s
+  tr 100.0%  block 74,177,533  span 256,500  logs 33,378  51s
+transfers: committed 72,000,001-74,177,533  +33,378 rows, 33,379 total
+{
+ "token": "0x28b0ed2365c8c25b4542d06725acb7662bef6edf",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74177533
+   ]
+  ],
+  "rows": 33379
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-27T19:10:27Z"
+}
+[19:10:27] HOODS: transfers DONE
+[19:10:27] HOODS: pool 0x3bd9c129 (v4/USDG) fresh from 71,590,743
+    0x3bd9c129   3.9% block 71,690,742 logs 0 0s
+    0x3bd9c129   9.7% block 71,840,742 logs 0 0s
+    0x3bd9c129  18.4% block 72,065,742 logs 0 6s
+    0x3bd9c129  31.4% block 72,403,242 logs 0 6s
+    0x3bd9c129  51.0% block 72,909,492 logs 0 6s
+    0x3bd9c129  80.3% block 73,668,867 logs 6,010 7s
+    0x3bd9c129 100.0% block 74,178,252 logs 6,804 12s
+[19:10:40] HOODS: pool 0x3bd9c129 DONE, 6,804 swaps
+8,144 transactions moved this token
+{
+ "attributed": 6685,
+ "attributed_multi_swap": 50,
+ "ambiguous_multi_swap": 68,
+ "no_transfers": 1,
+ "no_counterparty": 0
+}
+  attributed 99.0% of 6,804 swaps
+  'recipient' matched the true holder on 0.2% of 6,735 comparable swaps
+wrote /home/user/Public/data/tokens/0x28b0ed2365c8c25b4542d06725acb7662bef6edf/swaps_attributed.parquet
+[19:10:40] HOODS: attributed DONE
+6,804 trades -> /home/user/Public/data/tokens/0x28b0ed2365c8c25b4542d06725acb7662bef6edf/ledger.parquet
+  69 (1.01%) had no attributed trader and carry a null
+  1,993 distinct traders across the full history
+  span 1,790,445,779 - 1,790,536,138
+[19:10:41] HOODS: ledger DONE
+[19:10:41] ROO: transfers starting
+head 74,178,395
+transfers: scanning 1-74,178,395 (fresh)
+  tr   1.2%  block 100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 1,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 2,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 3,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 4,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 7,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 8,000,000  span 3,844,333  logs 0  1s
+transfers: committed 1-8,000,000  +0 rows, 0 total
+  tr   1.2%  block 8,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 8,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 8,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 8,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 9,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 10,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 11,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 12,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 15,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 16,000,000  span 3,844,333  logs 0  1s
+transfers: committed 8,000,001-16,000,000  +0 rows, 0 total
+  tr   1.2%  block 16,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 16,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 16,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 16,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 17,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 18,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 19,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 20,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 23,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 24,000,000  span 3,844,333  logs 0  1s
+transfers: committed 16,000,001-24,000,000  +0 rows, 0 total
+  tr   1.2%  block 24,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 24,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 24,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 24,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 25,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 26,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 27,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 28,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 31,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 32,000,000  span 3,844,333  logs 0  2s
+transfers: committed 24,000,001-32,000,000  +0 rows, 0 total
+  tr   1.2%  block 32,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 32,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 32,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 32,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 33,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 34,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 35,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 36,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 39,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 40,000,000  span 3,844,333  logs 0  2s
+transfers: committed 32,000,001-40,000,000  +0 rows, 0 total
+  tr   1.2%  block 40,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 40,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 40,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 40,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 41,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 42,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 43,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 44,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 47,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 48,000,000  span 3,844,333  logs 0  2s
+transfers: committed 40,000,001-48,000,000  +0 rows, 0 total
+  tr   1.2%  block 48,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 48,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 48,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 48,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 49,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 50,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 51,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 52,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 55,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 56,000,000  span 3,844,333  logs 0  2s
+transfers: committed 48,000,001-56,000,000  +0 rows, 0 total
+  tr   1.2%  block 56,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 56,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 56,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 56,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 57,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 58,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 59,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 60,925,780  span 1,708,593  logs 0  2s
+  tr  93.6%  block 63,488,669  span 2,562,889  logs 0  7s
+  tr 100.0%  block 64,000,000  span 3,844,333  logs 0  7s
+transfers: committed 56,000,001-64,000,000  +0 rows, 0 total
+  tr   1.2%  block 64,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 64,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 64,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 64,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 65,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 66,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 67,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 68,925,780  span 1,708,593  logs 0  1s
+  tr  77.6%  block 70,207,224  span 1,281,444  logs 1  9s
+  tr  83.6%  block 70,687,765  span 480,541  logs 1,420  16s
+  tr  88.1%  block 71,048,170  span 360,405  logs 10,719  16s
+  tr  90.4%  block 71,228,372  span 180,202  logs 17,647  29s
+  tr  91.5%  block 71,318,473  span 90,101  logs 21,753  38s
+  tr  93.2%  block 71,453,624  span 135,151  logs 28,517  45s
+  tr  94.9%  block 71,588,775  span 135,151  logs 34,179  52s
+  tr  95.7%  block 71,656,350  span 67,575  logs 36,579  65s
+  tr  97.0%  block 71,757,712  span 101,362  logs 40,800  65s
+  tr  98.9%  block 71,909,755  span 152,043  logs 45,873  65s
+  tr 100.0%  block 72,000,000  span 152,043  logs 47,900  72s
+transfers: committed 64,000,001-72,000,000  +47,900 rows, 47,900 total
+  tr   4.6%  block 72,100,000  span 100,000  logs 2,219  6s
+  tr  11.5%  block 72,250,000  span 150,000  logs 5,541  6s
+  tr  21.8%  block 72,475,000  span 225,000  logs 14,126  12s
+  tr  27.0%  block 72,587,500  span 112,500  logs 21,023  38s
+  tr  32.1%  block 72,700,000  span 112,500  logs 28,950  44s
+  tr  37.3%  block 72,812,500  span 112,500  logs 36,311  51s
+  tr  42.5%  block 72,925,000  span 112,500  logs 42,450  58s
+  tr  47.6%  block 73,037,500  span 112,500  logs 48,377  64s
+  tr  52.8%  block 73,150,000  span 112,500  logs 53,741  71s
+  tr  58.0%  block 73,262,500  span 112,500  logs 59,557  78s
+  tr  63.1%  block 73,375,000  span 112,500  logs 65,619  84s
+  tr  68.3%  block 73,487,500  span 112,500  logs 71,143  90s
+  tr  73.4%  block 73,600,000  span 112,500  logs 75,021  96s
+  tr  81.2%  block 73,768,750  span 168,750  logs 81,873  102s
+  tr  88.9%  block 73,937,500  span 168,750  logs 87,835  108s
+  tr  96.7%  block 74,106,250  span 168,750  logs 95,922  114s
+  tr 100.0%  block 74,178,395  span 168,750  logs 99,689  120s
+transfers: committed 72,000,001-74,178,395  +99,689 rows, 147,589 total
+{
+ "token": "0x3458e003f6ed93df0f537b8acac6fbe08e41247f",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74178395
+   ]
+  ],
+  "rows": 147589
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-27T19:14:12Z"
+}
+[19:14:12] ROO: transfers DONE
+[19:14:12] ROO: pool 0x91e9823a (v4/ETH) fresh from 70,199,052
+    0x91e9823a   2.5% block 70,299,051 logs 300 0s
+    0x91e9823a   6.3% block 70,449,051 logs 604 0s
+    0x91e9823a  11.9% block 70,674,051 logs 1,163 1s
+    0x91e9823a  20.4% block 71,011,551 logs 7,442 7s
+    0x91e9823a  28.9% block 71,349,051 logs 16,882 13s
+    0x91e9823a  37.4% block 71,686,551 logs 26,793 19s
+    0x91e9823a  45.8% block 72,024,051 logs 34,098 27s
+    0x91e9823a  54.3% block 72,361,551 logs 39,327 29s
+    0x91e9823a  58.6% block 72,530,301 logs 45,716 36s
+    0x91e9823a  62.8% block 72,699,051 logs 53,610 42s
+    0x91e9823a  67.0% block 72,867,801 logs 60,922 49s
+    0x91e9823a  71.3% block 73,036,551 logs 67,228 55s
+    0x91e9823a  75.5% block 73,205,301 logs 72,965 62s
+    0x91e9823a  79.7% block 73,374,051 logs 79,170 68s
+    0x91e9823a  84.0% block 73,542,801 logs 84,717 75s
+    0x91e9823a  88.2% block 73,711,551 logs 88,684 81s
+    0x91e9823a  94.6% block 73,964,676 logs 95,769 87s
+    0x91e9823a 100.0% block 74,180,486 logs 103,562 93s
+[19:15:47] ROO: pool 0x91e9823a DONE, 103,562 swaps
+134,594 transactions moved this token
+{
+ "attributed": 100734,
+ "attributed_multi_swap": 98,
+ "ambiguous_multi_swap": 2,
+ "no_transfers": 1914,
+ "no_counterparty": 814
+}
+  attributed 97.4% of 103,562 swaps
+  'recipient' matched the true holder on 0.0% of 100,832 comparable swaps
+wrote /home/user/Public/data/tokens/0x3458e003f6ed93df0f537b8acac6fbe08e41247f/swaps_attributed.parquet
+[19:15:49] ROO: attributed DONE
+103,562 trades -> /home/user/Public/data/tokens/0x3458e003f6ed93df0f537b8acac6fbe08e41247f/ledger.parquet
+  2,730 (2.64%) had no attributed trader and carry a null
+  40,713 distinct traders across the full history
+  span 1,790,136,042 - 1,790,536,357
+[19:15:53] ROO: ledger DONE
+[19:15:53] DEBT: transfers starting
+head 74,181,484
+transfers: scanning 1-74,181,484 (fresh)
+  tr   1.2%  block 100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 1,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 2,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 3,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 4,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 7,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 8,000,000  span 3,844,333  logs 0  1s
+transfers: committed 1-8,000,000  +0 rows, 0 total
+  tr   1.2%  block 8,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 8,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 8,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 8,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 9,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 10,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 11,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 12,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 15,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 16,000,000  span 3,844,333  logs 0  1s
+transfers: committed 8,000,001-16,000,000  +0 rows, 0 total
+  tr   1.2%  block 16,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 16,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 16,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 16,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 17,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 18,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 19,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 20,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 23,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 24,000,000  span 3,844,333  logs 0  1s
+transfers: committed 16,000,001-24,000,000  +0 rows, 0 total
+  tr   1.2%  block 24,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 24,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 24,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 24,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 25,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 26,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 27,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 28,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 31,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 32,000,000  span 3,844,333  logs 0  2s
+transfers: committed 24,000,001-32,000,000  +0 rows, 0 total
+  tr   1.2%  block 32,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 32,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 32,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 32,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 33,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 34,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 35,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 36,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 39,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 40,000,000  span 3,844,333  logs 0  2s
+transfers: committed 32,000,001-40,000,000  +0 rows, 0 total
+  tr   1.2%  block 40,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 40,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 40,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 40,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 41,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 42,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 43,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 44,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 47,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 48,000,000  span 3,844,333  logs 0  1s
+transfers: committed 40,000,001-48,000,000  +0 rows, 0 total
+  tr   1.2%  block 48,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 48,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 48,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 48,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 49,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 50,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 51,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 52,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 55,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 56,000,000  span 3,844,333  logs 0  1s
+transfers: committed 48,000,001-56,000,000  +0 rows, 0 total
+  tr   1.2%  block 56,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 56,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 56,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 56,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 57,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 58,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 59,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 60,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 63,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 64,000,000  span 3,844,333  logs 0  2s
+transfers: committed 56,000,001-64,000,000  +0 rows, 0 total
+  tr   1.2%  block 64,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 64,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 64,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 64,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 65,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 66,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 67,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 68,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 71,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 72,000,000  span 3,844,333  logs 0  1s
+transfers: committed 64,000,001-72,000,000  +0 rows, 0 total
+  tr   4.6%  block 72,100,000  span 100,000  logs 0  0s
+  tr  11.5%  block 72,250,000  span 150,000  logs 0  0s
+  tr  21.8%  block 72,475,000  span 225,000  logs 0  0s
+  tr  37.2%  block 72,812,500  span 337,500  logs 0  1s
+  tr  48.8%  block 73,065,625  span 253,125  logs 0  7s
+  tr  53.2%  block 73,160,546  span 94,921  logs 4,319  7s
+  tr  53.6%  block 73,169,444  span 8,898  logs 12,391  25s
+  tr  54.0%  block 73,178,342  span 8,898  logs 16,842  25s
+  tr  54.3%  block 73,185,015  span 6,673  logs 19,958  36s
+  tr  54.6%  block 73,190,019  span 5,004  logs 25,753  43s
+  tr  54.8%  block 73,195,023  span 5,004  logs 31,937  49s
+  tr  55.0%  block 73,200,027  span 5,004  logs 35,487  54s
+  tr  55.4%  block 73,207,533  span 7,506  logs 39,529  60s
+  tr  55.9%  block 73,218,792  span 11,259  logs 44,189  61s
+  tr  56.6%  block 73,235,680  span 16,888  logs 51,195  67s
+  tr  57.4%  block 73,252,568  span 16,888  logs 53,520  73s
+  tr  58.6%  block 73,277,900  span 25,332  logs 56,537  79s
+  tr  60.3%  block 73,315,898  span 37,998  logs 63,750  85s
+  tr  62.1%  block 73,353,896  span 37,998  logs 68,143  91s
+  tr  64.7%  block 73,410,893  span 56,997  logs 71,087  96s
+  tr  68.6%  block 73,496,388  span 85,495  logs 73,137  97s
+  tr  74.5%  block 73,624,630  span 128,242  logs 74,937  102s
+  tr  83.3%  block 73,816,993  span 192,363  logs 77,843  108s
+  tr  96.5%  block 74,105,537  span 288,544  logs 81,407  114s
+  tr 100.0%  block 74,181,484  span 432,816  logs 81,902  114s
+transfers: committed 72,000,001-74,181,484  +81,902 rows, 81,902 total
+{
+ "token": "0x41ca1a94f5262c4a84fafdaa23b9499aa5b9fcd0",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74181484
+   ]
+  ],
+  "rows": 81902
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-27T19:18:01Z"
+}
+[19:18:01] DEBT: transfers DONE
+[19:18:02] DEBT: pool 0x8ca0a057 (v4/ETH) fresh from 73,155,952
+    0x8ca0a057   2.4% block 73,180,951 logs 6,770 6s
+    0x8ca0a057   4.9% block 73,205,951 logs 12,078 12s
+    0x8ca0a057   7.3% block 73,230,951 logs 15,512 18s
+    0x8ca0a057  11.0% block 73,268,451 logs 17,229 18s
+    0x8ca0a057  16.4% block 73,324,701 logs 19,791 24s
+    0x8ca0a057  24.7% block 73,409,076 logs 21,388 24s
+    0x8ca0a057  37.0% block 73,535,638 logs 22,114 30s
+    0x8ca0a057  55.5% block 73,725,481 logs 22,942 30s
+    0x8ca0a057  83.2% block 74,010,245 logs 24,314 36s
+    0x8ca0a057 100.0% block 74,182,772 logs 24,883 36s
+[19:18:38] DEBT: pool 0x8ca0a057 DONE, 24,883 swaps
+32,171 transactions moved this token
+{
+ "attributed": 24257,
+ "attributed_multi_swap": 86,
+ "ambiguous_multi_swap": 104,
+ "no_transfers": 185,
+ "no_counterparty": 251
+}
+  attributed 97.8% of 24,883 swaps
+  'recipient' matched the true holder on 2.0% of 24,343 comparable swaps
+wrote /home/user/Public/data/tokens/0x41ca1a94f5262c4a84fafdaa23b9499aa5b9fcd0/swaps_attributed.parquet
+[19:18:39] DEBT: attributed DONE
+24,883 trades -> /home/user/Public/data/tokens/0x41ca1a94f5262c4a84fafdaa23b9499aa5b9fcd0/ledger.parquet
+  540 (2.17%) had no attributed trader and carry a null
+  5,850 distinct traders across the full history
+  span 1,790,433,184 - 1,790,536,315
+[19:18:40] DEBT: ledger DONE
+[19:18:40] CPU: transfers starting
+head 74,183,164
+transfers: scanning 1-74,183,164 (fresh)
+  tr   1.2%  block 100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 1,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 2,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 3,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 4,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 7,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 8,000,000  span 3,844,333  logs 0  1s
+transfers: committed 1-8,000,000  +0 rows, 0 total
+  tr   1.2%  block 8,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 8,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 8,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 8,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 9,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 10,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 11,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 12,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 15,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 16,000,000  span 3,844,333  logs 0  1s
+transfers: committed 8,000,001-16,000,000  +0 rows, 0 total
+  tr   1.2%  block 16,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 16,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 16,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 16,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 17,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 18,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 19,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 20,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 23,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 24,000,000  span 3,844,333  logs 0  1s
+transfers: committed 16,000,001-24,000,000  +0 rows, 0 total
+  tr   1.2%  block 24,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 24,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 24,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 24,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 25,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 26,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 27,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 28,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 31,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 32,000,000  span 3,844,333  logs 0  2s
+transfers: committed 24,000,001-32,000,000  +0 rows, 0 total
+  tr   1.2%  block 32,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 32,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 32,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 32,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 33,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 34,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 35,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 36,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 39,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 40,000,000  span 3,844,333  logs 0  1s
+transfers: committed 32,000,001-40,000,000  +0 rows, 0 total
+  tr   1.2%  block 40,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 40,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 40,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 40,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 41,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 42,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 43,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 44,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 47,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 48,000,000  span 3,844,333  logs 0  2s
+transfers: committed 40,000,001-48,000,000  +0 rows, 0 total
+  tr   1.2%  block 48,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 48,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 48,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 48,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 49,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 50,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 51,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 52,925,780  span 1,708,593  logs 0  1s
+  tr  93.6%  block 55,488,669  span 2,562,889  logs 0  1s
+  tr 100.0%  block 56,000,000  span 3,844,333  logs 0  2s
+transfers: committed 48,000,001-56,000,000  +0 rows, 0 total
+  tr   1.2%  block 56,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 56,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 56,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 56,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 57,318,750  span 506,250  logs 0  1s
+  tr  26.0%  block 58,078,125  span 759,375  logs 0  1s
+  tr  40.2%  block 59,217,187  span 1,139,062  logs 0  1s
+  tr  61.6%  block 60,925,780  span 1,708,593  logs 5,742  2s
+  tr  82.9%  block 62,634,373  span 1,708,593  logs 5,787  7s
+  tr 100.0%  block 64,000,000  span 2,562,889  logs 5,832  7s
+transfers: committed 56,000,001-64,000,000  +5,832 rows, 5,832 total
+  tr   1.2%  block 64,100,000  span 100,000  logs 0  0s
+  tr   3.1%  block 64,250,000  span 150,000  logs 0  0s
+  tr   5.9%  block 64,475,000  span 225,000  logs 0  0s
+  tr  10.2%  block 64,812,500  span 337,500  logs 0  1s
+  tr  16.5%  block 65,318,750  span 506,250  logs 0  1s
+  tr  18.9%  block 65,508,593  span 189,843  logs 0  18s
+  tr  19.3%  block 65,544,188  span 35,595  logs 58  24s
+  tr  19.5%  block 65,557,536  span 13,348  logs 195  25s
+  tr  19.6%  block 65,567,547  span 10,011  logs 4,186  25s
+  tr  19.6%  block 65,569,424  span 1,877  logs 8,804  42s
+  tr  19.7%  block 65,572,239  span 2,815  logs 18,784  43s
+  tr  19.7%  block 65,575,054  span 2,815  logs 23,847  49s
+  tr  19.7%  block 65,577,869  span 2,815  logs 29,665  50s
+  tr  19.8%  block 65,580,684  span 2,815  logs 32,969  56s
+  tr  19.8%  block 65,584,906  span 4,222  logs 37,405  56s
+  tr  19.9%  block 65,591,239  span 6,333  logs 42,535  56s
+  tr  20.0%  block 65,597,572  span 6,333  logs 48,678  62s
+  tr  20.0%  block 65,603,905  span 6,333  logs 52,223  63s
+  tr  20.2%  block 65,613,404  span 9,499  logs 57,474  69s
+  tr  20.3%  block 65,622,903  span 9,499  logs 60,654  75s
+  tr  20.5%  block 65,637,151  span 14,248  logs 63,887  81s
+  tr  20.7%  block 65,658,523  span 21,372  logs 65,942  87s
+  tr  21.1%  block 65,690,581  span 32,058  logs 71,498  87s
+  tr  21.5%  block 65,722,639  span 32,058  logs 73,769  93s
+  tr  22.1%  block 65,770,726  span 48,087  logs 82,597  95s
+  tr  22.7%  block 65,818,813  span 48,087  logs 86,177  101s
+  tr  23.6%  block 65,890,943  span 72,130  logs 88,306  107s
+  tr  25.0%  block 65,999,138  span 108,195  logs 90,775  113s
+  tr  27.0%  block 66,161,430  span 162,292  logs 97,583  114s

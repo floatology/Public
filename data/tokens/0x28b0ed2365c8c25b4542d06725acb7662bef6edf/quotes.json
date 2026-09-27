@@ -1,0 +1,12 @@
+{
+ "priced_at": "2026-09-27T19:10:40Z",
+ "eth_usd": 2686.71,
+ "pools": {
+  "0x3bd9c129b50f7301fb8e1abd3c36ad55f4c40589bf82d6b81de9d1fd0afd0611": {
+   "quote_usd": 1.0,
+   "decimals": 6,
+   "symbol": "USDG",
+   "base_usd": 0.0007
+  }
+ }
+}
