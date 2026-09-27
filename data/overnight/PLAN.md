@@ -20,6 +20,12 @@ scans at once (the node rate-limits globally). Tick steps here as they finish.
   from memory after every token.
 - Queued after the batch: `track_tokens.py reprice` (the running batch has the
   old per-pool pricing loaded; reprice fixes its ledgers without rescanning).
+- Queued batch 2 (case-control, data/overnight/batch2.json): 20 coins that
+  had a 2x run with 14d of history before it, 20 equally active coins that
+  never did. After batch 1 + reprice: `track_tokens.py add $(python3 -c
+  "import json;d=json.load(open('data/overnight/batch2.json'));print(' '.join(d['cases']+d['controls']))")`
+  then data/overnight/run_batch.sh, then reprice. Then wallet_signals_backtest
+  --horizon 14 and 7, and a case-vs-control comparison.
 - Also queued: `track_tokens.py add U` (now picks up its
   PancakeSwap V3 pool) and rebuild U.
 - Launch jobs via the scripts above, not inline: `pkill -f`/`grep` on a

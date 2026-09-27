@@ -3805,3 +3805,19 @@ transfers: committed 72,000,001-74,183,164  +46,151 rows, 272,423 total
     0xaf8aa959  40.2% block 63,006,923 logs 2,673 7s
     0xaf8aa959  61.6% block 64,715,516 logs 2,697 7s
     0xaf8aa959  69.6% block 65,356,238 logs 2,697 24s
+    0xaf8aa959  71.1% block 65,476,373 logs 2,697 38s
+    0xaf8aa959  72.2% block 65,566,474 logs 4,179 44s
+    0xaf8aa959  72.3% block 65,574,920 logs 12,615 51s
+    0xaf8aa959  72.4% block 65,583,366 logs 17,802 51s
+    0xaf8aa959  72.5% block 65,591,812 logs 20,706 52s
+    0xaf8aa959  72.7% block 65,604,481 logs 24,402 59s
+    0xaf8aa959  72.9% block 65,623,484 logs 27,771 65s
+    0xaf8aa959  73.3% block 65,651,988 logs 29,397 71s
+    0xaf8aa959  73.8% block 65,694,744 logs 31,959 77s
+    0xaf8aa959  74.6% block 65,758,878 logs 35,623 79s
+    0xaf8aa959  75.8% block 65,855,079 logs 37,639 84s
+    0xaf8aa959  77.6% block 65,999,380 logs 38,884 90s
+    0xaf8aa959  80.3% block 66,215,831 logs 43,525 92s
+    0xaf8aa959  84.4% block 66,540,507 logs 51,091 99s
+    0xaf8aa959  88.4% block 66,865,183 logs 54,262 100s
+    0xaf8aa959  94.5% block 67,352,197 logs 59,212 107s
