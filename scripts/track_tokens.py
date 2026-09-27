@@ -62,6 +62,31 @@ REORG = 5_000
 SEGMENT = 8_000_000
 
 
+STABLES = {"0x5fc5360d0400a0fd4f2af552add042d716f1d168"}          # USDG
+ETH_LIKE = {ZERO, "0x0bd7d308f8e1639fab988df18a8011f41eacad73"}  # ETH, WETH
+_QUOTE_CACHE: dict[str, float | None] = {}
+
+
+def quote_usd(quote: str, eth_usd: float) -> float | None:
+    """USD price of a quote asset: stable, ETH, or the token's own best pair."""
+    q = quote.lower()
+    if q in STABLES:
+        return 1.0
+    if q in ETH_LIKE:
+        return eth_usd
+    if q not in _QUOTE_CACHE:
+        px = None
+        try:
+            for pair in DexScreener().pairs_for_tokens([q]):
+                if pair["baseToken"]["address"].lower() == q:
+                    px = float(pair.get("priceUsd") or 0) or None
+                    break
+        except Exception:
+            px = None
+        _QUOTE_CACHE[q] = px
+    return _QUOTE_CACHE[q]
+
+
 def note(msg: str) -> None:
     STATUS.parent.mkdir(parents=True, exist_ok=True)
     if not STATUS.exists():
@@ -361,24 +386,13 @@ def build_token(token: str, entry: dict, eth_usd: float) -> bool:
         note(f"{sym}: attribution FAILED"); return False
     note(f"{sym}: attributed DONE")
 
-    # Per-pool quote prices, recorded beside the ledger.
-    ds = DexScreener()
-    quotes = {}
-    for pair in ds.pairs_for_tokens([token]):
-        key = pair["pairAddress"].lower()
-        if key in entry["pools"]:
-            pu, pn = float(pair.get("priceUsd") or 0), float(pair.get("priceNative") or 0)
-            quotes[key] = {"quote_usd": (pu / pn) if pn else None,
-                           "decimals": entry["pools"][key]["quote_decimals"],
-                           "symbol": entry["pools"][key]["quote_symbol"],
-                           "base_usd": pu}
-    for k, p in entry["pools"].items():
-        if k not in quotes or not quotes[k]["quote_usd"]:
-            # Fallback for a quote DexScreener did not price: ETH/WETH at the
-            # ETH price; anything else is left unpriced and says so.
-            eth_like = p["quote"] in (ZERO, "0x0bd7d308f8e1639fab988df18a8011f41eacad73")
-            quotes[k] = {"quote_usd": eth_usd if eth_like else None,
-                         "decimals": p["quote_decimals"], "symbol": p["quote_symbol"]}
+    # Quote prices, by quote ASSET. The first version priced per pool from
+    # DexScreener's token endpoint, which returns only a token's single best
+    # pair, so every other pool went unpriced: 152k of ORBIO's 202k trades,
+    # including plain USDG pools, carried a USD value of zero.
+    quotes = {k: {"quote_usd": quote_usd(p["quote"], eth_usd),
+                  "decimals": p["quote_decimals"], "symbol": p["quote_symbol"]}
+              for k, p in entry["pools"].items()}
     (tdir / "quotes.json").write_text(json.dumps(
         {"priced_at": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z",
          "eth_usd": eth_usd, "pools": quotes}, indent=1))
@@ -421,6 +435,37 @@ def cmd_build(args) -> int:
     return 0 if ok else 1
 
 
+def cmd_reprice(args) -> int:
+    """Recompute quote prices and rebuild ledgers from existing archives."""
+    reg = load_reg()
+    eth = eth_price()
+    for token, entry in reg.items():
+        if args.only and entry["symbol"].upper() not in {x.upper() for x in args.only}:
+            continue
+        tdir = ROOT / "data/tokens" / token
+        if args.skip and token in args.skip:
+            continue
+        if not (tdir / "swaps_attributed.parquet").exists():
+            continue
+        quotes = {k: {"quote_usd": quote_usd(p["quote"], eth), "decimals": p["quote_decimals"],
+                      "symbol": p["quote_symbol"]} for k, p in entry["pools"].items()}
+        (tdir / "quotes.json").write_text(json.dumps(
+            {"priced_at": dt.datetime.utcnow().isoformat(timespec="seconds") + "Z",
+             "eth_usd": eth, "pools": quotes}, indent=1))
+        market = sorted({V4_POOL_MANAGER if p["kind"] == "v4" else k
+                         for k, p in entry["pools"].items()})
+        cmd = [PY, str(ROOT / "scripts/build_ledger.py"), "--dir", str(tdir),
+               "--eth-usd", str(eth), "--quotes", str(tdir / "quotes.json"),
+               "--base-decimals", str(entry.get("decimals", 18))]
+        for m in market:
+            cmd += ["--pool", m]
+        r = subprocess.run(cmd, cwd=ROOT, capture_output=True, text=True)
+        unpriced = [v["symbol"] for v in quotes.values() if not v["quote_usd"]]
+        print(f"{entry['symbol']:10} {'ok' if r.returncode == 0 else 'FAILED'}"
+              f"{'  unpriced quotes: ' + ','.join(unpriced) if unpriced else ''}")
+    return 0
+
+
 def main() -> int:
     p = argparse.ArgumentParser(description=__doc__)
     sub = p.add_subparsers(dest="cmd", required=True)
@@ -428,8 +473,10 @@ def main() -> int:
     a.add_argument("--min-liq", type=float, default=20_000)
     a.add_argument("--skip-symbols", nargs="*", default=["USDC", "USDT", "USDG", "WETH", "ETH", "DAI"])
     b = sub.add_parser("build"); b.add_argument("--only", nargs="*")
+    r = sub.add_parser("reprice"); r.add_argument("--only", nargs="*")
+    r.add_argument("--skip", nargs="*", default=[])
     args = p.parse_args()
-    return cmd_add(args) if args.cmd == "add" else cmd_build(args)
+    return {"add": cmd_add, "build": cmd_build, "reprice": cmd_reprice}[args.cmd](args)
 
 
 if __name__ == "__main__":

@@ -229,3 +229,5 @@
 2026-09-27T19:18:39Z  DEBT: attributed DONE
 2026-09-27T19:18:40Z  DEBT: ledger DONE
 2026-09-27T19:18:40Z  CPU: transfers starting
+2026-09-27T19:24:09Z  CPU: transfers DONE
+2026-09-27T19:24:09Z  CPU: pool 0xaf8aa959 (v4/INTC) fresh from 59,789,737

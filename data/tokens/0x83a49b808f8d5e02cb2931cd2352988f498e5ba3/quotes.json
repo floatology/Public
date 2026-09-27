@@ -1,35 +1,34 @@
 {
- "priced_at": "2026-09-27T18:04:51Z",
- "eth_usd": 2686.71,
+ "priced_at": "2026-09-27T19:24:11Z",
+ "eth_usd": 2693.74,
  "pools": {
   "0x541bedd98337d22c46ff8196494f14e7d9922ddedf07b74df44c7020487e5fdf": {
-   "quote_usd": 6.524555589032841e-05,
+   "quote_usd": 6.487e-05,
    "decimals": 18,
-   "symbol": "musebook",
-   "base_usd": 4.331e-05
+   "symbol": "musebook"
   },
   "0x4e3c581d3043cfc06bfd425011cc3f590f2db319cd9f2103927f5a978194914d": {
-   "quote_usd": null,
+   "quote_usd": 1.0,
    "decimals": 6,
    "symbol": "USDG"
   },
   "0x9bcc119a4293ad41b78ee4ad6ced3edf80fc2f53e84ae99eae80d5514c1c4134": {
-   "quote_usd": null,
+   "quote_usd": 1.0,
    "decimals": 6,
    "symbol": "USDG"
   },
   "0x271cb70afdcad4ff16e343e39fabd18fcf38eda05ecb9e6e0cfc8ef26327d979": {
-   "quote_usd": null,
+   "quote_usd": 1.0,
    "decimals": 6,
    "symbol": "USDG"
   },
   "0xfc0191a1c405d7ec9efb33608df9e8e93449c236afc6437f47d54527eb15d302": {
-   "quote_usd": 2686.71,
+   "quote_usd": 2693.74,
    "decimals": 18,
    "symbol": "ETH"
   },
   "0xbe44ad58b8d16c60ea2f624a53b9c9c6ce35b6c0af7d9e5d3e0a5785348e9ff3": {
-   "quote_usd": 2686.71,
+   "quote_usd": 2693.74,
    "decimals": 18,
    "symbol": "ETH"
   }

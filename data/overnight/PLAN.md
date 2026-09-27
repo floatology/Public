@@ -18,7 +18,9 @@ scans at once (the node rate-limits globally). Tick steps here as they finish.
   except the six (resumable; tokens over 600k transfers/segment are skipped).
 - NEVER edit data/tokens/tokens.json while a build runs: the build rewrites it
   from memory after every token.
-- Queued after the batch: `track_tokens.py add U` (now picks up its
+- Queued after the batch: `track_tokens.py reprice` (the running batch has the
+  old per-pool pricing loaded; reprice fixes its ledgers without rescanning).
+- Also queued: `track_tokens.py add U` (now picks up its
   PancakeSwap V3 pool) and rebuild U.
 - Launch jobs via the scripts above, not inline: `pkill -f`/`grep` on a
   command line that contains the same text kills the calling shell.

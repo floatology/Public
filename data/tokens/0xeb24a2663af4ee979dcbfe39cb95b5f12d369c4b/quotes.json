@@ -1,15 +1,14 @@
 {
- "priced_at": "2026-09-27T18:11:10Z",
- "eth_usd": 2686.71,
+ "priced_at": "2026-09-27T19:24:15Z",
+ "eth_usd": 2693.74,
  "pools": {
   "0xb553e268a7790255e0db206aa27fa32e805b431645b230441fbd8beeb7618fc8": {
-   "quote_usd": 227.4024738344434,
+   "quote_usd": 225.42,
    "decimals": 18,
-   "symbol": "NVDA",
-   "base_usd": 0.001195
+   "symbol": "NVDA"
   },
   "0x402added27e8b8daa0e8141e05f7cec46a8a5549944a77ef122e541e54596700": {
-   "quote_usd": null,
+   "quote_usd": 1.0,
    "decimals": 6,
    "symbol": "USDG"
   }

@@ -8,3 +8,4 @@
 2026-09-27T17:51:38Z check-in 1: batch 7/30 built (musebook skipped heavy), candles 831/5290
 2026-09-27T17:53:18Z partial candle backtest run (outcomes switched to closes); findings in PLAN.md
 2026-09-27T19:21:02Z check-in 2: batch 14/30 built, candles 1785/5290
+2026-09-27T19:24:34Z fixed quote pricing (by asset, not per pool): 152k of ORBIO's 202k trades had been unpriced; repriced all built tokens

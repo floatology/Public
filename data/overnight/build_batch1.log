@@ -3740,3 +3740,68 @@ transfers: committed 56,000,001-64,000,000  +5,832 rows, 5,832 total
   tr  23.6%  block 65,890,943  span 72,130  logs 88,306  107s
   tr  25.0%  block 65,999,138  span 108,195  logs 90,775  113s
   tr  27.0%  block 66,161,430  span 162,292  logs 97,583  114s
+  tr  28.0%  block 66,242,576  span 81,146  logs 104,750  134s
+  tr  29.0%  block 66,323,722  span 81,146  logs 110,449  141s
+  tr  30.1%  block 66,404,868  span 81,146  logs 117,361  148s
+  tr  31.1%  block 66,486,014  span 81,146  logs 122,300  154s
+  tr  32.6%  block 66,607,733  span 121,719  logs 127,009  161s
+  tr  34.9%  block 66,790,311  span 182,578  logs 131,948  166s
+  tr  38.3%  block 67,064,178  span 273,867  logs 138,027  173s
+  tr  41.7%  block 67,338,045  span 273,867  logs 146,513  179s
+  tr  45.1%  block 67,611,912  span 273,867  logs 152,577  180s
+  tr  48.6%  block 67,885,779  span 273,867  logs 154,915  186s
+  tr  53.7%  block 68,296,579  span 410,800  logs 164,384  193s
+  tr  58.8%  block 68,707,379  span 410,800  logs 170,551  200s
+  tr  61.4%  block 68,912,779  span 205,400  logs 176,832  206s
+  tr  64.0%  block 69,118,179  span 205,400  logs 181,656  213s
+  tr  67.8%  block 69,426,279  span 308,100  logs 184,553  219s
+  tr  73.6%  block 69,888,429  span 462,150  logs 192,702  221s
+  tr  79.4%  block 70,350,579  span 462,150  logs 201,536  227s
+  tr  85.2%  block 70,812,729  span 462,150  logs 206,938  228s
+  tr  90.9%  block 71,274,879  span 462,150  logs 210,430  234s
+  tr  99.6%  block 71,968,104  span 693,225  logs 220,365  241s
+  tr 100.0%  block 72,000,000  span 693,225  logs 220,440  246s
+transfers: committed 64,000,001-72,000,000  +220,440 rows, 226,272 total
+  tr   4.6%  block 72,100,000  span 100,000  logs 696  0s
+  tr  11.5%  block 72,250,000  span 150,000  logs 2,219  1s
+  tr  21.8%  block 72,475,000  span 225,000  logs 5,870  7s
+  tr  37.2%  block 72,812,500  span 337,500  logs 10,724  12s
+  tr  48.8%  block 73,065,625  span 253,125  logs 16,091  25s
+  tr  60.4%  block 73,318,750  span 253,125  logs 21,465  31s
+  tr  63.3%  block 73,382,031  span 63,281  logs 27,508  43s
+  tr  66.2%  block 73,445,312  span 63,281  logs 35,104  49s
+  tr  69.1%  block 73,508,593  span 63,281  logs 36,944  54s
+  tr  73.4%  block 73,603,514  span 94,921  logs 38,090  55s
+  tr  80.0%  block 73,745,895  span 142,381  logs 39,638  55s
+  tr  89.8%  block 73,959,466  span 213,571  logs 42,340  55s
+  tr 100.0%  block 74,183,164  span 320,356  logs 46,151  61s
+transfers: committed 72,000,001-74,183,164  +46,151 rows, 272,423 total
+{
+ "token": "0x8eaa17be69ae9616cede4671e6d837bb89491e18",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74183164
+   ]
+  ],
+  "rows": 272423
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-27T19:24:09Z"
+}
+[19:24:09] CPU: transfers DONE
+[19:24:09] CPU: pool 0xaf8aa959 (v4/INTC) fresh from 59,789,737
+    0xaf8aa959   1.2% block 59,889,736 logs 2,511 1s
+    0xaf8aa959   3.1% block 60,039,736 logs 2,535 6s
+    0xaf8aa959   5.9% block 60,264,736 logs 2,562 6s
+    0xaf8aa959  10.2% block 60,602,236 logs 2,619 6s
+    0xaf8aa959  16.5% block 61,108,486 logs 2,667 6s
+    0xaf8aa959  26.0% block 61,867,861 logs 2,673 6s
+    0xaf8aa959  40.2% block 63,006,923 logs 2,673 7s
+    0xaf8aa959  61.6% block 64,715,516 logs 2,697 7s
+    0xaf8aa959  69.6% block 65,356,238 logs 2,697 24s

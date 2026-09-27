@@ -1,12 +1,11 @@
 {
- "priced_at": "2026-09-27T17:10:52Z",
- "eth_usd": 2686.71,
+ "priced_at": "2026-09-27T19:24:08Z",
+ "eth_usd": 2693.74,
  "pools": {
   "0x2200fd3e40810930d7438dd6a976fc70c0a30ba1bf619bba2af6d5878acd8640": {
    "quote_usd": 1.0,
    "decimals": 6,
-   "symbol": "USDG",
-   "base_usd": 3.731e-06
+   "symbol": "USDG"
   }
  }
 }
