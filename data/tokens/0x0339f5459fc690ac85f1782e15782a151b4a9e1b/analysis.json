@@ -2,33 +2,33 @@
  "token": "WALLET",
  "ath": {
   "day": "09-17",
-  "price": 0.09808172700378139
+  "price": 0.09861089186256573
  },
  "lp": {
-  "added": 1.1434132407814193,
-  "removed": 0.232543191177658
+  "added": 1.1435270126961632,
+  "removed": 0.2336583606901993
  },
  "snipers": {
   "addresses": 7,
   "share": 0.11797849885844766,
-  "paid_usd": 492.94933944638666,
-  "later_sold_usd": 1526.5910282241866
+  "paid_usd": 495.6088712018372,
+  "later_sold_usd": 1534.8272038151872
  },
  "bots": {
-  "traders": 1173,
-  "volume_share": 0.10525643291787129,
-  "whale_volume_share": 0.10695062216290825,
-  "retail_volume_share": 0.25413207568551005,
-  "unattributed_share": 0.0673217384674834
+  "traders": 1179,
+  "volume_share": 0.10462849043903663,
+  "whale_volume_share": 0.1072555161941952,
+  "retail_volume_share": 0.2544890425218598,
+  "unattributed_share": 0.06725390168984882
  },
  "pnl": {
-  "winners": 19421,
-  "traders": 31751,
-  "top10_share_of_profit": 0.09896873700781014
+  "winners": 19775,
+  "traders": 31787,
+  "top10_share_of_profit": 0.09844502388823088
  },
  "holders": {
-  "count": 8995,
+  "count": 8998,
   "top10": 0.15484457869262888,
-  "peer_received_share": 0.1613048853320055
+  "peer_received_share": 0.16202956876249466
  }
 }

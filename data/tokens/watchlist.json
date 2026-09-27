@@ -3,7 +3,7 @@
  "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
   "name": "WALLET",
   "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
-  "last_checked": 1790490925,
+  "last_checked": 1790518493,
   "wallets": [
    {
     "address": "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
@@ -59,7 +59,7 @@
  "0x6835dbf2d7d5852f84bf0a80de00cab3864f44b1": {
   "name": "HH",
   "pool": "0x34321f090a123d52473ae1a2473e8ed97dd9f770",
-  "last_checked": 1790490404,
+  "last_checked": 1790517282,
   "wallets": [
    {
     "address": "0xd2f8235aa89306c364a950f43163830573208c33",
@@ -78,7 +78,7 @@
    {
     "address": "0x1b37dd78e230ed8247df2b8f2ee47c51ac1b3793",
     "label": "deployer-funded buyback contract",
-    "why": "329 identical-size buys since 22 Sep, zero sells. Watch for it stopping.",
+    "why": "329 identical-size buys since 22 Sep, zero sells. Watch for it stopping. Stopped: last buy 26 Sep 22:59 UTC (checked 27 Sep 14:20).",
     "added": "2026-09-27",
     "active": true
    },
@@ -93,6 +93,13 @@
     "address": "0xf9ab5f4d82716311668a259da3549cf9b7856a89",
     "label": "staking/lock contract (28%)",
     "why": "Withdrawals from here are unlocks entering the float.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x81a3fcad15dbd4ffea426669cc61b35b4bf5509a",
+    "label": "distributor source, unstaking",
+    "why": "Sent 19.5% of supply to distributor contract 0x9e60; deposited into staking 7 Sep; withdrew 0.143% from staking on 27 Sep. Watch for further unstaking or sales.",
     "added": "2026-09-27",
     "active": true
    }
