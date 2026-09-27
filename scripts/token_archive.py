@@ -24,6 +24,12 @@ again, because a log read at the chain tip can be reorganised out from under
 the archive. Re-read rows replace rather than duplicate: rows are keyed on
 (block, log_index), which is unique per log.
 
+**Transfers carry their transaction hash**, which is what lets a swap be
+attributed to the address that actually ended up with the tokens: replay the
+transfers of that one transaction and the trader is whoever's balance moved.
+That costs no RPC calls at all, which is what makes full-history attribution
+affordable where per-swap `tx.from` resolution is not.
+
 **Sender resolution is stored per swap and never recomputed.** It costs one RPC
 call each — the expensive part of the whole pipeline — so a swap whose sender is
 already known is skipped on every later run.
@@ -207,13 +213,18 @@ def main() -> int:
             if kind == "transfers":
                 logs = scan(rpc, topic=TOPIC_TRANSFER, address=args.token,
                             lo=lo, hi=head, label="tr")
-                rows = {"block": [], "log_index": [], "src": [], "dst": [], "value": []}
+                rows = {"block": [], "log_index": [], "tx_hash": [],
+                        "src": [], "dst": [], "value": []}
                 for lg in logs:
                     t = lg.get("topics") or []
                     if len(t) < 3:
                         continue
                     rows["block"].append(int(lg["blockNumber"], 16))
                     rows["log_index"].append(int(lg.get("logIndex", "0x0"), 16))
+                    # tx_hash is what joins a transfer to the swap that caused
+                    # it, which is how a trade is attributed to the address that
+                    # ended up with the tokens rather than to a router.
+                    rows["tx_hash"].append(lg.get("transactionHash"))
                     rows["src"].append("0x" + t[1][-40:])
                     rows["dst"].append("0x" + t[2][-40:])
                     rows["value"].append(str(int(lg.get("data") or "0x0", 16)))
