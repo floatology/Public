@@ -1810,3 +1810,6 @@ transfers: committed 72,000,001-74,118,780  +115,570 rows, 636,352 total
     0x541bedd9  58.5% block 70,172,600 logs 83,505 322s
     0x541bedd9  59.9% block 70,282,253 logs 87,035 329s
     0x541bedd9  61.9% block 70,446,732 logs 89,067 335s
+    0x541bedd9  65.0% block 70,693,450 logs 92,032 341s
+    0x541bedd9  67.3% block 70,878,488 logs 95,384 426s
+    0x541bedd9  70.8% block 71,156,045 logs 102,968 442s
