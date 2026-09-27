@@ -1,0 +1,37 @@
+{
+ "priced_at": "2026-09-27T16:07:13Z",
+ "eth_usd": 2687.61,
+ "pools": {
+  "0xea9f200e13055b82f175f44f592c4c13dd8c9d9320a66487d3c5cd90d68550ef": {
+   "quote_usd": 1.0,
+   "decimals": 6,
+   "symbol": "USDG",
+   "base_usd": 0.09491
+  },
+  "0xc761f7de760d2b73cc3e3cc3d729916a4ed2f7fc6b0aa3872e2ced4258961e92": {
+   "quote_usd": null,
+   "decimals": 6,
+   "symbol": "USDG"
+  },
+  "0xa95b1fbdccb15d2b07509b980f63adab8a94303b1781f5ebc53b72942d12ddc1": {
+   "quote_usd": null,
+   "decimals": 18,
+   "symbol": "NVDA"
+  },
+  "0x4b83b47e62e9a5986a7badf9d2369911034a01c079532ede3c2819f332ac830a": {
+   "quote_usd": null,
+   "decimals": 6,
+   "symbol": "USDG"
+  },
+  "0x40521592c1698c730b85f2e0f3c1a59b33ae2f98": {
+   "quote_usd": null,
+   "decimals": 6,
+   "symbol": "USDG"
+  },
+  "0x75ee717303f5212cc1be3c52ea21f7128954902e": {
+   "quote_usd": null,
+   "decimals": 6,
+   "symbol": "USDG"
+  }
+ }
+}
