@@ -13,6 +13,16 @@ split across ten addresses — `rhc.clusters` scores that separately, from timin
 and size coincidence, against a null of how often unrelated wallets would
 overlap by chance.
 
+**`--resolve-senders` is what makes the trader column real.**  The swap log's
+`recipient` topic is the router on a routed trade, and on a sample of 14 recent
+WALLET swaps it matched the transaction's own sender on only 6.  `tx.from` is
+the trader in all 14, and the addresses it yields are the ones DexScreener
+prints in its TRADER column.  Resolving it costs one `eth_getTransactionByHash`
+per swap, so it is affordable for a window of recent activity and not for a
+token's whole history — 263,408 swaps at the client's own rate limit is about
+eleven hours.  For whole-history holdings use `token_transfers.py` instead,
+which gets exact balances without any per-trade lookup.
+
 **The net-position ledger is the point.**  A wallet that bought $50k and sold
 $49k of it is not accumulating, however large its buy volume looks in a
 leaderboard.  Positions here are tracked in base units (tokens), so a wallet's
@@ -37,7 +47,7 @@ import pyarrow as pa
 import pyarrow.parquet as pq
 
 from rhc.features import decode_v2_swaps, decode_v3_swaps
-from rhc.rpc import TOPIC_V2_SWAP, TOPIC_V3_SWAP, Rpc
+from rhc.rpc import TOPIC_V2_SWAP, TOPIC_V3_SWAP, Rpc, RpcError
 
 
 def main() -> int:
@@ -48,6 +58,10 @@ def main() -> int:
     parser.add_argument("--created-block", type=int, required=True)
     parser.add_argument("--quote-is-token0", action="store_true")
     parser.add_argument("--out", type=Path, required=True)
+    parser.add_argument("--resolve-senders", type=int, default=0, metavar="N",
+                        help="replace the recipient with the transaction's own "
+                             "sender for the last N swaps. One RPC call each, so "
+                             "this is for a window, not a history.")
     args = parser.parse_args()
 
     topic = TOPIC_V2_SWAP if args.protocol == "v2" else TOPIC_V3_SWAP
@@ -72,10 +86,45 @@ def main() -> int:
     trades = decode(logs, quote_is_token0=args.quote_is_token0)
     print(f"{len(trades):,} decoded trades", file=sys.stderr)
 
+    senders: list[str] = [t.wallet for t in trades]
+    if args.resolve_senders:
+        # Log order and trade order agree only while the decoder drops nothing,
+        # so pair them by (block, logIndex) rather than by position.
+        by_key = {(int(lg["blockNumber"], 16), int(lg.get("logIndex", "0x0"), 16)):
+                  lg["transactionHash"] for lg in logs}
+        window = range(max(0, len(trades) - args.resolve_senders), len(trades))
+        replaced = failed = 0
+        # A failed lookup falls back to the recipient rather than aborting: on a
+        # 12,708-swap window a single exhausted retry would otherwise throw away
+        # forty minutes of completed work. Failures are counted and reported, so
+        # a run that silently degraded is visible rather than assumed clean.
+        with Rpc(min_interval=0.2) as rpc:
+            for pos, i in enumerate(window):
+                tx_hash = by_key.get((trades[i].block, trades[i].log_index))
+                if not tx_hash:
+                    continue
+                try:
+                    tx = rpc.call("eth_getTransactionByHash", [tx_hash])
+                except RpcError:
+                    failed += 1
+                    continue
+                if not tx:
+                    failed += 1
+                    continue
+                if tx["from"].lower() != senders[i].lower():
+                    replaced += 1
+                senders[i] = tx["from"].lower()
+                if pos % 2000 == 0 and pos:
+                    print(f"    resolved {pos:,}/{len(window):,} "
+                          f"({failed:,} failed)", file=sys.stderr, flush=True)
+        print(f"resolved {len(window)-failed:,} senders; {replaced:,} differed from "
+              f"the swap recipient ({replaced/max(1,len(window)-failed):.0%}); "
+              f"{failed:,} fell back to the recipient", file=sys.stderr)
+
     rows = {
         "block": [t.block for t in trades],
         "log_index": [t.log_index for t in trades],
-        "wallet": [t.wallet for t in trades],
+        "wallet": senders,
         "is_buy": [t.is_buy for t in trades],
         "quote_amount": [str(t.quote_amount) for t in trades],
         "base_amount": [str(t.base_amount) for t in trades],
