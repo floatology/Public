@@ -11,6 +11,35 @@ UI shows — holders, transactions, trader addresses, liquidity events — is
 reachable from the free endpoints below, in more detail and over the full
 history.
 
+## Always: the watchlist
+
+**On every rerun for a token, report its watched wallets first.** They are kept
+in `data/tokens/watchlist.json` with the reason each one is watched. After
+refreshing the archive and rebuilding the ledger, run:
+
+```bash
+.venv/bin/python scripts/watch_wallets.py
+```
+
+It reports each active wallet's holdings, what it bought and sold since the
+last check and at what price, and its lifetime result, then advances
+`last_checked`. Lead the answer with any change in these wallets. When a new
+analysis turns up a wallet that matters — a major accumulator, a distributor,
+a liquidity puller, a treasury allocation — add it with a one-line `why`. When
+one stops mattering (exited fully, gone quiet for weeks), set `active: false`
+with a reason; never delete an entry.
+
+To see what else watched wallets hold across Robinhood Chain, now and in the
+past:
+
+```bash
+.venv/bin/python scripts/wallet_portfolio.py <addr> <addr> ... --out data/tokens/watch_portfolios.json
+```
+
+Positions count only if the token has at least $5k of pool liquidity, because
+smart-contract wallets here hold dozens of worthless airdrops. Past positions
+are listed without a value, since today's price says nothing about the exit.
+
 ## Order of work
 
 1. **Resolve the token.** Never trust the ticker: tickers are unpoliced here and
@@ -20,7 +49,8 @@ history.
    block and `quote_is_token0` in `data/parquet/pool_creations.parquet`.
 3. **Fill the archive** with `scripts/token_archive.py` (below). Resume, never
    rescan.
-4. **Analyse** with `scripts/token_forensics.py`.
+4. **Rebuild the ledger** (`attribute_trades.py`, `build_ledger.py`), **run the
+   watchlist**, then **analyse** with `scripts/ledger_analysis.py`.
 5. **State what the data cannot see** alongside what it can. The limits section
    is not boilerplate; each entry is a real hole that has produced a wrong
    answer in this project.
@@ -162,3 +192,13 @@ What stays unattributed is one shape — an arbitrage that buys and sells the sa
 token inside one transaction and nets to nothing, so no address dominates the
 movement. Those rows carry a null trader and are counted, because dropping them
 would understate every volume computed from the table.
+
+## Reading co-timing between wallets
+
+Count each wallet's trades that fall within two minutes of a same-direction trade
+by the other, as a share of its trades, and compare against random traders of
+similar activity. Counting overlapping pairs instead inflates the figure: on
+WALLET it produced 64 for a pair whose honest count was 14 of 98 trades.
+That pair scored 14% against a random-trader median of 0% and a 95th
+percentile of 2.9%. That is suggestive, but it is not proof of one operator
+without a direct transfer or a shared funder.

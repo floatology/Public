@@ -1,0 +1,736 @@
+{
+ "wallets": {
+  "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b": {
+   "positions": [
+    {
+     "token": "0x0339f5459fc690ac85f1782e15782a151b4a9e1b",
+     "symbol": "WALLET",
+     "value": 241097.38461108351,
+     "share": 0.013952394942771036,
+     "mcap": 16333188,
+     "liq": 1781306.15
+    }
+   ],
+   "past": [
+    {
+     "token": "0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec",
+     "symbol": "NVDA",
+     "transfers": 14,
+     "first": "2026-08-30T17:27:35.000000Z",
+     "last": "2026-09-16T18:54:34.000000Z"
+    },
+    {
+     "token": "0xbc9e7b1c5c0081f4ae85e71ec95703d3dec9ffad",
+     "symbol": "Bucket",
+     "transfers": 14,
+     "first": "2026-08-30T14:41:44.000000Z",
+     "last": "2026-09-17T15:50:39.000000Z"
+    },
+    {
+     "token": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+     "symbol": "AAPL",
+     "transfers": 13,
+     "first": "2026-08-30T17:26:38.000000Z",
+     "last": "2026-09-14T22:49:20.000000Z"
+    },
+    {
+     "token": "0xbe98b75361935b18d688409424a869a4c3dc7401",
+     "symbol": "NUDES",
+     "transfers": 9,
+     "first": "2026-09-02T12:25:18.000000Z",
+     "last": "2026-09-13T00:54:13.000000Z"
+    },
+    {
+     "token": "0xccee82fe024c36fa15e1005ede3e9e4787e23d09",
+     "symbol": "HIMS",
+     "transfers": 8,
+     "first": "2026-08-30T17:13:10.000000Z",
+     "last": "2026-09-03T13:39:02.000000Z"
+    },
+    {
+     "token": "0x322f0929c4625ed5bad873c95208d54e1c003b2d",
+     "symbol": "TSLA",
+     "transfers": 8,
+     "first": "2026-08-30T17:28:32.000000Z",
+     "last": "2026-09-02T20:53:56.000000Z"
+    },
+    {
+     "token": "0x1b0e319c6a659f002271b69db8a7df2f911c153e",
+     "symbol": "GME",
+     "transfers": 8,
+     "first": "2026-08-30T17:29:51.000000Z",
+     "last": "2026-09-02T20:55:53.000000Z"
+    },
+    {
+     "token": "0x117cc2133c37b721f49de2a7a74833232b3b4c0c",
+     "symbol": "SPY",
+     "transfers": 8,
+     "first": "2026-08-30T17:28:55.000000Z",
+     "last": "2026-09-02T20:55:03.000000Z"
+    },
+    {
+     "token": "0xe93237c50d904957cf27e7b1133b510c669c2e74",
+     "symbol": "MSFT",
+     "transfers": 7,
+     "first": "2026-08-30T17:29:15.000000Z",
+     "last": "2026-09-02T20:55:20.000000Z"
+    },
+    {
+     "token": "0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a",
+     "symbol": "PLTR",
+     "transfers": 7,
+     "first": "2026-08-30T17:28:11.000000Z",
+     "last": "2026-09-02T20:52:40.000000Z"
+    },
+    {
+     "token": "0x4a0e65a3eccec6dbe60ae065f2e7bb85fae35eea",
+     "symbol": "SPCX",
+     "transfers": 7,
+     "first": "2026-08-30T17:27:05.000000Z",
+     "last": "2026-09-10T02:07:40.000000Z"
+    },
+    {
+     "token": "0x2e0847e8910a9732eb3fb1bb4b70a580adad4fe3",
+     "symbol": "GOOGL",
+     "transfers": 7,
+     "first": "2026-08-30T17:29:35.000000Z",
+     "last": "2026-09-02T20:55:37.000000Z"
+    },
+    {
+     "token": "0x1d11f0496982706c5e14a514d4e79f2e6bde4516",
+     "symbol": "DJT",
+     "transfers": 7,
+     "first": "2026-08-30T17:12:49.000000Z",
+     "last": "2026-09-02T23:27:49.000000Z"
+    },
+    {
+     "token": "0xf0c4bf4c582cb3836e98394b1d4e7b7281101be8",
+     "symbol": "RBLX",
+     "transfers": 6,
+     "first": "2026-08-30T17:14:19.000000Z",
+     "last": "2026-09-03T13:40:59.000000Z"
+    },
+    {
+     "token": "0xec262a75e413fafd0df80480274532c79d42da09",
+     "symbol": "MSTR",
+     "transfers": 6,
+     "first": "2026-08-30T20:00:54.000000Z",
+     "last": "2026-09-03T21:09:41.000000Z"
+    },
+    {
+     "token": "0xc0d6457c16cc70d6790dd43521c899c87ce02f35",
+     "symbol": "META",
+     "transfers": 6,
+     "first": "2026-08-30T17:57:15.000000Z",
+     "last": "2026-09-02T20:56:09.000000Z"
+    },
+    {
+     "token": "0x86923f96303d656e4aa86d9d42d1e57ad2023fdc",
+     "symbol": "AMD",
+     "transfers": 6,
+     "first": "2026-08-30T20:01:44.000000Z",
+     "last": "2026-09-03T21:09:54.000000Z"
+    },
+    {
+     "token": "0x6330d8c3178a418788df01a47479c0ce7ccf450b",
+     "symbol": "COIN",
+     "transfers": 6,
+     "first": "2026-08-30T17:56:41.000000Z",
+     "last": "2026-09-02T17:59:43.000000Z"
+    },
+    {
+     "token": "0x062824dfb2245b675d9ea6c4d5e4ae3cb02b2d31",
+     "symbol": "HVLT",
+     "transfers": 6,
+     "first": "2026-09-25T21:30:32.000000Z",
+     "last": "2026-09-26T09:00:26.000000Z"
+    },
+    {
+     "token": "0xff080c8ce2e5feadaca0da81314ae59d232d4afd",
+     "symbol": "MU",
+     "transfers": 5,
+     "first": "2026-08-30T19:58:03.000000Z",
+     "last": "2026-09-02T20:56:45.000000Z"
+    },
+    {
+     "token": "0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8",
+     "symbol": "NFLX",
+     "transfers": 5,
+     "first": "2026-08-30T19:57:04.000000Z",
+     "last": "2026-09-02T23:27:03.000000Z"
+    },
+    {
+     "token": "0xd5f3879160bc7c32ebb4dc785f8a4f505888de68",
+     "symbol": "QQQ",
+     "transfers": 5,
+     "first": "2026-08-31T10:15:16.000000Z",
+     "last": "2026-09-03T13:40:16.000000Z"
+    },
+    {
+     "token": "0xa30fa36db767ad9ed3f7a60fc79526fb4d56d344",
+     "symbol": "USO",
+     "transfers": 5,
+     "first": "2026-08-30T17:15:22.000000Z",
+     "last": "2026-09-03T13:42:41.000000Z"
+    },
+    {
+     "token": "0x5e81213613b6b86eab4c6c50d718d34359459786",
+     "symbol": "TTWO",
+     "transfers": 5,
+     "first": "2026-08-30T17:14:56.000000Z",
+     "last": "2026-09-03T13:42:12.000000Z"
+    },
+    {
+     "token": "0x05b37fb53a299a1b874a619e1c4c404d52c36f4c",
+     "symbol": "RDDT",
+     "transfers": 5,
+     "first": "2026-08-30T19:59:02.000000Z",
+     "last": "2026-09-02T20:57:00.000000Z"
+    },
+    {
+     "token": "0xb90a19ff0af67f7779aff50a882a9cff42446400",
+     "symbol": "SNDK",
+     "transfers": 4,
+     "first": "2026-08-30T19:56:12.000000Z",
+     "last": "2026-09-01T15:15:37.000000Z"
+    },
+    {
+     "token": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+     "symbol": "USDG",
+     "transfers": 4,
+     "first": "2026-07-21T19:13:30.000000Z",
+     "last": "2026-07-21T19:35:06.000000Z"
+    },
+    {
+     "token": "0x4bd2f56720ad5d5aa077d64e57420a357cb91e18",
+     "symbol": "HARAM",
+     "transfers": 4,
+     "first": "2026-09-03T18:54:45.000000Z",
+     "last": "2026-09-11T12:13:24.000000Z"
+    },
+    {
+     "token": "0x12f190a9f9d7d37a250758b26824b97ce941bf54",
+     "symbol": "AMZN",
+     "transfers": 4,
+     "first": "2026-08-30T20:02:21.000000Z",
+     "last": "2026-09-01T17:42:28.000000Z"
+    },
+    {
+     "token": "0xdf0992e440dd0be65bd8439b609d6d4366bf1cb5",
+     "symbol": "CRCL",
+     "transfers": 3,
+     "first": "2026-08-30T20:04:15.000000Z",
+     "last": "2026-08-31T14:25:11.000000Z"
+    },
+    {
+     "token": "0xc4cb8a0167c77e36194f6affb6b71d931fab62c0",
+     "symbol": "SNOP",
+     "transfers": 3,
+     "first": "2026-09-03T16:35:17.000000Z",
+     "last": "2026-09-11T12:13:08.000000Z"
+    },
+    {
+     "token": "0x5e55f18453545d0d4314c5106a2d8db934298e95",
+     "symbol": "DEED",
+     "transfers": 3,
+     "first": "2026-09-22T00:59:02.000000Z",
+     "last": "2026-09-22T02:35:35.000000Z"
+    },
+    {
+     "token": "0x0e6d1ebb33f3b8f2d09bacf3b1a1d5c581110c33",
+     "symbol": "DPONS",
+     "transfers": 3,
+     "first": "2026-09-14T20:14:25.000000Z",
+     "last": "2026-09-17T15:50:50.000000Z"
+    },
+    {
+     "token": "0xc72b96e0e48ecd4dc75e1e45396e26300bc39681",
+     "symbol": "INTC",
+     "transfers": 2,
+     "first": "2026-08-30T17:13:30.000000Z",
+     "last": "2026-08-31T21:13:38.000000Z"
+    }
+   ]
+  },
+  "0xc7a0c8467b24170318e3eb3f21fe9ae20a5a1ced": {
+   "positions": [
+    {
+     "token": "0x0339f5459fc690ac85f1782e15782a151b4a9e1b",
+     "symbol": "WALLET",
+     "value": 91908.18063383673,
+     "share": 0.005318760453347033,
+     "mcap": 16333188,
+     "liq": 1781306.15
+    }
+   ],
+   "past": [
+    {
+     "token": "0x20fca261f23b8376db40c3fdda05b8e2aecc5889",
+     "symbol": "ARROW",
+     "transfers": 3,
+     "first": "2026-09-21T20:26:37.000000Z",
+     "last": "2026-09-22T05:31:53.000000Z"
+    },
+    {
+     "token": "0x062824dfb2245b675d9ea6c4d5e4ae3cb02b2d31",
+     "symbol": "HVLT",
+     "transfers": 3,
+     "first": "2026-09-25T20:38:43.000000Z",
+     "last": "2026-09-26T17:23:47.000000Z"
+    },
+    {
+     "token": "0x91edc83b9650ff586b1e0e519eb7e77d7fb7dfb7",
+     "symbol": "TUCK",
+     "transfers": 2,
+     "first": "2026-09-25T08:04:19.000000Z",
+     "last": "2026-09-25T15:13:28.000000Z"
+    }
+   ]
+  },
+  "0x19885325e9a4bbd5ce3e326c954e4730a8ab9f70": {
+   "positions": [
+    {
+     "token": "0x0339f5459fc690ac85f1782e15782a151b4a9e1b",
+     "symbol": "WALLET",
+     "value": 86908.92809545087,
+     "share": 0.00502945185737563,
+     "mcap": 16333188,
+     "liq": 1781306.15
+    }
+   ],
+   "past": [
+    {
+     "token": "0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec",
+     "symbol": "NVDA",
+     "transfers": 50,
+     "first": "2026-08-30T01:10:03.000000Z",
+     "last": "2026-09-17T23:50:14.000000Z"
+    },
+    {
+     "token": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+     "symbol": "AAPL",
+     "transfers": 48,
+     "first": "2026-08-30T01:09:19.000000Z",
+     "last": "2026-09-16T06:10:04.000000Z"
+    },
+    {
+     "token": "0xbe98b75361935b18d688409424a869a4c3dc7401",
+     "symbol": "NUDES",
+     "transfers": 47,
+     "first": "2026-09-01T22:33:26.000000Z",
+     "last": "2026-09-11T20:26:27.000000Z"
+    },
+    {
+     "token": "0xbc9e7b1c5c0081f4ae85e71ec95703d3dec9ffad",
+     "symbol": "Bucket",
+     "transfers": 41,
+     "first": "2026-08-30T00:15:39.000000Z",
+     "last": "2026-09-18T14:42:21.000000Z"
+    },
+    {
+     "token": "0x4a0e65a3eccec6dbe60ae065f2e7bb85fae35eea",
+     "symbol": "SPCX",
+     "transfers": 35,
+     "first": "2026-08-30T01:09:40.000000Z",
+     "last": "2026-09-10T20:50:59.000000Z"
+    },
+    {
+     "token": "0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a",
+     "symbol": "PLTR",
+     "transfers": 14,
+     "first": "2026-08-30T01:10:23.000000Z",
+     "last": "2026-09-02T20:52:37.000000Z"
+    },
+    {
+     "token": "0x1b0e319c6a659f002271b69db8a7df2f911c153e",
+     "symbol": "GME",
+     "transfers": 13,
+     "first": "2026-08-30T03:14:50.000000Z",
+     "last": "2026-09-21T03:34:45.000000Z"
+    },
+    {
+     "token": "0xe93237c50d904957cf27e7b1133b510c669c2e74",
+     "symbol": "MSFT",
+     "transfers": 12,
+     "first": "2026-08-30T01:11:32.000000Z",
+     "last": "2026-09-02T20:55:19.000000Z"
+    },
+    {
+     "token": "0x117cc2133c37b721f49de2a7a74833232b3b4c0c",
+     "symbol": "SPY",
+     "transfers": 12,
+     "first": "2026-08-30T01:11:16.000000Z",
+     "last": "2026-09-02T20:55:01.000000Z"
+    },
+    {
+     "token": "0x322f0929c4625ed5bad873c95208d54e1c003b2d",
+     "symbol": "TSLA",
+     "transfers": 11,
+     "first": "2026-08-30T01:10:50.000000Z",
+     "last": "2026-09-02T20:53:40.000000Z"
+    },
+    {
+     "token": "0x2e0847e8910a9732eb3fb1bb4b70a580adad4fe3",
+     "symbol": "GOOGL",
+     "transfers": 11,
+     "first": "2026-08-30T01:11:51.000000Z",
+     "last": "2026-09-02T20:55:35.000000Z"
+    },
+    {
+     "token": "0xccee82fe024c36fa15e1005ede3e9e4787e23d09",
+     "symbol": "HIMS",
+     "transfers": 10,
+     "first": "2026-08-30T08:25:34.000000Z",
+     "last": "2026-09-03T13:39:02.000000Z"
+    },
+    {
+     "token": "0xec262a75e413fafd0df80480274532c79d42da09",
+     "symbol": "MSTR",
+     "transfers": 9,
+     "first": "2026-08-30T03:07:43.000000Z",
+     "last": "2026-09-03T21:09:41.000000Z"
+    },
+    {
+     "token": "0xb90a19ff0af67f7779aff50a882a9cff42446400",
+     "symbol": "SNDK",
+     "transfers": 9,
+     "first": "2026-08-30T03:06:20.000000Z",
+     "last": "2026-09-01T15:15:36.000000Z"
+    },
+    {
+     "token": "0x86923f96303d656e4aa86d9d42d1e57ad2023fdc",
+     "symbol": "AMD",
+     "transfers": 9,
+     "first": "2026-08-30T03:08:00.000000Z",
+     "last": "2026-09-03T21:09:54.000000Z"
+    },
+    {
+     "token": "0xff080c8ce2e5feadaca0da81314ae59d232d4afd",
+     "symbol": "MU",
+     "transfers": 8,
+     "first": "2026-08-30T03:06:53.000000Z",
+     "last": "2026-09-02T20:56:45.000000Z"
+    },
+    {
+     "token": "0xe0444ef8bf4ed74f74fd73686e2ddf4c1c5591e8",
+     "symbol": "NFLX",
+     "transfers": 8,
+     "first": "2026-08-30T03:06:37.000000Z",
+     "last": "2026-09-02T23:27:01.000000Z"
+    },
+    {
+     "token": "0xc0d6457c16cc70d6790dd43521c899c87ce02f35",
+     "symbol": "META",
+     "transfers": 8,
+     "first": "2026-08-30T03:05:59.000000Z",
+     "last": "2026-09-02T20:56:09.000000Z"
+    },
+    {
+     "token": "0x6330d8c3178a418788df01a47479c0ce7ccf450b",
+     "symbol": "COIN",
+     "transfers": 8,
+     "first": "2026-08-30T03:15:03.000000Z",
+     "last": "2026-09-02T17:59:38.000000Z"
+    },
+    {
+     "token": "0x1d11f0496982706c5e14a514d4e79f2e6bde4516",
+     "symbol": "DJT",
+     "transfers": 8,
+     "first": "2026-08-30T08:25:17.000000Z",
+     "last": "2026-09-02T23:27:49.000000Z"
+    },
+    {
+     "token": "0x05b37fb53a299a1b874a619e1c4c404d52c36f4c",
+     "symbol": "RDDT",
+     "transfers": 8,
+     "first": "2026-08-30T03:07:10.000000Z",
+     "last": "2026-09-02T20:57:00.000000Z"
+    },
+    {
+     "token": "0xf0c4bf4c582cb3836e98394b1d4e7b7281101be8",
+     "symbol": "RBLX",
+     "transfers": 7,
+     "first": "2026-08-30T08:26:33.000000Z",
+     "last": "2026-09-03T13:40:59.000000Z"
+    },
+    {
+     "token": "0xa30fa36db767ad9ed3f7a60fc79526fb4d56d344",
+     "symbol": "USO",
+     "transfers": 7,
+     "first": "2026-08-30T08:27:18.000000Z",
+     "last": "2026-09-03T17:53:17.000000Z"
+    },
+    {
+     "token": "0x5e81213613b6b86eab4c6c50d718d34359459786",
+     "symbol": "TTWO",
+     "transfers": 6,
+     "first": "2026-08-30T08:27:01.000000Z",
+     "last": "2026-09-03T13:42:12.000000Z"
+    },
+    {
+     "token": "0x12f190a9f9d7d37a250758b26824b97ce941bf54",
+     "symbol": "AMZN",
+     "transfers": 6,
+     "first": "2026-08-30T08:24:04.000000Z",
+     "last": "2026-09-01T17:42:26.000000Z"
+    },
+    {
+     "token": "0xdf0992e440dd0be65bd8439b609d6d4366bf1cb5",
+     "symbol": "CRCL",
+     "transfers": 5,
+     "first": "2026-08-30T08:24:32.000000Z",
+     "last": "2026-08-31T14:25:11.000000Z"
+    },
+    {
+     "token": "0xd5f3879160bc7c32ebb4dc785f8a4f505888de68",
+     "symbol": "QQQ",
+     "transfers": 5,
+     "first": "2026-08-31T10:15:16.000000Z",
+     "last": "2026-09-03T13:40:16.000000Z"
+    },
+    {
+     "token": "0x8eaa17be69ae9616cede4671e6d837bb89491e18",
+     "symbol": "CPU",
+     "transfers": 5,
+     "first": "2026-09-18T15:38:49.000000Z",
+     "last": "2026-09-20T22:21:10.000000Z"
+    },
+    {
+     "token": "0x062824dfb2245b675d9ea6c4d5e4ae3cb02b2d31",
+     "symbol": "HVLT",
+     "transfers": 4,
+     "first": "2026-09-25T20:38:43.000000Z",
+     "last": "2026-09-26T17:23:47.000000Z"
+    },
+    {
+     "token": "0xc72b96e0e48ecd4dc75e1e45396e26300bc39681",
+     "symbol": "INTC",
+     "transfers": 3,
+     "first": "2026-08-30T08:25:49.000000Z",
+     "last": "2026-08-31T21:13:37.000000Z"
+    },
+    {
+     "token": "0x5fc5360d0400a0fd4f2af552add042d716f1d168",
+     "symbol": "USDG",
+     "transfers": 3,
+     "first": "2026-09-02T21:04:06.000000Z",
+     "last": "2026-09-02T21:05:17.000000Z"
+    },
+    {
+     "token": "0x20fca261f23b8376db40c3fdda05b8e2aecc5889",
+     "symbol": "ARROW",
+     "transfers": 3,
+     "first": "2026-09-21T20:26:37.000000Z",
+     "last": "2026-09-22T05:31:53.000000Z"
+    },
+    {
+     "token": "0x91edc83b9650ff586b1e0e519eb7e77d7fb7dfb7",
+     "symbol": "TUCK",
+     "transfers": 2,
+     "first": "2026-09-25T08:04:19.000000Z",
+     "last": "2026-09-25T15:13:28.000000Z"
+    },
+    {
+     "token": "0x59818904ab4ce163b3ce4ffb64f2d6ca02c434b4",
+     "symbol": "QUBT",
+     "transfers": 2,
+     "first": "2026-08-30T08:26:19.000000Z",
+     "last": "2026-08-30T17:14:04.000000Z"
+    }
+   ]
+  },
+  "0x5a7a61face3c7bf578098ad80fe7e7c471b4277c": {
+   "positions": [
+    {
+     "token": "0x0339f5459fc690ac85f1782e15782a151b4a9e1b",
+     "symbol": "WALLET",
+     "value": 174448.42461971566,
+     "share": 0.010095394943270582,
+     "mcap": 16333188,
+     "liq": 1781306.15
+    },
+    {
+     "token": "0x2d8d6f4a93acd7a916a5a654ec8b690ba3b3eadd",
+     "symbol": "STATICS",
+     "value": 43263.33061224961,
+     "share": 0.002390239260345282,
+     "mcap": 12625813,
+     "liq": 11803679.16
+    },
+    {
+     "token": "0xa92768863a55d8a0591709f7f5e594a249d36ea3",
+     "symbol": "ASKR",
+     "value": 10521.300240289016,
+     "share": 0.0028435946595375718,
+     "mcap": 3171708,
+     "liq": 185639.51
+    },
+    {
+     "token": "0x0a8b4763c71ac39101b3b8a97e62da0b81549a4f",
+     "symbol": "MONEY",
+     "value": 9334.13431964479,
+     "share": 0.00981924649066046,
+     "mcap": 950649,
+     "liq": 81416.93
+    },
+    {
+     "token": "0xa3b6aee90017b72c0812dc1e013de70eb2917ba3",
+     "symbol": "EARN",
+     "value": 6676.496325593536,
+     "share": 0.0022951173343394764,
+     "mcap": 2878937,
+     "liq": 350090.33
+    },
+    {
+     "token": "0x7e96c5d2dd964bccf631dd6abd0750da4cf52daa",
+     "symbol": "LIGHT",
+     "value": 5721.064722051272,
+     "share": 0.014049766016825326,
+     "mcap": 407283,
+     "liq": 61624.33
+    },
+    {
+     "token": "0xbed7c1660a01dbeee225bd893ac31727a91a5773",
+     "symbol": "SZR",
+     "value": 3535.1723079984877,
+     "share": 0.004735825221455871,
+     "mcap": 746806,
+     "liq": 14314.57
+    },
+    {
+     "token": "0xcf3d41f9671dc2e86ee4c0271b79ae6fdce36c05",
+     "symbol": "PARLEY",
+     "value": 2454.92797847733,
+     "share": 0.01123536832255071,
+     "mcap": 201998,
+     "liq": 45131.47
+    }
+   ],
+   "past": [
+    {
+     "token": "0xd0601ce157db5bdc3162bbac2a2c8af5320d9eec",
+     "symbol": "NVDA",
+     "transfers": 22,
+     "first": "2026-07-08T11:47:11.000000Z",
+     "last": "2026-07-08T17:13:24.000000Z"
+    },
+    {
+     "token": "0xaf3d76f1834a1d425780943c99ea8a608f8a93f9",
+     "symbol": "AAPL",
+     "transfers": 22,
+     "first": "2026-07-08T11:47:11.000000Z",
+     "last": "2026-07-08T17:13:24.000000Z"
+    },
+    {
+     "token": "0x86923f96303d656e4aa86d9d42d1e57ad2023fdc",
+     "symbol": "AMD",
+     "transfers": 22,
+     "first": "2026-07-08T11:47:11.000000Z",
+     "last": "2026-07-08T17:13:24.000000Z"
+    },
+    {
+     "token": "0x4a0e65a3eccec6dbe60ae065f2e7bb85fae35eea",
+     "symbol": "SPCX",
+     "transfers": 22,
+     "first": "2026-07-08T11:47:11.000000Z",
+     "last": "2026-07-08T17:13:24.000000Z"
+    },
+    {
+     "token": "0x322f0929c4625ed5bad873c95208d54e1c003b2d",
+     "symbol": "TSLA",
+     "transfers": 22,
+     "first": "2026-07-08T11:47:11.000000Z",
+     "last": "2026-07-08T17:13:24.000000Z"
+    },
+    {
+     "token": "0x3786728a2c49c4617bf4fe5bd82b90b6b0df5508",
+     "symbol": "DENAR",
+     "transfers": 13,
+     "first": "2026-08-31T09:20:24.000000Z",
+     "last": "2026-09-04T08:10:42.000000Z"
+    },
+    {
+     "token": "0xf1d3e39cc61aedd53dc40d8afff6aa1dd51875d0",
+     "symbol": "ROAR",
+     "transfers": 4,
+     "first": "2026-08-02T13:27:43.000000Z",
+     "last": "2026-08-07T11:32:38.000000Z"
+    },
+    {
+     "token": "0xa30fa36db767ad9ed3f7a60fc79526fb4d56d344",
+     "symbol": "USO",
+     "transfers": 4,
+     "first": "2026-09-02T18:45:03.000000Z",
+     "last": "2026-09-02T18:59:32.000000Z"
+    },
+    {
+     "token": "0x79e1b7e59054fd4e18ad7c71e5781162bf28888b",
+     "symbol": "MICROWAVE",
+     "transfers": 4,
+     "first": "2026-09-02T16:32:25.000000Z",
+     "last": "2026-09-02T18:58:02.000000Z"
+    },
+    {
+     "token": "0x20fca261f23b8376db40c3fdda05b8e2aecc5889",
+     "symbol": "ARROW",
+     "transfers": 3,
+     "first": "2026-09-21T20:26:37.000000Z",
+     "last": "2026-09-22T05:31:53.000000Z"
+    },
+    {
+     "token": "0x062824dfb2245b675d9ea6c4d5e4ae3cb02b2d31",
+     "symbol": "HVLT",
+     "transfers": 3,
+     "first": "2026-09-25T20:38:43.000000Z",
+     "last": "2026-09-26T17:23:47.000000Z"
+    },
+    {
+     "token": "0xe537ec1c7d8d80aa503b8ca5a43c6b85021fee76",
+     "symbol": "CASHBULL",
+     "transfers": 2,
+     "first": "2026-07-10T15:55:44.000000Z",
+     "last": "2026-07-10T17:57:16.000000Z"
+    },
+    {
+     "token": "0x91edc83b9650ff586b1e0e519eb7e77d7fb7dfb7",
+     "symbol": "TUCK",
+     "transfers": 2,
+     "first": "2026-09-25T08:04:19.000000Z",
+     "last": "2026-09-25T15:13:28.000000Z"
+    },
+    {
+     "token": "0x9162fefe5b784be862b826cabf52c0fa5a3f846a",
+     "symbol": "SIGHT",
+     "transfers": 2,
+     "first": "2026-09-03T15:18:28.000000Z",
+     "last": "2026-09-03T17:28:20.000000Z"
+    }
+   ]
+  },
+  "0x5173d36f9ef0c78a8a6d6e3d653b3bf6b6e08dfd": {
+   "positions": [
+    {
+     "token": "0x0339f5459fc690ac85f1782e15782a151b4a9e1b",
+     "symbol": "WALLET",
+     "value": 69235.30082944305,
+     "share": 0.00400667250170388,
+     "mcap": 16333188,
+     "liq": 1781306.15
+    }
+   ],
+   "past": []
+  }
+ },
+ "shared": {
+  "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
+   "symbol": "WALLET",
+   "wallets": [
+    "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
+    "0xc7a0c8467b24170318e3eb3f21fe9ae20a5a1ced",
+    "0x19885325e9a4bbd5ce3e326c954e4730a8ab9f70",
+    "0x5a7a61face3c7bf578098ad80fe7e7c471b4277c",
+    "0x5173d36f9ef0c78a8a6d6e3d653b3bf6b6e08dfd"
+   ]
+  }
+ }
+}

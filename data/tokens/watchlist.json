@@ -1,0 +1,101 @@
+{
+ "_about": "Wallets to report on every rerun of token-forensics while they stay relevant. scripts/watch_wallets.py reads this, reports each wallet's activity since last_checked, then advances last_checked. Retire a wallet by setting active=false with a reason; never delete, so the history of why it was watched survives.",
+ "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
+  "name": "WALLET",
+  "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
+  "last_checked": 1790490925,
+  "wallets": [
+   {
+    "address": "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
+    "label": "crash leader, re-accumulating",
+    "why": "Held since 12 Jul; sold 1.91% for $454k in the 17 Sep crash, bought 1.23% back after. Largest re-accumulator. Possibly one operator with 0x1988 (co-timing 14% vs 2.9% at the 95th percentile; near-identical trading history).",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0xc7a0c8467b24170318e3eb3f21fe9ae20a5a1ced",
+    "label": "crash seller, re-accumulating",
+    "why": "Sold 0.35% in the crash, bought 0.45% back at ~$0.019 including one $77.5k buy on 21 Sep.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x19885325e9a4bbd5ce3e326c954e4730a8ab9f70",
+    "label": "crash seller, re-accumulating",
+    "why": "Sold 0.34% in the crash, bought 0.42% back. Possible second address of 0x5364.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x5a7a61face3c7bf578098ad80fe7e7c471b4277c",
+    "label": "launch-day holder, dip buyer",
+    "why": "Bought 10 Jul at ~$0.002; up ~$295k overall. Diversified memecoin trader (STATICS, ASKR, MONEY, EARN, LIGHT...).",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x5173d36f9ef0c78a8a6d6e3d653b3bf6b6e08dfd",
+    "label": "top profit-taker, still selling",
+    "why": "Largest realised profit on the token (~$394k overall); net seller over the last week.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x02f5b2818b8d52832b06cd05673b7d5cf1d1f3f3",
+    "label": "liquidity puller / distributor",
+    "why": "Pulled 16.48 ETH of bid liquidity 10h before the 17 Sep crash; has sent 2.9% of supply to market over its life.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0xa600504dbd6f5a69a6cf15da0788eed57d088be8",
+    "label": "liquidity puller / one-way seller",
+    "why": "Pulled 9.14 ETH of bid liquidity 34 min before the crash cascade; 15 sells, no buys in the week before.",
+    "added": "2026-09-27",
+    "active": true
+   }
+  ]
+ },
+ "0x6835dbf2d7d5852f84bf0a80de00cab3864f44b1": {
+  "name": "HH",
+  "pool": "0x34321f090a123d52473ae1a2473e8ed97dd9f770",
+  "last_checked": 1790490404,
+  "wallets": [
+   {
+    "address": "0xd2f8235aa89306c364a950f43163830573208c33",
+    "label": "deployer's 10% allocation",
+    "why": "Received 10% of supply from the deployer on 28 Aug and has never moved it. Any movement is material.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0xcc964f8fe70d79cb3a03585aed329a4c644c9a69",
+    "label": "deployer",
+    "why": "Minted supply; reset the launch price by selling 17.9% into an empty pool.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x1b37dd78e230ed8247df2b8f2ee47c51ac1b3793",
+    "label": "deployer-funded buyback contract",
+    "why": "329 identical-size buys since 22 Sep, zero sells. Watch for it stopping.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0xf24d97ee91025733aa48d898371affb564638d28",
+    "label": "largest early buyer",
+    "why": "Bought 17% of supply for $6.2k on 31 Aug; staked about half; ~$159k open.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0xf9ab5f4d82716311668a259da3549cf9b7856a89",
+    "label": "staking/lock contract (28%)",
+    "why": "Withdrawals from here are unlocks entering the float.",
+    "added": "2026-09-27",
+    "active": true
+   }
+  ]
+ }
+}
