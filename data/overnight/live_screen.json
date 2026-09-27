@@ -5,7 +5,7 @@
    "symbol": "GME",
    "mcap": 3563639.4390449026,
    "age_days": 65,
-   "vol7": 44655360.64310237,
+   "vol7": 54445022.97342047,
    "close": 23.645261655632,
    "signals": [
     "dry",
@@ -14,14 +14,14 @@
     "coil",
     "SETUP"
    ],
-   "pools": 6
+   "pools": 19
   },
   {
    "token": "0x07ebb29a38fbcb41563817e5e19f2cec619c90d2",
    "symbol": "BUN",
    "mcap": 76734170.7346686,
    "age_days": 24,
-   "vol7": 6446118.779963007,
+   "vol7": 6812091.228935956,
    "close": 0.0767347910001673,
    "signals": [
     "dry",
@@ -29,7 +29,7 @@
     "brk",
     "BREAK"
    ],
-   "pools": 2
+   "pools": 4
   },
   {
    "token": "0x2d8d6f4a93acd7a916a5a654ec8b690ba3b3eadd",
@@ -78,18 +78,33 @@
    "pools": 1
   },
   {
-   "token": "0x116f00968269b7bfbad4109ce591d6e74c0601d4",
-   "symbol": "net",
-   "mcap": 167589.02825739665,
-   "age_days": 24,
-   "vol7": 39106.34142530212,
-   "close": 353.021098430489,
+   "token": "0x9d86881e6d6c2c9a8a0094b96604e7ae62fe2709",
+   "symbol": "HDX",
+   "mcap": 10890.391954920664,
+   "age_days": 69,
+   "vol7": 18545.873258426633,
+   "close": 1.08903919567436e-05,
    "signals": [
     "dry",
     "ignite",
     "hlows",
-    "coil",
-    "SETUP"
+    "brk",
+    "BREAK"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0xd3165c9d0993330c1132c59fc6513b08639211c5",
+   "symbol": "FRIDAY",
+   "mcap": 26322.74649024782,
+   "age_days": 70,
+   "vol7": 10912.133671414796,
+   "close": 2.63227464886104e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "brk",
+    "BREAK"
    ],
    "pools": 1
   },
@@ -100,6 +115,69 @@
    "age_days": 47,
    "vol7": 6598.307883710475,
    "close": 962.660919274313,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0xf56399ad11c50efbdaf9f5cef13ec04aa8a33910",
+   "symbol": "PONSCAT",
+   "mcap": 20863.19871718237,
+   "age_days": 73,
+   "vol7": 6184.362411018609,
+   "close": 2.08631987187243e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "brk",
+    "BREAK"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x45688b48a9f49ad73b54f45f7510e7ddda014ce0",
+   "symbol": "BIGBG",
+   "mcap": 12508.889767417135,
+   "age_days": 25,
+   "vol7": 1205.5652488349047,
+   "close": 1.25088897670421e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x3133f0e8a3cf06974055c872a8911d5e537cee7d",
+   "symbol": "BUY",
+   "mcap": 16374.058234967819,
+   "age_days": 76,
+   "vol7": 265.7366124849969,
+   "close": 1.6374058237245e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x0b322debc24f4e6ac59136883ea147b4afaf1df3",
+   "symbol": "POOLCHAN",
+   "mcap": 8584.634285475828,
+   "age_days": 32,
+   "vol7": 178.7464276640527,
+   "close": 8.5846342855945e-06,
    "signals": [
     "dry",
     "ignite",
@@ -126,31 +204,207 @@
    "pools": 1
   },
   {
+   "token": "0x9979e0271bd5e3650da1db2ae3e362b97778c03b",
+   "symbol": "CHEF",
+   "mcap": null,
+   "age_days": 30,
+   "vol7": 137.46649448917375,
+   "close": 7.03776592282575e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x061bd9479880cdbaf170bb05d2b9861648e27101",
+   "symbol": "FA",
+   "mcap": 8045.052314,
+   "age_days": 24,
+   "vol7": 122.40767886404416,
+   "close": 8.04505231379648e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "brk",
+    "BREAK"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x03bc731ffb162cdd7b98d3c6542bfc291126075d",
+   "symbol": "fly",
+   "mcap": null,
+   "age_days": 21,
+   "vol7": 102.13105094450603,
+   "close": 24.2724210900494,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x9f4a9c70d10f4fa88d9db84afdc6b8b44f3e81a1",
+   "symbol": "BABY",
+   "mcap": 10342.230974196478,
+   "age_days": 35,
+   "vol7": 58.454849058330126,
+   "close": 1.03422309746677e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x034d81835137ea6579a3824fc47176ade055c76d",
+   "symbol": "CLOSED",
+   "mcap": 17419.40299627,
+   "age_days": 41,
+   "vol7": 52.49063427728463,
+   "close": 2.05499875430158e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x0cada19f2ed10cde06e7ce6e0005dd6781d29101",
+   "symbol": "ALI",
+   "mcap": null,
+   "age_days": 23,
+   "vol7": 29.47904730853638,
+   "close": 4.99260083020092e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x033ac5b63fce7c8c4137abdd69710cb39451e931",
+   "symbol": "poolbot",
+   "mcap": 15511.12778,
+   "age_days": 46,
+   "vol7": 27.20320956334828,
+   "close": 1.55111277849998e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x4053929aeef75621d67749711b9867286e9ebc01",
+   "symbol": "AMC",
+   "mcap": null,
+   "age_days": 22,
+   "vol7": 18.69759409961854,
+   "close": 4.46203798914912e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x9d05b9cef884fed0273377fc635c6b248f0a1b45",
+   "symbol": "PMF",
+   "mcap": 32328.137424621404,
+   "age_days": 47,
+   "vol7": 17.387117039983707,
+   "close": 3.23281374256767e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x044147b31754aa6b87444d57cbd4c1f59b3a30b0",
+   "symbol": "HODL",
+   "mcap": null,
+   "age_days": 27,
+   "vol7": 4.427942368354451,
+   "close": 5.70351499749586e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x3b542b9b72441e4ba0e70885f983075c51ea5c16",
+   "symbol": "MICRON AI",
+   "mcap": 8114.751287,
+   "age_days": 23,
+   "vol7": 3.464659741323523,
+   "close": 8.11475128674696e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows",
+    "coil",
+    "SETUP"
+   ],
+   "pools": 1
+  },
+  {
    "token": "0xc0d6457c16cc70d6790dd43521c899c87ce02f35",
    "symbol": "META",
    "mcap": 6877992.446094706,
    "age_days": 77,
-   "vol7": 114477046.66707587,
+   "vol7": 115494378.81934513,
    "close": 749.011033746054,
    "signals": [
     "ignite",
     "hlows",
     "coil"
    ],
-   "pools": 10
+   "pools": 15
   },
   {
    "token": "0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3",
    "symbol": "ORBIO",
    "mcap": 71494803.11652757,
    "age_days": 25,
-   "vol7": 29747353.054003775,
+   "vol7": 30086390.448304098,
    "close": 0.0740732907536628,
    "signals": [
     "ignite",
     "hlows"
    ],
-   "pools": 10
+   "pools": 12
   },
   {
    "token": "0xb6a906d2d95e862cf4fd43b9e30162aee19eed8d",
@@ -171,14 +425,14 @@
    "symbol": "DELTA",
    "mcap": 20417822.163791407,
    "age_days": 57,
-   "vol7": 16618133.665824283,
+   "vol7": 17532724.76470901,
    "close": 0.0205287554009476,
    "signals": [
     "dry",
     "ignite",
     "hlows"
    ],
-   "pools": 1
+   "pools": 6
   },
   {
    "token": "0x1a911bb954daa9cb38513423075be74450351e18",
@@ -199,13 +453,27 @@
    "symbol": "NVDAx3L",
    "mcap": 720537.2694098923,
    "age_days": 32,
-   "vol7": 11641911.85503018,
+   "vol7": 11641980.063613877,
    "close": 1.194241424131,
    "signals": [
     "ignite",
     "hlows"
    ],
-   "pools": 1
+   "pools": 3
+  },
+  {
+   "token": "0xcec185eb182c47d1ba1efc84e6959e18cd620be4",
+   "symbol": "cbBTC",
+   "mcap": 3062095.5856806734,
+   "age_days": 28,
+   "vol7": 9959752.3219528,
+   "close": 84357.2163053903,
+   "signals": [
+    "ignite",
+    "hlows",
+    "coil"
+   ],
+   "pools": 9
   },
   {
    "token": "0x20024e485c0b22b42855589700721b28320a7777",
@@ -225,22 +493,50 @@
    "symbol": "PLTR",
    "mcap": 2663866.2572488207,
    "age_days": 33,
-   "vol7": 2371765.11711199,
+   "vol7": 2912875.7330005583,
    "close": 189.901548872313,
    "signals": [
     "ignite",
     "hlows",
     "coil"
    ],
-   "pools": 1
+   "pools": 5
+  },
+  {
+   "token": "0xf014a3782e6979bd965376f6638d90914820ebff",
+   "symbol": "+",
+   "mcap": null,
+   "age_days": 15,
+   "vol7": 1906962.6293287294,
+   "close": 0.000463884586458347,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 4
   },
   {
    "token": "0x2cc0fac44b8252f6b10208b091aff2c94b4da77d",
    "symbol": "INJOH",
    "mcap": 1924693.0604676923,
    "age_days": 57,
-   "vol7": 1081942.8616868695,
+   "vol7": 1084373.1572862288,
    "close": 0.00203423028188368,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 2
+  },
+  {
+   "token": "0x727701f88f09fed71eb217bcea88b3f314cf7079",
+   "symbol": "GRID",
+   "mcap": null,
+   "age_days": 71,
+   "vol7": 766434.0904637086,
+   "close": 0.00201609329975406,
    "signals": [
     "dry",
     "ignite",
@@ -260,6 +556,19 @@
     "hlows"
    ],
    "pools": 1
+  },
+  {
+   "token": "0x116f00968269b7bfbad4109ce591d6e74c0601d4",
+   "symbol": "net",
+   "mcap": 166437.7243622059,
+   "age_days": 14,
+   "vol7": 737477.1830894208,
+   "close": 350.595912426765,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 2
   },
   {
    "token": "0x743acf789e0f5419f550323a2349732a61c15439",
@@ -293,13 +602,13 @@
    "symbol": "SUSHI",
    "mcap": 284873.48155770864,
    "age_days": 69,
-   "vol7": 469485.53366900625,
+   "vol7": 511380.3922671955,
    "close": 0.262521903157962,
    "signals": [
     "ignite",
     "hlows"
    ],
-   "pools": 2
+   "pools": 6
   },
   {
    "token": "0xa15cd06dd305269a0f48bebeb30aa3588fba7b32",
@@ -347,13 +656,13 @@
    "symbol": "ABYSS",
    "mcap": 507203.1134266805,
    "age_days": 15,
-   "vol7": 193600.5301418208,
+   "vol7": 193601.17428997284,
    "close": 5.07203113429708e-06,
    "signals": [
     "ignite",
     "hlows"
    ],
-   "pools": 1
+   "pools": 2
   },
   {
    "token": "0xb9d3824149ad8ac984153ceec91d5a2405d1fb95",
@@ -383,12 +692,53 @@
    "pools": 1
   },
   {
+   "token": "0x5cc8c219c916fe53ab012983a6093529b5071e18",
+   "symbol": "GEM",
+   "mcap": null,
+   "age_days": 25,
+   "vol7": 115620.03532557908,
+   "close": 3.11589206866974e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x4b1b3cb23e1cd1eb03eff3123b6ccd698629cd65",
+   "symbol": "RWAPACT",
+   "mcap": null,
+   "age_days": 21,
+   "vol7": 88881.57761623373,
+   "close": 8.29017662928422e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
    "token": "0x757c3a4263dac550a7bff6e9e123752d8c947d16",
    "symbol": "Community",
    "mcap": 112900.12084873216,
    "age_days": 49,
    "vol7": 74499.10672771858,
    "close": 0.000112900120808281,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x7bc5ff817462b8c8185fac5c8834f0561fc33f27",
+   "symbol": "STOCKSS",
+   "mcap": null,
+   "age_days": 18,
+   "vol7": 68571.00805076897,
+   "close": 1.64434511283994e-05,
    "signals": [
     "dry",
     "ignite",
@@ -411,6 +761,88 @@
    "pools": 1
   },
   {
+   "token": "0x7c53a483f59a1684680c666a84b7b1462c181e18",
+   "symbol": "GME",
+   "mcap": null,
+   "age_days": 16,
+   "vol7": 61289.20890208147,
+   "close": 4.22769928509138e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x7aaf96267808d06975bcb5785568a76a668c1e18",
+   "symbol": "DGAME",
+   "mcap": null,
+   "age_days": 17,
+   "vol7": 49986.96795184246,
+   "close": 2.53551469210387e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x9be49ff1ff653060f4839d227e4943acf8f09caa",
+   "symbol": "MEMER",
+   "mcap": 47968.64073484809,
+   "age_days": 62,
+   "vol7": 27208.12094807052,
+   "close": 4.7968640736944e-05,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x205b9d3feb2d34113081471fd57a0327d5521e18",
+   "symbol": "GME",
+   "mcap": null,
+   "age_days": 54,
+   "vol7": 24930.41833963699,
+   "close": 6.29345712361695e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x6ad433b5a1afbe652d3bd0f0c4b1dc61911dae06",
+   "symbol": "anon",
+   "mcap": 3755.580496677215,
+   "age_days": 62,
+   "vol7": 20889.824999229906,
+   "close": 3.75558049675612e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0xf1d8c7b86609135b5317df923d510466d48abb9a",
+   "symbol": "POPEY",
+   "mcap": null,
+   "age_days": 61,
+   "vol7": 20512.17932042793,
+   "close": 5.38304195956424e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
    "token": "0x6e7e0db14d23144ef3e78d3294aa408ac38427b8",
    "symbol": "BLEP",
    "mcap": 296842.61143259425,
@@ -419,6 +851,33 @@
    "close": 0.000296842611390986,
    "signals": [
     "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0xbcc948e70f1d5dcdc8986147257bf4b6c40105f1",
+   "symbol": "PAWSINU",
+   "mcap": 16986.17545,
+   "age_days": 52,
+   "vol7": 15072.517168924325,
+   "close": 1.69861754481238e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0xc42cf61c16aac797b991cf9c1ac8ae70ba74a286",
+   "symbol": "ROBINHOODS",
+   "mcap": null,
+   "age_days": 67,
+   "vol7": 9672.648445834402,
+   "close": 6.96107509340715e-06,
+   "signals": [
     "ignite",
     "hlows"
    ],
@@ -439,12 +898,53 @@
    "pools": 1
   },
   {
+   "token": "0x8c4e875b294404efaa44eef8ef4c42ef4b855201",
+   "symbol": "BILLIONS",
+   "mcap": 4221.24256935938,
+   "age_days": 22,
+   "vol7": 8388.504244035572,
+   "close": 4.22124256966256e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
    "token": "0xf202de51bb42a0073948b0971707d14c54ef5f44",
    "symbol": "PEEPS",
    "mcap": 288462.2182257535,
    "age_days": 71,
    "vol7": 7595.723359397756,
    "close": 0.000289076663639707,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0xa369baacf5f350a353b622cc00c3be9cf3c832f3",
+   "symbol": "PROMPTAI",
+   "mcap": 35843.22716,
+   "age_days": 39,
+   "vol7": 6980.01323018449,
+   "close": 3.58432271620856e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x534b0b770583acb2761d475b9300d5a2976c56f5",
+   "symbol": "NUCLEAR",
+   "mcap": 20279.738122644216,
+   "age_days": 64,
+   "vol7": 6640.313650684786,
+   "close": 2.0279738119511e-05,
    "signals": [
     "ignite",
     "hlows"
@@ -466,6 +966,118 @@
    "pools": 1
   },
   {
+   "token": "0x10dc3d3719b507e6bf3fc90c3d327d8590827777",
+   "symbol": "MEMESTOCK",
+   "mcap": 18215.925538834825,
+   "age_days": 79,
+   "vol7": 6216.122390196343,
+   "close": 1.82159255352574e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x01397109534e47d3742e794d3a610fa1c3158888",
+   "symbol": "NINEHOOD",
+   "mcap": 17961.716208196336,
+   "age_days": 74,
+   "vol7": 5171.815527820737,
+   "close": 1.796171620898e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x282f842a6e99c6d2f0574a5664400f650e47ea5a",
+   "symbol": "SQUID",
+   "mcap": 13501.391875280558,
+   "age_days": 37,
+   "vol7": 4676.5548272016995,
+   "close": 1.35013918783557e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x0ae4cab49b6f048f9c589a522620bebfc4ededc6",
+   "symbol": "CUPCAKE",
+   "mcap": 25753579813.47251,
+   "age_days": 21,
+   "vol7": 3016.6869378377937,
+   "close": 25.9419116796709,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x47c54fb66467944f9fbe9c6e57ec0b8bbf29869a",
+   "symbol": "SPAN",
+   "mcap": null,
+   "age_days": 70,
+   "vol7": 2180.420851368342,
+   "close": 7.16916220502318e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x0070b94fa05ab29226febccedf56711f88f48ccf",
+   "symbol": "OPEN",
+   "mcap": null,
+   "age_days": 40,
+   "vol7": 1619.826232800108,
+   "close": 9.7641490130902e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x7f3aecc694f298e0010f8a31ec49250506bb3b7c",
+   "symbol": "YAM",
+   "mcap": 14421.59386381378,
+   "age_days": 69,
+   "vol7": 909.7041363388641,
+   "close": 1.44215938688423e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x41a3ae7655f0568a61fec519475ebf060597e544",
+   "symbol": "FIRE",
+   "mcap": null,
+   "age_days": 66,
+   "vol7": 777.9913865905714,
+   "close": 6.25782668903201e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
    "token": "0x18137ac93ea911f3ac7e1ef14ca3c65188c0dc25",
    "symbol": "B6PW",
    "mcap": 182298.4944,
@@ -478,9 +1090,245 @@
     "hlows"
    ],
    "pools": 1
+  },
+  {
+   "token": "0x017e6c44c65ea986c2b3225cac6c9a87e1b06f7a",
+   "symbol": "GORILLA",
+   "mcap": 18153.55418,
+   "age_days": 59,
+   "vol7": 389.8693087993398,
+   "close": 1.81535541763814e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x68276253089c09312d50e3f0d18cc8f53622e401",
+   "symbol": "MEO1W",
+   "mcap": null,
+   "age_days": 18,
+   "vol7": 389.2959102635395,
+   "close": 5.24480751445384e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0xd69845e0589c8d59de25e7a885f9dcecaec95b69",
+   "symbol": "PIP",
+   "mcap": 7792.737845,
+   "age_days": 77,
+   "vol7": 207.22080859734922,
+   "close": 7.7927378453883e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x6267f7b182eee81f96c0d6b099263df4ccbce7c0",
+   "symbol": "STOCK",
+   "mcap": null,
+   "age_days": 65,
+   "vol7": 195.61843676853383,
+   "close": 3.8103764475652e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x5bd04748860d9f7f945728819ea339dc95412101",
+   "symbol": "AMD",
+   "mcap": 7306.025823,
+   "age_days": 24,
+   "vol7": 164.44571508157114,
+   "close": 7.30602582313553e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x2d9fc1eca8d3bd3700e3e45d92d61123f26e6e44",
+   "symbol": "VLAD",
+   "mcap": null,
+   "age_days": 42,
+   "vol7": 132.13057508403756,
+   "close": 4.16922583179262e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x6505358522db45ad44884f3fd58afbd20eb4381c",
+   "symbol": "RTR",
+   "mcap": null,
+   "age_days": 63,
+   "vol7": 62.5695866604868,
+   "close": 3.99495725665021e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0xfdecd67f265575cfd20285575e71cfd8758ab84c",
+   "symbol": "XYZ",
+   "mcap": 36956.17593128622,
+   "age_days": 19,
+   "vol7": 29.570022724084094,
+   "close": 3.69561759333942e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x812b1a3f57056e3e8a08fe1411e3e0f2f63c9cdf",
+   "symbol": "CA",
+   "mcap": null,
+   "age_days": 65,
+   "vol7": 29.231433440568775,
+   "close": 3.83966880861703e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x7699dfe0a53b4534d470cdfbe480e4d2fa0f4ae6",
+   "symbol": "MOHAMMED\u2060",
+   "mcap": null,
+   "age_days": 62,
+   "vol7": 20.165229003468216,
+   "close": 3.79726489307882e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x4198528f64f5dadeb2d79bc03b5473986010ed7d",
+   "symbol": "Puma",
+   "mcap": null,
+   "age_days": 65,
+   "vol7": 13.329298507288744,
+   "close": 3.69902311591505e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x2070c73621468d2c47f334601cfda93ba08fec87",
+   "symbol": "\u6731\u5b9d",
+   "mcap": null,
+   "age_days": 61,
+   "vol7": 7.80632492684987,
+   "close": 3.75981865407665e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x6fea92b802c0e469655dd7ff6a238a0dece8ffe5",
+   "symbol": "SBSECURITY",
+   "mcap": 26453.537547364005,
+   "age_days": 15,
+   "vol7": 7.13827505841684,
+   "close": 2.6453537547364e-05,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0xa1aceb8993b9b6d6987d0c06a2906262bd7610a0",
+   "symbol": "POOLS",
+   "mcap": 8287.709440757619,
+   "age_days": 52,
+   "vol7": 1.343891496490508,
+   "close": 8.28770944088979e-06,
+   "signals": [
+    "dry",
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x4c3da4e4dffe025bffce7f4ea04f2e0e7908a572",
+   "symbol": "FOMO",
+   "mcap": null,
+   "age_days": 62,
+   "vol7": 0.8457052498401533,
+   "close": 3.77932411529448e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0xcac87bfb0bbfc82ecc97540f655a0182b5792184",
+   "symbol": "RTROLL",
+   "mcap": null,
+   "age_days": 64,
+   "vol7": 0.4297529930374222,
+   "close": 4.59006871378602e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
+  },
+  {
+   "token": "0x2c5bbeb129c4e1134be81f7bab39d26656797d40",
+   "symbol": "Hi",
+   "mcap": null,
+   "age_days": 61,
+   "vol7": 0.04741954983256848,
+   "close": 3.70036826305507e-06,
+   "signals": [
+    "ignite",
+    "hlows"
+   ],
+   "pools": 1
   }
  ],
  "new": [
+  {
+   "token": "0xd81057fdf94ed006339ad33118b9c202c7e0b874",
+   "symbol": "KVRA",
+   "days": 7,
+   "created": "2026-09-21T02:44:06Z",
+   "vol7": 38177764.1330072,
+   "mcap": null
+  },
   {
    "token": "0xe0cd4e72769e7317891d1e49905878b7b14c67ac",
    "symbol": "SI",
@@ -504,6 +1352,14 @@
    "created": "2026-09-26T09:14:47Z",
    "vol7": 19673082.856555246,
    "mcap": 607302.6266133963
+  },
+  {
+   "token": "0x4d810d6d1b34eecd3f5529e8597234768e44bbda",
+   "symbol": "POCKA",
+   "days": 7,
+   "created": "2026-09-21T04:41:59Z",
+   "vol7": 17503196.794802822,
+   "mcap": null
   },
   {
    "token": "0xc261532bc770c2b4ea10f97f72328aa0fc51b0d0",
@@ -538,12 +1394,28 @@
    "mcap": 134124.96386515172
   },
   {
+   "token": "0x26ee3536441951b00c9bd3af51efd2c3b90d89a6",
+   "symbol": "AEVA",
+   "days": 2,
+   "created": "2026-09-26T00:33:28Z",
+   "vol7": 8952851.772352831,
+   "mcap": 2809.4286353893167
+  },
+  {
    "token": "0xe6200d65d66256f4a65d1b4177597f1f4b20e809",
    "symbol": "HYDX",
    "days": 2,
    "created": "2026-09-26T20:11:20Z",
    "vol7": 8141307.60544919,
    "mcap": 2738.951102
+  },
+  {
+   "token": "0xe99c8437b0b29325a4080b8c837ff4e5a6f9fc69",
+   "symbol": "ORBIO",
+   "days": 2,
+   "created": "2026-09-26T05:49:40Z",
+   "vol7": 8006199.028190656,
+   "mcap": 442067.6167124857
   },
   {
    "token": "0xf9a9da0cd0c155df2451acf02e922a5e5e4222e5",
@@ -568,6 +1440,14 @@
    "created": "2026-09-25T16:33:59Z",
    "vol7": 6875736.206171494,
    "mcap": 870234.4654642999
+  },
+  {
+   "token": "0x749216618ac66ea41ee4cabf5229d83d74f04586",
+   "symbol": "FOOMS",
+   "days": 4,
+   "created": "2026-09-24T18:33:07Z",
+   "vol7": 5683686.862040319,
+   "mcap": 51164.93753733635
   },
   {
    "token": "0xfa31d04462746aaa24bc7e5626403e09e4b106ec",
@@ -602,6 +1482,14 @@
    "mcap": 8578726.482281946
   },
   {
+   "token": "0xcd0b3b43d8632ce600a13e4519754c138998a93c",
+   "symbol": "JOLLY",
+   "days": 5,
+   "created": "2026-09-23T05:25:06Z",
+   "vol7": 5009062.759101514,
+   "mcap": 133000.43624181638
+  },
+  {
    "token": "0x39679b59289cce7c7f6e0feacdf39a1e543de751",
    "symbol": "CREDITS",
    "days": 5,
@@ -622,7 +1510,7 @@
    "symbol": "QUANTA",
    "days": 5,
    "created": "2026-09-23T19:17:09Z",
-   "vol7": 4132325.6090348293,
+   "vol7": 4201229.116520913,
    "mcap": 137975.39774237253
   },
   {
@@ -634,12 +1522,52 @@
    "mcap": 2965.956845
   },
   {
+   "token": "0xc50d312d4f567d1698d3cc21b66efc4725786802",
+   "symbol": "HACHI",
+   "days": 7,
+   "created": "2026-09-21T01:29:35Z",
+   "vol7": 3993995.0232922523,
+   "mcap": null
+  },
+  {
+   "token": "0xe6514ec91d51d51ba57f767878c134e16c776c5a",
+   "symbol": "CPU",
+   "days": 1,
+   "created": "2026-09-27T10:31:27Z",
+   "vol7": 3985379.165155186,
+   "mcap": 20045.89992
+  },
+  {
+   "token": "0x6977777869f3192e378135ee50ee9180c717a80f",
+   "symbol": "Buck",
+   "days": 7,
+   "created": "2026-09-21T05:46:59Z",
+   "vol7": 3924940.033435828,
+   "mcap": null
+  },
+  {
    "token": "0xaa5751ff3fb61e613993b2eb4eab1fce017081fc",
    "symbol": "HYDX",
    "days": 4,
    "created": "2026-09-24T17:45:54Z",
-   "vol7": 3586211.6893295655,
+   "vol7": 3708981.517595289,
    "mcap": 1541737.0605190415
+  },
+  {
+   "token": "0x41ca1a94f5262c4a84fafdaa23b9499aa5b9fcd0",
+   "symbol": "DEBT",
+   "days": 2,
+   "created": "2026-09-26T14:33:04Z",
+   "vol7": 3675613.342418267,
+   "mcap": 133888.93383133697
+  },
+  {
+   "token": "0xd5d26bac627e8d9b67517be63dd418acb3a2d8e2",
+   "symbol": "TALIS",
+   "days": 3,
+   "created": "2026-09-25T14:37:30Z",
+   "vol7": 3652780.66473546,
+   "mcap": 156436.80782048823
   },
   {
    "token": "0x923d915ddf0fe60c04addac68e13f0d5af03164f",
@@ -658,20 +1586,20 @@
    "mcap": 1235613.145238815
   },
   {
-   "token": "0xd5d26bac627e8d9b67517be63dd418acb3a2d8e2",
-   "symbol": "TALIS",
-   "days": 3,
-   "created": "2026-09-25T14:37:30Z",
-   "vol7": 3333792.5020084297,
-   "mcap": 156436.80782048823
-  },
-  {
    "token": "0x28da843c0223990fb57701319b30804b89eff111",
    "symbol": "GAS",
    "days": 5,
    "created": "2026-09-23T00:27:29Z",
    "vol7": 3261534.1011946136,
    "mcap": 821066.6608978554
+  },
+  {
+   "token": "0xd797a7dbebba1e1056c9de1aa49379c728fecbf8",
+   "symbol": "MEME",
+   "days": 2,
+   "created": "2026-09-26T14:49:37Z",
+   "vol7": 3241401.065218915,
+   "mcap": 146648.38649779756
   },
   {
    "token": "0xd36b68e9f384bd2b94baf49c5e084b3b88fa1e18",
@@ -682,20 +1610,12 @@
    "mcap": 2015685.9860497694
   },
   {
-   "token": "0x41ca1a94f5262c4a84fafdaa23b9499aa5b9fcd0",
-   "symbol": "DEBT",
-   "days": 2,
-   "created": "2026-09-26T14:33:04Z",
-   "vol7": 3106897.973967659,
-   "mcap": 133888.93383133697
-  },
-  {
-   "token": "0xd797a7dbebba1e1056c9de1aa49379c728fecbf8",
-   "symbol": "MEME",
-   "days": 2,
-   "created": "2026-09-26T14:49:37Z",
-   "vol7": 3071818.3492505546,
-   "mcap": 146648.38649779756
+   "token": "0x1f8831066c9b39077bafd0b92045e6afc6eb1de9",
+   "symbol": "PUNKS",
+   "days": 7,
+   "created": "2026-09-21T03:43:49Z",
+   "vol7": 3033946.9614025974,
+   "mcap": 83530.43305545828
   },
   {
    "token": "0x7f003e06f62db24459be147be4bfa3657cc6f3b6",
@@ -706,12 +1626,12 @@
    "mcap": 8652.286674
   },
   {
-   "token": "0x1f8831066c9b39077bafd0b92045e6afc6eb1de9",
-   "symbol": "PUNKS",
+   "token": "0x72633b32e5cea8379fa93c45b4c8377dfc2e22d9",
+   "symbol": "+",
    "days": 7,
-   "created": "2026-09-21T03:43:49Z",
-   "vol7": 2934563.057946224,
-   "mcap": 83530.43305545828
+   "created": "2026-09-21T05:57:09Z",
+   "vol7": 2912886.162183695,
+   "mcap": null
   },
   {
    "token": "0x04263d37be40d4cb403bd63f9e04764d6b176d48",
@@ -728,6 +1648,14 @@
    "created": "2026-09-27T04:15:11Z",
    "vol7": 2812009.1099633425,
    "mcap": 12348.55286
+  },
+  {
+   "token": "0xa86b0c8d8c9856c51b887491c5b901b49f45ae05",
+   "symbol": "DOGE2",
+   "days": 2,
+   "created": "2026-09-26T14:07:06Z",
+   "vol7": 2778205.6803622125,
+   "mcap": 9041.790059
   },
   {
    "token": "0x5a7e7d32bbcb3fc42f4ba95bb9d490e61933b06d",
@@ -762,6 +1690,38 @@
    "mcap": 91265.11858784505
   },
   {
+   "token": "0xd617513a8d35efab7d8d28179e2b1098dec94605",
+   "symbol": "JEANHOOD",
+   "days": 1,
+   "created": "2026-09-27T12:55:41Z",
+   "vol7": 2534761.6890344513,
+   "mcap": 2538.333660932816
+  },
+  {
+   "token": "0x2b5fbd429872e94d3555183016c2afe558038ecf",
+   "symbol": "ERRAND",
+   "days": 1,
+   "created": "2026-09-27T11:15:09Z",
+   "vol7": 2476043.291365527,
+   "mcap": 66573.89075484214
+  },
+  {
+   "token": "0xe5395dc21ea46b5e16209c4deaba97e40f781f1c",
+   "symbol": "SI",
+   "days": 7,
+   "created": "2026-09-21T02:46:50Z",
+   "vol7": 2427270.311657693,
+   "mcap": null
+  },
+  {
+   "token": "0x6dce423fd8e7ebb5fe2af82e43a8274665e63835",
+   "symbol": "NEKOCOLN",
+   "days": 2,
+   "created": "2026-09-26T18:44:07Z",
+   "vol7": 2405463.541024836,
+   "mcap": 86526.46283
+  },
+  {
    "token": "0xcc67513c662c9457e951f144c82862e6ee2a308c",
    "symbol": "FROGES",
    "days": 2,
@@ -776,6 +1736,14 @@
    "created": "2026-09-27T11:25:47Z",
    "vol7": 2237888.879869701,
    "mcap": 2476.105104
+  },
+  {
+   "token": "0xf6e63db21ae8d780b26000d2cbe20802e07a0987",
+   "symbol": "DAWN",
+   "days": 5,
+   "created": "2026-09-23T03:45:46Z",
+   "vol7": 2185533.73354357,
+   "mcap": 11393.20478377873
   },
   {
    "token": "0xeeb9137c2b672569ab7a85b167c3e35f49a4b1cc",
@@ -802,6 +1770,38 @@
    "mcap": 13503.478850565833
   },
   {
+   "token": "0xce565efdc8527d54a147195a9f46ac559b46b5c2",
+   "symbol": "ERRAND",
+   "days": 1,
+   "created": "2026-09-27T11:34:53Z",
+   "vol7": 2114632.060954762,
+   "mcap": 518852.3734
+  },
+  {
+   "token": "0x842b71f7edeee50dadca84a51185e61828d644bc",
+   "symbol": "BIDEN",
+   "days": 2,
+   "created": "2026-09-26T19:26:12Z",
+   "vol7": 2113025.603807972,
+   "mcap": 98763.28239
+  },
+  {
+   "token": "0xa67a3eebf0ae8a935848bb47993b9a6d68751a23",
+   "symbol": "Protocol",
+   "days": 3,
+   "created": "2026-09-25T06:41:31Z",
+   "vol7": 2047963.843763287,
+   "mcap": 35894.14957473803
+  },
+  {
+   "token": "0x674ffb50dba9ee1505ff319fc7817731ce79137c",
+   "symbol": "+++++",
+   "days": 7,
+   "created": "2026-09-21T03:49:23Z",
+   "vol7": 2045867.7292515899,
+   "mcap": null
+  },
+  {
    "token": "0x314ad0f11422842d28b4f950a64cd40fafb029fd",
    "symbol": "PURSER",
    "days": 6,
@@ -826,6 +1826,14 @@
    "mcap": 11054.784
   },
   {
+   "token": "0xe8729dc9dca85167e06b7e9c66a58b22457c5f30",
+   "symbol": "AEVA",
+   "days": 3,
+   "created": "2026-09-25T15:56:07Z",
+   "vol7": 2011529.9159097148,
+   "mcap": 795352.8107076476
+  },
+  {
    "token": "0x99f2e3420c1071bff35b8aef98a1339ea823ce24",
    "symbol": "RH",
    "days": 6,
@@ -834,12 +1842,28 @@
    "mcap": 593312.6480118145
   },
   {
-   "token": "0xe8729dc9dca85167e06b7e9c66a58b22457c5f30",
-   "symbol": "AEVA",
-   "days": 3,
-   "created": "2026-09-25T15:56:07Z",
-   "vol7": 1896906.295877198,
-   "mcap": 795352.8107076476
+   "token": "0x4e26057ed35384fc317139b8f56c9803b3e29d24",
+   "symbol": "CASHED",
+   "days": 2,
+   "created": "2026-09-26T20:53:42Z",
+   "vol7": 1923581.1542607443,
+   "mcap": 287508.92
+  },
+  {
+   "token": "0x4ed6288c8053a00ecb78815593782e88ac24c088",
+   "symbol": "tech/opt",
+   "days": 2,
+   "created": "2026-09-26T15:03:21Z",
+   "vol7": 1891356.5692045619,
+   "mcap": 13542.29295
+  },
+  {
+   "token": "0x6321652a74d131db483bff0ec88b98b523e283b8",
+   "symbol": "SNOW",
+   "days": 7,
+   "created": "2026-09-21T07:10:17Z",
+   "vol7": 1849303.6099117233,
+   "mcap": null
   },
   {
    "token": "0x80a4af02e910e02b815e389a12ce69ba882929b0",
@@ -856,6 +1880,22 @@
    "created": "2026-09-23T20:07:22Z",
    "vol7": 1713281.589411538,
    "mcap": 276004.1590034105
+  },
+  {
+   "token": "0xaddb11c1dbdbbe404529c24e658bea0488aae5de",
+   "symbol": "WICKR",
+   "days": 5,
+   "created": "2026-09-23T17:00:05Z",
+   "vol7": 1708334.9358245223,
+   "mcap": 44926.6420881889
+  },
+  {
+   "token": "0xf2e33912058d267a4b5efd9a27a4e90521d6389a",
+   "symbol": "PAIDBOT",
+   "days": 2,
+   "created": "2026-09-26T21:40:06Z",
+   "vol7": 1687300.2195851903,
+   "mcap": 130978.05879093056
   },
   {
    "token": "0x756ec01256e6d652bacaa7d98b03fd8a48991e18",
@@ -882,12 +1922,28 @@
    "mcap": 774662.9701921428
   },
   {
+   "token": "0x70d29303be613e667edc223416245bccd8a99ba9",
+   "symbol": "The Mutual Fun",
+   "days": 2,
+   "created": "2026-09-26T20:30:33Z",
+   "vol7": 1575792.1794309036,
+   "mcap": 117178.5739
+  },
+  {
    "token": "0x4faaadc7f1cb0138f0d640cefc309d169718f6b4",
    "symbol": "a/tism",
    "days": 2,
    "created": "2026-09-26T23:36:38Z",
    "vol7": 1570442.7801143127,
    "mcap": 13618.11363
+  },
+  {
+   "token": "0x7325305929cb804d2fc394120622ae73afc804eb",
+   "symbol": "SW",
+   "days": 4,
+   "created": "2026-09-24T20:48:40Z",
+   "vol7": 1570096.9790635137,
+   "mcap": 513647.0758807982
   },
   {
    "token": "0x86542faee4265bdb36243ef687bccfccabfbedb8",
@@ -898,6 +1954,22 @@
    "mcap": 13548.2823
   },
   {
+   "token": "0x5015a792e2777c971e6bbe318f5cf3b312ef3190",
+   "symbol": "Astropika",
+   "days": 7,
+   "created": "2026-09-21T02:12:46Z",
+   "vol7": 1548327.285464382,
+   "mcap": null
+  },
+  {
+   "token": "0xdd6536545ae510f009ce0d91620ab4f09f869aaf",
+   "symbol": "UNIPCS",
+   "days": 2,
+   "created": "2026-09-26T13:11:50Z",
+   "vol7": 1544587.0149209492,
+   "mcap": 19020.59283201696
+  },
+  {
    "token": "0x197c5e23124a5c1382dbeb19596e285ab3b71e6c",
    "symbol": "Tinkerbelle",
    "days": 1,
@@ -906,20 +1978,36 @@
    "mcap": 12217.32678
   },
   {
-   "token": "0x7325305929cb804d2fc394120622ae73afc804eb",
-   "symbol": "SW",
-   "days": 4,
-   "created": "2026-09-24T20:48:40Z",
-   "vol7": 1486680.3584148556,
-   "mcap": 513647.0758807982
-  },
-  {
    "token": "0x060a0600abe74166e629f6749de284910ff8d8a3",
    "symbol": "RVN",
    "days": 6,
    "created": "2026-09-22T20:55:40Z",
    "vol7": 1441372.3137450723,
    "mcap": 284661.4858171947
+  },
+  {
+   "token": "0x9dff0da886c7204480fa41ff546673d4cd1cda97",
+   "symbol": "HYPERCAT",
+   "days": 4,
+   "created": "2026-09-24T09:04:08Z",
+   "vol7": 1425410.7877474462,
+   "mcap": 402400.4576
+  },
+  {
+   "token": "0x88fe31041dff071325c1e92fb7303cfe49d0e525",
+   "symbol": "OPENAIAGENT",
+   "days": 2,
+   "created": "2026-09-26T21:42:43Z",
+   "vol7": 1412926.5031018578,
+   "mcap": 655966.343
+  },
+  {
+   "token": "0x5dd505c64c1a1f2b70345d85eb0338b4231f414b",
+   "symbol": "BUBBLES",
+   "days": 2,
+   "created": "2026-09-26T17:41:01Z",
+   "vol7": 1401690.5132332046,
+   "mcap": 10260.430968236362
   },
   {
    "token": "0xe59fd28f51590533b0068f3ba7d7206fbc746947",
@@ -938,12 +2026,28 @@
    "mcap": 1311655.288370878
   },
   {
+   "token": "0x9f5a8b3a0ddec4412ab11d8d1e71c77e9de7d69a",
+   "symbol": "Pray",
+   "days": 7,
+   "created": "2026-09-21T01:03:16Z",
+   "vol7": 1345630.0792604608,
+   "mcap": null
+  },
+  {
    "token": "0x0379e228f6887c6f18bf394042ecaf81b308cb2e",
    "symbol": "MUSEGOD",
    "days": 5,
    "created": "2026-09-23T18:15:40Z",
    "vol7": 1304702.94999348,
    "mcap": 170673.43554839294
+  },
+  {
+   "token": "0x4dfd520f1fc2191adf31e8f016a82efd5c06e02e",
+   "symbol": "\u22c8CAT",
+   "days": 1,
+   "created": "2026-09-27T09:08:46Z",
+   "vol7": 1289630.5191165558,
+   "mcap": 74749.3527
   },
   {
    "token": "0xf30fb4d48aab1e71228d1060fa0eb11f8a25aacb",
@@ -962,6 +2066,14 @@
    "mcap": 224331.3055619986
   },
   {
+   "token": "0x81d31d40aca12f671d3a4db44516d84121463cf3",
+   "symbol": "INFERNOAI",
+   "days": 2,
+   "created": "2026-09-26T17:03:01Z",
+   "vol7": 1265502.2591299438,
+   "mcap": 52388.1093831562
+  },
+  {
    "token": "0x6b0d02d305b547a05ab874c7fd6acb820bb71e18",
    "symbol": "JIZZCOIN",
    "days": 6,
@@ -970,12 +2082,52 @@
    "mcap": 42298.94645787587
   },
   {
-   "token": "0x81d31d40aca12f671d3a4db44516d84121463cf3",
-   "symbol": "INFERNOAI",
+   "token": "0x9720db7cd017650ae50c2a86c2023fe4d2caad8f",
+   "symbol": "AURELIUS",
    "days": 2,
-   "created": "2026-09-26T17:03:01Z",
-   "vol7": 1243593.0673125,
-   "mcap": 52388.1093831562
+   "created": "2026-09-26T13:11:40Z",
+   "vol7": 1253713.109106569,
+   "mcap": 35420.97965869346
+  },
+  {
+   "token": "0x95f2de57d033d27ffbf6f8f0d39b0d4f5f7f30bb",
+   "symbol": "MANSA",
+   "days": 1,
+   "created": "2026-09-27T08:38:37Z",
+   "vol7": 1249164.5416691264,
+   "mcap": 66699.67879
+  },
+  {
+   "token": "0x3200bc1f59cff1d912de62e7d544022a43b8e593",
+   "symbol": "NIVI",
+   "days": 1,
+   "created": "2026-09-27T11:01:36Z",
+   "vol7": 1240706.8877002422,
+   "mcap": 182430.5151
+  },
+  {
+   "token": "0x3429ddc7b45830c4d66c1fdf521967d8dc901cbf",
+   "symbol": "RSTOCK",
+   "days": 7,
+   "created": "2026-09-21T06:53:02Z",
+   "vol7": 1198781.3722267428,
+   "mcap": null
+  },
+  {
+   "token": "0x41756128ddc5806a26fbcd798c26cb7d3ce06305",
+   "symbol": "MUSHIMMER",
+   "days": 1,
+   "created": "2026-09-27T06:38:53Z",
+   "vol7": 1189609.7429420308,
+   "mcap": 294974.452
+  },
+  {
+   "token": "0xa26718f651857448d4d1819085375855b9f9bbaf",
+   "symbol": "HUNBIKN",
+   "days": 7,
+   "created": "2026-09-21T05:34:03Z",
+   "vol7": 1189160.901662128,
+   "mcap": null
   },
   {
    "token": "0x65d7e1d00867d1a659c2f190cc40637df3ed1e18",
@@ -986,12 +2138,28 @@
    "mcap": 225825.3222718132
   },
   {
+   "token": "0x261d0a2633b2b9ac01b2f4b1571a5416d001a1a5",
+   "symbol": "PROOF",
+   "days": 2,
+   "created": "2026-09-26T21:48:29Z",
+   "vol7": 1179931.2855595194,
+   "mcap": 226911.5729
+  },
+  {
    "token": "0x89814ca6a4656a3e8a5025cf33cd59b23fa08ba3",
    "symbol": "Euler",
    "days": 5,
    "created": "2026-09-23T18:09:24Z",
    "vol7": 1166962.9050123247,
    "mcap": 69020.17054833502
+  },
+  {
+   "token": "0x4b45c6fb50c742ac8ea413e80a473cf3375998bb",
+   "symbol": "Sift",
+   "days": 2,
+   "created": "2026-09-26T20:10:57Z",
+   "vol7": 1166488.281553792,
+   "mcap": 8587.700445
   },
   {
    "token": "0x45593d952d9a83ba7f100ec4f874f5905d854eea",
@@ -1002,12 +2170,28 @@
    "mcap": 360676.36000386154
   },
   {
+   "token": "0x893694efb3709466b538d083d2d1b92b5807e5c2",
+   "symbol": "Stamp",
+   "days": 7,
+   "created": "2026-09-21T04:54:42Z",
+   "vol7": 1162627.034554463,
+   "mcap": null
+  },
+  {
    "token": "0xa03ee4ca463878a5eda551b064a02b74ef654377",
    "symbol": "ORDESK",
    "days": 1,
    "created": "2026-09-27T15:44:09Z",
    "vol7": 1155925.9732272024,
    "mcap": 680458.7301030924
+  },
+  {
+   "token": "0x912efb6ff668c886f769d26dba266b496c302271",
+   "symbol": "Onhand",
+   "days": 2,
+   "created": "2026-09-26T18:26:24Z",
+   "vol7": 1147932.0784352063,
+   "mcap": 8689.864204
   },
   {
    "token": "0x41f7acdf4955ec71c001768d83f12cf4d04200a4",
@@ -1018,12 +2202,60 @@
    "mcap": 10523.438887923001
   },
   {
+   "token": "0xd2e8077771e64588b0218525dd44bc44416cbc2e",
+   "symbol": "DEED",
+   "days": 7,
+   "created": "2026-09-21T01:32:17Z",
+   "vol7": 1146342.9447248345,
+   "mcap": null
+  },
+  {
+   "token": "0xcfba7288b1c0409f4007821b91580338ab6959f4",
+   "symbol": "BILLIONS",
+   "days": 2,
+   "created": "2026-09-26T20:33:27Z",
+   "vol7": 1139127.7654546115,
+   "mcap": 13517.44859
+  },
+  {
+   "token": "0x0b4276b22303a666367ce2d827912d553f6b0c8c",
+   "symbol": "T/ACC",
+   "days": 2,
+   "created": "2026-09-26T17:53:46Z",
+   "vol7": 1128409.3922874876,
+   "mcap": 13673.20004
+  },
+  {
    "token": "0xdce15944706cacc34326f4cfd10a9b8253126f3c",
    "symbol": "zc",
    "days": 1,
    "created": "2026-09-27T14:08:41Z",
    "vol7": 1120027.9584860813,
    "mcap": 203374.01501824782
+  },
+  {
+   "token": "0xd3384371c56fb9daf009d2289b8df4e8323fdc05",
+   "symbol": "COLLECT",
+   "days": 3,
+   "created": "2026-09-25T13:03:34Z",
+   "vol7": 1100897.5980127053,
+   "mcap": 453724.0083
+  },
+  {
+   "token": "0xaca07fe3bc5ff3e7501ca1dccfcd937fd710680d",
+   "symbol": "LABRAT",
+   "days": 4,
+   "created": "2026-09-24T21:22:16Z",
+   "vol7": 1099887.7585736834,
+   "mcap": 58806.230897727895
+  },
+  {
+   "token": "0xb712b60cf75ae3c940d7a689205b6614191ff562",
+   "symbol": "ROBIN",
+   "days": 2,
+   "created": "2026-09-26T21:22:58Z",
+   "vol7": 1083869.273765656,
+   "mcap": 2545.6804158298064
   },
   {
    "token": "0xf553178f864abed95acd723720986c7301e44fc7",
@@ -1034,12 +2266,28 @@
    "mcap": 514518.37165253557
   },
   {
+   "token": "0x09b3a79cd6ceb1264ec6279d860737736099c84c",
+   "symbol": "SATURNCOIN",
+   "days": 3,
+   "created": "2026-09-25T16:18:55Z",
+   "vol7": 1069064.2976762075,
+   "mcap": 34795.66836900089
+  },
+  {
    "token": "0xfad17d7cc41d9c9ca4a459da798a4446dd217974",
    "symbol": "POTATCHI",
    "days": 1,
    "created": "2026-09-27T07:49:42Z",
    "vol7": 1039231.7584744823,
    "mcap": 919711.376894447
+  },
+  {
+   "token": "0xa21d36465dffda78b6c2f23ca20a56aff49b9ee0",
+   "symbol": "IS",
+   "days": 7,
+   "created": "2026-09-21T07:27:57Z",
+   "vol7": 1024042.6835323113,
+   "mcap": null
   },
   {
    "token": "0x14234588ebf2e8cdd8e95baa518bca3ba29a1e18",
@@ -1050,12 +2298,44 @@
    "mcap": 31054.19833227351
   },
   {
+   "token": "0x6b74af5b0a14d0aaaaa58dc712178abc395bc05f",
+   "symbol": "DEBT",
+   "days": 2,
+   "created": "2026-09-26T15:59:45Z",
+   "vol7": 1013266.0847754088,
+   "mcap": 242243.5725
+  },
+  {
+   "token": "0x8132f4a899766c31f70d46e8efd2a5fc5b372715",
+   "symbol": "Randomcoin",
+   "days": 1,
+   "created": "2026-09-27T00:10:47Z",
+   "vol7": 993934.5738043952,
+   "mcap": 8114.731334055255
+  },
+  {
+   "token": "0x3416158e52f8b5177a665fd5631129e20063f9e2",
+   "symbol": "BELLE",
+   "days": 1,
+   "created": "2026-09-27T06:01:35Z",
+   "vol7": 993049.2627672688,
+   "mcap": 120979.91790005479
+  },
+  {
    "token": "0x250f720fafeceedaedf0578ac84aa2d1c2381e18",
    "symbol": "MICROCHIMP",
    "days": 3,
    "created": "2026-09-25T18:02:09Z",
    "vol7": 983832.0417383115,
    "mcap": 43213.93830368752
+  },
+  {
+   "token": "0x7a6e3ff412bdedfbfdacf585bbeae8094d6ddae7",
+   "symbol": "ROBINCAT",
+   "days": 1,
+   "created": "2026-09-27T09:05:17Z",
+   "vol7": 981440.5996898676,
+   "mcap": 205884.572
   },
   {
    "token": "0x8a773c2c56f841d527725bc45734ee25cc15d62f",
@@ -1074,12 +2354,68 @@
    "mcap": 313855.6308773924
   },
   {
+   "token": "0x40e1a49553ce67058fb33c2fe1446c7e0ee0038f",
+   "symbol": "PEARCAT",
+   "days": 3,
+   "created": "2026-09-25T01:31:17Z",
+   "vol7": 949365.9843677947,
+   "mcap": 34753.041131771744
+  },
+  {
+   "token": "0xe6b6689110213c80b0ab49f287d43c89d0ab8405",
+   "symbol": "o",
+   "days": 2,
+   "created": "2026-09-26T20:58:05Z",
+   "vol7": 948066.2477627937,
+   "mcap": 9735.788989
+  },
+  {
    "token": "0x7a5009127fb7c594ee2aacfb9c16e972f7809e5a",
    "symbol": "CERTIC",
    "days": 1,
    "created": "2026-09-27T13:55:51Z",
    "vol7": 945645.1862433379,
    "mcap": 286957.06373967556
+  },
+  {
+   "token": "0x9411673acad2ff68810713cbc04e029c8d636fe6",
+   "symbol": "CATWIFFEATHER",
+   "days": 7,
+   "created": "2026-09-21T13:31:21Z",
+   "vol7": 945175.8714371055,
+   "mcap": 50004.279294384876
+  },
+  {
+   "token": "0x430a8b3664e864962367ece80e44604d1cfba9b0",
+   "symbol": "ILY",
+   "days": 7,
+   "created": "2026-09-21T02:38:43Z",
+   "vol7": 911900.7408816118,
+   "mcap": null
+  },
+  {
+   "token": "0x55f93a15efd64e4a8c731cb8ec66661c76c4784c",
+   "symbol": "tinycat",
+   "days": 2,
+   "created": "2026-09-26T16:24:41Z",
+   "vol7": 902128.9862234943,
+   "mcap": 159627.7241
+  },
+  {
+   "token": "0x27489e7d25b70787b55e917456ae56930412cb9e",
+   "symbol": "PUNKS",
+   "days": 7,
+   "created": "2026-09-21T03:45:14Z",
+   "vol7": 883469.2919612974,
+   "mcap": null
+  },
+  {
+   "token": "0x5d2512992c300a86f6a38664963855a9eda48888",
+   "symbol": "HOOD Summit '26",
+   "days": 1,
+   "created": "2026-09-27T06:58:42Z",
+   "vol7": 863660.6966819579,
+   "mcap": 175514.4321
   },
   {
    "token": "0x32dae312abe8f6fdb782907b85edbc90d2e74b02",
@@ -1098,12 +2434,60 @@
    "mcap": 1364072.5837000462
   },
   {
+   "token": "0x0271cc806b4bd0282abf8beb1dcb0e797fec2293",
+   "symbol": "LITE",
+   "days": 4,
+   "created": "2026-09-24T09:07:10Z",
+   "vol7": 839730.9386069864,
+   "mcap": 30899.31510591485
+  },
+  {
+   "token": "0x42440bb09f331676f498e4296efe6044216b69c0",
+   "symbol": "PRP",
+   "days": 6,
+   "created": "2026-09-22T09:31:31Z",
+   "vol7": 837370.8907797006,
+   "mcap": 57748.42926172451
+  },
+  {
    "token": "0xa202af885a0f6a6e3fe2a3a5981448b44ae6a4c8",
    "symbol": "POKEGRASS",
    "days": 3,
    "created": "2026-09-25T01:16:01Z",
    "vol7": 834857.7291279542,
    "mcap": 129379.47312154711
+  },
+  {
+   "token": "0xb0725715540c071c72205808ee36440a70e5d295",
+   "symbol": "ZKS",
+   "days": 1,
+   "created": "2026-09-27T12:19:39Z",
+   "vol7": 832661.7919653757,
+   "mcap": 453982.0221
+  },
+  {
+   "token": "0xa4f1d0e1693a218c2a9c97965f7de59aa8c03ddf",
+   "symbol": "neko",
+   "days": 2,
+   "created": "2026-09-26T19:04:11Z",
+   "vol7": 832195.3322706713,
+   "mcap": 14775.98385
+  },
+  {
+   "token": "0x77d4b10dbf97f0de7642e1e84c3ef9d84bd8225c",
+   "symbol": "JACKJACK",
+   "days": 7,
+   "created": "2026-09-21T00:40:22Z",
+   "vol7": 816078.4740802251,
+   "mcap": null
+  },
+  {
+   "token": "0x35fac68d9b2145fb11763895d69a030d4aa7210d",
+   "symbol": "TERMINATOR",
+   "days": 7,
+   "created": "2026-09-21T00:50:54Z",
+   "vol7": 810335.1941024337,
+   "mcap": null
   },
   {
    "token": "0x4e1f4f48934631b1de38b480c58de3b2e2e75a61",
@@ -1122,12 +2506,36 @@
    "mcap": 27570.475566223824
   },
   {
+   "token": "0x74704352600bfd2d9cf29317c58c565de68872f2",
+   "symbol": "ILY",
+   "days": 7,
+   "created": "2026-09-21T02:52:07Z",
+   "vol7": 780214.7915867026,
+   "mcap": null
+  },
+  {
+   "token": "0x637391e179673d47fdbcf1f880f594bc5d734024",
+   "symbol": "401K",
+   "days": 2,
+   "created": "2026-09-26T16:25:08Z",
+   "vol7": 777467.1282655564,
+   "mcap": 9733.822115441053
+  },
+  {
    "token": "0xf0b6c137a803aaa5dba0bd3fe785c012d8c77fdc",
    "symbol": "MERID",
    "days": 2,
    "created": "2026-09-26T15:08:30Z",
    "vol7": 773325.4859636361,
    "mcap": 38643.52012996438
+  },
+  {
+   "token": "0xbdd8c00fe85bb3fc4424c8af036892ebfaa50448",
+   "symbol": "PUNKS",
+   "days": 7,
+   "created": "2026-09-21T05:05:31Z",
+   "vol7": 773158.1732821591,
+   "mcap": null
   },
   {
    "token": "0x968be0c1a394bf1ce239e3b40909ec0f9d4f5583",
@@ -1154,12 +2562,36 @@
    "mcap": 144561.8574586161
   },
   {
+   "token": "0x69dc2430f23b02c858c366cd507d6662d608a6db",
+   "symbol": "ALC",
+   "days": 2,
+   "created": "2026-09-26T21:59:29Z",
+   "vol7": 721148.0850527362,
+   "mcap": 30214.43633
+  },
+  {
+   "token": "0x0a58a2cfebead61af0554ebb460a85e9bb553387",
+   "symbol": "\u5bcc\u8d35",
+   "days": 3,
+   "created": "2026-09-25T10:35:36Z",
+   "vol7": 716999.6734673211,
+   "mcap": 309114.8292
+  },
+  {
    "token": "0x4855024b676c8c5779c836e35f469c462bfb7f4b",
    "symbol": "TRION",
    "days": 5,
    "created": "2026-09-23T18:22:03Z",
    "vol7": 716013.7386992698,
    "mcap": 134634.55497379715
+  },
+  {
+   "token": "0x4c6c67ed5b58c3524507233b11e9a5b77e87c5af",
+   "symbol": "ERRAND",
+   "days": 1,
+   "created": "2026-09-27T11:16:57Z",
+   "vol7": 708113.9795521821,
+   "mcap": 244612.92666697886
   },
   {
    "token": "0x368580343a637b8b91d27c8a8be124f534329a30",
@@ -1170,12 +2602,44 @@
    "mcap": 831173.6527405739
   },
   {
+   "token": "0x878e808704702e6927f91a88b5c4600498152868",
+   "symbol": "+++++",
+   "days": 7,
+   "created": "2026-09-21T03:18:46Z",
+   "vol7": 702255.7448203291,
+   "mcap": null
+  },
+  {
+   "token": "0xf53914048905a15ce9a74868b9acc61ea5fcdfbd",
+   "symbol": "OPENPAD",
+   "days": 3,
+   "created": "2026-09-25T22:06:25Z",
+   "vol7": 694215.4382793526,
+   "mcap": 31075.320287557584
+  },
+  {
+   "token": "0x6a706579fe0dbf2801b639bd5e26265d9a58c4c4",
+   "symbol": "buducca",
+   "days": 2,
+   "created": "2026-09-26T18:03:46Z",
+   "vol7": 690970.2261690898,
+   "mcap": 32993.01425
+  },
+  {
    "token": "0x4da3916d3ae6feece32ec8a2c4856d4abeb41bfd",
    "symbol": "SCROOGE",
    "days": 2,
    "created": "2026-09-26T16:52:08Z",
-   "vol7": 680858.6099582256,
+   "vol7": 689700.4342531834,
    "mcap": 402128.86941253743
+  },
+  {
+   "token": "0x6c673ca3d3212ddd1ba355f50631c03a1887c741",
+   "symbol": "MANSA",
+   "days": 1,
+   "created": "2026-09-27T07:10:51Z",
+   "vol7": 679027.9749317869,
+   "mcap": 27788.339171235708
   },
   {
    "token": "0xc933111439338ebfe3eccbb736dd39f24af1356d",
@@ -1186,6 +2650,14 @@
    "mcap": 92062.16905881003
   },
   {
+   "token": "0x3b5e4f55322207e1e1002e7aabbd8c1c65cea752",
+   "symbol": "KAPS",
+   "days": 1,
+   "created": "2026-09-27T07:39:50Z",
+   "vol7": 643653.846536218,
+   "mcap": 408324.6524
+  },
+  {
    "token": "0xf703ee7c1a9dd263ce46990e119c69d8ffb98d2a",
    "symbol": "ELSE",
    "days": 3,
@@ -1194,12 +2666,12 @@
    "mcap": 482876.3433716057
   },
   {
-   "token": "0x6c673ca3d3212ddd1ba355f50631c03a1887c741",
-   "symbol": "MANSA",
-   "days": 1,
-   "created": "2026-09-27T07:10:51Z",
-   "vol7": 627041.3992332983,
-   "mcap": 27788.339171235708
+   "token": "0xe32169e31a8e477dfd384d2ad179a8ab670324b7",
+   "symbol": "Muse402",
+   "days": 3,
+   "created": "2026-09-25T00:22:00Z",
+   "vol7": 616317.81385797,
+   "mcap": 36517.31095504999
   },
   {
    "token": "0x3e17c94ba8112380ef81a43fc33b08ca6284fb33",
@@ -1208,6 +2680,14 @@
    "created": "2026-09-27T14:58:55Z",
    "vol7": 615840.6671864543,
    "mcap": 163756.63102234676
+  },
+  {
+   "token": "0xaf06ceaaa2688e676c206ce2449c22723400e96e",
+   "symbol": "BREAD",
+   "days": 2,
+   "created": "2026-09-26T19:49:25Z",
+   "vol7": 611541.0670187132,
+   "mcap": 103327.21815807634
   },
   {
    "token": "0x5c9648d832eb943817dcc28f5882903ab705b796",
@@ -1224,6 +2704,38 @@
    "created": "2026-09-22T23:15:01Z",
    "vol7": 596766.0502337777,
    "mcap": 13619.889188645411
+  },
+  {
+   "token": "0xfe936755185353b63a81dd72b47533eb6021018e",
+   "symbol": "QUOTUM",
+   "days": 2,
+   "created": "2026-09-26T12:45:57Z",
+   "vol7": 590529.9290546544,
+   "mcap": 40126.93866923657
+  },
+  {
+   "token": "0xa081abf0dd1899ff5d0bc008fcab5e40b7bb001d",
+   "symbol": "AZK",
+   "days": 2,
+   "created": "2026-09-26T19:33:14Z",
+   "vol7": 590189.3277339292,
+   "mcap": 6117.073780720728
+  },
+  {
+   "token": "0xa53718a3b7b5aa88265efd7c0738e73fbaf8a775",
+   "symbol": "HACHI",
+   "days": 7,
+   "created": "2026-09-21T16:21:31Z",
+   "vol7": 584895.9734562158,
+   "mcap": 13325.973961144364
+  },
+  {
+   "token": "0x520541d03dec790ce51746da2a495dafa62e87f8",
+   "symbol": "OBJECTPAD",
+   "days": 3,
+   "created": "2026-09-25T21:16:42Z",
+   "vol7": 583471.1422965644,
+   "mcap": 58563.21257727283
   },
   {
    "token": "0x2c76ad95bbd169a50d0e96ae2bec672485450fe0",
@@ -1250,6 +2762,14 @@
    "mcap": 34303.07498097332
   },
   {
+   "token": "0x9e36951f8631ff12ecc02855baf6f018132c678c",
+   "symbol": "SEND",
+   "days": 1,
+   "created": "2026-09-27T01:47:04Z",
+   "vol7": 567667.7816921797,
+   "mcap": 1053622.2281557003
+  },
+  {
    "token": "0xb01356a005403c38c0fb01bd0aafe51e81ab9b07",
    "symbol": "CERT",
    "days": 2,
@@ -1266,12 +2786,20 @@
    "mcap": 23908.456321018908
   },
   {
-   "token": "0xaf06ceaaa2688e676c206ce2449c22723400e96e",
-   "symbol": "BREAD",
+   "token": "0x17562281dc6981da067941bb3c38f7d952370f54",
+   "symbol": "CASHX",
    "days": 2,
-   "created": "2026-09-26T20:50:09Z",
-   "vol7": 561571.4832283559,
-   "mcap": 103327.21815807634
+   "created": "2026-09-26T13:44:24Z",
+   "vol7": 562216.0475123198,
+   "mcap": 6079.046958393994
+  },
+  {
+   "token": "0x36ba4f1d182e80ff730f7c299750e46efbb1d90f",
+   "symbol": "DEBT",
+   "days": 2,
+   "created": "2026-09-26T19:23:07Z",
+   "vol7": 555091.9487492435,
+   "mcap": 31819.38067
   },
   {
    "token": "0x2bfb3507226080a3a5d740870e7e212ff519df6d",
@@ -1290,12 +2818,28 @@
    "mcap": 28754.789476328395
   },
   {
-   "token": "0xa081abf0dd1899ff5d0bc008fcab5e40b7bb001d",
-   "symbol": "AZK",
-   "days": 2,
-   "created": "2026-09-26T20:36:12Z",
-   "vol7": 534363.7989771923,
-   "mcap": 6117.073780720728
+   "token": "0x3030d40a6546e4b97239dceae3f97273343bf4a4",
+   "symbol": "INDX",
+   "days": 1,
+   "created": "2026-09-27T10:29:15Z",
+   "vol7": 534504.7768845276,
+   "mcap": 490916.6723
+  },
+  {
+   "token": "0x8920d999f8334ebbcbfecf42039da46e767690f3",
+   "symbol": "jizz",
+   "days": 1,
+   "created": "2026-09-27T04:19:31Z",
+   "vol7": 521923.39061752224,
+   "mcap": 20038.253466107148
+  },
+  {
+   "token": "0x64cf5494f2a40832449df0cc307f62c338db5f0a",
+   "symbol": "FOMUSE",
+   "days": 1,
+   "created": "2026-09-27T01:20:49Z",
+   "vol7": 512829.89805243246,
+   "mcap": 49120.13176185933
   },
   {
    "token": "0x26407fea3d7255910da0229e20bb7332e25538e0",
@@ -1306,6 +2850,38 @@
    "mcap": 104980.0995688139
   },
   {
+   "token": "0x18a34c0c4cf02c1990407c561bc1751a35dda812",
+   "symbol": "STABLE",
+   "days": 1,
+   "created": "2026-09-27T14:56:57Z",
+   "vol7": 499401.55380117317,
+   "mcap": 252922.5124
+  },
+  {
+   "token": "0xe8593571f1b0d3ee9f317d935f5abe2d646d2e4e",
+   "symbol": "UNPAID",
+   "days": 2,
+   "created": "2026-09-26T14:20:24Z",
+   "vol7": 495725.7408450362,
+   "mcap": 37598.89092029373
+  },
+  {
+   "token": "0x2bf4d200a7e185a1e19555ca09ffca87fc552304",
+   "symbol": "SI",
+   "days": 7,
+   "created": "2026-09-21T02:07:16Z",
+   "vol7": 485016.07856598083,
+   "mcap": null
+  },
+  {
+   "token": "0xafd72f2ff2bf963c68acd627d2d614c84253b165",
+   "symbol": "PUDGY",
+   "days": 7,
+   "created": "2026-09-21T04:29:47Z",
+   "vol7": 474562.8092628564,
+   "mcap": null
+  },
+  {
    "token": "0x63c12667638f2ae6fc6ae09b43d98ec84a8586ea",
    "symbol": "wsNET",
    "days": 3,
@@ -1314,20 +2890,76 @@
    "mcap": 8598448.98463665
   },
   {
-   "token": "0x8920d999f8334ebbcbfecf42039da46e767690f3",
-   "symbol": "jizz",
-   "days": 1,
-   "created": "2026-09-27T05:00:47Z",
-   "vol7": 471226.8607400093,
-   "mcap": 20038.253466107148
+   "token": "0x23a51c6bb80a8ae76244e6947ac346c9dd8703e9",
+   "symbol": "HOODS",
+   "days": 2,
+   "created": "2026-09-26T19:50:11Z",
+   "vol7": 473236.0018855113,
+   "mcap": 45.76948409
   },
   {
-   "token": "0x64cf5494f2a40832449df0cc307f62c338db5f0a",
-   "symbol": "FOMUSE",
+   "token": "0x4d017f2b78650abd670cb55d7facf020b2dfdbc0",
+   "symbol": "COLL",
    "days": 1,
-   "created": "2026-09-27T04:14:43Z",
-   "vol7": 439774.73135542125,
-   "mcap": 49120.13176185933
+   "created": "2026-09-27T15:19:48Z",
+   "vol7": 459421.0618092438,
+   "mcap": 148354.827
+  },
+  {
+   "token": "0x6b8fe8f9d657d7872e7eff254fec1365bf13f225",
+   "symbol": "RELOAD",
+   "days": 2,
+   "created": "2026-09-26T22:13:11Z",
+   "vol7": 458007.4332010391,
+   "mcap": 104804.7349
+  },
+  {
+   "token": "0xf0c34a09178da8d29255fc47c62225354c2d2046",
+   "symbol": "CAKE",
+   "days": 1,
+   "created": "2026-09-27T02:43:14Z",
+   "vol7": 454050.21848522144,
+   "mcap": 12128.099059059901
+  },
+  {
+   "token": "0xfda7480ec05890e13683e4f01ba32f91ea49b728",
+   "symbol": "Charlie",
+   "days": 1,
+   "created": "2026-09-27T00:12:22Z",
+   "vol7": 452753.3760958726,
+   "mcap": 9644.067084
+  },
+  {
+   "token": "0xa97477080774fc75aed43d997d437a8a654cb75a",
+   "symbol": "JEANPHIL",
+   "days": 7,
+   "created": "2026-09-21T05:41:02Z",
+   "vol7": 439101.6196402201,
+   "mcap": null
+  },
+  {
+   "token": "0x489e49bc9398057dba1705ffeff305e01dc4d1e1",
+   "symbol": "ARCUS",
+   "days": 2,
+   "created": "2026-09-26T15:38:12Z",
+   "vol7": 436559.5553736696,
+   "mcap": 323601.791
+  },
+  {
+   "token": "0x56289daf2d290f47549e5ab550ba8826ba966f2b",
+   "symbol": "buducca",
+   "days": 2,
+   "created": "2026-09-26T16:13:15Z",
+   "vol7": 434297.0884976278,
+   "mcap": 11487.071855761693
+  },
+  {
+   "token": "0xe1f3da83f9404e4618f48d39342226321b0942e5",
+   "symbol": "MORX",
+   "days": 4,
+   "created": "2026-09-24T05:20:41Z",
+   "vol7": 414718.2126984164,
+   "mcap": 38070.39204540206
   },
   {
    "token": "0x93ab6706979cb33b8012b2897210474fe9991e18",
@@ -1336,6 +2968,30 @@
    "created": "2026-09-21T01:40:47Z",
    "vol7": 411768.5797095919,
    "mcap": 51559.40115407808
+  },
+  {
+   "token": "0x098d7e7330c099c2217cc8f1e830302aa7bd824d",
+   "symbol": "PUDGY",
+   "days": 7,
+   "created": "2026-09-21T04:36:51Z",
+   "vol7": 400003.1008156218,
+   "mcap": null
+  },
+  {
+   "token": "0x2ca99ac61983bf70ca0f3088a4816893448e9d39",
+   "symbol": "SPLIT",
+   "days": 2,
+   "created": "2026-09-26T19:46:36Z",
+   "vol7": 399511.27465656085,
+   "mcap": 105240.56089577808
+  },
+  {
+   "token": "0xe472d2a31c5f44e06c35f787b077799496851e18",
+   "symbol": "WIZARDCAT",
+   "days": 7,
+   "created": "2026-09-21T03:14:50Z",
+   "vol7": 392080.26956873824,
+   "mcap": null
   },
   {
    "token": "0x6457da6fca3c807b7f430770dbbe8ab5a767234a",
@@ -1354,6 +3010,46 @@
    "mcap": 199960.39507852038
   },
   {
+   "token": "0xccd00c9747f4ce6c97334688171c88833aecf9b0",
+   "symbol": "FOEMIQ",
+   "days": 1,
+   "created": "2026-09-27T14:50:14Z",
+   "vol7": 379392.6491448111,
+   "mcap": 296972.3697
+  },
+  {
+   "token": "0xb4f2a12401206fe54792e0ecaf3adb47cf2e5049",
+   "symbol": "HBM",
+   "days": 1,
+   "created": "2026-09-27T15:21:16Z",
+   "vol7": 378116.20202050626,
+   "mcap": 277268.6279304399
+  },
+  {
+   "token": "0xd4704591100b4101590c0c82f8267e92289b77d2",
+   "symbol": "PAID",
+   "days": 2,
+   "created": "2026-09-26T14:19:46Z",
+   "vol7": 371017.64316861425,
+   "mcap": 537784.5915
+  },
+  {
+   "token": "0x78c251955d14fecf7793818cc54831c8e7df2b6b",
+   "symbol": "OCLU",
+   "days": 1,
+   "created": "2026-09-27T13:29:50Z",
+   "vol7": 369491.7006604294,
+   "mcap": 129916.59632642135
+  },
+  {
+   "token": "0xa32cdb8e84c68eb995c8dc270b528d7c5d6a0f20",
+   "symbol": "BPOOL",
+   "days": 1,
+   "created": "2026-09-27T15:04:34Z",
+   "vol7": 367099.33953602775,
+   "mcap": 39042.127512111954
+  },
+  {
    "token": "0xfd127fbec4e659631f2b3cf0530e49b09ac7b4d0",
    "symbol": "LAYA",
    "days": 2,
@@ -1362,12 +3058,28 @@
    "mcap": 5051.463077
   },
   {
+   "token": "0xa2437e6fe5a92d1f5fef3cceb785b077b0983ba3",
+   "symbol": "Jizz",
+   "days": 6,
+   "created": "2026-09-22T21:39:28Z",
+   "vol7": 363082.1726943376,
+   "mcap": 8314.6066363088
+  },
+  {
    "token": "0x1de7043cec8c0776fecd455409d5b9148a5d2ba3",
    "symbol": "crown",
    "days": 4,
    "created": "2026-09-23T22:50:46Z",
    "vol7": 359011.29328300414,
    "mcap": 24306.200996673935
+  },
+  {
+   "token": "0xa4c48be1bddec60e13859c8706ce3b77b12d6061",
+   "symbol": "VOVO",
+   "days": 7,
+   "created": "2026-09-21T01:45:58Z",
+   "vol7": 353741.95477123914,
+   "mcap": null
   },
   {
    "token": "0x66ab90f322e00c434028f4a8544ccd77dc638d37",
@@ -1386,6 +3098,30 @@
    "mcap": 65221.66480711754
   },
   {
+   "token": "0x4515f305f2b1c1b827f8d0506576948aad2b0dc2",
+   "symbol": "STABLE",
+   "days": 1,
+   "created": "2026-09-27T14:52:25Z",
+   "vol7": 349532.5955214754,
+   "mcap": 11610.098651739583
+  },
+  {
+   "token": "0xd28770f62cba8117be7faa5dd2d03089404c8d1b",
+   "symbol": "DIHA",
+   "days": 5,
+   "created": "2026-09-23T09:42:16Z",
+   "vol7": 348238.9662402809,
+   "mcap": 56687.5458211812
+  },
+  {
+   "token": "0xcfdc66607bada5d6ff434f21a7a7e5087e9b21c3",
+   "symbol": "KEE",
+   "days": 3,
+   "created": "2026-09-25T23:56:28Z",
+   "vol7": 345910.91155835777,
+   "mcap": 4551.627633481628
+  },
+  {
    "token": "0x9b40671d11fd1e85976618fb468c1c03caa7c2b4",
    "symbol": "OYSTER",
    "days": 1,
@@ -1394,12 +3130,60 @@
    "mcap": 173926.0302867449
   },
   {
-   "token": "0xa32cdb8e84c68eb995c8dc270b528d7c5d6a0f20",
-   "symbol": "BPOOL",
-   "days": 1,
-   "created": "2026-09-27T15:37:25Z",
-   "vol7": 318434.88944245514,
-   "mcap": 39042.127512111954
+   "token": "0xc08ec584f3f788f5b879f270e5e9afef4c6e1e18",
+   "symbol": "SUN",
+   "days": 7,
+   "created": "2026-09-21T06:22:45Z",
+   "vol7": 341809.3894150715,
+   "mcap": null
+  },
+  {
+   "token": "0xc3ddd03bb1b2d0ee3830e219b4ae00251e352487",
+   "symbol": "FLETCH",
+   "days": 2,
+   "created": "2026-09-26T18:38:31Z",
+   "vol7": 339120.0003201031,
+   "mcap": 203602.6432
+  },
+  {
+   "token": "0x932fc4db96a3d8b3701f6b959666309b64554f7f",
+   "symbol": "OZZY",
+   "days": 2,
+   "created": "2026-09-26T10:46:33Z",
+   "vol7": 335810.2953178837,
+   "mcap": 15793.778344390588
+  },
+  {
+   "token": "0x9cd5e3ea15ddd35154ea1567e60a782917648ebf",
+   "symbol": "TANK",
+   "days": 2,
+   "created": "2026-09-26T19:56:44Z",
+   "vol7": 334327.92014095956,
+   "mcap": 33021.05137
+  },
+  {
+   "token": "0x75097fe218df489c9624a3ace74fda9141388249",
+   "symbol": "TA",
+   "days": 2,
+   "created": "2026-09-26T17:00:32Z",
+   "vol7": 331757.52364228654,
+   "mcap": 7369.237629
+  },
+  {
+   "token": "0xd0502137f2e9e4955f2a8945b506b08e97237b38",
+   "symbol": "BOREDAPE",
+   "days": 7,
+   "created": "2026-09-21T04:29:24Z",
+   "vol7": 327080.095847934,
+   "mcap": null
+  },
+  {
+   "token": "0xc6020b9e4ecb03a38e75bc057017d0679c138ecd",
+   "symbol": "TRACK",
+   "days": 2,
+   "created": "2026-09-26T16:06:14Z",
+   "vol7": 317517.9344416743,
+   "mcap": 241150.5198
   },
   {
    "token": "0x8f6d4943a1994505d27b05d044debca2487c482d",
@@ -1410,20 +3194,108 @@
    "mcap": 127951.6396882547
   },
   {
-   "token": "0x4515f305f2b1c1b827f8d0506576948aad2b0dc2",
-   "symbol": "STABLE",
-   "days": 1,
-   "created": "2026-09-27T15:00:09Z",
-   "vol7": 295707.63464430434,
-   "mcap": 11610.098651739583
+   "token": "0x29d9f943d13a7708acf677893ab8ed58da7aab4a",
+   "symbol": "FORK",
+   "days": 2,
+   "created": "2026-09-26T19:13:10Z",
+   "vol7": 307224.7712878977,
+   "mcap": 165655.3932
   },
   {
-   "token": "0x75097fe218df489c9624a3ace74fda9141388249",
-   "symbol": "TA",
+   "token": "0x82acb89dff38ef72ee397d4a6322032b80a6567d",
+   "symbol": "ALC",
    "days": 2,
-   "created": "2026-09-26T17:20:37Z",
-   "vol7": 291976.2430836132,
-   "mcap": 7369.237629
+   "created": "2026-09-26T21:19:59Z",
+   "vol7": 307025.26410081703,
+   "mcap": 5386.8864482454355
+  },
+  {
+   "token": "0x44f148bcaf324dcbb6b6dac2aeccde7cc793067f",
+   "symbol": "MUSO",
+   "days": 2,
+   "created": "2026-09-26T16:39:30Z",
+   "vol7": 305651.55647601886,
+   "mcap": 37394.5992
+  },
+  {
+   "token": "0x34ae566adc70fd40a40e3648fb5becb53e362e68",
+   "symbol": "Z0MI",
+   "days": 2,
+   "created": "2026-09-26T12:39:47Z",
+   "vol7": 304285.5503189523,
+   "mcap": 11455.58961920117
+  },
+  {
+   "token": "0xf0ec262208698ccfe687a3986151bcbc595aa637",
+   "symbol": "bukangi",
+   "days": 1,
+   "created": "2026-09-27T15:51:18Z",
+   "vol7": 304120.9276764434,
+   "mcap": 2691.8042967220517
+  },
+  {
+   "token": "0x65d09b8dd022a77602ec41659fbbc0ac63e65eb8",
+   "symbol": "DURR",
+   "days": 2,
+   "created": "2026-09-26T06:47:12Z",
+   "vol7": 302548.3715040057,
+   "mcap": 38255.85549023756
+  },
+  {
+   "token": "0x10a00d4325673d8787db008b36274dc6df3b5714",
+   "symbol": "GITPAD",
+   "days": 2,
+   "created": "2026-09-26T16:57:19Z",
+   "vol7": 298948.78889993543,
+   "mcap": 3454.27621354794
+  },
+  {
+   "token": "0x449ca622a0a6137bf3ad492b5d7c58b866859b95",
+   "symbol": "OCLU",
+   "days": 1,
+   "created": "2026-09-27T12:11:40Z",
+   "vol7": 298761.258607135,
+   "mcap": 4747.60578149764
+  },
+  {
+   "token": "0x6f08b15ae81cc5449bcc6caace850a017ba97453",
+   "symbol": "DOMINO",
+   "days": 1,
+   "created": "2026-09-27T10:40:34Z",
+   "vol7": 296569.2395391728,
+   "mcap": 143253.9014114997
+  },
+  {
+   "token": "0x467b7a85f55bd716cb16d59f63b8ccac08852a6c",
+   "symbol": "AGRARIS",
+   "days": 3,
+   "created": "2026-09-25T11:08:58Z",
+   "vol7": 294290.71539455454,
+   "mcap": 54309.35344021921
+  },
+  {
+   "token": "0xab45a3189e15430187e0402d752013fbcec1b0ed",
+   "symbol": "PERMUTE",
+   "days": 2,
+   "created": "2026-09-26T18:11:15Z",
+   "vol7": 293497.458085728,
+   "mcap": 3288.752913506429
+  },
+  {
+   "token": "0x389dd564c2c8677e98df830654fe93a2b3dc40db",
+   "symbol": "ZARD",
+   "days": 7,
+   "created": "2026-09-21T00:25:17Z",
+   "vol7": 291011.5833025762,
+   "mcap": null
+  },
+  {
+   "token": "0x742331063c7890529ae4a8ab55ef32b387861e18",
+   "symbol": "WIZARDKITTY",
+   "days": 7,
+   "created": "2026-09-21T03:27:23Z",
+   "vol7": 290691.3672773679,
+   "mcap": null
   },
   {
    "token": "0x25db25ca341ec0fc45e33c46ce22c9a6acd61e18",
@@ -1432,6 +3304,14 @@
    "created": "2026-09-26T02:09:24Z",
    "vol7": 290300.6827290272,
    "mcap": 86359.52608627544
+  },
+  {
+   "token": "0x242b6222b3ef07f1be9a336d8d9d57704d6b4815",
+   "symbol": "MITSUNAKA",
+   "days": 1,
+   "created": "2026-09-27T08:08:16Z",
+   "vol7": 288107.8688805418,
+   "mcap": 6959.820287
   },
   {
    "token": "0x59cbe15eb2c034fcf6800a998225ce06b68a0229",
@@ -1458,6 +3338,22 @@
    "mcap": 78879.92825875076
   },
   {
+   "token": "0x05dad2118a40d2caaa8259d38186f79226fb69eb",
+   "symbol": "STBR",
+   "days": 7,
+   "created": "2026-09-21T04:44:45Z",
+   "vol7": 280151.05134002434,
+   "mcap": null
+  },
+  {
+   "token": "0xc20676e8727913e0cf512a94e16c05eda0015cc5",
+   "symbol": "AMERICA",
+   "days": 2,
+   "created": "2026-09-26T18:15:20Z",
+   "vol7": 278292.5089617091,
+   "mcap": 4011.454799156014
+  },
+  {
    "token": "0x5bf2f89a790c5e71239e26aa94f20722446b288f",
    "symbol": "NAMI",
    "days": 1,
@@ -1482,6 +3378,14 @@
    "mcap": 60799.08545795278
   },
   {
+   "token": "0x923c3385cc27275a982bef30acb90f9c26d3444a",
+   "symbol": "ASTEROID",
+   "days": 2,
+   "created": "2026-09-26T15:30:18Z",
+   "vol7": 265233.3957751615,
+   "mcap": 44648.01186473632
+  },
+  {
    "token": "0x2c7a596448f329e3ad35181be4be19d941a682b9",
    "symbol": "AGNTS",
    "days": 6,
@@ -1498,12 +3402,116 @@
    "mcap": 26428.440745500757
   },
   {
+   "token": "0x4b1cedb84181440861b00a8291fed6f9e1975263",
+   "symbol": "TRACK",
+   "days": 2,
+   "created": "2026-09-26T16:05:13Z",
+   "vol7": 256699.00952439746,
+   "mcap": 3003.808233
+  },
+  {
+   "token": "0x8031df281c8d3ea06c495749eba444e1ced574eb",
+   "symbol": "ZOOKR",
+   "days": 1,
+   "created": "2026-09-27T13:05:01Z",
+   "vol7": 254909.656711471,
+   "mcap": 23456.293048992153
+  },
+  {
+   "token": "0x75dd7f2ed1a5c06e1d3215dcca790964c93201f6",
+   "symbol": "GME",
+   "days": 2,
+   "created": "2026-09-26T16:12:46Z",
+   "vol7": 247161.98086991074,
+   "mcap": 12238.57051
+  },
+  {
+   "token": "0x4e166377ca10818ac68190d7ff01f53f56aba7f2",
+   "symbol": "AZUKI",
+   "days": 7,
+   "created": "2026-09-21T04:37:42Z",
+   "vol7": 244824.46713315308,
+   "mcap": null
+  },
+  {
+   "token": "0xa88c84f13c35b89252016d821b7c1cfa72110709",
+   "symbol": "ZECFARM",
+   "days": 1,
+   "created": "2026-09-27T10:25:15Z",
+   "vol7": 243241.51659408427,
+   "mcap": 5724.3535777783345
+  },
+  {
+   "token": "0x80992fe93bac122105f65c01e5203bd7dd2a9a0a",
+   "symbol": "BELLE",
+   "days": 1,
+   "created": "2026-09-26T22:12:41Z",
+   "vol7": 241478.56784945977,
+   "mcap": 11913.689900790607
+  },
+  {
+   "token": "0x56f44c67afe7a12087a79a3c15605fafc11ff46d",
+   "symbol": "COW",
+   "days": 1,
+   "created": "2026-09-27T05:21:19Z",
+   "vol7": 237851.9286189996,
+   "mcap": 4831.861011615043
+  },
+  {
    "token": "0x72e936815982a577386e8fcde94f5c9335836c88",
    "symbol": "SIRIUS",
    "days": 5,
    "created": "2026-08-28T15:06:36Z",
    "vol7": 235263.52554794372,
    "mcap": 219542.72685686208
+  },
+  {
+   "token": "0xbfa85f40a99aae533d2df2cb5cd173e2f505b6ea",
+   "symbol": "FTD",
+   "days": 7,
+   "created": "2026-09-21T00:46:14Z",
+   "vol7": 234512.7392033935,
+   "mcap": null
+  },
+  {
+   "token": "0x9248d80e041dee2ac418a0424f7d9f70d3ac8c4c",
+   "symbol": "SQUARED",
+   "days": 2,
+   "created": "2026-09-26T23:20:04Z",
+   "vol7": 234359.25762987637,
+   "mcap": 3200.0649117716152
+  },
+  {
+   "token": "0xfc68e865e2c784acf5c7148419452ebcc68692dc",
+   "symbol": "CASHEDCAT",
+   "days": 2,
+   "created": "2026-09-26T14:20:29Z",
+   "vol7": 233773.69312566926,
+   "mcap": 6250.284814410798
+  },
+  {
+   "token": "0xea25747f0f4ab4f749948c73d6dcd40e86db700d",
+   "symbol": "AERENT",
+   "days": 3,
+   "created": "2026-09-25T07:37:49Z",
+   "vol7": 232008.99179522073,
+   "mcap": 27453.439281307084
+  },
+  {
+   "token": "0xda2e4659da030aed0285f9ed3496ec07058b2319",
+   "symbol": "NOIR",
+   "days": 2,
+   "created": "2026-09-26T22:09:51Z",
+   "vol7": 231468.52284268895,
+   "mcap": 40588.18547588992
+  },
+  {
+   "token": "0xfb5bd7f984ea18b66ed3a51ac45b182b7c417d4f",
+   "symbol": "INDX",
+   "days": 1,
+   "created": "2026-09-24T14:53:36Z",
+   "vol7": 227881.3069394902,
+   "mcap": 53109.36876246353
   },
   {
    "token": "0x1c252b71e231269d39f78765b3ad457204561e18",
@@ -1514,12 +3522,68 @@
    "mcap": 80423.33371307937
   },
   {
+   "token": "0x9812470bedc5ebf90ccba2783f21d1510cd1d585",
+   "symbol": "buducca",
+   "days": 2,
+   "created": "2026-09-26T16:51:41Z",
+   "vol7": 221676.09926139872,
+   "mcap": 9620.300438
+  },
+  {
    "token": "0x582ab16da4d17cff75180807cc942e5622711e18",
    "symbol": "AMERICA",
    "days": 3,
    "created": "2026-09-25T17:00:30Z",
    "vol7": 218522.73010017755,
    "mcap": 24955.854207295237
+  },
+  {
+   "token": "0x1ed5889884b1250364606a6212b86a87e66781fd",
+   "symbol": "ZKS",
+   "days": 1,
+   "created": "2026-09-27T12:16:24Z",
+   "vol7": 216871.00974147598,
+   "mcap": 3732.925539754732
+  },
+  {
+   "token": "0x416d6d647cb4698e5ae35c1850f914794aa12638",
+   "symbol": "BEE",
+   "days": 1,
+   "created": "2026-09-27T07:06:51Z",
+   "vol7": 215594.62128654722,
+   "mcap": 6939.268548
+  },
+  {
+   "token": "0xaf53fa84775352c40c0763c6715aa6e86449acd6",
+   "symbol": "Credex",
+   "days": 2,
+   "created": "2026-09-26T16:00:15Z",
+   "vol7": 214335.49688924992,
+   "mcap": 6920.892863
+  },
+  {
+   "token": "0x79d0fa2c5a785f04c21e8e3f62ac856bb66ad34c",
+   "symbol": "BLOCKMAZING",
+   "days": 7,
+   "created": "2026-09-21T03:28:28Z",
+   "vol7": 209541.66676824345,
+   "mcap": null
+  },
+  {
+   "token": "0xbcae008a29e8359704156266ca26e27e16656ba3",
+   "symbol": "Terra",
+   "days": 5,
+   "created": "2026-09-23T23:25:10Z",
+   "vol7": 208845.47013344197,
+   "mcap": 26302.576952713687
+  },
+  {
+   "token": "0xd72518e09cd8881aa6d6f0ed70d5ceac106f83dd",
+   "symbol": "MUSELAB",
+   "days": 3,
+   "created": "2026-09-25T14:40:20Z",
+   "vol7": 208503.47989306322,
+   "mcap": 7594.5049162195755
   },
   {
    "token": "0x76491de3f353e38eb33089414b0accdbbb911e18",
@@ -1546,12 +3610,36 @@
    "mcap": 79025.8990761302
   },
   {
+   "token": "0x631381aace6376f4670d0257759f202475a45cd1",
+   "symbol": "ROYALTY",
+   "days": 2,
+   "created": "2026-09-26T09:20:39Z",
+   "vol7": 204347.149770867,
+   "mcap": 6352.986155642102
+  },
+  {
    "token": "0x1facebcab0a4cfb1da46072f36d0da40fec97ba3",
    "symbol": "MIND",
    "days": 2,
    "created": "2026-09-26T22:42:42Z",
    "vol7": 201555.53182872903,
    "mcap": 22027.33621894569
+  },
+  {
+   "token": "0xc00c26b09d602a04a83e6d7f8224affa3ecc4ca7",
+   "symbol": "ARCA",
+   "days": 6,
+   "created": "2026-09-22T16:58:21Z",
+   "vol7": 198952.78026099812,
+   "mcap": 52216.114415036005
+  },
+  {
+   "token": "0x47ba2cd5ddd3ac362c986b4417e7efd56cc57169",
+   "symbol": "FASTCOIN",
+   "days": 1,
+   "created": "2026-09-27T11:50:46Z",
+   "vol7": 195409.59952024586,
+   "mcap": 6150.841447318137
   },
   {
    "token": "0x137960d3a9888066ba38a0781132dcadd3011e18",
@@ -1562,12 +3650,156 @@
    "mcap": 43060.19051884504
   },
   {
+   "token": "0xa5718c4161dbcae5a21dbbe5e70550fa0cea2023",
+   "symbol": "UBIK",
+   "days": 7,
+   "created": "2026-09-21T02:22:29Z",
+   "vol7": 191567.12238256464,
+   "mcap": null
+  },
+  {
+   "token": "0xe0000cfddc1871c9dbe3aaa1c96b379d24cd0cb1",
+   "symbol": "ZDOG",
+   "days": 4,
+   "created": "2026-09-24T05:58:51Z",
+   "vol7": 185816.3467118706,
+   "mcap": 6958.833493
+  },
+  {
+   "token": "0x125b0e2def839c3ced3431cbe7d76d5e90d14c69",
+   "symbol": "STOCKWALK",
+   "days": 1,
+   "created": "2026-09-27T14:33:20Z",
+   "vol7": 185439.15032816905,
+   "mcap": 3262.7252340750174
+  },
+  {
+   "token": "0x9bc0d5a867d9e4d9e4ce1ffe39669624e995f1d2",
+   "symbol": "ROO",
+   "days": 4,
+   "created": "2026-09-24T13:40:48Z",
+   "vol7": 185424.58675544092,
+   "mcap": 6930.485826
+  },
+  {
    "token": "0x22c6ee4662fc22753ff47b0018b3d7a3ad49c73c",
    "symbol": "Zip",
    "days": 1,
    "created": "2026-09-27T16:14:13Z",
    "vol7": 185044.20677486068,
    "mcap": 75805.12059481462
+  },
+  {
+   "token": "0x081a47f482355cd5e4553a32d34cc1d5a576ee80",
+   "symbol": "TAOSTREET",
+   "days": 3,
+   "created": "2026-09-25T13:41:28Z",
+   "vol7": 184814.40637737623,
+   "mcap": 19796.133617976775
+  },
+  {
+   "token": "0x62a4d47bc53c6069b80d30b30995d52565dc7b94",
+   "symbol": "GME",
+   "days": 2,
+   "created": "2026-09-26T15:42:54Z",
+   "vol7": 182659.98210504907,
+   "mcap": 9834.948371060478
+  },
+  {
+   "token": "0xcad7447c088d891dffd353a9eff92622c09114ed",
+   "symbol": "USDCAT",
+   "days": 7,
+   "created": "2026-09-21T17:47:44Z",
+   "vol7": 180531.68731016462,
+   "mcap": 11708.87199
+  },
+  {
+   "token": "0x6abe0174695aa6a19d0cb775ff1a6604edf8da91",
+   "symbol": "URIEL",
+   "days": 7,
+   "created": "2026-09-21T07:29:38Z",
+   "vol7": 179879.8035708336,
+   "mcap": null
+  },
+  {
+   "token": "0xc137b0d782e0023d512d8286d268a5214d6f43e1",
+   "symbol": "TRIDENT",
+   "days": 2,
+   "created": "2026-09-26T11:55:06Z",
+   "vol7": 179262.14204005248,
+   "mcap": 53382.28990202767
+  },
+  {
+   "token": "0x4a42ae680eb09ac78603a4648c2e3064ac556046",
+   "symbol": "8",
+   "days": 7,
+   "created": "2026-09-21T03:52:30Z",
+   "vol7": 177941.36369920385,
+   "mcap": null
+  },
+  {
+   "token": "0x092bed08afd811f49f5ba639f52902a09d20bbe7",
+   "symbol": "ARBIO",
+   "days": 1,
+   "created": "2026-09-27T00:50:28Z",
+   "vol7": 176773.6649750527,
+   "mcap": 56637.28304064879
+  },
+  {
+   "token": "0xea59f8c34b6c07ab35ee77d8798f5995036d8fd0",
+   "symbol": "SQUAD",
+   "days": 2,
+   "created": "2026-09-26T21:09:18Z",
+   "vol7": 174619.11046935286,
+   "mcap": 15463.168640579153
+  },
+  {
+   "token": "0x0daa3806252340d90d307b320d47e7572d2a1bbb",
+   "symbol": "ROME",
+   "days": 1,
+   "created": "2026-09-27T07:35:16Z",
+   "vol7": 174588.37895917345,
+   "mcap": 6904.84892
+  },
+  {
+   "token": "0x2f33debaf24c8a041a9050178343b5cb932813d6",
+   "symbol": "TELEPAD",
+   "days": 2,
+   "created": "2026-09-26T05:59:27Z",
+   "vol7": 173640.93739210346,
+   "mcap": 5478.296661570647
+  },
+  {
+   "token": "0x39703c160e991e2961697d4b2b3c64136df25338",
+   "symbol": "Sandisk",
+   "days": 7,
+   "created": "2026-09-21T02:44:46Z",
+   "vol7": 172673.45207598066,
+   "mcap": null
+  },
+  {
+   "token": "0xee28144f417181fcdc7283bf48ed0fb68944f332",
+   "symbol": "ZORP",
+   "days": 1,
+   "created": "2026-09-27T12:29:38Z",
+   "vol7": 171711.2405619212,
+   "mcap": 55365.194269682564
+  },
+  {
+   "token": "0xbcf871da63e6b9635466cd2697ea55caee6ee979",
+   "symbol": "PITCH",
+   "days": 2,
+   "created": "2026-09-26T15:36:14Z",
+   "vol7": 167931.48520408917,
+   "mcap": 5716.84694399805
+  },
+  {
+   "token": "0xb176c8e852bcac34df29cd4d925f74d9f96a3be0",
+   "symbol": "EKOX",
+   "days": 2,
+   "created": "2026-09-26T18:32:31Z",
+   "vol7": 166134.34966781334,
+   "mcap": 23197.245550076248
   },
   {
    "token": "0x9768ecc9a75b426cf793c958b3a5d03bff1f1e18",
@@ -1578,12 +3810,60 @@
    "mcap": 39264.34766
   },
   {
+   "token": "0x93c16e396d797cbc8341c8d937bba768c664e75f",
+   "symbol": "POP",
+   "days": 1,
+   "created": "2026-09-27T16:03:56Z",
+   "vol7": 162988.7546079415,
+   "mcap": 4511.698502325479
+  },
+  {
+   "token": "0x54620b222fdef559189e17798416b19d0cb03625",
+   "symbol": "BEEBRAIN",
+   "days": 1,
+   "created": "2026-09-27T05:59:08Z",
+   "vol7": 162969.80739438848,
+   "mcap": 5148.868113446069
+  },
+  {
+   "token": "0x5e08a4a7f99714ebd963cbaefa779218022f0485",
+   "symbol": "VAUTH",
+   "days": 7,
+   "created": "2026-09-21T01:29:54Z",
+   "vol7": 161948.73964926534,
+   "mcap": null
+  },
+  {
    "token": "0x5f57aa1bb52d7ca10a3588ff4736e3650a2e1e18",
    "symbol": "MP",
    "days": 6,
    "created": "2026-09-22T05:40:21Z",
    "vol7": 161480.20247252076,
    "mcap": 168968.9539741948
+  },
+  {
+   "token": "0xde32dbfcd52d20e8295e6208324a20aef8209f1d",
+   "symbol": "DIVIDE",
+   "days": 1,
+   "created": "2026-09-27T00:07:13Z",
+   "vol7": 160885.83585381313,
+   "mcap": 13065.94700926931
+  },
+  {
+   "token": "0x9c8164e1647e905444909b0ebe53c380b33ee1c2",
+   "symbol": "PAID",
+   "days": 7,
+   "created": "2026-09-21T04:10:33Z",
+   "vol7": 160250.75692808186,
+   "mcap": null
+  },
+  {
+   "token": "0x0422b3c74327c47bee8e96d8aafb04aebed55621",
+   "symbol": "GitGPU",
+   "days": 1,
+   "created": "2026-09-27T12:30:48Z",
+   "vol7": 158311.62686150562,
+   "mcap": 30915.820511713202
   },
   {
    "token": "0x5d2b2fef7dd1c2d0e13a842a2cc112db3f517d6f",
@@ -1602,12 +3882,124 @@
    "mcap": 28962.39688301778
   },
   {
+   "token": "0x9007a5f5bf00fd529a4726150d770d987cb9fb4e",
+   "symbol": "Nailong",
+   "days": 7,
+   "created": "2026-09-21T02:29:33Z",
+   "vol7": 153723.83070150684,
+   "mcap": null
+  },
+  {
+   "token": "0x8bfad9837f46e4a867f414996cc465bf345538e3",
+   "symbol": "RSE",
+   "days": 2,
+   "created": "2026-09-26T00:33:47Z",
+   "vol7": 152128.74100112484,
+   "mcap": 18701.420869911286
+  },
+  {
+   "token": "0x0dc6559fc7a50275303403df6e24452795af219a",
+   "symbol": "METAFARM",
+   "days": 2,
+   "created": "2026-09-26T17:52:02Z",
+   "vol7": 151524.08525207813,
+   "mcap": 51276.400777090144
+  },
+  {
    "token": "0x6573737871551a9a94d599659939dc4c98801e18",
    "symbol": "RAM",
    "days": 2,
    "created": "2026-09-26T20:21:11Z",
    "vol7": 150150.3502217069,
    "mcap": 44626.4101292854
+  },
+  {
+   "token": "0x9bf8626b3471f00410fd0e612903271b97ee0d7c",
+   "symbol": "TRENCH",
+   "days": 1,
+   "created": "2026-09-27T07:40:18Z",
+   "vol7": 149526.86507005375,
+   "mcap": 7105.62512220795
+  },
+  {
+   "token": "0x6b0f47b67e79c373b8da0b5447d00ddabc1656d9",
+   "symbol": "LOX",
+   "days": 2,
+   "created": "2026-09-26T19:24:43Z",
+   "vol7": 148007.62077153023,
+   "mcap": 40221.11466620428
+  },
+  {
+   "token": "0xef3b36921810372eaf2e3209861de2a281601e18",
+   "symbol": "SUNCOIN",
+   "days": 7,
+   "created": "2026-09-21T06:22:50Z",
+   "vol7": 146733.14959919112,
+   "mcap": null
+  },
+  {
+   "token": "0x354ca4bdf86d739eb8512ce321b883df68f312ad",
+   "symbol": "NOSHCAT",
+   "days": 7,
+   "created": "2026-09-21T02:56:59Z",
+   "vol7": 146119.97358494735,
+   "mcap": null
+  },
+  {
+   "token": "0x317107f76ac665c7eb61e05d0bec138063ea5b0e",
+   "symbol": "zc",
+   "days": 1,
+   "created": "2026-09-27T12:49:14Z",
+   "vol7": 145327.25565792268,
+   "mcap": 5135.780223326051
+  },
+  {
+   "token": "0xba082576ce7191ad3eeb487b8daa58a88e95ecb3",
+   "symbol": "COLL",
+   "days": 1,
+   "created": "2026-09-27T15:16:08Z",
+   "vol7": 142959.45250962066,
+   "mcap": 40391.83914254084
+  },
+  {
+   "token": "0xe711d8d109afd339b917f887e2ef5ff0f676e93c",
+   "symbol": "POTATCHI",
+   "days": 1,
+   "created": "2026-09-27T12:57:10Z",
+   "vol7": 141427.12613858728,
+   "mcap": 6829.879982
+  },
+  {
+   "token": "0xf40cc477520e29ce21932efbe9bc2dc75e73c716",
+   "symbol": "pillzumi",
+   "days": 1,
+   "created": "2026-09-27T10:40:45Z",
+   "vol7": 141071.9509322645,
+   "mcap": 55209.73458895027
+  },
+  {
+   "token": "0xb23563649a8bb7ea164f762c8677fb2282c81e18",
+   "symbol": "YOLOTHEOCTOPUS",
+   "days": 7,
+   "created": "2026-09-21T04:29:14Z",
+   "vol7": 140285.35034354808,
+   "mcap": null
+  },
+  {
+   "token": "0x3f433e8f1a433ad3ba12b68aeda983e8cb05ab21",
+   "symbol": "Sob",
+   "days": 7,
+   "created": "2026-09-21T02:44:10Z",
+   "vol7": 139867.1256845621,
+   "mcap": null
+  },
+  {
+   "token": "0x1390d4e06126082ce98a9fc7ac9cea38507f3ee6",
+   "symbol": "0",
+   "days": 7,
+   "created": "2026-09-21T05:19:49Z",
+   "vol7": 139006.99079765793,
+   "mcap": null
   },
   {
    "token": "0x16ac8471e6a8311f72a2f9ea3aa02004b61c9999",
@@ -1618,12 +4010,68 @@
    "mcap": 519319.1522115321
   },
   {
+   "token": "0x9914b309fb898fd056a6686fb000f21f8fc03835",
+   "symbol": "neko",
+   "days": 2,
+   "created": "2026-09-26T18:40:42Z",
+   "vol7": 138830.70365029573,
+   "mcap": 4481.188577
+  },
+  {
+   "token": "0xeb2ecf641a1f04b8df37c24eabca8f5a47cfaacb",
+   "symbol": "ERRAND",
+   "days": 1,
+   "created": "2026-09-27T11:09:49Z",
+   "vol7": 135651.9482323252,
+   "mcap": 1017420.1132786453
+  },
+  {
+   "token": "0xdf729938d8ad210a3fe2659dd094c0d6bd81fef1",
+   "symbol": "TESSERA",
+   "days": 7,
+   "created": "2026-09-21T00:21:02Z",
+   "vol7": 134927.37760248958,
+   "mcap": null
+  },
+  {
+   "token": "0x33a9644ef405873f5180b7010832f1d211b6fe11",
+   "symbol": "AGNT",
+   "days": 1,
+   "created": "2026-09-27T16:10:22Z",
+   "vol7": 134916.66589133596,
+   "mcap": 10426.228714717963
+  },
+  {
    "token": "0x267ac1325a4f874aff0901478bc73dd0e586508f",
    "symbol": "WIRED",
    "days": 1,
    "created": "2026-09-27T10:51:24Z",
    "vol7": 133810.84970417965,
    "mcap": 80661.13697070001
+  },
+  {
+   "token": "0x5b8732492ed2f5d328ecce0b8a5970a8d4926343",
+   "symbol": "FOLIO",
+   "days": 3,
+   "created": "2026-09-25T08:08:19Z",
+   "vol7": 129713.57368219766,
+   "mcap": 27596.362085604233
+  },
+  {
+   "token": "0xf99a8228f9f4000cf501c9cb1ab8d3534485cad9",
+   "symbol": "TERMINATOR",
+   "days": 7,
+   "created": "2026-09-21T02:09:56Z",
+   "vol7": 129681.24703422714,
+   "mcap": null
+  },
+  {
+   "token": "0xa5801706a63d734fe433f56b404a54808a89ff0f",
+   "symbol": "FOEMIQ",
+   "days": 1,
+   "created": "2026-09-27T14:34:21Z",
+   "vol7": 125755.7372686836,
+   "mcap": 13070.17942122481
   },
   {
    "token": "0x9e742f64f72d346a3511659ef06a044978f37463",
@@ -1634,12 +4082,28 @@
    "mcap": 213647.62428714236
   },
   {
+   "token": "0x6852132316784b6c2018f2ed08faa342cfdccb55",
+   "symbol": "KAPS",
+   "days": 1,
+   "created": "2026-09-27T06:41:48Z",
+   "vol7": 124194.1614057701,
+   "mcap": 3006.1626346746025
+  },
+  {
    "token": "0xa92bbec425f2e9b7d7526f75710c6431f42bdba3",
    "symbol": "PQC",
    "days": 2,
    "created": "2026-09-26T02:35:47Z",
    "vol7": 121901.47776740704,
    "mcap": 28301.813055243998
+  },
+  {
+   "token": "0x266a0fb71f427f8bfe4147fca5c7037a6e38da79",
+   "symbol": "WILBER",
+   "days": 7,
+   "created": "2026-09-21T05:34:05Z",
+   "vol7": 120869.45807519241,
+   "mcap": null
   },
   {
    "token": "0xeb19c7a4d956fc362ae1a22f296a1a7d4aa1e67b",
@@ -1650,12 +4114,452 @@
    "mcap": 104151.59685281235
   },
   {
+   "token": "0x50c3a0f6652206a125babb4dbdccc371e2a38626",
+   "symbol": "MVRTX",
+   "days": 1,
+   "created": "2026-09-27T09:18:10Z",
+   "vol7": 120365.50808066205,
+   "mcap": 3749.443461224002
+  },
+  {
+   "token": "0xc523700da9bd0c4c9cfacddf44ef389169bcc640",
+   "symbol": "FOMOEGG",
+   "days": 7,
+   "created": "2026-09-21T01:21:25Z",
+   "vol7": 118546.76804783386,
+   "mcap": null
+  },
+  {
+   "token": "0x2e0e60eefa6aa49d0340d41c833ccce9f9f56a11",
+   "symbol": "STONK",
+   "days": 1,
+   "created": "2026-09-27T08:40:50Z",
+   "vol7": 117632.38352691843,
+   "mcap": 48099.34253
+  },
+  {
+   "token": "0xf0ef7c4c563ff9073098cc2ed7489d3d18791e18",
+   "symbol": "FIVE",
+   "days": 7,
+   "created": "2026-09-21T03:06:18Z",
+   "vol7": 116574.16310234877,
+   "mcap": null
+  },
+  {
+   "token": "0xd2cbb96e5534e3fa0aba58832211812bcb365194",
+   "symbol": "FREECODE",
+   "days": 2,
+   "created": "2026-09-26T20:16:53Z",
+   "vol7": 114912.14116600045,
+   "mcap": 4540.468732
+  },
+  {
+   "token": "0xab82428263a65fe0b14122a142bf1bf9ab2a6e99",
+   "symbol": "CANISE",
+   "days": 2,
+   "created": "2026-09-26T16:06:37Z",
+   "vol7": 114246.49266180128,
+   "mcap": 11230.479094750355
+  },
+  {
+   "token": "0xb4c5b2d905406692684db5907c863228e32b3c4d",
+   "symbol": "Muse",
+   "days": 2,
+   "created": "2026-09-26T15:34:19Z",
+   "vol7": 113173.29492255706,
+   "mcap": 1013740.888
+  },
+  {
+   "token": "0xfb14980438acc1cdfc45f7de6420c27ef4cc846f",
+   "symbol": "SIGILLAUNCH",
+   "days": 7,
+   "created": "2026-09-21T03:10:42Z",
+   "vol7": 112706.65724892422,
+   "mcap": null
+  },
+  {
+   "token": "0x8ef011b300437c00518d9bf5b1467d086a7e182c",
+   "symbol": "AD",
+   "days": 6,
+   "created": "2026-09-22T00:04:51Z",
+   "vol7": 112534.64869850627,
+   "mcap": 6829.165939
+  },
+  {
+   "token": "0x57aa744690cea038635f60cf27c8948eda292ca3",
+   "symbol": "AMERICA",
+   "days": 2,
+   "created": "2026-09-26T18:30:04Z",
+   "vol7": 109292.16468048967,
+   "mcap": 4522.044412
+  },
+  {
+   "token": "0x8033ec07274a751731f976c039bbed8d7324197d",
+   "symbol": "COW",
+   "days": 1,
+   "created": "2026-09-27T05:57:34Z",
+   "vol7": 108942.06838764997,
+   "mcap": 4524.814265
+  },
+  {
+   "token": "0xcf1f1211fbde57edfbf509fcc277c7f06d8ae73f",
+   "symbol": "ON",
+   "days": 1,
+   "created": "2026-09-27T08:08:16Z",
+   "vol7": 108632.59182162919,
+   "mcap": 16483.552164361685
+  },
+  {
+   "token": "0xc773e097e37f369559e62817f22cb9f73c991e18",
+   "symbol": "WK",
+   "days": 7,
+   "created": "2026-09-21T03:26:20Z",
+   "vol7": 108428.15630935029,
+   "mcap": null
+  },
+  {
+   "token": "0xe8ef9ab2e1221a2a59eab2a5c58c5d2eddd1e233",
+   "symbol": "LOCATE",
+   "days": 1,
+   "created": "2026-09-27T00:01:25Z",
+   "vol7": 106744.77188881338,
+   "mcap": 3109.946611802947
+  },
+  {
+   "token": "0xe2102430c72c40764250cbf6f0c8c39354665310",
+   "symbol": "LAUNCHNEAR",
+   "days": 1,
+   "created": "2026-09-27T15:03:28Z",
+   "vol7": 105751.97815776498,
+   "mcap": 56859.19977915115
+  },
+  {
+   "token": "0x9d4838831f24151b1a829ef4f30ac0c953c7040d",
+   "symbol": "SNOOT",
+   "days": 1,
+   "created": "2026-09-27T03:34:03Z",
+   "vol7": 105662.80202470529,
+   "mcap": 5982.449712
+  },
+  {
+   "token": "0x08ebb9610ee6d34d2a424bc6f31ef8bf4f527366",
+   "symbol": "c/acc",
+   "days": 1,
+   "created": "2026-09-27T10:45:50Z",
+   "vol7": 105442.6963042893,
+   "mcap": 4525.359002
+  },
+  {
+   "token": "0xe267364801aa818e5441a3ce95686a8717c6fad1",
+   "symbol": "REBATE",
+   "days": 2,
+   "created": "2026-09-26T22:43:27Z",
+   "vol7": 105301.0865423035,
+   "mcap": 6469.9589624638065
+  },
+  {
+   "token": "0xe407ba9e6eb3646ec6b3b4ad8e85f0cd5227b284",
+   "symbol": "STOCKMUSE",
+   "days": 2,
+   "created": "2026-09-26T16:14:55Z",
+   "vol7": 102617.73261103255,
+   "mcap": 5741.761582180374
+  },
+  {
+   "token": "0xf95e42648d896447625c6ca14872f560ce23e0ca",
+   "symbol": "CLANK",
+   "days": 7,
+   "created": "2026-09-21T00:28:45Z",
+   "vol7": 101364.89206680954,
+   "mcap": null
+  },
+  {
+   "token": "0x6d563c6404c2b2c7b5713680e56b246ad499fb61",
+   "symbol": "MUSELAUNCH",
+   "days": 1,
+   "created": "2026-09-27T15:18:02Z",
+   "vol7": 101183.9761757696,
+   "mcap": 17107.083600904596
+  },
+  {
+   "token": "0xb076ee43599ac0885503b130c51d2309e322f1a6",
+   "symbol": "GIWACHAD",
+   "days": 1,
+   "created": "2026-09-27T04:12:56Z",
+   "vol7": 99648.78066743544,
+   "mcap": 9918.32080672119
+  },
+  {
+   "token": "0xa0c340f5f520f899e3a8c4f41ec4f28663af2c7b",
+   "symbol": "STENKS",
+   "days": 1,
+   "created": "2026-09-27T12:12:16Z",
+   "vol7": 98974.64045424681,
+   "mcap": 32667.4217
+  },
+  {
+   "token": "0x55436eea2067b95e763d6aaa186b709822374df8",
+   "symbol": "AZAR",
+   "days": 2,
+   "created": "2026-09-26T20:33:54Z",
+   "vol7": 98936.54738749668,
+   "mcap": 73731.34377306062
+  },
+  {
+   "token": "0x25eb6f3c408c8ffebc9a2264a223f44ff8c7553b",
+   "symbol": "Douchebag",
+   "days": 7,
+   "created": "2026-09-21T06:59:00Z",
+   "vol7": 97903.87619513962,
+   "mcap": null
+  },
+  {
+   "token": "0x4592273bab9811c8e9022f7c6a083adecbdea392",
+   "symbol": "ROBINCATS",
+   "days": 2,
+   "created": "2026-09-26T15:47:46Z",
+   "vol7": 97624.32528151541,
+   "mcap": 2525.884489
+  },
+  {
+   "token": "0x69a72eb9b313a516c02d42a0bb139b27c3d6682d",
+   "symbol": "Core",
+   "days": 1,
+   "created": "2026-09-27T16:12:57Z",
+   "vol7": 96928.54294942418,
+   "mcap": 5100.680023380059
+  },
+  {
+   "token": "0x6a78a65bd6a6910577d0f82e99172eaf35432f0c",
+   "symbol": "TERMINATOR",
+   "days": 7,
+   "created": "2026-09-21T02:57:05Z",
+   "vol7": 96855.2322325929,
+   "mcap": null
+  },
+  {
+   "token": "0x6869dc980a75dc48b49dabe47b449ae6d464b9ec",
+   "symbol": "AD",
+   "days": 7,
+   "created": "2026-09-21T02:02:39Z",
+   "vol7": 96528.77457287663,
+   "mcap": null
+  },
+  {
+   "token": "0x336497d9bbaff75479abb565b116809700a8c654",
+   "symbol": "JIRO",
+   "days": 1,
+   "created": "2026-09-27T11:22:20Z",
+   "vol7": 96061.88859762695,
+   "mcap": 6864.134274181313
+  },
+  {
+   "token": "0xc7046c9be5c0458561ea830a8b833ebfc594899d",
+   "symbol": "cultcat",
+   "days": 1,
+   "created": "2026-09-27T16:06:04Z",
+   "vol7": 95706.91195625001,
+   "mcap": 20023.36634796812
+  },
+  {
+   "token": "0xecde2c0ddd8da7a3fa2fe9f420b56de3abed7f5c",
+   "symbol": "fundex",
+   "days": 1,
+   "created": "2026-09-27T09:00:09Z",
+   "vol7": 95462.9952439462,
+   "mcap": 7665.19343963976
+  },
+  {
+   "token": "0x7adcfaa99d0e60ba635e453aeadaeecff4db3c72",
+   "symbol": "XKOL",
+   "days": 2,
+   "created": "2026-09-26T22:15:29Z",
+   "vol7": 94951.06860465498,
+   "mcap": 8192.153332386011
+  },
+  {
+   "token": "0x1544d22362e3b0619830bbd7dc33055a536a6534",
+   "symbol": "KIRBY",
+   "days": 1,
+   "created": "2026-09-27T12:12:34Z",
+   "vol7": 94333.11867718914,
+   "mcap": 6868.445199
+  },
+  {
+   "token": "0x3d7a7e9a88ee3b52ea4e5cf03dadcba76478b1fa",
+   "symbol": "Tinkerbelle",
+   "days": 1,
+   "created": "2026-09-27T10:05:12Z",
+   "vol7": 94091.94069923766,
+   "mcap": 26772.33752
+  },
+  {
+   "token": "0x4f71cb3fd6b92c85007c74a07b1189a71283bd41",
+   "symbol": "AIDIV",
+   "days": 2,
+   "created": "2026-09-26T15:38:40Z",
+   "vol7": 93891.6632561058,
+   "mcap": 6857.6523177192075
+  },
+  {
+   "token": "0x909238a56d4b03746fee62aaa4d5ca1325fea007",
+   "symbol": "YOLO",
+   "days": 7,
+   "created": "2026-09-21T04:32:41Z",
+   "vol7": 93364.51974300454,
+   "mcap": null
+  },
+  {
+   "token": "0x3d09799c1cc842b1c0609b0336e6b2535f7258f1",
+   "symbol": "HUNBIKN",
+   "days": 7,
+   "created": "2026-09-21T05:56:57Z",
+   "vol7": 92677.1505944911,
+   "mcap": null
+  },
+  {
+   "token": "0x75f327a76dc0de76e203d59325baae3c02b664a0",
+   "symbol": "FIRE",
+   "days": 7,
+   "created": "2026-09-21T02:11:13Z",
+   "vol7": 92130.15309226398,
+   "mcap": null
+  },
+  {
+   "token": "0xebbdfe3eb3c35a0f255c05a18dc3231d5fe16877",
+   "symbol": "BURNT",
+   "days": 1,
+   "created": "2026-09-27T01:44:57Z",
+   "vol7": 92041.04304887837,
+   "mcap": 8049.120216610074
+  },
+  {
+   "token": "0x0546d796122f7222a69b71ed0323f8ef4103c8eb",
+   "symbol": "MUTUAL",
+   "days": 1,
+   "created": "2026-09-27T12:36:04Z",
+   "vol7": 91741.66225943521,
+   "mcap": 4505.740171
+  },
+  {
    "token": "0x9ac0efe775ef5eadf1fd106a6efe19d0e1421e18",
    "symbol": "PRIME",
    "days": 2,
    "created": "2026-09-26T19:14:09Z",
    "vol7": 90482.42458612222,
    "mcap": 36995.15462763417
+  },
+  {
+   "token": "0x2fc40cad97217ed3c2fdf911faa6aa3f503bfdd5",
+   "symbol": "JESTER",
+   "days": 1,
+   "created": "2026-09-27T16:19:10Z",
+   "vol7": 89877.2545263666,
+   "mcap": 4771.446804797202
+  },
+  {
+   "token": "0x2dad7f3b35ed888af4973c5637224c2bfb016694",
+   "symbol": "ACAT",
+   "days": 7,
+   "created": "2026-09-21T02:53:58Z",
+   "vol7": 89457.43436652633,
+   "mcap": null
+  },
+  {
+   "token": "0x5256b91845ebe0a5665e89f0422e1c6d1f26cb14",
+   "symbol": "CROSSRATE",
+   "days": 1,
+   "created": "2026-09-27T13:03:41Z",
+   "vol7": 88898.79040436565,
+   "mcap": 6898.2147898900275
+  },
+  {
+   "token": "0xa6e6a94208a481fa73e5083d8e54c01f7a7e04ed",
+   "symbol": "HEIR",
+   "days": 7,
+   "created": "2026-09-21T04:24:09Z",
+   "vol7": 88386.35646468725,
+   "mcap": null
+  },
+  {
+   "token": "0xed7a5f7ba56b5b88e63eb573583830d1b00b8044",
+   "symbol": "CLST",
+   "days": 7,
+   "created": "2026-09-21T11:48:54Z",
+   "vol7": 88245.39088337909,
+   "mcap": 6882.877608
+  },
+  {
+   "token": "0xbdda5f6c06f6d373a04c051e14066a76b953a375",
+   "symbol": "THESIS",
+   "days": 1,
+   "created": "2026-09-27T01:58:29Z",
+   "vol7": 87397.53661265885,
+   "mcap": 9309.365659961792
+  },
+  {
+   "token": "0xadb106c60ecbf6f01059450c3859322541306305",
+   "symbol": "MUSHIMMER",
+   "days": 1,
+   "created": "2026-09-27T06:32:47Z",
+   "vol7": 86944.80488326373,
+   "mcap": 6892.570924
+  },
+  {
+   "token": "0x0d9d8cfb4ca4afe602fa96e4f3a0f62b92fe3215",
+   "symbol": "PUNKS",
+   "days": 7,
+   "created": "2026-09-21T04:32:24Z",
+   "vol7": 86497.30623437768,
+   "mcap": null
+  },
+  {
+   "token": "0x57d0e54c95cd39e7cc42cbc77100160c0fdcfc58",
+   "symbol": "DOMINO",
+   "days": 1,
+   "created": "2026-09-27T10:31:14Z",
+   "vol7": 85803.16040767892,
+   "mcap": 4789.831018752684
+  },
+  {
+   "token": "0xaaa614281dd9fd3d3a2f286fd1d731286e657434",
+   "symbol": "RAID",
+   "days": 1,
+   "created": "2026-09-27T16:03:35Z",
+   "vol7": 85741.56869085488,
+   "mcap": 49565.50217
+  },
+  {
+   "token": "0xce9a64339941e6c14e467b03b89664ee4c090e86",
+   "symbol": "PCAT",
+   "days": 2,
+   "created": "2026-09-26T18:22:46Z",
+   "vol7": 85044.8067580757,
+   "mcap": 4523.482
+  },
+  {
+   "token": "0x57b261c6245e13863917ee5b944bc0aeca2b736f",
+   "symbol": "LAND",
+   "days": 1,
+   "created": "2026-09-27T12:42:03Z",
+   "vol7": 84970.01686357947,
+   "mcap": 6805.177304
+  },
+  {
+   "token": "0x102f4157f83e441760c3a5068bfa0abed5879483",
+   "symbol": "JIRO",
+   "days": 7,
+   "created": "2026-09-21T02:40:38Z",
+   "vol7": 84963.04404754566,
+   "mcap": null
+  },
+  {
+   "token": "0x60497130a8a3e7c35dc8cd820461c25dfea5560e",
+   "symbol": "SEND",
+   "days": 2,
+   "created": "2026-09-26T17:41:14Z",
+   "vol7": 84776.0303793161,
+   "mcap": 52780.16767811005
   },
   {
    "token": "0x65f16381ab00c0cff9881dc37409ea920f6a1e18",
@@ -1666,12 +4570,164 @@
    "mcap": 21318.004905786205
   },
   {
+   "token": "0x194c12efae70f02b2b4a745cc73e55579cb8c67b",
+   "symbol": "YOLOTHEOCTOPUS",
+   "days": 7,
+   "created": "2026-09-21T05:11:39Z",
+   "vol7": 84108.89100001476,
+   "mcap": null
+  },
+  {
+   "token": "0xd613437af7d906018825caa754dfa0c538faed0b",
+   "symbol": "Habanero",
+   "days": 1,
+   "created": "2026-09-27T03:33:51Z",
+   "vol7": 83707.66497922695,
+   "mcap": 55765.160938404835
+  },
+  {
+   "token": "0x32a5a019b3ade67ae572c441f0b40fb12a168f70",
+   "symbol": "AGEMICA",
+   "days": 2,
+   "created": "2026-09-26T18:07:28Z",
+   "vol7": 82629.5952806281,
+   "mcap": 4460.101061
+  },
+  {
+   "token": "0xa86dd85db272060b9419aef4e991d876be8a248b",
+   "symbol": "TERMINATOR",
+   "days": 7,
+   "created": "2026-09-21T01:50:45Z",
+   "vol7": 82452.18374168998,
+   "mcap": null
+  },
+  {
+   "token": "0xf37f0568898475dbc21d3f3fd60e396f4548fe98",
+   "symbol": "SCORE",
+   "days": 2,
+   "created": "2026-09-26T18:00:13Z",
+   "vol7": 81570.15938920819,
+   "mcap": 17384.706443541607
+  },
+  {
    "token": "0xa6c27f52d1af0e958a38628af7e8c0264e73bb07",
    "symbol": "EPIORA",
    "days": 7,
    "created": "2026-09-21T10:26:55Z",
    "vol7": 81167.31165537385,
    "mcap": 26798.312773973834
+  },
+  {
+   "token": "0x68dbf836275dbdf297bb5e2fc2038ff7bb8c128b",
+   "symbol": "\u725b\u6765",
+   "days": 6,
+   "created": "2026-09-22T11:14:59Z",
+   "vol7": 79842.02019252346,
+   "mcap": 6870.972295
+  },
+  {
+   "token": "0x6b1986f9c89b2662456112d9777884bef272a34d",
+   "symbol": "PUSSPUSS",
+   "days": 2,
+   "created": "2026-09-26T22:56:22Z",
+   "vol7": 79058.22731824119,
+   "mcap": 5705.017526
+  },
+  {
+   "token": "0xe1088a5fd3046a5f820d40cec069cf3c473b39aa",
+   "symbol": "333",
+   "days": 1,
+   "created": "2026-09-27T14:24:34Z",
+   "vol7": 77479.51876788044,
+   "mcap": 11531.382566357463
+  },
+  {
+   "token": "0xb7275ebed29d7c2b663a3fc0f396d79400d610ac",
+   "symbol": "TANK",
+   "days": 2,
+   "created": "2026-09-26T19:54:01Z",
+   "vol7": 77116.88854800128,
+   "mcap": 4557.961867
+  },
+  {
+   "token": "0x5887526e0d3c101e9b99023020e37bea555def4b",
+   "symbol": "ROARINGFIVEPLUS",
+   "days": 7,
+   "created": "2026-09-21T05:18:13Z",
+   "vol7": 76291.53752437652,
+   "mcap": null
+  },
+  {
+   "token": "0x79c7d47a8f9c309cfa441b2dc587e982b6831fad",
+   "symbol": "golden",
+   "days": 2,
+   "created": "2026-09-26T18:14:26Z",
+   "vol7": 75764.32460281957,
+   "mcap": 4463.431169
+  },
+  {
+   "token": "0x9da36913b690d302695be0a413bca09a62276297",
+   "symbol": "PRAY",
+   "days": 7,
+   "created": "2026-09-21T06:40:56Z",
+   "vol7": 75682.0074112804,
+   "mcap": null
+  },
+  {
+   "token": "0x5233b89ea4baae8339fcc239f8a8b2448dda6f9f",
+   "symbol": "MUSEPAD",
+   "days": 4,
+   "created": "2026-09-24T14:15:14Z",
+   "vol7": 75525.32108663859,
+   "mcap": 6844.165984
+  },
+  {
+   "token": "0xbba571946d3f370f7c6e56a38be06a5ce5a6bb91",
+   "symbol": "ROBINHOOD",
+   "days": 7,
+   "created": "2026-09-21T03:41:43Z",
+   "vol7": 75242.61480199112,
+   "mcap": null
+  },
+  {
+   "token": "0xa50ca62bfda0b681aa16498bc6af52c60052456c",
+   "symbol": "fomoegg",
+   "days": 7,
+   "created": "2026-09-21T00:48:55Z",
+   "vol7": 75224.71910443336,
+   "mcap": null
+  },
+  {
+   "token": "0x88aadde6c7486d237773d1420b1963a56a1e54b3",
+   "symbol": "KERBEROS",
+   "days": 7,
+   "created": "2026-09-21T04:43:49Z",
+   "vol7": 75075.90683022926,
+   "mcap": null
+  },
+  {
+   "token": "0x6a0b2b15616ace3db19779aa63720356c0bf832e",
+   "symbol": "AD",
+   "days": 7,
+   "created": "2026-09-21T12:43:51Z",
+   "vol7": 74966.43865657557,
+   "mcap": 6870.614249
+  },
+  {
+   "token": "0x7ec55bfc4ca9c3127157e4a6d3e583a812d2ad33",
+   "symbol": "CONDOASSETS",
+   "days": 4,
+   "created": "2026-09-24T18:21:08Z",
+   "vol7": 74496.76244507114,
+   "mcap": 11883.468672918867
+  },
+  {
+   "token": "0x16b4b7637e0b92371c514a85b5137cdf5c8e7c2c",
+   "symbol": "SAFE",
+   "days": 7,
+   "created": "2026-09-21T04:50:50Z",
+   "vol7": 74378.99250903064,
+   "mcap": null
   },
   {
    "token": "0x0d52c5f686893f61e08b16b05b4991cddf53fe11",
@@ -1682,6 +4738,14 @@
    "mcap": 284556.22579637205
   },
   {
+   "token": "0xfa0fba2714168b99cd3a6f0fb5cf17f7e0ce82bb",
+   "symbol": "OUTSIDER",
+   "days": 7,
+   "created": "2026-09-21T05:19:31Z",
+   "vol7": 73853.36069375367,
+   "mcap": null
+  },
+  {
    "token": "0x6fb6cb6e2e10ffcc9782fe12ed7fa90f115d1e18",
    "symbol": "SMURFJIZZ",
    "days": 1,
@@ -1690,12 +4754,132 @@
    "mcap": 21920.553206185174
   },
   {
+   "token": "0xf1cce9e6e04476142c6439c38044a5be0cd1b2a9",
+   "symbol": "ROBINHOOD",
+   "days": 7,
+   "created": "2026-09-21T05:21:03Z",
+   "vol7": 72894.26853048772,
+   "mcap": null
+  },
+  {
+   "token": "0x13910dca4f1466d930045b0c5cb2f5b24a9cc63c",
+   "symbol": "HELIOLAB",
+   "days": 1,
+   "created": "2026-09-27T04:32:41Z",
+   "vol7": 72474.97977535057,
+   "mcap": 6296.796083963619
+  },
+  {
+   "token": "0x7d1878da0bf59dcf1c2d06a717cb7de189cc21a6",
+   "symbol": "WIRE",
+   "days": 1,
+   "created": "2026-09-27T12:26:38Z",
+   "vol7": 72326.98333023483,
+   "mcap": 4391.968882782422
+  },
+  {
    "token": "0x093dba25e5428589fa698de674e5b16b80841e18",
    "symbol": "BUTTHOLE",
    "days": 2,
    "created": "2026-09-26T21:41:33Z",
    "vol7": 72293.4179285889,
    "mcap": 31868.44241
+  },
+  {
+   "token": "0xf1aae4960a92ec2043aaa7dd44efe67f2dca6911",
+   "symbol": "TRACE",
+   "days": 2,
+   "created": "2026-09-26T18:21:24Z",
+   "vol7": 72254.38842395923,
+   "mcap": 4475.471871
+  },
+  {
+   "token": "0xe319b0bad1108865beee60b0de58fe3671ad31d1",
+   "symbol": "TIM",
+   "days": 7,
+   "created": "2026-09-21T03:10:34Z",
+   "vol7": 71648.55235449021,
+   "mcap": null
+  },
+  {
+   "token": "0x4b434541873f171ab70d7d2f3a48b0f0b0f13ba3",
+   "symbol": "PORCH",
+   "days": 5,
+   "created": "2026-09-23T08:47:53Z",
+   "vol7": 71021.60829511662,
+   "mcap": 11377.335096705354
+  },
+  {
+   "token": "0xa0a5ea279f7be3637394abb720a13014162e7da1",
+   "symbol": "OUTSIDER",
+   "days": 7,
+   "created": "2026-09-21T05:28:08Z",
+   "vol7": 70991.74749861908,
+   "mcap": null
+  },
+  {
+   "token": "0x42d469329ad2e3d9cb49fa9565bfd64d1e81d4b8",
+   "symbol": "NOCT",
+   "days": 7,
+   "created": "2026-09-21T07:09:23Z",
+   "vol7": 70479.70919356843,
+   "mcap": null
+  },
+  {
+   "token": "0xa94f04a336316de286afa67c661d86bdd90a6809",
+   "symbol": "STREET",
+   "days": 2,
+   "created": "2026-09-26T18:48:55Z",
+   "vol7": 70145.50059190801,
+   "mcap": 4483.864194
+  },
+  {
+   "token": "0xdcd274c58120a3eeaeaaea4d2632687d63305fe8",
+   "symbol": "Gloob",
+   "days": 2,
+   "created": "2026-09-26T14:26:58Z",
+   "vol7": 69382.61758045877,
+   "mcap": 6816.753262
+  },
+  {
+   "token": "0x8d48dacf7b3ac2cac6e510c6dbdc8f00647bacb3",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T09:52:33Z",
+   "vol7": 69006.00110063712,
+   "mcap": 6827.696677294422
+  },
+  {
+   "token": "0x601f3d58da4199d13bd02ccb18fce0c2adeeb6b2",
+   "symbol": "CVNDLES",
+   "days": 7,
+   "created": "2026-09-21T03:02:12Z",
+   "vol7": 68440.57970621537,
+   "mcap": null
+  },
+  {
+   "token": "0xaa26b0dcfa2fb0a856397c100739fc341712db09",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T10:19:35Z",
+   "vol7": 68063.34204853362,
+   "mcap": 6860.519576
+  },
+  {
+   "token": "0xdcc9a10ebf384830501666eb1273bff700d6ed1c",
+   "symbol": "SPOTTR",
+   "days": 2,
+   "created": "2026-09-26T17:28:18Z",
+   "vol7": 67166.99268271563,
+   "mcap": 5189.348850276357
+  },
+  {
+   "token": "0x1237a7466de7f62c6900c15aa72b6d805ae76ff2",
+   "symbol": "TOKEN",
+   "days": 2,
+   "created": "2026-09-26T16:55:41Z",
+   "vol7": 67158.96565235734,
+   "mcap": 5478.488118762764
   },
   {
    "token": "0x2743d4c9bc0bae0ed4de60a5f5fa266826251e18",
@@ -1714,12 +4898,292 @@
    "mcap": 26910.633219570547
   },
   {
+   "token": "0x5eeb3041ad9ce214874e185b89b32c9f3a721e18",
+   "symbol": "LIUNG",
+   "days": 7,
+   "created": "2026-09-21T01:19:52Z",
+   "vol7": 65448.17017128702,
+   "mcap": null
+  },
+  {
+   "token": "0x029e96806db3bb4c8ff62946395aca31eeb28b9d",
+   "symbol": "BRICK",
+   "days": 1,
+   "created": "2026-09-27T12:10:53Z",
+   "vol7": 64770.88941976055,
+   "mcap": 4516.858389
+  },
+  {
+   "token": "0xa33953325a51b6734a415377fdcc95f2eb6c3e34",
+   "symbol": "CJ",
+   "days": 7,
+   "created": "2026-09-21T01:14:08Z",
+   "vol7": 64735.668013031296,
+   "mcap": null
+  },
+  {
    "token": "0x31adf06bac4248a55b0bd10c8485c33ff99a1e18",
    "symbol": "POKE",
    "days": 2,
    "created": "2026-09-26T04:57:25Z",
    "vol7": 64556.900779460906,
    "mcap": 20193.328375877438
+  },
+  {
+   "token": "0x6b2bac667c02644866dd8d8c32d05d7b9965087f",
+   "symbol": "ICETEA",
+   "days": 5,
+   "created": "2026-09-23T09:08:33Z",
+   "vol7": 64292.34557410178,
+   "mcap": 6845.924728
+  },
+  {
+   "token": "0xe073826b70babe3b1a200c2c2989de5a9c249e5a",
+   "symbol": "ICETEA",
+   "days": 1,
+   "created": "2026-09-27T13:29:07Z",
+   "vol7": 63727.53114807663,
+   "mcap": 6879.680221
+  },
+  {
+   "token": "0x5a4631ee02034439866b7c6bac131bd50609be07",
+   "symbol": "FLY",
+   "days": 1,
+   "created": "2026-09-27T14:20:17Z",
+   "vol7": 63522.35176098404,
+   "mcap": 4339.822762
+  },
+  {
+   "token": "0x378b136966b5fcf3b6d190e396620b61f469ab66",
+   "symbol": "BOAR",
+   "days": 2,
+   "created": "2026-09-26T17:09:49Z",
+   "vol7": 63414.366599903915,
+   "mcap": 4480.078308
+  },
+  {
+   "token": "0xa0f6de23f561b1b4447a82ad9dc863165d7a04da",
+   "symbol": "PRAY",
+   "days": 7,
+   "created": "2026-09-21T06:34:28Z",
+   "vol7": 63394.19865665352,
+   "mcap": null
+  },
+  {
+   "token": "0xbe04a4501d1f370639ba352886e89062551750b6",
+   "symbol": "WAIFUS",
+   "days": 5,
+   "created": "2026-09-23T20:02:08Z",
+   "vol7": 62637.79779111586,
+   "mcap": 70577.35412022147
+  },
+  {
+   "token": "0x053d295aa3ba7cb84a24d202602d429daabb4c54",
+   "symbol": "FTD",
+   "days": 7,
+   "created": "2026-09-21T00:56:32Z",
+   "vol7": 62296.345250675,
+   "mcap": null
+  },
+  {
+   "token": "0xc40b3c8f4443cfca0696a63b96ffe43f579d5486",
+   "symbol": "FORGE",
+   "days": 1,
+   "created": "2026-09-27T15:51:13Z",
+   "vol7": 60991.98320531675,
+   "mcap": 4394.356187965705
+  },
+  {
+   "token": "0x0e8b561ecc328e29461e4906f9aa9d64d0a35d05",
+   "symbol": "HASHLINGS",
+   "days": 1,
+   "created": "2026-09-27T15:47:02Z",
+   "vol7": 60648.15346760562,
+   "mcap": 50039.03402649754
+  },
+  {
+   "token": "0x19bb7086d01c576a27c3ae70e9a84710359f5b58",
+   "symbol": "MUSEMINT",
+   "days": 2,
+   "created": "2026-09-26T18:23:18Z",
+   "vol7": 60596.23514787875,
+   "mcap": 4840.856051
+  },
+  {
+   "token": "0x09e8755c5dad134d1b7217b47a9c39abe9addef5",
+   "symbol": "FORGE",
+   "days": 2,
+   "created": "2026-09-26T23:07:44Z",
+   "vol7": 60476.03909764439,
+   "mcap": 4372.814913
+  },
+  {
+   "token": "0xee68051c1ce50cd8bb8e5e8befad23a7ee111e18",
+   "symbol": "MUCH",
+   "days": 2,
+   "created": "2026-09-26T18:08:13Z",
+   "vol7": 59842.12071732617,
+   "mcap": 20498.29448
+  },
+  {
+   "token": "0x017c91720be37367f6ac6027f86862505e93bfd3",
+   "symbol": "tip",
+   "days": 2,
+   "created": "2026-09-26T20:26:27Z",
+   "vol7": 59675.310095089466,
+   "mcap": 4760.948194
+  },
+  {
+   "token": "0x4d86ca2be6bb8bc04d8b1e0b9a13b9abb0ef74e9",
+   "symbol": "HYIP",
+   "days": 1,
+   "created": "2026-09-27T03:45:35Z",
+   "vol7": 59363.36614230619,
+   "mcap": 4353.508847
+  },
+  {
+   "token": "0xfadb7dca0f7eda87cf3129f5b0d404fe4df1bc25",
+   "symbol": "JDESK Lab",
+   "days": 7,
+   "created": "2026-09-21T06:18:48Z",
+   "vol7": 58765.08350829237,
+   "mcap": null
+  },
+  {
+   "token": "0x58638e69f8b76811101b9c75aa651d34f1595312",
+   "symbol": "VEYRO",
+   "days": 1,
+   "created": "2026-09-27T03:51:19Z",
+   "vol7": 58294.85947320905,
+   "mcap": 20229.350664989448
+  },
+  {
+   "token": "0x2062801d30e9308eb55bd158224e85c5855625f7",
+   "symbol": "ABELL",
+   "days": 1,
+   "created": "2026-09-27T08:36:42Z",
+   "vol7": 57766.14031925786,
+   "mcap": 15908.906797764841
+  },
+  {
+   "token": "0x88b4878552eea03715f4753e8733730395a6a1b2",
+   "symbol": "CRATE",
+   "days": 3,
+   "created": "2026-09-25T17:48:38Z",
+   "vol7": 57480.69160553519,
+   "mcap": 1667.467815
+  },
+  {
+   "token": "0x5bbce5d6728a0700b3f9df14093209176c79cabc",
+   "symbol": "ZCAT",
+   "days": 7,
+   "created": "2026-09-21T01:10:54Z",
+   "vol7": 57195.77712242572,
+   "mcap": null
+  },
+  {
+   "token": "0xe926e89c9eedbbdde24f318f996e44df110a1e18",
+   "symbol": "ROBININU",
+   "days": 3,
+   "created": "2026-09-25T16:00:48Z",
+   "vol7": 57042.42338243652,
+   "mcap": 22676.39318480741
+  },
+  {
+   "token": "0xc556e5a17d43c2f0b7dd95d3c1886be0cb31b6f3",
+   "symbol": "MOO",
+   "days": 7,
+   "created": "2026-09-21T01:48:48Z",
+   "vol7": 56091.22101228684,
+   "mcap": null
+  },
+  {
+   "token": "0xd391d90a5b6a071fb1c7b0246c8b97d550f9c36b",
+   "symbol": "PEPEZILLA",
+   "days": 7,
+   "created": "2026-09-21T02:35:07Z",
+   "vol7": 55426.73889190675,
+   "mcap": null
+  },
+  {
+   "token": "0xdddf7ab756c35b4d0537825497e6932780710241",
+   "symbol": "$GARRI",
+   "days": 1,
+   "created": "2026-09-27T13:59:23Z",
+   "vol7": 54949.960365735,
+   "mcap": 25527.869764848107
+  },
+  {
+   "token": "0xa2cf4e93727dfddec335327243452a43723cdde1",
+   "symbol": "WORKS",
+   "days": 1,
+   "created": "2026-09-27T12:57:50Z",
+   "vol7": 54594.995975254074,
+   "mcap": 4343.154685
+  },
+  {
+   "token": "0xf6192c0ac71c14a43572366a807643a3479c8e65",
+   "symbol": "APES",
+   "days": 2,
+   "created": "2026-09-26T22:22:02Z",
+   "vol7": 54433.22908263899,
+   "mcap": 3466.137143623118
+  },
+  {
+   "token": "0x86bcc730c24bf03d396db51d4bcd538ddfb5f283",
+   "symbol": "CRYPTOADAM",
+   "days": 1,
+   "created": "2026-09-27T14:50:33Z",
+   "vol7": 54383.15454995563,
+   "mcap": 4488.36721816631
+  },
+  {
+   "token": "0xc1f5fb968039289cfa7f77349300cd2e52bd0000",
+   "symbol": "STRT",
+   "days": 2,
+   "created": "2026-09-26T21:57:08Z",
+   "vol7": 54360.639265927966,
+   "mcap": 4357.276988
+  },
+  {
+   "token": "0x34bc2a8f519ccf7ab471d16b8faafc2743ead6c8",
+   "symbol": "CLOUT",
+   "days": 1,
+   "created": "2026-09-27T13:46:34Z",
+   "vol7": 54344.7894943056,
+   "mcap": 7037.807887199801
+  },
+  {
+   "token": "0x73fdb39f8aa76372711df55830cfcb01f1d8d4db",
+   "symbol": "MAGCITO",
+   "days": 1,
+   "created": "2026-09-27T11:20:31Z",
+   "vol7": 54223.33207191214,
+   "mcap": 5158.975034007635
+  },
+  {
+   "token": "0x35afbd8f3277d2e5eb58416178ac37ca0001a5ed",
+   "symbol": "0",
+   "days": 7,
+   "created": "2026-09-21T05:27:15Z",
+   "vol7": 54059.47521415016,
+   "mcap": null
+  },
+  {
+   "token": "0xd7195f0d2e28800c1879e310416b4323e81cca19",
+   "symbol": "PONDUO",
+   "days": 2,
+   "created": "2026-09-26T15:24:58Z",
+   "vol7": 53947.10849149401,
+   "mcap": 5403.738554
+  },
+  {
+   "token": "0x42fa8f394bfc1bd765c69e83d94485335d0be75f",
+   "symbol": "POP",
+   "days": 1,
+   "created": "2026-09-27T16:08:07Z",
+   "vol7": 53778.08446762262,
+   "mcap": 216094.0425
   },
   {
    "token": "0x1dbda6eea34e28514e1467c90930148a3a4ad960",
@@ -1730,12 +5194,492 @@
    "mcap": 6521.079281000001
   },
   {
+   "token": "0x86720fdf293fa64b19181f49af61d5ffcf7471f4",
+   "symbol": "PLabs",
+   "days": 2,
+   "created": "2026-09-26T16:56:18Z",
+   "vol7": 53637.7007958534,
+   "mcap": 4504.047778
+  },
+  {
+   "token": "0xb6cb2e7e415987f25987b19c866c79c618e5876d",
+   "symbol": "RHINOPLASTY",
+   "days": 2,
+   "created": "2026-09-26T21:57:04Z",
+   "vol7": 53494.48921017944,
+   "mcap": 55962.44364805008
+  },
+  {
+   "token": "0xcc64a903307a895269d3c4a1772cff530b1f7236",
+   "symbol": "Trader",
+   "days": 1,
+   "created": "2026-09-27T13:35:19Z",
+   "vol7": 53421.3918604028,
+   "mcap": 4507.97838
+  },
+  {
+   "token": "0xad7c1f087c754747855333f60c1b1291454edf61",
+   "symbol": "ZOOKR",
+   "days": 1,
+   "created": "2026-09-27T16:07:42Z",
+   "vol7": 53385.3280527705,
+   "mcap": 5391.582255814576
+  },
+  {
+   "token": "0x708c0c66f5b53b7795609ce40fcde38b3689ba92",
+   "symbol": "TM",
+   "days": 2,
+   "created": "2026-09-26T19:45:43Z",
+   "vol7": 52690.688869796904,
+   "mcap": 4476.555754
+  },
+  {
+   "token": "0x07d6c56d189fc71edb947ba3033dc85d0a46c081",
+   "symbol": "fatgf",
+   "days": 7,
+   "created": "2026-09-21T00:20:20Z",
+   "vol7": 52688.697676819334,
+   "mcap": null
+  },
+  {
+   "token": "0x33ffbe4b2933e3eb2cd786f36709876bbb306b7d",
+   "symbol": "JEANHOOD",
+   "days": 1,
+   "created": "2026-09-27T13:24:54Z",
+   "vol7": 52551.54939228942,
+   "mcap": 6842.729615
+  },
+  {
+   "token": "0x79563709dc5fde61eda11b96011001738a916651",
+   "symbol": "updown",
+   "days": 2,
+   "created": "2026-09-26T16:49:00Z",
+   "vol7": 52476.53423459831,
+   "mcap": 4456.773898
+  },
+  {
+   "token": "0x5e0c10acef0a1919bb7a8214afcbcadfcfb3c6a9",
+   "symbol": "NOVA",
+   "days": 1,
+   "created": "2026-09-27T08:54:41Z",
+   "vol7": 52213.36851525137,
+   "mcap": 6055.051886
+  },
+  {
+   "token": "0x1f4ebf016c702eabf780986bf226042931900547",
+   "symbol": "FLY",
+   "days": 1,
+   "created": "2026-09-27T03:20:44Z",
+   "vol7": 52084.23780081236,
+   "mcap": 4356.084076
+  },
+  {
+   "token": "0x36df993de6399518f2c5b8b658b872e4db629adf",
+   "symbol": "ICETEA",
+   "days": 2,
+   "created": "2026-09-26T16:21:21Z",
+   "vol7": 51826.07265787072,
+   "mcap": 6790.156232
+  },
+  {
+   "token": "0xa85cb1af17a11db0b54b227e0d0ea180fe52d1ce",
+   "symbol": "JDESK Lab",
+   "days": 7,
+   "created": "2026-09-21T06:04:18Z",
+   "vol7": 51622.848310787835,
+   "mcap": null
+  },
+  {
+   "token": "0x40dbb1027ccbacb3efb166d50d9fa20b96b042a2",
+   "symbol": "SOVY",
+   "days": 7,
+   "created": "2026-09-21T04:44:35Z",
+   "vol7": 51445.933630919884,
+   "mcap": null
+  },
+  {
+   "token": "0x1b99c9826839875fb488518ade1f48dd0064e206",
+   "symbol": "BILLIONS",
+   "days": 2,
+   "created": "2026-09-26T19:14:50Z",
+   "vol7": 51362.67305641723,
+   "mcap": 4837.122726
+  },
+  {
+   "token": "0xebc5f171f35826fcde023824992b56c26d54144c",
+   "symbol": "TOOLS",
+   "days": 7,
+   "created": "2026-09-21T06:29:41Z",
+   "vol7": 50863.28866580388,
+   "mcap": null
+  },
+  {
+   "token": "0x8d861715128c251038efaada98069cd6d54b7621",
+   "symbol": "SIMANTIC",
+   "days": 2,
+   "created": "2026-09-26T18:27:56Z",
+   "vol7": 50580.158498157136,
+   "mcap": 4470.412246257191
+  },
+  {
+   "token": "0x07094d40e01165e7db5b22d5fc54a61b5694c913",
+   "symbol": "APPL",
+   "days": 7,
+   "created": "2026-09-21T06:17:44Z",
+   "vol7": 50486.86419261992,
+   "mcap": null
+  },
+  {
+   "token": "0x4a43b41330e53e88d3f9dd606f1bf0c0f100a229",
+   "symbol": "SHIELDS",
+   "days": 1,
+   "created": "2026-09-27T10:49:56Z",
+   "vol7": 50012.836978782994,
+   "mcap": 4453.706536232973
+  },
+  {
+   "token": "0xc1069e44531183913006ff0d9a1803f1af717b6a",
+   "symbol": "RHX402",
+   "days": 1,
+   "created": "2026-09-27T14:00:49Z",
+   "vol7": 49872.03961762331,
+   "mcap": 4750.985424645368
+  },
+  {
+   "token": "0x8471a0aaacde915ed8b58bd9648ceaa8eb911e18",
+   "symbol": "WOOLLY",
+   "days": 2,
+   "created": "2026-09-26T21:50:50Z",
+   "vol7": 49700.38919364642,
+   "mcap": 23275.66089
+  },
+  {
+   "token": "0xde9997504c355f647ebd07d80d82c43275d01860",
+   "symbol": "UNSTOX",
+   "days": 1,
+   "created": "2026-09-27T03:29:51Z",
+   "vol7": 49665.83178881073,
+   "mcap": 4381.023405
+  },
+  {
+   "token": "0x7747d2a94903411091f3d12c4b602bc344070bb2",
+   "symbol": "WORLDMONEY",
+   "days": 1,
+   "created": "2026-09-27T16:22:34Z",
+   "vol7": 49505.56140585553,
+   "mcap": 4474.479261279117
+  },
+  {
+   "token": "0x05233a1b5ea196561a6257dd26850a98e05f6a81",
+   "symbol": "ICETEA",
+   "days": 2,
+   "created": "2026-09-26T16:02:50Z",
+   "vol7": 49129.71184853398,
+   "mcap": 6799.934043126682
+  },
+  {
+   "token": "0x60ade551bde3c52c215c44b383c165288b352a7c",
+   "symbol": "ST0x",
+   "days": 2,
+   "created": "2026-09-26T19:37:04Z",
+   "vol7": 48754.827126218974,
+   "mcap": 4465.316573
+  },
+  {
+   "token": "0x8c37acc393575fd64edf928ec61f36efa5e45d09",
+   "symbol": "ADI",
+   "days": 2,
+   "created": "2026-09-26T19:05:39Z",
+   "vol7": 48752.362166665094,
+   "mcap": 4464.305133
+  },
+  {
+   "token": "0x2920157db5142285957f1e6d1c524afc6dc5858e",
+   "symbol": "Agraris",
+   "days": 1,
+   "created": "2026-09-27T13:31:19Z",
+   "vol7": 48706.74288293594,
+   "mcap": 4468.734268384636
+  },
+  {
+   "token": "0x3f67f8b01e74f6be254b32065743263bb8a01e18",
+   "symbol": "CHALLENGE",
+   "days": 7,
+   "created": "2026-09-21T00:34:57Z",
+   "vol7": 48382.35549092732,
+   "mcap": null
+  },
+  {
+   "token": "0x511d7b56295b78df5be8c6673fc112abf7d60d18",
+   "symbol": "BELL",
+   "days": 2,
+   "created": "2026-09-26T13:20:51Z",
+   "vol7": 48291.09508890402,
+   "mcap": 23374.718219486334
+  },
+  {
+   "token": "0x29a973f9459e35ffa95eb70f404a7b1971ce2208",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T00:51:08Z",
+   "vol7": 48238.75787550625,
+   "mcap": 6797.385547
+  },
+  {
+   "token": "0xc88048e57bc4b1d69d72252f01a1eac26b913253",
+   "symbol": "NAKED",
+   "days": 2,
+   "created": "2026-09-26T22:41:49Z",
+   "vol7": 47971.44306860026,
+   "mcap": 4352.829209404467
+  },
+  {
+   "token": "0xf2e32500497303cb6d48dbe8f896783b6f6c4b56",
+   "symbol": "RETAIL",
+   "days": 7,
+   "created": "2026-09-21T06:26:34Z",
+   "vol7": 47696.612450258115,
+   "mcap": null
+  },
+  {
+   "token": "0xacba2c7290f3805f9d25f4b07d82d68a8fbc980a",
+   "symbol": "BR",
+   "days": 7,
+   "created": "2026-09-21T03:24:03Z",
+   "vol7": 47520.16796922876,
+   "mcap": null
+  },
+  {
+   "token": "0x336b30fd3e280bf90055c8ae844db5e02dfe315f",
+   "symbol": "Stock6900",
+   "days": 7,
+   "created": "2026-09-21T03:05:52Z",
+   "vol7": 47397.18285214339,
+   "mcap": null
+  },
+  {
+   "token": "0xea989d6e6c3cdefb15b4a60a039cc7e74523439c",
+   "symbol": "GPXU",
+   "days": 2,
+   "created": "2026-09-26T18:55:18Z",
+   "vol7": 47354.30118576288,
+   "mcap": 5614.549980014141
+  },
+  {
+   "token": "0x45bb9179afd3c5b0a0494d82b462c99014583084",
+   "symbol": "BILLIONS",
+   "days": 2,
+   "created": "2026-09-26T19:15:09Z",
+   "vol7": 47275.46261224574,
+   "mcap": 3553.531604
+  },
+  {
+   "token": "0xd7f8192589a9df81801c761d7a9ca74b1c1e762f",
+   "symbol": "Opus",
+   "days": 1,
+   "created": "2026-09-27T10:19:38Z",
+   "vol7": 46935.65459145948,
+   "mcap": 4519.879666
+  },
+  {
+   "token": "0x45584466afe249d15bd57ba5ea675e86506e98d4",
+   "symbol": "Gloob",
+   "days": 1,
+   "created": "2026-09-27T14:12:48Z",
+   "vol7": 46654.419653835495,
+   "mcap": 6897.886340933881
+  },
+  {
+   "token": "0x401add8c41b512d7bd49c77a0df9679f8f02eb2e",
+   "symbol": "GPEPE",
+   "days": 1,
+   "created": "2026-09-27T01:34:11Z",
+   "vol7": 46248.705320433095,
+   "mcap": 3487.4709318497867
+  },
+  {
+   "token": "0xd515a38d0090114b1baa2cb6007be3be90cf46f4",
+   "symbol": "FASCIA",
+   "days": 1,
+   "created": "2026-09-27T13:05:54Z",
+   "vol7": 45879.72924019356,
+   "mcap": 10411.891736350979
+  },
+  {
+   "token": "0x1d4d680e4a96d87c4f6a06385f84b3fd89750000",
+   "symbol": "FORGE",
+   "days": 7,
+   "created": "2026-09-21T00:13:25Z",
+   "vol7": 45855.350355710165,
+   "mcap": null
+  },
+  {
+   "token": "0x3cbbf17fb1e75b2791e00bbc860ac2735fc41bcc",
+   "symbol": "VIRALPAD",
+   "days": 1,
+   "created": "2026-09-27T11:21:21Z",
+   "vol7": 45568.086892465275,
+   "mcap": 5404.2635389899815
+  },
+  {
+   "token": "0x36ccf52e475be6ce82dcf73bc14159401ad80000",
+   "symbol": "WIRE",
+   "days": 2,
+   "created": "2026-09-26T16:55:02Z",
+   "vol7": 45408.02259035684,
+   "mcap": 4363.260948
+  },
+  {
+   "token": "0x5b0d40cc159a0ce5ecf84ab457db31511ce41e18",
+   "symbol": "GAMESTONK",
+   "days": 7,
+   "created": "2026-09-21T03:17:21Z",
+   "vol7": 45399.7354171515,
+   "mcap": null
+  },
+  {
+   "token": "0xb7fa9a919ede636856da504ba08a53d3125c0d62",
+   "symbol": "TERMINATOR",
+   "days": 7,
+   "created": "2026-09-21T01:38:00Z",
+   "vol7": 45227.94887202806,
+   "mcap": null
+  },
+  {
+   "token": "0x4d60566ffb3a29a8154c9598f6ccb47391c3aa7a",
+   "symbol": "AD",
+   "days": 1,
+   "created": "2026-09-27T00:08:59Z",
+   "vol7": 45196.74513506625,
+   "mcap": 6809.524507
+  },
+  {
+   "token": "0x688ec04a2e44e9b5f8f7d797471c6f34d9453f9c",
+   "symbol": "ZEST",
+   "days": 2,
+   "created": "2026-09-26T17:02:35Z",
+   "vol7": 45125.483612337,
+   "mcap": 4461.384569
+  },
+  {
+   "token": "0x765629fbf4afb50e0129ee57dcc007db575475a0",
+   "symbol": "REGULARS",
+   "days": 1,
+   "created": "2026-09-27T13:04:29Z",
+   "vol7": 45047.62297357942,
+   "mcap": 6837.145713
+  },
+  {
+   "token": "0x7e8b92fda67d448b8ec8cb996ec0b891f434330e",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T00:29:28Z",
+   "vol7": 44722.534065463704,
+   "mcap": 6847.752404
+  },
+  {
+   "token": "0x03126ca60952444aed2f8fd0bf511889231f1e18",
+   "symbol": "BLUB",
+   "days": 2,
+   "created": "2026-09-26T17:26:39Z",
+   "vol7": 44615.51473946874,
+   "mcap": 21015.013853931323
+  },
+  {
+   "token": "0x1b972bd585544573a1cf0aecc81665002c95f470",
+   "symbol": "JUSTYPE",
+   "days": 1,
+   "created": "2026-09-27T04:09:08Z",
+   "vol7": 44290.66674563532,
+   "mcap": 4391.180881
+  },
+  {
+   "token": "0x8a9ef834375040ad1780d8eeed7c9a6838be5ae7",
+   "symbol": "HOODSAPLING",
+   "days": 1,
+   "created": "2026-09-27T08:52:49Z",
+   "vol7": 43956.75735032074,
+   "mcap": 4456.167457
+  },
+  {
+   "token": "0x0f2400b119d9eda80ff375bd1a86162affdd1247",
+   "symbol": "CRAB",
+   "days": 2,
+   "created": "2026-09-26T17:39:08Z",
+   "vol7": 43868.717234074276,
+   "mcap": 4490.113627148617
+  },
+  {
+   "token": "0x09703249470145828516aafce7c8e92ecc4f73cc",
+   "symbol": "WIRE",
+   "days": 1,
+   "created": "2026-09-27T03:09:33Z",
+   "vol7": 43660.19930100128,
+   "mcap": 4355.333841181854
+  },
+  {
+   "token": "0x7ea5fb162e87f3f8308ffbb5beee74025c2c0000",
+   "symbol": "NAKED",
+   "days": 2,
+   "created": "2026-09-26T17:31:54Z",
+   "vol7": 43564.89683458626,
+   "mcap": 4340.242811
+  },
+  {
+   "token": "0x2b4d3e1a3b1a08d50c8e5599174d6ece103b7da1",
+   "symbol": "Charlie",
+   "days": 2,
+   "created": "2026-09-26T22:25:13Z",
+   "vol7": 43494.95535120905,
+   "mcap": 5024.860843
+  },
+  {
+   "token": "0xc5abb83abc2ca6ff0f403f6a05a3a6d323074234",
+   "symbol": "BLUEPOINTS",
+   "days": 1,
+   "created": "2026-09-27T11:55:35Z",
+   "vol7": 43237.65195440494,
+   "mcap": 5268.093358996103
+  },
+  {
    "token": "0x64209a7631a987c64c102df824bbd5651f3b1e18",
    "symbol": "DAON",
    "days": 1,
    "created": "2026-09-27T15:15:55Z",
    "vol7": 42893.92086360885,
    "mcap": 23550.058906400547
+  },
+  {
+   "token": "0x41abb76ddb7db1e39288607b28cefdd17a947638",
+   "symbol": "FERN",
+   "days": 2,
+   "created": "2026-09-26T22:38:50Z",
+   "vol7": 42445.042417303186,
+   "mcap": 7328.413316407577
+  },
+  {
+   "token": "0x7e69783ec3764d7feed6b6c94bfbec19c121be1b",
+   "symbol": "+",
+   "days": 7,
+   "created": "2026-09-21T03:33:10Z",
+   "vol7": 42403.122236275354,
+   "mcap": null
+  },
+  {
+   "token": "0xe42990dc9b0ce3b454b70063f17b20a38a1ce655",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T09:25:53Z",
+   "vol7": 41821.2736205184,
+   "mcap": 6868.50301
+  },
+  {
+   "token": "0xfaec652239cc8e853dc1ba3d64133bb5f58b1e18",
+   "symbol": "PLUSPLUSPLUS",
+   "days": 7,
+   "created": "2026-09-21T02:44:35Z",
+   "vol7": 41238.64782817576,
+   "mcap": null
   },
   {
    "token": "0x24091df5045c0669936cbc5f5807a922f9497ba3",
@@ -1746,12 +5690,116 @@
    "mcap": 25245.594020477314
   },
   {
+   "token": "0xc9c4db049d69c944a40743130fefa8bffaff5a4b",
+   "symbol": "MIKI",
+   "days": 1,
+   "created": "2026-09-27T15:08:09Z",
+   "vol7": 40251.98048997231,
+   "mcap": 4483.426033
+  },
+  {
+   "token": "0x54419632316afc5bb114393b15ea34204bd790b5",
+   "symbol": "stocksmeet",
+   "days": 1,
+   "created": "2026-09-27T16:25:54Z",
+   "vol7": 40232.40523687394,
+   "mcap": 4440.42148198678
+  },
+  {
+   "token": "0x8401ce132b77efb4fc87a59ef0bb81601ab44777",
+   "symbol": "WORLD",
+   "days": 1,
+   "created": "2026-09-27T16:19:22Z",
+   "vol7": 39878.14513406488,
+   "mcap": 17170.050565579808
+  },
+  {
    "token": "0x41b3ec2f58d260326630ecf211e7e42f9d099738",
    "symbol": "CREDITS",
    "days": 5,
    "created": "2026-09-23T03:10:39Z",
    "vol7": 39867.38998965185,
    "mcap": 26823.76728
+  },
+  {
+   "token": "0x0c0274659541586feccbfc3cdfa6cba1be8a58fd",
+   "symbol": "RIDE",
+   "days": 1,
+   "created": "2026-09-27T13:39:56Z",
+   "vol7": 39851.922548430564,
+   "mcap": 9071.217453137742
+  },
+  {
+   "token": "0x5e0574e2144633d38dc2dc0cf096d3d81b931e18",
+   "symbol": "MONY",
+   "days": 2,
+   "created": "2026-09-26T16:28:43Z",
+   "vol7": 39832.009024263316,
+   "mcap": 21015.392182786705
+  },
+  {
+   "token": "0x1b64f59024dc9fa610a4027fbd3b84a4488e3ae7",
+   "symbol": "SMONEY",
+   "days": 2,
+   "created": "2026-09-26T16:35:51Z",
+   "vol7": 39751.35174196862,
+   "mcap": 4385.69107082914
+  },
+  {
+   "token": "0x87a2e17b9144fa5435bedf59265e8dd72cb3d456",
+   "symbol": "PAYLIST",
+   "days": 2,
+   "created": "2026-09-26T19:29:33Z",
+   "vol7": 39380.04801750518,
+   "mcap": 4504.905862
+  },
+  {
+   "token": "0x297f280073487bccfd57d1e169b82cde0449b783",
+   "symbol": "FUSE",
+   "days": 1,
+   "created": "2026-09-27T10:45:03Z",
+   "vol7": 39121.758583884926,
+   "mcap": 4818.60533601118
+  },
+  {
+   "token": "0xf5013fe9284587843c84cf311ed44ce2c42bd0d6",
+   "symbol": "LUMO",
+   "days": 1,
+   "created": "2026-09-27T05:18:51Z",
+   "vol7": 38961.126685629446,
+   "mcap": 19484.824027083963
+  },
+  {
+   "token": "0xb6bae42dda947f56bd942321f5fc4edff341a4db",
+   "symbol": "PONT",
+   "days": 1,
+   "created": "2026-09-27T07:54:03Z",
+   "vol7": 38892.41257486713,
+   "mcap": 4823.217877538038
+  },
+  {
+   "token": "0x5369a5b775f7dbcb18983cd961a98fb2ef1c8606",
+   "symbol": "HOTELLOBBY",
+   "days": 1,
+   "created": "2026-09-27T15:37:29Z",
+   "vol7": 38323.2245686032,
+   "mcap": 4556.423905881615
+  },
+  {
+   "token": "0xf5db98649d05aad7d4fe8b5d6b50090d2f41038d",
+   "symbol": "XL",
+   "days": 4,
+   "created": "2026-09-24T05:13:10Z",
+   "vol7": 38131.293713294035,
+   "mcap": 6847.184605
+  },
+  {
+   "token": "0x34d561a4d353197f385f7c530f2c4f7d3a48fdda",
+   "symbol": "NOCTPAD",
+   "days": 1,
+   "created": "2026-09-27T12:04:52Z",
+   "vol7": 38104.74343425752,
+   "mcap": 4610.94049191992
   },
   {
    "token": "0x439cd8669b73366349d422238f11a8a461a629f0",
@@ -1762,12 +5810,172 @@
    "mcap": 83905.76962
   },
   {
+   "token": "0x2cc477fb4fb0e63ccf5a3673c1628edc1007b734",
+   "symbol": "LOCKFI",
+   "days": 1,
+   "created": "2026-09-27T08:08:16Z",
+   "vol7": 37941.92241690599,
+   "mcap": 4415.225415322849
+  },
+  {
+   "token": "0x13a07f1555764557c36a0ddd82eda5d380c41eee",
+   "symbol": "OUTSIDER",
+   "days": 7,
+   "created": "2026-09-21T05:21:01Z",
+   "vol7": 37821.77171453331,
+   "mcap": null
+  },
+  {
+   "token": "0xa1f5b39647763f756e1f6187f13aefb333cbac4d",
+   "symbol": "UNREAL",
+   "days": 2,
+   "created": "2026-09-26T20:29:23Z",
+   "vol7": 37546.69419927199,
+   "mcap": 4385.249784851982
+  },
+  {
+   "token": "0x939f0f2ae6de6612518e32182232ea2f279d4a1b",
+   "symbol": "BULL",
+   "days": 1,
+   "created": "2026-09-27T10:58:45Z",
+   "vol7": 37322.80471980214,
+   "mcap": 6900.515365520113
+  },
+  {
+   "token": "0xb230f730ca151678b30027110279823171c71e18",
+   "symbol": "UNDERPANTSGNOME",
+   "days": 1,
+   "created": "2026-09-27T16:09:39Z",
+   "vol7": 37025.080903157104,
+   "mcap": 20804.457311940532
+  },
+  {
+   "token": "0xb9d21e49e4084b8266056aa08c9fb7064d60c3a8",
+   "symbol": "FOEMIQ",
+   "days": 1,
+   "created": "2026-09-27T14:36:53Z",
+   "vol7": 37020.09799043681,
+   "mcap": 4486.554049
+  },
+  {
+   "token": "0xe922c278829fc379ea6d2e278631d3e3b0039770",
+   "symbol": "BR",
+   "days": 7,
+   "created": "2026-09-21T01:47:23Z",
+   "vol7": 36804.37072273259,
+   "mcap": null
+  },
+  {
+   "token": "0x2b486143775e623ea54ac3fb72550872161785a1",
+   "symbol": "CJ",
+   "days": 7,
+   "created": "2026-09-21T01:26:10Z",
+   "vol7": 36568.24559783537,
+   "mcap": null
+  },
+  {
+   "token": "0xd0e497f8eb7c07eab6de7212f939b8a5da891e18",
+   "symbol": "TENDIES",
+   "days": 7,
+   "created": "2026-09-21T03:41:31Z",
+   "vol7": 36373.34797775148,
+   "mcap": null
+  },
+  {
    "token": "0x10da5f839b7f6ed39ea8d72129709558a962cba3",
    "symbol": "WANKR",
    "days": 2,
    "created": "2026-09-26T16:17:25Z",
    "vol7": 36334.756464314676,
    "mcap": 15752.56282
+  },
+  {
+   "token": "0x747edaf12ff9e78e686420d7757adfa2212cc1d9",
+   "symbol": "FLY",
+   "days": 2,
+   "created": "2026-09-26T22:53:28Z",
+   "vol7": 36268.94058502227,
+   "mcap": 4348.530045
+  },
+  {
+   "token": "0x62baf47be664b31d6cb9b636aeaaf865d1921e18",
+   "symbol": "HASH",
+   "days": 7,
+   "created": "2026-09-21T00:24:56Z",
+   "vol7": 36200.11750451462,
+   "mcap": null
+  },
+  {
+   "token": "0x4340e078c415e230e5067002c2e30d2fa2945fa0",
+   "symbol": "TIM",
+   "days": 7,
+   "created": "2026-09-21T02:15:49Z",
+   "vol7": 36020.27809533396,
+   "mcap": null
+  },
+  {
+   "token": "0x50e002007fd4407c8dea90e1b761ea11a68c3294",
+   "symbol": "SWARM",
+   "days": 7,
+   "created": "2026-09-21T04:10:58Z",
+   "vol7": 35985.46409482155,
+   "mcap": null
+  },
+  {
+   "token": "0x66bf879bbadfa73a2b4f3e54f42bb1a5627821a6",
+   "symbol": "BULL",
+   "days": 1,
+   "created": "2026-09-27T10:46:54Z",
+   "vol7": 35679.53513964279,
+   "mcap": 6849.719224
+  },
+  {
+   "token": "0x68defb25043baa924259abbf25f708b547bf45b6",
+   "symbol": "ACTA",
+   "days": 1,
+   "created": "2026-09-27T01:52:11Z",
+   "vol7": 35659.83997882572,
+   "mcap": 5226.689005299902
+  },
+  {
+   "token": "0xab8968a1f9a155212a26bf17d131e510dc566175",
+   "symbol": "ASTEROID",
+   "days": 2,
+   "created": "2026-09-26T17:04:14Z",
+   "vol7": 35536.27585926267,
+   "mcap": 5359.116695
+  },
+  {
+   "token": "0x6e44b4335ba6c09ba038136e9f609dc1155c4751",
+   "symbol": "HBM",
+   "days": 1,
+   "created": "2026-09-27T16:12:45Z",
+   "vol7": 35534.6772775767,
+   "mcap": 39686.809997245655
+  },
+  {
+   "token": "0xb3783071fd1394cd4b6a6dcebc72d5505e0d95fa",
+   "symbol": "PASSDECK",
+   "days": 2,
+   "created": "2026-09-26T16:18:16Z",
+   "vol7": 35255.14251214483,
+   "mcap": 4361.221205
+  },
+  {
+   "token": "0xd03226d3c18eae1b5a3e9aafbbf163df6ed34480",
+   "symbol": "CASHEDCAT",
+   "days": 1,
+   "created": "2026-09-27T10:40:44Z",
+   "vol7": 35155.163415011855,
+   "mcap": 2375.693672
+  },
+  {
+   "token": "0xb2efc7d86e8fb0b7013c7cfc26e53042bf05cb27",
+   "symbol": "DNA",
+   "days": 1,
+   "created": "2026-09-27T00:45:54Z",
+   "vol7": 34832.69794999511,
+   "mcap": 4425.026893617082
   },
   {
    "token": "0xb3b4951d782e15d2af0825b4c4953d6e3ce8f1ab",
@@ -1778,12 +5986,180 @@
    "mcap": 0.003794899550675973
   },
   {
+   "token": "0xd32f2db6d0cbe610a517fc2e95cd21bc06f12777",
+   "symbol": "jeancock",
+   "days": 1,
+   "created": "2026-09-27T16:12:40Z",
+   "vol7": 34222.630908689825,
+   "mcap": 18341.51026
+  },
+  {
+   "token": "0xb6dfc7cfd98fbbc01c514dfcfe7d77f7f93fd071",
+   "symbol": "MATCH",
+   "days": 1,
+   "created": "2026-09-27T12:40:19Z",
+   "vol7": 33827.8355594006,
+   "mcap": 4527.416733
+  },
+  {
+   "token": "0x4e2e4562d85a7c0be0c1b7e340ff4a1dd639bdea",
+   "symbol": "GITPAD",
+   "days": 2,
+   "created": "2026-09-26T17:01:42Z",
+   "vol7": 33798.667988431174,
+   "mcap": 4834.724255
+  },
+  {
+   "token": "0x0beef3da9216e79a181e041aa325df9b04130fd5",
+   "symbol": "WIZ",
+   "days": 7,
+   "created": "2026-09-21T05:07:49Z",
+   "vol7": 33544.821427641524,
+   "mcap": null
+  },
+  {
+   "token": "0xb6e0f78b92f4a85af17a656072cc41065ec1320e",
+   "symbol": "CJ",
+   "days": 7,
+   "created": "2026-09-21T01:08:23Z",
+   "vol7": 33513.44623824851,
+   "mcap": null
+  },
+  {
+   "token": "0x5eac646ca4b91508f6ce13827a7a94ebe5bd2573",
+   "symbol": "OMARCHY",
+   "days": 2,
+   "created": "2026-09-26T23:27:25Z",
+   "vol7": 32523.46773014137,
+   "mcap": 5079.200161
+  },
+  {
+   "token": "0xf51ba29de8f339069b591fd2d8e46e15d7522148",
+   "symbol": "JIRO",
+   "days": 1,
+   "created": "2026-09-27T11:12:06Z",
+   "vol7": 31808.777809539486,
+   "mcap": 6819.067782
+  },
+  {
+   "token": "0x6782780ec01a543918b14b50d57a516b307a1d01",
+   "symbol": "HESTER",
+   "days": 1,
+   "created": "2026-09-27T05:32:45Z",
+   "vol7": 31599.139371413967,
+   "mcap": 4532.463609
+  },
+  {
+   "token": "0x5cd45f62eebd05d543b142c0e80babe95a5be51e",
+   "symbol": "DEOKSANGI",
+   "days": 1,
+   "created": "2026-09-27T08:20:53Z",
+   "vol7": 31382.529012536397,
+   "mcap": 16769.25492981645
+  },
+  {
+   "token": "0xfed3a9c1cf74f492ca29fe906e86859502280c2b",
+   "symbol": "BINGE",
+   "days": 1,
+   "created": "2026-09-27T13:17:12Z",
+   "vol7": 31338.862897650008,
+   "mcap": 10701.400795748612
+  },
+  {
+   "token": "0x51a92d1e1073b73dcce93b15788859e37d87397b",
+   "symbol": "Agrippa",
+   "days": 1,
+   "created": "2026-09-27T16:03:03Z",
+   "vol7": 31312.369325403295,
+   "mcap": 0.003943852036
+  },
+  {
+   "token": "0x8688c6862db6377abb8b1456d69d7f6096a7d7aa",
+   "symbol": "MEME",
+   "days": 2,
+   "created": "2026-09-26T16:49:56Z",
+   "vol7": 31124.840861589124,
+   "mcap": 4886.433842
+  },
+  {
+   "token": "0x743fc9e0d7d636d440ea4c3588512bf8b470a381",
+   "symbol": "AD",
+   "days": 2,
+   "created": "2026-09-26T23:50:38Z",
+   "vol7": 31083.649526064422,
+   "mcap": 6818.955961
+  },
+  {
+   "token": "0x3a578143a7d264f41ede19cf24d672f59ca911a2",
+   "symbol": "NIRA",
+   "days": 1,
+   "created": "2026-09-27T15:55:47Z",
+   "vol7": 30322.805953542833,
+   "mcap": 4537.078704
+  },
+  {
+   "token": "0xea8bbe0050d44c4d7e7450ba58358f7f731707bd",
+   "symbol": "BijieTech",
+   "days": 1,
+   "created": "2026-09-27T16:04:26Z",
+   "vol7": 30206.26054459587,
+   "mcap": 44468.728709999996
+  },
+  {
+   "token": "0xe3f38f086bacccf1d3b93208daa269316a661e18",
+   "symbol": "SPXINU",
+   "days": 7,
+   "created": "2026-09-21T18:32:27Z",
+   "vol7": 29693.802171057225,
+   "mcap": 24924.854874062836
+  },
+  {
+   "token": "0x4f68cf455d22c8de2b189fa58aa4e707406ec193",
+   "symbol": "Sift",
+   "days": 2,
+   "created": "2026-09-26T17:28:04Z",
+   "vol7": 29680.933500135936,
+   "mcap": 4037.0466417601897
+  },
+  {
+   "token": "0xc3f2cb8e4e89349561f7c0e68797ddc2d631cf07",
+   "symbol": "RECEIPT",
+   "days": 2,
+   "created": "2026-09-26T18:00:20Z",
+   "vol7": 29655.996412791166,
+   "mcap": 4535.738284011613
+  },
+  {
    "token": "0x9ace519a22187c6a1cdd72fb715a10ac6141d9e3",
    "symbol": "RSHIB",
    "days": 1,
    "created": "2026-09-27T12:44:54Z",
    "vol7": 29424.03197088683,
    "mcap": 161.667368831938
+  },
+  {
+   "token": "0x4c16939f93b36f04808f0138abf669d432e44b90",
+   "symbol": "jeancock",
+   "days": 1,
+   "created": "2026-09-27T16:13:48Z",
+   "vol7": 29416.340788637906,
+   "mcap": 83051.92588
+  },
+  {
+   "token": "0x7b5dad651f6d12b3b531489089fd07ab29e6f5fa",
+   "symbol": "Butthole",
+   "days": 1,
+   "created": "2026-09-27T03:41:57Z",
+   "vol7": 28938.599185025007,
+   "mcap": 4491.719734
+  },
+  {
+   "token": "0x03e54ede57634de4441a3d948bc5189608acd64a",
+   "symbol": "GAYMAN",
+   "days": 1,
+   "created": "2026-09-27T16:04:49Z",
+   "vol7": 28622.969176627485,
+   "mcap": 63212.31120999999
   },
   {
    "token": "0xa00457f70ea8983ed9f195c329608862290b1e18",
@@ -1794,12 +6170,308 @@
    "mcap": 20938.970985967935
   },
   {
+   "token": "0x76f7445f9df082842296b626fd3e5ab2c2b11e18",
+   "symbol": "GM",
+   "days": 7,
+   "created": "2026-09-21T03:21:09Z",
+   "vol7": 28530.241286192853,
+   "mcap": null
+  },
+  {
+   "token": "0x68ac5a1c723039fc1be20b374eee43a85c36effc",
+   "symbol": "ROUTE",
+   "days": 1,
+   "created": "2026-09-27T16:13:10Z",
+   "vol7": 28376.015618693775,
+   "mcap": 4517.103597561484
+  },
+  {
+   "token": "0x1ba6a2a02cfb3ece8b7db7ec7828bcfa27f58e9d",
+   "symbol": "BAG",
+   "days": 7,
+   "created": "2026-09-21T02:23:43Z",
+   "vol7": 28345.472073697074,
+   "mcap": null
+  },
+  {
+   "token": "0x62e60accf6d515007bd0dcc7922a3e77730378e9",
+   "symbol": "CANISE",
+   "days": 2,
+   "created": "2026-09-26T16:06:51Z",
+   "vol7": 28219.732894532615,
+   "mcap": 4403.095742
+  },
+  {
+   "token": "0x6cb1e31fa10bd763c186a5cac6baeab68cf40abe",
+   "symbol": "OD",
+   "days": 1,
+   "created": "2026-09-27T02:02:52Z",
+   "vol7": 28152.733020121643,
+   "mcap": 4510.017895
+  },
+  {
+   "token": "0x65d5f1acf0e76f8c0e61477f274b71f21e111a8b",
+   "symbol": "PYLON",
+   "days": 2,
+   "created": "2026-09-26T20:06:03Z",
+   "vol7": 28151.546147314348,
+   "mcap": 4550.393045
+  },
+  {
+   "token": "0x5f05d789c8edce6af0d743ba34f666c234fb1e18",
+   "symbol": "ZC",
+   "days": 1,
+   "created": "2026-09-27T12:47:17Z",
+   "vol7": 28104.82662600441,
+   "mcap": 20050.287658664387
+  },
+  {
+   "token": "0x6bf37d5fa63bcefbcd5c8f9d01c8ebd90d140ec5",
+   "symbol": "BUILDCHORA",
+   "days": 1,
+   "created": "2026-09-27T09:34:04Z",
+   "vol7": 27502.907790049343,
+   "mcap": 4690.310227091887
+  },
+  {
+   "token": "0xf62933b5272526468f9f7c4d2ebc905eef0fc35b",
+   "symbol": "STONKEX",
+   "days": 7,
+   "created": "2026-09-21T03:54:22Z",
+   "vol7": 27426.133104924844,
+   "mcap": null
+  },
+  {
+   "token": "0x95ab07057ef4b2df6033399c4d13d3537fbdaca7",
+   "symbol": "CLEAR",
+   "days": 1,
+   "created": "2026-09-27T08:03:37Z",
+   "vol7": 27198.665867933374,
+   "mcap": 4779.173223
+  },
+  {
+   "token": "0x7f0d3099aa1f52830d7cd0058cb3dfb3558512c6",
+   "symbol": "ZC",
+   "days": 1,
+   "created": "2026-09-27T13:00:59Z",
+   "vol7": 26960.60295768913,
+   "mcap": 5132.320514636264
+  },
+  {
+   "token": "0x44aa935985f0d93d976255a8f04f8940a74b031d",
+   "symbol": "zc",
+   "days": 1,
+   "created": "2026-09-27T12:47:45Z",
+   "vol7": 26956.56709488054,
+   "mcap": 5039.542118286076
+  },
+  {
+   "token": "0x36b33fdc88e46ab8c6c3712b5f4d20bfedf0510a",
+   "symbol": "stockr",
+   "days": 1,
+   "created": "2026-09-27T15:35:56Z",
+   "vol7": 26702.416786626076,
+   "mcap": 3988.171650907484
+  },
+  {
+   "token": "0xaa54068644b2b39c0b567b0cd88f07655fb0239a",
+   "symbol": "ICETEA",
+   "days": 1,
+   "created": "2026-09-27T13:52:17Z",
+   "vol7": 26614.12541433178,
+   "mcap": 6765.490341
+  },
+  {
+   "token": "0x1722a01bff6615290bdc48dcf2bf6a4535d05de7",
+   "symbol": "Butthole",
+   "days": 1,
+   "created": "2026-09-27T03:41:24Z",
+   "vol7": 26445.45740327158,
+   "mcap": 5248.234672
+  },
+  {
+   "token": "0x67a32a749cd5eba9d69a0107b52f45015e3da20a",
+   "symbol": "fatgf",
+   "days": 7,
+   "created": "2026-09-21T00:16:08Z",
+   "vol7": 26415.20846958928,
+   "mcap": null
+  },
+  {
+   "token": "0x34bcba8711233a1badac879041ae0beb2a0a4934",
+   "symbol": "FWAIR",
+   "days": 7,
+   "created": "2026-09-21T05:37:29Z",
+   "vol7": 26349.741501396682,
+   "mcap": null
+  },
+  {
    "token": "0x4bf302b53eaa1b785d050aeb0fa06545c9ee1e18",
    "symbol": "BILIONS",
    "days": 2,
    "created": "2026-09-26T19:15:26Z",
    "vol7": 26294.746644147326,
    "mcap": 21271.56820453753
+  },
+  {
+   "token": "0x3d6fe15aee1fd2c9c0a50cf5ee1b54c48d1a0155",
+   "symbol": "BAL",
+   "days": 1,
+   "created": "2026-09-27T10:11:25Z",
+   "vol7": 26269.618417748992,
+   "mcap": 4568.256473
+  },
+  {
+   "token": "0x2c90c51fc997a0ba7329d2ee48db6cd67fcea771",
+   "symbol": "MUSEBOUNTY",
+   "days": 2,
+   "created": "2026-09-26T17:21:06Z",
+   "vol7": 25890.497297803056,
+   "mcap": 4469.736806
+  },
+  {
+   "token": "0xaf24cf87a28666abb3aaa9daf04945687f34d680",
+   "symbol": "ELSAN",
+   "days": 2,
+   "created": "2026-09-26T16:58:42Z",
+   "vol7": 25717.48779247538,
+   "mcap": 4950.185322766925
+  },
+  {
+   "token": "0xbf8dee2e07951e69ca6403620723ca4eba071e18",
+   "symbol": "DADCO",
+   "days": 7,
+   "created": "2026-09-21T01:56:52Z",
+   "vol7": 25539.835961432353,
+   "mcap": null
+  },
+  {
+   "token": "0xa81551f7839411facac53976a4f88db57c6004a6",
+   "symbol": "THICCUMS",
+   "days": 2,
+   "created": "2026-09-26T20:58:52Z",
+   "vol7": 25489.600115062716,
+   "mcap": 57135.8815531426
+  },
+  {
+   "token": "0x73e6d347870dfec19b7f8f695914facf5b62d899",
+   "symbol": "VLAD",
+   "days": 1,
+   "created": "2026-09-27T07:43:22Z",
+   "vol7": 25432.42377781678,
+   "mcap": 4777.113051
+  },
+  {
+   "token": "0xc097d9012ec10f3b75af7203cf822c691a4d1e18",
+   "symbol": "JIZZ",
+   "days": 1,
+   "created": "2026-09-27T04:19:10Z",
+   "vol7": 25357.765553676698,
+   "mcap": 20303.952938748993
+  },
+  {
+   "token": "0xc2b7623692b89d0f22eb258206cfe3b94e37b91a",
+   "symbol": "CROSSRATE",
+   "days": 1,
+   "created": "2026-09-27T12:57:09Z",
+   "vol7": 25317.663355607987,
+   "mcap": 6809.609788
+  },
+  {
+   "token": "0xb44550ba4cf719a116a8ee7d6b7079d903b97155",
+   "symbol": "REGULARS",
+   "days": 1,
+   "created": "2026-09-27T12:55:28Z",
+   "vol7": 25239.35813380415,
+   "mcap": 6792.522744
+  },
+  {
+   "token": "0x241a0fcddbcd147c88b54f1c7d62c0ec671c1e18",
+   "symbol": "XAMERICA",
+   "days": 2,
+   "created": "2026-09-26T21:33:52Z",
+   "vol7": 25119.03178996643,
+   "mcap": 20343.34796238256
+  },
+  {
+   "token": "0xc453e0e4b766d3092c544af1c1d954dd743bbb63",
+   "symbol": "VONZY",
+   "days": 1,
+   "created": "2026-09-27T10:37:30Z",
+   "vol7": 25072.176143159835,
+   "mcap": 4770.938463389068
+  },
+  {
+   "token": "0x28b246d57a81726c326b70fda1da0330ba3a1e18",
+   "symbol": "GB",
+   "days": 2,
+   "created": "2026-09-26T06:27:07Z",
+   "vol7": 25043.19518661262,
+   "mcap": 25974.89268582505
+  },
+  {
+   "token": "0x12cf2e1d7c8a3ab4db14be00cb9942fd6b36e476",
+   "symbol": "PACKLAB",
+   "days": 1,
+   "created": "2026-09-27T12:43:23Z",
+   "vol7": 24903.513631492013,
+   "mcap": 4789.240502
+  },
+  {
+   "token": "0x1f45885bbfba952052cdecfe857f16596eadc76d",
+   "symbol": "T/ACC",
+   "days": 1,
+   "created": "2026-09-27T10:23:38Z",
+   "vol7": 24868.231360734066,
+   "mcap": 3.0493327357687328
+  },
+  {
+   "token": "0xebcf5e1569138754e467e9353f9898cc14e2539a",
+   "symbol": "CASHX",
+   "days": 2,
+   "created": "2026-09-26T21:07:23Z",
+   "vol7": 24724.44800970706,
+   "mcap": 15246.047193365097
+  },
+  {
+   "token": "0xc28a81ac5e2fe9ae855d93202f4d76aaffed9e41",
+   "symbol": "DKILL",
+   "days": 1,
+   "created": "2026-09-27T08:49:55Z",
+   "vol7": 24630.50070226177,
+   "mcap": 2.9779205709062295
+  },
+  {
+   "token": "0x3d03838bc6936330fbf305b262e2c67c356a4d1e",
+   "symbol": "SEAL",
+   "days": 1,
+   "created": "2026-09-27T01:02:27Z",
+   "vol7": 24573.57887082452,
+   "mcap": 4601.022846
+  },
+  {
+   "token": "0x39f034af31724cc7c1ecadf0bfb0d632501ebdfc",
+   "symbol": "tech/opt",
+   "days": 2,
+   "created": "2026-09-26T17:30:43Z",
+   "vol7": 24504.31539280647,
+   "mcap": 0.0005975735953144043
+  },
+  {
+   "token": "0x3214cf24089224f346b7eba60b5c2c6361f8a26f",
+   "symbol": "CORVUS",
+   "days": 2,
+   "created": "2026-09-26T17:56:35Z",
+   "vol7": 24504.112078104612,
+   "mcap": 8459.045857414101
+  },
+  {
+   "token": "0x0c1ff6cf9cc2200f041c5b5bd4e9af5bc5778292",
+   "symbol": "LINKPAY",
+   "days": 1,
+   "created": "2026-09-27T15:17:54Z",
+   "vol7": 24484.91690522158,
+   "mcap": 15814.341070510758
   },
   {
    "token": "0x5d51deef8009bfeab61e64b902f6f46ce2d31e18",
@@ -1810,12 +6482,300 @@
    "mcap": 26084.941810809007
   },
   {
+   "token": "0x4ec2bebf3c6084ec455c3fec705426b397df3bb0",
+   "symbol": "AD",
+   "days": 1,
+   "created": "2026-09-27T00:01:02Z",
+   "vol7": 24369.3191299701,
+   "mcap": 6768.891628
+  },
+  {
+   "token": "0x2e5950f6d518606a8bd4dbb7d06b32c41f37923d",
+   "symbol": "ROBIN",
+   "days": 2,
+   "created": "2026-09-26T21:49:35Z",
+   "vol7": 24344.733966215852,
+   "mcap": 14480.365173203354
+  },
+  {
+   "token": "0xab17e8a02d03c29289d5d5640bdb6a98af4ce691",
+   "symbol": "Fire",
+   "days": 1,
+   "created": "2026-09-27T16:11:12Z",
+   "vol7": 24275.48772112919,
+   "mcap": 3834.44586815632
+  },
+  {
+   "token": "0x108f2230894a8d0e364d3874f906489fc24e7cfc",
+   "symbol": "UNIPCS",
+   "days": 1,
+   "created": "2026-09-27T00:04:29Z",
+   "vol7": 24268.792499027204,
+   "mcap": 2.8942002575997567
+  },
+  {
+   "token": "0xdb8f7d16236af2fe30fbc6064f3264f27f668c3d",
+   "symbol": "Aura",
+   "days": 1,
+   "created": "2026-09-27T09:40:50Z",
+   "vol7": 24257.584111610595,
+   "mcap": 43331.79926921324
+  },
+  {
+   "token": "0x70057f4d345de6fc493e91bb4946b51e5d02d638",
+   "symbol": "BONK",
+   "days": 2,
+   "created": "2026-09-26T23:17:46Z",
+   "vol7": 24247.853348273115,
+   "mcap": 9.181340648230789
+  },
+  {
+   "token": "0x682726b2ef10c00954e9b865cf3088743a4e9327",
+   "symbol": "HYDX",
+   "days": 1,
+   "created": "2026-09-27T00:50:39Z",
+   "vol7": 24247.804506353405,
+   "mcap": 0.001808129039604052
+  },
+  {
+   "token": "0xe794099764d775daae8e964927fae6f9ed4375f7",
+   "symbol": "PUDY",
+   "days": 7,
+   "created": "2026-09-21T05:06:37Z",
+   "vol7": 24114.465645312674,
+   "mcap": null
+  },
+  {
+   "token": "0xcfc899d04a31b121b9c98af1c3b4529a069ddb6f",
+   "symbol": "PUNKS",
+   "days": 7,
+   "created": "2026-09-21T04:18:19Z",
+   "vol7": 24107.535455594643,
+   "mcap": null
+  },
+  {
+   "token": "0xd5efca8ad568790212654efeb80b0cf9a5bcfcda",
+   "symbol": "BILLIONS",
+   "days": 2,
+   "created": "2026-09-26T22:34:19Z",
+   "vol7": 24097.486109343616,
+   "mcap": 2.8472936846585104
+  },
+  {
+   "token": "0x64d8c084e68dd1376905f812cc5459f56f3c5fac",
+   "symbol": "JEANHOOD",
+   "days": 1,
+   "created": "2026-09-27T15:08:20Z",
+   "vol7": 24094.294897076637,
+   "mcap": 2.8440655387470426
+  },
+  {
+   "token": "0x9506a539c0cda520ad19d8e7dd32d4acdaf807ff",
+   "symbol": "BPOOL",
+   "days": 1,
+   "created": "2026-09-27T16:06:59Z",
+   "vol7": 24069.61515623562,
+   "mcap": 42716.67319
+  },
+  {
+   "token": "0x0218dface505914f6618805909f6c2663be54a97",
+   "symbol": "Habanero",
+   "days": 1,
+   "created": "2026-09-27T07:22:32Z",
+   "vol7": 24056.736898682833,
+   "mcap": 0.0005766909479963451
+  },
+  {
+   "token": "0xc94e2a1450e398328594bd733ff83c9ee9c7af43",
+   "symbol": "BABYPOTATCHI",
+   "days": 1,
+   "created": "2026-09-27T09:48:09Z",
+   "vol7": 24036.93534905398,
+   "mcap": 9254.612807372583
+  },
+  {
+   "token": "0x69c7fa444dbbc05848c172e613378423ac15708b",
+   "symbol": "T/ACC",
+   "days": 2,
+   "created": "2026-09-26T18:58:14Z",
+   "vol7": 23936.91807829077,
+   "mcap": 2.7937524113311323
+  },
+  {
+   "token": "0x9e05a507755e1c4daff4e693643164bd82326506",
+   "symbol": "MAYAMASTER",
+   "days": 1,
+   "created": "2026-09-27T15:34:15Z",
+   "vol7": 23914.863501594537,
+   "mcap": 4494.185442
+  },
+  {
+   "token": "0x638b2d4f413cc42e6226cb34dddf5649935dd3a2",
+   "symbol": "BIDEN",
+   "days": 2,
+   "created": "2026-09-26T19:43:53Z",
+   "vol7": 23907.783806496373,
+   "mcap": 0.001786359360431929
+  },
+  {
+   "token": "0x6d1d693af19438ed397326e3cce3ae3b824a04ee",
+   "symbol": "FROGES",
+   "days": 2,
+   "created": "2026-09-26T16:47:48Z",
+   "vol7": 23881.521967751734,
+   "mcap": 13613.019551121568
+  },
+  {
+   "token": "0x8e29850799f56f8ab3313179a9b0271ba44c1856",
+   "symbol": "T/ACC",
+   "days": 1,
+   "created": "2026-09-27T11:16:38Z",
+   "vol7": 23876.262276483958,
+   "mcap": 0.005690527122
+  },
+  {
+   "token": "0x41192024d0d8472ba8b5dd392312328679253cd0",
+   "symbol": "SUN",
+   "days": 7,
+   "created": "2026-09-21T06:57:50Z",
+   "vol7": 23850.46245733972,
+   "mcap": null
+  },
+  {
+   "token": "0xd2ecf6f512248a77c4a94a1ca9e7973f532b5b6f",
+   "symbol": "WIZARD",
+   "days": 7,
+   "created": "2026-09-21T03:32:29Z",
+   "vol7": 23782.104974369315,
+   "mcap": null
+  },
+  {
+   "token": "0x8b8d8b13ae91e63daf8c40355afd08cf47a49ede",
+   "symbol": "DEBT",
+   "days": 2,
+   "created": "2026-09-26T20:25:17Z",
+   "vol7": 23703.239227073984,
+   "mcap": 43069.59146528025
+  },
+  {
    "token": "0xeaacd55254a00026fd495f302ba123c0c769ed33",
    "symbol": "ERRAND",
    "days": 1,
    "created": "2026-09-27T15:48:56Z",
    "vol7": 23701.83017297679,
    "mcap": 8.817826476670405
+  },
+  {
+   "token": "0x7ed016696111023bb96359be61c997e80538dfa8",
+   "symbol": "CROSSRATE",
+   "days": 1,
+   "created": "2026-09-27T12:45:28Z",
+   "vol7": 23657.15013645295,
+   "mcap": 6789.995383
+  },
+  {
+   "token": "0x75db5b0f8a69401af19f625d008f13c8374383e5",
+   "symbol": "MEME",
+   "days": 2,
+   "created": "2026-09-26T18:13:52Z",
+   "vol7": 23466.46097724563,
+   "mcap": 0.0001946058640713881
+  },
+  {
+   "token": "0x0cd1b45a2e60ab683a68efe4800aa901b8910ac7",
+   "symbol": "HUNBIKN",
+   "days": 7,
+   "created": "2026-09-21T05:53:17Z",
+   "vol7": 23238.930681636746,
+   "mcap": null
+  },
+  {
+   "token": "0xe54f348e30d3014cbca8abb4b3f75fd05105ee9a",
+   "symbol": "PEPECOIN",
+   "days": 2,
+   "created": "2026-09-26T15:13:38Z",
+   "vol7": 23179.530866290923,
+   "mcap": 6798.858926
+  },
+  {
+   "token": "0xe1f0942fae5e97b1e91f9f4535daf3157be01e18",
+   "symbol": "FWRFRWFW",
+   "days": 7,
+   "created": "2026-09-07T06:51:10Z",
+   "vol7": 22821.699843301136,
+   "mcap": null
+  },
+  {
+   "token": "0x359274808d6b5e29457dfa85e6e89726233a7e3e",
+   "symbol": "ROME",
+   "days": 1,
+   "created": "2026-09-27T08:05:39Z",
+   "vol7": 22778.440053087663,
+   "mcap": 2.395504859707362
+  },
+  {
+   "token": "0x2c7b5b3b329dcce9b5a005cab2dd3ece52b7c88c",
+   "symbol": "ICETEA",
+   "days": 2,
+   "created": "2026-09-26T23:44:06Z",
+   "vol7": 22746.44551528161,
+   "mcap": 6860.634792
+  },
+  {
+   "token": "0x36a7cc91c5c128c5a89df270d63dc23dd6d61e18",
+   "symbol": "WKT",
+   "days": 7,
+   "created": "2026-09-21T03:32:32Z",
+   "vol7": 22496.457941427856,
+   "mcap": null
+  },
+  {
+   "token": "0x759b7fb7543cba174d46d41a3b85fba69bc5a020",
+   "symbol": "AMBER",
+   "days": 2,
+   "created": "2026-09-26T19:03:15Z",
+   "vol7": 22316.48586618732,
+   "mcap": 4918.964946428014
+  },
+  {
+   "token": "0xe7c2802e4cee074e431309ede65e0aca72695fa3",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T09:17:15Z",
+   "vol7": 22116.910622951258,
+   "mcap": 6819.86801
+  },
+  {
+   "token": "0x7312120f1ca4e6ffae26b6425c445e001e58101c",
+   "symbol": "OPTIMISM",
+   "days": 1,
+   "created": "2026-09-27T06:54:09Z",
+   "vol7": 22052.883475670737,
+   "mcap": 6850.973200035023
+  },
+  {
+   "token": "0x25216f8506d52371605d012d89b6368ef49feb11",
+   "symbol": "VEILZK",
+   "days": 1,
+   "created": "2026-09-27T05:17:38Z",
+   "vol7": 21957.517263417376,
+   "mcap": 4857.886351
+  },
+  {
+   "token": "0xcfcf26395f98fdf206441658e87319026dc67162",
+   "symbol": "RAPPY",
+   "days": 2,
+   "created": "2026-09-26T18:18:52Z",
+   "vol7": 21901.86576279042,
+   "mcap": 4430.548362
+  },
+  {
+   "token": "0x2770d923eb08078b791a76fa1581fbd4115f817a",
+   "symbol": "musebook",
+   "days": 7,
+   "created": "2026-09-21T03:14:10Z",
+   "vol7": 21710.741171119582,
+   "mcap": null
   },
   {
    "token": "0x165590c3eb5186c0bf47519ecd52243cc7f98b07",
@@ -1826,12 +6786,468 @@
    "mcap": 26779.841470000003
   },
   {
+   "token": "0x81b2c5de9fce3c4806709801f4c26ecb4067b3ad",
+   "symbol": "JEVMAXX",
+   "days": 1,
+   "created": "2026-09-27T16:10:00Z",
+   "vol7": 21470.301891576084,
+   "mcap": 52207.08616480755
+  },
+  {
+   "token": "0xf76788495d437bcf4151bebeae33e955a53e1e18",
+   "symbol": "SUPERSTONK",
+   "days": 7,
+   "created": "2026-09-21T03:29:00Z",
+   "vol7": 21440.127603951973,
+   "mcap": null
+  },
+  {
+   "token": "0x902424fe4fdfe69e15ce0510c6e6d1dd1bd5089d",
+   "symbol": "VEMET",
+   "days": 4,
+   "created": "2026-09-24T04:35:41Z",
+   "vol7": 21375.76935364827,
+   "mcap": 5276.075358112692
+  },
+  {
+   "token": "0x399502b8eddb820782c4fd2cdb9d5d88b5d931db",
+   "symbol": "DEED",
+   "days": 7,
+   "created": "2026-09-21T01:35:37Z",
+   "vol7": 21071.789553672224,
+   "mcap": null
+  },
+  {
+   "token": "0x8b337164eac438a0d4715fac325af6e5cd5c6302",
+   "symbol": "JANUS",
+   "days": 1,
+   "created": "2026-09-27T10:59:40Z",
+   "vol7": 20786.731939208217,
+   "mcap": 4631.838489480173
+  },
+  {
+   "token": "0x98905809c854c4f0da76cc8f5793fc66f7fe81fd",
+   "symbol": "HDIG",
+   "days": 1,
+   "created": "2026-09-27T13:42:05Z",
+   "vol7": 20571.555938687157,
+   "mcap": 5775.851219290428
+  },
+  {
+   "token": "0x9fe8e77956da5e177243fadf68b48b0bb716f86f",
+   "symbol": "DAROC",
+   "days": 7,
+   "created": "2026-09-21T04:30:48Z",
+   "vol7": 20210.136014067557,
+   "mcap": null
+  },
+  {
+   "token": "0x7cee9b89c7e445a2c3262b3e824313cd0db3879d",
+   "symbol": "Gloob",
+   "days": 1,
+   "created": "2026-09-27T14:05:18Z",
+   "vol7": 20190.140785065483,
+   "mcap": 6807.032425
+  },
+  {
+   "token": "0x84256f8958615a046e2326034a29995d8e686086",
+   "symbol": "ROBINHOOD",
+   "days": 7,
+   "created": "2026-09-21T03:22:20Z",
+   "vol7": 19991.28480004309,
+   "mcap": null
+  },
+  {
+   "token": "0xe2a12993fb0e3d7febecb61ebedc56f928f21e18",
+   "symbol": "STOCKCATS",
+   "days": 7,
+   "created": "2026-09-21T04:06:52Z",
+   "vol7": 19794.512361762943,
+   "mcap": null
+  },
+  {
+   "token": "0x7a4f7b6933051394e3a1956524c211900ed455d7",
+   "symbol": "BOM",
+   "days": 2,
+   "created": "2026-09-26T19:05:57Z",
+   "vol7": 19774.085366266532,
+   "mcap": 4726.73823
+  },
+  {
+   "token": "0xc611d1868a78784b108d7c03c469265df1f796d7",
+   "symbol": "HUNBIKN",
+   "days": 7,
+   "created": "2026-09-21T05:54:25Z",
+   "vol7": 19697.54604145702,
+   "mcap": null
+  },
+  {
+   "token": "0x6ff94e51ca73d91cd1e26cb5b02513dde4db1e18",
+   "symbol": "TRUMPPEPE",
+   "days": 1,
+   "created": "2026-09-27T01:31:31Z",
+   "vol7": 19560.410977971038,
+   "mcap": 22467.81620898461
+  },
+  {
+   "token": "0xd713e5d00eb773312e52304cd0cfa5734e1ca1f7",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T09:42:35Z",
+   "vol7": 18691.71523747152,
+   "mcap": 6843.979999
+  },
+  {
+   "token": "0x2682d86d284a26b74ac2e9d1bcafb32e549e1e18",
+   "symbol": "DUMBMONEY",
+   "days": 7,
+   "created": "2026-09-21T03:28:57Z",
+   "vol7": 18614.899803643373,
+   "mcap": null
+  },
+  {
+   "token": "0xbe2445fc55a6f33f4eb219251e91191ba8b92777",
+   "symbol": "WOJACK",
+   "days": 1,
+   "created": "2026-09-27T16:03:51Z",
+   "vol7": 18571.25413012315,
+   "mcap": 17200.1633
+  },
+  {
+   "token": "0x777bbb8fe0a57e19cb7d15a0a8eb3b2882364777",
+   "symbol": "QR",
+   "days": 2,
+   "created": "2026-09-26T19:59:55Z",
+   "vol7": 17717.452913670728,
+   "mcap": 3191.815041
+  },
+  {
+   "token": "0x69275399d32a496d1c01a96a08286d139be60031",
+   "symbol": "MURCAT",
+   "days": 1,
+   "created": "2026-09-27T09:48:59Z",
+   "vol7": 17535.224227603347,
+   "mcap": 9129.303265734296
+  },
+  {
+   "token": "0xf4473399ab966182d76a14b03729f4115338d655",
+   "symbol": "CROSSRATE",
+   "days": 1,
+   "created": "2026-09-27T12:53:56Z",
+   "vol7": 17228.29236582263,
+   "mcap": 6764.234387
+  },
+  {
+   "token": "0xeae27e9307a5c9e9871ca18e7c74edbb91d91e18",
+   "symbol": "MU",
+   "days": 1,
+   "created": "2026-09-27T14:23:13Z",
+   "vol7": 17112.367377978968,
+   "mcap": 21077.615830712624
+  },
+  {
+   "token": "0xfc845c1017c901f501d20835963f7a0b34d2cd29",
+   "symbol": "FEEFI",
+   "days": 1,
+   "created": "2026-09-27T11:59:33Z",
+   "vol7": 17107.05917067204,
+   "mcap": 4662.868087736047
+  },
+  {
    "token": "0x647b2a3fa5daa052e94e24984ec7c89fdbd71e18",
    "symbol": "UNDERPANTS",
    "days": 1,
    "created": "2026-09-27T16:20:05Z",
    "vol7": 16988.400072769215,
    "mcap": 24290.01372736886
+  },
+  {
+   "token": "0x397aa59cdf5f7907e1553b09aa6487fb63c40237",
+   "symbol": "DATACENTER",
+   "days": 7,
+   "created": "2026-09-21T01:53:34Z",
+   "vol7": 16887.29115806802,
+   "mcap": null
+  },
+  {
+   "token": "0x85ebd2bb876d0e68c7a8971118765a383c3b3153",
+   "symbol": "FOMOEGG",
+   "days": 7,
+   "created": "2026-09-21T01:17:47Z",
+   "vol7": 16478.38111744563,
+   "mcap": null
+  },
+  {
+   "token": "0x88545df0d4b637d4868a3671c635a05d22521e18",
+   "symbol": "MRWIZARD",
+   "days": 7,
+   "created": "2026-09-21T02:59:44Z",
+   "vol7": 16471.649516305544,
+   "mcap": null
+  },
+  {
+   "token": "0xe33896464c7f12ea2e2b34fdf6bdde832cbb2647",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T09:46:25Z",
+   "vol7": 16259.632746305806,
+   "mcap": 6812.464551
+  },
+  {
+   "token": "0x65658806b1ffe4a49e2b5ec4c0079d3375ba1e18",
+   "symbol": "FROGETACO",
+   "days": 2,
+   "created": "2026-09-26T15:31:51Z",
+   "vol7": 15869.888358289432,
+   "mcap": 20968.65274
+  },
+  {
+   "token": "0xab4214fa9410cd720a6ce9b770e5654b522462b7",
+   "symbol": "POOLS",
+   "days": 1,
+   "created": "2026-09-27T07:49:12Z",
+   "vol7": 15639.29362448474,
+   "mcap": 4488.749614
+  },
+  {
+   "token": "0x1d48f9805b387ba32cc21985c7d78acc738b1e18",
+   "symbol": "WEFGW",
+   "days": 7,
+   "created": "2026-09-21T04:33:11Z",
+   "vol7": 15328.131841605815,
+   "mcap": null
+  },
+  {
+   "token": "0x158e2ae3edde7d2d5b7750264a2c3f9549fc0deb",
+   "symbol": "gnome",
+   "days": 1,
+   "created": "2026-09-27T16:09:50Z",
+   "vol7": 15246.678452669297,
+   "mcap": 4459.257051262909
+  },
+  {
+   "token": "0x90042f3559eaeafd4757f1dd448a062f19ae8b87",
+   "symbol": "ROBINHOOD",
+   "days": 7,
+   "created": "2026-09-21T05:13:43Z",
+   "vol7": 15173.511999289982,
+   "mcap": null
+  },
+  {
+   "token": "0xbf51fc0e9663f9492689de3351309b553d7e1e18",
+   "symbol": "OCTOPUS",
+   "days": 7,
+   "created": "2026-09-21T04:31:00Z",
+   "vol7": 14723.19993909019,
+   "mcap": null
+  },
+  {
+   "token": "0xffe0415d97a3032f57b77ce7fdda34b187143773",
+   "symbol": "MOO",
+   "days": 7,
+   "created": "2026-09-21T01:41:05Z",
+   "vol7": 14636.137158189442,
+   "mcap": null
+  },
+  {
+   "token": "0x48ccda67bf6f91fcea1663e213214d43bc6c4364",
+   "symbol": "KRYPTONITE",
+   "days": 1,
+   "created": "2026-09-27T02:20:43Z",
+   "vol7": 14613.606428733603,
+   "mcap": 4509.531867962198
+  },
+  {
+   "token": "0x6ef4f5ef1632728f81f6d9e64460264061fb4196",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T09:23:34Z",
+   "vol7": 14506.968510809982,
+   "mcap": 6811.670937
+  },
+  {
+   "token": "0x8daa4aea5d874c030bf4e95831f695de91ed166e",
+   "symbol": "KIRBY",
+   "days": 1,
+   "created": "2026-09-27T12:10:47Z",
+   "vol7": 14152.461177473111,
+   "mcap": 6821.099104
+  },
+  {
+   "token": "0x1bbb0433253e21c1396c5f1fd384e0592911dba3",
+   "symbol": "OUTSIDER",
+   "days": 7,
+   "created": "2026-09-21T05:30:41Z",
+   "vol7": 13902.951140423364,
+   "mcap": null
+  },
+  {
+   "token": "0x974e13c26a2143d6161a08fb00ac842063a99ba3",
+   "symbol": "TMT",
+   "days": 2,
+   "created": "2026-09-26T22:55:05Z",
+   "vol7": 13584.654096641418,
+   "mcap": 17019.52848385511
+  },
+  {
+   "token": "0x48b8db21ee87519c4bc5d37c31d8070e22fd7803",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T00:26:22Z",
+   "vol7": 13504.485702725115,
+   "mcap": 6768.964664
+  },
+  {
+   "token": "0x8b4874ea4a48943d0e2e35bc2a161a6ce4ba3b05",
+   "symbol": "LOUD",
+   "days": 1,
+   "created": "2026-09-27T13:37:46Z",
+   "vol7": 13499.148878006055,
+   "mcap": 5802.08476925469
+  },
+  {
+   "token": "0xc4672634944e14b28270283cf1a127c6c1d4eac8",
+   "symbol": "FANG",
+   "days": 1,
+   "created": "2026-09-27T12:09:45Z",
+   "vol7": 13463.552768569256,
+   "mcap": 4734.705321
+  },
+  {
+   "token": "0xe234ae85ff338ba7b202762b4b8cd9de5d33e88c",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T09:50:13Z",
+   "vol7": 13386.855048544736,
+   "mcap": 6809.487306
+  },
+  {
+   "token": "0x76f994383490cfec849b2a8d6af106d906091e18",
+   "symbol": "THESIFT",
+   "days": 2,
+   "created": "2026-09-26T17:27:56Z",
+   "vol7": 13186.287012782364,
+   "mcap": 21148.96016
+  },
+  {
+   "token": "0x5e165d58d56cb2fed56b88804a2e374243ae08e7",
+   "symbol": "TERMINATOR",
+   "days": 7,
+   "created": "2026-09-21T02:06:54Z",
+   "vol7": 12976.738963464195,
+   "mcap": null
+  },
+  {
+   "token": "0xc7fc69d0084bdea7193d40360ea4dfc5ac5499a0",
+   "symbol": "BULL",
+   "days": 1,
+   "created": "2026-09-27T10:44:50Z",
+   "vol7": 12885.353642460319,
+   "mcap": 6812.111139
+  },
+  {
+   "token": "0x53464e22794abed3e59cfbfdc63922cdab3a1e18",
+   "symbol": "LIKE",
+   "days": 7,
+   "created": "2026-09-21T03:14:21Z",
+   "vol7": 12864.738549796646,
+   "mcap": null
+  },
+  {
+   "token": "0x6e3ece96953983a8a9fab938d167e94b043c1e18",
+   "symbol": "MOONCHU",
+   "days": 7,
+   "created": "2026-09-21T03:46:00Z",
+   "vol7": 12316.212265947948,
+   "mcap": null
+  },
+  {
+   "token": "0x00000b313102eea87d13b17f0884bd7f7e6565f6",
+   "symbol": "CH",
+   "days": 2,
+   "created": "2026-09-26T21:07:07Z",
+   "vol7": 12304.808602497747,
+   "mcap": 3175.113937
+  },
+  {
+   "token": "0xf0daaa58a725293c2364a71fd93d732b3c7a5cb7",
+   "symbol": "BONDCOURSE",
+   "days": 1,
+   "created": "2026-09-27T16:15:41Z",
+   "vol7": 12255.251836563737,
+   "mcap": 4381.845035308145
+  },
+  {
+   "token": "0x5593455e6238db5a325c411e20715fa28b291e18",
+   "symbol": "SLING",
+   "days": 7,
+   "created": "2026-09-21T03:13:16Z",
+   "vol7": 12245.297339601393,
+   "mcap": null
+  },
+  {
+   "token": "0xe904d0a45be4fcbfe3559d2e38b3e0ee2beb2470",
+   "symbol": "NEARDOG",
+   "days": 1,
+   "created": "2026-09-27T16:02:38Z",
+   "vol7": 12211.252244584906,
+   "mcap": 4559.6510825147825
+  },
+  {
+   "token": "0x2b441c646f82e112bd3922d10d778653ebc4e548",
+   "symbol": "GIMBAL",
+   "days": 1,
+   "created": "2026-09-27T16:10:27Z",
+   "vol7": 12123.781363192233,
+   "mcap": 4290.35603658163
+  },
+  {
+   "token": "0x0775266ffd02015e655c343a26d171d23741e94e",
+   "symbol": "KARAT",
+   "days": 1,
+   "created": "2026-09-27T16:07:03Z",
+   "vol7": 12051.17633444783,
+   "mcap": 4560.781270955063
+  },
+  {
+   "token": "0x545fb9c619bef19f784879761deeb5fcb0ab1e18",
+   "symbol": "JETSON",
+   "days": 2,
+   "created": "2026-09-26T16:09:12Z",
+   "vol7": 11987.204240047417,
+   "mcap": 22111.73203233728
+  },
+  {
+   "token": "0x3ab97d4d2546c0e11d27381b5e4aa65c1b740700",
+   "symbol": "PRINTER",
+   "days": 7,
+   "created": "2026-09-21T17:51:39Z",
+   "vol7": 11908.894396254549,
+   "mcap": 10427.23882
+  },
+  {
+   "token": "0x159156db58ef518b335192a840c1f709098df758",
+   "symbol": "FOMOEGG",
+   "days": 1,
+   "created": "2026-09-27T09:16:17Z",
+   "vol7": 11815.793057406492,
+   "mcap": 6809.743514
+  },
+  {
+   "token": "0x8694a6ac661e14a654f32a67084c6bec234918a5",
+   "symbol": "TERMINATOR",
+   "days": 7,
+   "created": "2026-09-21T01:35:18Z",
+   "vol7": 11767.064723489093,
+   "mcap": null
+  },
+  {
+   "token": "0x3a09265b754d600f0d18660b95a38c08156bd00b",
+   "symbol": "TERMINATOR",
+   "days": 7,
+   "created": "2026-09-21T02:54:19Z",
+   "vol7": 11601.27253694701,
+   "mcap": null
   },
   {
    "token": "0x12132f24dcb39832bcfa2546c27b1dca0d1d1e18",
@@ -1842,12 +7258,748 @@
    "mcap": 25751.406771108206
   },
   {
+   "token": "0x625f6735db3efd1dff95ab3404ee509c4a141e18",
+   "symbol": "KEYCAT",
+   "days": 7,
+   "created": "2026-09-19T19:46:10Z",
+   "vol7": 11441.664406161499,
+   "mcap": null
+  },
+  {
+   "token": "0x50d5105df7ec848e057db302171cc3b337d61e18",
+   "symbol": "DOTCULT",
+   "days": 2,
+   "created": "2026-09-26T17:21:01Z",
+   "vol7": 11369.89990498946,
+   "mcap": 20436.950370793376
+  },
+  {
+   "token": "0x3ae9fc24321aaf32f6ef5087fc6b93a9adccd61e",
+   "symbol": "ROBINHOOD",
+   "days": 7,
+   "created": "2026-09-21T05:18:58Z",
+   "vol7": 11359.249126596687,
+   "mcap": null
+  },
+  {
+   "token": "0xa0dbab0be8e19339c068f441538d67a25378d14a",
+   "symbol": "AGNT",
+   "days": 1,
+   "created": "2026-09-27T16:18:39Z",
+   "vol7": 11220.0809844488,
+   "mcap": 49692.06151
+  },
+  {
+   "token": "0x36059dff3c4201c7b931e560e9c7da3552f5dd63",
+   "symbol": "JevAgentLab",
+   "days": 7,
+   "created": "2026-09-21T05:58:01Z",
+   "vol7": 11070.031446996365,
+   "mcap": null
+  },
+  {
+   "token": "0x70452e100f8db2c1ac584f68c3107275eea21ba3",
+   "symbol": "ANTIAI",
+   "days": 2,
+   "created": "2026-09-26T05:28:02Z",
+   "vol7": 10958.894622100754,
+   "mcap": 21832.85968077171
+  },
+  {
+   "token": "0xbdfbd64547abcf83cd92f021b5dd3f0c4b521e18",
+   "symbol": "MINIS",
+   "days": 2,
+   "created": "2026-09-26T16:57:54Z",
+   "vol7": 10785.44699500972,
+   "mcap": 21222.20977
+  },
+  {
+   "token": "0x12c265e41f787edff86a6de780283780e596768a",
+   "symbol": "BPOOL",
+   "days": 1,
+   "created": "2026-09-27T16:03:04Z",
+   "vol7": 10200.520862614938,
+   "mcap": 4478.581005717015
+  },
+  {
+   "token": "0x0870cd263e430ad37e626ddc42bffc3d59141e18",
+   "symbol": "BODEN",
+   "days": 2,
+   "created": "2026-09-26T17:43:09Z",
+   "vol7": 10125.80434210345,
+   "mcap": 19408.116221946366
+  },
+  {
+   "token": "0xf64d167e85f79171b9a81bb0172dab77faa3c4af",
+   "symbol": "musebook",
+   "days": 7,
+   "created": "2026-09-21T03:09:07Z",
+   "vol7": 10108.451318250483,
+   "mcap": null
+  },
+  {
+   "token": "0x70bd84a3ba0efed11710bb428b0170b847ae1e18",
+   "symbol": "NEMOCLAW",
+   "days": 1,
+   "created": "2026-09-27T03:03:31Z",
+   "vol7": 9919.393780909946,
+   "mcap": 20201.5558190333
+  },
+  {
+   "token": "0x636d2f79712d2a5169c84f6f0752f6076e2162ef",
+   "symbol": "$PEPE 2.0",
+   "days": 1,
+   "created": "2026-09-27T06:30:47Z",
+   "vol7": 9763.73535502953,
+   "mcap": 6793.436657
+  },
+  {
+   "token": "0xf6afaa1e65a7ca777d6888f113113a47d93433cc",
+   "symbol": "ROBINHOOD",
+   "days": 7,
+   "created": "2026-09-21T05:17:15Z",
+   "vol7": 9606.407967509016,
+   "mcap": null
+  },
+  {
+   "token": "0x4945d85fab4b80d42a6a3a8fa855214071372db3",
+   "symbol": "musebook",
+   "days": 7,
+   "created": "2026-09-21T03:11:13Z",
+   "vol7": 9408.134250350162,
+   "mcap": null
+  },
+  {
+   "token": "0x95cb1b1742e0fd4733430d0428d7c41fe0e186b2",
+   "symbol": "musebook",
+   "days": 7,
+   "created": "2026-09-21T03:12:42Z",
+   "vol7": 8960.833087147117,
+   "mcap": null
+  },
+  {
+   "token": "0x34bef4e2d339b3e45a5b5f5babb22fdd63d20f7d",
+   "symbol": "FLOUR",
+   "days": 1,
+   "created": "2026-09-27T08:06:08Z",
+   "vol7": 8710.786032289,
+   "mcap": 6802.838294
+  },
+  {
+   "token": "0x237b5c5997a8510d27bb4b96c7419ec6283b9681",
+   "symbol": "SU",
+   "days": 1,
+   "created": "2026-09-27T08:02:45Z",
+   "vol7": 8694.288215265953,
+   "mcap": 6808.058254
+  },
+  {
+   "token": "0x425c8768587adfc20622c58276dafc1bbf999257",
+   "symbol": "SMURFJIZZ",
+   "days": 1,
+   "created": "2026-09-27T07:33:44Z",
+   "vol7": 8677.13075478467,
+   "mcap": 6796.498886
+  },
+  {
+   "token": "0xe93a9e790a3ead41f77f604032762414972f8c7e",
+   "symbol": "WIZARDHAT",
+   "days": 7,
+   "created": "2026-09-21T05:17:05Z",
+   "vol7": 8666.828662761242,
+   "mcap": null
+  },
+  {
+   "token": "0x6f623a5828786306105d5144f61a54656853bbef",
+   "symbol": "FA660F",
+   "days": 1,
+   "created": "2026-09-27T16:03:24Z",
+   "vol7": 8618.260110396695,
+   "mcap": 5252.536164527148
+  },
+  {
+   "token": "0x3ce18b6f7626cac2f6a83ead6c989251e86a6d66",
+   "symbol": "RETIRE",
+   "days": 1,
+   "created": "2026-09-27T00:53:54Z",
+   "vol7": 8599.565520541448,
+   "mcap": 20409.61798359352
+  },
+  {
+   "token": "0xea7cf65570a80072d4fba1e5df9357a015346164",
+   "symbol": "JEVBOT",
+   "days": 7,
+   "created": "2026-09-21T05:51:54Z",
+   "vol7": 8569.090270007366,
+   "mcap": null
+  },
+  {
+   "token": "0xee6e9d1ce5ddba5a71e0b08092f0eff9990db869",
+   "symbol": "GAMESTOPGIRL",
+   "days": 7,
+   "created": "2026-09-21T05:15:32Z",
+   "vol7": 8567.534569457648,
+   "mcap": null
+  },
+  {
+   "token": "0xfac3a33c6ab0471ec3b1484386ab9571ef381e18",
+   "symbol": "FKING",
+   "days": 2,
+   "created": "2026-09-26T18:23:56Z",
+   "vol7": 8494.377948151418,
+   "mcap": 20054.92990787811
+  },
+  {
+   "token": "0x5652ea27fad74054183cb4c1c9c532f358f11e18",
+   "symbol": "FROGTACO",
+   "days": 2,
+   "created": "2026-09-26T18:27:28Z",
+   "vol7": 8385.290742431767,
+   "mcap": 20993.0973
+  },
+  {
+   "token": "0x4cc4f53505c9cfa9f63ae3536c82645178fe2543",
+   "symbol": "SUN",
+   "days": 7,
+   "created": "2026-09-21T06:22:55Z",
+   "vol7": 8132.605534337681,
+   "mcap": null
+  },
+  {
+   "token": "0x12a94b20deb3398385c9081a6c0e06c898481e18",
+   "symbol": "BUBBLES",
+   "days": 2,
+   "created": "2026-09-26T17:30:02Z",
+   "vol7": 8095.568677542799,
+   "mcap": 20185.22884182618
+  },
+  {
+   "token": "0x58b44654221b5fdbdd77cdc7110f5061d9701e18",
+   "symbol": "MOASS",
+   "days": 7,
+   "created": "2026-09-21T03:25:18Z",
+   "vol7": 8074.81269186881,
+   "mcap": null
+  },
+  {
+   "token": "0x3c4b0e9e4d98516a8b1ece61174710fe77b3563a",
+   "symbol": "FA660F",
+   "days": 1,
+   "created": "2026-09-27T16:03:24Z",
+   "vol7": 7858.508344984401,
+   "mcap": 5383.850160183917
+  },
+  {
+   "token": "0xd6614b09d3548c8130b7afedd5a7a00a73c8a1a7",
+   "symbol": "CAKE",
+   "days": 1,
+   "created": "2026-09-27T00:26:45Z",
+   "vol7": 7816.0788279080125,
+   "mcap": 40901.29303279182
+  },
+  {
+   "token": "0xfd9dada561b42f43345139aabeb7233d43aad4f6",
+   "symbol": "SWARMS",
+   "days": 1,
+   "created": "2026-09-27T16:14:06Z",
+   "vol7": 7767.889314259612,
+   "mcap": 4421.768443789158
+  },
+  {
+   "token": "0xecb61168699425ee6d4e3387aad7d9af88491e18",
+   "symbol": "GPU",
+   "days": 2,
+   "created": "2026-09-26T20:29:06Z",
+   "vol7": 7722.074206042915,
+   "mcap": 21953.03424
+  },
+  {
+   "token": "0xe759b242c02fc73550f5a0b8560922172d391e18",
+   "symbol": "GNOMES",
+   "days": 1,
+   "created": "2026-09-27T16:09:08Z",
+   "vol7": 7703.649450834875,
+   "mcap": 20138.552673522638
+  },
+  {
+   "token": "0xf60b99990050f5873d99ffd1cc1db4b27a3b5ba3",
+   "symbol": "esbuild",
+   "days": 2,
+   "created": "2026-09-26T17:54:00Z",
+   "vol7": 7638.086845643307,
+   "mcap": 10614.273580805648
+  },
+  {
+   "token": "0xe02b12edb68918d3837128e8cfc9d57b5b5fcb8f",
+   "symbol": "AGNT",
+   "days": 1,
+   "created": "2026-09-27T16:15:33Z",
+   "vol7": 7622.898508336748,
+   "mcap": 38215.1466558151
+  },
+  {
+   "token": "0xd205bc716cdf00ec77d82ea456992ca59a622dd4",
+   "symbol": "POPHIE",
+   "days": 1,
+   "created": "2026-09-27T16:10:13Z",
+   "vol7": 7615.607390554829,
+   "mcap": 29094.943045947977
+  },
+  {
+   "token": "0x1844d4e08092112ec831d116e959da6b98c164d0",
+   "symbol": "NSLP",
+   "days": 1,
+   "created": "2026-09-27T11:42:20Z",
+   "vol7": 7462.911863683565,
+   "mcap": 0.14393367745164415
+  },
+  {
+   "token": "0xefb234a386d7cc86496419b692efe1da2de57d8d",
+   "symbol": "SAMC",
+   "days": 2,
+   "created": "2026-09-26T21:09:48Z",
+   "vol7": 7369.024528031665,
+   "mcap": 23.487446238951694
+  },
+  {
+   "token": "0x9cfb76058f44342722766a3606b6e47eca8f1e18",
+   "symbol": "WOOLLYAI",
+   "days": 2,
+   "created": "2026-09-26T21:51:43Z",
+   "vol7": 7265.663305917933,
+   "mcap": 19916.20905879476
+  },
+  {
+   "token": "0x907b6d9a05b4faba0af71077d82cacf62125d388",
+   "symbol": "INFA",
+   "days": 1,
+   "created": "2026-09-27T15:59:45Z",
+   "vol7": 7245.726799081698,
+   "mcap": 0.0316299082494385
+  },
+  {
+   "token": "0x2ad35e8c0ea7444deec6953db7149cb9cfd8fe11",
+   "symbol": "AGNT",
+   "days": 1,
+   "created": "2026-09-27T16:14:27Z",
+   "vol7": 7223.006804667093,
+   "mcap": 86659.61983
+  },
+  {
+   "token": "0x3f8ae21d12f98868a6f2fc8cb4b997b353ff69a8",
+   "symbol": "MOODY",
+   "days": 1,
+   "created": "2026-09-27T16:14:36Z",
+   "vol7": 7064.644280471245,
+   "mcap": 4830.036412405474
+  },
+  {
+   "token": "0xb6263b503d68ebca5c2c4b7314e2ac92167e8db7",
+   "symbol": "DFRG",
+   "days": 1,
+   "created": "2026-09-27T07:40:08Z",
+   "vol7": 7040.164195310735,
+   "mcap": 0.04455255553742162
+  },
+  {
+   "token": "0xe833486404b0e8bf037d08e8e2d587ed6efac290",
+   "symbol": "THDD",
+   "days": 1,
+   "created": "2026-09-27T06:36:15Z",
+   "vol7": 6894.512168088655,
+   "mcap": 0.03393192410472645
+  },
+  {
    "token": "0xcd0c7ed02fe6575a00f84f4c7383db9f523a1e18",
    "symbol": "AMZNIKE",
    "days": 1,
    "created": "2026-09-27T15:56:50Z",
    "vol7": 6752.317412476783,
    "mcap": 21305.768074903608
+  },
+  {
+   "token": "0x419a7d666adc739211e876a36bb6aa7e3b8e1e18",
+   "symbol": "MORE",
+   "days": 2,
+   "created": "2026-09-26T19:12:40Z",
+   "vol7": 6734.027039041158,
+   "mcap": 20531.883152311093
+  },
+  {
+   "token": "0xf8d40b82dfe72cabaf15c379dfb8adcb98689288",
+   "symbol": "ALPA",
+   "days": 2,
+   "created": "2026-09-26T23:54:56Z",
+   "vol7": 6707.5691587988085,
+   "mcap": 0.06761519627037962
+  },
+  {
+   "token": "0x9ca37c259c043c8957d91d3266871e8d06c590ce",
+   "symbol": "FIRED",
+   "days": 1,
+   "created": "2026-09-27T04:08:34Z",
+   "vol7": 6696.475633211993,
+   "mcap": 36.96202257143219
+  },
+  {
+   "token": "0xab1d4cc419d0be3313b68ad3ea794647e4742735",
+   "symbol": "DOOD",
+   "days": 2,
+   "created": "2026-09-26T16:16:02Z",
+   "vol7": 6693.626664297388,
+   "mcap": 2090.545618524575
+  },
+  {
+   "token": "0xe5304324795b8f985805131f22840a0630023505",
+   "symbol": "SUPA",
+   "days": 1,
+   "created": "2026-09-27T15:12:01Z",
+   "vol7": 6654.7362969330825,
+   "mcap": 3694.08096782575
+  },
+  {
+   "token": "0x9b02316c34f5360c2ef79621f806e2ecf2139c07",
+   "symbol": "LAMA",
+   "days": 2,
+   "created": "2026-09-26T22:52:35Z",
+   "vol7": 6593.736676907995,
+   "mcap": 0.044855528055273916
+  },
+  {
+   "token": "0x946817d1ef5d26250ab4efd439cbfe2bf80c0cf5",
+   "symbol": "SHDD",
+   "days": 2,
+   "created": "2026-09-26T20:57:20Z",
+   "vol7": 6591.918038327762,
+   "mcap": 15.954861657946177
+  },
+  {
+   "token": "0xcd3c1b9c5897164371ef79f82980540a2cb1e0f0",
+   "symbol": "DIAM",
+   "days": 1,
+   "created": "2026-09-27T10:52:27Z",
+   "vol7": 6455.381820231603,
+   "mcap": 0.061214522957521084
+  },
+  {
+   "token": "0xec71518e5d357ae3668ce44f330d383d0cfd8ef9",
+   "symbol": "LZRF",
+   "days": 2,
+   "created": "2026-09-26T16:28:30Z",
+   "vol7": 6439.280057052958,
+   "mcap": 5593.779054568458
+  },
+  {
+   "token": "0xbca6181e7911a20c43e7599e457c2e712f8ca2db",
+   "symbol": "MBUN",
+   "days": 2,
+   "created": "2026-09-26T18:52:36Z",
+   "vol7": 6411.571273268219,
+   "mcap": 0.030312560831429827
+  },
+  {
+   "token": "0xf0001848404039a25b98e566b528f4c7baaba448",
+   "symbol": "BAPE",
+   "days": 1,
+   "created": "2026-09-27T00:46:14Z",
+   "vol7": 6362.798980391423,
+   "mcap": 9.242777429903553
+  },
+  {
+   "token": "0xb3df4c55fc93ae635ff44251d05de758394bdf03",
+   "symbol": "SOLF",
+   "days": 2,
+   "created": "2026-09-26T17:33:55Z",
+   "vol7": 6328.3611489411,
+   "mcap": 16.206067790423567
+  },
+  {
+   "token": "0x38b3fa70dc83b788a4de1f62f030d27383f4f0b7",
+   "symbol": "SAMC",
+   "days": 7,
+   "created": "2026-09-21T05:05:02Z",
+   "vol7": 6224.900207262392,
+   "mcap": null
+  },
+  {
+   "token": "0x12aca5243dac5d0ca5afc07278e92d8bdb45e524",
+   "symbol": "RAPE",
+   "days": 1,
+   "created": "2026-09-27T03:18:40Z",
+   "vol7": 6205.0854254403885,
+   "mcap": 11.62520219353268
+  },
+  {
+   "token": "0x8df3c9119f2456fe2844035de0d2a92d831cb9c9",
+   "symbol": "CLOAKR",
+   "days": 1,
+   "created": "2026-09-27T16:00:39Z",
+   "vol7": 6195.182502104846,
+   "mcap": 4469.717284740597
+  },
+  {
+   "token": "0x1ea34eeac83edf14842eaa9f1a0f8b098f29449b",
+   "symbol": "RRAT",
+   "days": 1,
+   "created": "2026-09-27T09:23:16Z",
+   "vol7": 6193.287654038919,
+   "mcap": 22.7913777830254
+  },
+  {
+   "token": "0x4f8c99cb10bf7e3f157fc66bdd2a94d4be081e18",
+   "symbol": "JERRY",
+   "days": 1,
+   "created": "2026-09-27T14:56:55Z",
+   "vol7": 6158.681376290424,
+   "mcap": 23024.719466993807
+  },
+  {
+   "token": "0x8c52fb030535946727825375eb7c2c80e220cf62",
+   "symbol": "SIGC",
+   "days": 1,
+   "created": "2026-09-27T11:54:49Z",
+   "vol7": 6132.826999310467,
+   "mcap": 1561.5084513867052
+  },
+  {
+   "token": "0x153fe69ad38f2b7e7bc3d1409cd6e74c48b53204",
+   "symbol": "GRNF",
+   "days": 1,
+   "created": "2026-09-27T03:31:08Z",
+   "vol7": 6092.527326064535,
+   "mcap": 0.06042540773
+  },
+  {
+   "token": "0xe86773964c54272345ec9ba61ba9cb85801f7a5c",
+   "symbol": "CYDU",
+   "days": 1,
+   "created": "2026-09-27T01:29:21Z",
+   "vol7": 6081.323129500971,
+   "mcap": 4320.474776126166
+  },
+  {
+   "token": "0x528a505210cf88f1f0c791365498b2fd9f892964",
+   "symbol": "BNKD",
+   "days": 1,
+   "created": "2026-09-27T05:16:55Z",
+   "vol7": 6056.121505465634,
+   "mcap": 6623.47373692216
+  },
+  {
+   "token": "0x42bc92dbdb0fe9d4029f9a1e5151ef0a24f99d20",
+   "symbol": "CPAN",
+   "days": 2,
+   "created": "2026-09-26T16:40:58Z",
+   "vol7": 6038.698301438746,
+   "mcap": 19.656864594671234
+  },
+  {
+   "token": "0xa7361b7ea90fd0b95e493578a73abc27b4030db7",
+   "symbol": "FIRA",
+   "days": 1,
+   "created": "2026-09-27T01:04:24Z",
+   "vol7": 6036.857321403835,
+   "mcap": 9.750116601645482
+  },
+  {
+   "token": "0x6d9716104228d82629ef6bc2bb75cadbd2102659",
+   "symbol": "EVLD",
+   "days": 1,
+   "created": "2026-09-27T13:30:42Z",
+   "vol7": 6022.621530279171,
+   "mcap": 0.13438797590048407
+  },
+  {
+   "token": "0x9f55a56634d85420eef346de30b987b255214ca6",
+   "symbol": "PAPR",
+   "days": 1,
+   "created": "2026-09-27T11:04:56Z",
+   "vol7": 6006.246586558091,
+   "mcap": 4283.609378545653
+  },
+  {
+   "token": "0x66df8d20aa1ed536a8bc531f4f2aabad657053e0",
+   "symbol": "NJRT",
+   "days": 1,
+   "created": "2026-09-27T08:58:18Z",
+   "vol7": 6001.703174459908,
+   "mcap": 0.04236219887429433
+  },
+  {
+   "token": "0x7eb176037de6be932d444c46e87972218a431e18",
+   "symbol": "CUSTODY",
+   "days": 1,
+   "created": "2026-09-27T03:27:06Z",
+   "vol7": 5991.003935545712,
+   "mcap": 20203.590567366977
+  },
+  {
+   "token": "0x8cb11ab949645bfcf71c95d872ab8ca618b3a24e",
+   "symbol": "MAPE",
+   "days": 2,
+   "created": "2026-09-26T17:55:45Z",
+   "vol7": 5990.934736432005,
+   "mcap": 0.03999557961090102
+  },
+  {
+   "token": "0x7a5b7ee1d138ddecb55a9262451875eec055c531",
+   "symbol": "MBEAR",
+   "days": 1,
+   "created": "2026-09-27T13:43:10Z",
+   "vol7": 5984.671134063539,
+   "mcap": 0.19793828064871288
+  },
+  {
+   "token": "0xd24cd46481bd5a1ae72b76ed96cec3e093a61e18",
+   "symbol": "BILLION",
+   "days": 2,
+   "created": "2026-09-26T19:15:19Z",
+   "vol7": 5918.989769181836,
+   "mcap": 20980.241362614444
+  },
+  {
+   "token": "0xac86b919f1ebcdeedb76ddc0ac66ca7d90c8bf3a",
+   "symbol": "NITF",
+   "days": 1,
+   "created": "2026-09-27T04:36:44Z",
+   "vol7": 5898.591353310299,
+   "mcap": 4479.8860237861145
+  },
+  {
+   "token": "0xab91fa9c761df13eba4ba5fa44f6229e121d6e39",
+   "symbol": "MYSA",
+   "days": 1,
+   "created": "2026-09-27T16:12:15Z",
+   "vol7": 5861.012547650991,
+   "mcap": 11.066795908141264
+  },
+  {
+   "token": "0xfb8cb70e2da2526fdd3709de0bf958c38ac30fad",
+   "symbol": "MOON",
+   "days": 7,
+   "created": "2026-09-21T00:43:56Z",
+   "vol7": 5830.543564407699,
+   "mcap": null
+  },
+  {
+   "token": "0x38e7b3a3e67262b66d810abef5821fbf66b7dd1b",
+   "symbol": "VIKD",
+   "days": 7,
+   "created": "2026-09-21T03:55:21Z",
+   "vol7": 5827.581538742902,
+   "mcap": null
+  },
+  {
+   "token": "0xff44acc58f0e12eb9a76b7db58666ebf92dd4b68",
+   "symbol": "ETRA",
+   "days": 1,
+   "created": "2026-09-27T07:27:40Z",
+   "vol7": 5808.516407191151,
+   "mcap": 0.02931943772159626
+  },
+  {
+   "token": "0xe3527633327904fe0a9b084b30deaef36c1d9582",
+   "symbol": "MEGA",
+   "days": 7,
+   "created": "2026-09-21T06:26:34Z",
+   "vol7": 5800.989448656913,
+   "mcap": null
+  },
+  {
+   "token": "0x59e23f1a33734496c740bf695128fe08218f7000",
+   "symbol": "RPAN",
+   "days": 7,
+   "created": "2026-09-21T00:56:26Z",
+   "vol7": 5734.060992461729,
+   "mcap": null
+  },
+  {
+   "token": "0x1237d4408a8fe8efc4505ccb182f82f02ce78425",
+   "symbol": "PCAT",
+   "days": 2,
+   "created": "2026-09-26T23:42:28Z",
+   "vol7": 5670.764853658114,
+   "mcap": 0.033360694113192584
+  },
+  {
+   "token": "0x249a7d38b862a7ebf2f11bb9e3de7c3422620423",
+   "symbol": "THDD",
+   "days": 2,
+   "created": "2026-09-26T21:22:16Z",
+   "vol7": 5666.254955204575,
+   "mcap": 0.056629375347655164
+  },
+  {
+   "token": "0xc1cb8ba4764e072c9442e81523811e31cb94f648",
+   "symbol": "WINTER",
+   "days": 2,
+   "created": "2026-09-26T22:06:16Z",
+   "vol7": 5593.485477023117,
+   "mcap": 25598.774637658087
+  },
+  {
+   "token": "0x7b84a631adfda60631fd543502015d4cb029293f",
+   "symbol": "PIRA",
+   "days": 2,
+   "created": "2026-09-26T17:09:00Z",
+   "vol7": 5586.510439238239,
+   "mcap": 1.212213963
+  },
+  {
+   "token": "0x5b22e30ff9b3829a6bd74a9c5fae30b903caa737",
+   "symbol": "FONS",
+   "days": 2,
+   "created": "2026-09-26T19:51:33Z",
+   "vol7": 5552.848458612437,
+   "mcap": 4271.809255
+  },
+  {
+   "token": "0xfcb2d44a9a148f7d8345f3ee4ee7dcb3d5a6ac68",
+   "symbol": "BASE",
+   "days": 1,
+   "created": "2026-09-27T13:59:39Z",
+   "vol7": 5547.771113976637,
+   "mcap": 0.0921606442253548
+  },
+  {
+   "token": "0x8e1f81d908172ba7d3e960a0f3dd20b41784230c",
+   "symbol": "ALND",
+   "days": 7,
+   "created": "2026-09-21T07:00:47Z",
+   "vol7": 5546.6205938770645,
+   "mcap": null
+  },
+  {
+   "token": "0x187d20d44e8c5ce44f620726395e98c48b4bcba3",
+   "symbol": "Sopa",
+   "days": 2,
+   "created": "2026-09-26T19:19:18Z",
+   "vol7": 5430.987099726456,
+   "mcap": 11148.580219015084
+  },
+  {
+   "token": "0x4ae4dd3a869967931f7d409199f8a25c6866f122",
+   "symbol": "SUPA",
+   "days": 2,
+   "created": "2026-09-26T22:36:05Z",
+   "vol7": 5363.8144220116465,
+   "mcap": 0.02499033544054024
+  },
+  {
+   "token": "0x0b862ba3250342be3170775b6d055308a118eeb5",
+   "symbol": "CYMS",
+   "days": 7,
+   "created": "2026-09-21T00:18:57Z",
+   "vol7": 5346.260620557352,
+   "mcap": null
+  },
+  {
+   "token": "0xadd5b640d7e6a74c1ca7d5a1d280bec649f40cc6",
+   "symbol": "MWA",
+   "days": 7,
+   "created": "2026-09-21T02:15:00Z",
+   "vol7": 5299.386600414882,
+   "mcap": null
   },
   {
    "token": "0xd7ad9629e409ed1d4390bb64b31b3fbb0fe444a5",
@@ -1858,12 +8010,204 @@
    "mcap": 35770.83662
   },
   {
+   "token": "0xe02345bfdf15772122125a41282a38b12dcf1e18",
+   "symbol": "BUB",
+   "days": 2,
+   "created": "2026-09-26T17:32:28Z",
+   "vol7": 5264.431232861245,
+   "mcap": 20398.051718741433
+  },
+  {
+   "token": "0xf1ecdecb6dd6274db7c6f6c55b5a6a23b83b14fe",
+   "symbol": "DESK",
+   "days": 1,
+   "created": "2026-09-27T15:59:19Z",
+   "vol7": 5187.4154483209,
+   "mcap": 4448.406786042899
+  },
+  {
+   "token": "0xf04edbc92b1c52440eb773cc7ed1c6ae1975866c",
+   "symbol": "COMA",
+   "days": 7,
+   "created": "2026-09-21T03:13:08Z",
+   "vol7": 5139.963678308462,
+   "mcap": null
+  },
+  {
+   "token": "0xc5d407064006af4140e102ca8b43c02146d7485e",
+   "symbol": "ALNC",
+   "days": 7,
+   "created": "2026-09-21T01:08:55Z",
+   "vol7": 5137.952170840811,
+   "mcap": null
+  },
+  {
+   "token": "0xe5535c487b3ed17499a31191fec26cdc89921e18",
+   "symbol": "BBC",
+   "days": 2,
+   "created": "2026-09-26T17:12:45Z",
+   "vol7": 5104.082661179162,
+   "mcap": 20043.560833046347
+  },
+  {
+   "token": "0x9b5a5049dbfb8ca89cb8bab8b2ea974ccf1811c4",
+   "symbol": "ALEX",
+   "days": 2,
+   "created": "2026-09-26T15:02:27Z",
+   "vol7": 4986.416608098816,
+   "mcap": 10050.90565
+  },
+  {
+   "token": "0xd86a9d8840ade0dbbcf5ba7fcca0d4851f264db9",
+   "symbol": "ZCHIMP",
+   "days": 1,
+   "created": "2026-09-27T16:02:06Z",
+   "vol7": 4867.4232882732285,
+   "mcap": 16462.973306226904
+  },
+  {
+   "token": "0x93b478554b4f1432282cc087dff76f0325828b01",
+   "symbol": "FEELNICE",
+   "days": 7,
+   "created": "2026-09-21T00:59:55Z",
+   "vol7": 4865.276694960001,
+   "mcap": null
+  },
+  {
+   "token": "0x5be49816bdc263b81d527ee5fac93a1b9473891e",
+   "symbol": "PMNK",
+   "days": 7,
+   "created": "2026-09-21T01:33:53Z",
+   "vol7": 4862.563064794399,
+   "mcap": null
+  },
+  {
+   "token": "0xa86663adb283072939cb60fc343c439fd7c91e18",
+   "symbol": "NOSEED",
+   "days": 2,
+   "created": "2026-09-26T17:59:11Z",
+   "vol7": 4829.874796942774,
+   "mcap": 21898.56853
+  },
+  {
+   "token": "0x73967648e6a125a430b5946b82bc4414ff7e1e18",
+   "symbol": "HICOIN",
+   "days": 1,
+   "created": "2026-09-27T02:43:00Z",
+   "vol7": 4828.228816448167,
+   "mcap": 19998.271208010236
+  },
+  {
+   "token": "0xd724e9d7a2356a78770fc4c85a2efbfd7c8662fe",
+   "symbol": "CRAT",
+   "days": 7,
+   "created": "2026-09-21T05:51:06Z",
+   "vol7": 4802.684263243061,
+   "mcap": null
+  },
+  {
+   "token": "0xdb69801748798df41b77cc2c491e225a17a3bb94",
+   "symbol": "LZRT",
+   "days": 7,
+   "created": "2026-09-21T01:21:24Z",
+   "vol7": 4721.867515546363,
+   "mcap": null
+  },
+  {
+   "token": "0xc2cf26c49ff20a0809c5b6905a6030e4b3013ba3",
+   "symbol": "Terra",
+   "days": 2,
+   "created": "2026-09-26T23:40:50Z",
+   "vol7": 4699.013514095538,
+   "mcap": 18254.10864
+  },
+  {
    "token": "0x5dbaca8327b0baa57eb6c872a333bf8d6f642ba3",
    "symbol": "ZAIBATSU",
    "days": 4,
    "created": "2026-09-24T20:06:12Z",
    "vol7": 4673.837883380588,
    "mcap": 198505.3451
+  },
+  {
+   "token": "0xf4483773c1b8d20f8373e697c3dd0de14ac31e18",
+   "symbol": "OPTIMISM",
+   "days": 1,
+   "created": "2026-09-27T05:21:28Z",
+   "vol7": 4636.422689740993,
+   "mcap": 19973.453423827006
+  },
+  {
+   "token": "0xc79418b1ad932fc8ce0333ba136fd168c33c1e18",
+   "symbol": "FAF",
+   "days": 1,
+   "created": "2026-09-27T16:03:22Z",
+   "vol7": 4627.662127663522,
+   "mcap": 20448.440132832948
+  },
+  {
+   "token": "0xe5a1b790cfba1e76132885f095803ea6386c1e18",
+   "symbol": "ACCELERATE",
+   "days": 2,
+   "created": "2026-09-26T21:43:58Z",
+   "vol7": 4511.005583615141,
+   "mcap": 20207.363005089483
+  },
+  {
+   "token": "0x7cf9bbb7c31533ba6683209aff9cbc646b361e18",
+   "symbol": "ULTRASOUND",
+   "days": 2,
+   "created": "2026-09-26T18:04:29Z",
+   "vol7": 4441.173274359457,
+   "mcap": 19974.330313886167
+  },
+  {
+   "token": "0xbf158062c943b7aa5469bda943ce83c53e451e18",
+   "symbol": "HAIL",
+   "days": 2,
+   "created": "2026-09-26T20:23:49Z",
+   "vol7": 4345.236293848071,
+   "mcap": 21985.80043
+  },
+  {
+   "token": "0x8e12965967080c35100176bab65db7b3ef03b5a5",
+   "symbol": "FV",
+   "days": 7,
+   "created": "2026-09-21T06:27:09Z",
+   "vol7": 4217.205795683439,
+   "mcap": null
+  },
+  {
+   "token": "0xb5fd494c59dbcb979b67f5a77fd37220059c1e18",
+   "symbol": "SCAP",
+   "days": 1,
+   "created": "2026-09-27T15:22:34Z",
+   "vol7": 4183.083983190129,
+   "mcap": 20132.86252951298
+  },
+  {
+   "token": "0xc022d27e3c1e3a480c0a5ffe263429547ed91e18",
+   "symbol": "RUN",
+   "days": 2,
+   "created": "2026-09-26T21:27:03Z",
+   "vol7": 4094.718202382165,
+   "mcap": 20329.390648874054
+  },
+  {
+   "token": "0x1225baac1e694f523af5fbe2ad8801de79e45566",
+   "symbol": "PLUG",
+   "days": 1,
+   "created": "2026-09-27T16:15:07Z",
+   "vol7": 4093.6479505970196,
+   "mcap": 12907.32177
+  },
+  {
+   "token": "0xc8525fed2220134062279c2093d811a7352f3776",
+   "symbol": "BYTEME",
+   "days": 1,
+   "created": "2026-09-27T16:18:07Z",
+   "vol7": 3984.278325812694,
+   "mcap": 11497.56354
   },
   {
    "token": "0xcbde393b418f5d8365c76eac5efa4f41e2a7bebe",
@@ -1874,6 +8218,142 @@
    "mcap": 34630.4212799992
   },
   {
+   "token": "0x1186b5dbed5cdbe6f093f871a22bd03cd39f1e18",
+   "symbol": "LIGHTVELA",
+   "days": 1,
+   "created": "2026-09-27T03:01:08Z",
+   "vol7": 3933.5382869151586,
+   "mcap": 20161.837255191487
+  },
+  {
+   "token": "0x9778c99085d2bd6f504fd298140817a1ac211e18",
+   "symbol": "ELONG",
+   "days": 1,
+   "created": "2026-09-27T10:35:40Z",
+   "vol7": 3829.9230269679765,
+   "mcap": 20159.85764850684
+  },
+  {
+   "token": "0x0792e8aa46a18055651d115d54cdc45d721edf67",
+   "symbol": "snowmoon",
+   "days": 1,
+   "created": "2026-09-27T16:18:43Z",
+   "vol7": 3779.6714157023835,
+   "mcap": 14026.722978887949
+  },
+  {
+   "token": "0xe66fb0fb402b2c07d06f757078dbd5ab7b541e18",
+   "symbol": "BLUB",
+   "days": 2,
+   "created": "2026-09-23T20:14:23Z",
+   "vol7": 3535.928127387398,
+   "mcap": 22068.802890958097
+  },
+  {
+   "token": "0xa65eb507314931099b10e1f979633704a1521e18",
+   "symbol": "FATEIRONY",
+   "days": 2,
+   "created": "2026-09-26T21:33:06Z",
+   "vol7": 3447.433232544933,
+   "mcap": 20066.808293894217
+  },
+  {
+   "token": "0x8d4d413b7e1e902e685e2640fe792cd4b3ae4de5",
+   "symbol": "ha4to",
+   "days": 1,
+   "created": "2026-09-27T13:40:49Z",
+   "vol7": 3212.473426632465,
+   "mcap": 10386.35678
+  },
+  {
+   "token": "0x22b8c956a70cbd0e4cf8d6f7833f617ab9b09f73",
+   "symbol": "ZC",
+   "days": 1,
+   "created": "2026-09-27T16:08:22Z",
+   "vol7": 2908.936566897931,
+   "mcap": 12506.841195
+  },
+  {
+   "token": "0x202a72430c345683f0bfd4bd9d15e4cb2ce51e18",
+   "symbol": "IPET",
+   "days": 1,
+   "created": "2026-09-27T14:16:26Z",
+   "vol7": 2722.5105305591055,
+   "mcap": 21354.097371704887
+  },
+  {
+   "token": "0x10f6a976fd34d61a17fb1e31ac86eb8a446f298b",
+   "symbol": "RBRC",
+   "days": 6,
+   "created": "2026-09-22T02:09:11Z",
+   "vol7": 2722.434960918337,
+   "mcap": 29011.7512487695
+  },
+  {
+   "token": "0xb0711574537f61298d43be9cebc05d8c5e6101e9",
+   "symbol": "DOG",
+   "days": 2,
+   "created": "2026-09-26T15:52:08Z",
+   "vol7": 1926.5538509874186,
+   "mcap": 8654.307191931262
+  },
+  {
+   "token": "0xa958a9bc9e5f0dd37f7f490155a2f1f2c09a9b3e",
+   "symbol": "ORLOWEB",
+   "days": 2,
+   "created": "2026-09-26T23:24:25Z",
+   "vol7": 1561.17208397418,
+   "mcap": 7447.841068
+  },
+  {
+   "token": "0xe7ce1ae88fef971aa3822b48f405b47889b4be65",
+   "symbol": "INFERA",
+   "days": 7,
+   "created": "2026-09-21T23:33:47Z",
+   "vol7": 1438.5003655963078,
+   "mcap": 27544.200404876305
+  },
+  {
+   "token": "0x7a40405b58e9e546aa5f4d3d9ab074170656096f",
+   "symbol": "ROVEEX",
+   "days": 1,
+   "created": "2026-09-27T15:59:03Z",
+   "vol7": 1128.4389710494127,
+   "mcap": 7503.729537
+  },
+  {
+   "token": "0x9e9282d68d9826a9f51df9d1219654acb6ec1e18",
+   "symbol": "UG",
+   "days": 1,
+   "created": "2026-09-27T16:09:05Z",
+   "vol7": 908.52703909969,
+   "mcap": 21669.92404913451
+  },
+  {
+   "token": "0xbcf1c3b8bc2467ec0f3e6a9c881e28434d325809",
+   "symbol": "metamuse",
+   "days": 2,
+   "created": "2026-09-26T23:16:34Z",
+   "vol7": 759.7556387704436,
+   "mcap": 7357.884688899573
+  },
+  {
+   "token": "0x89b45a9f2f67f7a302a085b40bcef2093e3c8ba3",
+   "symbol": "d/acc",
+   "days": 2,
+   "created": "2026-09-26T12:30:12Z",
+   "vol7": 688.8427647395704,
+   "mcap": 13049.970370826175
+  },
+  {
+   "token": "0xe626f1068f9c6d659a13e2e31b49795e4b083ba3",
+   "symbol": "WORLD",
+   "days": 1,
+   "created": "2026-09-27T16:15:30Z",
+   "vol7": 609.6387752673701,
+   "mcap": 9811.695349356132
+  },
+  {
    "token": "0xc7030b7c44bc4088ee0eb2bfc74a7a07fef372c0",
    "symbol": "CS",
    "days": 5,
@@ -1882,12 +8362,92 @@
    "mcap": 27246.277589438083
   },
   {
+   "token": "0x7a1f0543f4db58a48e1b182e4bf7f10c3797e801",
+   "symbol": "0xAgent",
+   "days": 7,
+   "created": "2026-09-21T06:13:14Z",
+   "vol7": 602.0945567999999,
+   "mcap": null
+  },
+  {
+   "token": "0xc25b6333d8354c4f3de711ec448645eaa06ddc00",
+   "symbol": "WOLFAGE",
+   "days": 2,
+   "created": "2026-09-26T20:13:25Z",
+   "vol7": 587.0778630139727,
+   "mcap": 7737.695937309436
+  },
+  {
+   "token": "0x0af158877920e2260e4925171b1347b015ed1314",
+   "symbol": "FEEL",
+   "days": 7,
+   "created": "2026-09-21T00:45:00Z",
+   "vol7": 534.8324228697006,
+   "mcap": null
+  },
+  {
    "token": "0x0215e0554ad949f1723b64ab142a52ef0b0b5807",
    "symbol": "XCREDIT",
    "days": 5,
    "created": "2026-09-23T05:01:45Z",
    "vol7": 514.94463728312,
    "mcap": 26516.485704708663
+  },
+  {
+   "token": "0x7e5aa4339c54582ca55419ad8abec6600413fba3",
+   "symbol": "FREECODE",
+   "days": 2,
+   "created": "2026-09-26T19:29:51Z",
+   "vol7": 470.4945441127117,
+   "mcap": 9933.097104598815
+  },
+  {
+   "token": "0xe4cb823a71a9c9a3429c6f160a21daf4701e3101",
+   "symbol": "Comet",
+   "days": 7,
+   "created": "2026-09-21T06:53:52Z",
+   "vol7": 339.92541446301,
+   "mcap": null
+  },
+  {
+   "token": "0x813d909bec3d16c10a6e1e5e0a6725c332f735ba",
+   "symbol": "SEA",
+   "days": 5,
+   "created": "2026-09-21T01:10:36Z",
+   "vol7": 299.02567553574966,
+   "mcap": 22340.902752
+  },
+  {
+   "token": "0xd33510b89756aa074ec75b169b8f73281c722f25",
+   "symbol": "bpool",
+   "days": 1,
+   "created": "2026-09-27T16:16:36Z",
+   "vol7": 271.85988237891036,
+   "mcap": 5569.318315
+  },
+  {
+   "token": "0x1e81771942bc5117ade6dae840992271069f2ba3",
+   "symbol": "HIVE",
+   "days": 2,
+   "created": "2026-09-26T20:23:27Z",
+   "vol7": 232.18455953266354,
+   "mcap": 10128.064040728836
+  },
+  {
+   "token": "0x29ee47544600feaf07cbc201439f37b91a703506",
+   "symbol": "INSANE",
+   "days": 1,
+   "created": "2026-09-27T10:04:07Z",
+   "vol7": 113.68763723764567,
+   "mcap": 7431.218327
+  },
+  {
+   "token": "0xdabd04a76c5945dddd3fa240874ae6296cad64d6",
+   "symbol": "$ECHO",
+   "days": 7,
+   "created": "2026-09-21T05:42:08Z",
+   "vol7": 91.46668203480127,
+   "mcap": null
   },
   {
    "token": "0x52de707095e4b44a5cca2862b3780e6f718d5849",
@@ -1914,6 +8474,14 @@
    "mcap": 1.97631922669509e+24
   },
   {
+   "token": "0x88a2fbbe0378d2b661fb465e8b2fc891237b7b90",
+   "symbol": "MUSEFM",
+   "days": 4,
+   "created": "2026-09-24T06:27:08Z",
+   "vol7": 19.93537257452293,
+   "mcap": 7252.740411
+  },
+  {
    "token": "0x7c101c580993ef944c95059482b38e3835e0908c",
    "symbol": "\ud83d\udc5c",
    "days": 6,
@@ -1930,12 +8498,44 @@
    "mcap": 26547.99377
   },
   {
+   "token": "0x58bd1f99c76e98269ed33bd9c55d2ebf257f6fb7",
+   "symbol": "USGH",
+   "days": 2,
+   "created": "2026-09-26T13:45:16Z",
+   "vol7": 16.808019022968793,
+   "mcap": 29899.40433
+  },
+  {
    "token": "0x3398bc741f6e0799fecd3a87af30a8019f50c524",
    "symbol": "FIRM",
    "days": 3,
    "created": "2026-09-25T13:22:47Z",
    "vol7": 12.502516859231754,
    "mcap": 26548.02444
+  },
+  {
+   "token": "0x71ae54cd61a94168d18174a938bc344a1403bb07",
+   "symbol": "CRDTS",
+   "days": 5,
+   "created": "2026-09-23T04:09:55Z",
+   "vol7": 9.67603748462159,
+   "mcap": 16505.58665
+  },
+  {
+   "token": "0xe5e0334ff78e5e34047009dfe59a777be4987b07",
+   "symbol": "CREDITS",
+   "days": 5,
+   "created": "2026-09-23T03:49:40Z",
+   "vol7": 4.90008629626842,
+   "mcap": 13891.01354
+  },
+  {
+   "token": "0x18bbf4958f242045ae63a11dbc69642cff7a1e18",
+   "symbol": "RCTH",
+   "days": 1,
+   "created": "2026-09-27T16:06:25Z",
+   "vol7": 4.125329970917538,
+   "mcap": 20155.155378562213
   },
   {
    "token": "0x4dd8512727aab23e3df8b69cba81f67678008b07",
@@ -1968,6 +8568,14 @@
    "created": "2026-09-23T05:12:45Z",
    "vol7": 1.840976618934054,
    "mcap": 27374.60155
+  },
+  {
+   "token": "0x5fa22af56319a853d47baa887c97c79805981e18",
+   "symbol": "DWINO",
+   "days": 1,
+   "created": "2026-09-27T16:01:35Z",
+   "vol7": 1.7509579524154186,
+   "mcap": 19718.993980741037
   },
   {
    "token": "0x5e21ff2857c3460c3b99cefd07b7122bc5e1cc18",
@@ -2088,6 +8696,14 @@
    "created": "2026-09-25T17:59:07Z",
    "vol7": 0.284275016629946,
    "mcap": 26498.32322
+  },
+  {
+   "token": "0x19254d4fa11da5dd2300e8dd7588e72153fce959",
+   "symbol": "OPERIA",
+   "days": 6,
+   "created": "2026-09-22T07:43:27Z",
+   "vol7": 0.247739991834645,
+   "mcap": 13628.05173
   },
   {
    "token": "0xa56a273b7ae4667d6bb2ee7a645a3f2c70fe98c0",
@@ -2216,6 +8832,14 @@
    "created": "2026-09-22T22:16:25Z",
    "vol7": 0.0530729241430398,
    "mcap": 27046.18948
+  },
+  {
+   "token": "0xaf748c6756207996fd1e9e08aaf1b57da2f6d616",
+   "symbol": "WWAI",
+   "days": 3,
+   "created": "2026-09-25T21:32:52Z",
+   "vol7": 0.0132587386369141,
+   "mcap": 7387.052402
   }
  ]
 }

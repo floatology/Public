@@ -1,0 +1,32 @@
+{
+ "priced_at": "2026-09-27T21:25:38Z",
+ "eth_usd": 2686.71,
+ "pools": {
+  "0x7e271c400427ecb727f5fbb27dec69254bce7c4219e95e3535d0ed128f79648a": {
+   "quote_usd": 340.2696793002915,
+   "decimals": 18,
+   "symbol": "AAPL",
+   "base_usd": 0.009337
+  },
+  "0xa95d3882fb3ff32b6d8cc411f88cf7a2413f1a1c": {
+   "quote_usd": 2686.71,
+   "decimals": 18,
+   "symbol": "WETH"
+  },
+  "0x9fbcc982881813add98a9e1875c0794bfc4bbc9cc6e0cf29b946a0e909e9dd5f": {
+   "quote_usd": null,
+   "decimals": 6,
+   "symbol": "USDG"
+  },
+  "0xece5b96aee6848dd9c0c549e8700878be0cfbaf07ef676e829e33a99fc3e35ad": {
+   "quote_usd": null,
+   "decimals": 18,
+   "symbol": "AI"
+  },
+  "0xcfa8d2b979e717c6b2f352033dde95c02c94af49c8815f6c0374cda3bb8d9faf": {
+   "quote_usd": 2686.71,
+   "decimals": 18,
+   "symbol": "ETH"
+  }
+ }
+}

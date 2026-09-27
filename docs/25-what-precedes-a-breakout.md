@@ -1,0 +1,140 @@
+# 25 — What precedes a breakout, tested across the market
+
+**Question.** WALLET's 3–4 September breakout came after a volume dry-up, an
+ignition day, higher lows while tokens left the pool, and a pullback that held.
+Does that shape predict breakouts on other coins, and which filters (age, market
+cap, activity) separate coins worth watching from noise?
+
+**Data.**
+- **Candles:** daily closes and volume for 3,169 tokens across 42 DEXes, V4
+  included (`scripts/gt_history.py`). The universe is today's GeckoTerminal
+  listing plus 1,896 pools from the September census that have since been
+  delisted.
+- **Flow:** per-trade histories for 4,211 tokens from the older V2/V3 archive
+  (`scripts/flow_backtest.py`).
+- **Wallets:** full attributed histories for 36+ coins
+  (`scripts/wallet_signals_backtest.py`, results pending).
+
+Outcomes are measured over the 14 days after each signal:
+
+| Outcome | Definition |
+|---|---|
+| `run2x` | some close in the window reaches 2× the entry close |
+| `crash` | some close falls to half the entry close |
+| `clean` | a close of 1.5× comes before any close of 0.7× |
+| `held` | still up 50% or more at day 14 |
+
+Events are de-duplicated to one per token per 14 days. Each signal's rate is
+compared to the base rate of coins with the **same weekly volume**. Every result
+is repeated on two halves split by time and two halves split by token.
+
+## Four measurement traps, each of which produced a false result first
+
+1. **Dead coins dominate.** 99% of token-days in the flow archive had under $1k
+   of weekly volume. A signal that fires only on live coins therefore beats the
+   all-days base rate by 20× while predicting nothing. Fix: compare each signal
+   with coins of the same activity level.
+2. **Wicks are not prices.** Measured on candle highs, 38.5% of token-days
+   "reached 2x within 14 days". On thin pools a single stray fill prints a
+   wick nobody could sell into. Fix: measure outcomes on closes.
+3. **Survivorship more than doubles the base rate.** Using only coins still
+   listed today, 27.6% of token-days hit 2x within 14 days. Adding back the
+   delisted census coins brings it to 11.9%.
+4. **Unpriced pools.** DexScreener's per-token endpoint returns only a token's
+   single best pair, so every other pool went unpriced: 152k of ORBIO's 202k
+   trades had a USD value of zero. Fix: price by quote asset.
+
+## Results (survivor-corrected candles, 26,684 token-days, 825 tokens)
+
+| Signal | Events | 2x in 14d | Crash | Held +50% | 2x lift | Crash lift |
+|---|---|---|---|---|---|---|
+| base, all | 26,684 | 11.9% | 8.6% | 10.5% | | |
+| base, weekly vol >= $10k | 8,930 | 27.3% | 23.6% | 21.5% | | |
+| dry-up alone | 1,372 | 15.7% | 11.2% | 13.8% | 1.05x | 1.09x |
+| ignition alone | 702 | 22.5% | 20.9% | 17.9% | 1.02x | 1.18x |
+| higher lows alone | 773 | 21.1% | 18.6% | 16.6% | 1.08x | 1.15x |
+| coil alone | 837 | 8.1% | 5.3% | 7.4% | 0.99x | 0.85x |
+| **SETUP** (dry + ignite + higher lows + coil) | 76 | 26.3% | 15.8% | 22.4% | **1.47x** | 1.07x |
+| **BREAK** (close > 20d high on >= 2x volume after a dry-up) | 142 | 43.0% | 25.4% | 35.2% | **1.74x** | 1.29x |
+
+The 2x lift holds across every split:
+
+| Signal | Time, 1st half | Time, 2nd half | Tokens A | Tokens B |
+|---|---|---|---|---|
+| BREAK | 2.02x | 1.75x | 1.84x | 1.63x |
+| SETUP | 1.39x | 1.40x | 1.66x | 1.29x |
+
+**Reading.**
+- **No single signal has an edge.** Dry-ups, ignition days, higher lows and
+  coiling each sit near 1.0x once matched on activity. The pattern only carries
+  information in combination.
+- **BREAK is the strongest signal**, and also the most volatile: it raises the
+  crash rate by 1.29x. It confirms a move rather than anticipating it.
+- **SETUP is the cleaner early signal**, at about 1.5x upside with roughly neutral
+  crash risk, but it is rare (76 events across 825 tokens).
+- **The flow test agreed on direction and was too small to add much.**
+  Absorption and breakout days predicted large moves in *both* directions. The
+  full WALLET-shaped composite with on-chain flow fired only 7 times.
+
+## Filters: what cuts the noise
+
+Base rates by bucket (candles, survivor-corrected):
+
+| Weekly volume | 2x | Crash | Ratio |
+|---|---|---|---|
+| < $1k | 2.4% | 0.6% | dead |
+| $1k–10k | 17.3% | 4.6% | 3.8 |
+| **$10k–50k** | **26.3%** | **7.1%** | **3.7** |
+| $50k–250k | 32.6% | 21.1% | 1.5 |
+| $250k–1M | 30.5% | 34.2% | 0.9 |
+| $1M+ | 22.1% | 29.9% | 0.7 |
+
+| Market cap | 2x | Crash |
+|---|---|---|
+| $25k–100k | 21.0% | 17.2% |
+| $100k–300k | 27.0% | 30.3% |
+| $300k–1M | 32.8% | 36.7% |
+| $1M–5M | 19.8% | 19.3% |
+| $5M+ | 21.0% | 19.7% |
+
+| Age | 2x | Crash |
+|---|---|---|
+| 14–44 days | 12–13% | 7–9% |
+| 45–59 days | 9.3% | 11.2% |
+| 60+ days | 8.0% | 13.9% |
+
+- **Weekly volume is the filter that matters.** Moderate activity ($1k–50k a
+  week) has the best upside-to-downside ratio. Above $250k a week, crashes
+  outnumber runs; that is churn and distribution, not accumulation.
+- **$100k–$1M is the most volatile market-cap band**, highest on both the
+  upside and the crash rate. Above $1M the two are balanced.
+- **Age is a weak filter, and older is not safer.** Past about six weeks the
+  upside falls and crashes rise. Coins younger than 14 days cannot be tested
+  here: they have no history to signal on. Today's busiest coins are mostly
+  hours old.
+- **Inside the $100k–$5M range with $10k+ of weekly volume**, SETUP hit 2x 43%
+  of the time with fewer crashes than comparable coins (0.78x); BREAK hit 2x 51%
+  of the time but crashed 37%.
+
+## Live screen
+
+`scripts/candle_backtest.py` flags SETUP and BREAK on the last complete day.
+`scripts/live_screen.py` then applies the filters above: SETUP or BREAK, weekly
+volume of at least $10k, market cap $100k–$5M, no tokenized stocks, and a
+HIGH-CHURN mark above $250k a week. On 27 Sep, 93 raw flags reduced to 2:
+
+- **Odin** — BREAK, $369k cap, $88k weekly volume
+- **ai17z** — BREAK, $252k cap, $323k weekly volume (HIGH-CHURN)
+
+## Limits
+
+- **One market, one quarter.** Everything comes from Robinhood Chain between
+  July and September 2026. Lifts of 1.5–1.7x on 76–142 events are consistent
+  across splits, but they are not large samples.
+- **Market cap is approximate:** price × supply, with supply from fdv/price or
+  a cached `totalSupply`. It is wrong for tokens that mint after launch (see
+  ERHA).
+- **Closes, not execution.** A 2x close is not a 2x fill after slippage and
+  fees, particularly on the thin pools where these signals fire.
+- **Wallet-level signals are pending.** Whether big wallets accumulate before
+  breakouts is the case-control batch still building.

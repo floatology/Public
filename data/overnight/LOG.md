@@ -11,3 +11,4 @@
 2026-09-27T19:24:34Z fixed quote pricing (by asset, not per pool): 152k of ORBIO's 202k trades had been unpriced; repriced all built tokens
 2026-09-27T19:26:00Z batch2 case-control list chosen (20 cases, 20 controls); queued after batch1
 2026-09-27T20:51:07Z check-in 3: batch1 24/30 (OPENAIx1L skipped heavy), candles 2864/5290 (liquid done, census-only ~half)
+2026-09-27T22:23:08Z check-in 4: full survivor-corrected candle backtest done; docs/25 drafted; live shortlist = Odin, ai17z
