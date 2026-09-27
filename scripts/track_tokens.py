@@ -130,6 +130,13 @@ def cmd_add(args) -> int:
                     print(f"   {q}: rejected lookalike {a} (24h volume ${v:,.0f})")
             pairs.sort(key=lambda p: -((p.get("liquidity") or {}).get("usd") or 0))
             pairs = [p for p in pairs if p["baseToken"]["address"].lower() == token]
+            # Tokenized stocks and stablecoins are not what this studies, and
+            # a stock token's price follows its share, not on-chain flow.
+            nm = pairs[0]["baseToken"].get("name") or ""
+            if nm.strip().lower().endswith("robinhood token") or args.skip_symbols and \
+                    pairs[0]["baseToken"]["symbol"].upper() in args.skip_symbols:
+                print(f"{q}: skipped ({nm})")
+                continue
             entry = reg.get(token, {"symbol": pairs[0]["baseToken"]["symbol"],
                                     "name": pairs[0]["baseToken"]["name"], "pools": {}})
             skipped = []
@@ -370,6 +377,7 @@ def main() -> int:
     sub = p.add_subparsers(dest="cmd", required=True)
     a = sub.add_parser("add"); a.add_argument("symbols", nargs="+")
     a.add_argument("--min-liq", type=float, default=20_000)
+    a.add_argument("--skip-symbols", nargs="*", default=["USDC", "USDT", "USDG", "WETH", "ETH", "DAI"])
     b = sub.add_parser("build"); b.add_argument("--only", nargs="*")
     args = p.parse_args()
     return cmd_add(args) if args.cmd == "add" else cmd_build(args)
