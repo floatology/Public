@@ -250,12 +250,57 @@ def first_transfer_block(tdir: Path) -> int | None:
     return min(t["block"]) if t.get("block") else None
 
 
+MAX_TRANSFERS = 2_000_000
+
+
+def estimate_transfers(rpc: Rpc, token: str, head: int) -> tuple[int, int]:
+    """Projected lifetime Transfer count, from density near the head.
+
+    Some tokens emit several transfers per swap (reflection and tax mechanics,
+    or bot churn). musebook ran at 2.7 per block, which projects to ~26 million
+    over its life and would have stalled an overnight batch for hours. The
+    density is measured on the last 20,000 blocks and projected back to the
+    token's first transfer, found by a coarse search, so the check costs a
+    handful of calls.
+    """
+    from rhc.rpc import TOPIC_TRANSFER
+    try:
+        recent = len(rpc.get_logs(from_block=head - 20_000, to_block=head,
+                                  topics=[[TOPIC_TRANSFER]], address=token))
+    except RpcError:
+        recent = 10_000          # at or over the node's cap: dense
+    lo, hi = 1, head
+    for _ in range(14):          # binary search for any activity, coarse
+        mid = (lo + hi) // 2
+        try:
+            got = rpc.get_logs(from_block=lo, to_block=mid, topics=[[TOPIC_TRANSFER]],
+                               address=token)
+        except RpcError:
+            got = [1]
+        if got:
+            hi = mid
+        else:
+            lo = mid + 1
+    life = head - lo
+    return int(recent / 20_000 * life), lo
+
+
 def build_token(token: str, entry: dict, eth_usd: float) -> bool:
     sym = entry["symbol"]
     tdir = ROOT / "data/tokens" / token
+    if entry.get("skipped_heavy") and not entry.get("force"):
+        note(f"{sym}: skipped (too heavy: {entry['skipped_heavy']})")
+        return True
     note(f"{sym}: transfers starting")
     r = subprocess.run([PY, str(ROOT / "scripts/token_archive.py"), "--token", token,
                         "--transfers"], cwd=ROOT)
+    if r.returncode == 3:
+        # More than 600k transfer logs in one 8M-block segment. Projections from
+        # a sample underestimated WALLET threefold, because launches are far
+        # denser than later trading, so the cap is enforced during the scan.
+        entry["skipped_heavy"] = "over 600k transfers in one segment"
+        note(f"{sym}: SKIPPED — over 600k transfers in one segment; set force=true to build")
+        return True
     if r.returncode:
         note(f"{sym}: transfers FAILED — rerun build to resume"); return False
     note(f"{sym}: transfers DONE")
@@ -368,6 +413,7 @@ def cmd_build(args) -> int:
     ok = True
     for token, entry in todo:
         ok &= build_token(token, entry, eth)
+        save_reg(reg)
     note("build finished" if ok else "build finished WITH FAILURES — rerun to resume")
     return 0 if ok else 1
 

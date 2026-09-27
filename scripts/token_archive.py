@@ -142,10 +142,19 @@ def dedupe(old: dict[str, list], new: dict[str, list]) -> dict[str, list]:
     return out
 
 
+MAX_LOGS_PER_SEGMENT = 600_000   # busiest normal token seen: WALLET, 176k in one segment
+
+
+class TooHeavy(RuntimeError):
+    """A token whose log volume would stall a batch; the caller skips it."""
+
+
 def scan(rpc: Rpc, *, topic: str, address: str, lo: int, hi: int, label: str) -> list[dict]:
     started = time.time()
 
     def progress(block: int, span: int, yielded: int) -> None:
+        if yielded > MAX_LOGS_PER_SEGMENT:
+            raise TooHeavy(f"{yielded:,} logs by block {block:,}")
         done = (block - lo) / max(1, hi - lo)
         print(f"  {label} {done:6.1%}  block {block:,}  span {span:,}  "
               f"logs {yielded:,}  {time.time()-started:.0f}s", file=sys.stderr, flush=True)
@@ -318,4 +327,8 @@ def main() -> int:
 
 
 if __name__ == "__main__":
-    raise SystemExit(main())
+    try:
+        raise SystemExit(main())
+    except TooHeavy as exc:
+        print(f"TOO_HEAVY: {exc}", file=sys.stderr)
+        raise SystemExit(3)
