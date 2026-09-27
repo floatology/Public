@@ -105,3 +105,53 @@
 2026-09-27T16:47:02Z  musebook: transfers starting
 2026-09-27T16:47:34Z  build starting for musebook, RBD, RHV, BIDEN, GIWA, CGEQ, DKILL, U, Agrippa, ORDESK, CEREBRO, UBIK, BUN, HOODS, ROO, DEBT, CPU, OPENAIx1L, POTATCHI, SW, zc, HOODCATS, FROGES, CERTIC, HYDX, INU, ZZZ, BONER, ORDESK, SCHIFFY (ETH $2,686.71)
 2026-09-27T16:47:34Z  musebook: transfers starting
+2026-09-27T16:58:50Z  musebook: SKIPPED — over 600k transfers in one segment; set force=true to build
+2026-09-27T16:58:50Z  RBD: transfers starting
+2026-09-27T17:04:24Z  RBD: transfers DONE
+2026-09-27T17:04:25Z  RBD: pool 0x5672a588 (v4/ETH) fresh from 64,158,226
+2026-09-27T17:07:36Z  RBD: pool 0x5672a588 DONE, 74,145 swaps
+2026-09-27T17:07:36Z  RBD: pool 0x99f1143e (v4/ETH) fresh from 64,158,226
+2026-09-27T17:09:26Z  RBD: pool 0x99f1143e DONE, 80,153 swaps
+2026-09-27T17:09:30Z  RBD: attributed DONE
+2026-09-27T17:09:33Z  RBD: ledger DONE
+2026-09-27T17:09:33Z  RHV: transfers starting
+2026-09-27T17:09:49Z  RHV: transfers DONE
+2026-09-27T17:09:50Z  RHV: pool 0x2b05bbea (v4/ETH) fresh from 73,950,538
+2026-09-27T17:09:51Z  RHV: pool 0x2b05bbea DONE, 10,655 swaps
+2026-09-27T17:09:51Z  RHV: attributed DONE
+2026-09-27T17:09:52Z  RHV: ledger DONE
+2026-09-27T17:09:52Z  BIDEN: transfers starting
+2026-09-27T17:10:44Z  BIDEN: transfers DONE
+2026-09-27T17:10:45Z  BIDEN: pool 0x2200fd3e (v4/USDG) fresh from 73,326,639
+2026-09-27T17:10:52Z  BIDEN: pool 0x2200fd3e DONE, 6,227 swaps
+2026-09-27T17:10:52Z  BIDEN: attributed DONE
+2026-09-27T17:10:53Z  BIDEN: ledger DONE
+2026-09-27T17:10:53Z  GIWA: transfers starting
+2026-09-27T17:15:04Z  GIWA: transfers DONE
+2026-09-27T17:15:05Z  GIWA: pool 0x28f26fb9 (v3/WETH) fresh from 20,576,084
+2026-09-27T17:18:43Z  GIWA: pool 0x28f26fb9 DONE, 40,295 swaps
+2026-09-27T17:18:44Z  GIWA: attributed DONE
+2026-09-27T17:18:45Z  GIWA: ledger DONE
+2026-09-27T17:18:45Z  CGEQ: transfers starting
+2026-09-27T17:20:07Z  CGEQ: transfers DONE
+2026-09-27T17:20:07Z  CGEQ: pool 0xc09aaf90 (v4/WETH) fresh from 72,834,701
+2026-09-27T17:20:23Z  CGEQ: pool 0xc09aaf90 DONE, 16,853 swaps
+2026-09-27T17:20:24Z  CGEQ: attributed DONE
+2026-09-27T17:20:25Z  CGEQ: ledger DONE
+2026-09-27T17:20:25Z  DKILL: transfers starting
+2026-09-27T17:20:47Z  DKILL: transfers DONE
+2026-09-27T17:20:47Z  DKILL: pool 0x55393464 (v3/WETH) fresh from 73,636,430
+2026-09-27T17:21:00Z  DKILL: pool 0x55393464 DONE, 8,295 swaps
+2026-09-27T17:21:00Z  DKILL: attributed DONE
+2026-09-27T17:21:01Z  DKILL: ledger DONE
+2026-09-27T17:21:01Z  U: transfers starting
+2026-09-27T17:25:30Z  U: transfers DONE
+2026-09-27T17:25:31Z  U: pool 0xf399bd15 (v4/USDG) fresh from 56,765,550
+2026-09-27T17:28:14Z  U: pool 0xf399bd15 DONE, 44,120 swaps
+2026-09-27T17:28:14Z  U: pool 0xa5d2fa75 (v4/ETH) fresh from 56,765,550
+2026-09-27T17:30:38Z  U: pool 0xa5d2fa75 DONE, 41,697 swaps
+2026-09-27T17:30:41Z  U: attributed DONE
+2026-09-27T17:30:44Z  U: ledger DONE
+2026-09-27T17:30:44Z  Agrippa: transfers starting
+2026-09-27T17:45:59Z  Agrippa: transfers DONE
+2026-09-27T17:46:00Z  Agrippa: pool 0x541bedd9 (v4/musebook) fresh from 65,494,043
