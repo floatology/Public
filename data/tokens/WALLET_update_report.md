@@ -42,45 +42,38 @@ pattern).
 
 ## SUMMARY tier (default)
 
-Format this as a scannable report, not prose paragraphs — tables for the
-numbers, bold for the verdict. Structure, in order:
+Format for a phone screen — **no wide tables that force horizontal
+scrolling.** Two short tables (price/change, then size/volume), not one wide
+row. No flow/buy-sell $ breakdown by default — the user said they don't care
+about it. Structure, in order:
 
-1. **Stats table** (the lead, always) — one row of the headline numbers,
-   not prose: `Price | 1h % | 4h % | 24h % | Market cap | Liquidity | 24h
-   volume`. Compute 4h change from the ledger (price now vs. price ~4h ago)
-   since DexScreener doesn't expose it directly; 1h/24h and volume/liquidity
-   come straight from DexScreener.
-2. **Flow table — default to OMITTED.** The user doesn't want the 30-min
-   breakdown by default; give the net buy/sell for 1h and 24h as a line or
-   two, not a bucketed table. Only bring back the time-bucketed table when
-   tracing a specific fast move (a breakout, a dump, something they ask to
-   see play-by-play) or when they ask for more detail.
-3. **"My read:"** — one bold lead sentence with the verdict, then bullets:
-   activity level vs a recent baseline, biggest single buyer/seller with
-   context (new vs known, size), watchlist status in one line, any
-   structural point worth flagging (a support/resistance level being
-   tested, a repeat pattern).
-4. **Who bought/sold** (when a specific move deserves it) — named wallets,
-   one line each: amount, price, and *what kind* of wallet (serial flipper
-   since [date] / long-term holder since [date] / brand new / already
-   watched — pull this from the wallet's full trade history, don't just
-   name the address).
-5. **Watchlist callout** — one line: which watched wallets moved, or "none
-   of the watched wallets traded this window."
-6. **Levels table** (when there's a level worth tracking) — `Level | What
-   it is`, e.g. a recent swing high/low, current price, why it matters.
-   Keep this simple, the user specifically likes it: state where support/
-   resistance sits, and name whether/when buyers defended a support test or
-   sellers capped a resistance test — one line each, no extra detail unless
-   asked.
-7. **Closing read** — one short paragraph: is this normal noise or a real
-   signal, and what would change the picture (a level breaking, a whale
-   moving).
+1. **Price/change table** — narrow, 4 columns max:
+   `Price | 1h | 4h | 24h`. Compute 4h change from the ledger (price now vs.
+   price ~4h ago) since DexScreener doesn't expose it directly; 1h/24h come
+   straight from DexScreener.
+2. **Size table** — separate, narrow: `Market cap | Liquidity | 24h volume`.
+3. **What's happened since the last update** — a short narrative paragraph
+   or a couple of bullets, anchored to `watchlist.json`'s per-token
+   `last_checked` timestamp (that's the actual "since I last asked" boundary
+   — `watch_wallets.py` advances it every run). Cover the shape of the move
+   in plain terms (drifted sideways / pushed up / pulled back / broke a
+   level), not a bucketed table, unless they ask to see the play-by-play.
+4. **Whalelist** (call it this in the report — the underlying file/script
+   are still `watchlist.json` / `watch_wallets.py`, don't rename those) —
+   one line: which whales moved since last check and what they did, or
+   "none of the whales traded since last check." Name specifics briefly if
+   something happened (who, how much, bought or sold), otherwise keep it to
+   the one line.
+5. **Support/resistance** — simple, one line each: where support sits and
+   whether it's been defended, where resistance sits and whether it's capped
+   a push. Only include when there's an actual level worth naming.
+6. **Closing read** — one or two sentences: is this normal or a real signal,
+   what would change the picture.
 
-Keep it tight — this is the "quick update" tier. The New-buyer origin/size
-segmentation (new vs returning vs watched, whale/mid/small split) from the
-detailed tier only needs to surface here as a line if it's unusual (e.g.
-mostly-new-wallet buying, or a size mix that's shifted sharply).
+No flow section, no new-buyer origin/size segmentation, no funding-link
+callouts in this tier by default — those are detailed-tier only now. Keep
+the whole thing short enough to read without scrolling past a couple of
+screens on a phone.
 
 ## DETAILED tier (on request, or when something's unusual)
 
