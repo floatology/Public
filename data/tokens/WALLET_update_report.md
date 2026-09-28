@@ -99,6 +99,11 @@ about it. Structure, in order:
    sentence of story pulled from the wallet's full trade history — new vs.
    long-time trader, net lifetime P&L, whether this looks like profit-
    taking, panic, or routine rotation — not just the address and amount.
+   When it's a wallet that's been selling down a position over time (not a
+   one-off), always add its **remaining balance** — tokens, $ value, and %
+   of supply, from `transfers.parquet`'s net-in-minus-out (the real
+   post-transfer balance, not just pool position) — so it's clear whether
+   they're nearly out or could keep pressuring price for a while.
    Omit the section entirely if nothing since the last update clears the
    bar; don't pad the report with routine small trades.
 5. **Support/resistance** — simple, one line each: where support sits and
