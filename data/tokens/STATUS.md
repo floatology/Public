@@ -1194,3 +1194,4 @@
 2026-09-28T17:07:36Z  GME: skipped (too heavy: over 600k transfers in one segment)
 2026-09-28T17:07:36Z  INJOH: transfers starting
 2026-09-28T17:07:40Z  INJOH: transfers DONE
+2026-09-28T17:07:41Z  INJOH: pool 0xb09fa4f0 (v3/WETH) fresh from 23,753,682
