@@ -916,3 +916,4 @@
 2026-09-28T10:14:47Z  GME: skipped (too heavy: over 600k transfers in one segment)
 2026-09-28T10:14:47Z  TYGR: transfers starting
 2026-09-28T10:14:53Z  TYGR: transfers DONE
+2026-09-28T10:14:53Z  TYGR: pool 0x94fc447f (v3/WETH) fresh from 14,884,234
