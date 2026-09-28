@@ -1,1 +1,8 @@
-
+{
+  "permissions": {
+    "allow": [
+      "Bash(.venv/bin/pip install eth-account:*)",
+      "Bash(.venv/bin/python scripts/wallet_bot.py:*)"
+    ]
+  }
+}
