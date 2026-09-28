@@ -983,3 +983,5 @@
 2026-09-28T11:36:30Z  build starting for GME, wire, JUGGERNAUT, INJOH, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,664.80)
 2026-09-28T11:36:30Z  GME: skipped (too heavy: over 600k transfers in one segment)
 2026-09-28T11:36:30Z  wire: transfers starting
+2026-09-28T11:44:20Z  wire: transfers DONE
+2026-09-28T11:44:21Z  wire: pool 0xd5524664 (v3/WETH) fresh from 12,356,072
