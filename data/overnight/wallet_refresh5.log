@@ -1,0 +1,57 @@
+head 74,536,698; 2,997 anchors held, 1 to fetch
+2,998 anchors; worst error above block 4,000,000: 2s (below it: 0s, where the chain had not reached a steady block rate)
+[05:11:27] build starting for WALLET (ETH $2,652.73)
+[05:11:27] WALLET: transfers starting
+head 74,536,719
+transfers: scanning 74,526,586-74,536,719 (resuming)
+  tr 100.0%  block 74,536,719  span 100,000  logs 244  0s
+transfers: committed 74,526,586-74,536,719  +244 rows, 642,397 total
+{
+ "token": "0x0339f5459fc690ac85f1782e15782a151b4a9e1b",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74536719
+   ]
+  ],
+  "rows": 642397
+ },
+ "swaps": {
+  "ranges": [
+   [
+    1,
+    74038513
+   ]
+  ],
+  "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
+  "protocol": "v3",
+  "rows": 271175
+ },
+ "updated_at": "2026-09-28T05:11:37Z"
+}
+[05:11:37] WALLET: transfers DONE
+[05:11:38] WALLET: pool 0x9501a20b (v3/WETH) resuming from 74,526,691
+    0x9501a20b 100.0% block 74,536,822 logs 57 36s
+[05:12:18] WALLET: pool 0x9501a20b DONE, 274,241 swaps
+[05:12:18] WALLET: pool 0x89f2e48d (v4/USDG) resuming from 74,526,691
+    0x89f2e48d 100.0% block 74,536,822 logs 10 0s
+[05:12:18] WALLET: pool 0x89f2e48d DONE, 17,577 swaps
+311,905 transactions moved this token
+{
+ "attributed": 247261,
+ "attributed_multi_swap": 24892,
+ "ambiguous_multi_swap": 5365,
+ "no_transfers": 177,
+ "no_counterparty": 14123
+}
+  attributed 93.3% of 291,818 swaps
+  'recipient' matched the true holder on 33.2% of 272,153 comparable swaps
+wrote /home/user/Public/data/tokens/0x0339f5459fc690ac85f1782e15782a151b4a9e1b/swaps_attributed.parquet
+[05:12:26] WALLET: attributed DONE
+291,818 trades -> /home/user/Public/data/tokens/0x0339f5459fc690ac85f1782e15782a151b4a9e1b/ledger.parquet
+  19,665 (6.74%) had no attributed trader and carry a null
+  32,577 distinct traders across the full history
+  span 1,783,645,329 - 1,790,572,240
+[05:12:31] WALLET: ledger DONE
+[05:12:31] build finished
