@@ -7,7 +7,7 @@ SYMS=$(python3 -c "
 import json
 r=json.load(open('data/tokens/tokens.json')); d=json.load(open('data/overnight/batch2.json'))
 want=set(a.lower() for a in d['cases']+d['controls'])|{'0xce24439f2d9c6a2289f741120fe202248b666666'}
-print(' '.join(sorted({e['symbol'] for t,e in r.items() if t in want and e.get('pools')})))")
+print(' '.join(sorted({e['symbol'] for t,e in r.items() if t in want and e.get('pools') and not __import__('os').path.exists(f'data/tokens/{t}/ledger.parquet')})))")
 log "batch2 build starting: $SYMS"
 .venv/bin/python scripts/track_tokens.py build --only $SYMS > data/overnight/build_batch2.log 2>&1
 .venv/bin/python scripts/track_tokens.py reprice > data/overnight/reprice2.log 2>&1
