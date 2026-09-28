@@ -1207,3 +1207,10 @@
 2026-09-28T19:07:20Z  build starting for GME, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,689.35)
 2026-09-28T19:07:20Z  GME: skipped (too heavy: over 600k transfers in one segment)
 2026-09-28T19:07:20Z  POOH: transfers starting
+2026-09-28T19:08:14Z  POOH: transfers DONE
+2026-09-28T19:08:15Z  POOH: pool 0xb192bb51 (v3/WETH) fresh from 10,876,938
+2026-09-28T20:06:29Z  build starting for GME, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,679.13)
+2026-09-28T20:06:29Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-28T20:06:29Z  POOH: transfers starting
+2026-09-28T20:06:31Z  POOH: transfers DONE
+2026-09-28T20:06:32Z  POOH: pool 0xb192bb51 (v3/WETH) resuming from 58,871,938
