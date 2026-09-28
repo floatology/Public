@@ -77,13 +77,16 @@ about it. Structure, in order:
    — `watch_wallets.py` advances it every run). Cover the shape of the move
    in plain terms (drifted sideways / pushed up / pulled back / broke a
    level), not a bucketed table, unless they ask to see the play-by-play.
-3a. **Buyer/seller mix table — standing, every report, not just when
-   unusual.** Over the same since-last-update window, split buy $ and sell
-   $ each into: **New** (first-ever trade in the window), **Whale** (on
-   `watchlist.json`, or net ≥ $10k in the window), **Mid** ($1k–$10k net,
-   not new/whale), **Small** (<$1k net). One narrow table, columns
-   `Bucket | Buy % | Sell %`. If the window is too short/quiet to have
-   meaningful volume, say so in one line instead of forcing an empty table.
+3a. **Buyer/seller mix table — NON-NEGOTIABLE, every single report, no
+   exceptions.** The user has asked for this twice now; never drop it, never
+   make it conditional on "something unusual happening." Over the same
+   since-last-update window, split buy $ and sell $ each into: **New**
+   (first-ever trade in the window), **Whale** (on `watchlist.json`, or net
+   ≥ $10k in the window), **Mid** ($1k–$10k net, not new/whale), **Small**
+   (<$1k net). One narrow table, columns `Bucket | Buy % | Sell %`. If the
+   window is too short/quiet to have meaningful volume, say so in one line
+   instead of forcing an empty table — but still show the table if there's
+   any volume at all.
 4. **Whalelist** (call it this in the report — the underlying file/script
    are still `watchlist.json` / `watch_wallets.py`, don't rename those) —
    one line: which whales moved since last check and what they did, or
