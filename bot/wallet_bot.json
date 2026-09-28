@@ -1,0 +1,13 @@
+{
+ "live": false,
+ "buy_min_usd": 0.038,
+ "buy_max_usd": 0.040,
+ "buy_usd": 100,
+ "forward_to": "0x43678140C65c0c0A08578Bb100cDf9575606c05B",
+ "slippage_pct": 3,
+ "gas_reserve_eth": 0.0003,
+ "poll_seconds": 1,
+ "log_every_seconds": 60,
+ "run_minutes": 345,
+ "sell": {"enabled": false, "take_profit_usd": null, "stop_usd": null}
+}

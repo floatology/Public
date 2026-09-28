@@ -1,0 +1,33 @@
+name: wallet-bot
+
+# Limit-buy bot for WALLET (scripts/wallet_bot.py, config bot/wallet_bot.json).
+# Each run polls the price every second for ~5h45m; the hourly schedule plus the
+# concurrency group keeps one run going with at most one queued behind it.
+# Live trading only happens when bot/wallet_bot.json has "live": true.
+
+on:
+  schedule:
+    - cron: "7 * * * *"
+  workflow_dispatch:
+
+concurrency:
+  group: wallet-bot
+  cancel-in-progress: false
+
+permissions:
+  contents: read
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    timeout-minutes: 355
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.11"
+      - run: pip install --quiet httpx eth-account
+      - name: Run bot
+        env:
+          BOT_PRIVATE_KEY: ${{ secrets.BOT_PRIVATE_KEY }}
+        run: python scripts/wallet_bot.py
