@@ -109,6 +109,13 @@
     "why": "First seen 28 Sep; net +$39.4k 03:30-05:00 UTC at avg $0.0457 over 38 trades, kept buying through the 04:48 wick to $0.0404.",
     "added": "2026-09-28",
     "active": true
+   },
+   {
+    "address": "0xa9fd0680aa3fef4dcbdd68b178d5179eb1c1246d",
+    "label": "#1 real whale (3.5% of supply), 0x31c8 is its buy/sell proxy",
+    "why": "Verified against a viral tweet claim: holds 33,333,366 tokens (3.524%), the largest real (non-pool, non-burn) holder. 0x31c8...5dd9 (already watched) acts as its trading proxy: sold 3.5M tokens on its behalf on 20 Sep, then bought ~3.22M more on 27 Sep during the breakout and forwarded it here, keeping only dust itself.",
+    "added": "2026-09-28",
+    "active": true
    }
   ]
  },
