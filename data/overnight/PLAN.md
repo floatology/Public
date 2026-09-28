@@ -75,3 +75,4 @@ scans at once (the node rate-limits globally). Tick steps here as they finish.
          and analyse_all.py, summarise.
 - 2026-09-28: user decided NOT to add a neckline/trendline-reclaim pattern to the screen. Don't propose it again.
 - 2026-09-28 02:05Z: hourly keep-alive routine trig_018bm3JnsphnBRCuj41vUpkD (:05 past each hour) replaces overnight resumes 6-8; it restarts run_batch2.sh if dead and disables itself when all steps are done or after 2026-09-29T00:00Z.
+- 2026-09-28 04:30Z: TAMPONS transfers FAILED mid-scan (resumable). After run_batch2 finishes, rerun `track_tokens.py build --only TAMPONS` before the wallet backtest results are final, then commit its dir.
