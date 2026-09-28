@@ -1407,3 +1407,7 @@ transfers: committed 8,000,001-16,000,000  +54,658 rows, 54,658 total
   tr  39.1%  block 19,131,487  span 320,359  logs 37,422  130s
   tr  45.2%  block 19,612,025  span 480,538  logs 46,073  130s
   tr  48.2%  block 19,852,294  span 240,269  logs 49,553  143s
+  tr  52.7%  block 20,212,697  span 360,403  logs 54,425  159s
+  tr  59.4%  block 20,753,301  span 540,604  logs 57,949  166s
+  tr  69.6%  block 21,564,207  span 810,906  logs 65,300  171s
+  tr  79.7%  block 22,375,113  span 810,906  logs 70,623  187s
