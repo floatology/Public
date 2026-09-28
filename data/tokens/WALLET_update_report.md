@@ -61,6 +61,16 @@ about it. Structure, in order:
    price ~4h ago) since DexScreener doesn't expose it directly; 1h/24h come
    straight from DexScreener.
 2. **Size table** — separate, narrow: `Market cap | Liquidity | 24h volume`.
+   Follow it with **one brief line** on whether volume and liquidity are
+   moving meaningfully: compare this run's reading against the last entry
+   in `data/tokens/WALLET_stats_log.csv` (append this run's reading to that
+   log after reading it — timestamp, price, mcap, liquidity, volume_h24).
+   Liquidity: flag a move of roughly 5%+ since the last logged entry either
+   way ("liquidity has grown/shrunk since last check") or say "liquidity
+   steady" if not. Volume: compare the last-1h ledger volume against the
+   preceding 1h (both computable fresh from `ledger.parquet` every time, no
+   log needed) — "picking up" / "slowing" / "steady". If the stats log has
+   no prior entry yet (first run), say so in one line instead of guessing.
 3. **What's happened since the last update** — a short narrative paragraph
    or a couple of bullets, anchored to `watchlist.json`'s per-token
    `last_checked` timestamp (that's the actual "since I last asked" boundary
