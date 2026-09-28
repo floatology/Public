@@ -3,7 +3,7 @@
  "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
   "name": "WALLET",
   "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
-  "last_checked": 1790571773,
+  "last_checked": 1790597389,
   "wallets": [
    {
     "address": "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
@@ -116,13 +116,41 @@
     "why": "Verified against a viral tweet claim: holds 33,333,366 tokens (3.524%), the largest real (non-pool, non-burn) holder. 0x31c8...5dd9 (already watched) acts as its trading proxy: sold 3.5M tokens on its behalf on 20 Sep, then bought ~3.22M more on 27 Sep during the breakout and forwarded it here, keeping only dust itself.",
     "added": "2026-09-28",
     "active": true
+   },
+   {
+    "address": "0x813ab764fd2a34eaff4713a89b6087ff5d6ccc08",
+    "label": "new big buyer, 117% breakout",
+    "why": "Net +$32.7k in the 24h to 28 Sep 12:16 UTC at avg $0.0378, during the run to $0.0394.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xee1b93f6b630851a37d15dbe604482a9b39a8ebb",
+    "label": "new big buyer, 117% breakout",
+    "why": "Net +$32.7k in the 24h to 28 Sep 12:16 UTC at avg $0.0385, during the run to $0.0394.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xb2c2ccde2a6f1242808345948f62e19761ff4237",
+    "label": "new big buyer, 117% breakout",
+    "why": "Net +$32.1k in the 24h to 28 Sep 12:16 UTC at avg $0.0395, during the run to $0.0394.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xc17c1b115f9ef355c13c5448cc981810aad6e7c7",
+    "label": "new big buyer, 117% breakout",
+    "why": "Net +$26.1k in the 24h to 28 Sep 12:16 UTC at avg $0.0413, during the run to $0.0394.",
+    "added": "2026-09-28",
+    "active": true
    }
   ]
  },
  "0x6835dbf2d7d5852f84bf0a80de00cab3864f44b1": {
   "name": "HH",
   "pool": "0x34321f090a123d52473ae1a2473e8ed97dd9f770",
-  "last_checked": 1790517282,
+  "last_checked": 1790523774,
   "wallets": [
    {
     "address": "0xd2f8235aa89306c364a950f43163830573208c33",
