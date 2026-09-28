@@ -22,3 +22,4 @@ data/parquet/*
 data/gt_pools.json
 data/gt_candles.json
 data/live_candles.json
+data/overnight/build_batch2.log
