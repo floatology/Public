@@ -801,3 +801,8 @@
 2026-09-28T07:07:27Z  HOOKR: transfers starting
 2026-09-28T07:07:36Z  HOOKR: transfers DONE
 2026-09-28T07:07:37Z  HOOKR: pool 0x590dcb6a (v4/ETH) resuming from 61,051,896
+2026-09-28T07:09:44Z  HOOKR: pool 0x590dcb6a DONE, 203,406 swaps
+2026-09-28T07:09:44Z  HOOKR: pool 0xe9e93bd1 (v4/USDG) fresh from 29,056,896
+2026-09-28T07:23:16Z  build starting for GME, HOOKR, POOLS, TYGR, worth, wire, JUGGERNAUT, INJOH, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,648.69)
+2026-09-28T07:23:16Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-28T07:23:16Z  HOOKR: transfers starting
