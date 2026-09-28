@@ -1195,3 +1195,8 @@
 2026-09-28T17:07:36Z  INJOH: transfers starting
 2026-09-28T17:07:40Z  INJOH: transfers DONE
 2026-09-28T17:07:41Z  INJOH: pool 0xb09fa4f0 (v3/WETH) fresh from 23,753,682
+2026-09-28T18:06:59Z  build starting for GME, INJOH, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,696.13)
+2026-09-28T18:06:59Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-28T18:06:59Z  INJOH: transfers starting
+2026-09-28T18:07:05Z  INJOH: transfers DONE
+2026-09-28T18:07:06Z  INJOH: pool 0xb09fa4f0 (v3/WETH) resuming from 55,748,682
