@@ -678,3 +678,42 @@ transfers: committed 16,000,001-24,000,000  +153,318 rows, 511,081 total
   tr  60.1%  block 28,807,543  span 513,034  logs 138,448  438s
   tr  64.9%  block 29,192,318  span 384,775  logs 143,167  451s
   tr  72.1%  block 29,769,480  span 577,162  logs 149,071  457s
+  tr  79.3%  block 30,346,642  span 577,162  logs 151,019  594s
+  tr  90.2%  block 31,212,385  span 865,743  logs 154,532  601s
+  tr 100.0%  block 32,000,000  span 1,298,614  logs 157,739  607s
+transfers: committed 24,000,001-32,000,000  +157,739 rows, 668,820 total
+  tr   1.2%  block 32,100,000  span 100,000  logs 551  0s
+  tr   3.1%  block 32,250,000  span 150,000  logs 1,244  17s
+  tr   5.9%  block 32,475,000  span 225,000  logs 2,243  33s
+  tr  10.2%  block 32,812,500  span 337,500  logs 5,133  39s
+  tr  16.5%  block 33,318,750  span 506,250  logs 8,477  45s
+  tr  26.0%  block 34,078,125  span 759,375  logs 14,325  47s
+  tr  30.7%  block 34,457,812  span 379,687  logs 15,841  60s
+  tr  34.3%  block 34,742,577  span 284,765  logs 21,252  66s
+  tr  34.7%  block 34,778,172  span 35,595  logs 29,154  92s
+  tr  35.2%  block 34,813,767  span 35,595  logs 31,110  98s
+  tr  35.8%  block 34,867,159  span 53,392  logs 33,038  105s
+  tr  36.8%  block 34,947,247  span 80,088  logs 35,043  111s
+  tr  38.3%  block 35,067,379  span 120,132  logs 36,386  127s
+  tr  40.6%  block 35,247,577  span 180,198  logs 37,905  133s
+  tr  44.0%  block 35,517,874  span 270,297  logs 44,084  151s
+  tr  47.4%  block 35,788,171  span 270,297  logs 47,695  157s
+  tr  52.4%  block 36,193,616  span 405,445  logs 49,885  157s
+  tr  60.0%  block 36,801,783  span 608,167  logs 53,885  163s
+  tr  71.4%  block 37,714,033  span 912,250  logs 59,793  201s
+  tr  77.1%  block 38,170,158  span 456,125  logs 63,116  214s
+  tr  85.7%  block 38,854,345  span 684,187  logs 66,744  230s
+  tr  98.5%  block 39,880,625  span 1,026,280  logs 70,477  236s
+  tr 100.0%  block 40,000,000  span 1,539,420  logs 71,223  242s
+transfers: committed 32,000,001-40,000,000  +71,223 rows, 740,043 total
+  tr   1.2%  block 40,100,000  span 100,000  logs 235  6s
+  tr   3.1%  block 40,250,000  span 150,000  logs 538  6s
+  tr   5.9%  block 40,475,000  span 225,000  logs 934  12s
+  tr  10.2%  block 40,812,500  span 337,500  logs 3,515  18s
+  tr  16.5%  block 41,318,750  span 506,250  logs 6,941  25s
+  tr  26.0%  block 42,078,125  span 759,375  logs 12,495  32s
+  tr  35.5%  block 42,837,500  span 759,375  logs 15,896  39s
+  tr  49.7%  block 43,976,562  span 1,139,062  logs 19,833  46s
+  tr  60.4%  block 44,830,858  span 854,296  logs 24,475  70s
+  tr  68.4%  block 45,471,580  span 640,722  logs 32,734  86s
+  tr  76.4%  block 46,112,302  span 640,722  logs 37,229  103s
