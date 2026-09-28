@@ -901,3 +901,6 @@
 2026-09-28T09:35:57Z  WALLET: attributed DONE
 2026-09-28T09:36:03Z  WALLET: ledger DONE
 2026-09-28T09:36:03Z  build finished
+2026-09-28T09:38:22Z  build starting for GME, TYGR, worth, wire, JUGGERNAUT, INJOH, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,640.01)
+2026-09-28T09:38:22Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-28T09:38:22Z  TYGR: transfers starting
