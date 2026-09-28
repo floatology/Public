@@ -1214,3 +1214,7 @@
 2026-09-28T20:06:29Z  POOH: transfers starting
 2026-09-28T20:06:31Z  POOH: transfers DONE
 2026-09-28T20:06:32Z  POOH: pool 0xb192bb51 (v3/WETH) resuming from 58,871,938
+2026-09-28T20:06:36Z  POOH: pool 0xb192bb51 DONE, 25,355 swaps
+2026-09-28T20:06:37Z  POOH: attributed DONE
+2026-09-28T20:06:38Z  POOH: ledger DONE
+2026-09-28T20:06:38Z  TA: transfers starting
