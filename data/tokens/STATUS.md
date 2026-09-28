@@ -888,3 +888,6 @@
 2026-09-28T09:19:09Z  POOLS: attributed DONE
 2026-09-28T09:19:12Z  POOLS: ledger DONE
 2026-09-28T09:19:12Z  TYGR: transfers starting
+2026-09-28T09:25:23Z  build starting for GME, TYGR, worth, wire, JUGGERNAUT, INJOH, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,648.96)
+2026-09-28T09:25:23Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-28T09:25:23Z  TYGR: transfers starting
