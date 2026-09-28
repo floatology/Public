@@ -17,3 +17,5 @@
 2026-09-28T00:24:17Z check-in 5: add of batch2 had crashed on 'U' (DexScreener 400); fixed, registered 35 of 40 (4 controls now have no pairs = dead; INTC stock skipped; LUTE on undecodable DEX); batch2 build started
 2026-09-28T00:24:17Z batch2 build starting: BAG CLOCKIN FLOPS FRIDAY Froggy GME HMM HOODRAT HOOKR INJOH JUGGERNAUT KITSU MANCER MOONCOW NASDANQ PEEPS PEPE POOH POOLS PORK RHPS SNOW TA TAMPONS TUX TYGR U WELOVECATS WEN WOJAK WOOF YOLO wire worth
 2026-09-28T01:19:07Z candles complete (5,290); final candle backtest 39,771 token-days / 1,235 tokens: BREAK 1.84x (splits 1.68-2.04x), SETUP 1.41x (1.22-1.63x); docs/25 updated. NOTE: waiter loops using pgrep -f self-match their own bash; the earlier waiter never fired.
+2026-09-28T05:06:28Z keep-alive: run_batch2 found dead (last progress FRIDAY 04:34Z); restarted
+2026-09-28T05:06:28Z batch2 build starting: BAG CLOCKIN FLOPS FRIDAY Froggy GME HMM HOODRAT HOOKR INJOH JUGGERNAUT KITSU MANCER MOONCOW NASDANQ PEEPS PEPE POOH POOLS PORK RHPS SNOW TA TAMPONS TUX TYGR U WELOVECATS WEN WOJAK WOOF YOLO wire worth
