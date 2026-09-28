@@ -1218,3 +1218,6 @@
 2026-09-28T20:06:37Z  POOH: attributed DONE
 2026-09-28T20:06:38Z  POOH: ledger DONE
 2026-09-28T20:06:38Z  TA: transfers starting
+2026-09-28T21:06:03Z  build starting for GME, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,688.05)
+2026-09-28T21:06:03Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-28T21:06:03Z  TA: transfers starting
