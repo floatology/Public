@@ -470,3 +470,9 @@
 2026-09-28T00:24:28Z  U: pool 0xa5d2fa75 (v4/ETH) resuming from 74,354,900
 2026-09-28T00:24:28Z  U: pool 0xa5d2fa75 DONE, 42,685 swaps
 2026-09-28T00:24:28Z  U: pool 0x090f2f03 (pcs3/USDG) fresh from 56,765,550
+2026-09-28T00:28:14Z  U: pool 0x090f2f03 DONE, 24,590 swaps
+2026-09-28T00:28:16Z  U: attributed DONE
+2026-09-28T00:28:17Z  U: ledger DONE
+2026-09-28T00:28:17Z  GME: transfers starting
+2026-09-28T00:43:11Z  GME: SKIPPED — over 600k transfers in one segment; set force=true to build
+2026-09-28T00:43:11Z  WOOF: transfers starting
