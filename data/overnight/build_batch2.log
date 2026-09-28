@@ -1247,3 +1247,10 @@ transfers: committed 72,000,001-74,452,966  +1,537 rows, 392,841 total
     0x3f98045d  46.4% block 8,490,258 logs 22,321 123s
     0x3f98045d  58.5% block 9,451,341 logs 28,930 139s
     0x3f98045d  61.5% block 9,691,611 logs 30,793 201s
+    0x3f98045d  66.0% block 10,052,016 logs 35,238 218s
+    0x3f98045d  72.7% block 10,592,623 logs 38,852 226s
+    0x3f98045d  82.9% block 11,403,533 logs 42,066 233s
+    0x3f98045d  98.1% block 12,619,898 logs 46,589 240s
+    0x3f98045d 100.0% block 12,774,732 logs 47,405 246s
+    0x3f98045d   1.2% block 12,874,732 logs 433 0s
+    0x3f98045d   3.1% block 13,024,732 logs 943 6s
