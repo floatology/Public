@@ -3,7 +3,7 @@
  "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
   "name": "WALLET",
   "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
-  "last_checked": 1790565220,
+  "last_checked": 1790571773,
   "wallets": [
    {
     "address": "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
@@ -100,6 +100,13 @@
     "address": "0x2cd2194f074261d811138a1e0112d6631549cdd1",
     "label": "doubling-move buyer",
     "why": "Net +$28.3k 27-28 Sep at avg $0.0306. First seen 14 Sep.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x63b8398227c8704bc4b3276be15e920d894ac41a",
+    "label": "new wallet, bought the highs and the dip",
+    "why": "First seen 28 Sep; net +$39.4k 03:30-05:00 UTC at avg $0.0457 over 38 trades, kept buying through the 04:48 wick to $0.0404.",
     "added": "2026-09-28",
     "active": true
    }
