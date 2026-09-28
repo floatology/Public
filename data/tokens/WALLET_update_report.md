@@ -37,6 +37,15 @@ pattern).
    found" rather than omitting the check.
 5. **Auto-add new $25k+ net buyers** per the token-forensics skill's standing
    rule — same as always, no need to ask first.
+5a. **Check for rapid repeat buying from one wallet**, every time, even
+   below the $25k threshold: any trader with 2+ separate buy transactions
+   (distinct `tx_hash`, not just multiple ledger rows from one multi-hop
+   swap) inside the last ~15-20 minutes. Flag it in the report — who it is
+   (new vs long-time trader, from its full history), how many buys, total
+   size, whether each buy's multiple ledger rows are one multi-hop swap
+   (same `ts`) rather than genuinely separate purchases. This is what got
+   missed once already: a repeat buyer inside a short window is worth
+   surfacing on its own even when it's not whale-sized.
 6. **Answer whatever the user specifically flagged** (a chart, a wallet, a
    trade pattern) on top of the above, not instead of it.
 
@@ -64,6 +73,10 @@ about it. Structure, in order:
    "none of the whales traded since last check." Name specifics briefly if
    something happened (who, how much, bought or sold), otherwise keep it to
    the one line.
+4a. **Rapid repeat buyer callout** (from step 5a) — one line if a wallet
+   bought 2+ times in the last ~15-20 min, whether or not it's on the
+   whalelist. Say who (new/known), how many buys, total size. Omit the
+   line entirely if nothing matches — don't pad the report.
 5. **Support/resistance** — simple, one line each: where support sits and
    whether it's been defended, where resistance sits and whether it's capped
    a push. Only include when there's an actual level worth naming.
