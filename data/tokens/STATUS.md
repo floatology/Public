@@ -995,3 +995,7 @@
 2026-09-28T11:49:53Z  WALLET: attributed DONE
 2026-09-28T11:50:00Z  WALLET: ledger DONE
 2026-09-28T11:50:00Z  build finished
+2026-09-28T11:54:40Z  wire: pool 0xd5524664 DONE, 130,986 swaps
+2026-09-28T11:54:44Z  wire: attributed DONE
+2026-09-28T11:54:46Z  wire: ledger DONE
+2026-09-28T11:54:46Z  JUGGERNAUT: transfers starting
