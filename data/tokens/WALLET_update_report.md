@@ -45,13 +45,16 @@ pattern).
 Format this as a scannable report, not prose paragraphs — tables for the
 numbers, bold for the verdict. Structure, in order:
 
-1. **Header line**: `WALLET: $price at HH:MM UTC. Up/down N% over 24h, N%
-   over 1h, liquidity $X.` (Skip personal-position framing here — that's
-   handled separately per `scratchpad/user_wallet_position.md` when asked.)
-2. **Flow table** — time-bucketed (30 min if calm, 15 min or less during a
-   fast move), columns: `Time | Bought | Sold | Net | Price range`. Cover
-   however far back is relevant to what's being asked (last few hours by
-   default, longer if tracing a specific move).
+1. **Stats table** (the lead, always) — one row of the headline numbers,
+   not prose: `Price | 1h % | 4h % | 24h % | Market cap | Liquidity | 24h
+   volume`. Compute 4h change from the ledger (price now vs. price ~4h ago)
+   since DexScreener doesn't expose it directly; 1h/24h and volume/liquidity
+   come straight from DexScreener.
+2. **Flow table — default to OMITTED.** The user doesn't want the 30-min
+   breakdown by default; give the net buy/sell for 1h and 24h as a line or
+   two, not a bucketed table. Only bring back the time-bucketed table when
+   tracing a specific fast move (a breakout, a dump, something they ask to
+   see play-by-play) or when they ask for more detail.
 3. **"My read:"** — one bold lead sentence with the verdict, then bullets:
    activity level vs a recent baseline, biggest single buyer/seller with
    context (new vs known, size), watchlist status in one line, any
