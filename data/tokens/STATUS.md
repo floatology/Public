@@ -534,3 +534,43 @@
 2026-09-28T04:20:42Z  YOLO: attributed DONE
 2026-09-28T04:20:45Z  YOLO: ledger DONE
 2026-09-28T04:20:45Z  TAMPONS: transfers starting
+2026-09-28T04:29:59Z  TAMPONS: transfers FAILED — rerun build to resume
+2026-09-28T04:29:59Z  HOOKR: transfers starting
+2026-09-28T04:30:15Z  HOOKR: transfers FAILED — rerun build to resume
+2026-09-28T04:30:15Z  POOLS: transfers starting
+2026-09-28T04:30:30Z  POOLS: transfers FAILED — rerun build to resume
+2026-09-28T04:30:30Z  TYGR: transfers starting
+2026-09-28T04:30:45Z  TYGR: transfers FAILED — rerun build to resume
+2026-09-28T04:30:45Z  worth: transfers starting
+2026-09-28T04:31:01Z  worth: transfers FAILED — rerun build to resume
+2026-09-28T04:31:01Z  wire: transfers starting
+2026-09-28T04:31:16Z  wire: transfers FAILED — rerun build to resume
+2026-09-28T04:31:16Z  JUGGERNAUT: transfers starting
+2026-09-28T04:31:31Z  JUGGERNAUT: transfers FAILED — rerun build to resume
+2026-09-28T04:31:31Z  INJOH: transfers starting
+2026-09-28T04:31:46Z  INJOH: transfers FAILED — rerun build to resume
+2026-09-28T04:31:46Z  POOH: transfers starting
+2026-09-28T04:32:02Z  POOH: transfers FAILED — rerun build to resume
+2026-09-28T04:32:02Z  TA: transfers starting
+2026-09-28T04:32:17Z  TA: transfers FAILED — rerun build to resume
+2026-09-28T04:32:17Z  KITSU: transfers starting
+2026-09-28T04:32:32Z  KITSU: transfers FAILED — rerun build to resume
+2026-09-28T04:32:32Z  WOJAK: transfers starting
+2026-09-28T04:32:47Z  WOJAK: transfers FAILED — rerun build to resume
+2026-09-28T04:32:47Z  HMM: transfers starting
+2026-09-28T04:33:03Z  HMM: transfers FAILED — rerun build to resume
+2026-09-28T04:33:03Z  MANCER: transfers starting
+2026-09-28T04:33:18Z  MANCER: transfers FAILED — rerun build to resume
+2026-09-28T04:33:18Z  NASDANQ: transfers starting
+2026-09-28T04:33:33Z  NASDANQ: transfers FAILED — rerun build to resume
+2026-09-28T04:33:33Z  BAG: transfers starting
+2026-09-28T04:33:49Z  BAG: transfers FAILED — rerun build to resume
+2026-09-28T04:33:49Z  MOONCOW: transfers starting
+2026-09-28T04:34:04Z  MOONCOW: transfers FAILED — rerun build to resume
+2026-09-28T04:34:04Z  CLOCKIN: transfers starting
+2026-09-28T04:34:19Z  CLOCKIN: transfers FAILED — rerun build to resume
+2026-09-28T04:34:19Z  FLOPS: transfers starting
+2026-09-28T04:34:34Z  FLOPS: transfers FAILED — rerun build to resume
+2026-09-28T04:34:34Z  WELOVECATS: transfers starting
+2026-09-28T04:34:50Z  WELOVECATS: transfers FAILED — rerun build to resume
+2026-09-28T04:34:50Z  FRIDAY: transfers starting
