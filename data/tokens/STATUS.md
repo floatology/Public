@@ -985,3 +985,13 @@
 2026-09-28T11:36:30Z  wire: transfers starting
 2026-09-28T11:44:20Z  wire: transfers DONE
 2026-09-28T11:44:21Z  wire: pool 0xd5524664 (v3/WETH) fresh from 12,356,072
+2026-09-28T11:49:25Z  build starting for WALLET (ETH $2,663.30)
+2026-09-28T11:49:25Z  WALLET: transfers starting
+2026-09-28T11:49:33Z  WALLET: transfers DONE
+2026-09-28T11:49:34Z  WALLET: pool 0x9501a20b (v3/WETH) resuming from 74,742,192
+2026-09-28T11:49:37Z  WALLET: pool 0x9501a20b DONE, 274,902 swaps
+2026-09-28T11:49:37Z  WALLET: pool 0x89f2e48d (v4/USDG) resuming from 74,742,192
+2026-09-28T11:49:43Z  WALLET: pool 0x89f2e48d DONE, 17,687 swaps
+2026-09-28T11:49:53Z  WALLET: attributed DONE
+2026-09-28T11:50:00Z  WALLET: ledger DONE
+2026-09-28T11:50:00Z  build finished
