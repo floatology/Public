@@ -144,6 +144,13 @@
     "why": "Net +$26.1k in the 24h to 28 Sep 12:16 UTC at avg $0.0413, during the run to $0.0394.",
     "added": "2026-09-28",
     "active": true
+   },
+   {
+    "address": "0x03d4719e44f885b3de27f7ea34afd9aef5b92e41",
+    "label": "repeat accumulator, never sold",
+    "why": "9 buys, $40.4k total, zero sells: 4 buys $18.6k on 22 Sep at ~$0.026, quiet 5 days, then 5 more buys through the breakout including two back-to-back on 28 Sep 13:34-13:35 UTC ($5.4k + $5.5k) at ~$0.039.",
+    "added": "2026-09-28",
+    "active": true
    }
   ]
  },
