@@ -53,6 +53,34 @@
     "why": "Pulled 9.14 ETH of bid liquidity 34 min before the crash cascade; 15 sells, no buys in the week before.",
     "added": "2026-09-27",
     "active": true
+   },
+   {
+    "address": "0x31c83a891dec2ff9caa21d1b93c7f0e976895dd9",
+    "label": "doubling-move top buyer, forwards tokens",
+    "why": "Largest net buyer of the 27-28 Sep doubling: +$66k (0.322%) at avg $0.0207, early in the move. First seen 11 Jul. Holds only ~0.026% itself, so it moved the tokens to another wallet; trace where they went.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x275b2edbc7c4413dbecff9ef37ba9214758e3b13",
+    "label": "doubling-move big buyer",
+    "why": "Net +$42k in the 27-28 Sep doubling. First seen Sep.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x8c1fc660fc56beb49a657276c7692cc6ad98349e",
+    "label": "doubling-move big buyer",
+    "why": "Net +$38k in the 27-28 Sep doubling. First seen late Jul.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xad51e4b06de14812286a496c399096d9a5abf00d",
+    "label": "former big loser, chasing",
+    "why": "Net +$47k in the 27-28 Sep doubling at avg $0.0372, late in the move. First seen 13 Sep; a big loser earlier in September.",
+    "added": "2026-09-28",
+    "active": true
    }
   ]
  },

@@ -29,6 +29,13 @@ a liquidity puller, a treasury allocation — add it with a one-line `why`. When
 one stops mattering (exited fully, gone quiet for weeks), set `active: false`
 with a reason; never delete an entry.
 
+**Standing rule from the user: every rerun, add the new big buyers
+automatically.** After refreshing, rank traders by net USD bought since
+`last_checked`; add every wallet that is not yet watched and is among the
+top net buyers with at least $25k net (typically 3–6 wallets). Give each an
+`added` date and a `why` naming the move, the net amount and the average
+price. Say in the answer which ones were added. No need to ask first.
+
 To see what else watched wallets hold across Robinhood Chain, now and in the
 past:
 
