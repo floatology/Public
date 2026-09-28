@@ -3,7 +3,7 @@
  "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
   "name": "WALLET",
   "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
-  "last_checked": 1790518493,
+  "last_checked": 1790565220,
   "wallets": [
    {
     "address": "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
@@ -79,6 +79,27 @@
     "address": "0xad51e4b06de14812286a496c399096d9a5abf00d",
     "label": "former big loser, chasing",
     "why": "Net +$47k in the 27-28 Sep doubling at avg $0.0372, late in the move. First seen 13 Sep; a big loser earlier in September.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xd49a203d930fea83df02af0c34ee603777b5fa5c",
+    "label": "late doubling-move buyer",
+    "why": "Net +$31.7k 27-28 Sep at avg $0.0400, mostly after 01:00 UTC 28 Sep near the highs. First seen 26 Sep.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x047635e0cbe4130f105666674106222fb0d68057",
+    "label": "late doubling-move buyer",
+    "why": "Net +$28.9k 27-28 Sep at avg $0.0426, bought at the top of the move. First seen 16 Sep.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x2cd2194f074261d811138a1e0112d6631549cdd1",
+    "label": "doubling-move buyer",
+    "why": "Net +$28.3k 27-28 Sep at avg $0.0306. First seen 14 Sep.",
     "added": "2026-09-28",
     "active": true
    }
