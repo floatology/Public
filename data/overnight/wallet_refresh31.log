@@ -1,0 +1,63 @@
+head 75,195,546; 3,085 anchors held, 1 to fetch
+3,086 anchors; worst error above block 4,000,000: 2s (below it: 0s, where the chain had not reached a steady block rate)
+[23:34:43] build starting for WALLET (ETH $2,689.87)
+[23:34:43] WALLET: transfers starting
+head 75,195,573
+transfers: scanning 74,893,530-75,195,573 (resuming)
+  tr  33.1%  block 74,993,529  span 100,000  logs 1,867  0s
+  tr  82.8%  block 75,143,529  span 150,000  logs 4,271  6s
+  tr 100.0%  block 75,195,573  span 225,000  logs 5,198  11s
+transfers: committed 74,893,530-75,195,573  +5,198 rows, 651,471 total
+{
+ "token": "0x0339f5459fc690ac85f1782e15782a151b4a9e1b",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    75195573
+   ]
+  ],
+  "rows": 651471
+ },
+ "swaps": {
+  "ranges": [
+   [
+    1,
+    74038513
+   ]
+  ],
+  "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
+  "protocol": "v3",
+  "rows": 271175
+ },
+ "updated_at": "2026-09-28T23:35:09Z"
+}
+[23:35:09] WALLET: transfers DONE
+[23:35:10] WALLET: pool 0x9501a20b (v3/WETH) resuming from 74,893,603
+    0x9501a20b  33.1% block 74,993,602 logs 412 0s
+    0x9501a20b  82.7% block 75,143,602 logs 1,038 6s
+    0x9501a20b 100.0% block 75,195,826 logs 1,223 6s
+[23:35:21] WALLET: pool 0x9501a20b DONE, 276,507 swaps
+[23:35:21] WALLET: pool 0x89f2e48d (v4/USDG) resuming from 74,893,603
+    0x89f2e48d  33.1% block 74,993,602 logs 89 0s
+    0x89f2e48d  82.7% block 75,143,602 logs 157 0s
+    0x89f2e48d 100.0% block 75,195,826 logs 174 1s
+[23:35:22] WALLET: pool 0x89f2e48d DONE, 17,943 swaps
+315,294 transactions moved this token
+{
+ "attributed": 249350,
+ "attributed_multi_swap": 25261,
+ "ambiguous_multi_swap": 5401,
+ "no_transfers": 183,
+ "no_counterparty": 14255
+}
+  attributed 93.3% of 294,450 swaps
+  'recipient' matched the true holder on 33.1% of 274,611 comparable swaps
+wrote /home/user/Public/data/tokens/0x0339f5459fc690ac85f1782e15782a151b4a9e1b/swaps_attributed.parquet
+[23:35:33] WALLET: attributed DONE
+294,450 trades -> /home/user/Public/data/tokens/0x0339f5459fc690ac85f1782e15782a151b4a9e1b/ledger.parquet
+  19,839 (6.74%) had no attributed trader and carry a null
+  32,976 distinct traders across the full history
+  span 1,783,645,329 - 1,790,638,424
+[23:35:40] WALLET: ledger DONE
+[23:35:40] build finished
