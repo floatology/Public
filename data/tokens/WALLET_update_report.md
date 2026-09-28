@@ -66,6 +66,10 @@ numbers, bold for the verdict. Structure, in order:
    of the watched wallets traded this window."
 6. **Levels table** (when there's a level worth tracking) — `Level | What
    it is`, e.g. a recent swing high/low, current price, why it matters.
+   Keep this simple, the user specifically likes it: state where support/
+   resistance sits, and name whether/when buyers defended a support test or
+   sellers capped a resistance test — one line each, no extra detail unless
+   asked.
 7. **Closing read** — one short paragraph: is this normal noise or a real
    signal, and what would change the picture (a level breaking, a whale
    moving).
