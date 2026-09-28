@@ -976,3 +976,7 @@
 2026-09-28T11:07:02Z  worth: transfers starting
 2026-09-28T11:07:05Z  worth: transfers DONE
 2026-09-28T11:07:06Z  worth: pool 0x191ae9cd (v3/WETH) fresh from 6,266,183
+2026-09-28T11:18:42Z  worth: pool 0x191ae9cd DONE, 94,142 swaps
+2026-09-28T11:18:45Z  worth: attributed DONE
+2026-09-28T11:18:47Z  worth: ledger DONE
+2026-09-28T11:18:47Z  wire: transfers starting
