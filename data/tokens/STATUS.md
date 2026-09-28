@@ -910,3 +910,9 @@
 2026-09-28T10:07:22Z  build starting for GME, TYGR, worth, wire, JUGGERNAUT, INJOH, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,646.68)
 2026-09-28T10:07:22Z  GME: skipped (too heavy: over 600k transfers in one segment)
 2026-09-28T10:07:22Z  TYGR: transfers starting
+2026-09-28T10:08:54Z  TYGR: transfers DONE
+2026-09-28T10:08:55Z  TYGR: pool 0x94fc447f (v3/WETH) fresh from 14,884,234
+2026-09-28T10:14:47Z  build starting for GME, TYGR, worth, wire, JUGGERNAUT, INJOH, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,644.80)
+2026-09-28T10:14:47Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-28T10:14:47Z  TYGR: transfers starting
+2026-09-28T10:14:53Z  TYGR: transfers DONE
