@@ -959,3 +959,15 @@
 2026-09-28T10:52:15Z  build starting for GME, worth, wire, JUGGERNAUT, INJOH, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,654.12)
 2026-09-28T10:52:15Z  GME: skipped (too heavy: over 600k transfers in one segment)
 2026-09-28T10:52:15Z  worth: transfers starting
+2026-09-28T10:55:38Z  worth: transfers DONE
+2026-09-28T10:55:39Z  worth: pool 0x191ae9cd (v3/WETH) fresh from 6,266,183
+2026-09-28T11:04:11Z  build starting for WALLET (ETH $2,658.89)
+2026-09-28T11:04:11Z  WALLET: transfers starting
+2026-09-28T11:04:23Z  WALLET: transfers DONE
+2026-09-28T11:04:24Z  WALLET: pool 0x9501a20b (v3/WETH) resuming from 74,723,862
+2026-09-28T11:04:29Z  WALLET: pool 0x9501a20b DONE, 274,812 swaps
+2026-09-28T11:04:29Z  WALLET: pool 0x89f2e48d (v4/USDG) resuming from 74,723,862
+2026-09-28T11:04:29Z  WALLET: pool 0x89f2e48d DONE, 17,676 swaps
+2026-09-28T11:04:37Z  WALLET: attributed DONE
+2026-09-28T11:04:43Z  WALLET: ledger DONE
+2026-09-28T11:04:43Z  build finished
