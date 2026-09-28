@@ -956,3 +956,6 @@
 2026-09-28T10:35:50Z  TYGR: attributed DONE
 2026-09-28T10:35:53Z  TYGR: ledger DONE
 2026-09-28T10:35:53Z  worth: transfers starting
+2026-09-28T10:52:15Z  build starting for GME, worth, wire, JUGGERNAUT, INJOH, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,654.12)
+2026-09-28T10:52:15Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-28T10:52:15Z  worth: transfers starting
