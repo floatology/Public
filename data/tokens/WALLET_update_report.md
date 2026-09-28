@@ -42,14 +42,38 @@ pattern).
 
 ## SUMMARY tier (default)
 
-- Price, market cap, 24h % change, liquidity.
-- Net flow: last 1h and last 24h, one line each (buy $ / sell $ / net).
-- Watchlist one-liner: "X of Y watched wallets active: N bought (+$total),
-  M sold (–$total), rest held."
-- New-buyer snapshot: how many new $25k+ buyers were added this update, and
-  the one-line volume split (new / returning / watched, whale / mid / small).
-- Anything the user flagged, answered directly.
-- Any newly-detected anomaly (bot pattern, unusual concentration) in one line.
+Format this as a scannable report, not prose paragraphs — tables for the
+numbers, bold for the verdict. Structure, in order:
+
+1. **Header line**: `WALLET: $price at HH:MM UTC. Up/down N% over 24h, N%
+   over 1h, liquidity $X.` (Skip personal-position framing here — that's
+   handled separately per `scratchpad/user_wallet_position.md` when asked.)
+2. **Flow table** — time-bucketed (30 min if calm, 15 min or less during a
+   fast move), columns: `Time | Bought | Sold | Net | Price range`. Cover
+   however far back is relevant to what's being asked (last few hours by
+   default, longer if tracing a specific move).
+3. **"My read:"** — one bold lead sentence with the verdict, then bullets:
+   activity level vs a recent baseline, biggest single buyer/seller with
+   context (new vs known, size), watchlist status in one line, any
+   structural point worth flagging (a support/resistance level being
+   tested, a repeat pattern).
+4. **Who bought/sold** (when a specific move deserves it) — named wallets,
+   one line each: amount, price, and *what kind* of wallet (serial flipper
+   since [date] / long-term holder since [date] / brand new / already
+   watched — pull this from the wallet's full trade history, don't just
+   name the address).
+5. **Watchlist callout** — one line: which watched wallets moved, or "none
+   of the watched wallets traded this window."
+6. **Levels table** (when there's a level worth tracking) — `Level | What
+   it is`, e.g. a recent swing high/low, current price, why it matters.
+7. **Closing read** — one short paragraph: is this normal noise or a real
+   signal, and what would change the picture (a level breaking, a whale
+   moving).
+
+Keep it tight — this is the "quick update" tier. The New-buyer origin/size
+segmentation (new vs returning vs watched, whale/mid/small split) from the
+detailed tier only needs to surface here as a line if it's unusual (e.g.
+mostly-new-wallet buying, or a size mix that's shifted sharply).
 
 ## DETAILED tier (on request, or when something's unusual)
 
