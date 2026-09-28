@@ -12,3 +12,7 @@
 2026-09-27T19:26:00Z batch2 case-control list chosen (20 cases, 20 controls); queued after batch1
 2026-09-27T20:51:07Z check-in 3: batch1 24/30 (OPENAIx1L skipped heavy), candles 2864/5290 (liquid done, census-only ~half)
 2026-09-27T22:23:08Z check-in 4: full survivor-corrected candle backtest done; docs/25 drafted; live shortlist = Odin, ai17z
+2026-09-28T00:11:17Z batch1 finished; repricing
+2026-09-28T00:12:09Z batch2 registered; building
+2026-09-28T00:24:17Z check-in 5: add of batch2 had crashed on 'U' (DexScreener 400); fixed, registered 35 of 40 (4 controls now have no pairs = dead; INTC stock skipped; LUTE on undecodable DEX); batch2 build started
+2026-09-28T00:24:17Z batch2 build starting: BAG CLOCKIN FLOPS FRIDAY Froggy GME HMM HOODRAT HOOKR INJOH JUGGERNAUT KITSU MANCER MOONCOW NASDANQ PEEPS PEPE POOH POOLS PORK RHPS SNOW TA TAMPONS TUX TYGR U WELOVECATS WEN WOJAK WOOF YOLO wire worth

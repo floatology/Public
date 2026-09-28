@@ -1,0 +1,46 @@
+{
+ "priced_at": "2026-09-28T00:11:58Z",
+ "eth_usd": 2685.52,
+ "pools": {
+  "0x6538e2c223ed70228114983afecbe5e69fe627e2fafdf367bdd6bdeff2ad391f": {
+   "quote_usd": 2685.52,
+   "decimals": 18,
+   "symbol": "ETH"
+  },
+  "0x4e2a7c0057cec67170ee71641d23d0e835afb6f1deb6b4c6a182b4c16ec8f594": {
+   "quote_usd": 1.0,
+   "decimals": 6,
+   "symbol": "USDG"
+  },
+  "0x6c614c38c65fea492f4cb2b90fd664f924a7b828c7384620662217e2e2df43ed": {
+   "quote_usd": 1.0,
+   "decimals": 6,
+   "symbol": "USDG"
+  },
+  "0xdd3c8aa6551bf5049310399c124cbb699b7d1c5c": {
+   "quote_usd": 2685.52,
+   "decimals": 18,
+   "symbol": "WETH"
+  },
+  "0x1e2ed4084a9e5b594d725d8a022554dc8e4c759a7a7a3f396018be916941c331": {
+   "quote_usd": 2685.52,
+   "decimals": 18,
+   "symbol": "ETH"
+  },
+  "0xf398e8f73f8b5067a978b1306c963e0c2224b2ada11b71d294d756106d02ae5d": {
+   "quote_usd": 1.0,
+   "decimals": 6,
+   "symbol": "USDG"
+  },
+  "0xa17f84dbdeb7cabaf40ee23330ceab4219b6a6d7ca556c0dc99e1ae3dc317c83": {
+   "quote_usd": 1.0,
+   "decimals": 6,
+   "symbol": "USDG"
+  },
+  "0x501122bfd256e408a63bddad901cc19a2512d74b2006f0474a3cf480e94afe1b": {
+   "quote_usd": 2685.52,
+   "decimals": 18,
+   "symbol": "ETH"
+  }
+ }
+}

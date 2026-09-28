@@ -1,0 +1,40 @@
+head 74,365,481; 2,984 anchors held, 1 to fetch
+2,985 anchors; worst error above block 4,000,000: 2s (below it: 0s, where the chain had not reached a steady block rate)
+[00:24:24] build starting for U, GME, WOOF, HOODRAT, WEN, YOLO, TAMPONS, HOOKR, POOLS, TYGR, worth, wire, JUGGERNAUT, INJOH, POOH, TA, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,696.58)
+[00:24:24] U: transfers starting
+head 74,365,552
+transfers: scanning 74,354,673-74,365,552 (resuming)
+  tr 100.0%  block 74,365,552  span 100,000  logs 198  0s
+transfers: committed 74,354,673-74,365,552  +198 rows, 155,465 total
+{
+ "token": "0xce24439f2d9c6a2289f741120fe202248b666666",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    74365552
+   ]
+  ],
+  "rows": 155465
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-28T00:24:27Z"
+}
+[00:24:27] U: transfers DONE
+[00:24:27] U: pool 0xf399bd15 (v4/USDG) resuming from 74,354,900
+    0xf399bd15 100.0% block 74,365,577 logs 56 0s
+[00:24:28] U: pool 0xf399bd15 DONE, 44,876 swaps
+[00:24:28] U: pool 0xa5d2fa75 (v4/ETH) resuming from 74,354,900
+    0xa5d2fa75 100.0% block 74,365,577 logs 92 0s
+[00:24:28] U: pool 0xa5d2fa75 DONE, 42,685 swaps
+[00:24:28] U: pool 0x090f2f03 (pcs3/USDG) fresh from 56,765,550
+    0x090f2f03   1.2% block 56,865,549 logs 0 0s
+    0x090f2f03   3.1% block 57,015,549 logs 0 0s
+    0x090f2f03   5.9% block 57,240,549 logs 0 0s
+    0x090f2f03  10.2% block 57,578,049 logs 0 1s
+    0x090f2f03  16.5% block 58,084,299 logs 2,013 2s
+    0x090f2f03  26.0% block 58,843,674 logs 2,470 18s

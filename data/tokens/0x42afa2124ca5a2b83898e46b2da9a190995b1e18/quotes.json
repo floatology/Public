@@ -1,0 +1,21 @@
+{
+ "priced_at": "2026-09-28T00:12:05Z",
+ "eth_usd": 2685.52,
+ "pools": {
+  "0xc749412e31087a6e6f9210af575bc9100159fbc9f45da3ca8b26b31f3bf5777e": {
+   "quote_usd": 390.71,
+   "decimals": 18,
+   "symbol": "GLD"
+  },
+  "0xf66ccb1c5e6b579f94311131724a8daf0d96b0ebdbe53ab9fa27b98a8abaeb8b": {
+   "quote_usd": 1.0,
+   "decimals": 6,
+   "symbol": "USDG"
+  },
+  "0x417e0a3a9d03ddee6749f21aa02498338a652786": {
+   "quote_usd": 2685.52,
+   "decimals": 18,
+   "symbol": "WETH"
+  }
+ }
+}

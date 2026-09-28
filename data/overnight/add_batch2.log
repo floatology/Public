@@ -1,0 +1,13 @@
+Traceback (most recent call last):
+  File "/home/user/Public/scripts/track_tokens.py", line 483, in <module>
+    raise SystemExit(main())
+                     ^^^^^^
+  File "/home/user/Public/scripts/track_tokens.py", line 479, in main
+    return {"add": cmd_add, "build": cmd_build, "reprice": cmd_reprice}[args.cmd](args)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Public/scripts/track_tokens.py", line 135, in cmd_add
+    r = ds.get(f"/latest/dex/search?q={q}")
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/home/user/Public/src/rhc/dexscreener.py", line 101, in get
+    raise DexScreenerError(f"HTTP {response.status_code} for {path}")
+rhc.dexscreener.DexScreenerError: HTTP 400 for /latest/dex/search?q=U

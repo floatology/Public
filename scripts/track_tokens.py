@@ -132,7 +132,13 @@ def cmd_add(args) -> int:
     with Rpc() as rpc:
         head = rpc.block_number()
         for q in args.symbols:
-            r = ds.get(f"/latest/dex/search?q={q}")
+            # One bad query (DexScreener rejects "U" as too short) must not
+            # abort a batch of forty: log it and move on.
+            try:
+                r = ds.get(f"/latest/dex/search?q={q}")
+            except Exception as exc:
+                print(f"{q}: search failed ({exc}); pass the contract address instead")
+                continue
             pairs = [p for p in r.get("pairs") or []
                      if p.get("chainId") == "robinhood"
                      and (p["baseToken"]["symbol"].upper() == q.upper()
