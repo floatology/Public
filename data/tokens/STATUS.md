@@ -476,3 +476,5 @@
 2026-09-28T00:28:17Z  GME: transfers starting
 2026-09-28T00:43:11Z  GME: SKIPPED — over 600k transfers in one segment; set force=true to build
 2026-09-28T00:43:11Z  WOOF: transfers starting
+2026-09-28T01:06:08Z  WOOF: transfers DONE
+2026-09-28T01:06:08Z  WOOF: pool 0x2a004148 (v3/WETH) fresh from 21,107,086

@@ -44,34 +44,37 @@ is repeated on two halves split by time and two halves split by token.
    single best pair, so every other pool went unpriced: 152k of ORBIO's 202k
    trades had a USD value of zero. Fix: price by quote asset.
 
-## Results (survivor-corrected candles, 26,684 token-days, 825 tokens)
+## Results (survivor-corrected candles, final run: 39,771 token-days, 1,235 tokens)
+
+The final run adds the last 1,555 small pools. It confirms the earlier run
+on 26,684 token-days, and the numbers below are the final ones.
 
 | Signal | Events | 2x in 14d | Crash | Held +50% | 2x lift | Crash lift |
 |---|---|---|---|---|---|---|
-| base, all | 26,684 | 11.9% | 8.6% | 10.5% | | |
+| base, all | 39,771 | 9.1% | 6.6% | 8.7% | | |
 | base, weekly vol >= $10k | 8,930 | 27.3% | 23.6% | 21.5% | | |
-| dry-up alone | 1,372 | 15.7% | 11.2% | 13.8% | 1.05x | 1.09x |
-| ignition alone | 702 | 22.5% | 20.9% | 17.9% | 1.02x | 1.18x |
-| higher lows alone | 773 | 21.1% | 18.6% | 16.6% | 1.08x | 1.15x |
-| coil alone | 837 | 8.1% | 5.3% | 7.4% | 0.99x | 0.85x |
-| **SETUP** (dry + ignite + higher lows + coil) | 76 | 26.3% | 15.8% | 22.4% | **1.47x** | 1.07x |
-| **BREAK** (close > 20d high on >= 2x volume after a dry-up) | 142 | 43.0% | 25.4% | 35.2% | **1.74x** | 1.29x |
+| dry-up alone (earlier run) | 1,372 | 15.7% | 11.2% | 13.8% | 1.05x | 1.09x |
+| ignition alone (earlier run) | 702 | 22.5% | 20.9% | 17.9% | 1.02x | 1.18x |
+| higher lows alone (earlier run) | 773 | 21.1% | 18.6% | 16.6% | 1.08x | 1.15x |
+| coil alone (earlier run) | 837 | 8.1% | 5.3% | 7.4% | 0.99x | 0.85x |
+| **SETUP** (dry + ignite + higher lows + coil) | 103 | 20.4% | 11.7% | 16.5% | **1.41x** | 0.96x |
+| **BREAK** (close > 20d high on >= 2x volume after a dry-up) | 169 | 37.9% | 24.9% | 30.2% | **1.84x** | 1.41x |
 
 The 2x lift holds across every split:
 
 | Signal | Time, 1st half | Time, 2nd half | Tokens A | Tokens B |
 |---|---|---|---|---|
-| BREAK | 2.02x | 1.75x | 1.84x | 1.63x |
-| SETUP | 1.39x | 1.40x | 1.66x | 1.29x |
+| BREAK | 2.04x | 1.86x | 1.98x | 1.68x |
+| SETUP | 1.27x | 1.36x | 1.63x | 1.22x |
 
 **Reading.**
 - **No single signal has an edge.** Dry-ups, ignition days, higher lows and
   coiling each sit near 1.0x once matched on activity. The pattern only carries
   information in combination.
 - **BREAK is the strongest signal**, and also the most volatile: it raises the
-  crash rate by 1.29x. It confirms a move rather than anticipating it.
+  crash rate by 1.41x. It confirms a move rather than anticipating it.
 - **SETUP is the cleaner early signal**, at about 1.5x upside with roughly neutral
-  crash risk, but it is rare (76 events across 825 tokens).
+  crash risk, but it is rare (103 events across 1,235 tokens).
 - **The flow test agreed on direction and was too small to add much.**
   Absorption and breakout days predicted large moves in *both* directions. The
   full WALLET-shaped composite with on-chain flow fired only 7 times.
@@ -121,7 +124,7 @@ Base rates by bucket (candles, survivor-corrected):
 `scripts/candle_backtest.py` flags SETUP and BREAK on the last complete day.
 `scripts/live_screen.py` then applies the filters above: SETUP or BREAK, weekly
 volume of at least $10k, market cap $100k–$5M, no tokenized stocks, and a
-HIGH-CHURN mark above $250k a week. On 27 Sep, 93 raw flags reduced to 2:
+HIGH-CHURN mark above $250k a week. On 27 Sep, 93 raw flags reduced to 2 (on 28 Sep, 140 raw flags reduced to none):
 
 - **Odin** — BREAK, $369k cap, $88k weekly volume
 - **ai17z** — BREAK, $252k cap, $323k weekly volume (HIGH-CHURN)

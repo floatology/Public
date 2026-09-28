@@ -1,172 +1,172 @@
 
-== ALL: 26,684 token-days, 825 tokens
+== ALL: 39,771 token-days, 1,235 tokens
                            events              run2x              crash              clean               held
-   BASE (all days)          26684  11.9% [ 12%- 12%]   8.6% [  8%-  9%]  15.9% [ 16%- 16%]  10.5% [ 10%- 11%]
-   dry                       1372  15.7% [ 14%- 18%]  11.2% [ 10%- 13%]  18.8% [ 17%- 21%]  13.8% [ 12%- 16%]   lift vs same-activity: run2x 1.05x crash 1.09x clean 0.96x held 1.07x
-   ignite                     702  22.5% [ 20%- 26%]  20.9% [ 18%- 24%]  28.6% [ 25%- 32%]  17.9% [ 15%- 21%]   lift vs same-activity: run2x 1.02x crash 1.18x clean 1.02x held 1.00x
-   hlows                      773  21.1% [ 18%- 24%]  18.6% [ 16%- 22%]  26.1% [ 23%- 29%]  16.6% [ 14%- 19%]   lift vs same-activity: run2x 1.08x crash 1.15x clean 1.05x held 1.03x
-   coil                       837   8.1% [  6%- 10%]   5.3% [  4%-  7%]   9.7% [  8%- 12%]   7.4% [  6%-  9%]   lift vs same-activity: run2x 0.99x crash 0.85x clean 0.83x held 0.96x
-   SETUP                       76  26.3% [ 18%- 37%]  15.8% [  9%- 26%]  28.9% [ 20%- 40%]  22.4% [ 14%- 33%]   lift vs same-activity: run2x 1.47x crash 1.07x clean 1.23x held 1.50x
-   BREAK                      142  43.0% [ 35%- 51%]  25.4% [ 19%- 33%]  41.5% [ 34%- 50%]  35.2% [ 28%- 43%]   lift vs same-activity: run2x 1.74x crash 1.29x clean 1.34x held 1.78x
+   BASE (all days)          39771   9.1% [  9%-  9%]   6.6% [  6%-  7%]  13.3% [ 13%- 14%]   8.7% [  8%-  9%]
+   dry                       1949  12.5% [ 11%- 14%]   9.4% [  8%- 11%]  15.5% [ 14%- 17%]  10.8% [ 10%- 12%]   lift vs same-activity: run2x 1.08x crash 1.15x clean 0.96x held 1.02x
+   ignite                     871  19.2% [ 17%- 22%]  19.1% [ 17%- 22%]  25.5% [ 23%- 28%]  15.5% [ 13%- 18%]   lift vs same-activity: run2x 1.02x crash 1.22x clean 1.03x held 1.00x
+   hlows                      989  17.8% [ 16%- 20%]  16.4% [ 14%- 19%]  23.0% [ 20%- 26%]  14.3% [ 12%- 17%]   lift vs same-activity: run2x 1.09x crash 1.18x clean 1.06x held 1.04x
+   coil                      1233   6.2% [  5%-  8%]   4.0% [  3%-  5%]   7.9% [  6%- 10%]   5.7% [  5%-  7%]   lift vs same-activity: run2x 0.94x crash 0.84x clean 0.76x held 0.82x
+   SETUP                      103  20.4% [ 14%- 29%]  11.7% [  7%- 19%]  22.3% [ 15%- 31%]  16.5% [ 11%- 25%]   lift vs same-activity: run2x 1.41x crash 0.96x clean 1.12x held 1.32x
+   BREAK                      169  37.9% [ 31%- 45%]  24.9% [ 19%- 32%]  36.7% [ 30%- 44%]  30.2% [ 24%- 37%]   lift vs same-activity: run2x 1.84x crash 1.41x clean 1.38x held 1.81x
 
-== TIME SPLIT first half: 5,642 token-days, 471 tokens
+== TIME SPLIT first half: 7,370 token-days, 700 tokens
                            events              run2x              crash              clean               held
-   BASE (all days)           5642  12.7% [ 12%- 14%]   9.6% [  9%- 10%]  16.3% [ 15%- 17%]  11.6% [ 11%- 12%]
-   dry                        570  12.1% [ 10%- 15%]  11.6% [  9%- 14%]  14.4% [ 12%- 18%]  11.2% [  9%- 14%]   lift vs same-activity: run2x 0.93x crash 1.22x clean 0.86x held 0.94x
-   ignite                     173  19.1% [ 14%- 26%]  27.2% [ 21%- 34%]  23.7% [ 18%- 31%]  17.9% [ 13%- 24%]   lift vs same-activity: run2x 0.85x crash 1.53x clean 0.84x held 0.91x
-   hlows                      170  21.8% [ 16%- 29%]  25.3% [ 19%- 32%]  29.4% [ 23%- 37%]  20.6% [ 15%- 27%]   lift vs same-activity: run2x 0.91x crash 1.27x clean 0.98x held 0.99x
-   coil                       236   3.4% [  2%-  7%]   3.8% [  2%-  7%]   3.0% [  1%-  6%]   3.0% [  1%-  6%]   lift vs same-activity: run2x 0.70x crash 0.94x clean 0.44x held 0.60x
-   SETUP                       10  30.0% [ 11%- 60%]  10.0% [  2%- 40%]  20.0% [  6%- 51%]  30.0% [ 11%- 60%]   lift vs same-activity: run2x 1.39x crash 0.62x clean 0.69x held 1.49x
-   BREAK                       15  60.0% [ 36%- 80%]  40.0% [ 20%- 64%]  53.3% [ 30%- 75%]  53.3% [ 30%- 75%]   lift vs same-activity: run2x 2.02x crash 1.42x clean 1.49x held 2.18x
+   BASE (all days)           7370  10.1% [  9%- 11%]   7.4% [  7%-  8%]  13.2% [ 12%- 14%]   9.4% [  9%- 10%]
+   dry                        807   8.8% [  7%- 11%]   8.4% [  7%- 11%]  10.9% [  9%- 13%]   8.3% [  7%- 10%]   lift vs same-activity: run2x 0.89x crash 1.21x clean 0.84x held 0.89x
+   ignite                     210  15.7% [ 11%- 21%]  22.4% [ 17%- 28%]  20.0% [ 15%- 26%]  15.2% [ 11%- 21%]   lift vs same-activity: run2x 0.79x crash 1.49x clean 0.79x held 0.86x
+   hlows                      195  19.0% [ 14%- 25%]  23.1% [ 18%- 29%]  26.2% [ 20%- 33%]  18.5% [ 14%- 24%]   lift vs same-activity: run2x 0.90x crash 1.32x clean 0.98x held 1.01x
+   coil                       380   2.1% [  1%-  4%]   2.4% [  1%-  4%]   1.8% [  1%-  4%]   1.8% [  1%-  4%]   lift vs same-activity: run2x 0.60x crash 0.90x clean 0.35x held 0.48x
+   SETUP                       13  23.1% [  8%- 50%]   7.7% [  1%- 33%]  15.4% [  4%- 42%]  23.1% [  8%- 50%]   lift vs same-activity: run2x 1.27x crash 0.55x clean 0.63x held 1.37x
+   BREAK                       16  56.2% [ 33%- 77%]  37.5% [ 18%- 61%]  50.0% [ 28%- 72%]  50.0% [ 28%- 72%]   lift vs same-activity: run2x 2.04x crash 1.43x clean 1.49x held 2.21x
 
-== TIME SPLIT second half: 21,042 token-days, 825 tokens
+== TIME SPLIT second half: 32,401 token-days, 1,235 tokens
                            events              run2x              crash              clean               held
-   BASE (all days)          21042  11.7% [ 11%- 12%]   8.3% [  8%-  9%]  15.9% [ 15%- 16%]  10.2% [ 10%- 11%]
-   dry                        959  17.5% [ 15%- 20%]  12.1% [ 10%- 14%]  19.9% [ 18%- 23%]  15.7% [ 14%- 18%]   lift vs same-activity: run2x 1.06x crash 1.07x clean 0.93x held 1.14x
-   ignite                     595  24.4% [ 21%- 28%]  17.0% [ 14%- 20%]  29.9% [ 26%- 34%]  19.3% [ 16%- 23%]   lift vs same-activity: run2x 1.12x crash 0.97x clean 1.08x held 1.13x
-   hlows                      664  21.5% [ 19%- 25%]  16.7% [ 14%- 20%]  25.0% [ 22%- 28%]  17.2% [ 14%- 20%]   lift vs same-activity: run2x 1.14x crash 1.08x clean 1.04x held 1.14x
-   coil                       708   8.3% [  7%- 11%]   5.4% [  4%-  7%]  10.3% [  8%- 13%]   7.8% [  6%- 10%]   lift vs same-activity: run2x 0.95x crash 0.82x clean 0.83x held 0.96x
-   SETUP                       67  23.9% [ 15%- 35%]  16.4% [  9%- 27%]  28.4% [ 19%- 40%]  19.4% [ 12%- 30%]   lift vs same-activity: run2x 1.40x crash 1.15x clean 1.27x held 1.40x
-   BREAK                      130  41.5% [ 33%- 50%]  24.6% [ 18%- 33%]  40.8% [ 33%- 49%]  33.1% [ 26%- 42%]   lift vs same-activity: run2x 1.75x crash 1.29x clean 1.36x held 1.78x
+   BASE (all days)          32401   8.9% [  9%-  9%]   6.4% [  6%-  7%]  13.3% [ 13%- 14%]   8.6% [  8%-  9%]
+   dry                       1341  14.7% [ 13%- 17%]  11.3% [ 10%- 13%]  17.4% [ 15%- 19%]  13.1% [ 11%- 15%]   lift vs same-activity: run2x 1.14x crash 1.20x clean 0.97x held 1.16x
+   ignite                     750  20.7% [ 18%- 24%]  15.9% [ 13%- 19%]  26.5% [ 23%- 30%]  16.5% [ 14%- 19%]   lift vs same-activity: run2x 1.13x crash 1.03x clean 1.10x held 1.12x
+   hlows                      862  18.3% [ 16%- 21%]  14.8% [ 13%- 17%]  22.2% [ 20%- 25%]  14.6% [ 12%- 17%]   lift vs same-activity: run2x 1.18x crash 1.11x clean 1.06x held 1.13x
+   coil                      1045   6.5% [  5%-  8%]   4.1% [  3%-  5%]   8.5% [  7%- 10%]   6.0% [  5%-  8%]   lift vs same-activity: run2x 0.93x crash 0.81x clean 0.77x held 0.83x
+   SETUP                       91  18.7% [ 12%- 28%]  12.1% [  7%- 20%]  22.0% [ 15%- 32%]  14.3% [  9%- 23%]   lift vs same-activity: run2x 1.36x crash 1.03x clean 1.14x held 1.22x
+   BREAK                      156  36.5% [ 29%- 44%]  24.4% [ 18%- 32%]  35.9% [ 29%- 44%]  28.2% [ 22%- 36%]   lift vs same-activity: run2x 1.86x crash 1.42x clean 1.40x held 1.81x
 
-== TOKEN SPLIT A: 13,249 token-days, 408 tokens
+== TOKEN SPLIT A: 20,181 token-days, 625 tokens
                            events              run2x              crash              clean               held
-   BASE (all days)          13249  11.3% [ 11%- 12%]   8.2% [  8%-  9%]  15.1% [ 15%- 16%]  10.1% [ 10%- 11%]
-   dry                        682  15.0% [ 12%- 18%]  11.0% [  9%- 14%]  18.8% [ 16%- 22%]  13.0% [ 11%- 16%]   lift vs same-activity: run2x 1.06x crash 1.13x clean 1.01x held 1.06x
-   ignite                     338  21.9% [ 18%- 27%]  21.6% [ 18%- 26%]  29.0% [ 24%- 34%]  18.9% [ 15%- 23%]   lift vs same-activity: run2x 0.99x crash 1.26x clean 1.03x held 1.04x
-   hlows                      374  20.1% [ 16%- 24%]  19.0% [ 15%- 23%]  25.9% [ 22%- 31%]  17.4% [ 14%- 22%]   lift vs same-activity: run2x 1.03x crash 1.20x clean 1.05x held 1.08x
-   coil                       434   7.8% [  6%- 11%]   5.3% [  4%-  8%]   9.2% [  7%- 12%]   7.6% [  5%- 10%]   lift vs same-activity: run2x 1.04x crash 0.97x clean 0.87x held 1.05x
-   SETUP                       35  31.4% [ 19%- 48%]  17.1% [  8%- 33%]  28.6% [ 16%- 45%]  25.7% [ 14%- 42%]   lift vs same-activity: run2x 1.66x crash 1.22x clean 1.18x held 1.59x
-   BREAK                       68  45.6% [ 34%- 57%]  20.6% [ 13%- 32%]  42.6% [ 32%- 54%]  39.7% [ 29%- 52%]   lift vs same-activity: run2x 1.84x crash 1.08x clean 1.36x held 1.97x
+   BASE (all days)          20181   8.7% [  8%-  9%]   6.4% [  6%-  7%]  12.6% [ 12%- 13%]   8.3% [  8%-  9%]
+   dry                        996  11.4% [ 10%- 14%]   9.1% [  8%- 11%]  15.3% [ 13%- 18%]  10.2% [  9%- 12%]   lift vs same-activity: run2x 1.06x crash 1.16x clean 1.00x held 1.04x
+   ignite                     432  18.8% [ 15%- 23%]  19.4% [ 16%- 23%]  25.5% [ 22%- 30%]  15.7% [ 13%- 19%]   lift vs same-activity: run2x 1.04x crash 1.31x clean 1.08x held 1.06x
+   hlows                      494  16.6% [ 14%- 20%]  15.8% [ 13%- 19%]  22.5% [ 19%- 26%]  14.8% [ 12%- 18%]   lift vs same-activity: run2x 1.07x crash 1.20x clean 1.09x held 1.13x
+   coil                       642   5.9% [  4%-  8%]   4.0% [  3%-  6%]   7.5% [  6%- 10%]   5.8% [  4%-  8%]   lift vs same-activity: run2x 0.95x crash 0.90x clean 0.77x held 0.88x
+   SETUP                       53  22.6% [ 13%- 36%]  11.3% [  5%- 23%]  20.8% [ 12%- 33%]  17.0% [  9%- 29%]   lift vs same-activity: run2x 1.63x crash 1.06x clean 1.10x held 1.39x
+   BREAK                       86  38.4% [ 29%- 49%]  19.8% [ 13%- 29%]  36.0% [ 27%- 47%]  31.4% [ 23%- 42%]   lift vs same-activity: run2x 1.98x crash 1.23x clean 1.44x held 2.00x
 
-== TOKEN SPLIT B: 13,435 token-days, 417 tokens
+== TOKEN SPLIT B: 19,590 token-days, 610 tokens
                            events              run2x              crash              clean               held
-   BASE (all days)          13435  12.5% [ 12%- 13%]   9.0% [  9%-  9%]  16.7% [ 16%- 17%]  11.0% [ 10%- 12%]
-   dry                        690  16.5% [ 14%- 19%]  11.3% [  9%- 14%]  18.8% [ 16%- 22%]  14.5% [ 12%- 17%]   lift vs same-activity: run2x 1.05x crash 1.07x clean 0.92x held 1.07x
-   ignite                     364  23.1% [ 19%- 28%]  20.3% [ 17%- 25%]  28.3% [ 24%- 33%]  17.0% [ 14%- 21%]   lift vs same-activity: run2x 1.05x crash 1.12x clean 1.01x held 0.96x
-   hlows                      399  22.1% [ 18%- 26%]  18.3% [ 15%- 22%]  26.3% [ 22%- 31%]  15.8% [ 13%- 20%]   lift vs same-activity: run2x 1.13x crash 1.12x clean 1.05x held 0.99x
-   coil                       403   8.4% [  6%- 12%]   5.2% [  3%-  8%]  10.2% [  8%- 14%]   7.2% [  5%- 10%]   lift vs same-activity: run2x 0.96x crash 0.76x clean 0.81x held 0.88x
-   SETUP                       41  22.0% [ 12%- 37%]  14.6% [  7%- 28%]  29.3% [ 18%- 44%]  19.5% [ 10%- 34%]   lift vs same-activity: run2x 1.29x crash 0.97x clean 1.29x held 1.41x
-   BREAK                       74  40.5% [ 30%- 52%]  29.7% [ 21%- 41%]  40.5% [ 30%- 52%]  31.1% [ 22%- 42%]   lift vs same-activity: run2x 1.63x crash 1.48x clean 1.32x held 1.55x
+   BASE (all days)          19590   9.6% [  9%- 10%]   6.8% [  6%-  7%]  14.0% [ 13%- 14%]   9.2% [  9%- 10%]
+   dry                        953  13.6% [ 12%- 16%]   9.8% [  8%- 12%]  15.8% [ 14%- 18%]  11.4% [ 10%- 14%]   lift vs same-activity: run2x 1.10x crash 1.14x clean 0.92x held 1.01x
+   ignite                     439  19.6% [ 16%- 24%]  18.7% [ 15%- 23%]  25.5% [ 22%- 30%]  15.3% [ 12%- 19%]   lift vs same-activity: run2x 1.01x crash 1.14x clean 0.99x held 0.95x
+   hlows                      495  19.0% [ 16%- 23%]  17.0% [ 14%- 21%]  23.4% [ 20%- 27%]  13.7% [ 11%- 17%]   lift vs same-activity: run2x 1.13x crash 1.18x clean 1.05x held 0.97x
+   coil                       591   6.4% [  5%-  9%]   3.9% [  3%-  6%]   8.3% [  6%- 11%]   5.6% [  4%-  8%]   lift vs same-activity: run2x 0.93x crash 0.80x clean 0.75x held 0.77x
+   SETUP                       50  18.0% [ 10%- 31%]  12.0% [  6%- 24%]  24.0% [ 14%- 37%]  16.0% [  8%- 29%]   lift vs same-activity: run2x 1.22x crash 0.89x clean 1.16x held 1.28x
+   BREAK                       83  37.3% [ 28%- 48%]  30.1% [ 21%- 41%]  37.3% [ 28%- 48%]  28.9% [ 20%- 39%]   lift vs same-activity: run2x 1.68x crash 1.57x clean 1.32x held 1.61x
 
 == BASE RATES BY AGE (days of trading history)
-       14-20d    5,608 days    825 tokens  run2x  12.1%  crash   9.1%  clean  14.7%  held  10.2%
-       21-29d    6,747 days    775 tokens  run2x  12.7%  crash   7.1%  clean  15.5%  held  11.4%
-       30-44d    8,687 days    709 tokens  run2x  12.9%  crash   7.5%  clean  17.6%  held  11.8%
-       45-59d    4,914 days    471 tokens  run2x   9.3%  crash  11.2%  clean  15.3%  held   7.9%
-         60d+      728 days    126 tokens  run2x   8.0%  crash  13.9%  clean  13.3%  held   6.9%
+       14-20d    8,417 days  1,235 tokens  run2x   9.2%  crash   7.0%  clean  11.9%  held   7.9%
+       21-29d   10,084 days  1,157 tokens  run2x   9.2%  crash   5.5%  clean  11.8%  held   8.5%
+       30-44d   13,181 days  1,050 tokens  run2x   9.9%  crash   5.8%  clean  14.5%  held   9.8%
+       45-59d    7,116 days    719 tokens  run2x   7.7%  crash   8.5%  clean  15.0%  held   8.6%
+         60d+      973 days    177 tokens  run2x   6.5%  crash  11.9%  clean  11.3%  held   5.9%
 
 == BASE RATES BY MARKET CAP
-         <25k    5,982 days    252 tokens  run2x  13.6%  crash   1.7%  clean  19.1%  held  14.2%
-      25-100k    2,873 days    172 tokens  run2x  21.0%  crash  17.2%  clean  24.1%  held  17.5%
-     100-300k    1,506 days    127 tokens  run2x  27.0%  crash  30.3%  clean  31.9%  held  20.2%
-      300k-1M      961 days     98 tokens  run2x  32.8%  crash  36.7%  clean  37.7%  held  26.0%
-         1-5M    1,640 days    102 tokens  run2x  19.8%  crash  19.3%  clean  26.1%  held  16.3%
-          5M+    1,234 days     54 tokens  run2x  21.0%  crash  19.7%  clean  27.4%  held  16.0%
+         <25k   17,805 days    628 tokens  run2x   6.6%  crash   1.1%  clean  11.0%  held   7.9%
+      25-100k    3,337 days    206 tokens  run2x  19.1%  crash  17.9%  clean  22.5%  held  15.8%
+     100-300k    1,687 days    145 tokens  run2x  26.4%  crash  29.8%  clean  31.5%  held  19.9%
+      300k-1M    1,164 days    117 tokens  run2x  30.8%  crash  36.0%  clean  36.2%  held  23.5%
+         1-5M    1,812 days    117 tokens  run2x  18.7%  crash  21.0%  clean  25.6%  held  15.3%
+          5M+    1,273 days     58 tokens  run2x  19.3%  crash  17.5%  clean  27.8%  held  16.6%
 
 == BASE RATES BY 7-DAY VOLUME
-          <1k   15,725 days    532 tokens  run2x   2.4%  crash   0.6%  clean   4.7%  held   3.5%
-        1-10k    2,029 days    214 tokens  run2x  17.3%  crash   4.6%  clean  24.1%  held  16.3%
-       10-50k    1,950 days    206 tokens  run2x  26.3%  crash   7.1%  clean  36.8%  held  23.4%
-      50-250k    2,246 days    210 tokens  run2x  32.6%  crash  21.1%  clean  36.7%  held  26.3%
-      250k-1M    1,801 days    181 tokens  run2x  30.5%  crash  34.2%  clean  34.9%  held  21.9%
-          1M+    2,933 days    175 tokens  run2x  22.1%  crash  29.9%  clean  28.9%  held  16.3%
+          <1k   27,026 days    914 tokens  run2x   2.6%  crash   0.7%  clean   5.7%  held   4.2%
+        1-10k    2,958 days    306 tokens  run2x  13.3%  crash   5.3%  clean  20.0%  held  12.9%
+       10-50k    2,357 days    269 tokens  run2x  23.5%  crash   7.3%  clean  33.0%  held  20.4%
+      50-250k    2,492 days    253 tokens  run2x  30.1%  crash  22.0%  clean  34.6%  held  24.0%
+      250k-1M    1,862 days    190 tokens  run2x  29.7%  crash  34.6%  clean  34.2%  held  21.3%
+          1M+    3,076 days    183 tokens  run2x  21.6%  crash  29.8%  clean  28.5%  held  15.9%
 
-== ACTIVE ONLY (7d volume >= $1k): 10,959 token-days, 443 tokens
+== ACTIVE ONLY (7d volume >= $1k): 12,745 token-days, 572 tokens
                            events              run2x              crash              clean               held
-   BASE (all days)          10959  25.5% [ 25%- 26%]  20.1% [ 19%- 21%]  32.0% [ 31%- 33%]  20.5% [ 20%- 21%]
-   dry                        779  26.8% [ 24%- 30%]  18.6% [ 16%- 21%]  32.0% [ 29%- 35%]  23.0% [ 20%- 26%]   lift vs same-activity: run2x 1.07x crash 1.05x clean 1.01x held 1.11x
-   ignite                     607  25.4% [ 22%- 29%]  23.7% [ 21%- 27%]  32.9% [ 29%- 37%]  20.6% [ 18%- 24%]   lift vs same-activity: run2x 1.00x crash 1.16x clean 1.03x held 1.01x
-   hlows                      577  27.7% [ 24%- 32%]  24.6% [ 21%- 28%]  34.1% [ 30%- 38%]  22.2% [ 19%- 26%]   lift vs same-activity: run2x 1.08x crash 1.15x clean 1.07x held 1.09x
-   coil                       234  23.9% [ 19%- 30%]  17.1% [ 13%- 22%]  26.9% [ 22%- 33%]  21.4% [ 17%- 27%]   lift vs same-activity: run2x 1.00x crash 0.82x clean 0.88x held 1.11x
-   SETUP                       56  33.9% [ 23%- 47%]  19.6% [ 11%- 32%]  37.5% [ 26%- 51%]  28.6% [ 18%- 41%]   lift vs same-activity: run2x 1.43x crash 0.99x clean 1.23x held 1.49x
-   BREAK                      135  45.9% [ 38%- 54%]  26.7% [ 20%- 35%]  44.4% [ 36%- 53%]  37.8% [ 30%- 46%]   lift vs same-activity: run2x 1.77x crash 1.29x clean 1.36x held 1.81x
+   BASE (all days)          12745  22.9% [ 22%- 24%]  19.1% [ 18%- 20%]  29.4% [ 29%- 30%]  18.4% [ 18%- 19%]
+   dry                        937  24.2% [ 22%- 27%]  18.4% [ 16%- 21%]  29.2% [ 26%- 32%]  20.2% [ 18%- 23%]   lift vs same-activity: run2x 1.10x crash 1.10x clean 1.02x held 1.11x
+   ignite                     710  22.5% [ 20%- 26%]  22.5% [ 20%- 26%]  30.0% [ 27%- 33%]  18.5% [ 16%- 21%]   lift vs same-activity: run2x 0.99x crash 1.18x clean 1.02x held 1.01x
+   hlows                      668  24.9% [ 22%- 28%]  23.2% [ 20%- 27%]  31.1% [ 28%- 35%]  20.1% [ 17%- 23%]   lift vs same-activity: run2x 1.08x crash 1.15x clean 1.06x held 1.09x
+   coil                       276  21.4% [ 17%- 27%]  16.3% [ 12%- 21%]  24.6% [ 20%- 30%]  19.2% [ 15%- 24%]   lift vs same-activity: run2x 1.01x crash 0.86x clean 0.89x held 1.12x
+   SETUP                       68  29.4% [ 20%- 41%]  16.2% [  9%- 27%]  32.4% [ 22%- 44%]  23.5% [ 15%- 35%]   lift vs same-activity: run2x 1.41x crash 0.89x clean 1.17x held 1.38x
+   BREAK                      150  42.0% [ 34%- 50%]  26.0% [ 20%- 34%]  41.3% [ 34%- 49%]  34.7% [ 28%- 43%]   lift vs same-activity: run2x 1.80x crash 1.31x clean 1.39x held 1.86x
 
-== ACTIVE ONLY (7d volume >= $10k): 8,930 token-days, 366 tokens
+== ACTIVE ONLY (7d volume >= $10k): 9,787 token-days, 448 tokens
                            events              run2x              crash              clean               held
-   BASE (all days)           8930  27.3% [ 26%- 28%]  23.6% [ 23%- 24%]  33.8% [ 33%- 35%]  21.5% [ 21%- 22%]
-   dry                        610  31.3% [ 28%- 35%]  23.4% [ 20%- 27%]  34.8% [ 31%- 39%]  26.6% [ 23%- 30%]   lift vs same-activity: run2x 1.12x crash 1.09x clean 1.00x held 1.19x
-   ignite                     531  27.3% [ 24%- 31%]  28.1% [ 24%- 32%]  33.3% [ 29%- 37%]  22.0% [ 19%- 26%]   lift vs same-activity: run2x 1.01x crash 1.22x clean 0.99x held 1.03x
-   hlows                      506  29.4% [ 26%- 34%]  28.3% [ 25%- 32%]  35.0% [ 31%- 39%]  22.1% [ 19%- 26%]   lift vs same-activity: run2x 1.09x crash 1.18x clean 1.04x held 1.04x
-   coil                       186  25.8% [ 20%- 33%]  21.0% [ 16%- 27%]  26.9% [ 21%- 34%]  20.4% [ 15%- 27%]   lift vs same-activity: run2x 0.98x crash 0.83x clean 0.82x held 1.01x
-   SETUP                       44  38.6% [ 26%- 53%]  22.7% [ 13%- 37%]  38.6% [ 26%- 53%]  27.3% [ 16%- 42%]   lift vs same-activity: run2x 1.51x crash 0.94x clean 1.19x held 1.36x
-   BREAK                      122  47.5% [ 39%- 56%]  31.1% [ 24%- 40%]  43.4% [ 35%- 52%]  36.9% [ 29%- 46%]   lift vs same-activity: run2x 1.73x crash 1.36x clean 1.27x held 1.70x
+   BASE (all days)           9787  25.8% [ 25%- 27%]  23.3% [ 22%- 24%]  32.2% [ 31%- 33%]  20.1% [ 19%- 21%]
+   dry                        688  29.7% [ 26%- 33%]  23.5% [ 21%- 27%]  33.3% [ 30%- 37%]  24.4% [ 21%- 28%]   lift vs same-activity: run2x 1.14x crash 1.12x clean 1.02x held 1.18x
+   ignite                     588  25.5% [ 22%- 29%]  27.6% [ 24%- 31%]  31.3% [ 28%- 35%]  20.4% [ 17%- 24%]   lift vs same-activity: run2x 1.00x crash 1.24x clean 0.97x held 1.02x
+   hlows                      551  27.9% [ 24%- 32%]  27.6% [ 24%- 31%]  33.8% [ 30%- 38%]  21.1% [ 18%- 25%]   lift vs same-activity: run2x 1.09x crash 1.17x clean 1.05x held 1.06x
+   coil                       201  24.4% [ 19%- 31%]  20.4% [ 15%- 26%]  25.9% [ 20%- 32%]  19.9% [ 15%- 26%]   lift vs same-activity: run2x 0.98x crash 0.84x clean 0.82x held 1.04x
+   SETUP                       48  35.4% [ 23%- 50%]  20.8% [ 12%- 34%]  35.4% [ 23%- 50%]  25.0% [ 15%- 39%]   lift vs same-activity: run2x 1.46x crash 0.88x clean 1.14x held 1.32x
+   BREAK                      128  45.3% [ 37%- 54%]  32.0% [ 25%- 41%]  41.4% [ 33%- 50%]  35.2% [ 27%- 44%]   lift vs same-activity: run2x 1.75x crash 1.39x clean 1.28x held 1.74x
 
-== FILTERED mcap $100k-5M, 7d vol >= $10k: 3,948 token-days, 205 tokens
+== FILTERED mcap $100k-5M, 7d vol >= $10k: 4,311 token-days, 226 tokens
                            events              run2x              crash              clean               held
-   BASE (all days)           3948  26.5% [ 25%- 28%]  28.5% [ 27%- 30%]  32.0% [ 31%- 33%]  20.6% [ 19%- 22%]
-   dry                        289  35.6% [ 30%- 41%]  31.1% [ 26%- 37%]  36.3% [ 31%- 42%]  25.3% [ 21%- 31%]   lift vs same-activity: run2x 1.34x crash 1.16x clean 1.13x held 1.20x
-   ignite                     280  29.3% [ 24%- 35%]  33.9% [ 29%- 40%]  32.5% [ 27%- 38%]  21.1% [ 17%- 26%]   lift vs same-activity: run2x 1.10x crash 1.21x clean 1.01x held 1.02x
-   hlows                      259  29.3% [ 24%- 35%]  36.3% [ 31%- 42%]  33.2% [ 28%- 39%]  20.1% [ 16%- 25%]   lift vs same-activity: run2x 1.09x crash 1.26x clean 1.03x held 0.96x
-   coil                       105  24.8% [ 17%- 34%]  21.9% [ 15%- 31%]  22.9% [ 16%- 32%]  17.1% [ 11%- 25%]   lift vs same-activity: run2x 0.94x crash 0.78x clean 0.72x held 0.83x
-   SETUP                       23  43.5% [ 26%- 63%]  21.7% [ 10%- 42%]  43.5% [ 26%- 63%]  21.7% [ 10%- 42%]   lift vs same-activity: run2x 1.67x crash 0.78x clean 1.38x held 1.07x
-   BREAK                       68  51.5% [ 40%- 63%]  36.8% [ 26%- 49%]  47.1% [ 36%- 59%]  36.8% [ 26%- 49%]   lift vs same-activity: run2x 1.86x crash 1.36x clean 1.42x held 1.68x
+   BASE (all days)           4311  25.7% [ 24%- 27%]  29.2% [ 28%- 31%]  31.3% [ 30%- 33%]  19.6% [ 18%- 21%]
+   dry                        321  34.6% [ 30%- 40%]  33.0% [ 28%- 38%]  35.5% [ 30%- 41%]  24.0% [ 20%- 29%]   lift vs same-activity: run2x 1.34x crash 1.19x clean 1.13x held 1.20x
+   ignite                     301  27.9% [ 23%- 33%]  35.2% [ 30%- 41%]  30.6% [ 26%- 36%]  19.6% [ 16%- 24%]   lift vs same-activity: run2x 1.08x crash 1.23x clean 0.97x held 0.99x
+   hlows                      277  28.2% [ 23%- 34%]  37.2% [ 32%- 43%]  31.8% [ 27%- 37%]  19.5% [ 15%- 25%]   lift vs same-activity: run2x 1.08x crash 1.26x clean 1.01x held 0.98x
+   coil                       111  23.4% [ 17%- 32%]  22.5% [ 16%- 31%]  21.6% [ 15%- 30%]  16.2% [ 11%- 24%]   lift vs same-activity: run2x 0.92x crash 0.79x clean 0.70x held 0.83x
+   SETUP                       25  40.0% [ 23%- 59%]  20.0% [  9%- 39%]  40.0% [ 23%- 59%]  20.0% [  9%- 39%]   lift vs same-activity: run2x 1.62x crash 0.70x clean 1.31x held 1.05x
+   BREAK                       72  48.6% [ 37%- 60%]  38.9% [ 28%- 50%]  44.4% [ 34%- 56%]  34.7% [ 25%- 46%]   lift vs same-activity: run2x 1.81x crash 1.39x clean 1.38x held 1.68x
 
-== LIVE SCREEN (last complete day): 93 tokens flagged
-   GME          0x1b0e319c6a659f002271b69db8a7df2f911c153e  mcap $   3,563,639  7d vol $ 54,445,023  age  65d  dry,ignite,hlows,coil,SETUP
-   BUN          0x07ebb29a38fbcb41563817e5e19f2cec619c90d2  mcap $  76,734,171  7d vol $  6,812,091  age  24d  dry,ignite,brk,BREAK
-   STATICS      0x2d8d6f4a93acd7a916a5a654ec8b690ba3b3eadd  mcap $  16,899,125  7d vol $  2,152,245  age  30d  dry,ignite,hlows,coil,SETUP
-   ai17z        0x16cb7cbb26295b60df7f4b3b39a99a9a3c585e81  mcap $     252,221  7d vol $    323,347  age  24d  ignite,hlows,brk,BREAK
-   Odin         0x2c1f6272b41a5a23930bb3df21dac0c76c2db6f8  mcap $     368,905  7d vol $     88,292  age  60d  dry,ignite,brk,BREAK
-   HDX          0x9d86881e6d6c2c9a8a0094b96604e7ae62fe2709  mcap $      10,890  7d vol $     18,546  age  69d  dry,ignite,hlows,brk,BREAK
-   FRIDAY       0xd3165c9d0993330c1132c59fc6513b08639211c5  mcap $      26,323  7d vol $     10,912  age  70d  dry,ignite,brk,BREAK
-   LITE         0x8ef20885f94e3d9bc7eb3080279188bd5ed7c08c  mcap $     286,373  7d vol $      6,598  age  47d  dry,ignite,hlows,coil,SETUP
-   PONSCAT      0xf56399ad11c50efbdaf9f5cef13ec04aa8a33910  mcap $      20,863  7d vol $      6,184  age  73d  dry,ignite,brk,BREAK
-   BIGBG        0x45688b48a9f49ad73b54f45f7510e7ddda014ce0  mcap $      12,509  7d vol $      1,206  age  25d  dry,ignite,hlows,coil,SETUP
-   BUY          0x3133f0e8a3cf06974055c872a8911d5e537cee7d  mcap $      16,374  7d vol $        266  age  76d  dry,ignite,hlows,coil,SETUP
-   POOLCHAN     0x0b322debc24f4e6ac59136883ea147b4afaf1df3  mcap $       8,585  7d vol $        179  age  32d  dry,ignite,hlows,coil,SETUP
-   STCLAW       0x9dd34c835bbb0c97e93e733819c828b6565f771b  mcap $      79,863  7d vol $        140  age  38d  dry,ignite,hlows,coil,SETUP
-   CHEF         0x9979e0271bd5e3650da1db2ae3e362b97778c03b  mcap $           0  7d vol $        137  age  30d  dry,ignite,hlows,coil,SETUP
-   FA           0x061bd9479880cdbaf170bb05d2b9861648e27101  mcap $       8,045  7d vol $        122  age  24d  dry,ignite,hlows,brk,BREAK
-   fly          0x03bc731ffb162cdd7b98d3c6542bfc291126075d  mcap $           0  7d vol $        102  age  21d  dry,ignite,hlows,coil,SETUP
-   BABY         0x9f4a9c70d10f4fa88d9db84afdc6b8b44f3e81a1  mcap $      10,342  7d vol $         58  age  35d  dry,ignite,hlows,coil,SETUP
-   CLOSED       0x034d81835137ea6579a3824fc47176ade055c76d  mcap $      17,419  7d vol $         52  age  41d  dry,ignite,hlows,coil,SETUP
-   ALI          0x0cada19f2ed10cde06e7ce6e0005dd6781d29101  mcap $           0  7d vol $         29  age  23d  dry,ignite,hlows,coil,SETUP
-   poolbot      0x033ac5b63fce7c8c4137abdd69710cb39451e931  mcap $      15,511  7d vol $         27  age  46d  dry,ignite,hlows,coil,SETUP
-   AMC          0x4053929aeef75621d67749711b9867286e9ebc01  mcap $           0  7d vol $         19  age  22d  dry,ignite,hlows,coil,SETUP
-   PMF          0x9d05b9cef884fed0273377fc635c6b248f0a1b45  mcap $      32,328  7d vol $         17  age  47d  dry,ignite,hlows,coil,SETUP
-   HODL         0x044147b31754aa6b87444d57cbd4c1f59b3a30b0  mcap $           0  7d vol $          4  age  27d  dry,ignite,hlows,coil,SETUP
-   MICRON AI    0x3b542b9b72441e4ba0e70885f983075c51ea5c16  mcap $       8,115  7d vol $          3  age  23d  dry,ignite,hlows,coil,SETUP
-   META         0xc0d6457c16cc70d6790dd43521c899c87ce02f35  mcap $   6,877,992  7d vol $115,494,379  age  77d  ignite,hlows,coil
-   ORBIO        0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3  mcap $  71,494,803  7d vol $ 30,086,390  age  25d  ignite,hlows
-   ZFORGE       0xb6a906d2d95e862cf4fd43b9e30162aee19eed8d  mcap $      42,988  7d vol $ 18,764,736  age  16d  dry,ignite,hlows
-   DELTA        0xe8ffd7e24187f72afb08d75b1bb13088a989a791  mcap $  20,417,822  7d vol $ 17,532,725  age  57d  dry,ignite,hlows
-   MONITOR      0x1a911bb954daa9cb38513423075be74450351e18  mcap $   4,785,696  7d vol $ 15,681,179  age  24d  dry,ignite,hlows
-   NVDAx3L      0xf51fb54de60f6e16252e852a5ed0e60b8307606a  mcap $     720,537  7d vol $ 11,641,980  age  32d  ignite,hlows
-   cbBTC        0xcec185eb182c47d1ba1efc84e6959e18cd620be4  mcap $   3,062,096  7d vol $  9,959,752  age  28d  ignite,hlows,coil
-   PRISM        0x20024e485c0b22b42855589700721b28320a7777  mcap $  15,928,905  7d vol $  6,083,593  age  53d  ignite,hlows
-   PLTR         0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a  mcap $   2,663,866  7d vol $  2,912,876  age  33d  ignite,hlows,coil
-   +            0xf014a3782e6979bd965376f6638d90914820ebff  mcap $           0  7d vol $  1,906,963  age  15d  dry,ignite,hlows
-   INJOH        0x2cc0fac44b8252f6b10208b091aff2c94b4da77d  mcap $   1,924,693  7d vol $  1,084,373  age  57d  dry,ignite,hlows
-   GRID         0x727701f88f09fed71eb217bcea88b3f314cf7079  mcap $           0  7d vol $    766,434  age  71d  dry,ignite,hlows
-   DATACENTER   0x080ad0136ede24cc46aefa11b7f648724bf71e18  mcap $     122,212  7d vol $    742,651  age  18d  ignite,hlows
-   net          0x116f00968269b7bfbad4109ce591d6e74c0601d4  mcap $     166,438  7d vol $    737,477  age  14d  ignite,hlows
-   WHEN         0x743acf789e0f5419f550323a2349732a61c15439  mcap $     468,344  7d vol $    661,039  age  58d  dry,ignite,hlows
-   NATION       0xc839a88a05b231515a82c71ee97b4f18973c1340  mcap $     211,225  7d vol $    516,010  age  22d  ignite,hlows
+== LIVE SCREEN (last complete day): 140 tokens flagged
+   GME          0x1b0e319c6a659f002271b69db8a7df2f911c153e  mcap $   3,561,975  7d vol $ 59,118,544  age  66d  dry,ignite,hlows,coil,SETUP
+   STATICS      0x2d8d6f4a93acd7a916a5a654ec8b690ba3b3eadd  mcap $  16,750,820  7d vol $  2,199,218  age  31d  dry,ignite,hlows,coil,SETUP
+   BUY          0x3133f0e8a3cf06974055c872a8911d5e537cee7d  mcap $      19,319  7d vol $     85,971  age  77d  dry,ignite,hlows,brk,BREAK
+   HDX          0x9d86881e6d6c2c9a8a0094b96604e7ae62fe2709  mcap $      11,705  7d vol $     25,759  age  70d  dry,ignite,brk,BREAK
+   QVR          0xf130c9630efa5fd5f660c90e71aaada344ff8d2b  mcap $      90,504  7d vol $     13,456  age  44d  dry,ignite,hlows,coil,SETUP
+   PONSCAT      0xf56399ad11c50efbdaf9f5cef13ec04aa8a33910  mcap $      31,704  7d vol $     10,642  age  74d  dry,ignite,brk,BREAK
+   LITE         0x8ef20885f94e3d9bc7eb3080279188bd5ed7c08c  mcap $     286,373  7d vol $      6,598  age  48d  dry,ignite,hlows,coil,SETUP
+   MXL          0x48961813349333209994750ffa89b3c5c22ec969  mcap $      16,863  7d vol $      2,521  age  52d  dry,ignite,hlows,coil,SETUP
+   DINGER       0xeaa56be16c0722f5643d118dc2888ef6bb0faa01  mcap $       6,936  7d vol $        855  age  26d  dry,ignite,hlows,coil,SETUP
+   BIGBG        0x45688b48a9f49ad73b54f45f7510e7ddda014ce0  mcap $      13,036  7d vol $        641  age  26d  dry,ignite,hlows,brk,BREAK
+   KEKIUS       0x249e973b883930743dd61c9fefa0b26b8d420420  mcap $       6,135  7d vol $        245  age  38d  dry,ignite,hlows,coil,SETUP
+   POOLCHAN     0x0b322debc24f4e6ac59136883ea147b4afaf1df3  mcap $       8,590  7d vol $        180  age  33d  dry,ignite,hlows,coil,SETUP
+   AMD          0x5bd04748860d9f7f945728819ea339dc95412101  mcap $       7,306  7d vol $        164  age  25d  dry,ignite,hlows,coil,SETUP
+   CHEF         0x9979e0271bd5e3650da1db2ae3e362b97778c03b  mcap $           0  7d vol $        137  age  31d  dry,ignite,hlows,coil,SETUP
+   UPDOG        0xd66e42d659a2bb2b108abbbb3a666f6ed30c19ea  mcap $       2,961  7d vol $        108  age  48d  dry,ignite,hlows,coil,SETUP
+   fly          0x03bc731ffb162cdd7b98d3c6542bfc291126075d  mcap $      18,747  7d vol $         88  age  22d  dry,ignite,hlows,coil,SETUP
+   QI           0xec664a0669c75ab4337c176926881100bf495c01  mcap $       6,325  7d vol $         32  age  26d  dry,ignite,hlows,coil,SETUP
+   Cassowary    0xe5f99b9eea7b3e3aacc961013582704a76f52052  mcap $       6,371  7d vol $         30  age  26d  dry,ignite,hlows,coil,SETUP
+   ALI          0x0cada19f2ed10cde06e7ce6e0005dd6781d29101  mcap $           0  7d vol $         29  age  24d  dry,ignite,hlows,coil,SETUP
+   poolbot      0x033ac5b63fce7c8c4137abdd69710cb39451e931  mcap $      15,511  7d vol $         27  age  47d  dry,ignite,hlows,coil,SETUP
+   AMC          0x4053929aeef75621d67749711b9867286e9ebc01  mcap $           0  7d vol $         18  age  23d  dry,ignite,hlows,coil,SETUP
+   Spoderman    0xb2c3fcfde01f6ea798b178aff18e4a0f607cdb01  mcap $       6,160  7d vol $         10  age  26d  dry,ignite,hlows,coil,SETUP
+   TIT          0xef4eaf0fb2f3c154f6339fbd78f42f0b70487d01  mcap $       5,148  7d vol $          6  age  25d  dry,ignite,hlows,coil,SETUP
+   MICRON AI    0x3b542b9b72441e4ba0e70885f983075c51ea5c16  mcap $       8,115  7d vol $          3  age  24d  dry,ignite,hlows,coil,SETUP
+   HODL         0x044147b31754aa6b87444d57cbd4c1f59b3a30b0  mcap $           0  7d vol $          3  age  28d  dry,ignite,hlows,coil,SETUP
+   POOLS        0xa1aceb8993b9b6d6987d0c06a2906262bd7610a0  mcap $       7,978  7d vol $          2  age  53d  dry,ignite,hlows,coil,SETUP
+   META         0xc0d6457c16cc70d6790dd43521c899c87ce02f35  mcap $   6,859,853  7d vol $115,205,274  age  78d  ignite,hlows,coil
+   ORBIO        0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3  mcap $  89,491,374  7d vol $ 30,560,040  age  26d  ignite,hlows
+   DELTA        0xe8ffd7e24187f72afb08d75b1bb13088a989a791  mcap $  21,532,538  7d vol $ 17,383,655  age  58d  dry,ignite,hlows
+   MONITOR      0x1a911bb954daa9cb38513423075be74450351e18  mcap $   4,386,751  7d vol $ 15,386,235  age  25d  dry,ignite,hlows
+   NVDAx3L      0xf51fb54de60f6e16252e852a5ed0e60b8307606a  mcap $     720,050  7d vol $ 11,281,560  age  33d  ignite,hlows
+   URANUS       0xb911f04a24a9f6234537829290335e623ee71e18  mcap $     553,474  7d vol $  2,879,530  age  14d  dry,ignite,hlows
+   PLTR         0x894e1ec2d74ffe5aef8dc8a9e84686accb964f2a  mcap $   2,671,608  7d vol $  2,636,444  age  34d  ignite,hlows,coil
+   GIWA         0xdab0e8ce3b999d16898709a6dfc44c953bfc43b1  mcap $     676,163  7d vol $  2,619,189  age  62d  ignite,hlows
+   +            0xf014a3782e6979bd965376f6638d90914820ebff  mcap $           0  7d vol $  1,907,638  age  16d  dry,ignite,hlows
+   INJOH        0x2cc0fac44b8252f6b10208b091aff2c94b4da77d  mcap $   2,338,335  7d vol $  1,121,740  age  58d  dry,ignite,hlows
+   DATACENTER   0x080ad0136ede24cc46aefa11b7f648724bf71e18  mcap $     127,357  7d vol $    739,031  age  19d  ignite,hlows
+   swappy       0x298348d5b2e45c774e3ee4f1a0924071dfbdc8c7  mcap $     731,515  7d vol $    693,164  age  54d  dry,ignite,hlows
+   GRID         0x727701f88f09fed71eb217bcea88b3f314cf7079  mcap $           0  7d vol $    685,121  age  72d  dry,ignite,hlows
+   net          0x116f00968269b7bfbad4109ce591d6e74c0601d4  mcap $     172,173  7d vol $    683,145  age  15d  ignite,hlows
 
-== NEW LISTINGS (<=7 days of candles): 940
-   KVRA         0xd81057fdf94ed006339ad33118b9c202c7e0b874  7d  mcap $           0  7d vol $ 38,177,764
-   SI           0xe0cd4e72769e7317891d1e49905878b7b14c67ac  3d  mcap $  11,047,593  7d vol $ 31,152,063
-   FILR         0xb6ef1b60750a7f7e3f6b075989d48e9c733dd1da  2d  mcap $     835,108  7d vol $ 28,900,120
-   CGEQ         0x47c58ffe1390801165acd5b5c36b07c2240690e1  2d  mcap $     607,303  7d vol $ 19,673,083
-   POCKA        0x4d810d6d1b34eecd3f5529e8597234768e44bbda  7d  mcap $           0  7d vol $ 17,503,197
-   DEBT         0xc261532bc770c2b4ea10f97f72328aa0fc51b0d0  2d  mcap $      29,880  7d vol $ 13,048,584
-   BROBIN       0x1f97391be0ba667886f57273eace827d6e79cf17  2d  mcap $     326,398  7d vol $ 11,925,408
-   HEISENBERG   0xf119ae24ecc34e90bea3ca171dd86e5309859c17  2d  mcap $       2,730  7d vol $ 10,041,582
-   SI           0x51377fe2ad6137e323500c9db71bb63b867cecab  7d  mcap $     134,125  7d vol $  9,496,409
-   AEVA         0x26ee3536441951b00c9bd3af51efd2c3b90d89a6  2d  mcap $       2,809  7d vol $  8,952,852
-   HYDX         0xe6200d65d66256f4a65d1b4177597f1f4b20e809  2d  mcap $       2,739  7d vol $  8,141,308
-   ORBIO        0xe99c8437b0b29325a4080b8c837ff4e5a6f9fc69  2d  mcap $     442,068  7d vol $  8,006,199
-   CASHED       0xf9a9da0cd0c155df2451acf02e922a5e5e4222e5  2d  mcap $       6,419  7d vol $  7,899,176
-   VELN         0x61fcfb63902e5976908e1d7137530ffbf5df2f45  1d  mcap $   2,291,938  7d vol $  7,137,961
-   ROBINPEPE    0xa241395adcdf456f6dc04d1bc02b18e6f4c4052c  3d  mcap $     870,234  7d vol $  6,875,736
-   FOOMS        0x749216618ac66ea41ee4cabf5229d83d74f04586  4d  mcap $      51,165  7d vol $  5,683,687
-   AGI          0xfa31d04462746aaa24bc7e5626403e09e4b106ec  7d  mcap $   1,187,675  7d vol $  5,553,356
-   VLTKIT       0x7a3c86c8966d280ff85ebc355cbb52c46fe6fb01  1d  mcap $   1,417,853  7d vol $  5,507,031
-   ROO          0x3458e003f6ed93df0f537b8acac6fbe08e41247f  5d  mcap $     438,788  7d vol $  5,073,162
-   RBD          0xb41c7ac9d46a980f8bdf1894b392a2a07ec9992a  4d  mcap $   8,578,726  7d vol $  5,010,041
-   JOLLY        0xcd0b3b43d8632ce600a13e4519754c138998a93c  5d  mcap $     133,000  7d vol $  5,009,063
-   CREDITS      0x39679b59289cce7c7f6e0feacdf39a1e543de751  5d  mcap $     107,190  7d vol $  4,808,131
-   VORTA        0xe5c2bd3881a00a87412b7faf385959cdc5e556ed  1d  mcap $      59,109  7d vol $  4,448,419
-   QUANTA       0x1da81ca017949efbe07972776580d04592ba9b63  5d  mcap $     137,975  7d vol $  4,201,229
-   CIB          0x4ad6be87ea760753bf7ec207b77fa184f4f7548c  2d  mcap $       2,966  7d vol $  4,081,838
+== NEW LISTINGS (<=7 days of candles): 925
+   SI           0xe0cd4e72769e7317891d1e49905878b7b14c67ac  4d  mcap $  11,047,593  7d vol $ 31,152,063
+   FILR         0xb6ef1b60750a7f7e3f6b075989d48e9c733dd1da  3d  mcap $     835,108  7d vol $ 28,900,120
+   CGEQ         0x47c58ffe1390801165acd5b5c36b07c2240690e1  3d  mcap $     607,303  7d vol $ 19,673,083
+   DEBT         0xc261532bc770c2b4ea10f97f72328aa0fc51b0d0  3d  mcap $      29,880  7d vol $ 13,048,584
+   BROBIN       0x1f97391be0ba667886f57273eace827d6e79cf17  3d  mcap $     326,398  7d vol $ 11,925,408
+   HEISENBERG   0xf119ae24ecc34e90bea3ca171dd86e5309859c17  3d  mcap $       2,730  7d vol $ 10,041,582
+   AEVA         0x26ee3536441951b00c9bd3af51efd2c3b90d89a6  3d  mcap $       2,809  7d vol $  8,952,852
+   HYDX         0xe6200d65d66256f4a65d1b4177597f1f4b20e809  3d  mcap $       2,739  7d vol $  8,141,308
+   ORBIO        0xe99c8437b0b29325a4080b8c837ff4e5a6f9fc69  3d  mcap $     442,068  7d vol $  8,006,199
+   CASHED       0xf9a9da0cd0c155df2451acf02e922a5e5e4222e5  3d  mcap $       6,419  7d vol $  7,899,176
+   VELN         0x61fcfb63902e5976908e1d7137530ffbf5df2f45  2d  mcap $   2,291,938  7d vol $  7,137,961
+   ROBINPEPE    0xa241395adcdf456f6dc04d1bc02b18e6f4c4052c  4d  mcap $     870,234  7d vol $  6,875,736
+   Agrippa      0xfa1824e750f9a5bc7d253342935471b8f2709d70  6d  mcap $       5,203  7d vol $  6,783,020
+   FOOMS        0x749216618ac66ea41ee4cabf5229d83d74f04586  5d  mcap $      51,165  7d vol $  5,683,819
+   VLTKIT       0x7a3c86c8966d280ff85ebc355cbb52c46fe6fb01  2d  mcap $   1,417,853  7d vol $  5,507,031
+   ROO          0x3458e003f6ed93df0f537b8acac6fbe08e41247f  6d  mcap $     438,788  7d vol $  5,079,867
+   RBD          0xb41c7ac9d46a980f8bdf1894b392a2a07ec9992a  5d  mcap $   8,578,726  7d vol $  5,010,041
+   JOLLY        0xcd0b3b43d8632ce600a13e4519754c138998a93c  6d  mcap $     133,000  7d vol $  5,009,063
+   CREDITS      0x39679b59289cce7c7f6e0feacdf39a1e543de751  6d  mcap $     107,190  7d vol $  4,808,131
+   VORTA        0xe5c2bd3881a00a87412b7faf385959cdc5e556ed  2d  mcap $      59,109  7d vol $  4,448,419
+   QUANTA       0x1da81ca017949efbe07972776580d04592ba9b63  6d  mcap $     137,975  7d vol $  4,201,423
+   CIB          0x4ad6be87ea760753bf7ec207b77fa184f4f7548c  3d  mcap $       2,966  7d vol $  4,081,838
+   CPU          0xe6514ec91d51d51ba57f767878c134e16c776c5a  2d  mcap $      20,046  7d vol $  3,985,379
+   HYDX         0xaa5751ff3fb61e613993b2eb4eab1fce017081fc  5d  mcap $   1,541,737  7d vol $  3,708,982
+   DEBT         0x41ca1a94f5262c4a84fafdaa23b9499aa5b9fcd0  3d  mcap $     133,889  7d vol $  3,675,613
