@@ -90,10 +90,17 @@ about it. Structure, in order:
    "none of the whales traded since last check." Name specifics briefly if
    something happened (who, how much, bought or sold), otherwise keep it to
    the one line.
-4a. **Rapid repeat buyer callout** (from step 5a) — one line if a wallet
-   bought 2+ times in the last ~15-20 min, whether or not it's on the
-   whalelist. Say who (new/known), how many buys, total size. Omit the
-   line entirely if nothing matches — don't pad the report.
+4a. **Significant recent action** — standing section, every report. Cover
+   any single trade or short burst worth a sentence, even off the
+   whalelist and below auto-add size: a large single buy or sell (say,
+   $5k+), a wallet's repeat buying (2+ buys in ~15-20 min, per step 5a), or
+   a sell that stands out against the recent pattern (e.g. one wallet
+   dumping heavily in just the last few minutes). For each one, give a
+   sentence of story pulled from the wallet's full trade history — new vs.
+   long-time trader, net lifetime P&L, whether this looks like profit-
+   taking, panic, or routine rotation — not just the address and amount.
+   Omit the section entirely if nothing since the last update clears the
+   bar; don't pad the report with routine small trades.
 5. **Support/resistance** — simple, one line each: where support sits and
    whether it's been defended, where resistance sits and whether it's capped
    a push. Only include when there's an actual level worth naming.
