@@ -1390,3 +1390,5 @@
 2026-09-29T05:12:57Z  build starting for GME, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,666.40)
 2026-09-29T05:12:57Z  GME: skipped (too heavy: over 600k transfers in one segment)
 2026-09-29T05:12:57Z  MANCER: transfers starting
+2026-09-29T05:17:04Z  MANCER: transfers DONE
+2026-09-29T05:17:05Z  MANCER: pool 0x543127d6 (v3/WETH) fresh from 29,738,819
