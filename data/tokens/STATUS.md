@@ -1541,3 +1541,16 @@
 2026-09-29T11:09:54Z  Froggy: transfers starting
 2026-09-29T11:10:27Z  Froggy: transfers DONE
 2026-09-29T11:10:28Z  Froggy: pool 0x767cdbcd (v4/ETH) fresh from 28,739,779
+2026-09-29T11:12:11Z  Froggy: pool 0x767cdbcd DONE, 12,021 swaps
+2026-09-29T11:12:11Z  Froggy: attributed DONE
+2026-09-29T11:12:12Z  Froggy: ledger DONE
+2026-09-29T11:12:12Z  PORK: transfers starting
+2026-09-29T11:12:45Z  PORK: transfers DONE
+2026-09-29T11:12:46Z  PORK: pool 0x53d6c3d1 (v4/ETH) fresh from 36,667,492
+2026-09-29T11:13:46Z  PORK: pool 0x53d6c3d1 DONE, 11,350 swaps
+2026-09-29T11:13:46Z  PORK: attributed DONE
+2026-09-29T11:13:47Z  PORK: ledger DONE
+2026-09-29T11:13:47Z  build finished
+2026-09-29T12:07:36Z  build starting for GME (ETH $2,728.85)
+2026-09-29T12:07:36Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-29T12:07:36Z  build finished

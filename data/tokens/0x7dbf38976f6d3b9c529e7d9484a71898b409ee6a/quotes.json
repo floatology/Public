@@ -1,9 +1,9 @@
 {
- "priced_at": "2026-09-28T00:11:58Z",
- "eth_usd": 2685.52,
+ "priced_at": "2026-09-29T11:15:49Z",
+ "eth_usd": 2717.86,
  "pools": {
   "0x6538e2c223ed70228114983afecbe5e69fe627e2fafdf367bdd6bdeff2ad391f": {
-   "quote_usd": 2685.52,
+   "quote_usd": 2717.86,
    "decimals": 18,
    "symbol": "ETH"
   },
@@ -18,12 +18,12 @@
    "symbol": "USDG"
   },
   "0xdd3c8aa6551bf5049310399c124cbb699b7d1c5c": {
-   "quote_usd": 2685.52,
+   "quote_usd": 2717.86,
    "decimals": 18,
    "symbol": "WETH"
   },
   "0x1e2ed4084a9e5b594d725d8a022554dc8e4c759a7a7a3f396018be916941c331": {
-   "quote_usd": 2685.52,
+   "quote_usd": 2717.86,
    "decimals": 18,
    "symbol": "ETH"
   },
@@ -38,7 +38,7 @@
    "symbol": "USDG"
   },
   "0x501122bfd256e408a63bddad901cc19a2512d74b2006f0474a3cf480e94afe1b": {
-   "quote_usd": 2685.52,
+   "quote_usd": 2717.86,
    "decimals": 18,
    "symbol": "ETH"
   }

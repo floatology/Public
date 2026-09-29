@@ -1,9 +1,9 @@
 {
- "priced_at": "2026-09-28T00:11:47Z",
- "eth_usd": 2685.52,
+ "priced_at": "2026-09-29T11:15:18Z",
+ "eth_usd": 2717.86,
  "pools": {
   "0xaf8aa959b7e460fbbc61d25b9896a6e3f92cbf3a2bde01fa2b5ac811f2d6a986": {
-   "quote_usd": 123.69,
+   "quote_usd": 116.64,
    "decimals": 18,
    "symbol": "INTC"
   },
