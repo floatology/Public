@@ -1,0 +1,63 @@
+head 75,689,495; 3,138 anchors held, 1 to fetch
+3,139 anchors; worst error above block 4,000,000: 2s (below it: 0s, where the chain had not reached a steady block rate)
+[13:24:15] build starting for ORBIO (ETH $2,734.08)
+[13:24:15] ORBIO: transfers starting
+head 75,689,537
+transfers: scanning 75,674,887-75,689,537 (resuming)
+  tr 100.0%  block 75,689,537  span 100,000  logs 372  0s
+transfers: committed 75,674,887-75,689,537  +372 rows, 669,563 total
+{
+ "token": "0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    75689537
+   ]
+  ],
+  "rows": 669563
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-29T13:24:23Z"
+}
+[13:24:23] ORBIO: transfers DONE
+[13:24:24] ORBIO: pool 0xc761f7de (v4/USDG) resuming from 75,675,497
+    0xc761f7de 100.0% block 75,689,623 logs 7 0s
+[13:24:24] ORBIO: pool 0xc761f7de DONE, 4,721 swaps
+[13:24:24] ORBIO: pool 0xa95b1fbd (v4/NVDA) resuming from 75,675,497
+    0xa95b1fbd 100.0% block 75,689,623 logs 4 0s
+[13:24:25] ORBIO: pool 0xa95b1fbd DONE, 58,902 swaps
+[13:24:25] ORBIO: pool 0xea9f200e (v4/USDG) resuming from 75,675,497
+    0xea9f200e 100.0% block 75,689,623 logs 30 0s
+[13:24:25] ORBIO: pool 0xea9f200e DONE, 62,800 swaps
+[13:24:25] ORBIO: pool 0x4b83b47e (v4/USDG) resuming from 75,675,497
+    0x4b83b47e 100.0% block 75,689,623 logs 3 0s
+[13:24:26] ORBIO: pool 0x4b83b47e DONE, 19,162 swaps
+[13:24:26] ORBIO: pool 0x40521592 (v3/USDG) resuming from 75,675,497
+    0x40521592 100.0% block 75,689,623 logs 4 0s
+[13:24:26] ORBIO: pool 0x40521592 DONE, 32,762 swaps
+[13:24:26] ORBIO: pool 0x75ee7173 (v3/USDG) resuming from 75,675,497
+    0x75ee7173 100.0% block 75,689,623 logs 7 0s
+[13:24:26] ORBIO: pool 0x75ee7173 DONE, 44,643 swaps
+246,781 transactions moved this token
+{
+ "attributed": 131948,
+ "attributed_multi_swap": 55053,
+ "ambiguous_multi_swap": 7935,
+ "no_transfers": 2517,
+ "no_counterparty": 25537
+}
+  attributed 83.9% of 222,990 swaps
+  'recipient' matched the true holder on 6.4% of 187,001 comparable swaps
+wrote /home/user/Public/data/tokens/0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3/swaps_attributed.parquet
+[13:24:36] ORBIO: attributed DONE
+222,990 trades -> /home/user/Public/data/tokens/0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3/ledger.parquet
+  35,989 (16.14%) had no attributed trader and carry a null
+  20,621 distinct traders across the full history
+  span 1,788,223,549 - 1,790,688,168
+[13:24:43] ORBIO: ledger DONE
+[13:24:43] build finished
