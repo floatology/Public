@@ -70,7 +70,7 @@ scans at once (the node rate-limits globally). Tick steps here as they finish.
          token-and-time split. Criteria study: base rates by age, market cap,
          liquidity, volume.
 - [x] 7. Live Tier 1 screen on today's data.
-- [~] 8. Write docs/25 (drafted with candle + flow results; ADD wallet-level results after batch 2) with results and the recommended filters.
+- [x] 8. Write docs/25 (drafted with candle + flow results; ADD wallet-level results after batch 2) with results and the recommended filters.
 - [ ] 9. Refresh the six coins (track_tokens.py build), run watch_wallets.py
          and analyse_all.py, summarise.
 - 2026-09-28: user decided NOT to add a neckline/trendline-reclaim pattern to the screen. Don't propose it again.

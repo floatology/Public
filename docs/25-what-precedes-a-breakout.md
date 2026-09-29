@@ -12,8 +12,10 @@ cap, activity) separate coins worth watching from noise?
   delisted.
 - **Flow:** per-trade histories for 4,211 tokens from the older V2/V3 archive
   (`scripts/flow_backtest.py`).
-- **Wallets:** full attributed histories for 36+ coins
-  (`scripts/wallet_signals_backtest.py`, results pending).
+- **Wallets:** full attributed histories for 43 coins (case-control batch,
+  `data/overnight/batch2.json`) — 20 that had a 2x run with 14 days of prior
+  history, 20 equally active coins that never did
+  (`scripts/wallet_signals_backtest.py`).
 
 Outcomes are measured over the 14 days after each signal:
 
@@ -79,6 +81,50 @@ The 2x lift holds across every split:
   Absorption and breakout days predicted large moves in *both* directions. The
   full WALLET-shaped composite with on-chain flow fired only 7 times.
 
+## Wallet-level results (case-control batch, 43 tokens)
+
+Same de-duplication and same-activity comparison as above, tested at two
+horizons on the case-control batch (20 coins with a prior 2x run, 20 equally
+active coins that never had one). `n_accum`/breadth counts distinct wallets;
+`whale_accum` is net tokens bought over 10 days by wallets that end the day
+holding >= 0.5% of supply, as a share of supply.
+
+| Signal | Events (7d / 14d) | 2x lift (7d / 14d) | Crash lift (7d / 14d) |
+|---|---|---|---|
+| whales net-bought >= 1% (10d) | 226 / 104 | **1.07x / 1.05x** | 0.92x / 0.99x |
+| whales net-bought >= 0.5% (10d) | 242 / 113 | 1.04x / 1.03x | 0.97x / 1.00x |
+| >= 15 distinct wallets took 0.05%+ | 224 / 107 | 1.07x / 1.04x | 0.96x / 0.99x |
+| holders +25% in 7d | 85 / 54 | 1.14x / 0.92x | **1.37x / 1.19x** |
+| top-20 share -2 pts (10d, distributing) | 57 / 37 | 1.25x / 0.86x | **1.25x / 1.30x** |
+
+Base rates: 7d horizon 35.3% run2x / 29.3% crash (1,646 token-days, 43 tokens);
+14d horizon 48.4% run2x / 44.9% crash (1,373 token-days, 39 tokens).
+
+**Reading.**
+- **Whale net-buying is a real but modest edge**, and the only wallet signal
+  that holds its sign at both horizons: ~1.05–1.07x more likely to run,
+  ~flat-to-slightly-fewer crashes (0.92–0.99x). It confirms the qualitative
+  pattern from watching WALLET live all session (0x5364, 0xa9fd and others
+  accumulating ahead of moves) generalises across the market — but the edge
+  is far smaller here than BREAK/SETUP's 1.4–1.8x, so treat it as a
+  confirming signal to stack on a price pattern, not a standalone one.
+- **Breadth tracks the whale signal almost exactly** (>=15 wallets each
+  taking a stake), which makes sense — a real accumulation phase draws both
+  a concentrated buyer and a wider crowd together.
+- **Holder-count growth is a false-positive trap, not a green light.** It
+  raises the crash rate more than the 2x rate at both horizons (1.19–1.37x
+  more crashes vs. 0.92–1.14x more runs) — a fast-growing holder count looks
+  like hype/new-speculator inflow more than durable accumulation, and should
+  be read as a caution sign, not confirmation.
+- **Falling top-20 concentration (known-wallet distribution) is a bad sign
+  at 14 days** — lower 2x rate (0.86x) and materially higher crash rate
+  (1.30x). This matches what distribution from a token's known sellers has
+  looked like live on WALLET: it's the closest thing here to a real
+  short-side signal, though the 7-day read is more ambiguous (both rates up
+  together, more volatility than direction).
+- **New-wallet-share signals had too few qualifying tokens** (1–4) at either
+  horizon in this batch to draw a conclusion.
+
 ## Filters: what cuts the noise
 
 Base rates by bucket (candles, survivor-corrected):
@@ -139,5 +185,8 @@ HIGH-CHURN mark above $250k a week. On 27 Sep, 93 raw flags reduced to 2 (on 28 
   ERHA).
 - **Closes, not execution.** A 2x close is not a 2x fill after slippage and
   fees, particularly on the thin pools where these signals fire.
-- **Wallet-level signals are pending.** Whether big wallets accumulate before
-  breakouts is the case-control batch still building.
+- **Wallet-level sample is small.** 43 tokens, one case-control batch, one
+  quarter. The whale-accumulation edge (1.05–1.07x) is consistent in sign
+  across both horizons but is a modest effect on a modest sample — it should
+  be read as one input alongside the price-pattern signals above, not tested
+  in combination with them yet.
