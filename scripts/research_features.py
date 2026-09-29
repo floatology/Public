@@ -144,6 +144,7 @@ def main() -> None:
                f.newb_6h / nullif(6 * f.newb_rate72, 0) as newb_surge,
                o.run2x_72, o.run2x_168, o.crash_168, o.hours_to_2x
         from feat f join fwd_order o on o.token = f.token and o.hour = f.hour + 3600
+        where o.complete   -- full 7-day forward window inside archive coverage (no censoring)
     """)
     print(con.execute("""select count(*), avg(run2x_72::int), avg(run2x_168::int),
                          avg(case when age_h >= 48 then run2x_72::int end) from panel""").fetchone())

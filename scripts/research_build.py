@@ -76,11 +76,27 @@ def main() -> None:
         group by 1, 2
     """)
 
+    # Archive coverage end per token (meta.json updated_at). A token that stops
+    # trading is still covered until then: its hours run on, flat and empty, so
+    # a dead coin scores as "no 2x" instead of silently dropping out, and hours
+    # whose 7-day forward window runs past coverage can be excluded (censoring).
+    import datetime as dt
+    import json
+    cov = []
+    for m in (ROOT / "data/tokens").glob("0x*/meta.json"):
+        u = json.loads(m.read_text()).get("updated_at")
+        if u:
+            ts = int(dt.datetime.fromisoformat(u.replace("Z", "+00:00")).timestamp())
+            cov.append((m.parent.name, (ts // 3600) * 3600))
+    con.execute("create or replace table cov_end (token varchar, cov_end bigint)")
+    con.executemany("insert into cov_end values (?, ?)", cov)
+
     # Fill every hour in each token's life; carry price forward over empty hours.
     con.execute("""
         create or replace table hourly as
         with span as (
-            select token, min(hour) as h0, max(hour) as h1 from bars_raw group by 1
+            select b.token, min(b.hour) as h0, greatest(max(b.hour), coalesce(max(c.cov_end), 0)) as h1
+            from bars_raw b left join cov_end c using (token) group by 1
         ), grid as (
             select s.token, g.hour
             from span s, generate_series(s.h0, s.h1, 3600) as g(hour)
@@ -126,6 +142,8 @@ def main() -> None:
             group by 1, 2
         )
         select token, hour,
+               hour + 604800 <= (select coalesce(max(c.cov_end), 0) from cov_end c where c.token = pairs.token)
+                 as complete,
                (t2x is not null and t2x <= hour + 259200) as run2x_72,
                (t2x is not null) as run2x_168,
                (thalf is not null and thalf <= hour + 259200 and (t2x is null or thalf < t2x)) as crash_72,
