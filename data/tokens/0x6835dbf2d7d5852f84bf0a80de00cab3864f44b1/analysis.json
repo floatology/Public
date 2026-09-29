@@ -2,7 +2,7 @@
  "token": "HH",
  "ath": {
   "day": "09-21",
-  "price": 0.10362178509970987
+  "price": 0.10481845064809825
  },
  "lp": {
   "added": 0.7208083595606969,
@@ -11,24 +11,24 @@
  "snipers": {
   "addresses": 1,
   "share": 7.505045702924664e-08,
-  "paid_usd": 0.00811357736982,
+  "paid_usd": 0.008207276185212,
   "later_sold_usd": 0.0
  },
  "bots": {
   "traders": 14,
-  "volume_share": 0.014353544695880094,
-  "whale_volume_share": 0.13668594502115444,
-  "retail_volume_share": 0.28259167601073487,
-  "unattributed_share": 0.13273766854445831
+  "volume_share": 0.014524840925767637,
+  "whale_volume_share": 0.1357696251949195,
+  "retail_volume_share": 0.2835956705297814,
+  "unattributed_share": 0.13221972669906215
  },
  "pnl": {
-  "winners": 2114,
-  "traders": 3161,
-  "top10_share_of_profit": 0.5587056371783374
+  "winners": 386,
+  "traders": 3166,
+  "top10_share_of_profit": 0.5548814917800292
  },
  "holders": {
-  "count": 675,
-  "top10": 0.6340049983977574,
-  "peer_received_share": 0.403615825952606
+  "count": 653,
+  "top10": 0.6345223793501383,
+  "peer_received_share": 0.4100979805175306
  }
 }

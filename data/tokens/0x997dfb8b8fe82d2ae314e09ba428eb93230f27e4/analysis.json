@@ -1,0 +1,34 @@
+{
+ "token": "ERHA",
+ "ath": {
+  "day": "09-21",
+  "price": 6.606197766904176e-05
+ },
+ "lp": {
+  "added": 0.0016185899555848046,
+  "removed": 0.0014366574130940462
+ },
+ "snipers": {
+  "addresses": 33,
+  "share": 0.041401048000965175,
+  "paid_usd": 2189.813909221123,
+  "later_sold_usd": 1416.2540322152345
+ },
+ "bots": {
+  "traders": 7,
+  "volume_share": 0.0036806613645261293,
+  "whale_volume_share": 0.048632947640853234,
+  "retail_volume_share": 0.4378985793711488,
+  "unattributed_share": 0.019575623246944982
+ },
+ "pnl": {
+  "winners": 316,
+  "traders": 987,
+  "top10_share_of_profit": 0.2994287795316738
+ },
+ "holders": {
+  "count": 228,
+  "top10": 0.25004193995000623,
+  "peer_received_share": 0.2154126292893729
+ }
+}

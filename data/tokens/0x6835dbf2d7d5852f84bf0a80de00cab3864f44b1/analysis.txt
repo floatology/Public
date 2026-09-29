@@ -1,42 +1,44 @@
 
 ==============================================================================
-1. THE CHART — HH, daily, from the ledger (price in USD at $2,706/ETH)
+1. THE CHART — HH, daily, from the ledger (price in USD at $2,737/ETH)
 ==============================================================================
    day     close      high    volume  net flow traders   new
- 08-27   0.00877   0.00897      $102       $48       2     2
- 08-28   0.00039   0.01134    $13.1k    -$5.9k     108   107
- 08-29   0.00040   0.00040       $35       $32       2     2
- 08-30   0.00040   0.00040       $31       $30       2     1
- 08-31   0.01488   0.01488   $133.6k    $34.3k     180   176
- 09-01   0.04136   0.05139   $355.7k    $27.6k     549   486
- 09-02   0.04057   0.08261   $261.8k     -$359     323   155
- 09-03   0.03909   0.04648    $94.1k    -$1.0k     148    38
- 09-04   0.02909   0.04541    $77.3k    -$9.1k     121    48
- 09-05   0.04773   0.06023   $136.9k    $16.4k     123    64
- 09-06   0.05361   0.06259    $91.1k     $4.7k     110    34
- 09-07   0.04582   0.05512    $64.0k    -$5.9k      89    32
- 09-08   0.03576   0.05149    $59.4k    -$8.3k      72    16
- 09-09   0.04492   0.04696    $41.4k     $7.8k      56    17
- 09-10   0.04716   0.04836    $24.2k     $2.0k      47    12
- 09-11   0.04980   0.05021    $23.9k     $2.1k      40     8
- 09-12   0.04366   0.05085    $35.2k    -$4.9k     282   257
- 09-13   0.04274   0.05271    $50.3k     -$779     343   318
- 09-14   0.04877   0.05736    $26.7k     $5.1k      39    13
- 09-15   0.05163   0.05523    $32.1k     $2.1k     317   294
- 09-16   0.04088   0.05183    $40.9k    -$8.6k     104    78
- 09-17   0.04657   0.05495   $113.1k     $5.0k     567   516
- 09-18   0.04867   0.04971    $26.7k     $1.7k      72    33
- 09-19   0.06154   0.07231    $37.0k     $9.3k      64    31
- 09-20   0.06906   0.08032    $38.7k     $5.1k      51    13
- 09-21   0.08866   0.10362   $111.2k    $12.2k     402   334
- 09-22   0.07779   0.09035    $24.4k    -$6.5k      73    20
- 09-23   0.06491   0.07777    $36.9k    -$8.3k      70    31
- 09-24   0.06378   0.06875    $36.8k    -$1.1k      60    20
- 09-25   0.05285   0.06345    $23.8k    -$7.2k      34     2
- 09-26   0.05192   0.05372     $6.2k     -$630      21     1
- 09-27   0.05059   0.05211     $3.7k    -$1.1k      10     2
+ 08-27   0.00887   0.00907      $103       $49       2     2
+ 08-28   0.00040   0.01147    $13.3k    -$5.9k     108   107
+ 08-29   0.00040   0.00041       $36       $32       2     2
+ 08-30   0.00041   0.00041       $31       $30       2     1
+ 08-31   0.01505   0.01505   $135.2k    $34.7k     180   176
+ 09-01   0.04184   0.05198   $359.8k    $27.9k     549   486
+ 09-02   0.04104   0.08356   $264.9k     -$363     323   155
+ 09-03   0.03954   0.04701    $95.2k    -$1.1k     148    38
+ 09-04   0.02942   0.04593    $78.2k    -$9.2k     121    48
+ 09-05   0.04828   0.06093   $138.5k    $16.6k     123    64
+ 09-06   0.05423   0.06331    $92.1k     $4.7k     110    34
+ 09-07   0.04635   0.05575    $64.8k    -$6.0k      89    32
+ 09-08   0.03617   0.05208    $60.1k    -$8.4k      72    16
+ 09-09   0.04544   0.04751    $41.9k     $7.9k      56    17
+ 09-10   0.04771   0.04892    $24.5k     $2.0k      47    12
+ 09-11   0.05038   0.05079    $24.2k     $2.1k      40     8
+ 09-12   0.04416   0.05144    $35.6k    -$5.0k     282   257
+ 09-13   0.04324   0.05332    $50.9k     -$788     343   318
+ 09-14   0.04933   0.05802    $27.0k     $5.1k      39    13
+ 09-15   0.05223   0.05587    $32.5k     $2.1k     317   294
+ 09-16   0.04135   0.05243    $41.4k    -$8.7k     104    78
+ 09-17   0.04711   0.05558   $114.4k     $5.1k     567   516
+ 09-18   0.04923   0.05028    $27.1k     $1.7k      72    33
+ 09-19   0.06225   0.07315    $37.4k     $9.5k      64    31
+ 09-20   0.06985   0.08125    $39.1k     $5.1k      51    13
+ 09-21   0.08968   0.10482   $112.5k    $12.4k     402   334
+ 09-22   0.07869   0.09139    $24.6k    -$6.5k      73    20
+ 09-23   0.06566   0.07867    $37.3k    -$8.4k      70    31
+ 09-24   0.06451   0.06954    $37.2k    -$1.1k      60    20
+ 09-25   0.05346   0.06419    $24.0k    -$7.3k      34     2
+ 09-26   0.05252   0.05434     $6.3k     -$637      21     1
+ 09-27   0.04823   0.05271    $12.2k    -$3.3k      28     5
+ 09-28   0.04236   0.04853     $9.3k    -$4.7k      27     1
+ 09-29   0.04064   0.04235     $2.1k    -$1.7k       8     1
 
-ATH $0.10362 on 09-21; now $0.05064 (-51% from ATH)
+ATH $0.10482 on 09-21; now $0.00000 (-100% from ATH)
 
 ==============================================================================
 2. WHERE THE SUPPLY CAME FROM
@@ -44,11 +46,14 @@ ATH $0.10362 on 09-21; now $0.05064 (-51% from ATH)
 minted to 0xcc964f8fe70d79cb3a03585aed329a4c644c9a69 at block 47,691,352
 minter holds now: 0.02% of supply
 minter sent to:
-   0x34321f090a123d52473ae1a2473e8ed97dd9f770   90.00%  holds now  7.31%  POOL
+   0x34321f090a123d52473ae1a2473e8ed97dd9f770   90.00%  holds now  8.22%  POOL
    0xd2f8235aa89306c364a950f43163830573208c33   10.00%  holds now 10.00%  
-   0x1b37dd78e230ed8247df2b8f2ee47c51ac1b3793    0.24%  holds now  0.53%  
+   0x1b37dd78e230ed8247df2b8f2ee47c51ac1b3793    0.24%  holds now  0.34%  
    0x6aaced5e128792d3a29726ddd9d4bba200bec196    0.24%  holds now  0.00%  
+   0x000000000000000000000000000000000000dead    0.22%  holds now  0.49%  
    0xa88a6fa0aba178418c6538a862162c0d89f12213    0.00%  holds now  0.00%  
+
+supply events: 1 mints, 0 burns to the zero address
 
 liquidity events (pool transfers with no swap in the tx): 13
   tokens added 72.08% of supply by 3 addresses; removed 0.03% by 3
@@ -69,109 +74,109 @@ liquidity events (pool transfers with no swap in the tx): 13
 ==============================================================================
 5. BOTS VS ORGANIC
 ==============================================================================
-3,161 attributed traders; total two-way volume $2.02M
-  bot-signature traders :     14    1.4% of volume
-  top-1% non-bot traders:     29   13.7%
-  everyone else         :  3,118   28.3%
-  unattributed or intermediary: 13.3% (of which custodial/router intermediaries 5.8%; the rest same-tx arbitrage netting to zero)
+3,166 attributed traders; total two-way volume $2.06M
+  bot-signature traders :     14    1.5% of volume
+  top-1% non-bot traders:     29   13.6%
+  everyone else         :  3,123   28.4%
+  unattributed or intermediary: 13.2% (of which custodial/router intermediaries 5.8%; the rest same-tx arbitrage netting to zero)
   signals fired: repeat-size 9, flat-round-trip 4, metronomic 3
 
   biggest bots by volume:
-    0x1b37…3793    $20.4k    329b/0    s  net  -$20.4k  repeat-size
-    0xc981…5f1a    $19.3k     12b/8    s  net    -$436  flat-round-trip
-    0x022f…5351     $6.3k     33b/5    s  net      -$7  repeat-size,flat-round-trip
-    0x7e1d…0df6     $3.8k     23b/10   s  net     -$87  flat-round-trip
-    0x0128…d6da     $3.8k      8b/2    s  net    -$443  repeat-size
+    0x1b37…3793    $21.9k    384b/0    s  net  -$21.9k  repeat-size
+    0xc981…5f1a    $19.5k     12b/8    s  net    -$441  flat-round-trip
+    0x022f…5351     $6.4k     33b/5    s  net      -$7  repeat-size,flat-round-trip
+    0x7e1d…0df6     $3.9k     23b/10   s  net     -$88  flat-round-trip
+    0x0128…d6da     $3.8k      8b/2    s  net    -$448  repeat-size
     0xf5bb…d2a1     $1.2k     13b/0    s  net   -$1.2k  repeat-size
-    0x4725…c807      $702      8b/3    s  net      -$9  metronomic
-    0x6638…9bb3      $687    102b/4    s  net       $4  repeat-size,flat-round-trip
+    0x4725…c807      $710      8b/3    s  net     -$10  metronomic
+    0x6638…9bb3      $710    102b/5    s  net      $19  repeat-size,flat-round-trip
 
-  trade size: median $30, p90 $358, p99 $1.8k; 74% under $100
+  trade size: median $31, p90 $362, p99 $1.8k; 74% under $100
 
 ==============================================================================
 6. MAJOR PLAYERS — by profit taken (convention-free: ETH out minus ETH in)
 ==============================================================================
       address  realised  open@now   bought     sold    buy px   sell px     x       first  holds  flags
-  0x7812…271f    $19.5k     $7.5k   $16.9k   $36.4k   0.01049   0.02483   2.4 08-31 18:41 0.00%  
-  0xf24d…8d28    $15.7k   $156.4k    $6.3k   $22.0k   0.00165   0.03121  18.9 08-31 18:11 3.31%  
-  0x866a…0ca2    $14.8k     $4.2k    $1.7k   $16.5k   0.00289   0.03305  11.4 08-31 18:26 0.00%  
-  0xc5ac…4c27    $11.4k        $0       $0   $11.4k   0.00000   0.04078   0.0 09-13 08:37 0.00%  
-  0xf268…d83a    $10.3k     $4.8k    $3.0k   $13.3k   0.00924   0.05783   6.3 08-31 22:40 0.31%  
-  0x773d…cb5e     $9.6k    $19.0k     $172    $9.8k   0.00035   0.08798 249.0 08-28 03:50 0.90%  
-  0xf492…9a8f     $7.3k        $0    $2.9k   $10.2k   0.03335   0.03422   1.0 09-04 04:10 0.00%  
-  0x21f8…d3b8     $7.2k     $2.0k    $7.2k   $14.4k   0.02345   0.05356   2.3 08-31 22:48 0.00%  
-  0x36f9…d5ab     $7.0k     $7.2k   $24.3k   $31.3k   0.02743   0.04201   1.5 08-31 18:36 0.37%  
-  0xcc96…9a69     $6.7k        $0      $10    $6.7k   0.08852   0.00179   0.0 08-28 03:17 0.02%  
-  0xd016…eed2     $5.1k    $26.5k     $586    $5.7k   0.00091   0.04803  52.6 08-31 17:58 2.17%  
-  0x7e3b…a3ad     $4.5k      $867    $6.1k   $10.6k   0.02557   0.04772   1.9 09-01 04:10 0.00%  
-  0xd0c2…54bd     $4.4k     $3.4k    $1.5k    $6.0k   0.00667   0.03715   5.6 08-31 22:38 0.00%  
-  0xc313…1fc6     $3.7k     $3.5k   $24.9k   $28.5k   0.03459   0.04386   1.3 09-01 04:34 0.00%  
-  0x87da…2f4a     $3.1k    $31.5k     $268    $3.4k   0.00037   0.03358  90.5 08-28 04:16 0.96%  
+  0x7812…271f    $19.7k        $0   $17.1k   $36.8k   0.01061   0.02512   2.4 08-31 18:41 0.00%  
+  0xf24d…8d28    $15.9k        $0    $6.4k   $22.3k   0.00167   0.03157  18.9 08-31 18:11 3.31%  
+  0x866a…0ca2    $15.0k        $0    $1.7k   $16.7k   0.00292   0.03343  11.4 08-31 18:26 0.00%  
+  0xf268…d83a    $11.9k        $0    $3.0k   $15.0k   0.00935   0.05713   6.1 08-31 22:40 0.15%  
+  0xc5ac…4c27    $11.5k        $0       $0   $11.5k   0.00000   0.04125   0.0 09-13 08:37 0.00%  
+  0x773d…cb5e     $9.7k        $0     $174    $9.9k   0.00036   0.08900 249.0 08-28 03:50 0.90%  
+  0xf492…9a8f     $7.4k        $0    $2.9k   $10.3k   0.03373   0.03461   1.0 09-04 04:10 0.00%  
+  0x21f8…d3b8     $7.2k        $0    $7.3k   $14.5k   0.02372   0.05418   2.3 08-31 22:48 0.00%  
+  0x36f9…d5ab     $7.1k        $0   $24.6k   $31.6k   0.02775   0.04250   1.5 08-31 18:36 0.37%  
+  0xcc96…9a69     $6.8k        $0      $10    $6.8k   0.08954   0.00181   0.0 08-28 03:17 0.02%  
+  0xd016…eed2     $5.2k        $0     $593    $5.8k   0.00092   0.04858  52.6 08-31 17:58 2.17%  
+  0x7e3b…a3ad     $4.6k        $0    $6.2k   $10.8k   0.02587   0.04827   1.9 09-01 04:10 0.00%  
+  0xd0c2…54bd     $4.5k        $0    $1.5k    $6.0k   0.00675   0.03758   5.6 08-31 22:38 0.00%  
+  0xc313…1fc6     $3.7k        $0   $25.2k   $28.9k   0.03499   0.04436   1.3 09-01 04:34 0.00%  
+  0x87da…2f4a     $3.1k        $0     $271    $3.4k   0.00038   0.03397  90.5 08-28 04:16 0.96%  
 
   biggest losers:
-  0x1b37…3793   -$20.4k open   $16.4k bought   $20.4k at 0.06309  first 09-22 17:46  holds 0.53%
-  0xb6e1…47a0   -$14.5k open   $10.7k bought   $14.5k at 0.06880  first 09-20 15:29  holds 0.95%
-  0xf109…b0a9   -$13.8k open    $8.8k bought   $13.8k at 0.07910  first 09-21 03:36  holds 0.81%
-  0x3c7f…1fe6   -$12.2k open   $17.5k bought   $12.2k at 0.03547  first 09-17 17:34  holds 1.56%
-  0xfc25…5a27   -$10.4k open   $29.6k bought   $10.4k at 0.01783  first 08-31 18:44  holds 0.12%
-  0x9ce0…fa29    -$9.6k open   $12.8k bought    $9.6k at 0.03805  first 09-01 08:59  holds 0.00%
-  0x32ee…39d8    -$9.0k open   $37.0k bought   $11.0k at 0.00961  first 08-31 01:21  holds 3.09%
-  0x4677…f4b5    -$8.1k open    $9.2k bought    $8.1k at 0.04471  first 09-09 13:14  holds 0.14%
+  0x1b37…3793   -$21.9k open       $0 bought   $21.9k at 0.06250  first 09-22 17:46  holds 0.34%
+  0xb6e1…47a0   -$14.7k open       $0 bought   $14.7k at 0.06959  first 09-20 15:29  holds 0.95%
+  0xf109…b0a9   -$13.9k open       $0 bought   $13.9k at 0.08002  first 09-21 03:36  holds 0.81%
+  0x3c7f…1fe6   -$12.4k open       $0 bought   $12.4k at 0.03588  first 09-17 17:34  holds 1.56%
+  0xfc25…5a27   -$10.5k open       $0 bought   $10.5k at 0.01804  first 08-31 18:44  holds 0.12%
+  0x9ce0…fa29    -$9.7k open       $0 bought    $9.8k at 0.03849  first 09-01 08:59  holds 0.00%
+  0x32ee…39d8    -$9.1k open       $0 bought   $11.1k at 0.00972  first 08-31 01:21  holds 3.09%
+  0x4677…f4b5    -$8.2k open       $0 bought    $8.2k at 0.04523  first 09-09 13:14  holds 0.14%
 
-  2,114 of 3,161 traders (67%) are up on realised + open-at-today's-price; net across all: -$208.8k realised
-  the top 10 took $109.5k — 56% of all realised profit
+  386 of 3,166 traders (12%) are up on realised + open-at-today's-price; net across all: -$203.8k realised
+  the top 10 took $112.3k — 55% of all realised profit
 
 ==============================================================================
 7. WHO HOLDS IT NOW, AND HOW THEY GOT IT
 ==============================================================================
-675 holders; pool 7.31%, burn 0.27%, float 92.35%
-  top   1: 28.11%
-  top   5: 50.50%
-  top  10: 63.40%
-  top  25: 78.08%
-  top 100: 90.07%
+653 holders; pools 8.22%, burn 0.49%, float 91.20%
+  top   1: 28.18%
+  top   5: 50.41%
+  top  10: 63.45%
+  top  25: 78.13%
+  top 100: 89.39%
 
   #        holder  holds    value  bought   recvd          from       since pool basis  vs now
-  1   0xf9ab…6a89 28.11%  $298.9k  0.00% 28.90%   0xf24d…8d28 09-07 16:07          —       —
-  2   0xd2f8…8c33 10.00%  $106.3k  0.00% 10.00%   0xcc96…9a69 08-28 03:51          —       —
-  3   0x9e60…a1c6 4.65%   $49.5k  0.00% 19.49%   0x81a3…509a 09-06 14:18          —       —
-  4   0x0594…c0f1 4.43%   $47.1k  0.00%  4.43%   0xc360…6c2f 09-20 11:39          —       —
-  5   0xf24d…8d28 3.31%   $35.2k 17.16%  0.51%   0x00a7…0bc9 08-31 18:11    0.00165  +2960%
-  6   0x4458…be64 3.26%   $34.7k  0.00%  3.66%   0x4fd4…bfd3 09-07 18:57          —       —
-  7   0x32ee…39d8 3.09%   $32.9k  5.15%  0.00%             — 08-31 01:21    0.00961   +427%
-  8   0xd07c…5fe3 2.38%   $25.3k  4.89%  0.34%   0x00a7…0bc9 08-31 17:18    0.00109  +4559%
-  9   0xd016…eed2 2.17%   $23.0k  2.90%  0.51%   0x00a7…0bc9 08-31 17:58    0.00091  +5446%
- 10   0x0a3a…e485 2.00%   $21.3k  0.00%  2.00%   0x1660…e12e 09-20 11:37          —       —
- 11   0x0796…7998 1.63%   $17.3k  2.46%  0.51%   0x00a7…0bc9 08-31 16:52    0.00062  +8036%
- 12   0x3c7f…1fe6 1.56%   $16.6k  1.56%  0.00%             — 09-17 17:34    0.03547    +43%
- 13   0x3948…2f69 1.45%   $15.4k  3.00%  0.52%   0x00a7…0bc9 08-28 03:57    0.00034 +14667%
- 14   0xc261…a69c 1.17%   $12.5k  1.32%  0.33%   0x00a7…0bc9 09-01 02:17    0.01956   +159%
- 15   0xe6f4…8866 0.98%   $10.4k  1.16%  0.51%   0x00a7…0bc9 08-28 04:39    0.00604   +738%
- 16   0x79d7…b01f 0.97%   $10.3k  2.34%  0.51%   0x00a7…0bc9 08-31 13:12    0.00051  +9901%
- 17   0x87da…2f4a 0.96%   $10.3k  3.27%  0.51%   0x00a7…0bc9 08-28 04:16    0.00037 +13543%
- 18   0xb6e1…47a0 0.95%   $10.1k  0.95%  0.00%             — 09-20 15:29    0.06880    -26%
- 19   0x773d…cb5e 0.90%    $9.5k  2.20%  0.51%   0x00a7…0bc9 08-28 03:50    0.00035 +14234%
- 20   0xf109…b0a9 0.81%    $8.6k  0.79%  0.02%   0x8366…0951 09-21 03:36    0.07910    -36%
+  1   0xf9ab…6a89 28.18%       $0  0.00% 28.99%   0xf24d…8d28 09-07 16:07          —       —
+  2   0xd2f8…8c33 10.00%       $0  0.00% 10.00%   0xcc96…9a69 08-28 03:51          —       —
+  3   0x9e60…a1c6 5.20%       $0  0.00% 21.20%   0x81a3…509a 09-06 14:18          —       —
+  4   0x0594…c0f1 3.71%       $0  0.00%  5.43%   0xc360…6c2f 09-20 11:39          —       —
+  5   0xf24d…8d28 3.31%       $0 17.16%  0.51%   0x00a7…0bc9 08-31 18:11    0.00167   -100%
+  6   0x4458…be64 3.26%       $0  0.00%  3.66%   0x4fd4…bfd3 09-07 18:57          —       —
+  7   0x32ee…39d8 3.09%       $0  5.15%  0.00%             — 08-31 01:21    0.00972   -100%
+  8   0xd07c…5fe3 2.38%       $0  4.89%  0.34%   0x00a7…0bc9 08-31 17:18    0.00110   -100%
+  9   0xd016…eed2 2.17%       $0  2.90%  0.51%   0x00a7…0bc9 08-31 17:58    0.00092   -100%
+ 10   0x0a3a…e485 2.14%       $0  0.00%  2.14%   0x1660…e12e 09-20 11:37          —       —
+ 11   0x0796…7998 1.63%       $0  2.46%  0.51%   0x00a7…0bc9 08-31 16:52    0.00063   -100%
+ 12   0x3c7f…1fe6 1.56%       $0  1.56%  0.00%             — 09-17 17:34    0.03588   -100%
+ 13   0x3948…2f69 1.45%       $0  3.00%  0.52%   0x00a7…0bc9 08-28 03:57    0.00035   -100%
+ 14   0xc261…a69c 1.17%       $0  1.32%  0.33%   0x00a7…0bc9 09-01 02:17    0.01978   -100%
+ 15   0xe6f4…8866 0.98%       $0  1.16%  0.51%   0x00a7…0bc9 08-28 04:39    0.00611   -100%
+ 16   0x79d7…b01f 0.97%       $0  2.34%  0.51%   0x00a7…0bc9 08-31 13:12    0.00051   -100%
+ 17   0x87da…2f4a 0.96%       $0  3.27%  0.51%   0x00a7…0bc9 08-28 04:16    0.00038   -100%
+ 18   0xb6e1…47a0 0.95%       $0  0.95%  0.00%             — 09-20 15:29    0.06959   -100%
+ 19   0x773d…cb5e 0.90%       $0  2.20%  0.51%   0x00a7…0bc9 08-28 03:50    0.00036   -100%
+ 20   0xf109…b0a9 0.81%       $0  0.79%  0.02%   0x8366…0951 09-21 03:36    0.08002   -100%
 
-  across all holders, 40% of tokens ever received came from another holder rather than the market
+  across all holders, 41% of tokens ever received came from another holder rather than the market
 
-  direct transfers between top-50 holders: 98 links
+  direct transfers between top-50 holders: 99 links
     0xf24d…8d28 -> 0xf9ab…6a89  9.18%
     0xd07c…5fe3 -> 0xf9ab…6a89  2.33%
     0x87da…2f4a -> 0xf9ab…6a89  1.66%
-    0x81a3…509a -> 0x9e60…a1c6  1.46%
+    0x81a3…509a -> 0x9e60…a1c6  1.61%
+    0x9e60…a1c6 -> 0x81a3…509a  1.46%
     0x3948…2f69 -> 0xf9ab…6a89  1.41%
-    0x9e60…a1c6 -> 0x81a3…509a  1.32%
     0x79d7…b01f -> 0xf9ab…6a89  1.23%
     0x51ca…74ef -> 0xf9ab…6a89  1.00%
 
   addresses that supplied 3+ of the top 100 holders directly:
-    0x9e60ca774f2a78f52174c05b54025523e59fa1c6  fed 19 holders now holding 18.26%; itself holds 4.65%
-    0x00a78d1c8c26a34e4f49d8862dc648784f540bc9  fed 19 holders now holding 18.39%; itself holds 0.19%
-    0x1b37dd78e230ed8247df2b8f2ee47c51ac1b3793  fed 8 holders now holding 4.80%; itself holds 0.53%
-    0xf24d97ee91025733aa48d898371affb564638d28  fed 6 holders now holding 35.70%; itself holds 3.31%
-    0xfc254a7dacd3b1146573603ce280ee6f80ba5a27  fed 5 holders now holding 35.14%; itself holds 0.12%
-    0xf9ab5f4d82716311668a259da3549cf9b7856a89  fed 5 holders now holding 0.47%; itself holds 28.11%
+    0x9e60ca774f2a78f52174c05b54025523e59fa1c6  fed 20 holders now holding 18.31%; itself holds 5.20%
+    0x00a78d1c8c26a34e4f49d8862dc648784f540bc9  fed 20 holders now holding 18.42%; itself holds 0.19%
+    0x1b37dd78e230ed8247df2b8f2ee47c51ac1b3793  fed 8 holders now holding 4.75%; itself holds 0.34%
+    0xf24d97ee91025733aa48d898371affb564638d28  fed 6 holders now holding 36.47%; itself holds 3.31%
+    0xfc254a7dacd3b1146573603ce280ee6f80ba5a27  fed 5 holders now holding 35.91%; itself holds 0.12%
+    0xcb1639c3dd1e5aa2e87abfe87bca9dc0743c8a03  fed 5 holders now holding 11.37%; itself holds 0.00%
 
 ==============================================================================
 8. THE BIG MOVES — who acted before them
@@ -180,15 +185,15 @@ biggest run: 296.9x from 08-28 03:00 to 09-21 15:00
 worst hour : -96% at 08-28 03:00
 
   bought in the base (3d before trough to first quarter of run) AND sold into the top (last quarter to peak+1d): 32 traders
-    0x36f9…d5ab  bought 1.320%  sold 0.687%  realised $7.0k  
-    0x773d…cb5e  bought 2.307%  sold 0.522%  realised $9.6k  
+    0x36f9…d5ab  bought 1.320%  sold 0.687%  realised $7.1k  
+    0x773d…cb5e  bought 2.307%  sold 0.522%  realised $9.7k  
     0x87da…2f4a  bought 3.441%  sold 0.476%  realised $3.1k  
     0x7905…e6a1  bought 4.354%  sold 0.381%  realised $1.9k  
-    0xf24d…8d28  bought 15.274%  sold 0.347%  realised $15.7k  
-    0x65aa…6e1d  bought 3.876%  sold 0.266%  realised -$486  
-    0xf268…d83a  bought 1.335%  sold 0.248%  realised $10.3k  
+    0xf24d…8d28  bought 15.274%  sold 0.347%  realised $15.9k  
+    0x65aa…6e1d  bought 3.876%  sold 0.266%  realised -$492  
+    0xf268…d83a  bought 1.335%  sold 0.248%  realised $11.9k  
     0x0c71…299b  bought 0.886%  sold 0.153%  realised -$3.0k  
-    0xcfe0…557a  bought 0.226%  sold 0.153%  realised -$516  
+    0xcfe0…557a  bought 0.226%  sold 0.153%  realised -$522  
     0xc313…1fc6  bought 0.128%  sold 0.421%  realised $3.7k  
   base rate: 32/924 base buyers (3%) sold into the top
 
@@ -204,33 +209,33 @@ worst hour : -96% at 08-28 03:00
 9. ENTRY COHORTS — when people first bought, and how that went (ETH terms)
 ==============================================================================
  week   from  buyers    put in  took out  open@now    result still hold
-    0  08-27     956   $568.5k   $536.0k    $1.16M    $1.13M       40%
-    1  09-03     220   $153.7k    $79.8k    $95.0k    $21.1k       35%
-    2  09-10   1,201   $109.3k    $64.5k    $57.6k    $12.8k        6%
-    3  09-17     752   $145.8k    $68.9k    $58.2k   -$18.7k        9%
-    4  09-24       5     $3.2k       $69     $3.0k     -$111       60%
+    0  08-27     956   $575.7k   $544.0k        $0   -$31.7k       40%
+    1  09-03     220   $155.5k    $83.6k        $0   -$71.9k       34%
+    2  09-10   1,201   $111.1k    $66.6k        $0   -$44.5k        5%
+    3  09-17     754   $150.6k    $73.9k        $0   -$76.7k        8%
+    4  09-24       8     $4.4k     $1.0k        $0    -$3.4k       50%
 
 ==============================================================================
 10. LAST 7 DAYS — who is moving the price now
 ==============================================================================
-           bots: net    $20.7k (buying)
-         retail: net    -$7.2k (selling)
-   unattributed: net   -$25.2k (selling)
-         whales: net     $6.2k (buying)
+           bots: net    $22.2k (buying)
+         retail: net   -$30.8k (selling)
+   unattributed: net   -$15.4k (selling)
+         whales: net    -$6.2k (selling)
 
   biggest net accumulators, 7d:
-    0x1b37…3793  +1.541%  holds 0.526%  first 09-22 17:46  repeat-size
-    0xb6e1…47a0  +1.006%  holds 0.947%  first 09-20 15:29  
-    0xf109…b0a9  +0.830%  holds 0.810%  first 09-21 03:36  
-    0xc631…e5e3  +0.156%  holds 0.000%  first 09-21 09:52  
+    0x1b37…3793  +1.665%  holds 0.339%  first 09-22 17:46  repeat-size
     0x0c52…e898  +0.151%  holds 0.000%  first 09-26 07:31  
-    0x08b4…6fc1  +0.107%  holds 0.101%  first 09-21 13:10  
+    0xa271…25ac  +0.136%  holds 0.000%  first 09-15 06:24  
+    0x96d8…d62e  +0.127%  holds 0.121%  first 09-21 10:10  
+    0x04a8…9f28  +0.109%  holds 0.103%  first 09-17 17:48  
+    0xf241…0635  +0.107%  holds 0.007%  first 09-27 22:43  
   biggest net sellers, 7d:
-    0x773d…cb5e  -0.522%  holds 0.896%  first 08-28 03:50  
-    0x36f9…d5ab  -0.445%  holds 0.369%  first 08-31 18:36  
+    0xf268…d83a  -0.412%  holds 0.149%  first 08-31 22:40  
+    0x6f17…76f2  -0.344%  holds 0.000%  first 09-17 18:00  
     0xfd5d…a6df  -0.336%  holds 0.000%  first 09-19 10:18  
-    0xf268…d83a  -0.300%  holds 0.306%  first 08-31 22:40  
     0x5075…08d1  -0.238%  holds 0.000%  first 09-19 11:38  
-    0x6f17…76f2  -0.190%  holds 0.000%  first 09-17 18:00  
+    0x1d7d…d42d  -0.227%  holds 0.000%  first 09-21 15:20  
+    0x2187…c997  -0.195%  holds 0.000%  first 09-28 14:10  
 
-  new traders in the last 7 days: 417
+  new traders in the last 7 days: 65

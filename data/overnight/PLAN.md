@@ -71,8 +71,17 @@ scans at once (the node rate-limits globally). Tick steps here as they finish.
          liquidity, volume.
 - [x] 7. Live Tier 1 screen on today's data.
 - [x] 8. Write docs/25 (drafted with candle + flow results; ADD wallet-level results after batch 2) with results and the recommended filters.
-- [ ] 9. Refresh the six coins (track_tokens.py build), run watch_wallets.py
+- [x] 9. Refresh the six coins (track_tokens.py build), run watch_wallets.py
          and analyse_all.py, summarise.
+- 2026-09-29 13:xxZ: refreshed ORBIO/ASKR/HH/AXON/ERHA. ORBIO is the only one
+  still genuinely active ($1.6M/24h vol, price $0.0755, near its highs); added
+  it to watchlist.json with 4 wallets that crossed the $25k+/24h net-buy rule
+  in the last 24h. ORBIO's own 7d flow split: retail net +$693k buying,
+  whales net -$233k selling — mixed, not a clean accumulation story despite
+  the new whale buyers. ASKR still has real but small volume ($75k/24h,
+  down ~66% from its 19 Sep ATH); no wallet crossed the auto-add bar. HH is
+  quiet ($8k/24h). AXON ($31k mcap) and ERHA ($6k mcap) are effectively dead,
+  down ~100% from ATH with dust-level volume — not worth continued tracking.
 - 2026-09-28: user decided NOT to add a neckline/trendline-reclaim pattern to the screen. Don't propose it again.
 - 2026-09-28 02:05Z: hourly keep-alive routine trig_018bm3JnsphnBRCuj41vUpkD (:05 past each hour) replaces overnight resumes 6-8; it restarts run_batch2.sh if dead and disables itself when all steps are done or after 2026-09-29T00:00Z.
 - 2026-09-28 04:30Z: TAMPONS transfers FAILED mid-scan (resumable). After run_batch2 finishes, rerun `track_tokens.py build --only TAMPONS` before the wallet backtest results are final, then commit its dir.

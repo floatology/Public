@@ -1,0 +1,34 @@
+{
+ "token": "ASKR",
+ "ath": {
+  "day": "09-19",
+  "price": 0.007362668199250848
+ },
+ "lp": {
+  "added": 0.33225826093358884,
+  "removed": 0.1376372343338073
+ },
+ "snipers": {
+  "addresses": 103,
+  "share": 0.2346801393314732,
+  "paid_usd": 22288.81364849719,
+  "later_sold_usd": 220141.33379787026
+ },
+ "bots": {
+  "traders": 114,
+  "volume_share": 0.05264636561025642,
+  "whale_volume_share": 0.10049139584376524,
+  "retail_volume_share": 0.2745404202793504,
+  "unattributed_share": 0.1446436365332738
+ },
+ "pnl": {
+  "winners": 3919,
+  "traders": 8452,
+  "top10_share_of_profit": 0.17284760472265173
+ },
+ "holders": {
+  "count": 2451,
+  "top10": 0.27156348344912945,
+  "peer_received_share": 0.2620302994309065
+ }
+}

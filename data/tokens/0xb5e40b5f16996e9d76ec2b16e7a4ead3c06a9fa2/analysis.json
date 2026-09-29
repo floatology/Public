@@ -1,0 +1,34 @@
+{
+ "token": "AXON",
+ "ath": {
+  "day": "09-21",
+  "price": 0.0002017558036998589
+ },
+ "lp": {
+  "added": 0.0015962019912875009,
+  "removed": 0.001422053030478192
+ },
+ "snipers": {
+  "addresses": 65,
+  "share": 0.06801825230928066,
+  "paid_usd": 3773.4229517390486,
+  "later_sold_usd": 4757.721381590111
+ },
+ "bots": {
+  "traders": 15,
+  "volume_share": 0.01567930416601627,
+  "whale_volume_share": 0.06851569278029986,
+  "retail_volume_share": 0.3945690824882285,
+  "unattributed_share": 0.0424718411309142
+ },
+ "pnl": {
+  "winners": 649,
+  "traders": 1623,
+  "top10_share_of_profit": 0.25089904221198955
+ },
+ "holders": {
+  "count": 303,
+  "top10": 0.32338517404302985,
+  "peer_received_share": 0.1440874476026841
+ }
+}

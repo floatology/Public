@@ -161,10 +161,45 @@
    }
   ]
  },
+ "0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3": {
+  "name": "ORBIO",
+  "pool": "0xea9f200e13055b82f175f44f592c4c13dd8c9d9320a66487d3c5cd90d68550ef",
+  "last_checked": 1790687633,
+  "wallets": [
+   {
+    "address": "0xb02208d1b27811480cf6171bccc2b7af9513cddb",
+    "label": "new whale, first buy is its whole position",
+    "why": "First seen 28 Sep 17:04 UTC; net +$124.5k in a single burst of 10 trades (~7s), still holding all of it (~$120.7k, 0.168% of supply). No prior history.",
+    "added": "2026-09-29",
+    "active": true
+   },
+   {
+    "address": "0x22357b1276fdcdebe20475c9654a2aa63af42600",
+    "label": "consistent accumulator",
+    "why": "Trading since ~20-21 Sep; net +$162.4k lifetime across 45 trades, holds ~$166.3k (0.226% of supply). Added another $49.8k over several hours in the 24h to 29 Sep.",
+    "added": "2026-09-29",
+    "active": true
+   },
+   {
+    "address": "0x9337ce7e633230aa6f32e3c10d0a26aedf92a82b",
+    "label": "new whale, steady buyer",
+    "why": "First seen 28 Sep 17:06 UTC (same window as 0xb022); net +$29.2k over 18 trades spread across ~19h, holds ~$28.9k (0.168% of supply).",
+    "added": "2026-09-29",
+    "active": true
+   },
+   {
+    "address": "0x2836056c5d02dde4d2887e8dcea7db15e5f93aa2",
+    "label": "brand-new whale",
+    "why": "First seen 29 Sep, same day; net +$29.9k in 4 trades, holds ~$32.1k (0.164% of supply).",
+    "added": "2026-09-29",
+    "active": true
+   }
+  ]
+ },
  "0x6835dbf2d7d5852f84bf0a80de00cab3864f44b1": {
   "name": "HH",
   "pool": "0x34321f090a123d52473ae1a2473e8ed97dd9f770",
-  "last_checked": 1790523774,
+  "last_checked": 1790686579,
   "wallets": [
    {
     "address": "0xd2f8235aa89306c364a950f43163830573208c33",
