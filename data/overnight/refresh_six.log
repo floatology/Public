@@ -1,0 +1,364 @@
+head 75,679,861; 3,135 anchors held, 2 to fetch
+3,137 anchors; worst error above block 4,000,000: 2s (below it: 0s, where the chain had not reached a steady block rate)
+[13:08:06] build starting for ORBIO, ASKR, HH, AXON, ERHA (ETH $2,737.08)
+[13:08:06] ORBIO: transfers starting
+head 75,679,886
+transfers: scanning 74,045,731-75,679,886 (resuming)
+  tr   3.1%  block 74,095,730  span 50,000  logs 5,802  1s
+  tr   4.6%  block 74,120,730  span 25,000  logs 11,417  13s
+  tr   6.1%  block 74,145,730  span 25,000  logs 15,825  13s
+  tr   8.4%  block 74,183,230  span 37,500  logs 21,042  13s
+  tr  10.7%  block 74,220,730  span 37,500  logs 23,756  14s
+  tr  14.2%  block 74,276,980  span 56,250  logs 30,622  14s
+  tr  17.6%  block 74,333,230  span 56,250  logs 34,896  15s
+  tr  22.8%  block 74,417,605  span 84,375  logs 40,743  15s
+  tr  27.9%  block 74,501,980  span 84,375  logs 43,769  15s
+  tr  35.7%  block 74,628,542  span 126,562  logs 47,149  16s
+  tr  47.3%  block 74,818,385  span 189,843  logs 52,693  16s
+  tr  53.1%  block 74,913,306  span 94,921  logs 56,664  22s
+  tr  57.4%  block 74,984,496  span 71,190  logs 66,242  29s
+  tr  61.8%  block 75,055,686  span 71,190  logs 68,645  29s
+  tr  68.3%  block 75,162,471  span 106,785  logs 71,755  46s
+  tr  78.1%  block 75,322,648  span 160,177  logs 76,107  52s
+  tr  92.8%  block 75,562,913  span 240,265  logs 80,674  52s
+  tr 100.0%  block 75,679,886  span 360,397  logs 82,932  52s
+transfers: committed 74,045,731-75,679,886  +82,932 rows, 669,330 total
+{
+ "token": "0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    75679886
+   ]
+  ],
+  "rows": 669330
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-29T13:09:08Z"
+}
+[13:09:08] ORBIO: transfers DONE
+[13:09:09] ORBIO: pool 0xc761f7de (v4/USDG) resuming from 74,055,371
+    0xc761f7de   6.2% block 74,155,370 logs 117 0s
+    0xc761f7de  15.4% block 74,305,370 logs 254 0s
+    0xc761f7de  29.2% block 74,530,370 logs 412 0s
+    0xc761f7de  50.0% block 74,867,870 logs 587 1s
+    0xc761f7de  81.1% block 75,374,120 logs 884 1s
+    0xc761f7de 100.0% block 75,680,496 logs 974 1s
+[13:09:10] ORBIO: pool 0xc761f7de DONE, 4,720 swaps
+[13:09:10] ORBIO: pool 0xa95b1fbd (v4/NVDA) resuming from 74,055,371
+    0xa95b1fbd   6.2% block 74,155,370 logs 452 6s
+    0xa95b1fbd  15.4% block 74,305,370 logs 971 6s
+    0xa95b1fbd  29.2% block 74,530,370 logs 1,337 6s
+    0xa95b1fbd  50.0% block 74,867,870 logs 1,535 6s
+    0xa95b1fbd  81.1% block 75,374,120 logs 2,098 6s
+    0xa95b1fbd 100.0% block 75,680,496 logs 2,195 6s
+[13:09:17] ORBIO: pool 0xa95b1fbd DONE, 58,902 swaps
+[13:09:17] ORBIO: pool 0xea9f200e (v4/USDG) resuming from 74,055,371
+    0xea9f200e   6.2% block 74,155,370 logs 3,011 0s
+    0xea9f200e  15.4% block 74,305,370 logs 5,517 6s
+    0xea9f200e  29.2% block 74,530,370 logs 7,262 7s
+    0xea9f200e  50.0% block 74,867,870 logs 8,809 13s
+    0xea9f200e  81.1% block 75,374,120 logs 12,465 19s
+    0xea9f200e 100.0% block 75,680,496 logs 13,182 19s
+[13:09:37] ORBIO: pool 0xea9f200e DONE, 62,776 swaps
+[13:09:37] ORBIO: pool 0x4b83b47e (v4/USDG) resuming from 74,055,371
+    0x4b83b47e   6.2% block 74,155,370 logs 92 6s
+    0x4b83b47e  15.4% block 74,305,370 logs 157 6s
+    0x4b83b47e  29.2% block 74,530,370 logs 232 6s
+    0x4b83b47e  50.0% block 74,867,870 logs 318 6s
+    0x4b83b47e  81.1% block 75,374,120 logs 407 6s
+    0x4b83b47e 100.0% block 75,680,496 logs 426 6s
+[13:09:44] ORBIO: pool 0x4b83b47e DONE, 19,162 swaps
+[13:09:44] ORBIO: pool 0x40521592 (v3/USDG) resuming from 74,055,371
+    0x40521592   6.2% block 74,155,370 logs 450 0s
+    0x40521592  15.4% block 74,305,370 logs 793 0s
+    0x40521592  29.2% block 74,530,370 logs 983 0s
+    0x40521592  50.0% block 74,867,870 logs 1,188 1s
+    0x40521592  81.1% block 75,374,120 logs 1,578 1s
+    0x40521592 100.0% block 75,680,496 logs 1,702 6s
+[13:09:51] ORBIO: pool 0x40521592 DONE, 32,761 swaps
+[13:09:51] ORBIO: pool 0x75ee7173 (v3/USDG) resuming from 74,055,371
+    0x75ee7173   6.2% block 74,155,370 logs 496 0s
+    0x75ee7173  15.4% block 74,305,370 logs 1,020 0s
+    0x75ee7173  29.2% block 74,530,370 logs 1,398 6s
+    0x75ee7173  50.0% block 74,867,870 logs 1,842 6s
+    0x75ee7173  81.1% block 75,374,120 logs 2,435 6s
+    0x75ee7173 100.0% block 75,680,496 logs 2,625 7s
+[13:09:58] ORBIO: pool 0x75ee7173 DONE, 44,641 swaps
+246,682 transactions moved this token
+{
+ "attributed": 131924,
+ "attributed_multi_swap": 55050,
+ "ambiguous_multi_swap": 7933,
+ "no_transfers": 2519,
+ "no_counterparty": 25536
+}
+  attributed 83.9% of 222,962 swaps
+  'recipient' matched the true holder on 6.4% of 186,974 comparable swaps
+wrote /home/user/Public/data/tokens/0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3/swaps_attributed.parquet
+[13:10:09] ORBIO: attributed DONE
+222,962 trades -> /home/user/Public/data/tokens/0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3/ledger.parquet
+  35,988 (16.14%) had no attributed trader and carry a null
+  20,619 distinct traders across the full history
+  span 1,788,223,549 - 1,790,687,323
+[13:10:16] ORBIO: ledger DONE
+[13:10:16] ASKR: transfers starting
+head 75,681,166
+transfers: scanning 74,063,998-75,681,166 (resuming)
+  tr   6.2%  block 74,163,997  span 100,000  logs 356  0s
+  tr  15.5%  block 74,313,997  span 150,000  logs 1,516  0s
+  tr  29.4%  block 74,538,997  span 225,000  logs 2,292  1s
+  tr  50.2%  block 74,876,497  span 337,500  logs 4,280  6s
+  tr  81.5%  block 75,382,747  span 506,250  logs 5,846  7s
+  tr 100.0%  block 75,681,166  span 759,375  logs 6,460  7s
+transfers: committed 74,063,998-75,681,166  +6,460 rows, 158,728 total
+{
+ "token": "0xa92768863a55d8a0591709f7f5e594a249d36ea3",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    75681166
+   ]
+  ],
+  "rows": 158728
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-29T13:10:25Z"
+}
+[13:10:25] ASKR: transfers DONE
+[13:10:25] ASKR: pool 0x90b75d6e (v4/ETH) resuming from 74,066,929
+    0x90b75d6e   6.2% block 74,166,928 logs 22 8s
+    0x90b75d6e  15.5% block 74,316,928 logs 116 8s
+    0x90b75d6e  29.4% block 74,541,928 logs 172 10s
+    0x90b75d6e  50.3% block 74,879,428 logs 372 11s
+    0x90b75d6e  81.7% block 75,385,678 logs 523 12s
+    0x90b75d6e 100.0% block 75,681,254 logs 580 12s
+[13:10:40] ASKR: pool 0x90b75d6e DONE, 22,822 swaps
+[13:10:40] ASKR: pool 0x96fb4a1f (v4/USDG) resuming from 74,066,929
+    0x96fb4a1f   6.2% block 74,166,928 logs 11 0s
+    0x96fb4a1f  15.5% block 74,316,928 logs 40 0s
+    0x96fb4a1f  29.4% block 74,541,928 logs 64 0s
+    0x96fb4a1f  50.3% block 74,879,428 logs 116 1s
+    0x96fb4a1f  81.7% block 75,385,678 logs 154 1s
+    0x96fb4a1f 100.0% block 75,681,254 logs 163 1s
+[13:10:41] ASKR: pool 0x96fb4a1f DONE, 5,052 swaps
+[13:10:41] ASKR: pool 0x7d0dd05c (v3/WETH) resuming from 74,066,929
+    0x7d0dd05c   6.2% block 74,166,928 logs 52 0s
+    0x7d0dd05c  15.5% block 74,316,928 logs 217 0s
+    0x7d0dd05c  29.4% block 74,541,928 logs 328 1s
+    0x7d0dd05c  50.3% block 74,879,428 logs 585 1s
+    0x7d0dd05c  81.7% block 75,385,678 logs 817 1s
+    0x7d0dd05c 100.0% block 75,681,254 logs 901 1s
+[13:10:42] ASKR: pool 0x7d0dd05c DONE, 13,723 swaps
+[13:10:42] ASKR: pool 0xf4a911f7 (v4/USDG) resuming from 74,066,929
+    0xf4a911f7   6.2% block 74,166,928 logs 52 0s
+    0xf4a911f7  15.5% block 74,316,928 logs 210 0s
+    0xf4a911f7  29.4% block 74,541,928 logs 301 0s
+    0xf4a911f7  50.3% block 74,879,428 logs 565 1s
+    0xf4a911f7  81.7% block 75,385,678 logs 796 6s
+    0xf4a911f7 100.0% block 75,681,254 logs 889 7s
+[13:10:51] ASKR: pool 0xf4a911f7 DONE, 15,351 swaps
+[13:10:51] ASKR: pool 0x6ea0b587 (v4/USDG) resuming from 74,066,929
+    0x6ea0b587   6.2% block 74,166,928 logs 8 0s
+    0x6ea0b587  15.5% block 74,316,928 logs 59 0s
+    0x6ea0b587  29.4% block 74,541,928 logs 96 0s
+    0x6ea0b587  50.3% block 74,879,428 logs 172 1s
+    0x6ea0b587  81.7% block 75,385,678 logs 230 1s
+    0x6ea0b587 100.0% block 75,681,254 logs 245 1s
+[13:10:52] ASKR: pool 0x6ea0b587 DONE, 999 swaps
+53,535 transactions moved this token
+{
+ "attributed": 32025,
+ "attributed_multi_swap": 21537,
+ "ambiguous_multi_swap": 2666,
+ "no_transfers": 753,
+ "no_counterparty": 966
+}
+  attributed 92.4% of 57,947 swaps
+  'recipient' matched the true holder on 7.9% of 53,562 comparable swaps
+wrote /home/user/Public/data/tokens/0xa92768863a55d8a0591709f7f5e594a249d36ea3/swaps_attributed.parquet
+[13:10:55] ASKR: attributed DONE
+57,947 trades -> /home/user/Public/data/tokens/0xa92768863a55d8a0591709f7f5e594a249d36ea3/ledger.parquet
+  4,385 (7.57%) had no attributed trader and carry a null
+  8,462 distinct traders across the full history
+  span 1,789,756,615 - 1,790,687,280
+[13:10:56] ASKR: ledger DONE
+[13:10:56] HH: transfers starting
+head 75,681,570
+transfers: scanning 74,068,854-75,681,570 (resuming)
+  tr   6.2%  block 74,168,853  span 100,000  logs 32  0s
+  tr  15.5%  block 74,318,853  span 150,000  logs 162  0s
+  tr  29.5%  block 74,543,853  span 225,000  logs 178  0s
+  tr  50.4%  block 74,881,353  span 337,500  logs 282  1s
+  tr  81.8%  block 75,387,603  span 506,250  logs 389  1s
+  tr 100.0%  block 75,681,570  span 759,375  logs 421  1s
+transfers: committed 74,068,854-75,681,570  +421 rows, 31,649 total
+{
+ "token": "0x6835dbf2d7d5852f84bf0a80de00cab3864f44b1",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    75681570
+   ]
+  ],
+  "rows": 31649
+ },
+ "swaps": {
+  "ranges": [
+   [
+    1,
+    74038631
+   ]
+  ],
+  "pool": "0x34321f090a123d52473ae1a2473e8ed97dd9f770",
+  "protocol": "v2",
+  "rows": 13031
+ },
+ "updated_at": "2026-09-29T13:10:59Z"
+}
+[13:10:59] HH: transfers DONE
+[13:10:59] HH: pool 0x34321f09 (v2/WETH) resuming from 74,068,866
+    0x34321f09   6.2% block 74,168,865 logs 11 0s
+    0x34321f09  15.5% block 74,318,865 logs 53 0s
+    0x34321f09  29.5% block 74,543,865 logs 58 0s
+    0x34321f09  50.4% block 74,881,365 logs 97 6s
+    0x34321f09  81.8% block 75,387,615 logs 135 6s
+    0x34321f09 100.0% block 75,681,590 logs 148 6s
+[13:11:06] HH: pool 0x34321f09 DONE, 13,186 swaps
+13,501 transactions moved this token
+{
+ "attributed": 11572,
+ "attributed_multi_swap": 521,
+ "ambiguous_multi_swap": 1093,
+ "no_transfers": 0,
+ "no_counterparty": 0
+}
+  attributed 91.7% of 13,186 swaps
+  'recipient' matched the true holder on 51.1% of 12,093 comparable swaps
+wrote /home/user/Public/data/tokens/0x6835dbf2d7d5852f84bf0a80de00cab3864f44b1/swaps_attributed.parquet
+[13:11:06] HH: attributed DONE
+13,186 trades -> /home/user/Public/data/tokens/0x6835dbf2d7d5852f84bf0a80de00cab3864f44b1/ledger.parquet
+  1,093 (8.29%) had no attributed trader and carry a null
+  3,169 distinct traders across the full history
+  span 1,787,859,370 - 1,790,686,579
+[13:11:07] HH: ledger DONE
+[13:11:07] AXON: transfers starting
+head 75,681,691
+transfers: scanning 74,068,889-75,681,691 (resuming)
+  tr   6.2%  block 74,168,888  span 100,000  logs 44  0s
+  tr  15.5%  block 74,318,888  span 150,000  logs 62  0s
+  tr  29.5%  block 74,543,888  span 225,000  logs 96  0s
+  tr  50.4%  block 74,881,388  span 337,500  logs 196  1s
+  tr  81.8%  block 75,387,638  span 506,250  logs 316  1s
+  tr 100.0%  block 75,681,691  span 759,375  logs 385  1s
+transfers: committed 74,068,889-75,681,691  +385 rows, 20,555 total
+{
+ "token": "0xb5e40b5f16996e9d76ec2b16e7a4ead3c06a9fa2",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    75681691
+   ]
+  ],
+  "rows": 20555
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-29T13:11:09Z"
+}
+[13:11:09] AXON: transfers DONE
+[13:11:10] AXON: pool 0x10a3d82f (v4/ETH) resuming from 74,069,396
+    0x10a3d82f   6.2% block 74,169,395 logs 15 0s
+    0x10a3d82f  15.5% block 74,319,395 logs 24 0s
+    0x10a3d82f  29.5% block 74,544,395 logs 39 0s
+    0x10a3d82f  50.4% block 74,881,895 logs 81 1s
+    0x10a3d82f  81.8% block 75,388,145 logs 127 1s
+    0x10a3d82f 100.0% block 75,681,706 logs 157 1s
+[13:11:10] AXON: pool 0x10a3d82f DONE, 7,930 swaps
+8,353 transactions moved this token
+{
+ "attributed": 7875,
+ "attributed_multi_swap": 40,
+ "ambiguous_multi_swap": 6,
+ "no_transfers": 8,
+ "no_counterparty": 1
+}
+  attributed 99.8% of 7,930 swaps
+  'recipient' matched the true holder on 17.7% of 7,915 comparable swaps
+wrote /home/user/Public/data/tokens/0xb5e40b5f16996e9d76ec2b16e7a4ead3c06a9fa2/swaps_attributed.parquet
+[13:11:11] AXON: attributed DONE
+7,930 trades -> /home/user/Public/data/tokens/0xb5e40b5f16996e9d76ec2b16e7a4ead3c06a9fa2/ledger.parquet
+  15 (0.19%) had no attributed trader and carry a null
+  1,625 distinct traders across the full history
+  span 1,789,930,124 - 1,790,684,048
+[13:11:11] AXON: ledger DONE
+[13:11:11] ERHA: transfers starting
+head 75,681,718
+transfers: scanning 74,069,837-75,681,718 (resuming)
+  tr   6.2%  block 74,169,836  span 100,000  logs 3  0s
+  tr  15.5%  block 74,319,836  span 150,000  logs 11  6s
+  tr  29.5%  block 74,544,836  span 225,000  logs 12  6s
+  tr  50.4%  block 74,882,336  span 337,500  logs 22  6s
+  tr  81.8%  block 75,388,586  span 506,250  logs 35  6s
+  tr 100.0%  block 75,681,718  span 759,375  logs 37  6s
+transfers: committed 74,069,837-75,681,718  +37 rows, 9,248 total
+{
+ "token": "0x997dfb8b8fe82d2ae314e09ba428eb93230f27e4",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    75681718
+   ]
+  ],
+  "rows": 9248
+ },
+ "swaps": {
+  "ranges": [],
+  "pool": null,
+  "protocol": null
+ },
+ "updated_at": "2026-09-29T13:11:19Z"
+}
+[13:11:19] ERHA: transfers DONE
+[13:11:19] ERHA: pool 0xb8d97045 (v4/ETH) resuming from 74,070,220
+    0xb8d97045   6.2% block 74,170,219 logs 1 0s
+    0xb8d97045  15.5% block 74,320,219 logs 4 0s
+    0xb8d97045  29.5% block 74,545,219 logs 5 0s
+    0xb8d97045  50.4% block 74,882,719 logs 9 1s
+    0xb8d97045  81.8% block 75,388,969 logs 16 1s
+    0xb8d97045 100.0% block 75,681,807 logs 18 1s
+[13:11:20] ERHA: pool 0xb8d97045 DONE, 3,488 swaps
+4,278 transactions moved this token
+{
+ "attributed": 3484,
+ "attributed_multi_swap": 3,
+ "ambiguous_multi_swap": 0,
+ "no_transfers": 0,
+ "no_counterparty": 1
+}
+  attributed 100.0% of 3,488 swaps
+  'recipient' matched the true holder on 20.2% of 3,487 comparable swaps
+wrote /home/user/Public/data/tokens/0x997dfb8b8fe82d2ae314e09ba428eb93230f27e4/swaps_attributed.parquet
+[13:11:21] ERHA: attributed DONE
+3,488 trades -> /home/user/Public/data/tokens/0x997dfb8b8fe82d2ae314e09ba428eb93230f27e4/ledger.parquet
+  1 (0.03%) had no attributed trader and carry a null
+  988 distinct traders across the full history
+  span 1,789,976,620 - 1,790,677,846
+[13:11:21] ERHA: ledger DONE
+[13:11:21] build finished

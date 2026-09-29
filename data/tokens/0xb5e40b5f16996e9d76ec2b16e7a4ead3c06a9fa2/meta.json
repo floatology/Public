@@ -4,15 +4,15 @@
   "ranges": [
    [
     1,
-    74073888
+    75681691
    ]
   ],
-  "rows": 20173
+  "rows": 20555
  },
  "swaps": {
   "ranges": [],
   "pool": null,
   "protocol": null
  },
- "updated_at": "2026-09-27T16:16:20Z"
+ "updated_at": "2026-09-29T13:11:09Z"
 }
