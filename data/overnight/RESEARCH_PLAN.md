@@ -46,7 +46,7 @@ is done: disable the hourly routine and leave the user a morning summary.
          lookahead, including cross-token smart-wallet entry signals.
 - [ ] 6. Evaluate each feature and combinations: precision, lift, split
          in/out of sample. data/research/eval.md.
-- [ ] 7. Daily-candle universe check for price-only patterns that survive 6.
+- [x] 7. Daily-candle universe check for price-only patterns that survive 6.
 - [ ] 8. Write docs/26 with the results and a live screen if anything holds.
 - [ ] 9. Morning summary for the user; disable the routine.
 
@@ -70,3 +70,5 @@ is done: disable the hourly routine and leave the user a morning summary.
 - ~17:55Z coverage (research_recall.py -> recall.md): sharp patterns (surge/new-wallet surge/wake-up) flag only 2-13% of the 179 legs (up to ~30% of 10x+ legs); common patterns (pullback reversal, smart wallets) precede ~75% but fire constantly. Most runs don't announce themselves; distinctive signals are rare and appear at ignition.
 - ~18:00Z trade sim (research_strategy.py -> strategy.md, 4% costs): ledger sample profitable, e.g. surge10+breadth TP2x/SL-50%/7d = 67% win, +50%/trade (27 trades); model top 0.5% TP2x/SL-30%/72h = 61% win, +48%. Hold-72h means huge but outlier-driven (medians +4..+44%). Must repeat on unbiased hourly data.
 - ~18:00Z launch window (age < 48h): research_eval.py --launch -> eval_launch.md.
+- ~18:10Z step 7 done (daily universe: research_daily.py, research_daily_model.py; walk-forward top picks 20-32% 2x3d, ~50% crash). Launch window on ledger coins = 72% base: pure selection bias, report as such.
+- ~18:10Z gt_hourly.py restarted in RANDOM order (so a partial fetch is unbiased); 38/1,162 done, ETA ~21:30Z. DO NOT use `pkill -f gt_hourly` from a shell whose own command line contains that text (it kills the calling shell). NEXT on each check-in: if fetch running, just re-arm the 20-min chain; at ~300+ tokens run research_hourly_universe.py for an interim read; when HOURLY_DONE: run it + a strategy sim on the unbiased data, then finish docs/26 sections 5-6, live screen if warranted, and the morning summary (step 9).
