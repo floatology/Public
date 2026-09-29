@@ -1523,3 +1523,15 @@
 2026-09-29T11:06:38Z  build starting for GME, PEEPS, Froggy, PORK (ETH $2,713.96)
 2026-09-29T11:06:38Z  GME: skipped (too heavy: over 600k transfers in one segment)
 2026-09-29T11:06:38Z  PEEPS: transfers starting
+2026-09-29T11:07:49Z  PEEPS: transfers DONE
+2026-09-29T11:07:50Z  PEEPS: pool 0x867230e3 (v3/WETH) fresh from 12,086,937
+2026-09-29T11:08:02Z  build starting for WALLET (ETH $2,717.12)
+2026-09-29T11:08:02Z  WALLET: transfers starting
+2026-09-29T11:08:15Z  WALLET: transfers DONE
+2026-09-29T11:08:16Z  WALLET: pool 0x9501a20b (v3/WETH) resuming from 75,591,616
+2026-09-29T11:08:21Z  WALLET: pool 0x9501a20b DONE, 277,514 swaps
+2026-09-29T11:08:21Z  WALLET: pool 0x89f2e48d (v4/USDG) resuming from 75,591,616
+2026-09-29T11:08:22Z  WALLET: pool 0x89f2e48d DONE, 18,067 swaps
+2026-09-29T11:08:33Z  WALLET: attributed DONE
+2026-09-29T11:08:41Z  WALLET: ledger DONE
+2026-09-29T11:08:42Z  build finished
