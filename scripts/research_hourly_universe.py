@@ -47,6 +47,23 @@ def heat_by_day():
             for d in daily if any(x in daily for x in (d - 1, d - 2, d - 3))}
 
 
+SERIES = {}   # token -> (hour0, close array, volume array), for the trade simulation
+COST = 0.04
+EXITS = [("TP 2x / SL -30% / 72h", 2.0, 0.30, 72), ("TP 2x / SL -50% / 7d", 2.0, 0.50, 168),
+         ("hold 72h", None, None, 72)]
+
+
+def sim(path, tp, sl, horizon):
+    """Entry at path[0] (next hour's close). TP filled at target, SL at the breaching close."""
+    e = path[0]
+    for p in path[1:horizon + 1]:
+        if tp and p >= tp * e:
+            return tp - 1 - COST
+        if sl and p <= (1 - sl) * e:
+            return p / e - 1 - COST
+    return path[min(horizon, len(path) - 1)] / e - 1 - COST
+
+
 def build():
     heat = heat_by_day()
     rows = []
@@ -73,6 +90,7 @@ def build():
         close = np.array(close, dtype=float)
         vol = np.array(vol, dtype=float)
         n = len(hours)
+        SERIES[r["token"]] = (h0, close, vol)
         cvol = np.concatenate([[0], np.cumsum(vol)])
         wsum = lambda a, b: cvol[max(b, 0)] - cvol[max(a, 0)]   # sum vol[a:b]
         for i in range(24, n - 1):
@@ -170,6 +188,28 @@ def main() -> None:
         lines.append(row(f"top {100 * f:g}%", order[:max(1, int(f * len(idx)))], bw))
     for c in (0.3, 0.4, 0.5, 0.6):
         lines.append(row(f"prob >= {c}", idx[p[idx] >= c], bw))
+
+    # Trade simulation on the same de-duplicated signals (entry = next hour's close).
+    lines += ["\n## Trade simulation (entry next hour's close, 4% round-trip cost)\n",
+              "| signal | exit rule | trades | mean | median | losing | TP hit |", "|---|---|---|---|---|---|---|"]
+    sigs = [(label, np.where(np.nan_to_num(m.astype(float)) > 0)[0]) for label, m in rules[:2]]
+    sigs += [(f"model top {100 * f:g}%", order[:max(1, int(f * len(idx)))]) for f in (0.005, 0.01, 0.02)]
+    sigs += [("every live token-hour (baseline)", allidx)]
+    for label, sel in sigs:
+        paths = []
+        for i in dedup(list(sel)):
+            h0, close, _ = SERIES[tok[i]]
+            k = (t[i] - h0) // 3600 + 1
+            pth = close[k:k + 169]
+            if len(pth) >= 24 and pth[0]:
+                paths.append(pth)
+        for rname, tp, sl, hz in EXITS:
+            r = np.array([sim(pth, tp, sl, hz) for pth in paths])
+            if not len(r):
+                continue
+            tph = np.mean(r >= (tp or 1e9) - 1 - COST - 1e-9) if tp else float("nan")
+            lines.append(f"| {label} | {rname} | {len(r)} | {100 * r.mean():+.0f}% | {100 * np.median(r):+.0f}% | "
+                         f"{100 * (r < 0).mean():.0f}% | {'' if tp is None else f'{100 * tph:.0f}%'} |")
     text = "\n".join(lines) + "\n"
     (ROOT / "data/research/hourly_universe.md").write_text(text)
     print(text)
