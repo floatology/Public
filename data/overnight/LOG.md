@@ -121,3 +121,4 @@
 2026-09-29T12:07:32Z batch2 build starting: GME
 2026-09-29T12:07:34Z keep-alive: dead (hourly trigger restart); build stage complete, resuming reprice+backtest
 2026-09-29T12:13:38Z batch2 built and repriced; running wallet backtests
+2026-09-29T12:18:22Z wallet backtests done
