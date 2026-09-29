@@ -151,6 +151,13 @@
     "why": "9 buys, $40.4k total, zero sells: 4 buys $18.6k on 22 Sep at ~$0.026, quiet 5 days, then 5 more buys through the breakout including two back-to-back on 28 Sep 13:34-13:35 UTC ($5.4k + $5.5k) at ~$0.039.",
     "added": "2026-09-28",
     "active": true
+   },
+   {
+    "address": "0x7e4a4cab1b75df99a88e0d9aa3999845271f7bd8",
+    "label": "long-time trader, fully exited",
+    "why": "18 buys ($36.7k in) / 18 sells ($77k out) since Jul, net realised +$40.4k. Closed its entire remaining position with a single $17.9k sell on 29 Sep. Watching for re-entry.",
+    "added": "2026-09-29",
+    "active": true
    }
   ]
  },
