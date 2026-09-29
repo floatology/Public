@@ -32,7 +32,10 @@ def main() -> int:
         if live >= 3:
             first = s["seq"][0]["d"] * 86400
             todo.append((live, tok, s["main_pool"], first, s.get("symbol")))
-    todo.sort(reverse=True)
+    # Random order (fixed seed): if the fetch is cut short, what has been fetched
+    # is still a fair sample, not the longest-lived survivors first.
+    import random
+    random.Random(7).shuffle(todo)
     done = set()
     if OUT.exists():
         for line in OUT.read_text().splitlines():
