@@ -24,3 +24,4 @@ data/gt_candles.json
 data/live_candles.json
 data/overnight/build_batch2.log
 data/research/cache/
+data/chain/hourly.jsonl
