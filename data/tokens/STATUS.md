@@ -1535,3 +1535,9 @@
 2026-09-29T11:08:33Z  WALLET: attributed DONE
 2026-09-29T11:08:41Z  WALLET: ledger DONE
 2026-09-29T11:08:42Z  build finished
+2026-09-29T11:09:50Z  PEEPS: pool 0x867230e3 DONE, 58,292 swaps
+2026-09-29T11:09:52Z  PEEPS: attributed DONE
+2026-09-29T11:09:54Z  PEEPS: ledger DONE
+2026-09-29T11:09:54Z  Froggy: transfers starting
+2026-09-29T11:10:27Z  Froggy: transfers DONE
+2026-09-29T11:10:28Z  Froggy: pool 0x767cdbcd (v4/ETH) fresh from 28,739,779
