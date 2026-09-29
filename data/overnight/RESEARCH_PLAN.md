@@ -44,11 +44,11 @@ is done: disable the hourly routine and leave the user a morning summary.
          cross-token "smart wallets" in the 72h before. data/research/case_studies.md.
 - [x] 5. Hypothesis features (from 1 + 4), computed per token-hour with no
          lookahead, including cross-token smart-wallet entry signals.
-- [ ] 6. Evaluate each feature and combinations: precision, lift, split
+- [x] 6. Evaluate each feature and combinations: precision, lift, split
          in/out of sample. data/research/eval.md.
 - [x] 7. Daily-candle universe check for price-only patterns that survive 6.
-- [ ] 8. Write docs/26 with the results and a live screen if anything holds.
-- [ ] 9. Morning summary for the user; disable the routine.
+- [x] 8. Write docs/26 with the results and a live screen if anything holds.
+- [x] 9. Morning summary for the user; disable the routine.
 
 ## Log
 - ~16:5xZ step 1 done: data/research/literature.md (8 testable claims; main new lever is WHO buys: cross-token smart wallets, coordinated fresh wallets).
@@ -75,3 +75,4 @@ is done: disable the hourly routine and leave the user a morning summary.
 - ~17:56Z fetch had died at 119/1,162 (no HOURLY_DONE); restarted, ~13 pools/min, ETA ~19:20Z.
 - ~18:06Z fetch died again at 164 (nohup process doesn't survive idle turns); relaunched as a harness-tracked background task instead.
 - ~19:10Z INTERIM unbiased hourly (829/1,162 fetched; 627 tokens usable, 323k live token-hours) -> hourly_universe.md: base 16% 2x72h / 23% crash. Model top 0.5-2% = 34-36% 2x72h (2.2-2.4x lift) but ~50% crash first; simple rules 25-34%. Trade sim (4% cost): TP/SL exits ~breakeven (-5%..+8%/trade, baseline +5%); hold-72h means driven by a few extreme outliers, medians negative. The ledger-sample 50-60% was selection bias. NEXT: final run at HOURLY_DONE, then docs/26 sections 5-6 and morning summary.
+- ~19:45Z FINAL unbiased hourly (all 1,162 fetched; 870 usable, 427k token-hours): base 16% 2x72h / 23% crash; best selections 30-35% (1.9-2.3x lift), model top picks crash first 50%+; trade sim ~= random baseline (surge20 TP2x/SL-50%/7d +8% vs baseline +5%; model top picks slightly negative). Hold-72h means are lottery tails (median loses). Ledger 50-60% = selection bias. docs/26 sections 5-6 written (no live screen). Steps 6, 8, 9 ticked; routine disabled.

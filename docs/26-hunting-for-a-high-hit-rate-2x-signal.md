@@ -18,9 +18,9 @@ came before each, and test every candidate across all coins.
   are inflated.
 - **Daily, unbiased:** 4,029 tokens with daily candles, delisted coins
   included (`candle_backtest.build_series`).
-- **Hourly, unbiased** *(fetching overnight)*: GeckoTerminal hourly candles
-  for the main pool of all 1,162 tokens that ever had 3+ days of $1k+ volume
-  (`gt_hourly.py`).
+- **Hourly, unbiased:** GeckoTerminal hourly candles for the main pool of all
+  1,162 tokens that ever had 3+ days of $1k+ volume (`gt_hourly.py`); 870
+  have enough history, giving 427k live token-hours (>= $1k volume in 24h).
 - **Events:** 252 up-legs of 2x+ (zigzag on hourly VWAP); 185 in coins at
   least two days old, 31 of them 10x+ (`research_events.py`, `events.csv`).
 
@@ -94,6 +94,66 @@ negative result.
   ~40% 2x in 72h; unbiased daily: ~15% 2x in 3 days vs 8% for 2-8 week-old
   coins) — and crash more (~30%).
 
-*(Pending: the unbiased hourly test on all 1,162 active coins decides whether
-the 50-60% top-pick hit rate is real or an artefact of the hand-picked
-sample. Sections 5-6 — verdict and live screen — follow when it lands.)*
+## 5. The decisive test: every active coin, hourly (verdict)
+
+`data/research/hourly_universe.md` (`research_hourly_universe.py`). Same
+price/volume features, same walk-forward, but on all 870 active coins instead
+of 65 hand-picked ones. Base: 16% of de-duplicated coin-hours see a 2x
+within 72h; 23% halve first.
+
+| selection | events | tokens | 2x in 72h | 2x in 7d | crash first | lift |
+|---|---|---|---|---|---|---|
+| coins 1-2 days old (base) | — | — | 30% | — | 42% | — |
+| coins 30+ days old (base) | — | — | 10% | — | 15% | — |
+| volume surge >= 20x | 645 | 380 | 26% | 33% | 26% | 1.6x |
+| momentum +50% in 24h | 2,533 | 704 | 27% | 39% | 39% | 1.7x |
+| pullback reversal + surge 5x | 735 | 389 | 29% | 37% | 36% | 1.8x |
+| 2-7 day old coin + surge 10x | 183 | 174 | 30% | 36% | 32% | 1.9x |
+| model top 0.5% (walk-forward) | 162 | 134 | **35%** | 41% | **56%** | 2.3x |
+| model top 2% | 445 | 325 | 32% | 41% | 49% | 2.1x |
+
+**The 50-60% hit rate on the ledger coins does not survive.** On an unbiased
+universe the best selections top out at ~30-35% for a 2x in 72h — about
+twice the base rate — and the same selections crash first 50%+ of the time.
+The ledger result was mostly selection bias (coins chosen partly because
+they ran).
+
+**Trading it** (entry next hour's close, 4% round-trip cost):
+
+| signal | exit | trades | mean | mean w/o top 1% | median | losing |
+|---|---|---|---|---|---|---|
+| surge >= 20x | TP 2x / SL -50% / 7d | 645 | +8% | +7% | -11% | 61% |
+| model top 1% | TP 2x / SL -50% / 7d | 249 | -2% | -3% | -54% | 65% |
+| every live coin-hour (baseline) | TP 2x / SL -50% / 7d | 6,916 | +5% | +4% | -8% | 61% |
+| surge >= 20x | hold 72h | 645 | +404% | +37% | -10% | 67% |
+| every live coin-hour (baseline) | hold 72h | 6,916 | +82% | +7% | -7% | 65% |
+
+With disciplined exits, nothing beats buying at random by a meaningful
+margin; the model's top picks do slightly worse (they are the most volatile
+coins, so they hit the stop more). Holding looks spectacular on the mean, but
+that comes from a few dozen 20x-1,700x runs (a handful are thin-print
+artefacts); the median trade loses and two in three trades lose. It is a
+lottery-ticket payoff, not a hit rate.
+
+## 6. What this means — no high-hit-rate screen
+
+No live screen is published: nothing tested — smart money (three
+definitions), bundled or fresh-wallet flow, volume surges, momentum,
+pullback reversals, regime, second legs, or a model combining all of them —
+reaches a hit rate that is high in absolute terms on unbiased data. The
+realistic ceiling at hourly resolution is ~1 in 3 for a 2x within three
+days, with ~1 in 2 halving first.
+
+What does hold, and is usable as a *filter* rather than a signal:
+1. **Age is the biggest single factor.** Coins 1-7 days old double 2-3x as
+   often as month-old coins, and crash about as much more often.
+2. **A volume surge (>= 10-20x trailing rate) roughly doubles the odds** and,
+   unlike momentum or the model, does *not* raise the crash rate much
+   (26% vs 23% base). It is the least-bad trigger found.
+3. **Wallet data adds nothing to timing** once price and volume are known;
+   its value remains in reading a coin you already hold (who is
+   distributing, docs/24-25), not in finding the next 2x.
+4. Any strategy here is a volatility bet: many small positions, fixed size,
+   accept that most lose, and let the rare 10x+ carry the book. Hit rate is
+   the wrong target; the right one is keeping losers small enough that the
+   tail pays for them.
