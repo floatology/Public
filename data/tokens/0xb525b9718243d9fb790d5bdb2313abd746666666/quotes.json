@@ -1,14 +1,14 @@
 {
- "priced_at": "2026-09-29T07:10:44Z",
- "eth_usd": 2706.074,
+ "priced_at": "2026-09-29T12:13:23Z",
+ "eth_usd": 2728.85,
  "pools": {
   "0x1602f58e62adb60927ec314145a19617507dfb78": {
-   "quote_usd": 2706.074,
+   "quote_usd": 2728.85,
    "decimals": 18,
    "symbol": "WETH"
   },
   "0xd7965cd1198ec7a85ce45b5c70dd99f9eddcea23": {
-   "quote_usd": 0.007711,
+   "quote_usd": 0.00835,
    "decimals": 18,
    "symbol": "STONKBROKER"
   }

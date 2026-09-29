@@ -1554,3 +1554,13 @@
 2026-09-29T12:07:36Z  build starting for GME (ETH $2,728.85)
 2026-09-29T12:07:36Z  GME: skipped (too heavy: over 600k transfers in one segment)
 2026-09-29T12:07:36Z  build finished
+2026-09-29T12:14:54Z  build starting for WALLET (ETH $2,731.28)
+2026-09-29T12:14:54Z  WALLET: transfers starting
+2026-09-29T12:15:01Z  WALLET: transfers DONE
+2026-09-29T12:15:03Z  WALLET: pool 0x9501a20b (v3/WETH) resuming from 75,603,425
+2026-09-29T12:15:08Z  WALLET: pool 0x9501a20b DONE, 277,585 swaps
+2026-09-29T12:15:08Z  WALLET: pool 0x89f2e48d (v4/USDG) resuming from 75,603,425
+2026-09-29T12:15:09Z  WALLET: pool 0x89f2e48d DONE, 18,082 swaps
+2026-09-29T12:15:18Z  WALLET: attributed DONE
+2026-09-29T12:15:29Z  WALLET: ledger DONE
+2026-09-29T12:15:29Z  build finished

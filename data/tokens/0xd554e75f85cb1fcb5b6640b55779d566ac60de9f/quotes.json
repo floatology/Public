@@ -1,9 +1,9 @@
 {
- "priced_at": "2026-09-29T11:12:11Z",
- "eth_usd": 2713.96,
+ "priced_at": "2026-09-29T12:13:37Z",
+ "eth_usd": 2728.85,
  "pools": {
   "0x767cdbcdfa957c38af2dcee8fbc4a15a8436b06b2a28855ea738b1d4c6393fc5": {
-   "quote_usd": 2713.96,
+   "quote_usd": 2728.85,
    "decimals": 18,
    "symbol": "ETH"
   }
