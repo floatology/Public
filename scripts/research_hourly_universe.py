@@ -191,7 +191,7 @@ def main() -> None:
 
     # Trade simulation on the same de-duplicated signals (entry = next hour's close).
     lines += ["\n## Trade simulation (entry next hour's close, 4% round-trip cost)\n",
-              "| signal | exit rule | trades | mean | median | losing | TP hit |", "|---|---|---|---|---|---|---|"]
+              "| signal | exit rule | trades | mean | mean w/o top 1% | median | losing | TP hit |", "|---|---|---|---|---|---|---|---|"]
     sigs = [(label, np.where(np.nan_to_num(m.astype(float)) > 0)[0]) for label, m in rules[:2]]
     sigs += [(f"model top {100 * f:g}%", order[:max(1, int(f * len(idx)))]) for f in (0.005, 0.01, 0.02)]
     sigs += [("every live token-hour (baseline)", allidx)]
@@ -208,7 +208,7 @@ def main() -> None:
             if not len(r):
                 continue
             tph = np.mean(r >= (tp or 1e9) - 1 - COST - 1e-9) if tp else float("nan")
-            lines.append(f"| {label} | {rname} | {len(r)} | {100 * r.mean():+.0f}% | {100 * np.median(r):+.0f}% | "
+            lines.append(f"| {label} | {rname} | {len(r)} | {100 * r.mean():+.0f}% | {100 * np.sort(r)[:len(r) - max(1, len(r) // 100)].mean() if len(r) > 1 else float('nan'):+.0f}% | {100 * np.median(r):+.0f}% | "
                          f"{100 * (r < 0).mean():.0f}% | {'' if tp is None else f'{100 * tph:.0f}%'} |")
     text = "\n".join(lines) + "\n"
     (ROOT / "data/research/hourly_universe.md").write_text(text)
