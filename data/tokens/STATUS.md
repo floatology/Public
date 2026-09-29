@@ -1257,3 +1257,14 @@
 2026-09-28T23:54:48Z  TA: transfers starting
 2026-09-28T23:54:58Z  TA: transfers DONE
 2026-09-28T23:54:59Z  TA: pool 0x80526500 (v4/ETH) resuming from 44,796,633
+2026-09-28T23:58:29Z  TA: pool 0x80526500 DONE, 205,686 swaps
+2026-09-28T23:58:37Z  TA: attributed DONE
+2026-09-28T23:58:41Z  TA: ledger DONE
+2026-09-28T23:58:41Z  KITSU: transfers starting
+2026-09-29T00:04:21Z  KITSU: transfers DONE
+2026-09-29T00:04:22Z  KITSU: pool 0xff4ba5ff (v3/WETH) fresh from 62,881
+2026-09-29T00:06:39Z  build starting for GME, KITSU, WOJAK, HMM, MANCER, NASDANQ, BAG, MOONCOW, CLOCKIN, FLOPS, WELOVECATS, FRIDAY, RHPS, SNOW, TUX, PEPE, PEEPS, Froggy, PORK (ETH $2,689.14)
+2026-09-29T00:06:39Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-29T00:06:39Z  KITSU: transfers starting
+2026-09-29T00:06:44Z  KITSU: transfers DONE
+2026-09-29T00:06:45Z  KITSU: pool 0xff4ba5ff (v3/WETH) fresh from 62,881
