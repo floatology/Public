@@ -1514,3 +1514,12 @@
 2026-09-29T10:52:59Z  TUX: attributed DONE
 2026-09-29T10:53:00Z  TUX: ledger DONE
 2026-09-29T10:53:00Z  PEPE: transfers starting
+2026-09-29T10:55:37Z  PEPE: transfers DONE
+2026-09-29T10:55:37Z  PEPE: pool 0x0d389c0c (v3/WETH) fresh from 38,096,573
+2026-09-29T10:57:13Z  PEPE: pool 0x0d389c0c DONE, 39,819 swaps
+2026-09-29T10:57:14Z  PEPE: attributed DONE
+2026-09-29T10:57:15Z  PEPE: ledger DONE
+2026-09-29T10:57:15Z  PEEPS: transfers starting
+2026-09-29T11:06:38Z  build starting for GME, PEEPS, Froggy, PORK (ETH $2,713.96)
+2026-09-29T11:06:38Z  GME: skipped (too heavy: over 600k transfers in one segment)
+2026-09-29T11:06:38Z  PEEPS: transfers starting
