@@ -1,0 +1,11 @@
+{
+ "priced_at": "2026-09-29T10:52:59Z",
+ "eth_usd": 2711.17,
+ "pools": {
+  "0xa3b88a160e23b593a80bed0e986a3c8e0ae0bbe224f1dd819b26422dec276296": {
+   "quote_usd": 221.55,
+   "decimals": 18,
+   "symbol": "IBM"
+  }
+ }
+}
