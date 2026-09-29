@@ -1,255 +1,255 @@
 {
-  "_about": "Wallets to report on every rerun of token-forensics while they stay relevant. scripts/watch_wallets.py reads this, reports each wallet's activity since last_checked, then advances last_checked. Retire a wallet by setting active=false with a reason; never delete, so the history of why it was watched survives.",
-  "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
-    "name": "WALLET",
-    "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
-    "last_checked": 1790723605,
-    "wallets": [
-      {
-        "address": "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
-        "label": "crash leader, re-accumulating",
-        "why": "Held since 12 Jul; sold 1.91% for $454k in the 17 Sep crash, bought 1.23% back after. Largest re-accumulator. Possibly one operator with 0x1988 (co-timing 14% vs 2.9% at the 95th percentile; near-identical trading history).",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0xc7a0c8467b24170318e3eb3f21fe9ae20a5a1ced",
-        "label": "crash seller, re-accumulating",
-        "why": "Sold 0.35% in the crash, bought 0.45% back at ~$0.019 including one $77.5k buy on 21 Sep.",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0x19885325e9a4bbd5ce3e326c954e4730a8ab9f70",
-        "label": "crash seller, re-accumulating",
-        "why": "Sold 0.34% in the crash, bought 0.42% back. Possible second address of 0x5364.",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0x5a7a61face3c7bf578098ad80fe7e7c471b4277c",
-        "label": "launch-day holder, dip buyer",
-        "why": "Bought 10 Jul at ~$0.002; up ~$295k overall. Diversified memecoin trader (STATICS, ASKR, MONEY, EARN, LIGHT...).",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0x5173d36f9ef0c78a8a6d6e3d653b3bf6b6e08dfd",
-        "label": "top profit-taker, still selling",
-        "why": "Largest realised profit on the token (~$394k overall); net seller over the last week.",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0x02f5b2818b8d52832b06cd05673b7d5cf1d1f3f3",
-        "label": "liquidity puller / distributor",
-        "why": "Pulled 16.48 ETH of bid liquidity 10h before the 17 Sep crash; has sent 2.9% of supply to market over its life.",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0xa600504dbd6f5a69a6cf15da0788eed57d088be8",
-        "label": "liquidity puller / one-way seller",
-        "why": "Pulled 9.14 ETH of bid liquidity 34 min before the crash cascade; 15 sells, no buys in the week before.",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0x31c83a891dec2ff9caa21d1b93c7f0e976895dd9",
-        "label": "doubling-move top buyer, forwards tokens",
-        "why": "Largest net buyer of the 27-28 Sep doubling: +$66k (0.322%) at avg $0.0207, early in the move. First seen 11 Jul. Holds only ~0.026% itself, so it moved the tokens to another wallet; trace where they went.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0x275b2edbc7c4413dbecff9ef37ba9214758e3b13",
-        "label": "doubling-move big buyer",
-        "why": "Net +$42k in the 27-28 Sep doubling. First seen Sep.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0x8c1fc660fc56beb49a657276c7692cc6ad98349e",
-        "label": "doubling-move big buyer",
-        "why": "Net +$38k in the 27-28 Sep doubling. First seen late Jul.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0xad51e4b06de14812286a496c399096d9a5abf00d",
-        "label": "former big loser, chasing",
-        "why": "Net +$47k in the 27-28 Sep doubling at avg $0.0372, late in the move. First seen 13 Sep; a big loser earlier in September.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0xd49a203d930fea83df02af0c34ee603777b5fa5c",
-        "label": "late doubling-move buyer",
-        "why": "Net +$31.7k 27-28 Sep at avg $0.0400, mostly after 01:00 UTC 28 Sep near the highs. First seen 26 Sep.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0x047635e0cbe4130f105666674106222fb0d68057",
-        "label": "late doubling-move buyer",
-        "why": "Net +$28.9k 27-28 Sep at avg $0.0426, bought at the top of the move. First seen 16 Sep.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0x2cd2194f074261d811138a1e0112d6631549cdd1",
-        "label": "doubling-move buyer",
-        "why": "Net +$28.3k 27-28 Sep at avg $0.0306. First seen 14 Sep.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0x63b8398227c8704bc4b3276be15e920d894ac41a",
-        "label": "new wallet, bought the highs and the dip",
-        "why": "First seen 28 Sep; net +$39.4k 03:30-05:00 UTC at avg $0.0457 over 38 trades, kept buying through the 04:48 wick to $0.0404.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0xa9fd0680aa3fef4dcbdd68b178d5179eb1c1246d",
-        "label": "#1 real whale (3.5% of supply), 0x31c8 is its buy/sell proxy",
-        "why": "Verified against a viral tweet claim: holds 33,333,366 tokens (3.524%), the largest real (non-pool, non-burn) holder. 0x31c8...5dd9 (already watched) acts as its trading proxy: sold 3.5M tokens on its behalf on 20 Sep, then bought ~3.22M more on 27 Sep during the breakout and forwarded it here, keeping only dust itself.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0x813ab764fd2a34eaff4713a89b6087ff5d6ccc08",
-        "label": "new big buyer, 117% breakout",
-        "why": "Net +$32.7k in the 24h to 28 Sep 12:16 UTC at avg $0.0378, during the run to $0.0394.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0xee1b93f6b630851a37d15dbe604482a9b39a8ebb",
-        "label": "new big buyer, 117% breakout",
-        "why": "Net +$32.7k in the 24h to 28 Sep 12:16 UTC at avg $0.0385, during the run to $0.0394.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0xb2c2ccde2a6f1242808345948f62e19761ff4237",
-        "label": "new big buyer, 117% breakout",
-        "why": "Net +$32.1k in the 24h to 28 Sep 12:16 UTC at avg $0.0395, during the run to $0.0394.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0xc17c1b115f9ef355c13c5448cc981810aad6e7c7",
-        "label": "new big buyer, 117% breakout",
-        "why": "Net +$26.1k in the 24h to 28 Sep 12:16 UTC at avg $0.0413, during the run to $0.0394.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0x03d4719e44f885b3de27f7ea34afd9aef5b92e41",
-        "label": "repeat accumulator, never sold",
-        "why": "9 buys, $40.4k total, zero sells: 4 buys $18.6k on 22 Sep at ~$0.026, quiet 5 days, then 5 more buys through the breakout including two back-to-back on 28 Sep 13:34-13:35 UTC ($5.4k + $5.5k) at ~$0.039.",
-        "added": "2026-09-28",
-        "active": true
-      },
-      {
-        "address": "0x7e4a4cab1b75df99a88e0d9aa3999845271f7bd8",
-        "label": "long-time trader, fully exited",
-        "why": "18 buys ($36.7k in) / 18 sells ($77k out) since Jul, net realised +$40.4k. Closed its entire remaining position with a single $17.9k sell on 29 Sep. Watching for re-entry.",
-        "added": "2026-09-29",
-        "active": true
-      },
-      {
-        "address": "0xe089ec6b790d6e274236c5883f079e615b96a3aa",
-        "label": "long-time trader, bought the breakdown",
-        "why": "Trading since 11 Jul (139 trades, ~$256k in / $231k out, realised +$24k). Auto-added as a $25k+ net buyer over 24h (+$46.9k): 4 separate buys ($5.4k, $5.4k, $8.1k, $9.7k) from $0.033 down to $0.0274 as $0.035 support broke on 29 Sep 23:05-23:13, catching 0x2cd2's $72k dump. Holds 1.51M tokens (0.16%). No transfer link to other watched wallets.",
-        "added": "2026-09-29",
-        "active": true
-      }
-    ]
-  },
-  "0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3": {
-    "name": "ORBIO",
-    "pool": "0xea9f200e13055b82f175f44f592c4c13dd8c9d9320a66487d3c5cd90d68550ef",
-    "last_checked": 1790688168,
-    "wallets": [
-      {
-        "address": "0xb02208d1b27811480cf6171bccc2b7af9513cddb",
-        "label": "new whale, first buy is its whole position",
-        "why": "First seen 28 Sep 17:04 UTC; net +$124.5k in a single burst of 10 trades (~7s), still holding all of it (~$120.7k, 0.168% of supply). No prior history.",
-        "added": "2026-09-29",
-        "active": true
-      },
-      {
-        "address": "0x22357b1276fdcdebe20475c9654a2aa63af42600",
-        "label": "consistent accumulator",
-        "why": "Trading since ~20-21 Sep; net +$162.4k lifetime across 45 trades, holds ~$166.3k (0.226% of supply). Added another $49.8k over several hours in the 24h to 29 Sep.",
-        "added": "2026-09-29",
-        "active": true
-      },
-      {
-        "address": "0x9337ce7e633230aa6f32e3c10d0a26aedf92a82b",
-        "label": "new whale, steady buyer",
-        "why": "First seen 28 Sep 17:06 UTC (same window as 0xb022); net +$29.2k over 18 trades spread across ~19h, holds ~$28.9k (0.168% of supply).",
-        "added": "2026-09-29",
-        "active": true
-      },
-      {
-        "address": "0x2836056c5d02dde4d2887e8dcea7db15e5f93aa2",
-        "label": "brand-new whale",
-        "why": "First seen 29 Sep, same day; net +$29.9k in 4 trades, holds ~$32.1k (0.164% of supply).",
-        "added": "2026-09-29",
-        "active": true
-      }
-    ]
-  },
-  "0x6835dbf2d7d5852f84bf0a80de00cab3864f44b1": {
-    "name": "HH",
-    "pool": "0x34321f090a123d52473ae1a2473e8ed97dd9f770",
-    "last_checked": 1790686579,
-    "wallets": [
-      {
-        "address": "0xd2f8235aa89306c364a950f43163830573208c33",
-        "label": "deployer's 10% allocation",
-        "why": "Received 10% of supply from the deployer on 28 Aug and has never moved it. Any movement is material.",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0xcc964f8fe70d79cb3a03585aed329a4c644c9a69",
-        "label": "deployer",
-        "why": "Minted supply; reset the launch price by selling 17.9% into an empty pool.",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0x1b37dd78e230ed8247df2b8f2ee47c51ac1b3793",
-        "label": "deployer-funded buyback contract",
-        "why": "329 identical-size buys since 22 Sep, zero sells. Watch for it stopping. Stopped: last buy 26 Sep 22:59 UTC (checked 27 Sep 14:20).",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0xf24d97ee91025733aa48d898371affb564638d28",
-        "label": "largest early buyer",
-        "why": "Bought 17% of supply for $6.2k on 31 Aug; staked about half; ~$159k open.",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0xf9ab5f4d82716311668a259da3549cf9b7856a89",
-        "label": "staking/lock contract (28%)",
-        "why": "Withdrawals from here are unlocks entering the float.",
-        "added": "2026-09-27",
-        "active": true
-      },
-      {
-        "address": "0x81a3fcad15dbd4ffea426669cc61b35b4bf5509a",
-        "label": "distributor source, unstaking",
-        "why": "Sent 19.5% of supply to distributor contract 0x9e60; deposited into staking 7 Sep; withdrew 0.143% from staking on 27 Sep. Watch for further unstaking or sales.",
-        "added": "2026-09-27",
-        "active": true
-      }
-    ]
-  }
+ "_about": "Wallets to report on every rerun of token-forensics while they stay relevant. scripts/watch_wallets.py reads this, reports each wallet's activity since last_checked, then advances last_checked. Retire a wallet by setting active=false with a reason; never delete, so the history of why it was watched survives.",
+ "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
+  "name": "WALLET",
+  "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
+  "last_checked": 1790723605,
+  "wallets": [
+   {
+    "address": "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
+    "label": "crash leader, re-accumulating",
+    "why": "Held since 12 Jul; sold 1.91% for $454k in the 17 Sep crash, bought 1.23% back after. Largest re-accumulator. Possibly one operator with 0x1988 (co-timing 14% vs 2.9% at the 95th percentile; near-identical trading history).",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0xc7a0c8467b24170318e3eb3f21fe9ae20a5a1ced",
+    "label": "crash seller, re-accumulating",
+    "why": "Sold 0.35% in the crash, bought 0.45% back at ~$0.019 including one $77.5k buy on 21 Sep.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x19885325e9a4bbd5ce3e326c954e4730a8ab9f70",
+    "label": "crash seller, re-accumulating",
+    "why": "Sold 0.34% in the crash, bought 0.42% back. Possible second address of 0x5364.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x5a7a61face3c7bf578098ad80fe7e7c471b4277c",
+    "label": "launch-day holder, dip buyer",
+    "why": "Bought 10 Jul at ~$0.002; up ~$295k overall. Diversified memecoin trader (STATICS, ASKR, MONEY, EARN, LIGHT...).",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x5173d36f9ef0c78a8a6d6e3d653b3bf6b6e08dfd",
+    "label": "top profit-taker, still selling",
+    "why": "Largest realised profit on the token (~$394k overall); net seller over the last week.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x02f5b2818b8d52832b06cd05673b7d5cf1d1f3f3",
+    "label": "liquidity puller / distributor",
+    "why": "Pulled 16.48 ETH of bid liquidity 10h before the 17 Sep crash; has sent 2.9% of supply to market over its life.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0xa600504dbd6f5a69a6cf15da0788eed57d088be8",
+    "label": "liquidity puller / one-way seller",
+    "why": "Pulled 9.14 ETH of bid liquidity 34 min before the crash cascade; 15 sells, no buys in the week before.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x31c83a891dec2ff9caa21d1b93c7f0e976895dd9",
+    "label": "doubling-move top buyer, forwards tokens",
+    "why": "Largest net buyer of the 27-28 Sep doubling: +$66k (0.322%) at avg $0.0207, early in the move. First seen 11 Jul. Holds only ~0.026% itself, so it moved the tokens to another wallet; trace where they went.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x275b2edbc7c4413dbecff9ef37ba9214758e3b13",
+    "label": "doubling-move big buyer",
+    "why": "Net +$42k in the 27-28 Sep doubling. First seen Sep.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x8c1fc660fc56beb49a657276c7692cc6ad98349e",
+    "label": "doubling-move big buyer",
+    "why": "Net +$38k in the 27-28 Sep doubling. First seen late Jul.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xad51e4b06de14812286a496c399096d9a5abf00d",
+    "label": "former big loser, chasing",
+    "why": "Net +$47k in the 27-28 Sep doubling at avg $0.0372, late in the move. First seen 13 Sep; a big loser earlier in September.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xd49a203d930fea83df02af0c34ee603777b5fa5c",
+    "label": "late doubling-move buyer",
+    "why": "Net +$31.7k 27-28 Sep at avg $0.0400, mostly after 01:00 UTC 28 Sep near the highs. First seen 26 Sep.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x047635e0cbe4130f105666674106222fb0d68057",
+    "label": "late doubling-move buyer",
+    "why": "Net +$28.9k 27-28 Sep at avg $0.0426, bought at the top of the move. First seen 16 Sep.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x2cd2194f074261d811138a1e0112d6631549cdd1",
+    "label": "doubling-move buyer",
+    "why": "Net +$28.3k 27-28 Sep at avg $0.0306. First seen 14 Sep.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x63b8398227c8704bc4b3276be15e920d894ac41a",
+    "label": "new wallet, bought the highs and the dip",
+    "why": "First seen 28 Sep; net +$39.4k 03:30-05:00 UTC at avg $0.0457 over 38 trades, kept buying through the 04:48 wick to $0.0404.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xa9fd0680aa3fef4dcbdd68b178d5179eb1c1246d",
+    "label": "#1 real whale (3.5% of supply), 0x31c8 is its buy/sell proxy",
+    "why": "Verified against a viral tweet claim: holds 33,333,366 tokens (3.524%), the largest real (non-pool, non-burn) holder. 0x31c8...5dd9 (already watched) acts as its trading proxy: sold 3.5M tokens on its behalf on 20 Sep, then bought ~3.22M more on 27 Sep during the breakout and forwarded it here, keeping only dust itself.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x813ab764fd2a34eaff4713a89b6087ff5d6ccc08",
+    "label": "new big buyer, 117% breakout",
+    "why": "Net +$32.7k in the 24h to 28 Sep 12:16 UTC at avg $0.0378, during the run to $0.0394.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xee1b93f6b630851a37d15dbe604482a9b39a8ebb",
+    "label": "new big buyer, 117% breakout",
+    "why": "Net +$32.7k in the 24h to 28 Sep 12:16 UTC at avg $0.0385, during the run to $0.0394.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xb2c2ccde2a6f1242808345948f62e19761ff4237",
+    "label": "new big buyer, 117% breakout",
+    "why": "Net +$32.1k in the 24h to 28 Sep 12:16 UTC at avg $0.0395, during the run to $0.0394.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0xc17c1b115f9ef355c13c5448cc981810aad6e7c7",
+    "label": "new big buyer, 117% breakout",
+    "why": "Net +$26.1k in the 24h to 28 Sep 12:16 UTC at avg $0.0413, during the run to $0.0394.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x03d4719e44f885b3de27f7ea34afd9aef5b92e41",
+    "label": "repeat accumulator, never sold",
+    "why": "9 buys, $40.4k total, zero sells: 4 buys $18.6k on 22 Sep at ~$0.026, quiet 5 days, then 5 more buys through the breakout including two back-to-back on 28 Sep 13:34-13:35 UTC ($5.4k + $5.5k) at ~$0.039.",
+    "added": "2026-09-28",
+    "active": true
+   },
+   {
+    "address": "0x7e4a4cab1b75df99a88e0d9aa3999845271f7bd8",
+    "label": "long-time trader, fully exited",
+    "why": "18 buys ($36.7k in) / 18 sells ($77k out) since Jul, net realised +$40.4k. Closed its entire remaining position with a single $17.9k sell on 29 Sep. Watching for re-entry.",
+    "added": "2026-09-29",
+    "active": true
+   },
+   {
+    "address": "0xe089ec6b790d6e274236c5883f079e615b96a3aa",
+    "label": "long-time trader, bought the breakdown",
+    "why": "Trading since 11 Jul (139 trades, ~$256k in / $231k out, realised +$24k). Auto-added as a $25k+ net buyer over 24h (+$46.9k): 4 separate buys ($5.4k, $5.4k, $8.1k, $9.7k) from $0.033 down to $0.0274 as $0.035 support broke on 29 Sep 23:05-23:13, catching 0x2cd2's $72k dump. Holds 1.51M tokens (0.16%). No transfer link to other watched wallets.",
+    "added": "2026-09-29",
+    "active": true
+   }
+  ]
+ },
+ "0xaa07a0e9209e16ac99708c3ec70159c6ef3128a3": {
+  "name": "ORBIO",
+  "pool": "0xea9f200e13055b82f175f44f592c4c13dd8c9d9320a66487d3c5cd90d68550ef",
+  "last_checked": 1790688168,
+  "wallets": [
+   {
+    "address": "0xb02208d1b27811480cf6171bccc2b7af9513cddb",
+    "label": "new whale, first buy is its whole position",
+    "why": "First seen 28 Sep 17:04 UTC; net +$124.5k in a single burst of 10 trades (~7s), still holding all of it (~$120.7k, 0.168% of supply). No prior history.",
+    "added": "2026-09-29",
+    "active": true
+   },
+   {
+    "address": "0x22357b1276fdcdebe20475c9654a2aa63af42600",
+    "label": "consistent accumulator",
+    "why": "Trading since ~20-21 Sep; net +$162.4k lifetime across 45 trades, holds ~$166.3k (0.226% of supply). Added another $49.8k over several hours in the 24h to 29 Sep.",
+    "added": "2026-09-29",
+    "active": true
+   },
+   {
+    "address": "0x9337ce7e633230aa6f32e3c10d0a26aedf92a82b",
+    "label": "new whale, steady buyer",
+    "why": "First seen 28 Sep 17:06 UTC (same window as 0xb022); net +$29.2k over 18 trades spread across ~19h, holds ~$28.9k (0.168% of supply).",
+    "added": "2026-09-29",
+    "active": true
+   },
+   {
+    "address": "0x2836056c5d02dde4d2887e8dcea7db15e5f93aa2",
+    "label": "brand-new whale",
+    "why": "First seen 29 Sep, same day; net +$29.9k in 4 trades, holds ~$32.1k (0.164% of supply).",
+    "added": "2026-09-29",
+    "active": true
+   }
+  ]
+ },
+ "0x6835dbf2d7d5852f84bf0a80de00cab3864f44b1": {
+  "name": "HH",
+  "pool": "0x34321f090a123d52473ae1a2473e8ed97dd9f770",
+  "last_checked": 1790686579,
+  "wallets": [
+   {
+    "address": "0xd2f8235aa89306c364a950f43163830573208c33",
+    "label": "deployer's 10% allocation",
+    "why": "Received 10% of supply from the deployer on 28 Aug and has never moved it. Any movement is material.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0xcc964f8fe70d79cb3a03585aed329a4c644c9a69",
+    "label": "deployer",
+    "why": "Minted supply; reset the launch price by selling 17.9% into an empty pool.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x1b37dd78e230ed8247df2b8f2ee47c51ac1b3793",
+    "label": "deployer-funded buyback contract",
+    "why": "329 identical-size buys since 22 Sep, zero sells. Watch for it stopping. Stopped: last buy 26 Sep 22:59 UTC (checked 27 Sep 14:20).",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0xf24d97ee91025733aa48d898371affb564638d28",
+    "label": "largest early buyer",
+    "why": "Bought 17% of supply for $6.2k on 31 Aug; staked about half; ~$159k open.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0xf9ab5f4d82716311668a259da3549cf9b7856a89",
+    "label": "staking/lock contract (28%)",
+    "why": "Withdrawals from here are unlocks entering the float.",
+    "added": "2026-09-27",
+    "active": true
+   },
+   {
+    "address": "0x81a3fcad15dbd4ffea426669cc61b35b4bf5509a",
+    "label": "distributor source, unstaking",
+    "why": "Sent 19.5% of supply to distributor contract 0x9e60; deposited into staking 7 Sep; withdrew 0.143% from staking on 27 Sep. Watch for further unstaking or sales.",
+    "added": "2026-09-27",
+    "active": true
+   }
+  ]
+ }
 }
