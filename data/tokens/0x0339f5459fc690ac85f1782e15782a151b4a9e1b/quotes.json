@@ -1,9 +1,9 @@
 {
- "priced_at": "2026-09-29T16:42:24Z",
- "eth_usd": 2676.61,
+ "priced_at": "2026-09-29T22:36:08Z",
+ "eth_usd": 2677.18,
  "pools": {
   "0x9501a20bedb8bea0798fe5d4c411f5e270965d49": {
-   "quote_usd": 2676.61,
+   "quote_usd": 2677.18,
    "decimals": 18,
    "symbol": "WETH"
   },

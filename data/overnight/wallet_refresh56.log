@@ -1,0 +1,60 @@
+head 76,019,265; 3,152 anchors held, 9 to fetch
+3,161 anchors; worst error above block 4,000,000: 2s (below it: 0s, where the chain had not reached a steady block rate)
+[22:35:35] build starting for WALLET (ETH $2,677.18)
+[22:35:35] WALLET: transfers starting
+head 76,019,300
+transfers: scanning 75,802,736-76,019,300 (resuming)
+  tr  46.2%  block 75,902,735  span 100,000  logs 1,456  0s
+  tr 100.0%  block 76,019,300  span 150,000  logs 4,323  0s
+transfers: committed 75,802,736-76,019,300  +4,323 rows, 661,962 total
+{
+ "token": "0x0339f5459fc690ac85f1782e15782a151b4a9e1b",
+ "transfers": {
+  "ranges": [
+   [
+    1,
+    76019300
+   ]
+  ],
+  "rows": 661962
+ },
+ "swaps": {
+  "ranges": [
+   [
+    1,
+    74038513
+   ]
+  ],
+  "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
+  "protocol": "v3",
+  "rows": 271175
+ },
+ "updated_at": "2026-09-29T22:35:50Z"
+}
+[22:35:50] WALLET: transfers DONE
+[22:35:51] WALLET: pool 0x9501a20b (v3/WETH) resuming from 75,802,863
+    0x9501a20b  46.2% block 75,902,862 logs 342 0s
+    0x9501a20b 100.0% block 76,019,451 logs 1,046 0s
+[22:35:56] WALLET: pool 0x9501a20b DONE, 279,074 swaps
+[22:35:56] WALLET: pool 0x89f2e48d (v4/USDG) resuming from 75,802,863
+    0x89f2e48d  46.2% block 75,902,862 logs 50 0s
+    0x89f2e48d 100.0% block 76,019,451 logs 228 0s
+[22:35:57] WALLET: pool 0x89f2e48d DONE, 18,412 swaps
+319,132 transactions moved this token
+{
+ "attributed": 251507,
+ "attributed_multi_swap": 25865,
+ "ambiguous_multi_swap": 5519,
+ "no_transfers": 187,
+ "no_counterparty": 14408
+}
+  attributed 93.2% of 297,486 swaps
+  'recipient' matched the true holder on 33.0% of 277,372 comparable swaps
+wrote /home/user/Public/data/tokens/0x0339f5459fc690ac85f1782e15782a151b4a9e1b/swaps_attributed.parquet
+[22:36:08] WALLET: attributed DONE
+297,486 trades -> /home/user/Public/data/tokens/0x0339f5459fc690ac85f1782e15782a151b4a9e1b/ledger.parquet
+  20,114 (6.76%) had no attributed trader and carry a null
+  33,248 distinct traders across the full history
+  span 1,783,645,329 - 1,790,721,298
+[22:36:16] WALLET: ledger DONE
+[22:36:16] build finished
