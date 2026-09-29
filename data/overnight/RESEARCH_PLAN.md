@@ -32,12 +32,12 @@ is done: disable the hourly routine and leave the user a morning summary.
 
 ## Steps
 
-- [ ] 1. Literature scan: known indicators of memecoin / DEX token 2x+ runs
+- [x] 1. Literature scan: known indicators of memecoin / DEX token 2x+ runs
          (web). Write data/research/literature.md.
-- [ ] 2. Inventory: which tokens have per-trade ledgers (data/tokens/*/ledger.parquet),
+- [x] 2. Inventory: which tokens have per-trade ledgers (data/tokens/*/ledger.parquet),
          spans, trade counts; build hourly bars + flow features per token
          (data/research/hourly.parquet).
-- [ ] 3. Event table: every 2x run in the ledger tokens (start hour, peak,
+- [x] 3. Event table: every 2x run in the ledger tokens (start hour, peak,
          size, duration), and in the daily-candle universe.
 - [ ] 4. Case studies: the 8-12 biggest runs, one by one — price structure,
          volume, buyer mix, whales, new wallets, liquidity adds, bots, and
@@ -51,3 +51,6 @@ is done: disable the hourly routine and leave the user a morning summary.
 - [ ] 9. Morning summary for the user; disable the routine.
 
 ## Log
+- 17:00Z step 1 done: data/research/literature.md (8 testable claims; main new lever is WHO buys: cross-token smart wallets, coordinated fresh wallets).
+- 17:10Z step 2 done: scripts/research_build.py -> data/research/cache/rd.duckdb (gitignored, rebuildable): 6,434,460 trades, 65 tokens, 59,355 token-hours; hourly VWAP bars + forward outcomes. Base: 18.1% of token-hours reach 2x in 72h, 29.3% in 7d; 20.5% crash first in 7d.
+- 17:15Z step 3 done: scripts/research_events.py -> data/research/events.csv: 252 up-legs >= 2x (zigzag, 50% reversal), 67 at launch (<48h), 185 in established coins across 41 tokens (74 at 2-3x, 48 at 3-5x, 32 at 5-10x, 31 at 10x+).
