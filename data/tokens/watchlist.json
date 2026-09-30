@@ -3,7 +3,7 @@
  "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
   "name": "WALLET",
   "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
-  "last_checked": 1790769115,
+  "last_checked": 1790773043,
   "wallets": [
    {
     "address": "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
@@ -184,6 +184,20 @@
     "address": "0x0ec4a9fa81091c4375fbbdf21f556f5471b09e3d",
     "label": "long-time trader, bought the crash",
     "why": "Trading since 14 Jul (~195 trades, ~$143k in / $85k out). Holds 1.36M tokens (~0.14%). Auto-added 30 Sep as a $25k+ 24h net buyer (+$25.1k), buying the $0.027-0.029 breakdown and the post-crash lows. No transfer link to other watched wallets.",
+    "added": "2026-09-30",
+    "active": true
+   },
+   {
+    "address": "0xfa34b5c1097187e400254b117488c9d5c712f6f1",
+    "label": "drip-sell bot (funded by 0x43e3)",
+    "why": "Automated seller: hundreds of $20-220 sells every ~12s. Bought only ~$1k itself; its tokens come by transfer from 0x43e3 (3.1M WALLET in 4 batches, 23-30 Sep, last 597k at 30 Sep 12:09). Sold ~$48.7k lifetime, much of it 30 Sep 10:40-12:08 while price fell $0.027 -> $0.022. Held ~738k at 12:58 UTC.",
+    "added": "2026-09-30",
+    "active": true
+   },
+   {
+    "address": "0x43e3a912602c5dd201b90bcf859d9c7ceebb78be",
+    "label": "funder of the 0xfa34 drip-sell bot",
+    "why": "Trader since mid-Jul (165 trades, ~$91k in / $55k out). Moved its whole remaining 3.1M WALLET to 0xfa34 in batches for automated selling; holds 0 itself now. Watch for it receiving/buying more.",
     "added": "2026-09-30",
     "active": true
    }
