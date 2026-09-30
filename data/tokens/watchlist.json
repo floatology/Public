@@ -3,7 +3,7 @@
  "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
   "name": "WALLET",
   "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
-  "last_checked": 1790731475,
+  "last_checked": 1790736165,
   "wallets": [
    {
     "address": "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
@@ -164,6 +164,27 @@
     "label": "long-time trader, bought the breakdown",
     "why": "Trading since 11 Jul (139 trades, ~$256k in / $231k out, realised +$24k). Auto-added as a $25k+ net buyer over 24h (+$46.9k): 4 separate buys ($5.4k, $5.4k, $8.1k, $9.7k) from $0.033 down to $0.0274 as $0.035 support broke on 29 Sep 23:05-23:13, catching 0x2cd2's $72k dump. Holds 1.51M tokens (0.16%). No transfer link to other watched wallets.",
     "added": "2026-09-29",
+    "active": true
+   },
+   {
+    "address": "0x002dbd7f88acdb6c222351afa09ff06624bff71e",
+    "label": "large holder, never sold, bought the crash recovery",
+    "why": "Holder since 28 Aug, has never sold. Transfer balance 15.0M tokens (~1.6% of supply, ~$388k at $0.0258); only ~2.8M came via its own swaps, the rest arrived by transfer. Auto-added 30 Sep as a $25k+ 24h net buyer (+$28.3k): 5 buys at $0.0245-0.0259 after the 29 Sep crash. No transfer link to other watched wallets.",
+    "added": "2026-09-30",
+    "active": true
+   },
+   {
+    "address": "0x469514238c67b29fe10f259feb7a14eb360179b7",
+    "label": "accumulator since Sep, bought the recovery",
+    "why": "Trading since 11 Sep: ~$114k in, $7.4k out. Holds 3.15M tokens (~0.33%). Auto-added 30 Sep as a $25k+ 24h net buyer (+$27.2k), incl. a $14k buy at $0.0251 after the crash. No transfer link to other watched wallets.",
+    "added": "2026-09-30",
+    "active": true
+   },
+   {
+    "address": "0x0ec4a9fa81091c4375fbbdf21f556f5471b09e3d",
+    "label": "long-time trader, bought the crash",
+    "why": "Trading since 14 Jul (~195 trades, ~$143k in / $85k out). Holds 1.36M tokens (~0.14%). Auto-added 30 Sep as a $25k+ 24h net buyer (+$25.1k), buying the $0.027-0.029 breakdown and the post-crash lows. No transfer link to other watched wallets.",
+    "added": "2026-09-30",
     "active": true
    }
   ]
