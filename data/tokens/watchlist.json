@@ -3,7 +3,7 @@
  "0x0339f5459fc690ac85f1782e15782a151b4a9e1b": {
   "name": "WALLET",
   "pool": "0x9501a20bedb8bea0798fe5d4c411f5e270965d49",
-  "last_checked": 1790838635,
+  "last_checked": 1790854386,
   "wallets": [
    {
     "address": "0x5364d7bef3b0add040704ab65b9b0549c6e69e4b",
@@ -213,6 +213,13 @@
     "label": "old profitable holder, rebought the crash",
     "why": "Holder/trader since 11 Jul (~106 trades, ~+$67k realised). Auto-added 30 Sep as a $25k+ 24h net buyer (+$36.7k): bought $16.1k at $0.020-0.021 right after the 29 Sep crash and more through the KuCoin Alpha rally.",
     "added": "2026-09-30",
+    "active": true
+   },
+   {
+    "address": "0x17292715d511994cf9e32f3912a2004bce9460b2",
+    "label": "crash capitulator, bought back",
+    "why": "Holder since 23 Aug (~$246k in lifetime). Dumped $74.8k at ~$0.015 at the 29 Sep 23:46 second flush (realised ~-$82k). Bought back $36.9k in one buy at $0.0253 on 1 Oct 11:28. Auto-added as a $25k+ 24h net buyer. No transfer link to other watched wallets.",
+    "added": "2026-10-01",
     "active": true
    }
   ]
